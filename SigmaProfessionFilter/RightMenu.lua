@@ -3,7 +3,7 @@ function SPF_RightMenu_OnClick(this, arg1, arg2, checked)
     UIDropDownMenu_SetSelectedID(SPF_RightMenu, this:GetID());
     
     local Profession = SPF[GetCraftDisplaySkillLine()];
-    if (Professionand Profession["Right"]) then
+    if (Professionand and Profession["Right"]) then
         Profession["Selected"]["Right"] = this:GetID();
     end
     
