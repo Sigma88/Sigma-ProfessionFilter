@@ -1,0 +1,8 @@
+## Interface: 11304
+## Title: Sigma |cffa335eeProfession Filter|r |cff1170dd(Classic)|r
+## Author: Sigma88
+## Notes: v0.0.1 |cffff0000Alpha|r
+## LoadOnDemand: 1
+## SavedVariables: Sigma_ProfessionFilter_GroupBy, Sigma_ProfessionFilter_SearchBar, Sigma_ProfessionFilter_ReplacePortrait, Sigma_ProfessionFilter_SearchReagents, Sigma_ProfessionFilter_SearchGroups
+## LoadWith: Blizzard_CraftUI
+SigmaProfessionFilter.xml
