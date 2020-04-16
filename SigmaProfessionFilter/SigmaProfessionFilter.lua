@@ -1,5 +1,8 @@
 function SPF_OnLoad()
-    ---Replace Functions
+	-- Hooks
+	hooksecurefunc("CraftFrame_Update", SPF_CheckFirstRecipe);
+	
+	---Replace Functions
 	
 	--Number of crafts
     SPF_baseGetNumCrafts = GetNumCrafts;
@@ -22,14 +25,6 @@ function SPF_OnLoad()
 	CraftCreateButton:HookScript("OnMouseDown", SPF_CraftCreateButton_OnMouseDown);
 	CraftCreateButton:HookScript("OnMouseUp", SPF_CraftCreateButton_OnMouseUp);
 	CraftCreateButton:HookScript("OnClick", SPF_CraftCreateButton_OnClick);
-	
-	-- USING THIS CAUSES BLIZ TO FREAK OUT
-	-- SPF_baseGetCraftSelectionIndex = GetCraftSelectionIndex;
-    -- GetCraftSelectionIndex = SPF_GetCraftSelectionIndex;
-    
-    -- --Crafting
-    -- SPF_baseDoCraft = DoCraft;
-    -- DoCraft = SPF_DoCraft;
     
     --Tooltips
     SPF_baseSetCraftItem = GameTooltip.SetCraftItem;
