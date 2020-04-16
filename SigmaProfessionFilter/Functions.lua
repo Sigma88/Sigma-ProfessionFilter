@@ -54,6 +54,7 @@ function SPF_GetNumCrafts()
 	
 	local totalCount = 0;
     local headerCount = 0;
+	local firstRecipe = nil;
 	
 	if Ordered[groupBy] ~= nil then
 		--for group,items in pairs(Ordered[groupBy]) do
@@ -85,6 +86,10 @@ function SPF_GetNumCrafts()
 					for i,craftIndex in ipairs(items) do
 						totalCount = totalCount + 1;
 						
+						if (not firstRecipe) then 
+							firstRecipe = totalCount;
+						end
+						
 						SPF.Data[totalCount] = {
 							["original"] = craftIndex;
 						};
@@ -96,7 +101,8 @@ function SPF_GetNumCrafts()
 	
     SPF.Data.n = totalCount;
     SPF.Headers.n = headerCount;
-    return totalCount;
+	
+    return totalCount, headerCount, firstRecipe;
 end
 
 -- Get Craft Info
