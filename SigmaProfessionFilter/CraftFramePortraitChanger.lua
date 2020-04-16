@@ -7,7 +7,7 @@ end
 
 function SPF_PortraitChanger_OnMouseDown()
 	-- Check if the profession is supported
-	local Profession = SPF[GetCraftDisplaySkillLine()];
+	local Profession = SPF[GetCraftName()];
 	
 	-- Toggle the option
 	if Profession and Profession["icon"] then
@@ -18,7 +18,7 @@ end
 
 function SPF_PortraitChanger_OnUpdate()
 	-- Check if the profession is supported
-	local Profession = SPF[GetCraftDisplaySkillLine()];
+	local Profession = SPF[GetCraftName()];
 	
 	-- Replace the Portrait Icon
 	if Profession and Profession["icon"] and Sigma_ProfessionFilter_ReplacePortrait ~= false then

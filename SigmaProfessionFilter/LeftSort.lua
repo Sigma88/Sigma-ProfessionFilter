@@ -3,13 +3,13 @@ function SPF_LeftSort_OnLoad()
 end
 
 function SPF_LeftSort_OnShow()
-	local Profession = SPF[GetCraftDisplaySkillLine()];
+	local Profession = SPF[GetCraftName()];
 	
 	if (Profession and (not Sigma_ProfessionFilter_SearchBar)) then
 		if (Sigma_ProfessionFilter_GroupBy == nil) then
 			Sigma_ProfessionFilter_GroupBy = {};
 		end
-		SPF_LeftSort:SetChecked(Sigma_ProfessionFilter_GroupBy[GetCraftDisplaySkillLine()] == "Left");
+		SPF_LeftSort:SetChecked(Sigma_ProfessionFilter_GroupBy[GetCraftName()] == "Left");
 	else
 		SPF_LeftSort:Hide();
 	end
@@ -22,7 +22,7 @@ function SPF_LeftSort_OnClick()
 	if (Sigma_ProfessionFilter_GroupBy == nil) then
 		Sigma_ProfessionFilter_GroupBy = {};
 	end
-	Sigma_ProfessionFilter_GroupBy[GetCraftDisplaySkillLine()] = "Left";
+	Sigma_ProfessionFilter_GroupBy[GetCraftName()] = "Left";
 	
 	SPF_RightSort_OnShow();
     SPF_FullUpdate();

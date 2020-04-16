@@ -13,7 +13,7 @@ end
 function SPF_Search_OnShow()
 	
 	-- Check if the profession is supported
-	local Profession = SPF[GetCraftDisplaySkillLine()];
+	local Profession = SPF[GetCraftName()];
 	
 	-- Toggle the option
 	if Profession and (Profession["Left"] or Profession["Right"]) then

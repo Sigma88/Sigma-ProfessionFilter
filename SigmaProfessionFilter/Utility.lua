@@ -4,7 +4,7 @@ function trim(str)
 end
 
 function SPF_GetGroup(groupName, craftName)
-	local Profession = SPF[GetCraftDisplaySkillLine()];
+	local Profession = SPF[GetCraftName()];
 	
 	if (Profession) then
 		for i,button in ipairs(Profession[groupName]) do

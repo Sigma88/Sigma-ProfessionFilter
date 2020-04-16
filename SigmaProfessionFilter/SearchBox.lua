@@ -23,7 +23,7 @@ end
 function SPF_SearchBox_OnShow()
 	
 	-- Check if the profession is supported
-	local Profession = SPF[GetCraftDisplaySkillLine()];
+	local Profession = SPF[GetCraftName()];
 	
 	if Profession and (Profession["Left"] or Profession["Right"]) then
 		if not Sigma_ProfessionFilter_SearchBox then

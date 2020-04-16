@@ -2,7 +2,7 @@ function SPF_RightMenu_OnClick(this, arg1, arg2, checked)
     
     UIDropDownMenu_SetSelectedID(SPF_RightMenu, this:GetID());
     
-    local Profession = SPF[GetCraftDisplaySkillLine()];
+    local Profession = SPF[GetCraftName()];
     if (Profession and Profession["Right"]) then
         Profession["Selected"]["Right"] = this:GetID();
     end
@@ -13,7 +13,7 @@ end
 function SPF_RightMenu_Initialize()
     
     -- Check if the profession is supported
-    local Profession = SPF[GetCraftDisplaySkillLine()];
+    local Profession = SPF[GetCraftName()];
     
     if (Profession and Profession["Right"]) then
         local info = {};
@@ -34,7 +34,7 @@ function SPF_RightMenu_Initialize()
 end
 
 function SPF_RightMenu_OnShow()
-    local Profession = SPF[GetCraftDisplaySkillLine()];
+    local Profession = SPF[GetCraftName()];
     if (not Profession or not Profession["Right"] or (Sigma_ProfessionFilter_SearchBox == true)) then
         SPF_RightMenu:Hide();
     end
