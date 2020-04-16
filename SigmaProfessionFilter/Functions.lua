@@ -164,6 +164,11 @@ function SPF_CollapseCraftSkillLine(id)
 		
 		if (craftType == "header") then
 			-- Set Collapsed To False
+			
+			if (SPF.Collapsed == nil) then
+				SPF.Collapsed = {};
+			end
+			
 			SPF.Collapsed[craftName] = true;
 		end
 	end
