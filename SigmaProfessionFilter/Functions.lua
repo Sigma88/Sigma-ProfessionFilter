@@ -207,7 +207,7 @@ end
 function SPF_SetCraftItem(obj, id, reagId)
 	
 	-- If The Profession is supported
-	if (SPF[GetCraftDisplaySkillLine()] and SPF.Data and SPF.Data[id]) then
+	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
 		return SPF_baseSetCraftItem(obj, SPF.Data[id]["original"], reagId);
 	end
 	
@@ -218,7 +218,7 @@ end
 function SPF_SetCraftSpell(obj, id)
 	
 	-- If The Profession is supported
-	if (SPF[GetCraftDisplaySkillLine()] and SPF.Data and SPF.Data[id]) then
+	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
 		return SPF_baseSetCraftSpell(obj, SPF.Data[id]["original"]);
 	end
 	
@@ -229,7 +229,7 @@ end
 function SPF_GetCraftItemLink(id)
 	
 	-- If The Profession is supported
-	if (SPF[GetCraftDisplaySkillLine()] and SPF.Data and SPF.Data[id]) then
+	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
 		return SPF_baseGetCraftItemLink(SPF.Data[id]["original"]);
 	end
 	
@@ -240,7 +240,7 @@ end
 function SPF_GetCraftReagentItemLink(id, reagId)
 	
 	-- If The Profession is supported
-	if (SPF[GetCraftDisplaySkillLine()] and SPF.Data and SPF.Data[id]) then
+	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
 		return SPF_baseGetCraftReagentItemLink(SPF.Data[id]["original"], reagId);
 	end
 	
@@ -262,7 +262,7 @@ end
 function SPF_GetCraftDescription(id)
 	
 	-- If The Profession is supported
-	if (SPF[GetCraftDisplaySkillLine()] and SPF.Data and SPF.Data[id]) then
+	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
 		return SPF_baseGetCraftDescription(SPF.Data[id]["original"]);
 	end
 	
@@ -273,7 +273,7 @@ end
 function SPF_GetCraftNumReagents(id)
 	
 	-- If The Profession is supported
-	if (SPF[GetCraftDisplaySkillLine()] and SPF.Data and SPF.Data[id]) then
+	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
 		return SPF_baseGetCraftNumReagents(SPF.Data[id]["original"]);
 	end
 	
@@ -284,7 +284,7 @@ end
 function SPF_GetCraftReagentInfo(id, reagId)
 	
 	-- If The Profession is supported
-	if (SPF[GetCraftDisplaySkillLine()] and SPF.Data and SPF.Data[id]) then
+	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
 		return SPF_baseGetCraftReagentInfo(SPF.Data[id]["original"], reagId);
 	end
 	
@@ -295,7 +295,7 @@ end
 function SPF_GetCraftSpellFocus(id)
 	
 	-- If The Profession is supported
-	if (SPF[GetCraftDisplaySkillLine()] and SPF.Data and SPF.Data[id]) then
+	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
 		return SPF_baseGetCraftSpellFocus(SPF.Data[id]["original"]);
 	end
 	
