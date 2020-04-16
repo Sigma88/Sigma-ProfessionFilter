@@ -1,7 +1,4 @@
 function SPF_OnLoad()
-	-- Hooks
-	hooksecurefunc("CraftFrame_Update", SPF_CheckFirstRecipe);
-	
 	---Replace Functions
 	
 	--Number of crafts
