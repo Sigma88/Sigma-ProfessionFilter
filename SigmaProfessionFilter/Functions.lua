@@ -130,8 +130,9 @@ function SPF_ExpandCraftSkillLine(id)
 	
 	-- if the id is zero we need to expand all headers
 	if (id == 0) then
-		for i,headerID in ipairs(SPF.Headers) do
-			SPF_ExpandCraftSkillLine(headerID)
+		-- Expand in reverse order otherwise it's a mess
+		for i=#SPF.Headers, 1, -1 do
+			SPF_ExpandCraftSkillLine(SPF.Headers[i]);
 		end
 		
 	-- otherwise expand this header
@@ -158,8 +159,9 @@ function SPF_CollapseCraftSkillLine(id)
 	
 	-- if the id is zero we need to collapse all headers
 	if (id == 0) then
-		for i,headerID in ipairs(SPF.Headers) do
-			SPF_CollapseCraftSkillLine(headerID)
+		-- Collapse in reverse order otherwise it's a mess
+		for i=#SPF.Headers, 1, -1 do
+			SPF_CollapseCraftSkillLine(SPF.Headers[i]);
 		end
 		
 	-- otherwise collapse this header
