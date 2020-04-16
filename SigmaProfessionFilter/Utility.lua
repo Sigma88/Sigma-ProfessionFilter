@@ -61,8 +61,9 @@ function SPF_FilterWithSearchBox(craftIndex, craftName, leftGroupName, rightGrou
 end
 
 function SPF_FullUpdate()
-	if SPF_GetNumCrafts() > 1 then
-		CraftFrame_SetSelection(2);
+	local totalCount, headerCount, firstRecipe = SPF_GetNumCrafts();
+	if firstRecipe then
+		CraftFrame_SetSelection(firstRecipe);
 	end
 	CraftFrame_Update();
 end
