@@ -147,7 +147,7 @@ function SPF_ExpandCraftSkillLine(id)
 		end
 	end
 	
-    CraftFrame_Update();
+    SPF_FullUpdate();
 end
 
 -- Collapse
