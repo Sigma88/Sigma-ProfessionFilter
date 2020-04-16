@@ -1,7 +1,7 @@
 --Set up data table
 function SPF_GetNumCrafts()
 	-- Check if the profession is supported
-	local Profession = SPF[GetCraftDisplaySkillLine()];
+	local Profession = SPF[GetCraftName()];
 	if (not Profession) then return SPF_baseGetNumCrafts() end
 	
 	if Sigma_ProfessionFilter_GroupBy == nil then
@@ -9,7 +9,7 @@ function SPF_GetNumCrafts()
 	end
 	
 	-- Check the Chosen Grouping Scheme
-	local groupBy = Sigma_ProfessionFilter_GroupBy[GetCraftDisplaySkillLine()] or "Right";
+	local groupBy = Sigma_ProfessionFilter_GroupBy[GetCraftName()] or "Right";
 	local Ordered = {["Left"] = {}, ["Right"] = {}}
 	
     -- Find which items pass all filters
@@ -18,7 +18,7 @@ function SPF_GetNumCrafts()
         local craftName, craftSubSpellName, craftType, numAvailable, isExpanded, trainingPointCost, requiredLevel = SPF_baseGetCraftInfo(i);
 		local leftGroupName, leftGroupID = SPF_GetGroup("Left", craftName);
 		local rightGroupName, rightGroupID = SPF_GetGroup("Right", craftName);
-		
+
 		-- CHECKBOX1
         if (craftType == "trivial" and Sigma_ProfessionFilter_HasSkillUp)
 		-- CHECKBOX2
@@ -79,7 +79,6 @@ function SPF_GetNumCrafts()
 				
 				if (SPF.Collapsed and SPF.Collapsed[group]) then
 					SPF.Data[totalCount]["isExpanded"] = false;
-					
 				else
 					SPF.Data[totalCount]["isExpanded"] = true;
 					
@@ -103,7 +102,7 @@ end
 -- Get Craft Info
 function SPF_GetCraftInfo(id)
 	-- If The Profession is supported
-	if (SPF[GetCraftDisplaySkillLine()] and SPF.Data and SPF.Data[id]) then
+	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
 		if (SPF.Data[id]["original"] == 0) then
 			return SPF.Data[id]["craftName"], SPF.Data[id]["craftSubSpellName"], SPF.Data[id]["craftType"], SPF.Data[id]["numAvailable"], SPF.Data[id]["isExpanded"], SPF.Data[id]["trainingPointCost"], SPF.Data[id]["requiredLevel"];
 		else
