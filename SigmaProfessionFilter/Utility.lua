@@ -61,9 +61,33 @@ function SPF_FilterWithSearchBox(craftIndex, craftName, leftGroupName, rightGrou
 end
 
 function SPF_FullUpdate()
+	
 	local totalCount, headerCount, firstRecipe = SPF_GetNumCrafts();
+	
 	if firstRecipe then
 		CraftFrame_SetSelection(firstRecipe);
 	end
+	
 	CraftFrame_Update();
+	
+	if not firstRecipe then
+		SPF_ClearCraft();
+	end
+end
+
+function SPF_ClearCraft()
+	CraftName:Hide();
+	CraftRequirements:Hide();
+	CraftIcon:Hide();
+	CraftReagentLabel:Hide();
+	CraftDescription:Hide();
+	for i=1, MAX_CRAFT_REAGENTS, 1 do
+		getglobal("CraftReagent"..i):Hide();
+	end
+	CraftDetailScrollFrameScrollBar:Hide();
+	CraftDetailScrollFrameTop:Hide();
+	CraftDetailScrollFrameBottom:Hide();
+	CraftHighlightFrame:Hide();
+	CraftRequirements:Hide();
+	CraftCreateButton:Disable();
 end
