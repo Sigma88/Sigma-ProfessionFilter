@@ -1,5 +1,5 @@
 ## Interface: 11304
-## Title: Sigma |cffa335eeProfession Filter|r |cff1170dd(Classic)|r
+## Title: Sigma |cffbc5ff4Profession Filter|r |cff2e91f3(Classic)|r
 ## Author: Sigma88
 ## Notes: v0.0.1 |cffff0000Alpha|r
 ## LoadOnDemand: 1
