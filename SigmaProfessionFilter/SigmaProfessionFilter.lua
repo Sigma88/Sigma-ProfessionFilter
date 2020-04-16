@@ -1,7 +1,7 @@
 function SPF_OnLoad()
     ---Replace Functions
 	
-    --Number of crafts
+	--Number of crafts
     SPF_baseGetNumCrafts = GetNumCrafts;
     GetNumCrafts = SPF_GetNumCrafts;
     
