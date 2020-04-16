@@ -101,6 +101,7 @@ end
 
 -- Get Craft Info
 function SPF_GetCraftInfo(id)
+	
 	-- If The Profession is supported
 	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
 		if (SPF.Data[id]["original"] == 0) then
@@ -118,7 +119,7 @@ end
 function SPF_ExpandCraftSkillLine(id)
 	
 	-- Check if the profession is supported
-	local Profession = SPF[GetCraftDisplaySkillLine()];
+	local Profession = SPF[GetCraftName()];
 	if (not Profession) then return SPF_baseExpandCraftSkillLine(id) end
 	
 	-- if the id is zero we need to expand all headers
@@ -146,7 +147,7 @@ end
 function SPF_CollapseCraftSkillLine(id)
 	
 	-- Check if the profession is supported
-	local Profession = SPF[GetCraftDisplaySkillLine()];
+	local Profession = SPF[GetCraftName()];
 	if (not Profession) then return SPF_baseCollapseCraftSkillLine(id) end
 	
 	-- if the id is zero we need to collapse all headers
@@ -167,13 +168,13 @@ function SPF_CollapseCraftSkillLine(id)
 		end
 	end
 	
-    CraftFrame_Update();
+    SPF_FullUpdate();
 end
 
 -- Select Craft
 function SPF_SelectCraft(id)
 
-	if SPF[GetCraftDisplaySkillLine()] and SPF.Data and SPF.Data[id] and SPF_CRAFTING then
+	if SPF[GetCraftName()] and SPF.Data and SPF.Data[id] and SPF_CRAFTING then
 		SPF_baseSelectCraft(SPF.Data[id]["original"]);
 	else
 		SPF_baseSelectCraft(id);
@@ -250,7 +251,7 @@ end
 function SPF_GetCraftIcon(id)
 	
 	-- If The Profession is supported
-	if (SPF[GetCraftDisplaySkillLine()] and SPF.Data and SPF.Data[id]) then
+	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
 		return SPF_baseGetCraftIcon(SPF.Data[id]["original"]);
 	end
 	
