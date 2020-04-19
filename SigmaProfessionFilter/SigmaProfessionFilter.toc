@@ -2,7 +2,26 @@
 ## Title: Sigma |cffbc5ff4Profession Filter|r |cff2e91f3(Classic)|r
 ## Author: Sigma88
 ## Notes: v0.0.1 |cffff0000Alpha|r
-## LoadOnDemand: 1
-## SavedVariables: Sigma_ProfessionFilter_GroupBy, Sigma_ProfessionFilter_SearchBar, Sigma_ProfessionFilter_ReplacePortrait, Sigma_ProfessionFilter_SearchReagents, Sigma_ProfessionFilter_SearchGroups
-## LoadWith: Blizzard_CraftUI
-SigmaProfessionFilter.xml
+## SavedVariablesPerCharacter: Sigma_ProfessionFilter
+## Dependencies: Blizzard_CraftUI, Blizzard_TradeSkillUI
+
+
+SigmaProfessionFilter.lua
+
+CraftFrame\Core\Utility.lua
+CraftFrame\Core\DefineFunctions.lua
+CraftFrame\Core\ReplaceFunctions.lua
+
+CraftFrame\Frames\DropDowns\LeftMenu.lua
+CraftFrame\Frames\DropDowns\LeftSort.lua
+CraftFrame\Frames\DropDowns\RightMenu.lua
+CraftFrame\Frames\DropDowns\RightSort.lua
+CraftFrame\Frames\Filters\Filter1.lua
+CraftFrame\Frames\Filters\Filter2.lua
+CraftFrame\Frames\TextSearch\SearchBox.lua
+CraftFrame\Frames\TextSearch\Search.lua
+CraftFrame\Frames\PortraitChanger.lua
+CraftFrame\Frames\LeatrixPlusCompatibility.lua
+
+Professions\BeastTraining.lua
+Professions\Enchanting.lua

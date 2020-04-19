@@ -1,3 +1,10 @@
+**v0.0.2**
+
+- Removed the XML file
+- Rearranged the code for better modularity
+- Fixed a bug with selecting recipes
+- Added compatibility with "Beast Training"
+
 **v0.0.1**
 
 - First Test Release
