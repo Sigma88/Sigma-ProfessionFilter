@@ -64,7 +64,7 @@ SPF["Beast Training"] = {
 		["tooltip"] = "Sort the abilities by the type of effect they provide.";
 	};
 	["RightMenu"] = {
-		["tooltip"] = "Sort the abilities by the source from which they are aquired.";
+		["tooltip"] = "Sort the abilities by the source from which they are acquired.";
 		["Filter"] = function(craftIndex, groupIndex)
 			local groupName = SPF:GetGroup("Right", SPF.baseGetCraftInfo(craftIndex), 3);
 			if #(SPF:GetGroup("Right", SPF.baseGetCraftInfo(craftIndex), groupIndex)) > 0 then
