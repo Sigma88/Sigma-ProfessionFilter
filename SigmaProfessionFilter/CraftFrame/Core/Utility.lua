@@ -137,8 +137,10 @@ function SPF.FullUpdate()
 	local totalCount, headerCount, firstRecipe = SPF.GetNumCrafts();
 	
 	if firstRecipe then
+		FauxScrollFrame_SetOffset(CraftListScrollFrame, 0);
 		SPF.CraftFrame_SetSelection(firstRecipe);
 	end
+	CraftListScrollFrameScrollBar:SetValue(0);
 	
 	CraftFrame_Update();
 	
