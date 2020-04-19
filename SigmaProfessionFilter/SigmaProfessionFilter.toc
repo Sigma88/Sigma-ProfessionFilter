@@ -10,6 +10,7 @@ SigmaProfessionFilter.lua
 
 CraftFrame\Core\Utility.lua
 CraftFrame\Core\DefineFunctions.lua
+CraftFrame\Core\Blizzard_CraftUI.lua
 CraftFrame\Core\ReplaceFunctions.lua
 
 CraftFrame\Frames\DropDowns\LeftMenu.lua
