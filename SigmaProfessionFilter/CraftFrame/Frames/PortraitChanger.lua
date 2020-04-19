@@ -40,9 +40,13 @@ function SPF.PortraitChanger:GetIcon()
 	if SPF:Custom("Portrait")["Icon"] then
 		return SPF:Custom("Portrait"):Icon();
 	end
-	if SPF[GetCraftName()] then
+	
+	if SPF[GetCraftName()] and SPF[GetCraftName()]["icon"] then
 		return SPF[GetCraftName()]["icon"];
 	end
+	
+	local _,_,icon = GetSpellInfo(GetCraftName());
+	return icon;
 end
 
 SPF.PortraitChanger:OnLoad();
