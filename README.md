@@ -1,6 +1,20 @@
-# Sigma-ProfessionFilter
+# Sigma ProfessionFilter
 
-**WoWClassic Addon to filter the recipes of professions.**
 
-- [Releases](https://github.com/Sigma88/Sigma-ProfessionFilter/releases)
-- [ChangeLog](https://raw.githubusercontent.com/Sigma88/Sigma-ProfessionFilter/master/Changelog.txt)
+**WoWClassic Addon to filter the recipes of professions**
+
+
+**DownLoads**
+
+GitHub: https://github.com/Sigma88/Sigma-ProfessionFilter/releases
+
+WoWInterface: https://www.wowinterface.com/downloads/info25549-SigmaProfessionFilter.html
+
+
+**Other Links**
+
+Dev versions: https://github.com/Sigma88/Sigma-Replacements/tree/Development
+
+ChangeLog: https://raw.githubusercontent.com/Sigma88/Sigma-ProfessionFilter/master/Changelog.txt
+
+WoWInterface Forum: https://www.wowinterface.com/forums/showthread.php?p=335638
