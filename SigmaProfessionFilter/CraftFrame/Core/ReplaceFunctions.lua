@@ -15,14 +15,6 @@ ExpandCraftSkillLine = SPF.ExpandCraftSkillLine;
 SPF.baseCollapseCraftSkillLine = CollapseCraftSkillLine;
 CollapseCraftSkillLine = SPF.CollapseCraftSkillLine;
 
---Indexing
-SPF.baseCraftFrame_SetSelection = CraftFrame_SetSelection;
-CraftFrame_SetSelection = SPF.CraftFrame_SetSelection;
-SPF.baseGetCraftSelectionIndex = GetCraftSelectionIndex;
-GetCraftSelectionIndex = SPF.GetCraftSelectionIndex;
-SPF.baseSelectCraft = SelectCraft;
-SelectCraft = SPF.SelectCraft;
-
 --Crafting
 CraftCreateButton:HookScript("OnMouseDown", SPF.CraftCreateButton_OnMouseDown);
 CraftCreateButton:HookScript("OnMouseUp", SPF.CraftCreateButton_OnMouseUp);
@@ -51,3 +43,22 @@ SPF.baseGetCraftReagentInfo = GetCraftReagentInfo;
 GetCraftReagentInfo = SPF.GetCraftReagentInfo;
 SPF.baseGetCraftSpellFocus = GetCraftSpellFocus;
 GetCraftSpellFocus = SPF.GetCraftSpellFocus;
+
+--Indexing
+SPF.baseSelectCraft = SelectCraft;
+SelectCraft = SPF.SelectCraft;
+
+SPF.baseGetCraftSelectionIndex = GetCraftSelectionIndex;
+--GetCraftSelectionIndex = SPF.GetCraftSelectionIndex; DO NOT REPLACE 'GetCraftSelectionIndex'
+
+--SPF.baseCraftFrame_SetSelection = CraftFrame_SetSelection; INCLUDED IN SigmaProfessionFilter/CraftFrame/Core/Blizzard_CraftUI.lua
+CraftFrame_SetSelection = SPF.CraftFrame_SetSelection;
+
+-- Blizzard_CraftUI
+SPF.baseCraftFrame_OnEvent = CraftFrame_OnEvent;
+CraftFrame_OnEvent = SPF.CraftFrame_OnEvent;
+SPF.baseCraftFrame_Update = CraftFrame_Update;
+CraftFrame_Update = SPF.CraftFrame_Update;
+SPF.baseCraftFrame_Update = CraftFrame_Update;
+CraftFrame_Update = SPF.CraftFrame_Update;
+
