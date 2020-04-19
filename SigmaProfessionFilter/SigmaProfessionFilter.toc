@@ -1,7 +1,7 @@
 ## Interface: 11304
 ## Title: Sigma |cffbc5ff4Profession Filter|r |cff2e91f3(Classic)|r
 ## Author: Sigma88
-## Notes: v0.0.2 |cffff0000Alpha|r
+## Notes: v0.0.3 |cffff0000Alpha|r
 ## SavedVariablesPerCharacter: Sigma_ProfessionFilter
 ## Dependencies: Blizzard_CraftUI, Blizzard_TradeSkillUI
 
