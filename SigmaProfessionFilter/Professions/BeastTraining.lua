@@ -175,4 +175,13 @@ SPF["Beast Training"] = {
 			end
 		end;
 	};
+	["Tooltip"] = {
+		["Set"] = function()
+			if UnitExists("pet") then
+				GameTooltip:SetUnit("pet");
+			else
+				SPF.PortraitChanger:DefaultTooltip();
+			end
+		end
+	};
 }
