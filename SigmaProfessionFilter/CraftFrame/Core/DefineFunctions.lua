@@ -1,49 +1,51 @@
 --Set up data table
-function SPF_GetNumCrafts()
-	-- Check if the profession is supported
-	local Profession = SPF[GetCraftName()];
-	if (not Profession) then return SPF_baseGetNumCrafts() end
+function SPF.GetNumCrafts()
 	
-	if Sigma_ProfessionFilter_GroupBy == nil then
-		Sigma_ProfessionFilter_GroupBy = {};
+	if not SPF:GetMenu("Right") then
+		SPF:SavedData()["GroupBy"] = nil;
+		SPF.LeftSort:OnShow();
 	end
 	
 	-- Check the Chosen Grouping Scheme
-	local groupBy = Sigma_ProfessionFilter_GroupBy[GetCraftName()] or "Right";
+	local groupBy = SPF:SavedData()["GroupBy"] or "Left";
 	local Ordered = {["Left"] = {}, ["Right"] = {}}
 	
     -- Find which items pass all filters
-    for i=1, SPF_baseGetNumCrafts() do
+    for i=1, SPF.baseGetNumCrafts() do
 		-- IMPLEMENT CHECKS LATER
-        local craftName, craftSubSpellName, craftType, numAvailable, isExpanded, trainingPointCost, requiredLevel = SPF_baseGetCraftInfo(i);
-		local leftGroupName, leftGroupID = SPF_GetGroup("Left", craftName);
-		local rightGroupName, rightGroupID = SPF_GetGroup("Right", craftName);
+		local leftGroupName = SPF.LeftMenu:Filter(i, SPF:GetSelected("Left"));
+		local rightGroupName = SPF.RightMenu:Filter(i, SPF:GetSelected("Right"));
 
-		-- CHECKBOX1
-        if (craftType == "trivial" and Sigma_ProfessionFilter_HasSkillUp)
-		-- CHECKBOX2
-			or ((not (numAvailable > 0)) and Sigma_ProfessionFilter_HaveMats)
-		-- SEARCHBOX
-			or (not SPF_FilterWithSearchBox(i, craftName, leftGroupName, rightGroupName))
-		-- LEFT DROPDOWN
-			or ((Profession["Selected"]["Left"] > 1) and Profession["Selected"]["Left"] - 1 ~= leftGroupID)
-		-- RIGHT DROPDOWN
-			or ((Profession["Selected"]["Right"] > 1) and Profession["Selected"]["Right"] - 1 ~= rightGroupID)
+		-- FILTER_1
+        if (not SPF.Filter1:Filter(i))
+		-- FILTER_2
+			or (not SPF.Filter2:Filter(i))
+		-- SEARCH_BOX
+			or not(SPF.SearchBox:Filter(i))
+		-- LEFT_DROPDOWN
+			or not (SPF:GetSelected("Left") == 1 or #leftGroupName > 0)
+		-- RIGHT_DROPDOWN
+			or not (SPF:GetSelected("Right") == 1 or #rightGroupName > 0)
 		then
 			-- ELEMENTS THAT FAIL TO MATCH ALL FILTERS
 		else
 			-- ELEMENTS THAT MATCH ALL FILTERS
 			if (groupBy == "Left") then
 				if (Ordered["Left"][leftGroupName] == nil) then
-					Ordered["Left"][leftGroupName] = {}
+					Ordered["Left"][leftGroupName] = {};
 				end
-				table.insert(Ordered["Left"][leftGroupName], i)
+				table.insert(Ordered["Left"][leftGroupName], i);
 			else
 				if (Ordered["Right"][rightGroupName] == nil) then
-					Ordered["Right"][rightGroupName] = {}
+					Ordered["Right"][rightGroupName] = {};
 				end
-				table.insert(Ordered["Right"][rightGroupName], i)
+				table.insert(Ordered["Right"][rightGroupName], i);
 			end
+		end
+		
+		-- Fix for BeastTraining headers not forgetting their old cost
+		if (getglobal("Craft"..i.."Cost")) then
+			getglobal("Craft"..i.."Cost"):SetText("");
 		end
     end
 	
@@ -57,31 +59,42 @@ function SPF_GetNumCrafts()
 	local firstRecipe = nil;
 	
 	if Ordered[groupBy] ~= nil then
-		--for group,items in pairs(Ordered[groupBy]) do
-		for i,button in ipairs(Profession[groupBy]) do
+		local Pairs = SPF:GetMenu(groupBy);
+		
+		if (groupBy == "Left" and not SPF:GetMenu("Left")) then
+			Pairs = { [1] = { name = ""; } };
+		end
+		
+		for i,button in ipairs(Pairs) do
 			local group = button.name;
+			
 			local items = Ordered[groupBy][group];
+			
 			if (items) then
+				
 				-- Add the Header
-				headerCount = headerCount + 1;
-				totalCount = totalCount + 1;
+				if (#group > 0) then
+					headerCount = headerCount + 1;
+					totalCount = totalCount + 1;
+					SPF.Headers[headerCount] = totalCount;
 				
-				SPF.Headers[headerCount] = totalCount;
-				
-				SPF.Data[totalCount] = {
-					["craftName"] = group;
-					["craftSubSpellName"] = "";
-					["craftType"] = "header";
-					["numAvailable"] = 0;
-					["trainingPointCost"] = 0;
-					["requiredLevel"] = 0;
-					["original"] = 0;
-				};
+					SPF.Data[totalCount] = {
+						["craftName"] = group;
+						["craftSubSpellName"] = "";
+						["craftType"] = "header";
+						["numAvailable"] = 0;
+						["trainingPointCost"] = nil;
+						["requiredLevel"] = 0;
+						["original"] = 0;
+					};
+				end
 				
 				if (SPF.Collapsed and SPF.Collapsed[group]) then
 					SPF.Data[totalCount]["isExpanded"] = false;
 				else
-					SPF.Data[totalCount]["isExpanded"] = true;
+					if (#group > 0) then
+						SPF.Data[totalCount]["isExpanded"] = true;
+					end
 					
 					for i,craftIndex in ipairs(items) do
 						totalCount = totalCount + 1;
@@ -106,33 +119,34 @@ function SPF_GetNumCrafts()
 end
 
 -- Get Craft Info
-function SPF_GetCraftInfo(id)
+function SPF.GetCraftInfo(id)
 	
 	-- If The Profession is supported
 	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
 		if (SPF.Data[id]["original"] == 0) then
 			return SPF.Data[id]["craftName"], SPF.Data[id]["craftSubSpellName"], SPF.Data[id]["craftType"], SPF.Data[id]["numAvailable"], SPF.Data[id]["isExpanded"], SPF.Data[id]["trainingPointCost"], SPF.Data[id]["requiredLevel"];
 		else
-			return SPF_baseGetCraftInfo(SPF.Data[id]["original"]);
+			return SPF.baseGetCraftInfo(SPF.Data[id]["original"]);
 		end
 	end
 	
 	-- Otherwise fall back to the original
-	return SPF_baseGetCraftInfo(id);
+	return SPF.baseGetCraftInfo(id);
 end
 
 -- Expand
-function SPF_ExpandCraftSkillLine(id)
+function SPF.ExpandCraftSkillLine(id)
 	
 	-- Check if the profession is supported
-	local Profession = SPF[GetCraftName()];
-	if (not Profession) then return SPF_baseExpandCraftSkillLine(id) end
+	if (not SPF[GetCraftName()]) then
+		return SPF.baseExpandCraftSkillLine(id);
+	end
 	
 	-- if the id is zero we need to expand all headers
 	if (id == 0) then
 		-- Expand in reverse order otherwise it's a mess
 		for i=#SPF.Headers, 1, -1 do
-			SPF_ExpandCraftSkillLine(SPF.Headers[i]);
+			SPF.ExpandCraftSkillLine(SPF.Headers[i]);
 		end
 		
 	-- otherwise expand this header
@@ -147,21 +161,22 @@ function SPF_ExpandCraftSkillLine(id)
 		end
 	end
 	
-    SPF_FullUpdate();
+    SPF.FullUpdate();
 end
 
 -- Collapse
-function SPF_CollapseCraftSkillLine(id)
+function SPF.CollapseCraftSkillLine(id)
 	
 	-- Check if the profession is supported
-	local Profession = SPF[GetCraftName()];
-	if (not Profession) then return SPF_baseCollapseCraftSkillLine(id) end
+	if (not SPF[GetCraftName()]) then
+		return SPF.baseCollapseCraftSkillLine(id);
+	end
 	
 	-- if the id is zero we need to collapse all headers
 	if (id == 0) then
 		-- Collapse in reverse order otherwise it's a mess
 		for i=#SPF.Headers, 1, -1 do
-			SPF_CollapseCraftSkillLine(SPF.Headers[i]);
+			SPF.CollapseCraftSkillLine(SPF.Headers[i]);
 		end
 		
 	-- otherwise collapse this header
@@ -181,137 +196,146 @@ function SPF_CollapseCraftSkillLine(id)
 		end
 	end
 	
-    SPF_FullUpdate();
+    SPF.FullUpdate();
 end
 
 -- Select Craft
-function SPF_SelectCraft(id)
+function SPF.CraftFrame_SetSelection(craftIndex)
+	SPF.SELECTED = craftIndex;
+	SPF.baseCraftFrame_SetSelection(craftIndex);
+end
 
-	if SPF[GetCraftName()] and SPF.Data and SPF.Data[id] and SPF_CRAFTING then
-		SPF_baseSelectCraft(SPF.Data[id]["original"]);
+function SPF.GetCraftSelectionIndex()
+	return SPF.SELECTED;
+end
+
+function SPF.SelectCraft(id)
+	if SPF[GetCraftName()] and SPF.Data and SPF.Data[id] and SPF.CRAFTING then
+		SPF.baseSelectCraft(SPF.Data[id]["original"]);
 	else
-		SPF_baseSelectCraft(id);
+		SPF.baseSelectCraft(id);
 	end
 end
 
-function SPF_CraftCreateButton_OnMouseDown(self, mouseBtn)
+-- Crafting
+function SPF.CraftCreateButton_OnMouseDown(self, mouseBtn)
 	if CraftCreateButton:IsEnabled() and mouseBtn == "LeftButton" then
-		SPF_CRAFTING = true;
-		SPF_SelectCraft(GetCraftSelectionIndex());
+		SPF.CRAFTING = true;
+		SPF.SelectCraft(GetCraftSelectionIndex());
 	end
 end
 
-function SPF_CraftCreateButton_OnMouseUp()
-	if SPF_CRAFTING then
+function SPF.CraftCreateButton_OnMouseUp()
+	if SPF.CRAFTING then
 		if not CraftCreateButton:IsMouseOver() then
-			SPF_CRAFTING = nil;
-			SPF_SelectCraft(GetCraftSelectionIndex());
+			SPF.CRAFTING = nil;
+			SPF.SelectCraft(GetCraftSelectionIndex());
 		end
 	end
 end
 
-function SPF_CraftCreateButton_OnClick()
-	if SPF_CRAFTING then
-		SPF_CRAFTING = nil;
-		SPF_SelectCraft(GetCraftSelectionIndex());
+function SPF.CraftCreateButton_OnClick()
+	if SPF.CRAFTING then
+		SPF.CRAFTING = nil;
+		SPF.SelectCraft(GetCraftSelectionIndex());
 	end
 end
 
-function SPF_SetCraftItem(obj, id, reagId)
+function SPF.SetCraftItem(obj, id, reagId)
 	
 	-- If The Profession is supported
 	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
-		return SPF_baseSetCraftItem(obj, SPF.Data[id]["original"], reagId);
+		return SPF.baseSetCraftItem(obj, SPF.Data[id]["original"], reagId);
 	end
 	
 	-- Otherwise fall back to the original
-    return SPF_baseSetCraftItem(obj, id, reagId);
+    return SPF.baseSetCraftItem(obj, id, reagId);
 end
 
-function SPF_SetCraftSpell(obj, id)
+function SPF.SetCraftSpell(obj, id)
 	
 	-- If The Profession is supported
 	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
-		return SPF_baseSetCraftSpell(obj, SPF.Data[id]["original"]);
+		return SPF.baseSetCraftSpell(obj, SPF.Data[id]["original"]);
 	end
 	
 	-- Otherwise fall back to the original
-    return SPF_baseSetCraftSpell(obj, id);
+    return SPF.baseSetCraftSpell(obj, id);
 end
 
-function SPF_GetCraftItemLink(id)
+function SPF.GetCraftItemLink(id)
 	
 	-- If The Profession is supported
 	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
-		return SPF_baseGetCraftItemLink(SPF.Data[id]["original"]);
+		return SPF.baseGetCraftItemLink(SPF.Data[id]["original"]);
 	end
 	
 	-- Otherwise fall back to the original
-    return SPF_baseGetCraftItemLink(id);
+    return SPF.baseGetCraftItemLink(id);
 end
 
-function SPF_GetCraftReagentItemLink(id, reagId)
+function SPF.GetCraftReagentItemLink(id, reagId)
 	
 	-- If The Profession is supported
 	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
-		return SPF_baseGetCraftReagentItemLink(SPF.Data[id]["original"], reagId);
+		return SPF.baseGetCraftReagentItemLink(SPF.Data[id]["original"], reagId);
 	end
 	
 	-- Otherwise fall back to the original
-    return SPF_baseGetCraftReagentItemLink(id, reagId);
+    return SPF.baseGetCraftReagentItemLink(id, reagId);
 end
 
-function SPF_GetCraftIcon(id)
+function SPF.GetCraftIcon(id)
 	
 	-- If The Profession is supported
 	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
-		return SPF_baseGetCraftIcon(SPF.Data[id]["original"]);
+		return SPF.baseGetCraftIcon(SPF.Data[id]["original"]);
 	end
 	
 	-- Otherwise fall back to the original
-    return SPF_baseGetCraftIcon(id);
+    return SPF.baseGetCraftIcon(id);
 end
 
-function SPF_GetCraftDescription(id)
+function SPF.GetCraftDescription(id)
 	
 	-- If The Profession is supported
 	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
-		return SPF_baseGetCraftDescription(SPF.Data[id]["original"]);
+		return SPF.baseGetCraftDescription(SPF.Data[id]["original"]);
 	end
 	
 	-- Otherwise fall back to the original
-    return SPF_baseGetCraftDescription(id);
+    return SPF.baseGetCraftDescription(id);
 end
 
-function SPF_GetCraftNumReagents(id)
+function SPF.GetCraftNumReagents(id)
 	
 	-- If The Profession is supported
 	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
-		return SPF_baseGetCraftNumReagents(SPF.Data[id]["original"]);
+		return SPF.baseGetCraftNumReagents(SPF.Data[id]["original"]);
 	end
 	
 	-- Otherwise fall back to the original
-    return SPF_baseGetCraftNumReagents(id);
+    return SPF.baseGetCraftNumReagents(id);
 end
 
-function SPF_GetCraftReagentInfo(id, reagId)
+function SPF.GetCraftReagentInfo(id, reagId)
 	
 	-- If The Profession is supported
 	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
-		return SPF_baseGetCraftReagentInfo(SPF.Data[id]["original"], reagId);
+		return SPF.baseGetCraftReagentInfo(SPF.Data[id]["original"], reagId);
 	end
 	
 	-- Otherwise fall back to the original
-    return SPF_baseGetCraftReagentInfo(id, reagId);
+    return SPF.baseGetCraftReagentInfo(id, reagId);
 end
 
-function SPF_GetCraftSpellFocus(id)
+function SPF.GetCraftSpellFocus(id)
 	
 	-- If The Profession is supported
 	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
-		return SPF_baseGetCraftSpellFocus(SPF.Data[id]["original"]);
+		return SPF.baseGetCraftSpellFocus(SPF.Data[id]["original"]);
 	end
 	
 	-- Otherwise fall back to the original
-    return SPF_baseGetCraftSpellFocus(id);
+    return SPF.baseGetCraftSpellFocus(id);
 end

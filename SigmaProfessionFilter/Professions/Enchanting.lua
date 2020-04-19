@@ -1,8 +1,6 @@
 SPF["Enchanting"] = {
-	["name"] = "Enchanting";
 	["icon"] = 136244;
 	["LeftTitle"] = "All Bonuses";
-	["RightTitle"] = "All Slots";
 	["Left"] = {
 		[1] = { name = "Strength"; filter = "Strength" };
 		[2] = { name = "Agility"; filter = "Agility" };
@@ -22,6 +20,7 @@ SPF["Enchanting"] = {
 		[16] = { name = "Create Rod"; filter = "Rod" };
 		[17] = { name = "Miscellaneous"; filter = "" };
 	};
+	["RightTitle"] = "All Slots";
 	["Right"] = {
 		[1] = { name = "Chest"; filter = "Chest" };
 		[2] = { name = "Feet"; filter = "Boots" };
@@ -34,9 +33,5 @@ SPF["Enchanting"] = {
 		[9] = { name = "Create Wand"; filter = "Wand" };
 		[10] = { name = "Create Rod"; filter = "Rod" };
 		[11] = { name = "Miscellaneous"; filter = "" };
-	};
-	["Selected"] = {
-		["Left"] = 1;
-		["Right"] = 1;
 	};
 };
