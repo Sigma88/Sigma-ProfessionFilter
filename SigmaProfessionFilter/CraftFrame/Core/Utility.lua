@@ -133,6 +133,24 @@ function SPF:FilterWithSearchBox(craftIndex)
 	return false;
 end
 
+function SPF.ClearCraft()
+	CraftName:Hide();
+	CraftRequirements:Hide();
+	CraftIcon:Hide();
+	CraftReagentLabel:Hide();
+	CraftDescription:Hide();
+	for i=1, MAX_CRAFT_REAGENTS, 1 do
+		getglobal("CraftReagent"..i):Hide();
+	end
+	CraftDetailScrollFrameScrollBar:Hide();
+	CraftDetailScrollFrameTop:Hide();
+	CraftDetailScrollFrameBottom:Hide();
+	CraftHighlightFrame:Hide();
+	CraftRequirements:Hide();
+	CraftCreateButton:Disable();
+	CraftCost:Hide();
+end
+
 function SPF.FullUpdate()
 	local totalCount, headerCount, firstRecipe = SPF.GetNumCrafts();
 	
@@ -153,22 +171,4 @@ function SPF.FullUpdate()
 		CraftFramePointsLabel:ClearAllPoints();
 		CraftFramePointsLabel:SetPoint("TOPLEFT", CraftFrame, "TOPLEFT", 355, -418);
     end
-end
-
-function SPF.ClearCraft()
-	CraftName:Hide();
-	CraftRequirements:Hide();
-	CraftIcon:Hide();
-	CraftReagentLabel:Hide();
-	CraftDescription:Hide();
-	for i=1, MAX_CRAFT_REAGENTS, 1 do
-		getglobal("CraftReagent"..i):Hide();
-	end
-	CraftDetailScrollFrameScrollBar:Hide();
-	CraftDetailScrollFrameTop:Hide();
-	CraftDetailScrollFrameBottom:Hide();
-	CraftHighlightFrame:Hide();
-	CraftRequirements:Hide();
-	CraftCreateButton:Disable();
-	CraftCost:Hide();
 end
