@@ -1,5 +1,4 @@
 SPF["Enchanting"] = {
-	["icon"] = 136244;
 	["LeftTitle"] = "All Bonuses";
 	["Left"] = {
 		[1] = { name = "Strength"; filter = "Strength" };

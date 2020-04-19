@@ -1,9 +1,18 @@
+**v0.0.3**
+
+- Hotfixed bug that made Enchanting unusable
+- Icons for the PortraitChanger are detected automatically
+- Added tooltip to the CraftFramePortrait
+- Reset the scrollbar on full-updates
+
+
 **v0.0.2**
 
 - Removed the XML file
 - Rearranged the code for better modularity
 - Fixed a bug with selecting recipes
 - Added compatibility with "Beast Training"
+
 
 **v0.0.1**
 

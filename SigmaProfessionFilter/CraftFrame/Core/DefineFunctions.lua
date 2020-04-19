@@ -221,7 +221,7 @@ end
 function SPF.CraftCreateButton_OnMouseDown(self, mouseBtn)
 	if CraftCreateButton:IsEnabled() and mouseBtn == "LeftButton" then
 		SPF.CRAFTING = true;
-		SPF.SelectCraft(GetCraftSelectionIndex());
+		SPF.SelectCraft(SPF.GetCraftSelectionIndex());
 	end
 end
 
@@ -229,7 +229,7 @@ function SPF.CraftCreateButton_OnMouseUp()
 	if SPF.CRAFTING then
 		if not CraftCreateButton:IsMouseOver() then
 			SPF.CRAFTING = nil;
-			SPF.SelectCraft(GetCraftSelectionIndex());
+			SPF.SelectCraft(SPF.GetCraftSelectionIndex());
 		end
 	end
 end
@@ -237,15 +237,17 @@ end
 function SPF.CraftCreateButton_OnClick()
 	if SPF.CRAFTING then
 		SPF.CRAFTING = nil;
-		SPF.SelectCraft(GetCraftSelectionIndex());
+		SPF.SelectCraft(SPF.GetCraftSelectionIndex());
 	end
 end
 
 function SPF.SetCraftItem(obj, id, reagId)
 	
 	-- If The Profession is supported
-	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
-		return SPF.baseSetCraftItem(obj, SPF.Data[id]["original"], reagId);
+	local craftIndex = SPF.GetCraftSelectionIndex();
+	
+	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[craftIndex]) then
+		return SPF.baseSetCraftItem(obj, SPF.Data[craftIndex]["original"], reagId);
 	end
 	
 	-- Otherwise fall back to the original
@@ -254,9 +256,11 @@ end
 
 function SPF.SetCraftSpell(obj, id)
 	
+	local craftIndex = SPF.GetCraftSelectionIndex();
+	
 	-- If The Profession is supported
-	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
-		return SPF.baseSetCraftSpell(obj, SPF.Data[id]["original"]);
+	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[craftIndex]) then
+		return SPF.baseSetCraftSpell(obj, SPF.Data[craftIndex]["original"]);
 	end
 	
 	-- Otherwise fall back to the original
@@ -287,9 +291,11 @@ end
 
 function SPF.GetCraftIcon(id)
 	
+	local craftIndex = SPF.GetCraftSelectionIndex();
+	
 	-- If The Profession is supported
-	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
-		return SPF.baseGetCraftIcon(SPF.Data[id]["original"]);
+	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[craftIndex]) then
+		return SPF.baseGetCraftIcon(SPF.Data[craftIndex]["original"]);
 	end
 	
 	-- Otherwise fall back to the original

@@ -133,26 +133,6 @@ function SPF:FilterWithSearchBox(craftIndex)
 	return false;
 end
 
-function SPF.FullUpdate()
-	local totalCount, headerCount, firstRecipe = SPF.GetNumCrafts();
-	
-	if firstRecipe then
-		SPF.CraftFrame_SetSelection(firstRecipe);
-	end
-	
-	CraftFrame_Update();
-	
-	if not firstRecipe then
-		SPF.ClearCraft();
-	end
-	
-	--LeatrixPlus compatibility
-    if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
-		CraftFramePointsLabel:ClearAllPoints();
-		CraftFramePointsLabel:SetPoint("TOPLEFT", CraftFrame, "TOPLEFT", 355, -418);
-    end
-end
-
 function SPF.ClearCraft()
 	CraftName:Hide();
 	CraftRequirements:Hide();
@@ -169,4 +149,26 @@ function SPF.ClearCraft()
 	CraftRequirements:Hide();
 	CraftCreateButton:Disable();
 	CraftCost:Hide();
+end
+
+function SPF.FullUpdate()
+	local totalCount, headerCount, firstRecipe = SPF.GetNumCrafts();
+	
+	if firstRecipe then
+		FauxScrollFrame_SetOffset(CraftListScrollFrame, 0);
+		SPF.CraftFrame_SetSelection(firstRecipe);
+	end
+	CraftListScrollFrameScrollBar:SetValue(0);
+	
+	CraftFrame_Update();
+	
+	if not firstRecipe then
+		SPF.ClearCraft();
+	end
+	
+	--LeatrixPlus compatibility
+    if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
+		CraftFramePointsLabel:ClearAllPoints();
+		CraftFramePointsLabel:SetPoint("TOPLEFT", CraftFrame, "TOPLEFT", 355, -418);
+    end
 end
