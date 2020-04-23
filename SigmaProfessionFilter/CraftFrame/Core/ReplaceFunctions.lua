@@ -61,4 +61,3 @@ SPF.baseCraftFrame_Update = CraftFrame_Update;
 CraftFrame_Update = SPF.CraftFrame_Update;
 SPF.baseCraftFrame_Update = CraftFrame_Update;
 CraftFrame_Update = SPF.CraftFrame_Update;
-
