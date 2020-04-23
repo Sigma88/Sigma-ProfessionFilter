@@ -51,6 +51,7 @@ function SPF.GetNumCrafts()
 	
 	-- Build the new ordered table
 	
+	SPF.FIRST = nil;
 	SPF.Data = {};
 	SPF.Headers = {};
 	
@@ -101,6 +102,7 @@ function SPF.GetNumCrafts()
 						
 						if (not firstRecipe) then 
 							firstRecipe = totalCount;
+							SPF.FIRST = totalCount;
 						end
 						
 						SPF.Data[totalCount] = {

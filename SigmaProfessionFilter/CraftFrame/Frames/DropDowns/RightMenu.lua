@@ -31,7 +31,7 @@ function SPF.RightMenu.Initialize()
         local info = {};
         info.text = SPF[GetCraftName()]["RightTitle"];
         info.func = SPF.RightMenu.OnClick;
-        info.checked = true;
+        info.checked = false;
         
         UIDropDownMenu_AddButton(info);
         
