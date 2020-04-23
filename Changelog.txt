@@ -1,3 +1,10 @@
+**v0.1.0**
+- First Full Release
+- Added support for the TradeSkillFrame
+- Fixed a bug with the CraftFrame DropDowns
+- Increased the number of recipes shown with LeatrixPlus
+
+
 **v0.0.3**
 
 - Hotfixed bug that made Enchanting unusable
