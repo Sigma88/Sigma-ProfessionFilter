@@ -8,6 +8,7 @@
 
 SigmaProfessionFilter.lua
 
+
 CraftFrame\Core\Utility.lua
 CraftFrame\Core\DefineFunctions.lua
 CraftFrame\Core\Blizzard_CraftUI.lua
@@ -23,6 +24,23 @@ CraftFrame\Frames\TextSearch\SearchBox.lua
 CraftFrame\Frames\TextSearch\Search.lua
 CraftFrame\Frames\PortraitChanger.lua
 CraftFrame\Frames\LeatrixPlusCompatibility.lua
+
+
+TradeSkillFrame\Core\Utility.lua
+TradeSkillFrame\Core\DefineFunctions.lua
+TradeSkillFrame\Core\ReplaceFunctions.lua
+
+TradeSkillFrame\Frames\DropDowns\LeftMenu.lua
+TradeSkillFrame\Frames\DropDowns\LeftSort.lua
+TradeSkillFrame\Frames\DropDowns\RightMenu.lua
+TradeSkillFrame\Frames\DropDowns\RightSort.lua
+TradeSkillFrame\Frames\Filters\Filter1.lua
+TradeSkillFrame\Frames\Filters\Filter2.lua
+TradeSkillFrame\Frames\TextSearch\SearchBox.lua
+TradeSkillFrame\Frames\TextSearch\Search.lua
+TradeSkillFrame\Frames\PortraitChanger.lua
+TradeSkillFrame\Frames\LeatrixPlusCompatibility.lua
+
 
 Professions\BeastTraining.lua
 Professions\Enchanting.lua
