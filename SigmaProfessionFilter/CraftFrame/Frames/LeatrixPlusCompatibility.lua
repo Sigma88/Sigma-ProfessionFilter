@@ -13,7 +13,7 @@ function SPF:LeatrixPlusCompatibility()
 			end
 		else
 			Craft1:ClearAllPoints();
-			Craft1:SetPoint("TOPLEFT", TradeSkillFrame, "TOPLEFT", 22, -96);
+			Craft1:SetPoint("TOPLEFT", CraftFrame, "TOPLEFT", 22, -96);
 			if Craft23 then
 				Craft23:Hide();
 			end
