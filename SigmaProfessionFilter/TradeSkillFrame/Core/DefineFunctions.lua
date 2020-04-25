@@ -65,6 +65,10 @@ function SPF2.GetNumTradeSkills()
 	-- Check the Chosen Grouping Scheme
 	local groupBy = SPF2:SavedData()["GroupBy"] or "Left";
 	
+	if (groupBy == "Right" and not SPF2:GetMenu("Right")) then
+		groupBy = "Left";
+	end
+	
 	local Ordered = {};
 	
 	-- Divide the filtered recipes in groups
@@ -96,22 +100,11 @@ function SPF2.GetNumTradeSkills()
 			Pairs = { [1] = { name = ""; } };
 		end
 		
-		if (groupBy == "Right" and not SPF2:GetMenu("Right")) then
-			Pairs = {};
-			for i,n in ipairs({GetTradeSkillInvSlots()}) do
-				table.insert(Pairs, { name = n; });
-			end
-		end
-		
-		
-		-- SPF2:ClearUsed(groupBy);
-		
 		for i,button in ipairs(Pairs) do
 			local group = button.name;
 			local items = Ordered[i];
 			
 			if items then
-				
 				-- Add the Header
 				if (#group > 0) then
 					headerCount = headerCount + 1;
