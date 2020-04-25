@@ -1,6 +1,10 @@
 --Set up data table
 function SPF2.GetNumTradeSkills()
-	
+
+	if not TradeSkillFrame:IsVisible() then
+		return SPF2.baseGetNumTradeSkills();
+	end
+
 	-- Reset the Data
 	SPF2.FIRST = nil;
 	SPF2.Data = {};
@@ -141,7 +145,15 @@ function SPF2.GetNumTradeSkills()
 			end
 		end
 	end
-		
+	
+	-- Leatrix Plus Compatibility
+	if LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On" then
+		if SPF2.FIRST and #SPF2.Headers == 0 then
+			TRADE_SKILLS_DISPLAYED = 23;
+		else 
+			TRADE_SKILLS_DISPLAYED = 22;
+		end
+	end
 	
 	return totalCount;
 end

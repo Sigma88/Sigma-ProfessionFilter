@@ -1,6 +1,10 @@
 --Set up data table
 function SPF.GetNumCrafts()
 	
+	if not CraftFrame:IsVisible() then
+		return SPF.baseGetNumCrafts();
+	end
+	
 	if not SPF:GetMenu("Right") then
 		SPF:SavedData()["GroupBy"] = nil;
 		SPF.LeftSort:OnShow();
@@ -116,6 +120,15 @@ function SPF.GetNumCrafts()
 	
     SPF.Data.n = totalCount;
     SPF.Headers.n = headerCount;
+	
+	-- Leatrix Plus Compatibility
+	if LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On" then
+		if SPF.FIRST and #SPF.Headers == 0 then
+			CRAFTS_DISPLAYED = 23;
+		else 
+			CRAFTS_DISPLAYED = 22;
+		end
+	end
 	
     return totalCount, headerCount, firstRecipe;
 end
