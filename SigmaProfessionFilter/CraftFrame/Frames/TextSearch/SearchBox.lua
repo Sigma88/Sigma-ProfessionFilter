@@ -32,9 +32,6 @@ function SPF.SearchBox.Clear()
 end
 
 function SPF.SearchBox.OnShow()
-	-- Check if the profession is supported
-	local Profession = SPF[GetCraftName()];
-	
 	if SPF:GetMenu("Left") or SPF:GetMenu("Right") then
 		if not SPF:SavedData()["SearchBox"] then
 			SPF.SearchBox:Hide();
