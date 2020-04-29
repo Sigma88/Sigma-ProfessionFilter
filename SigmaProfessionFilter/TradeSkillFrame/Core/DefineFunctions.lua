@@ -323,7 +323,11 @@ end
 
 function SPF2.GetTradeSkillItemLink(skillIndex)
 	if SPF2.Data and SPF2.Data[skillIndex] then
-		return SPF2.baseGetTradeSkillItemLink(SPF2.Data[skillIndex]["original"]);
+		if SPF2.Data[skillIndex]["original"] then
+			return SPF2.baseGetTradeSkillItemLink(SPF2.Data[skillIndex]["original"]);
+		else
+			return nil;
+		end
 	end
 	return SPF2.baseGetTradeSkillItemLink(skillIndex);
 end
