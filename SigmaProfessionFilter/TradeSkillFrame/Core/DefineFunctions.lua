@@ -25,7 +25,7 @@ function SPF2.GetNumTradeSkills()
 			headerIndex = headerIndex + 1;
 			ByType["header"][headerIndex] = { name = skillName };
 		else
-			SPF2.OriginalHeaders[i] = skillName;
+			SPF2.OriginalHeaders[i] = ByType["header"][headerIndex].name;
 			
 			-- IMPLEMENT CHECKS LATER
 			local leftGroupID = SPF2.LeftMenu:Filter(i, SPF2:GetSelected("Left")) or headerIndex;
