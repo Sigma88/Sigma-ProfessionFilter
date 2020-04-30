@@ -65,7 +65,7 @@ function SPF2.GetNumTradeSkills()
 	-- Check the Chosen Grouping Scheme
 	local groupBy = SPF2:SavedData()["GroupBy"] or "Left";
 	
-	if (groupBy == "Right" and not SPF2:GetMenu("Right")) then
+	if (groupBy == "Right" and SPF2:Custom("RightMenu")["disabled"]) then
 		groupBy = "Left";
 	end
 	
