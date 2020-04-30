@@ -97,8 +97,10 @@ function SPF2.RightMenu:Filter(skillIndex, groupIndex)
 			local lastID = 0;
 			for i,slot in ipairs({GetTradeSkillInvSlots()}) do
 				lastID = i;
-				if slotName == slot then
-					return i;
+				if slotName then
+					if slotName == slot or slotName.."s" == slot or slotName == slot.."s" then
+						return i;
+					end
 				end
 			end
 			return lastID;
