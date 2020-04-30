@@ -1,11 +1,11 @@
 function SPF:SavedData()
-	if not Sigma_ProfessionFilter then
-		Sigma_ProfessionFilter = {};
+	if not SigmaProfessionFilter_SavedVariables then
+		SigmaProfessionFilter_SavedVariables = {};
 	end
-	if not Sigma_ProfessionFilter[GetCraftName()] then
-		Sigma_ProfessionFilter[GetCraftName()] = {};
+	if not SigmaProfessionFilter_SavedVariables[GetCraftName()] then
+		SigmaProfessionFilter_SavedVariables[GetCraftName()] = {};
 	end
-	return Sigma_ProfessionFilter[GetCraftName()];
+	return SigmaProfessionFilter_SavedVariables[GetCraftName()];
 end
 
 function SPF:GetMenu(side)

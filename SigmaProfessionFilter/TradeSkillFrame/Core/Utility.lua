@@ -6,13 +6,13 @@ function GetTradeSkillName()
 end
 
 function SPF2:SavedData()
-	if not Sigma_ProfessionFilter then
-		Sigma_ProfessionFilter = {};
+	if not SigmaProfessionFilter_SavedVariables then
+		SigmaProfessionFilter_SavedVariables = {};
 	end
-	if not Sigma_ProfessionFilter[GetTradeSkillName()] then
-		Sigma_ProfessionFilter[GetTradeSkillName()] = {};
+	if not SigmaProfessionFilter_SavedVariables[GetTradeSkillName()] then
+		SigmaProfessionFilter_SavedVariables[GetTradeSkillName()] = {};
 	end
-	return Sigma_ProfessionFilter[GetTradeSkillName()];
+	return SigmaProfessionFilter_SavedVariables[GetTradeSkillName()];
 end
 
 function SPF2:GetTitle(side)
