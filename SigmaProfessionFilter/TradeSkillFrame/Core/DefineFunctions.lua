@@ -96,6 +96,13 @@ function SPF2.GetNumTradeSkills()
 		
 		local Pairs = SPF2:GetMenu(groupBy) or ByType["header"];
 		
+		if (groupBy == "Right" and not SPF2:GetMenu("Right")) then
+			Pairs = {};
+			for i,slot in ipairs({GetTradeSkillInvSlots()}) do
+				table.insert( Pairs, { name = slot; } );
+			end
+		end
+		
 		if (groupBy == "Left" and SPF2:Custom("LeftMenu")["disabled"]) then
 			Pairs = { [1] = { name = ""; } };
 		end
@@ -125,7 +132,7 @@ function SPF2.GetNumTradeSkills()
 						SPF2.Data[totalCount]["isExpanded"] = true;
 					end
 					
-					for i,skillInfo in ipairs(items) do
+					for j,skillInfo in ipairs(items) do
 						totalCount = totalCount + 1;
 						
 						if (not SPF2.FIRST) then 
