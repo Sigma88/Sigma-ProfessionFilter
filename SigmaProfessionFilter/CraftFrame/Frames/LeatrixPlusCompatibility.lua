@@ -2,7 +2,7 @@ function SPF:LeatrixPlusCompatibility()
 	--LeatrixPlus compatibility
     if (LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On") then
 		for i=1, CRAFTS_DISPLAYED do
-			getglobal("Craft"..i):SetWidth(293);
+			_G["Craft"..i]:SetWidth(293);
 		end
 		
 		if SPF.Headers and #SPF.Headers == 0 and SPF.FIRST then

@@ -93,7 +93,7 @@ function SPF2.RightMenu:Filter(skillIndex, groupIndex)
 				return firstGroup;
 			end
 		else
-			local slotName = getglobal(select(9, SPF2.baseGetTradeSkillItemInfo(skillIndex)));
+			local slotName = _G[select(9, SPF2.baseGetTradeSkillItemInfo(skillIndex))];
 			local lastID = 0;
 			for i,slot in ipairs({GetTradeSkillInvSlots()}) do
 				lastID = i;

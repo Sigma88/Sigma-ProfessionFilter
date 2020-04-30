@@ -47,7 +47,7 @@ function SPF.CraftFrame_Update()
 	local numCrafts = GetNumCrafts();
 	local craftOffset = FauxScrollFrame_GetOffset(CraftListScrollFrame);
 	-- Set the action button text
-	CraftCreateButton:SetText(getglobal(GetCraftButtonToken()));
+	CraftCreateButton:SetText(_G[GetCraftButtonToken()]);
 	-- Set the craft skill line status bar info
 	local name, rank, maxRank = GetCraftDisplaySkillLine();
 	if ( name ) then
@@ -80,14 +80,14 @@ function SPF.CraftFrame_Update()
 		CraftReagentLabel:Hide();
 		CraftDescription:Hide();
 		for i=1, MAX_CRAFT_REAGENTS, 1 do
-			getglobal("CraftReagent"..i):Hide();
+			_G["CraftReagent"..i]:Hide();
 		end
 		CraftDetailScrollFrameScrollBar:Hide();
 		CraftDetailScrollFrameTop:Hide();
 		CraftDetailScrollFrameBottom:Hide();
 		CraftListScrollFrame:Hide();
 		for i=1, CRAFTS_DISPLAYED, 1 do
-			getglobal("Craft"..i):Hide();
+			_G["Craft"..i]:Hide();
 		end
 		CraftHighlightFrame:Hide();
 		CraftRequirements:Hide();
@@ -111,11 +111,11 @@ function SPF.CraftFrame_Update()
 	for i=1, CRAFTS_DISPLAYED, 1 do
 		craftIndex = i + craftOffset;
 		craftName, craftSubSpellName, craftType, numAvailable, isExpanded, trainingPointCost, requiredLevel = GetCraftInfo(craftIndex);
-		craftButton = getglobal("Craft"..i);
-		craftButtonSubText = getglobal("Craft"..i.."SubText");
-		craftButtonCost = getglobal("Craft"..i.."Cost");
-		craftButtonText = getglobal("Craft"..i.."Text");
-		if ( craftIndex <= numCrafts ) then	
+		craftButton = _G["Craft"..i];
+		craftButtonSubText = _G["Craft"..i.."SubText"];
+		craftButtonCost = _G["Craft"..i.."Cost"];
+		craftButtonText = _G["Craft"..i.."Text"];
+		if ( craftIndex <= numCrafts ) then
 			-- Set button widths if scrollbar is shown or hidden
 			if ( CraftListScrollFrame:IsVisible() ) then
 				craftButton:SetWidth(293);
@@ -148,11 +148,11 @@ function SPF.CraftFrame_Update()
 				else
 					craftButton:SetNormalTexture("Interface\\Buttons\\UI-PlusButton-Up");
 				end
-				getglobal("Craft"..i.."Highlight"):SetTexture("Interface\\Buttons\\UI-PlusButton-Hilight");
-				getglobal("Craft"..i):UnlockHighlight();
+				_G["Craft"..i.."Highlight"]:SetTexture("Interface\\Buttons\\UI-PlusButton-Hilight");
+				_G["Craft"..i]:UnlockHighlight();
 			else
 				craftButton:SetNormalTexture("");
-				getglobal("Craft"..i.."Highlight"):SetTexture("");
+				_G["Craft"..i.."Highlight"]:SetTexture("");
 				if ( numAvailable == 0 ) then
 					craftButton:SetText(" "..craftName);
 				else
@@ -180,9 +180,9 @@ function SPF.CraftFrame_Update()
 					CraftHighlightFrame:Show();
 					Craft_SetSubTextColor(craftButton, 1.0, 1.0, 1.0);
 					craftButtonCost:SetTextColor(1.0, 1.0, 1.0);
-					getglobal("Craft"..i):LockHighlight();
+					_G["Craft"..i]:LockHighlight();
 				else
-					getglobal("Craft"..i):UnlockHighlight();
+					_G["Craft"..i]:UnlockHighlight();
 				end
 			end
 			
@@ -219,13 +219,13 @@ function SPF.CraftFrame_Update()
 	if ( numHeaders > 0 ) then
 		-- If has headers then move all the names to the right
 		for i=1, CRAFTS_DISPLAYED, 1 do
-			getglobal("Craft"..i.."Text"):SetPoint("TOPLEFT", "Craft"..i, "TOPLEFT", 21, 0);
+			_G["Craft"..i.."Text"]:SetPoint("TOPLEFT", "Craft"..i, "TOPLEFT", 21, 0);
 		end
 		CraftExpandButtonFrame:Show();
 	else
 		-- If no headers then move all the names to the left
 		for i=1, CRAFTS_DISPLAYED, 1 do
-			getglobal("Craft"..i.."Text"):SetPoint("TOPLEFT", "Craft"..i, "TOPLEFT", 3, 0);
+			_G["Craft"..i.."Text"]:SetPoint("TOPLEFT", "Craft"..i, "TOPLEFT", 3, 0);
 		end
 		CraftExpandButtonFrame:Hide();
 	end
@@ -273,9 +273,9 @@ function SPF.baseCraftFrame_SetSelection(id)
 	
 	for i=1, numReagents, 1 do
 		local reagentName, reagentTexture, reagentCount, playerReagentCount = GetCraftReagentInfo(id, i);
-		local reagent = getglobal("CraftReagent"..i)
-		local name = getglobal("CraftReagent"..i.."Name");
-		local count = getglobal("CraftReagent"..i.."Count");
+		local reagent = _G["CraftReagent"..i];
+		local name = _G["CraftReagent"..i.."Name"];
+		local count = _G["CraftReagent"..i.."Count"];
 		if ( not reagentName or not reagentTexture ) then
 			reagent:Hide();
 		else
@@ -304,7 +304,7 @@ function SPF.baseCraftFrame_SetSelection(id)
 		CraftReagentLabel:Hide();
 	end
 	for i=numReagents + 1, MAX_CRAFT_REAGENTS, 1 do
-		getglobal("CraftReagent"..i):Hide();
+		_G["CraftReagent"..i]:Hide();
 	end
 
 	local requiredTotems = BuildColoredListString(GetCraftSpellFocus(id));

@@ -140,7 +140,7 @@ function SPF.ClearCraft()
 	CraftReagentLabel:Hide();
 	CraftDescription:Hide();
 	for i=1, MAX_CRAFT_REAGENTS, 1 do
-		getglobal("CraftReagent"..i):Hide();
+		_G["CraftReagent"..i]:Hide();
 	end
 	CraftDetailScrollFrameScrollBar:Hide();
 	CraftDetailScrollFrameTop:Hide();

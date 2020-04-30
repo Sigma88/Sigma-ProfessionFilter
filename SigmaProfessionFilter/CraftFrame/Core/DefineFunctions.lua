@@ -48,8 +48,8 @@ function SPF.GetNumCrafts()
 		end
 		
 		-- Fix for BeastTraining headers not forgetting their old cost
-		if (getglobal("Craft"..i.."Cost")) then
-			getglobal("Craft"..i.."Cost"):SetText("");
+		if _G["Craft"..i.."Cost"] then
+			_G["Craft"..i.."Cost"]:SetText("");
 		end
     end
 	

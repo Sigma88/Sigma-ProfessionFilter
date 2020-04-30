@@ -189,13 +189,13 @@ function SPF2.TradeSkillFrame_PostUpdate()
 		if #SPF2.Headers > 0 then
 			-- If has headers then move all the names to the right
 			for i=1, TRADE_SKILLS_DISPLAYED, 1 do
-				getglobal("TradeSkillSkill"..i.."Text"):SetPoint("TOPLEFT", "TradeSkillSkill"..i, "TOPLEFT", 21, 0);
+				_G["TradeSkillSkill"..i.."Text"]:SetPoint("TOPLEFT", "TradeSkillSkill"..i, "TOPLEFT", 21, 0);
 			end
 			TradeSkillExpandButtonFrame:Show();
 		else
 			-- If no headers then move all the names to the left
 			for i=1, TRADE_SKILLS_DISPLAYED, 1 do
-				getglobal("TradeSkillSkill"..i.."Text"):SetPoint("TOPLEFT", "TradeSkillSkill"..i, "TOPLEFT", 3, 0);
+				_G["TradeSkillSkill"..i.."Text"]:SetPoint("TOPLEFT", "TradeSkillSkill"..i, "TOPLEFT", 3, 0);
 			end
 			TradeSkillExpandButtonFrame:Hide();
 		end
@@ -227,7 +227,7 @@ function SPF2.ClearTradeSkill()
 	TradeSkillRequirementLabel:Hide();
 	TradeSkillRequirementText:SetText("");
 	for i=1, MAX_TRADE_SKILL_REAGENTS, 1 do
-		getglobal("TradeSkillReagent"..i):Hide();
+		_G["TradeSkillReagent"..i]:Hide();
 	end
 	TradeSkillDetailScrollFrameScrollBar:Hide();
 	TradeSkillDetailScrollFrameTop:Hide();
