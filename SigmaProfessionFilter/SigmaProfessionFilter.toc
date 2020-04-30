@@ -1,8 +1,8 @@
 ## Interface: 11304
 ## Title: Sigma |cffbc5ff4Profession Filter|r |cff2e91f3(Classic)|r
 ## Author: Sigma88
-## Notes: v0.1.0 |cff00ff00Release|r
-## SavedVariablesPerCharacter: Sigma_ProfessionFilter
+## Notes: v0.1.0 |cffff0000Beta|r
+## SavedVariablesPerCharacter: SigmaProfessionFilter_SavedVariables
 ## Dependencies: Blizzard_CraftUI, Blizzard_TradeSkillUI
 
 
@@ -40,6 +40,9 @@ TradeSkillFrame\Frames\TextSearch\SearchBox.lua
 TradeSkillFrame\Frames\TextSearch\Search.lua
 TradeSkillFrame\Frames\PortraitChanger.lua
 TradeSkillFrame\Frames\LeatrixPlusCompatibility.lua
+
+
+Common\Frames\ElvUICompatibility.lua
 
 
 Professions\BeastTraining.lua
