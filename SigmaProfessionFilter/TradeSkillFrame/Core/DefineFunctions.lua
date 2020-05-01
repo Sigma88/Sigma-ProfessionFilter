@@ -238,7 +238,7 @@ end
 
 function SPF2.GetTradeSkillSelectionIndex()
 	
-	if SPF2.SELECTED then		
+	if SPF2.SELECTED then
 		return SPF2.SELECTED;
 	end
 	return SPF2.baseGetTradeSkillSelectionIndex();
