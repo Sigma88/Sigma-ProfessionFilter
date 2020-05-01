@@ -77,6 +77,10 @@ function SPF2.RightMenu:OnClick(arg1, arg2, checked)
     
     UIDropDownMenu_SetSelectedID(SPF2.RightMenu, self:GetID());
     
+	if not SPF2:GetMenu("Right") then
+		TradeSkillInvSlotDropDownButton_OnClick(self);
+	end
+
 	SPF2:SetSelected("Right", self:GetID() - 1);
     
     SPF2.FullUpdate();
