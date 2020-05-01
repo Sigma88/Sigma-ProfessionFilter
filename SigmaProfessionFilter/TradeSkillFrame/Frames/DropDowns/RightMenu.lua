@@ -54,6 +54,21 @@ function SPF2.RightMenu.Initialize()
 				info.checked = false;
 				UIDropDownMenu_AddButton(info);
 			end
+		else
+			local info = {};
+			info.text = ALL_INVENTORY_SLOTS;
+			info.func = SPF2.RightMenu.OnClick;
+			info.checked = false;
+			
+			UIDropDownMenu_AddButton(info);
+			
+			for i,slot in ipairs({GetTradeSkillInvSlots()}) do
+				info = {};
+				info.text = slot;
+				info.func = SPF2.RightMenu.OnClick;
+				info.checked = false;
+				UIDropDownMenu_AddButton(info);
+			end
 		end
 	end
 end

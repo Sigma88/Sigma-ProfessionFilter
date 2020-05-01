@@ -54,6 +54,21 @@ function SPF2.LeftMenu:Initialize()
 				info.checked = false;
 				UIDropDownMenu_AddButton(info);
 			end
+		else
+			local info = {};
+			info.text = ALL_SUBCLASSES;
+			info.func = SPF2.LeftMenu.OnClick;
+			info.checked = false;
+			
+			UIDropDownMenu_AddButton(info);
+			
+			for i,subclass in ipairs({GetTradeSkillSubClasses()}) do
+				info = {};
+				info.text = subclass;
+				info.func = SPF2.LeftMenu.OnClick;
+				info.checked = false;
+				UIDropDownMenu_AddButton(info);
+			end
 		end
 	end
 end
