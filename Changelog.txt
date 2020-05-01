@@ -1,3 +1,10 @@
+**v0.2.0**
+- Fixed Leatrix Plus Compatibility
+- Fixed Altoholic Confict
+- Added ElvUI Compatibility
+- Other minor bug fixes
+
+
 **v0.1.0**
 - First Full Release
 - Added support for the TradeSkillFrame
