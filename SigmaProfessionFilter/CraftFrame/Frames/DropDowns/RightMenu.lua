@@ -1,28 +1,25 @@
 SPF.RightMenu = CreateFrame("Frame", nil, CraftFrame, "UIDropDownMenuTemplate");
 
 function SPF.RightMenu.OnLoad()
-	if not SPF.RightMenu.loaded then
-		
-		SPF.RightMenu.loaded = true;
-		
-		SPF.RightMenu:SetPoint("TOPRIGHT", CraftFrame, "TOPRIGHT", -25, -66);
-		
-		SPF.RightMenu:SetScript("OnShow", SPF.RightMenu.OnShow);
-		
-		UIDropDownMenu_SetWidth(SPF.RightMenu, 120);
-		UIDropDownMenu_Initialize(SPF.RightMenu, SPF:Custom("RightMenu")["Initialize"] or SPF.RightMenu.Initialize);
-		UIDropDownMenu_SetSelectedID(SPF.RightMenu, 1);
-		
-		-- LeatrixPlus compatibility
-		if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
-			SPF.RightMenu:SetPoint("TOPRIGHT", CraftFrame, "TOPRIGHT", -34, -40);
-		end
+	SPF.RightMenu:SetPoint("TOPRIGHT", CraftFrame, "TOPRIGHT", -25, -66);
+	
+	SPF.RightMenu:SetScript("OnShow", SPF.RightMenu.OnShow);
+	hooksecurefunc("CraftFrame_OnShow", SPF.RightMenu.OnShow);
+	
+	UIDropDownMenu_SetWidth(SPF.RightMenu, 120);
+	
+	-- LeatrixPlus compatibility
+	if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
+		SPF.RightMenu:SetPoint("TOPRIGHT", CraftFrame, "TOPRIGHT", -34, -40);
 	end
 end
 
 function SPF.RightMenu.OnShow()
     if ((not SPF:GetMenu("Right")) or (SPF:SavedData()["SearchBox"])) then
         SPF.RightMenu:Hide();
+	else		
+		UIDropDownMenu_Initialize(SPF.RightMenu, SPF:Custom("RightMenu")["Initialize"] or SPF.RightMenu.Initialize);
+		UIDropDownMenu_SetSelectedID(SPF.RightMenu, 1);
     end
 end
 
@@ -70,4 +67,4 @@ function SPF.RightMenu:Filter(craftIndex, groupIndex)
 	end
 end
 
-hooksecurefunc("CraftFrame_LoadUI", SPF.RightMenu.OnLoad);
+SPF.RightMenu:OnLoad();
