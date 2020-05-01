@@ -63,9 +63,13 @@ function SPF2.LeftMenu:Initialize()
 end
 
 function SPF2.LeftMenu:OnClick(arg1, arg2, checked)
-    
-    UIDropDownMenu_SetSelectedID(SPF2.LeftMenu, self:GetID());
-    
+	
+	UIDropDownMenu_SetSelectedID(SPF2.LeftMenu, self:GetID());
+	
+	if not SPF2:GetMenu("Left") then
+		TradeSkillSubClassDropDownButton_OnClick(self);
+	end
+
 	SPF2:SetSelected("Left", self:GetID() - 1);
     
     SPF2.FullUpdate();
