@@ -1,6 +1,6 @@
 SPF.Filter1 = CreateFrame("CheckButton", nil, CraftFrame, "UICheckButtonTemplate");
 
-function SPF.Filter1.OnLoad()
+function SPF.Filter1:OnLoad()
 	SPF.Filter1:SetWidth(15);
 	SPF.Filter1:SetHeight(15);
 	SPF.Filter1:SetPoint("TOPLEFT", CraftFrame, "TOPLEFT", 135, -54);

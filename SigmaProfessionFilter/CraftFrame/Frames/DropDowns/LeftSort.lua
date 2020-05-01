@@ -45,4 +45,4 @@ function SPF.LeftSort:OnLeave()
     GameTooltip:Hide();
 end
 
-SPF.LeftSort.OnLoad();
+SPF.LeftSort:OnLoad();

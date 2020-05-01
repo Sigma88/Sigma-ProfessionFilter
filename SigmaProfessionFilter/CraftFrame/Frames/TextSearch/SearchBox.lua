@@ -1,6 +1,6 @@
 SPF.SearchBox = CreateFrame("EditBox", nil, CraftFrame, "SearchBoxTemplate");
 
-function SPF.SearchBox.OnLoad()
+function SPF.SearchBox:OnLoad()
 	SPF.SearchBox:SetWidth(260);
 	SPF.SearchBox:SetHeight(27);
 	SPF.SearchBox:SetPoint("TOPRIGHT", CraftFrame, "TOPRIGHT", -44, -67);
@@ -63,4 +63,4 @@ function SPF.SearchBox:Filter(craftIndex)
 	end
 end
 
-SPF.SearchBox.OnLoad();
+SPF.SearchBox:OnLoad();

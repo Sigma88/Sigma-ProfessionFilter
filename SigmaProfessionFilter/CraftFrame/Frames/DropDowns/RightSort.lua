@@ -43,4 +43,4 @@ function SPF.RightSort.OnLeave()
     GameTooltip:Hide();
 end
 
-SPF.RightSort.OnLoad();
+SPF.RightSort:OnLoad();
