@@ -24,7 +24,7 @@ function SPF2.LeftSort:OnShow()
 		if SPF2:Custom("RightMenu")["disabled"] then
 			SPF2:SavedData()["GroupBy"] = nil;
 		end
-		SPF2.LeftSort.tooltipText = SPF2:Custom("LeftMenu")["tooltip"] or "Sort recipes by the bonus they provide.";
+		SPF2.LeftSort.tooltipText = SPF2:Custom("LeftMenu")["tooltip"] or "Sort recipes by the sub-class of the crafted item.";
 		SPF2.LeftSort:SetChecked(SPF2:SavedData()["GroupBy"] ~= "Right");
 	end
 	
