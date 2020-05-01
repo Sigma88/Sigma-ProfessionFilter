@@ -1,6 +1,10 @@
 --Set up data table
 function SPF.GetNumCrafts()
 	
+	if not CraftFrame:IsVisible() then
+		return SPF.baseGetNumCrafts();
+	end
+	
 	if not SPF:GetMenu("Right") then
 		SPF:SavedData()["GroupBy"] = nil;
 		SPF.LeftSort:OnShow();
@@ -44,8 +48,8 @@ function SPF.GetNumCrafts()
 		end
 		
 		-- Fix for BeastTraining headers not forgetting their old cost
-		if (getglobal("Craft"..i.."Cost")) then
-			getglobal("Craft"..i.."Cost"):SetText("");
+		if _G["Craft"..i.."Cost"] then
+			_G["Craft"..i.."Cost"]:SetText("");
 		end
     end
 	
@@ -97,7 +101,7 @@ function SPF.GetNumCrafts()
 						SPF.Data[totalCount]["isExpanded"] = true;
 					end
 					
-					for i,craftIndex in ipairs(items) do
+					for j,craftIndex in ipairs(items) do
 						totalCount = totalCount + 1;
 						
 						if (not firstRecipe) then 
@@ -117,6 +121,15 @@ function SPF.GetNumCrafts()
     SPF.Data.n = totalCount;
     SPF.Headers.n = headerCount;
 	
+	-- Leatrix Plus Compatibility
+	if LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On" then
+		if SPF.FIRST and #SPF.Headers == 0 then
+			CRAFTS_DISPLAYED = 23;
+		else 
+			CRAFTS_DISPLAYED = 22;
+		end
+	end
+	
     return totalCount, headerCount, firstRecipe;
 end
 
@@ -124,7 +137,7 @@ end
 function SPF.GetCraftInfo(id)
 	
 	-- If The Profession is supported
-	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
+	if (SPF.Data and SPF.Data[id]) then
 		if (SPF.Data[id]["original"] == 0) then
 			return SPF.Data[id]["craftName"], SPF.Data[id]["craftSubSpellName"], SPF.Data[id]["craftType"], SPF.Data[id]["numAvailable"], SPF.Data[id]["isExpanded"], SPF.Data[id]["trainingPointCost"], SPF.Data[id]["requiredLevel"];
 		else
@@ -212,7 +225,7 @@ function SPF.GetCraftSelectionIndex()
 end
 
 function SPF.SelectCraft(id)
-	if SPF[GetCraftName()] and SPF.Data and SPF.Data[id] and SPF.CRAFTING then
+	if SPF.Data and SPF.Data[id] and SPF.CRAFTING then
 		SPF.baseSelectCraft(SPF.Data[id]["original"]);
 	else
 		SPF.baseSelectCraft(id);
@@ -248,7 +261,7 @@ function SPF.SetCraftItem(obj, id, reagId)
 	-- If The Profession is supported
 	local craftIndex = SPF.GetCraftSelectionIndex();
 	
-	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[craftIndex]) then
+	if (SPF.Data and SPF.Data[craftIndex]) then
 		return SPF.baseSetCraftItem(obj, SPF.Data[craftIndex]["original"], reagId);
 	end
 	
@@ -261,7 +274,7 @@ function SPF.SetCraftSpell(obj, id)
 	local craftIndex = SPF.GetCraftSelectionIndex();
 	
 	-- If The Profession is supported
-	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[craftIndex]) then
+	if (SPF.Data and SPF.Data[craftIndex]) then
 		return SPF.baseSetCraftSpell(obj, SPF.Data[craftIndex]["original"]);
 	end
 	
@@ -272,7 +285,7 @@ end
 function SPF.GetCraftItemLink(id)
 	
 	-- If The Profession is supported
-	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
+	if (SPF.Data and SPF.Data[id]) then
 		return SPF.baseGetCraftItemLink(SPF.Data[id]["original"]);
 	end
 	
@@ -283,7 +296,7 @@ end
 function SPF.GetCraftReagentItemLink(id, reagId)
 	
 	-- If The Profession is supported
-	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
+	if (SPF.Data and SPF.Data[id]) then
 		return SPF.baseGetCraftReagentItemLink(SPF.Data[id]["original"], reagId);
 	end
 	
@@ -296,7 +309,7 @@ function SPF.GetCraftIcon(id)
 	local craftIndex = SPF.GetCraftSelectionIndex();
 	
 	-- If The Profession is supported
-	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[craftIndex]) then
+	if (SPF.Data and SPF.Data[craftIndex]) then
 		return SPF.baseGetCraftIcon(SPF.Data[craftIndex]["original"]);
 	end
 	
@@ -307,7 +320,7 @@ end
 function SPF.GetCraftDescription(id)
 	
 	-- If The Profession is supported
-	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
+	if (SPF.Data and SPF.Data[id]) then
 		return SPF.baseGetCraftDescription(SPF.Data[id]["original"]);
 	end
 	
@@ -318,7 +331,7 @@ end
 function SPF.GetCraftNumReagents(id)
 	
 	-- If The Profession is supported
-	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
+	if (SPF.Data and SPF.Data[id]) then
 		return SPF.baseGetCraftNumReagents(SPF.Data[id]["original"]);
 	end
 	
@@ -329,7 +342,7 @@ end
 function SPF.GetCraftReagentInfo(id, reagId)
 	
 	-- If The Profession is supported
-	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
+	if (SPF.Data and SPF.Data[id]) then
 		return SPF.baseGetCraftReagentInfo(SPF.Data[id]["original"], reagId);
 	end
 	
@@ -340,7 +353,7 @@ end
 function SPF.GetCraftSpellFocus(id)
 	
 	-- If The Profession is supported
-	if (SPF[GetCraftName()] and SPF.Data and SPF.Data[id]) then
+	if (SPF.Data and SPF.Data[id]) then
 		return SPF.baseGetCraftSpellFocus(SPF.Data[id]["original"]);
 	end
 	

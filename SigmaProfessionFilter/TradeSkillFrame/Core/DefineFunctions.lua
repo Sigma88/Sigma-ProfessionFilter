@@ -1,6 +1,10 @@
 --Set up data table
 function SPF2.GetNumTradeSkills()
-	
+
+	if not TradeSkillFrame:IsVisible() then
+		return SPF2.baseGetNumTradeSkills();
+	end
+
 	-- Reset the Data
 	SPF2.FIRST = nil;
 	SPF2.Data = {};
@@ -21,7 +25,7 @@ function SPF2.GetNumTradeSkills()
 			headerIndex = headerIndex + 1;
 			ByType["header"][headerIndex] = { name = skillName };
 		else
-			SPF2.OriginalHeaders[i] = skillName;
+			SPF2.OriginalHeaders[i] = ByType["header"][headerIndex].name;
 			
 			-- IMPLEMENT CHECKS LATER
 			local leftGroupID = SPF2.LeftMenu:Filter(i, SPF2:GetSelected("Left")) or headerIndex;
@@ -61,6 +65,10 @@ function SPF2.GetNumTradeSkills()
 	-- Check the Chosen Grouping Scheme
 	local groupBy = SPF2:SavedData()["GroupBy"] or "Left";
 	
+	if (groupBy == "Right" and SPF2:Custom("RightMenu")["disabled"]) then
+		groupBy = "Left";
+	end
+	
 	local Ordered = {};
 	
 	-- Divide the filtered recipes in groups
@@ -88,26 +96,22 @@ function SPF2.GetNumTradeSkills()
 		
 		local Pairs = SPF2:GetMenu(groupBy) or ByType["header"];
 		
-		if (groupBy == "Left" and SPF2:Custom("LeftMenu")["disabled"]) then
-			Pairs = { [1] = { name = ""; } };
-		end
-		
 		if (groupBy == "Right" and not SPF2:GetMenu("Right")) then
 			Pairs = {};
-			for i,n in ipairs({GetTradeSkillInvSlots()}) do
-				table.insert(Pairs, { name = n; });
+			for i,slot in ipairs({GetTradeSkillInvSlots()}) do
+				table.insert( Pairs, { name = slot; } );
 			end
 		end
 		
-		
-		-- SPF2:ClearUsed(groupBy);
+		if (groupBy == "Left" and SPF2:Custom("LeftMenu")["disabled"]) then
+			Pairs = { [1] = { name = ""; } };
+		end
 		
 		for i,button in ipairs(Pairs) do
 			local group = button.name;
 			local items = Ordered[i];
 			
 			if items then
-				
 				-- Add the Header
 				if (#group > 0) then
 					headerCount = headerCount + 1;
@@ -128,7 +132,7 @@ function SPF2.GetNumTradeSkills()
 						SPF2.Data[totalCount]["isExpanded"] = true;
 					end
 					
-					for i,skillInfo in ipairs(items) do
+					for j,skillInfo in ipairs(items) do
 						totalCount = totalCount + 1;
 						
 						if (not SPF2.FIRST) then 
@@ -141,7 +145,15 @@ function SPF2.GetNumTradeSkills()
 			end
 		end
 	end
-		
+	
+	-- Leatrix Plus Compatibility
+	if LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On" then
+		if SPF2.FIRST and #SPF2.Headers == 0 then
+			TRADE_SKILLS_DISPLAYED = 23;
+		else 
+			TRADE_SKILLS_DISPLAYED = 22;
+		end
+	end
 	
 	return totalCount;
 end
@@ -226,7 +238,7 @@ end
 
 function SPF2.GetTradeSkillSelectionIndex()
 	
-	if SPF2.SELECTED then		
+	if SPF2.SELECTED then
 		return SPF2.SELECTED;
 	end
 	return SPF2.baseGetTradeSkillSelectionIndex();
@@ -318,7 +330,11 @@ end
 
 function SPF2.GetTradeSkillItemLink(skillIndex)
 	if SPF2.Data and SPF2.Data[skillIndex] then
-		return SPF2.baseGetTradeSkillItemLink(SPF2.Data[skillIndex]["original"]);
+		if SPF2.Data[skillIndex]["original"] then
+			return SPF2.baseGetTradeSkillItemLink(SPF2.Data[skillIndex]["original"]);
+		else
+			return nil;
+		end
 	end
 	return SPF2.baseGetTradeSkillItemLink(skillIndex);
 end

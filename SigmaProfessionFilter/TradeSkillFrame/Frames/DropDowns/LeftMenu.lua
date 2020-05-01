@@ -26,13 +26,9 @@ function SPF2.LeftMenu:OnShow()
 			SPF2:SavedData()["SearchBox"] = true;
 		end
 	else
-		if SPF2:GetMenu("Left") then
-			TradeSkillSubClassDropDown:Hide();
-			UIDropDownMenu_Initialize(SPF2.LeftMenu, SPF2:Custom("LeftMenu")["Initialize"] or SPF2.LeftMenu.Initialize);
-			UIDropDownMenu_SetSelectedID(SPF2.LeftMenu, 1);
-		else
-			SPF2.LeftMenu:Hide();
-		end
+		TradeSkillSubClassDropDown:Hide();
+		UIDropDownMenu_Initialize(SPF2.LeftMenu, SPF2:Custom("LeftMenu")["Initialize"] or SPF2.LeftMenu.Initialize);
+		UIDropDownMenu_SetSelectedID(SPF2.LeftMenu, 1);
 	end
 	
     if SPF2:SavedData()["SearchBox"] then
@@ -58,14 +54,33 @@ function SPF2.LeftMenu:Initialize()
 				info.checked = false;
 				UIDropDownMenu_AddButton(info);
 			end
+		else
+			local info = {};
+			info.text = ALL_SUBCLASSES;
+			info.func = SPF2.LeftMenu.OnClick;
+			info.checked = false;
+			
+			UIDropDownMenu_AddButton(info);
+			
+			for i,subclass in ipairs({GetTradeSkillSubClasses()}) do
+				info = {};
+				info.text = subclass;
+				info.func = SPF2.LeftMenu.OnClick;
+				info.checked = false;
+				UIDropDownMenu_AddButton(info);
+			end
 		end
 	end
 end
 
 function SPF2.LeftMenu:OnClick(arg1, arg2, checked)
-    
-    UIDropDownMenu_SetSelectedID(SPF2.LeftMenu, self:GetID());
-    
+	
+	UIDropDownMenu_SetSelectedID(SPF2.LeftMenu, self:GetID());
+	
+	if not SPF2:GetMenu("Left") then
+		TradeSkillSubClassDropDownButton_OnClick(self);
+	end
+
 	SPF2:SetSelected("Left", self:GetID() - 1);
     
     SPF2.FullUpdate();

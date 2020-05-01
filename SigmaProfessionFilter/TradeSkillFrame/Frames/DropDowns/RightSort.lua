@@ -23,7 +23,7 @@ function SPF2.RightSort:OnShow()
 		if SPF2:Custom("LeftMenu")["disabled"] then
 			SPF2:SavedData()["GroupBy"] = "Right";
 		end
-		SPF2.RightSort.tooltipText = SPF2:Custom("RightMenu")["tooltip"] or "Sort recipes by the slot they enchant.";
+		SPF2.RightSort.tooltipText = SPF2:Custom("RightMenu")["tooltip"] or "Sort recipes by the inventory slot of the crafted item.";
 		SPF2.RightSort:SetChecked(SPF2:SavedData()["GroupBy"] == "Right");
 	end
 	

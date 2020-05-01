@@ -47,7 +47,6 @@ end
 
 function SPF2.SearchBox.OnTextChanged()
     SPF2.FullUpdate();
-	--CraftFrame_Update();
 end
 
 function SPF2.SearchBox.InsertItemName(itemLink)

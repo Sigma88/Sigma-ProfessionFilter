@@ -26,13 +26,9 @@ function SPF2.RightMenu:OnShow()
 			SPF2:SavedData()["SearchBox"] = true;
 		end
 	else
-		if SPF2:GetMenu("Right") then
-			TradeSkillInvSlotDropDown:Hide();
-			UIDropDownMenu_Initialize(SPF2.RightMenu, SPF2:Custom("RightMenu")["Initialize"] or SPF2.RightMenu.Initialize);
-			UIDropDownMenu_SetSelectedID(SPF2.RightMenu, 1);
-		else
-			SPF2.RightMenu:Hide();
-		end
+		TradeSkillInvSlotDropDown:Hide();
+		UIDropDownMenu_Initialize(SPF2.RightMenu, SPF2:Custom("RightMenu")["Initialize"] or SPF2.RightMenu.Initialize);
+		UIDropDownMenu_SetSelectedID(SPF2.RightMenu, 1);
 	end
 	
 	if SPF2:SavedData()["SearchBox"] then
@@ -58,6 +54,21 @@ function SPF2.RightMenu.Initialize()
 				info.checked = false;
 				UIDropDownMenu_AddButton(info);
 			end
+		else
+			local info = {};
+			info.text = ALL_INVENTORY_SLOTS;
+			info.func = SPF2.RightMenu.OnClick;
+			info.checked = false;
+			
+			UIDropDownMenu_AddButton(info);
+			
+			for i,slot in ipairs({GetTradeSkillInvSlots()}) do
+				info = {};
+				info.text = slot;
+				info.func = SPF2.RightMenu.OnClick;
+				info.checked = false;
+				UIDropDownMenu_AddButton(info);
+			end
 		end
 	end
 end
@@ -66,6 +77,10 @@ function SPF2.RightMenu:OnClick(arg1, arg2, checked)
     
     UIDropDownMenu_SetSelectedID(SPF2.RightMenu, self:GetID());
     
+	if not SPF2:GetMenu("Right") then
+		TradeSkillInvSlotDropDownButton_OnClick(self);
+	end
+
 	SPF2:SetSelected("Right", self:GetID() - 1);
     
     SPF2.FullUpdate();
@@ -93,12 +108,14 @@ function SPF2.RightMenu:Filter(skillIndex, groupIndex)
 				return firstGroup;
 			end
 		else
-			local slotName = getglobal(select(9, SPF2.baseGetTradeSkillItemInfo(skillIndex)));
+			local slotName = _G[select(9, SPF2.baseGetTradeSkillItemInfo(skillIndex))];
 			local lastID = 0;
 			for i,slot in ipairs({GetTradeSkillInvSlots()}) do
 				lastID = i;
-				if slotName == slot then
-					return i;
+				if slotName then
+					if slotName == slot or slotName.."s" == slot or slotName == slot.."s" then
+						return i;
+					end
 				end
 			end
 			return lastID;

@@ -1,6 +1,6 @@
 SPF.SearchBox = CreateFrame("EditBox", nil, CraftFrame, "SearchBoxTemplate");
 
-function SPF.SearchBox.OnLoad()
+function SPF.SearchBox:OnLoad()
 	SPF.SearchBox:SetWidth(260);
 	SPF.SearchBox:SetHeight(27);
 	SPF.SearchBox:SetPoint("TOPRIGHT", CraftFrame, "TOPRIGHT", -44, -67);
@@ -32,9 +32,6 @@ function SPF.SearchBox.Clear()
 end
 
 function SPF.SearchBox.OnShow()
-	-- Check if the profession is supported
-	local Profession = SPF[GetCraftName()];
-	
 	if SPF:GetMenu("Left") or SPF:GetMenu("Right") then
 		if not SPF:SavedData()["SearchBox"] then
 			SPF.SearchBox:Hide();
@@ -66,4 +63,4 @@ function SPF.SearchBox:Filter(craftIndex)
 	end
 end
 
-SPF.SearchBox.OnLoad();
+SPF.SearchBox:OnLoad();

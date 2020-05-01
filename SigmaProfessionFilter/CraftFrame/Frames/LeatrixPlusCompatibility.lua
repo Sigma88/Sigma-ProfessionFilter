@@ -2,7 +2,7 @@ function SPF:LeatrixPlusCompatibility()
 	--LeatrixPlus compatibility
     if (LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On") then
 		for i=1, CRAFTS_DISPLAYED do
-			getglobal("Craft"..i):SetWidth(293);
+			_G["Craft"..i]:SetWidth(293);
 		end
 		
 		if SPF.Headers and #SPF.Headers == 0 and SPF.FIRST then
@@ -13,7 +13,7 @@ function SPF:LeatrixPlusCompatibility()
 			end
 		else
 			Craft1:ClearAllPoints();
-			Craft1:SetPoint("TOPLEFT", TradeSkillFrame, "TOPLEFT", 22, -96);
+			Craft1:SetPoint("TOPLEFT", CraftFrame, "TOPLEFT", 22, -96);
 			if Craft23 then
 				Craft23:Hide();
 			end

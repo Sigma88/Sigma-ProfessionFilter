@@ -1,6 +1,6 @@
 SPF.Search = CreateFrame("CheckButton", nil, CraftFrame, "UICheckButtonTemplate");
 
-function SPF.Search.OnLoad()
+function SPF.Search:OnLoad()
 	SPF.Search:SetWidth(15);
 	SPF.Search:SetHeight(15);
 	SPF.Search:SetPoint("TOPLEFT", CraftFrame, "TOPLEFT", 72, -54);
@@ -64,4 +64,4 @@ function SPF.Search.OnLeave()
     GameTooltip:Hide();
 end
 
-SPF.Search.OnLoad();
+SPF.Search:OnLoad();
