@@ -26,13 +26,9 @@ function SPF2.RightMenu:OnShow()
 			SPF2:SavedData()["SearchBox"] = true;
 		end
 	else
-		if SPF2:GetMenu("Right") then
-			TradeSkillInvSlotDropDown:Hide();
-			UIDropDownMenu_Initialize(SPF2.RightMenu, SPF2:Custom("RightMenu")["Initialize"] or SPF2.RightMenu.Initialize);
-			UIDropDownMenu_SetSelectedID(SPF2.RightMenu, 1);
-		else
-			SPF2.RightMenu:Hide();
-		end
+		TradeSkillInvSlotDropDown:Hide();
+		UIDropDownMenu_Initialize(SPF2.RightMenu, SPF2:Custom("RightMenu")["Initialize"] or SPF2.RightMenu.Initialize);
+		UIDropDownMenu_SetSelectedID(SPF2.RightMenu, 1);
 	end
 	
 	if SPF2:SavedData()["SearchBox"] then

@@ -26,13 +26,9 @@ function SPF2.LeftMenu:OnShow()
 			SPF2:SavedData()["SearchBox"] = true;
 		end
 	else
-		if SPF2:GetMenu("Left") then
-			TradeSkillSubClassDropDown:Hide();
-			UIDropDownMenu_Initialize(SPF2.LeftMenu, SPF2:Custom("LeftMenu")["Initialize"] or SPF2.LeftMenu.Initialize);
-			UIDropDownMenu_SetSelectedID(SPF2.LeftMenu, 1);
-		else
-			SPF2.LeftMenu:Hide();
-		end
+		TradeSkillSubClassDropDown:Hide();
+		UIDropDownMenu_Initialize(SPF2.LeftMenu, SPF2:Custom("LeftMenu")["Initialize"] or SPF2.LeftMenu.Initialize);
+		UIDropDownMenu_SetSelectedID(SPF2.LeftMenu, 1);
 	end
 	
     if SPF2:SavedData()["SearchBox"] then
