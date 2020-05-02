@@ -110,14 +110,12 @@ function SPF2.RightMenu:Filter(skillIndex, groupIndex)
 				return firstGroup;
 			end
 		else
-			local slotName = _G[select(9, SPF2.baseGetTradeSkillItemInfo(skillIndex))];
+			local invType = select(9, SPF2.baseGetTradeSkillItemInfo(skillIndex));
 			local lastID = 0;
 			for i,slot in ipairs({GetTradeSkillInvSlots()}) do
 				lastID = i;
-				if slotName then
-					if slotName == slot or slotName.."s" == slot or slotName == slot.."s" then
-						return i;
-					end
+				if SPF2:GetSlot(invType) == slot then
+					return i;
 				end
 			end
 			return lastID;
