@@ -1,3 +1,4 @@
+local L = SigmaProfessionFilter.L;
 local SPF1 = SigmaProfessionFilter[1];
 
 SPF1.Search = CreateFrame("CheckButton", nil, CraftFrame, "UICheckButtonTemplate");
@@ -22,8 +23,8 @@ end
 
 function SPF1.Search.OnShow()
 	if (SPF1:GetMenu("Left") or SPF1:GetMenu("Right")) then
-		SPF1.Search.text:SetText("Search");
-		SPF1.Search.tooltipText = "Toggle the Search Box.";
+		SPF1.Search.text:SetText(L["SEARCH"]);
+		SPF1.Search.tooltipText = L["SEARCH_TOOLTIP"];
 		SPF1.Search:SetChecked(SPF1:SavedData()["SearchBox"]);
 	else
 		SPF1.Search:Hide();

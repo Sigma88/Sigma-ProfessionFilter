@@ -1,3 +1,4 @@
+local L = SigmaProfessionFilter.L;
 local SPF1 = SigmaProfessionFilter[1];
 
 SPF1.Filter1 = CreateFrame("CheckButton", nil, CraftFrame, "UICheckButtonTemplate");
@@ -21,8 +22,8 @@ function SPF1.Filter1:OnLoad()
 end
 
 function SPF1.Filter1:OnShow()
-	SPF1.Filter1.text:SetText(SPF1:Custom("Filter1")["text"] or "Has Skill Up");
-	SPF1.Filter1.tooltipText = SPF1:Custom("Filter1")["tooltip"] or "Only show the recipes that can make your skill go up.";
+	SPF1.Filter1.text:SetText(SPF1:Custom("Filter1")["text"] or L["HAS_SKILL_UP"]);
+	SPF1.Filter1.tooltipText = SPF1:Custom("Filter1")["tooltip"] or L["HAS_SKILL_UP_TOOLTIP"];
 end
 
 function SPF1.Filter1:OnClick()
