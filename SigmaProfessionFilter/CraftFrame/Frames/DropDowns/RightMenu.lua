@@ -26,7 +26,7 @@ end
 function SPF1.RightMenu.Initialize()
     if (SPF1:GetMenu("Right")) then
         local info = {};
-        info.text = SPF1[GetCraftName()]["RightTitle"];
+        info.text = SigmaProfessionFilter[GetCraftName()]["RightTitle"];
         info.func = SPF1.RightMenu.OnClick;
         info.checked = false;
         

@@ -16,53 +16,44 @@ function SPF2:SavedData()
 end
 
 function SPF2:GetTitle(side)
-	if SPF2[GetTradeSkillName()] and SPF2[GetTradeSkillName()][side.."Title"] then
-		return SPF2[GetTradeSkillName()][side.."Title"];
-	end
-	if SPF2["Default"] then
-		return SPF2["Default"][side.."Title"] or "";
+	if SigmaProfessionFilter[GetTradeSkillName()] and SigmaProfessionFilter[GetTradeSkillName()][side.."Title"] then
+		return SigmaProfessionFilter[GetTradeSkillName()][side.."Title"];
 	end
 end
 
 function SPF2:GetMenu(side)
-	if SPF2[GetTradeSkillName()] and SPF2[GetTradeSkillName()][side] then
-		return SPF2[GetTradeSkillName()][side];
-	end
-	if SPF2["Default"] then
-		return SPF2["Default"][side];
+	if SigmaProfessionFilter[GetTradeSkillName()] and SigmaProfessionFilter[GetTradeSkillName()][side] then
+		return SigmaProfessionFilter[GetTradeSkillName()][side];
 	end
 end
 
 function SPF2:GetSelected(side)
-	if not SPF2[GetTradeSkillName()] then
-		SPF2[GetTradeSkillName()] = {};
+	if not SigmaProfessionFilter[GetTradeSkillName()] then
+		SigmaProfessionFilter[GetTradeSkillName()] = {};
 	end
-	if SPF2:GetMenu(side) and SPF2[GetTradeSkillName()]["Selected"] then
-		return SPF2[GetTradeSkillName()]["Selected"][side] or 0;
+	if SPF2:GetMenu(side) and SigmaProfessionFilter[GetTradeSkillName()]["Selected"] then
+		return SigmaProfessionFilter[GetTradeSkillName()]["Selected"][side] or 0;
 	end
 	return 0;
 end
 
 function SPF2:SetSelected(side, id)
-	if not SPF2[GetTradeSkillName()] then
-		SPF2[GetTradeSkillName()] = {};
+	if not SigmaProfessionFilter[GetTradeSkillName()] then
+		SigmaProfessionFilter[GetTradeSkillName()] = {};
 	end
 	if SPF2:GetMenu(side) then
-		if not SPF2[GetTradeSkillName()]["Selected"] then
-			SPF2[GetTradeSkillName()]["Selected"] = {};
+		if not SigmaProfessionFilter[GetTradeSkillName()]["Selected"] then
+			SigmaProfessionFilter[GetTradeSkillName()]["Selected"] = {};
 		end
-		SPF2[GetTradeSkillName()]["Selected"][side] = id;
+		SigmaProfessionFilter[GetTradeSkillName()]["Selected"][side] = id;
 	end
 end
 
 function SPF2:Custom(target)
-	if SPF2[GetTradeSkillName()] then
-		if SPF2[GetTradeSkillName()][target] then
-			return SPF2[GetTradeSkillName()][target];
+	if SigmaProfessionFilter[GetTradeSkillName()] then
+		if SigmaProfessionFilter[GetTradeSkillName()][target] then
+			return SigmaProfessionFilter[GetTradeSkillName()][target];
 		end
-	end
-	if SPF2["Default"] then
-		return SPF2["Default"][target] or {};
 	end
 	return {};
 end

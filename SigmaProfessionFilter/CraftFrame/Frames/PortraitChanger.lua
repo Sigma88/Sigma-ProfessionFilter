@@ -53,8 +53,8 @@ function SPF1.PortraitChanger:GetIcon()
 		return SPF1:Custom("Portrait"):Icon();
 	end
 	
-	if SPF1[GetCraftName()] and SPF1[GetCraftName()]["icon"] then
-		return SPF1[GetCraftName()]["icon"];
+	if SigmaProfessionFilter[GetCraftName()] and SigmaProfessionFilter[GetCraftName()]["icon"] then
+		return SigmaProfessionFilter[GetCraftName()]["icon"];
 	end
 	
 	local _,_,icon = GetSpellInfo(GetCraftName());

@@ -9,29 +9,29 @@ function SPF1:SavedData()
 end
 
 function SPF1:GetMenu(side)
-	if SPF1[GetCraftName()] then
-		return SPF1[GetCraftName()][side];
+	if SigmaProfessionFilter[GetCraftName()] then
+		return SigmaProfessionFilter[GetCraftName()][side];
 	end
 end
 
 function SPF1:GetSelected(side)
-	if SPF1:GetMenu(side) and SPF1[GetCraftName()]["Selected"] then
-		return SPF1[GetCraftName()]["Selected"][side] or 1;
+	if SPF1:GetMenu(side) and SigmaProfessionFilter[GetCraftName()]["Selected"] then
+		return SigmaProfessionFilter[GetCraftName()]["Selected"][side] or 1;
 	end
 	return 1;
 end
 
 function SPF1:SetSelected(side, id)
 	if SPF1:GetMenu(side) then
-		if not SPF1[GetCraftName()]["Selected"] then
-			SPF1[GetCraftName()]["Selected"] = {};
+		if not SigmaProfessionFilter[GetCraftName()]["Selected"] then
+			SigmaProfessionFilter[GetCraftName()]["Selected"] = {};
 		end
-		SPF1[GetCraftName()]["Selected"][side] = id;
+		SigmaProfessionFilter[GetCraftName()]["Selected"][side] = id;
 	end
 end
 
 function SPF1:Custom(target)
-	local Profession = SPF1[GetCraftName()] or {};
+	local Profession = SigmaProfessionFilter[GetCraftName()] or {};
 	return Profession[target] or {};
 end
 

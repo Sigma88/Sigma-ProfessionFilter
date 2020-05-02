@@ -26,7 +26,7 @@ end
 function SPF1.LeftMenu:Initialize()
     if (SPF1:GetMenu("Left")) then
         local info = {};
-        info.text = SPF1[GetCraftName()]["LeftTitle"];
+        info.text = SigmaProfessionFilter[GetCraftName()]["LeftTitle"];
         info.func = SPF1.LeftMenu.OnClick;
         info.checked = false;
         

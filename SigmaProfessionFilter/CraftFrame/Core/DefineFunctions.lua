@@ -153,7 +153,7 @@ end
 function SPF1.ExpandCraftSkillLine(id)
 	
 	-- Check if the profession is supported
-	if (not SPF1[GetCraftName()]) then
+	if (not SigmaProfessionFilter[GetCraftName()]) then
 		return SPF1.baseExpandCraftSkillLine(id);
 	end
 	
@@ -183,7 +183,7 @@ end
 function SPF1.CollapseCraftSkillLine(id)
 	
 	-- Check if the profession is supported
-	if (not SPF1[GetCraftName()]) then
+	if (not SigmaProfessionFilter[GetCraftName()]) then
 		return SPF1.baseCollapseCraftSkillLine(id);
 	end
 	

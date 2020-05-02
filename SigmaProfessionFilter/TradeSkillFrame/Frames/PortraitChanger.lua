@@ -62,8 +62,8 @@ function SPF2.PortraitChanger:GetIcon()
 		return SPF2:Custom("Portrait"):Icon();
 	end
 
-	if SPF2[GetTradeSkillName()] and SPF2[GetTradeSkillName()]["icon"] then
-		return SPF2[GetTradeSkillName()]["icon"];
+	if SigmaProfessionFilter[GetTradeSkillName()] and SigmaProfessionFilter[GetTradeSkillName()]["icon"] then
+		return SigmaProfessionFilter[GetTradeSkillName()]["icon"];
 	end
 	
 	local _,_,icon = GetSpellInfo(GetTradeSkillName());
