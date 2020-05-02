@@ -1,48 +1,48 @@
-SPF.LeftSort = CreateFrame("CheckButton", nil, SPF.LeftMenu, "UICheckButtonTemplate");
+SPF1.LeftSort = CreateFrame("CheckButton", nil, SPF1.LeftMenu, "UICheckButtonTemplate");
 
-function SPF.LeftSort:OnLoad()
-	SPF.LeftSort:SetWidth(15);
-	SPF.LeftSort:SetHeight(15);
-	SPF.LeftSort:SetPoint("LEFT", SPF.LeftMenu, "LEFT", 23, 2);
-	SPF.LeftSort:SetHitRectInsets(0, -90, 0, 0);
-	SPF.LeftSort:SetFrameLevel(4);
+function SPF1.LeftSort:OnLoad()
+	SPF1.LeftSort:SetWidth(15);
+	SPF1.LeftSort:SetHeight(15);
+	SPF1.LeftSort:SetPoint("LEFT", SPF1.LeftMenu, "LEFT", 23, 2);
+	SPF1.LeftSort:SetHitRectInsets(0, -90, 0, 0);
+	SPF1.LeftSort:SetFrameLevel(4);
 	
-	SPF.LeftSort:SetScript("OnShow", SPF.LeftSort.OnShow);
-	SPF.LeftSort:SetScript("OnClick", SPF.LeftSort.OnClick);
-	SPF.LeftSort:SetScript("OnEnter", SPF.LeftSort.OnEnter);
-	SPF.LeftSort:SetScript("OnLeave", SPF.LeftSort.OnLeave);
+	SPF1.LeftSort:SetScript("OnShow", SPF1.LeftSort.OnShow);
+	SPF1.LeftSort:SetScript("OnClick", SPF1.LeftSort.OnClick);
+	SPF1.LeftSort:SetScript("OnEnter", SPF1.LeftSort.OnEnter);
+	SPF1.LeftSort:SetScript("OnLeave", SPF1.LeftSort.OnLeave);
 end
 
-function SPF.LeftSort:OnShow()
-	if (SPF:GetMenu("Left")) then
-		SPF.LeftSort.tooltipText = SPF:Custom("LeftMenu")["tooltip"] or "Sort recipes by the bonus they provide.";
-		SPF.LeftSort:SetChecked(SPF:SavedData()["GroupBy"] ~= "Right");
+function SPF1.LeftSort:OnShow()
+	if (SPF1:GetMenu("Left")) then
+		SPF1.LeftSort.tooltipText = SPF1:Custom("LeftMenu")["tooltip"] or "Sort recipes by the bonus they provide.";
+		SPF1.LeftSort:SetChecked(SPF1:SavedData()["GroupBy"] ~= "Right");
 	end
 end
 
-function SPF.LeftSort:OnClick(mod)
-	if SPF:GetMenu("Left") then
-		SPF.LeftSort:SetChecked(true);
+function SPF1.LeftSort:OnClick(mod)
+	if SPF1:GetMenu("Left") then
+		SPF1.LeftSort:SetChecked(true);
 		
-		SPF:SavedData()["GroupBy"] = nil;
+		SPF1:SavedData()["GroupBy"] = nil;
 		
 		if (mod ~= "silent") then
 			PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
-			SPF.RightSort.OnShow();
-			SPF.FullUpdate();
+			SPF1.RightSort.OnShow();
+			SPF1.FullUpdate();
 		end
 	end
 end
 
-function SPF.LeftSort:OnEnter()
-    if (SPF.LeftSort.tooltipText) then
-        GameTooltip:SetOwner(SPF.LeftSort, "ANCHOR_TOPLEFT");
-        GameTooltip:SetText(SPF.LeftSort.tooltipText, nil, nil, nil, nil, true);
+function SPF1.LeftSort:OnEnter()
+    if (SPF1.LeftSort.tooltipText) then
+        GameTooltip:SetOwner(SPF1.LeftSort, "ANCHOR_TOPLEFT");
+        GameTooltip:SetText(SPF1.LeftSort.tooltipText, nil, nil, nil, nil, true);
     end
 end
 
-function SPF.LeftSort:OnLeave()
+function SPF1.LeftSort:OnLeave()
     GameTooltip:Hide();
 end
 
-SPF.LeftSort:OnLoad();
+SPF1.LeftSort:OnLoad();

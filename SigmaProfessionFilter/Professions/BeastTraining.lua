@@ -1,4 +1,4 @@
-SPF["Beast Training"] = {
+SPF1["Beast Training"] = {
 	["LeftTitle"] = "All Types";
 	["Left"] = {
 		[1] = { name = "Damage"; filter = "Bite;Claw;Lightning Breath"; };
@@ -36,7 +36,7 @@ SPF["Beast Training"] = {
 		["Icon"] = function()
 			if UnitExists("pet") then
 				local _,_,_,petFamily = GetStablePetInfo(0);
-				return SPF["Beast Training"]["PetFamily"][petFamily];
+				return SPF1["Beast Training"]["PetFamily"][petFamily];
 			end
 			return 132162;
 		end;
@@ -66,26 +66,26 @@ SPF["Beast Training"] = {
 	["RightMenu"] = {
 		["tooltip"] = "Sort the abilities by the source from which they are acquired.";
 		["Filter"] = function(craftIndex, groupIndex)
-			local groupName = SPF:GetGroup("Right", SPF.baseGetCraftInfo(craftIndex), 3);
-			if #(SPF:GetGroup("Right", SPF.baseGetCraftInfo(craftIndex), groupIndex)) > 0 then
-				groupName = groupName..(SPF:GetGroup("Right", SPF.baseGetCraftInfo(craftIndex), 2));
+			local groupName = SPF1:GetGroup("Right", SPF1.baseGetCraftInfo(craftIndex), 3);
+			if #(SPF1:GetGroup("Right", SPF1.baseGetCraftInfo(craftIndex), groupIndex)) > 0 then
+				groupName = groupName..(SPF1:GetGroup("Right", SPF1.baseGetCraftInfo(craftIndex), 2));
 			end
 			return groupName;
 		end;
 		
 		["Initialize"] = function()
-			if (SPF:GetMenu("Right")) then
+			if (SPF1:GetMenu("Right")) then
 				local info = {};
-				info.text = SPF[GetCraftName()]["RightTitle"];
-				info.func = SPF.RightMenu.OnClick;
+				info.text = SPF1[GetCraftName()]["RightTitle"];
+				info.func = SPF1.RightMenu.OnClick;
 				info.checked = false;
 
 				UIDropDownMenu_AddButton(info);
 
-				for i,button in ipairs(SPF:GetMenu("Right")) do
+				for i,button in ipairs(SPF1:GetMenu("Right")) do
 					info = {};
 					info.text = button.name;
-					info.func = SPF.RightMenu.OnClick;
+					info.func = SPF1.RightMenu.OnClick;
 					info.checked = false;
 
 					if (GetCraftName() == "Beast Training") then
@@ -107,7 +107,7 @@ SPF["Beast Training"] = {
 		["text"] = "Available";
 		["tooltip"] = "Only show the abilities that can be learned by your active pet.";
 		["Filter"] = function(craftIndex)
-			local craftName, _, craftType, _, _, trainingPointCost = SPF.baseGetCraftInfo(craftIndex);
+			local craftName, _, craftType, _, _, trainingPointCost = SPF1.baseGetCraftInfo(craftIndex);
 			
 			if not UnitExists("pet") then
 				return false;
@@ -130,7 +130,7 @@ SPF["Beast Training"] = {
 		["text"] = "Trainable";
 		["tooltip"] = "Only show the abilities for which your active pet has the required level and training points.";
 		["Filter"] = function(craftIndex)
-			local craftName, _, craftType, _, _, trainingPointCost, requiredLevel = SPF.baseGetCraftInfo(craftIndex);
+			local craftName, _, craftType, _, _, trainingPointCost, requiredLevel = SPF1.baseGetCraftInfo(craftIndex);
 			local _, _, petLevel = GetStablePetInfo(0);
 			
 			if not UnitExists("pet") then
@@ -155,8 +155,8 @@ SPF["Beast Training"] = {
 				local trainingPointsAvailable = totalPoints - pointsSpent;
 				local trainingPointsRefund = 0;
 				
-				for i=SPF.baseGetNumCrafts(), 1, -1 do
-					local cN, _, cT, _, _, tpC = SPF.baseGetCraftInfo(craftIndex);
+				for i=SPF1.baseGetNumCrafts(), 1, -1 do
+					local cN, _, cT, _, _, tpC = SPF1.baseGetCraftInfo(craftIndex);
 					if cT == "used" then
 						if cN == craftName then
 							trainingPointsRefund = tpC;
@@ -180,7 +180,7 @@ SPF["Beast Training"] = {
 			if UnitExists("pet") then
 				GameTooltip:SetUnit("pet");
 			else
-				SPF.PortraitChanger:DefaultTooltip();
+				SPF1.PortraitChanger:DefaultTooltip();
 			end
 		end
 	};

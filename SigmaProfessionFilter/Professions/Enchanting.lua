@@ -1,4 +1,4 @@
-SPF["Enchanting"] = {
+SPF1["Enchanting"] = {
 	["LeftTitle"] = "All Bonuses";
 	["Left"] = {
 		[1] = { name = "Strength"; filter = "Strength" };

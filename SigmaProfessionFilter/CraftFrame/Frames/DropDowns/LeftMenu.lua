@@ -1,63 +1,63 @@
-SPF.LeftMenu = CreateFrame("Frame", nil, CraftFrame, "UIDropDownMenuTemplate");
+SPF1.LeftMenu = CreateFrame("Frame", nil, CraftFrame, "UIDropDownMenuTemplate");
 
-function SPF.LeftMenu:OnLoad()
-	SPF.LeftMenu:SetPoint("TOPRIGHT", CraftFrame, "TOPRIGHT", -160, -66);
+function SPF1.LeftMenu:OnLoad()
+	SPF1.LeftMenu:SetPoint("TOPRIGHT", CraftFrame, "TOPRIGHT", -160, -66);
 
-	SPF.LeftMenu:SetScript("OnShow", SPF.LeftMenu.OnShow);
-	hooksecurefunc("CraftFrame_OnShow", SPF.LeftMenu.OnShow);
+	SPF1.LeftMenu:SetScript("OnShow", SPF1.LeftMenu.OnShow);
+	hooksecurefunc("CraftFrame_OnShow", SPF1.LeftMenu.OnShow);
 
-	UIDropDownMenu_SetWidth(SPF.LeftMenu, 120);
+	UIDropDownMenu_SetWidth(SPF1.LeftMenu, 120);
 
 	-- LeatrixPlus compatibility
 	if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
-		SPF.LeftMenu:SetPoint("TOPRIGHT", CraftFrame, "TOPRIGHT", -204, -40);
+		SPF1.LeftMenu:SetPoint("TOPRIGHT", CraftFrame, "TOPRIGHT", -204, -40);
 	end
 end
 
-function SPF.LeftMenu:OnShow()
-    if ((not SPF:GetMenu("Left")) or (SPF:SavedData()["SearchBox"])) then
-        SPF.LeftMenu:Hide();
+function SPF1.LeftMenu:OnShow()
+    if ((not SPF1:GetMenu("Left")) or (SPF1:SavedData()["SearchBox"])) then
+        SPF1.LeftMenu:Hide();
 	else
-		UIDropDownMenu_Initialize(SPF.LeftMenu, SPF:Custom("LeftMenu")["Initialize"] or SPF.LeftMenu.Initialize);
-		UIDropDownMenu_SetSelectedID(SPF.LeftMenu, 1);
+		UIDropDownMenu_Initialize(SPF1.LeftMenu, SPF1:Custom("LeftMenu")["Initialize"] or SPF1.LeftMenu.Initialize);
+		UIDropDownMenu_SetSelectedID(SPF1.LeftMenu, 1);
     end
 end
 
-function SPF.LeftMenu:Initialize()
-    if (SPF:GetMenu("Left")) then
+function SPF1.LeftMenu:Initialize()
+    if (SPF1:GetMenu("Left")) then
         local info = {};
-        info.text = SPF[GetCraftName()]["LeftTitle"];
-        info.func = SPF.LeftMenu.OnClick;
+        info.text = SPF1[GetCraftName()]["LeftTitle"];
+        info.func = SPF1.LeftMenu.OnClick;
         info.checked = false;
         
         UIDropDownMenu_AddButton(info);
         
-        for i,button in ipairs(SPF:GetMenu("Left")) do
+        for i,button in ipairs(SPF1:GetMenu("Left")) do
             info = {};
             info.text = button.name;
-            info.func = SPF.LeftMenu.OnClick;
+            info.func = SPF1.LeftMenu.OnClick;
             info.checked = false;
             UIDropDownMenu_AddButton(info);
 		end
     end
 end
 
-function SPF.LeftMenu:OnClick(arg1, arg2, checked)
+function SPF1.LeftMenu:OnClick(arg1, arg2, checked)
     
-    UIDropDownMenu_SetSelectedID(SPF.LeftMenu, self:GetID());
+    UIDropDownMenu_SetSelectedID(SPF1.LeftMenu, self:GetID());
     
-	SPF:SetSelected("Left", self:GetID());
+	SPF1:SetSelected("Left", self:GetID());
     
-    SPF.FullUpdate();
+    SPF1.FullUpdate();
 end
 
 -- Return the group name if the craft matches the filter otherwise return ""
-function SPF.LeftMenu:Filter(craftIndex, groupIndex)
-	if SPF:Custom("LeftMenu")["Filter"] then
-		return SPF:Custom("LeftMenu")["Filter"](craftIndex, groupIndex);
+function SPF1.LeftMenu:Filter(craftIndex, groupIndex)
+	if SPF1:Custom("LeftMenu")["Filter"] then
+		return SPF1:Custom("LeftMenu")["Filter"](craftIndex, groupIndex);
 	else
-		local firstGroup = SPF:GetGroup("Left", SPF.baseGetCraftInfo(craftIndex), 1);
-		local requiredGroup = SPF:GetGroup("Left", SPF.baseGetCraftInfo(craftIndex), groupIndex);
+		local firstGroup = SPF1:GetGroup("Left", SPF1.baseGetCraftInfo(craftIndex), 1);
+		local requiredGroup = SPF1:GetGroup("Left", SPF1.baseGetCraftInfo(craftIndex), groupIndex);
 		
 		if (firstGroup == requiredGroup) then
 			return firstGroup;
@@ -67,4 +67,4 @@ function SPF.LeftMenu:Filter(craftIndex, groupIndex)
 	end
 end
 
-SPF.LeftMenu:OnLoad();
+SPF1.LeftMenu:OnLoad();
