@@ -17,7 +17,7 @@ end
 
 function SPF1.RightSort.OnShow()
 	if (SPF1:GetMenu("Right")) then
-		SPF1.RightSort.tooltipText = SPF1:Custom("RightMenu")["tooltip"] or "Sort recipes by the slot they enchant.";
+		SPF1.RightSort.tooltipText = SPF1:Custom("RightMenu")["tooltip"];
 		SPF1.RightSort:SetChecked(SPF1:SavedData()["GroupBy"] == "Right");
 	else
 		SPF1.RightSort:OnClick("silent");

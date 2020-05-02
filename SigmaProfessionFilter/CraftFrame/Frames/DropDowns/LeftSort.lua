@@ -17,7 +17,7 @@ end
 
 function SPF1.LeftSort:OnShow()
 	if (SPF1:GetMenu("Left")) then
-		SPF1.LeftSort.tooltipText = SPF1:Custom("LeftMenu")["tooltip"] or "Sort recipes by the bonus they provide.";
+		SPF1.LeftSort.tooltipText = SPF1:Custom("LeftMenu")["tooltip"];
 		SPF1.LeftSort:SetChecked(SPF1:SavedData()["GroupBy"] ~= "Right");
 	end
 end
