@@ -1,3 +1,5 @@
+local SPF1 = SigmaProfessionFilter[1];
+
 SPF1.RightSort = CreateFrame("CheckButton", nil, SPF1.RightMenu, "UICheckButtonTemplate");
 
 function SPF1.RightSort:OnLoad()

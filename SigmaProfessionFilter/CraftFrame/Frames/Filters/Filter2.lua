@@ -1,3 +1,5 @@
+local SPF1 = SigmaProfessionFilter[1];
+
 SPF1.Filter2 = CreateFrame("CheckButton", nil, CraftFrame, "UICheckButtonTemplate");
 
 function SPF1.Filter2:OnLoad()

@@ -1,3 +1,5 @@
+local SPF1 = SigmaProfessionFilter[1];
+
 function SPF1:LeatrixPlusCompatibility()
 	--LeatrixPlus compatibility
     if (LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On") then

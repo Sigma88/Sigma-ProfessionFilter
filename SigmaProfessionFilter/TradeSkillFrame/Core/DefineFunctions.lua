@@ -1,3 +1,5 @@
+local SPF2 = SigmaProfessionFilter[2];
+
 --Set up data table
 function SPF2.GetNumTradeSkills()
 

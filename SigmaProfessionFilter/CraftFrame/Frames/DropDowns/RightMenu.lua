@@ -1,3 +1,5 @@
+local SPF1 = SigmaProfessionFilter[1];
+
 SPF1.RightMenu = CreateFrame("Frame", nil, CraftFrame, "UIDropDownMenuTemplate");
 
 function SPF1.RightMenu.OnLoad()

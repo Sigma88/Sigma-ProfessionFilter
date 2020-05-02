@@ -1,3 +1,5 @@
+local SPF1 = SigmaProfessionFilter[1];
+
 -- EXACTLY THE SAME AS THE BLIZZARD CraftUI FUNCTIONS
 -- EXCEPT THAT THESE USE 'SPF1.GetCraftSelectionIndex'
 -- RATHER THAN THE ORIGINAL 'GetCraftSelectionIndex'

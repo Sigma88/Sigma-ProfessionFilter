@@ -1,6 +1,7 @@
 -- ElvUI Compatibility
 
 if ElvUI then
+	local SPF2 = SigmaProfessionFilter[2];
 	local E = unpack(ElvUI);
 	local S = E:GetModule('Skins');
 

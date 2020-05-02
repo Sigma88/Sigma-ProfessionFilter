@@ -1,3 +1,5 @@
+local SPF1 = SigmaProfessionFilter[1];
+
 function SPF1:SavedData()
 	if not SigmaProfessionFilter_SavedVariables then
 		SigmaProfessionFilter_SavedVariables = {};

@@ -1,3 +1,5 @@
+local SPF2 = SigmaProfessionFilter[2];
+
 SPF2.PortraitChanger = CreateFrame("Frame", nil, TradeSkillFrame);
 
 function SPF2.PortraitChanger:OnLoad()

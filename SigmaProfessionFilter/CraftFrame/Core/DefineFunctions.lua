@@ -1,3 +1,5 @@
+local SPF1 = SigmaProfessionFilter[1];
+
 --Set up data table
 function SPF1.GetNumCrafts()
 	

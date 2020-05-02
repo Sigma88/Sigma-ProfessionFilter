@@ -1,3 +1,5 @@
+local SPF1 = SigmaProfessionFilter[1];
+
 SPF1.PortraitChanger = CreateFrame("Frame", nil, CraftFrame);
 
 function SPF1.PortraitChanger:OnLoad()
