@@ -15,12 +15,6 @@ function SPF2:SavedData()
 	return SigmaProfessionFilter_SavedVariables[GetTradeSkillName()];
 end
 
-function SPF2:GetTitle(side)
-	if SigmaProfessionFilter[GetTradeSkillName()] and SigmaProfessionFilter[GetTradeSkillName()][side.."Title"] then
-		return SigmaProfessionFilter[GetTradeSkillName()][side.."Title"];
-	end
-end
-
 function SPF2:GetMenu(side)
 	if SigmaProfessionFilter[GetTradeSkillName()] and SigmaProfessionFilter[GetTradeSkillName()][side] then
 		return SigmaProfessionFilter[GetTradeSkillName()][side];

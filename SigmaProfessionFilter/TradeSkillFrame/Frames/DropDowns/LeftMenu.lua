@@ -43,7 +43,7 @@ function SPF2.LeftMenu:Initialize()
 	if not SPF2:Custom("LeftMenu")["disabled"] then
 		if (SPF2:GetMenu("Left")) then
 			local info = {};
-			info.text = SPF2:GetTitle("Left");
+			info.text = SPF2:Custom("LeftMenu")["title"] or ALL_SUBCLASSES;
 			info.func = SPF2.LeftMenu.OnClick;
 			info.checked = false;
 			

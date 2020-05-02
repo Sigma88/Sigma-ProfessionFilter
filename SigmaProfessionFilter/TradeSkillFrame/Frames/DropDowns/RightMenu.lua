@@ -43,7 +43,7 @@ function SPF2.RightMenu.Initialize()
 	if not SPF2:Custom("RightMenu")["disabled"] then
 		if (SPF2:GetMenu("Right")) then
 			local info = {};
-			info.text = SPF2:GetTitle("Right");
+			info.text = SPF2:Custom("RightMenu")["title"] or ALL_INVENTORY_SLOTS;
 			info.func = SPF2.RightMenu.OnClick;
 			info.checked = false;
 			
