@@ -4,6 +4,7 @@
 ## Notes: v0.2.0 |cff00ff00Release|r
 ## SavedVariablesPerCharacter: SigmaProfessionFilter_SavedVariables
 ## Dependencies: Blizzard_CraftUI, Blizzard_TradeSkillUI
+## OptionalDeps: ElvUI, Leatrix_Plus
 
 
 SigmaProfessionFilter.lua
