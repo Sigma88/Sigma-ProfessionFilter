@@ -41,7 +41,7 @@ L["LEFT_03_FILTER"] = "Screech;Thunderstomp";
 L["LEFT_04_FILTER"] = "Charge;Furious Howl;Prowl;Shell Shield";
 L["LEFT_05_FILTER"] = "Dash;Dive";
 L["LEFT_06_FILTER"] = "Cower;"..L["GROWL"];
-L["LEFT_07_FILTER"] = SPELL_STAT3_NAME..";"..RESISTANCE0_NAME;
+L["LEFT_07_FILTER"] = SPELL_STAT3_NAME..";"..STAT_ARMOR;
 L["LEFT_08_FILTER"] = RESISTANCE_LABEL;
 -- Right Menu
 L["RIGHT_TITLE"] = "All Sources";
@@ -51,7 +51,7 @@ L["RIGHT_01_NAME"] = "Wild Animals";
 L["RIGHT_02_NAME"] = "Pet Trainer";
 -- Filters
 L["RIGHT_01_FILTER"] = "Bite;Charge;Claw;Cower;Dash;Dive;Furious Howl;Lightning Breath;Prowl;Scorpid Poison;Screech;Shell Shield;Thunderstomp";
-L["RIGHT_02_FILTER"] = L["GROWL"]..";"..SPELL_STAT3_NAME..";"..RESISTANCE0_NAME..";"..RESISTANCE_LABEL;
+L["RIGHT_02_FILTER"] = L["GROWL"]..";"..SPELL_STAT3_NAME..";"..STAT_ARMOR..";"..RESISTANCE_LABEL;
 L["RIGHT_03_FILTER"] = "Bite;Cower;Dash;Furious Howl";
 L["RIGHT_04_FILTER"] = "Bite;Claw;Cower;Dash;Prowl";
 L["RIGHT_05_FILTER"] = "Bite;Cower";
