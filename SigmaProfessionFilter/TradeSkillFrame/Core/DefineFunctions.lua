@@ -6,6 +6,18 @@ function SPF2.GetNumTradeSkills()
 	if not TradeSkillFrame:IsVisible() then
 		return SPF2.baseGetNumTradeSkills();
 	end
+	
+	local LeftSelection = SPF2:GetSelected("Left");
+	if not SPF2:GetMenu("Left") and LeftSelection > 0 and GetTradeSkillSubClassFilter(0) then
+		UIDropDownMenu_SetSelectedID(TradeSkillSubClassDropDown, LeftSelection + 1);
+		SetTradeSkillSubClassFilter(LeftSelection, 1, 1);
+	end
+	
+	local RightSelection = SPF2:GetSelected("Right");
+	if not SPF2:GetMenu("Right") and RightSelection > 0 and GetTradeSkillInvSlotFilter(0) then
+		UIDropDownMenu_SetSelectedID(TradeSkillInvSlotDropDown, RightSelection + 1)
+		SetTradeSkillInvSlotFilter(RightSelection, 1, 1);
+	end
 
 	-- Reset the Data
 	SPF2.FIRST = nil;
