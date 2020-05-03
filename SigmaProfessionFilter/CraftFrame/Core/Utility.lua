@@ -42,7 +42,8 @@ function trim(str)
 end
 
 function SPF1:GetGroup(side, craftName, groupIndex)
-	if (SPF1:GetMenu(side)) then
+	if (SPF1:GetMenu(side) and type(craftName) == "string") then
+		local name = craftName:lower();
 		for i = 1, #SPF1:GetMenu(side), 1 do
 			if groupIndex > 1 then
 				i = groupIndex - 1;
@@ -52,12 +53,12 @@ function SPF1:GetGroup(side, craftName, groupIndex)
 			
 			if string.find(button.filter, ";") then
 				for f in string.gmatch(button.filter, "[^%;]+") do
-					if string.find(craftName, f) then
+					if type(f) == "string" and string.find(name, f:lower()) then
 						return button.name;
 					end
 				end
 			else
-				if (string.find(craftName, button.filter)) then
+				if (type(button.filter) == "string" and string.find(name, button.filter:lower())) then
 					return button.name;
 				end
 			end
