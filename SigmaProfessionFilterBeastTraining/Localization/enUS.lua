@@ -2,8 +2,7 @@ local _, L = ...;
 
 -- Profession
 L["PROFESSION"] = "Beast Training";
--- Spells
-L["GROWL"] = "Growl";
+L["PROFESSION"] = "Doma de bestias";
 -- PetFamilies
 L["PET_FAMILY_01"] = "Wolf";
 L["PET_FAMILY_02"] = "Cat";
@@ -22,6 +21,27 @@ L["PET_FAMILY_14"] = "Bat";
 L["PET_FAMILY_15"] = "Hyena";
 L["PET_FAMILY_16"] = "Owl";
 L["PET_FAMILY_17"] = "Wind Serpent";
+-- Filter1
+L["FILTER1"] = "Available";
+L["FILTER1_TOOLTIP"] = "Only show the abilities that can be learned by your active pet.";
+-- Filter2
+L["FILTER2"] = "Trainable";
+L["FILTER2_TOOLTIP"] = "Only show the abilities for which your active pet has the required level and training points.";
+-- Spells
+L["BITE"] = GetSpellInfo(17253);
+L["CHARGE"] = GetSpellInfo(7371);
+L["CLAW"] = GetSpellInfo(16827);
+L["COWER"] = GetSpellInfo(1742);
+L["DASH"] = GetSpellInfo(23099);
+L["DIVE"] = GetSpellInfo(23145);
+L["FURIOUS_HOWL"] = GetSpellInfo(24604);
+L["GROWL"] = GetSpellInfo(2649);
+L["LIGHTNING_BREATH"] = GetSpellInfo(24844);
+L["PROWL"] = GetSpellInfo(24450);
+L["SCORPID_POISON"] = GetSpellInfo(24640);
+L["SCREECH"] = GetSpellInfo(24423);
+L["SHELL_SHIELD"] = GetSpellInfo(26064);
+L["THUNDERSTOMP"] = GetSpellInfo(26090);
 -- Left Menu
 L["LEFT_TITLE"] = "All Types";
 L["LEFT_TOOLTIP"] = "Sort the abilities by the type of effect they provide.";
@@ -35,12 +55,12 @@ L["LEFT_06_NAME"] = "Threat";
 L["LEFT_07_NAME"] = RAID_BUFF_1;
 L["LEFT_08_NAME"] = RESISTANCE_LABEL;
 -- Filters
-L["LEFT_01_FILTER"] = "Bite;Claw;Lightning Breath";
-L["LEFT_02_FILTER"] = "Scorpid Poison";
-L["LEFT_03_FILTER"] = "Screech;Thunderstomp";
-L["LEFT_04_FILTER"] = "Charge;Furious Howl;Prowl;Shell Shield";
-L["LEFT_05_FILTER"] = "Dash;Dive";
-L["LEFT_06_FILTER"] = "Cower;"..L["GROWL"];
+L["LEFT_01_FILTER"] = L["BITE"]..";"..L["CLAW"]..";"..L["LIGHTNING_BREATH"];
+L["LEFT_02_FILTER"] = L["SCORPID_POISON"];
+L["LEFT_03_FILTER"] = L["SCREECH"]..";"..L["THUNDERSTOMP"];
+L["LEFT_04_FILTER"] = L["CHARGE"]..";"..L["FURIOUS_HOWL"]..";"..L["PROWL"]..";"..L["SHELL_SHIELD"];
+L["LEFT_05_FILTER"] = L["DASH"]..";"..L["DIVE"];
+L["LEFT_06_FILTER"] = L["COWER"]..";"..L["GROWL"];
 L["LEFT_07_FILTER"] = SPELL_STAT3_NAME..";"..STAT_ARMOR;
 L["LEFT_08_FILTER"] = RESISTANCE_LABEL;
 -- Right Menu
@@ -50,28 +70,22 @@ L["RIGHT_TOOLTIP"] = "Sort the abilities by the source from which they are acqui
 L["RIGHT_01_NAME"] = "Wild Animals";
 L["RIGHT_02_NAME"] = "Pet Trainer";
 -- Filters
-L["RIGHT_01_FILTER"] = "Bite;Charge;Claw;Cower;Dash;Dive;Furious Howl;Lightning Breath;Prowl;Scorpid Poison;Screech;Shell Shield;Thunderstomp";
+L["RIGHT_01_FILTER"] = L["BITE"]..";"..L["CHARGE"]..";"..L["CLAW"]..";"..L["COWER"]..";"..L["DASH"]..";"..L["DIVE"]..";"..L["FURIOUS_HOWL"]..";"..L["LIGHTNING_BREATH"]..";"..L["PROWL"]..";"..L["SCORPID_POISON"]..";"..L["SCREECH"]..";"..L["SHELL_SHIELD"]..";"..L["THUNDERSTOMP"];
 L["RIGHT_02_FILTER"] = L["GROWL"]..";"..SPELL_STAT3_NAME..";"..STAT_ARMOR..";"..RESISTANCE_LABEL;
-L["RIGHT_03_FILTER"] = "Bite;Cower;Dash;Furious Howl";
-L["RIGHT_04_FILTER"] = "Bite;Claw;Cower;Dash;Prowl";
-L["RIGHT_05_FILTER"] = "Bite;Cower";
-L["RIGHT_06_FILTER"] = "Bite;Claw;Cower";
-L["RIGHT_07_FILTER"] = "Bite;Charge;Cower;Dash";
-L["RIGHT_08_FILTER"] = "Bite;Cower";
-L["RIGHT_09_FILTER"] = "Bite;Claw;Cower;Dive;Screech";
-L["RIGHT_10_FILTER"] = "Claw;Cower";
-L["RIGHT_11_FILTER"] = "Bite;Cower;Thunderstomp";
-L["RIGHT_12_FILTER"] = "Bite;Claw;Cower";
-L["RIGHT_13_FILTER"] = "Bite;Cower;Dash";
-L["RIGHT_14_FILTER"] = "Claw;Cower;Scorpid Poison";
-L["RIGHT_15_FILTER"] = "Bite;Cower;Shell Shield";
-L["RIGHT_16_FILTER"] = "Bite;Cower;Dive;Screech";
-L["RIGHT_17_FILTER"] = "Bite;Cower;Dash";
-L["RIGHT_18_FILTER"] = "Claw;Cower;Dive;Screech";
-L["RIGHT_19_FILTER"] = "Bite;Cower;Dive;Lightning Breath";
--- Filter1
-L["FILTER1"] = "Available";
-L["FILTER1_TOOLTIP"] = "Only show the abilities that can be learned by your active pet.";
--- Filter2
-L["FILTER2"] = "Trainable";
-L["FILTER2_TOOLTIP"] = "Only show the abilities for which your active pet has the required level and training points.";
+L["RIGHT_03_FILTER"] = L["BITE"]..";"..L["COWER"]..";"..L["DASH"]..";"..L["FURIOUS_HOWL"];
+L["RIGHT_04_FILTER"] = L["BITE"]..";"..L["CLAW"]..";"..L["COWER"]..";"..L["DASH"]..";"..L["PROWL"];
+L["RIGHT_05_FILTER"] = L["BITE"]..";"..L["COWER"];
+L["RIGHT_06_FILTER"] = L["BITE"]..";"..L["CLAW"]..";"..L["COWER"];
+L["RIGHT_07_FILTER"] = L["BITE"]..";"..L["CHARGE"]..";"..L["COWER"]..";"..L["DASH"];
+L["RIGHT_08_FILTER"] = L["BITE"]..";"..L["COWER"];
+L["RIGHT_09_FILTER"] = L["BITE"]..";"..L["CLAW"]..";"..L["COWER"]..";"..L["DIVE"]..";"..L["SCREECH"];
+L["RIGHT_10_FILTER"] = L["CLAW"]..";"..L["COWER"];
+L["RIGHT_11_FILTER"] = L["BITE"]..";"..L["COWER"]..";"..L["THUNDERSTOMP"];
+L["RIGHT_12_FILTER"] = L["BITE"]..";"..L["CLAW"]..";"..L["COWER"];
+L["RIGHT_13_FILTER"] = L["BITE"]..";"..L["COWER"]..";"..L["DASH"];
+L["RIGHT_14_FILTER"] = L["CLAW"]..";"..L["COWER"]..";"..L["SCORPID_POISON"];
+L["RIGHT_15_FILTER"] = L["BITE"]..";"..L["COWER"]..";"..L["SHELL_SHIELD"];
+L["RIGHT_16_FILTER"] = L["BITE"]..";"..L["COWER"]..";"..L["DIVE"]..";"..L["SCREECH"];
+L["RIGHT_17_FILTER"] = L["BITE"]..";"..L["COWER"]..";"..L["DASH"];
+L["RIGHT_18_FILTER"] = L["CLAW"]..";"..L["COWER"]..";"..L["DIVE"]..";"..L["SCREECH"];
+L["RIGHT_19_FILTER"] = L["BITE"]..";"..L["COWER"]..";"..L["DIVE"]..";"..L["LIGHTNING_BREATH"];
