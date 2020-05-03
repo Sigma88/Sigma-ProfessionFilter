@@ -63,7 +63,7 @@ function SPF2:GetSelected(side)
 	if not SigmaProfessionFilter[GetTradeSkillName()] then
 		SigmaProfessionFilter[GetTradeSkillName()] = {};
 	end
-	if SPF2:GetMenu(side) and SigmaProfessionFilter[GetTradeSkillName()]["Selected"] then
+	if SigmaProfessionFilter[GetTradeSkillName()]["Selected"] then
 		return SigmaProfessionFilter[GetTradeSkillName()]["Selected"][side] or 0;
 	end
 	return 0;
@@ -73,12 +73,10 @@ function SPF2:SetSelected(side, id)
 	if not SigmaProfessionFilter[GetTradeSkillName()] then
 		SigmaProfessionFilter[GetTradeSkillName()] = {};
 	end
-	if SPF2:GetMenu(side) then
-		if not SigmaProfessionFilter[GetTradeSkillName()]["Selected"] then
-			SigmaProfessionFilter[GetTradeSkillName()]["Selected"] = {};
-		end
-		SigmaProfessionFilter[GetTradeSkillName()]["Selected"][side] = id;
+	if not SigmaProfessionFilter[GetTradeSkillName()]["Selected"] then
+		SigmaProfessionFilter[GetTradeSkillName()]["Selected"] = {};
 	end
+	SigmaProfessionFilter[GetTradeSkillName()]["Selected"][side] = id;
 end
 
 function SPF2:Custom(target)
