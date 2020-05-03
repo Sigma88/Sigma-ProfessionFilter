@@ -14,4 +14,6 @@ SigmaProfessionFilter.L = {
 	
 	["ALL_SUBCLASSES_TOOLTIP"] = "Sort recipes by the sub-class of the crafted item.";
 	["ALL_INVENTORY_SLOTS_TOOLTIP"] = "Sort recipes by the inventory slot of the crafted item.";
+	
+	["Mining_SpellName"] = "Smelting";
 };

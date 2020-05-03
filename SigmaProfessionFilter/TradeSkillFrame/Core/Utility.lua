@@ -2,9 +2,8 @@ local L = SigmaProfessionFilter.L;
 
 function GetTradeSkillName()
 	local skillName = GetTradeSkillLine();
-	if skillName == L["MINING"] then skillName = L["SMELTING"] end;
 	
-	return skillName;
+	return L[skillName.."_SpellName"] or skillName;
 end
 
 local SPF2 = SigmaProfessionFilter[2];
