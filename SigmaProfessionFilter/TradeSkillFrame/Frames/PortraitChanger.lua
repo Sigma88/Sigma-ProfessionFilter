@@ -83,18 +83,19 @@ end
 function SPF2.PortraitChanger:DefaultTooltip()
 	local spellBookIndex, spellRank = SPF2.PortraitChanger.GetTooltipInfo();
 	
-	GameTooltip:SetSpellBookItem(spellBookIndex, BOOKTYPE_SPELL);
-	GameTooltipTextRight1:SetText(spellRank);
-	GameTooltipTextRight1:SetTextColor(0.5, 0.5, 0.5, 1);
-	GameTooltipTextRight1:Show();
-	GameTooltipTextRight1:ClearAllPoints();
-	GameTooltipTextRight1:SetPoint("RIGHT", GameTooltipTextLeft1, "LEFT", GameTooltip:GetWidth() - 20, 0);
+	if spellBookIndex then
+		GameTooltip:SetSpellBookItem(spellBookIndex, BOOKTYPE_SPELL);
+		GameTooltipTextRight1:SetText(spellRank);
+		GameTooltipTextRight1:SetTextColor(0.5, 0.5, 0.5, 1);
+		GameTooltipTextRight1:Show();
+		GameTooltipTextRight1:ClearAllPoints();
+		GameTooltipTextRight1:SetPoint("RIGHT", GameTooltipTextLeft1, "LEFT", GameTooltip:GetWidth() - 20, 0);
+	end
 end
 
 function SPF2.PortraitChanger.GetTooltipInfo()
 	
 	local tradeSkillName = GetTradeSkillName();
-	
 	local spellRank = GetSpellSubtext(tradeSkillName);
 	local spellBookIndex = 0;
 	local spellName = true;
