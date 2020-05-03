@@ -78,14 +78,13 @@ end
 function SPF2.LeftMenu:OnClick(arg1, arg2, checked)
 	
 	UIDropDownMenu_SetSelectedID(SPF2.LeftMenu, self:GetID());
+	SPF2:SetSelected("Left", self:GetID() - 1);
 	
 	if not SPF2:GetMenu("Left") then
 		TradeSkillSubClassDropDownButton_OnClick(self);
 	end
-
-	SPF2:SetSelected("Left", self:GetID() - 1);
-    
-    SPF2.FullUpdate();
+	
+	SPF2.FullUpdate();
 end
 
 -- Return the group index if the skill matches the filter

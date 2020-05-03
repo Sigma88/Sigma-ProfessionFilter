@@ -76,16 +76,15 @@ function SPF2.RightMenu.Initialize()
 end
 
 function SPF2.RightMenu:OnClick(arg1, arg2, checked)
-    
-    UIDropDownMenu_SetSelectedID(SPF2.RightMenu, self:GetID());
-    
+	
+	UIDropDownMenu_SetSelectedID(SPF2.RightMenu, self:GetID());
+	SPF2:SetSelected("Right", self:GetID() - 1);
+	
 	if not SPF2:GetMenu("Right") then
 		TradeSkillInvSlotDropDownButton_OnClick(self);
 	end
-
-	SPF2:SetSelected("Right", self:GetID() - 1);
-    
-    SPF2.FullUpdate();
+	
+	SPF2.FullUpdate();
 end
 
 -- Return the group index if the skill matches the filter
