@@ -44,7 +44,3 @@ TradeSkillFrame\Frames\TextSearch\Search.lua
 TradeSkillFrame\Frames\PortraitChanger.lua
 TradeSkillFrame\Frames\LeatrixPlusCompatibility.lua
 TradeSkillFrame\Frames\ElvUICompatibility.lua
-
-
-Professions\BeastTraining.lua
-Professions\Enchanting.lua
