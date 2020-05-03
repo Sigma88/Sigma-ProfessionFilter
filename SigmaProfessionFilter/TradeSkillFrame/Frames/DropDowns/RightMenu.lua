@@ -1,3 +1,5 @@
+local SPF2 = SigmaProfessionFilter[2];
+
 SPF2.RightMenu = CreateFrame("Frame", nil, TradeSkillFrame, "UIDropDownMenuTemplate");
 
 function SPF2.RightMenu.OnLoad()
@@ -7,6 +9,9 @@ function SPF2.RightMenu.OnLoad()
 	hooksecurefunc("TradeSkillFrame_OnShow", SPF2.RightMenu.OnShow);
 	
 	UIDropDownMenu_SetWidth(SPF2.RightMenu, 120);
+	
+	UIDropDownMenu_SetSelectedID(SPF2.RightMenu, 1);
+	SPF2:SetSelected("Right", 0);
 	
 	-- LeatrixPlus compatibility
 	if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
@@ -28,7 +33,7 @@ function SPF2.RightMenu:OnShow()
 	else
 		TradeSkillInvSlotDropDown:Hide();
 		UIDropDownMenu_Initialize(SPF2.RightMenu, SPF2:Custom("RightMenu")["Initialize"] or SPF2.RightMenu.Initialize);
-		UIDropDownMenu_SetSelectedID(SPF2.RightMenu, 1);
+		UIDropDownMenu_SetSelectedID(SPF2.RightMenu, SPF2:GetSelected("Right") + 1);
 	end
 	
 	if SPF2:SavedData()["SearchBox"] then
@@ -41,7 +46,7 @@ function SPF2.RightMenu.Initialize()
 	if not SPF2:Custom("RightMenu")["disabled"] then
 		if (SPF2:GetMenu("Right")) then
 			local info = {};
-			info.text = SPF2:GetTitle("Right");
+			info.text = SPF2:Custom("RightMenu")["title"] or ALL_INVENTORY_SLOTS;
 			info.func = SPF2.RightMenu.OnClick;
 			info.checked = false;
 			
@@ -74,16 +79,15 @@ function SPF2.RightMenu.Initialize()
 end
 
 function SPF2.RightMenu:OnClick(arg1, arg2, checked)
-    
-    UIDropDownMenu_SetSelectedID(SPF2.RightMenu, self:GetID());
-    
+	
+	UIDropDownMenu_SetSelectedID(SPF2.RightMenu, self:GetID());
+	SPF2:SetSelected("Right", self:GetID() - 1);
+	
 	if not SPF2:GetMenu("Right") then
 		TradeSkillInvSlotDropDownButton_OnClick(self);
 	end
-
-	SPF2:SetSelected("Right", self:GetID() - 1);
-    
-    SPF2.FullUpdate();
+	
+	SPF2.FullUpdate();
 end
 
 -- Return the group index if the skill matches the filter
@@ -108,14 +112,12 @@ function SPF2.RightMenu:Filter(skillIndex, groupIndex)
 				return firstGroup;
 			end
 		else
-			local slotName = _G[select(9, SPF2.baseGetTradeSkillItemInfo(skillIndex))];
+			local invType = select(9, SPF2.baseGetTradeSkillItemInfo(skillIndex));
 			local lastID = 0;
 			for i,slot in ipairs({GetTradeSkillInvSlots()}) do
 				lastID = i;
-				if slotName then
-					if slotName == slot or slotName.."s" == slot or slotName == slot.."s" then
-						return i;
-					end
+				if SPF2:GetSlot(invType) == slot then
+					return i;
 				end
 			end
 			return lastID;

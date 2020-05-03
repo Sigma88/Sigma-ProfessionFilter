@@ -1,3 +1,6 @@
+local L = SigmaProfessionFilter.L;
+local SPF2 = SigmaProfessionFilter[2];
+
 SPF2.Search = CreateFrame("CheckButton", nil, TradeSkillFrame, "UICheckButtonTemplate");
 
 function SPF2.Search.OnLoad()
@@ -25,8 +28,8 @@ function SPF2.Search:OnShow()
 	SPF2.Search:Show();
 	
 	if not(SPF2:Custom("LeftMenu")["disabled"] and SPF2:Custom("RightMenu")["disabled"]) then
-		SPF2.Search.text:SetText("Search");
-		SPF2.Search.tooltipText = "Toggle the Search Box.";
+		SPF2.Search.text:SetText(L["SEARCH"]);
+		SPF2.Search.tooltipText = L["SEARCH_TOOLTIP"];
 		SPF2.Search:SetChecked(SPF2:SavedData()["SearchBox"]);
 	else
 		SPF2.Search:Hide();

@@ -1,3 +1,5 @@
+local SPF2 = SigmaProfessionFilter[2];
+
 -- Replace Functions
 
 --Number of crafts

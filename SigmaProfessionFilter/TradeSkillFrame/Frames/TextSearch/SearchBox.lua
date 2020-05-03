@@ -1,3 +1,5 @@
+local SPF2 = SigmaProfessionFilter[2];
+
 SPF2.SearchBox = CreateFrame("EditBox", nil, TradeSkillFrame, "SearchBoxTemplate");
 
 function SPF2.SearchBox.OnLoad()

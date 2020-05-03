@@ -1,18 +1,20 @@
+local SPF1 = SigmaProfessionFilter[1];
+
 -- EXACTLY THE SAME AS THE BLIZZARD CraftUI FUNCTIONS
--- EXCEPT THAT THESE USE 'SPF.GetCraftSelectionIndex'
+-- EXCEPT THAT THESE USE 'SPF1.GetCraftSelectionIndex'
 -- RATHER THAN THE ORIGINAL 'GetCraftSelectionIndex'
 -- I HAVE TO DO THIS BECAUSE I CAN'T REPLACE THAT FUNCTION
 -- BECAUSE IT GIVES AN ERROR WHEN TRYING TO CREATE THE CRAFT
 
-function SPF.CraftFrame_OnEvent(self, event, ...)
+function SPF1.CraftFrame_OnEvent(self, event, ...)
 	if ( not self:IsVisible() ) then
 		return;
 	end
 
 	if ( event == "CRAFT_UPDATE" ) then
 		CraftCreateButton:Disable();
-		if ( SPF.GetCraftSelectionIndex() > 1 ) then
-			CraftFrame_SetSelection(SPF.GetCraftSelectionIndex());
+		if ( SPF1.GetCraftSelectionIndex() > 1 ) then
+			CraftFrame_SetSelection(SPF1.GetCraftSelectionIndex());
 		else
 			if ( GetNumCrafts() > 0 ) then
 				-- Check to see if has headers, if so select the second slot if not select the first slot
@@ -40,7 +42,7 @@ function SPF.CraftFrame_OnEvent(self, event, ...)
 	end
 end
 
-function SPF.CraftFrame_Update()
+function SPF1.CraftFrame_Update()
 	SetPortraitTexture(CraftFramePortrait, "player");
 	CraftFrameTitleText:SetText(GetCraftName());
 
@@ -175,7 +177,7 @@ function SPF.CraftFrame_Update()
 
 				craftButtonSubText:SetPoint("LEFT", "Craft"..i.."Text", "RIGHT", CRAFT_SUBTEXT_OFFSET, 0);
 				-- Place the highlight and lock the highlight state
-				if ( SPF.GetCraftSelectionIndex() == craftIndex ) then
+				if ( SPF1.GetCraftSelectionIndex() == craftIndex ) then
 					CraftHighlightFrame:SetPoint("TOPLEFT", "Craft"..i, "TOPLEFT", 0, 0);
 					CraftHighlightFrame:Show();
 					Craft_SetSubTextColor(craftButton, 1.0, 1.0, 1.0);
@@ -231,7 +233,7 @@ function SPF.CraftFrame_Update()
 	end
 end
 
-function SPF.baseCraftFrame_SetSelection(id)
+function SPF1.baseCraftFrame_SetSelection(id)
 	if ( not id ) then
 		return;
 	end
@@ -248,7 +250,7 @@ function SPF.baseCraftFrame_SetSelection(id)
 		return;
 	end
 	SelectCraft(id);
-	if ( SPF.GetCraftSelectionIndex() > GetNumCrafts() ) then
+	if ( SPF1.GetCraftSelectionIndex() > GetNumCrafts() ) then
 		return;
 	end
 	local color = CraftTypeColor[craftType];

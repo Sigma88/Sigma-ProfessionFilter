@@ -1,3 +1,5 @@
+local SPF2 = SigmaProfessionFilter[2];
+
 SPF2.LeftMenu = CreateFrame("Frame", nil, TradeSkillFrame, "UIDropDownMenuTemplate");
 
 function SPF2.LeftMenu:OnLoad()
@@ -7,6 +9,9 @@ function SPF2.LeftMenu:OnLoad()
 	hooksecurefunc("TradeSkillFrame_OnShow", SPF2.LeftMenu.OnShow);
 	
 	UIDropDownMenu_SetWidth(SPF2.LeftMenu, 120);
+
+	UIDropDownMenu_SetSelectedID(SPF2.LeftMenu, 1);
+	SPF2:SetSelected("Left", 0);
 	
 	-- LeatrixPlus compatibility
 	if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
@@ -28,7 +33,7 @@ function SPF2.LeftMenu:OnShow()
 	else
 		TradeSkillSubClassDropDown:Hide();
 		UIDropDownMenu_Initialize(SPF2.LeftMenu, SPF2:Custom("LeftMenu")["Initialize"] or SPF2.LeftMenu.Initialize);
-		UIDropDownMenu_SetSelectedID(SPF2.LeftMenu, 1);
+		UIDropDownMenu_SetSelectedID(SPF2.LeftMenu, SPF2:GetSelected("Left") + 1);
 	end
 	
     if SPF2:SavedData()["SearchBox"] then
@@ -41,7 +46,7 @@ function SPF2.LeftMenu:Initialize()
 	if not SPF2:Custom("LeftMenu")["disabled"] then
 		if (SPF2:GetMenu("Left")) then
 			local info = {};
-			info.text = SPF2:GetTitle("Left");
+			info.text = SPF2:Custom("LeftMenu")["title"] or ALL_SUBCLASSES;
 			info.func = SPF2.LeftMenu.OnClick;
 			info.checked = false;
 			
@@ -76,14 +81,13 @@ end
 function SPF2.LeftMenu:OnClick(arg1, arg2, checked)
 	
 	UIDropDownMenu_SetSelectedID(SPF2.LeftMenu, self:GetID());
+	SPF2:SetSelected("Left", self:GetID() - 1);
 	
 	if not SPF2:GetMenu("Left") then
 		TradeSkillSubClassDropDownButton_OnClick(self);
 	end
-
-	SPF2:SetSelected("Left", self:GetID() - 1);
-    
-    SPF2.FullUpdate();
+	
+	SPF2.FullUpdate();
 end
 
 -- Return the group index if the skill matches the filter

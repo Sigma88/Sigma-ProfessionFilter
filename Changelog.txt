@@ -1,4 +1,14 @@
+**v0.3.0**
+
+- Added support for localization
+- Split the base addon from the profession modules
+- Fixed bug that would randomly reset the filters
+- Fixed portrait changer errors on invalid tooltips
+- Fixed bug that caused filters to reset too often
+
+
 **v0.2.0**
+
 - Fixed Leatrix Plus Compatibility
 - Fixed Altoholic Confict
 - Added ElvUI Compatibility

@@ -1,4 +1,6 @@
-function SPF:SavedData()
+local SPF1 = SigmaProfessionFilter[1];
+
+function SPF1:SavedData()
 	if not SigmaProfessionFilter_SavedVariables then
 		SigmaProfessionFilter_SavedVariables = {};
 	end
@@ -8,30 +10,30 @@ function SPF:SavedData()
 	return SigmaProfessionFilter_SavedVariables[GetCraftName()];
 end
 
-function SPF:GetMenu(side)
-	if SPF[GetCraftName()] then
-		return SPF[GetCraftName()][side];
+function SPF1:GetMenu(side)
+	if SigmaProfessionFilter[GetCraftName()] then
+		return SigmaProfessionFilter[GetCraftName()][side];
 	end
 end
 
-function SPF:GetSelected(side)
-	if SPF:GetMenu(side) and SPF[GetCraftName()]["Selected"] then
-		return SPF[GetCraftName()]["Selected"][side] or 1;
+function SPF1:GetSelected(side)
+	if SPF1:GetMenu(side) and SigmaProfessionFilter[GetCraftName()]["Selected"] then
+		return SigmaProfessionFilter[GetCraftName()]["Selected"][side] or 1;
 	end
 	return 1;
 end
 
-function SPF:SetSelected(side, id)
-	if SPF:GetMenu(side) then
-		if not SPF[GetCraftName()]["Selected"] then
-			SPF[GetCraftName()]["Selected"] = {};
+function SPF1:SetSelected(side, id)
+	if SPF1:GetMenu(side) then
+		if not SigmaProfessionFilter[GetCraftName()]["Selected"] then
+			SigmaProfessionFilter[GetCraftName()]["Selected"] = {};
 		end
-		SPF[GetCraftName()]["Selected"][side] = id;
+		SigmaProfessionFilter[GetCraftName()]["Selected"][side] = id;
 	end
 end
 
-function SPF:Custom(target)
-	local Profession = SPF[GetCraftName()] or {};
+function SPF1:Custom(target)
+	local Profession = SigmaProfessionFilter[GetCraftName()] or {};
 	return Profession[target] or {};
 end
 
@@ -39,23 +41,24 @@ function trim(str)
 	return (str:gsub("^%s*(.-)%s*$", "%1"))
 end
 
-function SPF:GetGroup(side, craftName, groupIndex)
-	if (SPF:GetMenu(side)) then
-		for i = 1, #SPF:GetMenu(side), 1 do
+function SPF1:GetGroup(side, craftName, groupIndex)
+	if (SPF1:GetMenu(side) and type(craftName) == "string") then
+		local name = craftName:lower();
+		for i = 1, #SPF1:GetMenu(side), 1 do
 			if groupIndex > 1 then
 				i = groupIndex - 1;
 			end
 			
-			local button = SPF:GetMenu(side)[i];
+			local button = SPF1:GetMenu(side)[i];
 			
 			if string.find(button.filter, ";") then
 				for f in string.gmatch(button.filter, "[^%;]+") do
-					if string.find(craftName, f) then
+					if type(f) == "string" and string.find(name, f:lower()) then
 						return button.name;
 					end
 				end
 			else
-				if (string.find(craftName, button.filter)) then
+				if (type(button.filter) == "string" and string.find(name, button.filter:lower())) then
 					return button.name;
 				end
 			end
@@ -68,33 +71,33 @@ function SPF:GetGroup(side, craftName, groupIndex)
 	return "";
 end
 
-function SPF:FilterWithSearchBox(craftIndex)
+function SPF1:FilterWithSearchBox(craftIndex)
 	
-	if SPF.SearchBox ~= nil then
-		local searchFilter = trim(SPF.SearchBox:GetText():lower());
-		local craftName, craftSubSpellName, craftType, numAvailable, isExpanded, trainingPointCost, requiredLevel = SPF.baseGetCraftInfo(craftIndex);
+	if SPF1.SearchBox ~= nil then
+		local searchFilter = trim(SPF1.SearchBox:GetText():lower());
+		local craftName, craftSubSpellName, craftType, numAvailable, isExpanded, trainingPointCost, requiredLevel = SPF1.baseGetCraftInfo(craftIndex);
 		
 		-- Check the Name
-		if (SPF:SavedData()["SearchNames"] ~= false) then
+		if (SPF1:SavedData()["SearchNames"] ~= false) then
 			if strmatch(craftName:lower(), searchFilter) ~= nil then
 				return true;
 			end
 		end
 		
 		-- Check the SubName
-		if (SPF:SavedData()["SearchSubNames"] ~= false) then
+		if (SPF1:SavedData()["SearchSubNames"] ~= false) then
 			if strmatch(craftSubSpellName:lower(), searchFilter) ~= nil then
 				return true;
 			end
 		end
 		
 		-- Check the Headers
-		if (SPF:SavedData()["SearchHeaders"] ~= false) then
+		if (SPF1:SavedData()["SearchHeaders"] ~= false) then
 			
 			-- Check the LeftMenu
-			if SPF:GetMenu("Left") then
-				for	i,button in ipairs(SPF:GetMenu("Left")) do
-					local groupName = SPF.LeftMenu:Filter(craftIndex, i + 1);
+			if SPF1:GetMenu("Left") then
+				for	i,button in ipairs(SPF1:GetMenu("Left")) do
+					local groupName = SPF1.LeftMenu:Filter(craftIndex, i + 1);
 					if #groupName > 0 then
 						if strmatch(button.name:lower(), searchFilter) ~= nil then
 							return true;
@@ -104,9 +107,9 @@ function SPF:FilterWithSearchBox(craftIndex)
 			end
 			
 			-- Check the RightMenu
-			if SPF:GetMenu("Right") then
-				for	i,button in ipairs(SPF:GetMenu("Right")) do
-					local groupName = SPF.RightMenu:Filter(craftIndex, i + 1);
+			if SPF1:GetMenu("Right") then
+				for	i,button in ipairs(SPF1:GetMenu("Right")) do
+					local groupName = SPF1.RightMenu:Filter(craftIndex, i + 1);
 					if #groupName > 0 then
 						if strmatch(button.name:lower(), searchFilter) ~= nil then
 							return true;
@@ -119,9 +122,9 @@ function SPF:FilterWithSearchBox(craftIndex)
 		-- Check the RightMenu Groups
 		
 		-- Check the Reagents
-		if (SPF:SavedData()["SearchReagents"] ~= false) then
-			for i = 1, SPF.baseGetCraftNumReagents(craftIndex), 1 do
-				local reagentName, reagentTexture, reagentCount, playerReagentCount = SPF.baseGetCraftReagentInfo(craftIndex, i);
+		if (SPF1:SavedData()["SearchReagents"] ~= false) then
+			for i = 1, SPF1.baseGetCraftNumReagents(craftIndex), 1 do
+				local reagentName, reagentTexture, reagentCount, playerReagentCount = SPF1.baseGetCraftReagentInfo(craftIndex, i);
 				
 				if (reagentName and strmatch(reagentName:lower(), searchFilter)) then
 					return true
@@ -133,7 +136,7 @@ function SPF:FilterWithSearchBox(craftIndex)
 	return false;
 end
 
-function SPF.ClearCraft()
+function SPF1.ClearCraft()
 	CraftName:Hide();
 	CraftRequirements:Hide();
 	CraftIcon:Hide();
@@ -151,19 +154,19 @@ function SPF.ClearCraft()
 	CraftCost:Hide();
 end
 
-function SPF.FullUpdate()
-	local totalCount, headerCount, firstRecipe = SPF.GetNumCrafts();
+function SPF1.FullUpdate()
+	local totalCount, headerCount, firstRecipe = SPF1.GetNumCrafts();
 	
 	if firstRecipe then
 		FauxScrollFrame_SetOffset(CraftListScrollFrame, 0);
-		SPF.CraftFrame_SetSelection(firstRecipe);
+		SPF1.CraftFrame_SetSelection(firstRecipe);
 	end
 	CraftListScrollFrameScrollBar:SetValue(0);
 	
 	CraftFrame_Update();
 	
 	if not firstRecipe then
-		SPF.ClearCraft();
+		SPF1.ClearCraft();
 	end
 	
 	--LeatrixPlus compatibility

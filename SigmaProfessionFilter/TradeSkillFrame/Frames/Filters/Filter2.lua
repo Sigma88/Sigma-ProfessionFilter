@@ -1,3 +1,6 @@
+local L = SigmaProfessionFilter.L;
+local SPF2 = SigmaProfessionFilter[2];
+
 SPF2.Filter2 = CreateFrame("CheckButton", nil, TradeSkillFrame, "UICheckButtonTemplate");
 
 function SPF2.Filter2.OnLoad()
@@ -22,8 +25,8 @@ end
 
 function SPF2.Filter2:OnShow()
 	SPF2.Filter2:Show();
-	SPF2.Filter2.text:SetText(SPF2:Custom("Filter2")["text"] or CRAFT_IS_MAKEABLE);
-	SPF2.Filter2.tooltipText = SPF2:Custom("Filter2")["tooltip"] or CRAFT_IS_MAKEABLE_TOOLTIP;
+	SPF2.Filter2.text:SetText(SPF2:Custom("Filter2")["text"] or L["HAVE_MATS"]);
+	SPF2.Filter2.tooltipText = SPF2:Custom("Filter2")["tooltip"] or L["HAVE_MATS_TOOLTIP"];
 end
 
 function SPF2.Filter2:OnClick()

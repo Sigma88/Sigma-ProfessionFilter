@@ -1,63 +1,65 @@
+local SPF1 = SigmaProfessionFilter[1];
+
 ---Replace Functions
 
 --Number of crafts
-SPF.baseGetNumCrafts = GetNumCrafts;
-GetNumCrafts = SPF.GetNumCrafts;
+SPF1.baseGetNumCrafts = GetNumCrafts;
+GetNumCrafts = SPF1.GetNumCrafts;
 
 --Info on craft index
-SPF.baseGetCraftInfo = GetCraftInfo;
-GetCraftInfo = SPF.GetCraftInfo;
+SPF1.baseGetCraftInfo = GetCraftInfo;
+GetCraftInfo = SPF1.GetCraftInfo;
 
 --Expand header
-SPF.baseExpandCraftSkillLine = ExpandCraftSkillLine;
-ExpandCraftSkillLine = SPF.ExpandCraftSkillLine;
+SPF1.baseExpandCraftSkillLine = ExpandCraftSkillLine;
+ExpandCraftSkillLine = SPF1.ExpandCraftSkillLine;
 --Collapse header
-SPF.baseCollapseCraftSkillLine = CollapseCraftSkillLine;
-CollapseCraftSkillLine = SPF.CollapseCraftSkillLine;
+SPF1.baseCollapseCraftSkillLine = CollapseCraftSkillLine;
+CollapseCraftSkillLine = SPF1.CollapseCraftSkillLine;
 
 --Crafting
-CraftCreateButton:HookScript("OnMouseDown", SPF.CraftCreateButton_OnMouseDown);
-CraftCreateButton:HookScript("OnMouseUp", SPF.CraftCreateButton_OnMouseUp);
-CraftCreateButton:HookScript("OnClick", SPF.CraftCreateButton_OnClick);
+CraftCreateButton:HookScript("OnMouseDown", SPF1.CraftCreateButton_OnMouseDown);
+CraftCreateButton:HookScript("OnMouseUp", SPF1.CraftCreateButton_OnMouseUp);
+CraftCreateButton:HookScript("OnClick", SPF1.CraftCreateButton_OnClick);
 
 --Tooltips
-SPF.baseSetCraftItem = GameTooltip.SetCraftItem;
-GameTooltip.SetCraftItem = SPF.SetCraftItem;
-SPF.baseSetCraftSpell = GameTooltip.SetCraftSpell;
-GameTooltip.SetCraftSpell = SPF.SetCraftSpell;
+SPF1.baseSetCraftItem = GameTooltip.SetCraftItem;
+GameTooltip.SetCraftItem = SPF1.SetCraftItem;
+SPF1.baseSetCraftSpell = GameTooltip.SetCraftSpell;
+GameTooltip.SetCraftSpell = SPF1.SetCraftSpell;
 
 --Links
-SPF.baseGetCraftItemLink = GetCraftItemLink;
-GetCraftItemLink = SPF.GetCraftItemLink;
-SPF.baseGetCraftReagentItemLink = GetCraftReagentItemLink;
-GetCraftReagentItemLink = SPF.GetCraftReagentItemLink;
+SPF1.baseGetCraftItemLink = GetCraftItemLink;
+GetCraftItemLink = SPF1.GetCraftItemLink;
+SPF1.baseGetCraftReagentItemLink = GetCraftReagentItemLink;
+GetCraftReagentItemLink = SPF1.GetCraftReagentItemLink;
 
 --During SetSelection
-SPF.baseGetCraftIcon = GetCraftIcon;
-GetCraftIcon = SPF.GetCraftIcon;
-SPF.baseGetCraftDescription = GetCraftDescription;
-GetCraftDescription = SPF.GetCraftDescription;
-SPF.baseGetCraftNumReagents = GetCraftNumReagents;
-GetCraftNumReagents = SPF.GetCraftNumReagents;
-SPF.baseGetCraftReagentInfo = GetCraftReagentInfo;
-GetCraftReagentInfo = SPF.GetCraftReagentInfo;
-SPF.baseGetCraftSpellFocus = GetCraftSpellFocus;
-GetCraftSpellFocus = SPF.GetCraftSpellFocus;
+SPF1.baseGetCraftIcon = GetCraftIcon;
+GetCraftIcon = SPF1.GetCraftIcon;
+SPF1.baseGetCraftDescription = GetCraftDescription;
+GetCraftDescription = SPF1.GetCraftDescription;
+SPF1.baseGetCraftNumReagents = GetCraftNumReagents;
+GetCraftNumReagents = SPF1.GetCraftNumReagents;
+SPF1.baseGetCraftReagentInfo = GetCraftReagentInfo;
+GetCraftReagentInfo = SPF1.GetCraftReagentInfo;
+SPF1.baseGetCraftSpellFocus = GetCraftSpellFocus;
+GetCraftSpellFocus = SPF1.GetCraftSpellFocus;
 
 --Indexing
-SPF.baseSelectCraft = SelectCraft;
-SelectCraft = SPF.SelectCraft;
+SPF1.baseSelectCraft = SelectCraft;
+SelectCraft = SPF1.SelectCraft;
 
-SPF.baseGetCraftSelectionIndex = GetCraftSelectionIndex;
---GetCraftSelectionIndex = SPF.GetCraftSelectionIndex; DO NOT REPLACE 'GetCraftSelectionIndex'
+SPF1.baseGetCraftSelectionIndex = GetCraftSelectionIndex;
+--GetCraftSelectionIndex = SPF1.GetCraftSelectionIndex; DO NOT REPLACE 'GetCraftSelectionIndex'
 
---SPF.baseCraftFrame_SetSelection = CraftFrame_SetSelection; INCLUDED IN SigmaProfessionFilter/CraftFrame/Core/Blizzard_CraftUI.lua
-CraftFrame_SetSelection = SPF.CraftFrame_SetSelection;
+--SPF1.baseCraftFrame_SetSelection = CraftFrame_SetSelection; INCLUDED IN SigmaProfessionFilter/CraftFrame/Core/Blizzard_CraftUI.lua
+CraftFrame_SetSelection = SPF1.CraftFrame_SetSelection;
 
 -- Blizzard_CraftUI
-SPF.baseCraftFrame_OnEvent = CraftFrame_OnEvent;
-CraftFrame_OnEvent = SPF.CraftFrame_OnEvent;
-SPF.baseCraftFrame_Update = CraftFrame_Update;
-CraftFrame_Update = SPF.CraftFrame_Update;
-SPF.baseCraftFrame_Update = CraftFrame_Update;
-CraftFrame_Update = SPF.CraftFrame_Update;
+SPF1.baseCraftFrame_OnEvent = CraftFrame_OnEvent;
+CraftFrame_OnEvent = SPF1.CraftFrame_OnEvent;
+SPF1.baseCraftFrame_Update = CraftFrame_Update;
+CraftFrame_Update = SPF1.CraftFrame_Update;
+SPF1.baseCraftFrame_Update = CraftFrame_Update;
+CraftFrame_Update = SPF1.CraftFrame_Update;

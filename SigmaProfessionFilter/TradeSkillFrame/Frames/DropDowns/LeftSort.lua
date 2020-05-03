@@ -1,3 +1,6 @@
+local L = SigmaProfessionFilter.L;
+local SPF2 = SigmaProfessionFilter[2];
+
 SPF2.LeftSort = CreateFrame("CheckButton", nil, TradeSkillFrame, "UICheckButtonTemplate");
 
 function SPF2.LeftSort:OnLoad()
@@ -24,7 +27,7 @@ function SPF2.LeftSort:OnShow()
 		if SPF2:Custom("RightMenu")["disabled"] then
 			SPF2:SavedData()["GroupBy"] = nil;
 		end
-		SPF2.LeftSort.tooltipText = SPF2:Custom("LeftMenu")["tooltip"] or "Sort recipes by the sub-class of the crafted item.";
+		SPF2.LeftSort.tooltipText = SPF2:Custom("LeftMenu")["tooltip"] or L["ALL_SUBCLASSES_TOOLTIP"];
 		SPF2.LeftSort:SetChecked(SPF2:SavedData()["GroupBy"] ~= "Right");
 	end
 	
