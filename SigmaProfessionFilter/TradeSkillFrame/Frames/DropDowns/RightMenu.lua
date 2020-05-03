@@ -10,6 +10,9 @@ function SPF2.RightMenu.OnLoad()
 	
 	UIDropDownMenu_SetWidth(SPF2.RightMenu, 120);
 	
+	UIDropDownMenu_SetSelectedID(SPF2.RightMenu, 1);
+	SPF2:SetSelected("Right", 0);
+	
 	-- LeatrixPlus compatibility
 	if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
 		SPF2.RightMenu:SetPoint("TOPRIGHT", TradeSkillFrame, "TOPRIGHT", -34, -40);
@@ -30,7 +33,7 @@ function SPF2.RightMenu:OnShow()
 	else
 		TradeSkillInvSlotDropDown:Hide();
 		UIDropDownMenu_Initialize(SPF2.RightMenu, SPF2:Custom("RightMenu")["Initialize"] or SPF2.RightMenu.Initialize);
-		UIDropDownMenu_SetSelectedID(SPF2.RightMenu, 1);
+		UIDropDownMenu_SetSelectedID(SPF2.RightMenu, SPF2:GetSelected("Right") + 1);
 	end
 	
 	if SPF2:SavedData()["SearchBox"] then
