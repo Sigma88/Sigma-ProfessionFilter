@@ -2,7 +2,6 @@ local _, L = ...;
 
 -- Profession
 L["PROFESSION"] = "Beast Training";
-L["PROFESSION"] = "Doma de bestias";
 -- PetFamilies
 L["PET_FAMILY_01"] = "Wolf";
 L["PET_FAMILY_02"] = "Cat";
