@@ -9,7 +9,10 @@ function SPF1.LeftMenu:OnLoad()
 	hooksecurefunc("CraftFrame_OnShow", SPF1.LeftMenu.OnShow);
 
 	UIDropDownMenu_SetWidth(SPF1.LeftMenu, 120);
-
+	
+	UIDropDownMenu_Initialize(SPF1.LeftMenu, SPF1:Custom("LeftMenu")["Initialize"] or SPF1.LeftMenu.Initialize);
+	UIDropDownMenu_SetSelectedID(SPF1.LeftMenu, 1);
+	
 	-- LeatrixPlus compatibility
 	if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
 		SPF1.LeftMenu:SetPoint("TOPRIGHT", CraftFrame, "TOPRIGHT", -204, -40);
@@ -21,7 +24,7 @@ function SPF1.LeftMenu:OnShow()
         SPF1.LeftMenu:Hide();
 	else
 		UIDropDownMenu_Initialize(SPF1.LeftMenu, SPF1:Custom("LeftMenu")["Initialize"] or SPF1.LeftMenu.Initialize);
-		UIDropDownMenu_SetSelectedID(SPF1.LeftMenu, 1);
+		UIDropDownMenu_SetSelectedID(SPF1.LeftMenu, SPF1:GetSelected("Left"));
     end
 end
 
