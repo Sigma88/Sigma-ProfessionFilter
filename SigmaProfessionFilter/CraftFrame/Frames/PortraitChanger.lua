@@ -74,12 +74,14 @@ end
 function SPF1.PortraitChanger:DefaultTooltip()
 	local spellBookIndex, spellRank = SPF1.PortraitChanger.GetTooltipInfo();
 	
-	GameTooltip:SetSpellBookItem(spellBookIndex, BOOKTYPE_SPELL);
-	GameTooltipTextRight1:SetText(spellRank);
-	GameTooltipTextRight1:SetTextColor(0.5, 0.5, 0.5, 1);
-	GameTooltipTextRight1:Show();
-	GameTooltipTextRight1:ClearAllPoints();
-	GameTooltipTextRight1:SetPoint("RIGHT", GameTooltipTextLeft1, "LEFT", GameTooltip:GetWidth() - 20, 0);
+	if spellBookIndex then
+		GameTooltip:SetSpellBookItem(spellBookIndex, BOOKTYPE_SPELL);
+		GameTooltipTextRight1:SetText(spellRank);
+		GameTooltipTextRight1:SetTextColor(0.5, 0.5, 0.5, 1);
+		GameTooltipTextRight1:Show();
+		GameTooltipTextRight1:ClearAllPoints();
+		GameTooltipTextRight1:SetPoint("RIGHT", GameTooltipTextLeft1, "LEFT", GameTooltip:GetWidth() - 20, 0);
+	end
 end
 
 function SPF1.PortraitChanger.GetTooltipInfo()
