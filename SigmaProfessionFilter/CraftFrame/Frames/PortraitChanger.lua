@@ -35,7 +35,7 @@ function SPF1.PortraitChanger:OnUpdate()
 end
 
 function SPF1.PortraitChanger:OnEvent(event, arg1, ...)
-	if (event == "UNIT_PET" and arg1 == "player") then
+	if (CraftFrame:IsVisible() and event == "UNIT_PET" and arg1 == "player") then
 		SPF1.FullUpdate();
 	end
 end
