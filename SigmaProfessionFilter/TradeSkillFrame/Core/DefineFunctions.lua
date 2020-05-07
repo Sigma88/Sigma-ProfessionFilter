@@ -260,7 +260,7 @@ end
 
 -- Crafting
 function SPF2.GetTradeSkillNumReagents(skillIndex)
-	if SPF2.Data and SPF2.Data[skillIndex] then
+	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
 		return SPF2.baseGetTradeSkillNumReagents(SPF2.Data[skillIndex]["original"]);
 	end
 	return SPF2.baseGetTradeSkillNumReagents(skillIndex);
@@ -354,7 +354,7 @@ function SPF2.GetTradeSkillItemLink(skillIndex)
 end
 
 function SPF2.GetTradeSkillReagentItemLink(skillIndex, reagentIndex)
-	if SPF2.Data and SPF2.Data[skillIndex] then
+	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
 		return SPF2.baseGetTradeSkillReagentItemLink(SPF2.Data[skillIndex]["original"], reagentIndex);
 	end
 	return SPF2.baseGetTradeSkillReagentItemLink(skillIndex, reagentIndex);
