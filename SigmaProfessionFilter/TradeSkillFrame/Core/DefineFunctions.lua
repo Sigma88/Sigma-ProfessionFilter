@@ -43,7 +43,7 @@ function SPF2.GetNumTradeSkills()
 			
 			-- IMPLEMENT CHECKS LATER
 			local leftGroupID = SPF2.LeftMenu:Filter(i, SPF2:GetSelected("Left")) or headerIndex;
-			local rightGroupID = SPF2.RightMenu:Filter(i, SPF2:GetSelected("Right"));
+			local rightGroupID = SPF2.RightMenu:Filter(i, SPF2:GetSelected("Right")) or 0;
 			
 			-- FILTER_1
 			if (not SPF2.Filter1:Filter(i))

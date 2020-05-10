@@ -93,7 +93,7 @@ function SPF2.trim(str)
 end
 
 -- Return the group index if the skill matches the filter
--- Return 0 when to disable the filter
+-- Return 0 to disable the filter
 -- Otherwise return nil
 function SPF2:GetGroup(side, skillIndex, groupIndex)
 	if (SPF2:GetMenu(side)) then
@@ -147,7 +147,7 @@ function SPF2:FilterWithSearchBox(skillIndex)
 			if not SPF2:Custom("LeftMenu")["disabled"] then
 				if SPF2:GetMenu("Left") then
 					for	i,button in ipairs(SPF2:GetMenu("Left")) do
-						local groupIndex = SPF2.LeftMenu:Filter(skillIndex, i);
+						local groupIndex = SPF2.LeftMenu:Filter(skillIndex, i) or 0;
 						if groupIndex > 0 then
 							if strmatch(button.name:lower(), searchFilter) ~= nil then
 								return true;
@@ -167,7 +167,7 @@ function SPF2:FilterWithSearchBox(skillIndex)
 			if not SPF2:Custom("RightMenu")["disabled"] then
 				if SPF2:GetMenu("Right") then
 					for	i,button in ipairs(SPF2:GetMenu("Right")) do
-						local groupIndex = SPF2.RightMenu:Filter(skillIndex, i);
+						local groupIndex = SPF2.RightMenu:Filter(skillIndex, i) or 0;
 						if groupIndex > 0 then
 							if strmatch(button.name:lower(), searchFilter) ~= nil then
 								return true;
