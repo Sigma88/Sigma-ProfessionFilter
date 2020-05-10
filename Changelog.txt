@@ -1,3 +1,12 @@
+**v0.4.0**
+
+- Added Cooking module
+- Simplified Beast Training localization
+- Fixed bug occurring when the CraftFrame is not visible
+- Fixed infinite loop bug
+- Fixed headers bug
+
+
 **v0.3.0**
 
 - Added support for localization
@@ -16,6 +25,7 @@
 
 
 **v0.1.0**
+
 - First Full Release
 - Added support for the TradeSkillFrame
 - Fixed a bug with the CraftFrame DropDowns
