@@ -91,7 +91,6 @@ function SPF2.RightMenu:OnClick(arg1, arg2, checked)
 end
 
 -- Return the group index if the skill matches the filter
--- Return nil to disable the filter
 -- Otherwise return 0
 function SPF2.RightMenu:Filter(skillIndex, groupIndex)
 	if SPF2:Custom("RightMenu")["Filter"] then

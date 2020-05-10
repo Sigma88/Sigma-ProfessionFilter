@@ -23,19 +23,21 @@ end
 
 function SPF1.PortraitChanger:OnUpdate()
 	-- Replace the Portrait Icon
-	if SPF1:SavedData()["ReplacePortrait"] ~= false then
-		CraftFramePortrait:SetTexCoord(0.02,0.96,0.05,0.97);
-		local icon = SPF1.PortraitChanger:GetIcon();
-		if icon then
-			SetPortraitToTexture(CraftFramePortrait, icon);
-			return;
+	if CraftFrame:IsVisible() then
+		if SPF1:SavedData()["ReplacePortrait"] ~= false then
+			CraftFramePortrait:SetTexCoord(0.02,0.96,0.05,0.97);
+			local icon = SPF1.PortraitChanger:GetIcon();
+			if icon then
+				SetPortraitToTexture(CraftFramePortrait, icon);
+				return;
+			end
 		end
+		CraftFramePortrait:SetTexCoord(0,1,0,1);
 	end
-	CraftFramePortrait:SetTexCoord(0,1,0,1);
 end
 
 function SPF1.PortraitChanger:OnEvent(event, arg1, ...)
-	if (event == "UNIT_PET" and arg1 == "player") then
+	if (CraftFrame:IsVisible() and event == "UNIT_PET" and arg1 == "player") then
 		SPF1.FullUpdate();
 	end
 end
