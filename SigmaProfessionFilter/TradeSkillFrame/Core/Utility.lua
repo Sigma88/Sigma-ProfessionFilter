@@ -92,6 +92,16 @@ function SPF2.trim(str)
 	return (str:gsub("^%s*(.-)%s*$", "%1"))
 end
 
+function SPF2.match(str, filter)
+	if str and filter then
+		for f in string.gmatch(filter:lower(), "[^%;]+") do
+			if string.find(str:lower(), f) then
+				return true;
+			end
+		end
+	end
+end
+
 -- Return the group index if the skill matches the filter
 -- Return 0 to disable the filter
 -- Otherwise return nil
@@ -105,16 +115,8 @@ function SPF2:GetGroup(side, skillIndex, groupIndex)
 			
 			local button = SPF2:GetMenu(side)[i];
 			
-			if string.find(button.filter, ";") then
-				for f in string.gmatch(button.filter, "[^%;]+") do
-					if string.find(targetValue, f) then
-						return i;
-					end
-				end
-			else
-				if (string.find(targetValue, button.filter)) then
-					return i;
-				end
+			if SPF2.match(targetValue, button.filter) then
+				return i;
 			end
 			
 			if groupIndex > 0 then
