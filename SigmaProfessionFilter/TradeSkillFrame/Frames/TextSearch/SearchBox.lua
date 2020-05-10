@@ -60,7 +60,7 @@ end
 -- Return a string if the filter matches
 function SPF2.SearchBox:Filter(skillIndex)	
 	if SPF2:Custom("SearchBox")["Filter"] then
-		return SPF2:Custom("SearchBox")["Filter"];
+		return SPF2:Custom("SearchBox")["Filter"](skillIndex);
 	else
 		return SPF2:FilterWithSearchBox(skillIndex);
 	end
