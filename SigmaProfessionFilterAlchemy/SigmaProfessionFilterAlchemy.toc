@@ -1,0 +1,8 @@
+## Interface: 11304
+## Title: Sigma |cffbc5ff4Professions|r |cff111111|r|T136240:13|t |cffffffff[Alchemy]|r
+## Author: Sigma88
+## Notes: Alchemy module for |cffffcf00Sigma|r |cffbc5ff4Profession Filter|r |cff2e91f3(Classic)|r.
+## Dependencies: SigmaProfessionFilter
+
+Localization\enUS.lua
+SigmaProfessionFilterAlchemy.lua

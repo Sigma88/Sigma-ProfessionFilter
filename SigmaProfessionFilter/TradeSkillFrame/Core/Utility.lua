@@ -94,6 +94,9 @@ end
 
 function SPF2.match(str, filter)
 	if str and filter then
+		if #filter == 0 then
+			return true;
+		end
 		for f in string.gmatch(filter:lower(), "[^%;]+") do
 			if string.find(str:lower(), f) then
 				return true;
