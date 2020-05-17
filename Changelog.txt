@@ -1,3 +1,12 @@
+**v0.5.0**
+
+- Added First Aid module
+- Added Mining module
+- Added Poisons module
+- Added Alchemy module
+- Minor bug fixes
+
+
 **v0.4.0**
 
 - Added Cooking module
