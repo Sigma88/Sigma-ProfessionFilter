@@ -51,13 +51,52 @@ function SPF2.Filter2.OnLeave()
     GameTooltip:Hide();
 end
 
+function SPF2.baseTradeSkillHasMats(skillIndex, requiredAmount)
+	
+	local skillName,_, numAvailable = SPF2.baseGetTradeSkillInfo(skillIndex);
+	if numAvailable >= requiredAmount then
+		return true;
+	end
+	
+	local numReagents = SPF2.baseGetTradeSkillNumReagents(skillIndex);
+	local requiredReagents = {};
+	for i=1, numReagents do
+		local reagentName, _, reagentCount, playerReagentCount = SPF2.baseGetTradeSkillReagentInfo(skillIndex, i);
+		if not requiredReagents[reagentName] then
+			requiredReagents[reagentName] = 0;
+		end
+		requiredReagents[reagentName] = requiredReagents[reagentName] + reagentCount * requiredAmount - playerReagentCount;
+	end
+	
+	for i=1, SPF2.baseGetNumTradeSkills() do
+		local name, _, num = SPF2.baseGetTradeSkillInfo(i);
+		if requiredReagents[name] then
+			if SPF2.baseTradeSkillHasMats(i, requiredReagents[name]) then
+				requiredReagents[name] = nil;
+			else
+				return false;
+			end
+		end
+	end
+	
+	for a,b in pairs(requiredReagents) do
+		if b and b > 0 then
+			return false;
+		end
+	end
+	
+	return true;
+end
+
 -- Return True if the skill matches the filter
 function SPF2.Filter2:Filter(skillIndex)
+	
+	if not SPF2.Filter2:GetChecked() then
+		return true;
+	end
+	
 	if SPF2:Custom("Filter2").Filter then
-		return (not SPF2.Filter2:GetChecked() or SPF2:Custom("Filter2").Filter(skillIndex));
-	else
-		local _,_, numAvailable = SPF2.baseGetTradeSkillInfo(skillIndex);
-		return (not SPF2.Filter2:GetChecked() or numAvailable > 0);
+		return SPF2:Custom("Filter2").Filter(skillIndex);
 	end
 end
 
