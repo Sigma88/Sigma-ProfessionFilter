@@ -99,7 +99,9 @@ function SPF2.Filter2:Filter(skillIndex)
 		return SPF2:Custom("Filter2").Filter(skillIndex);
 	end
 	
-	return SPF2.baseTradeSkillHasMats(skillIndex, 1);
+	if SPF2:SavedData()["IncludeCraftableMats"] then
+		return SPF2.baseTradeSkillHasMats(skillIndex, 1);
+	end
 end
 
 SPF2.Filter2:OnLoad();
