@@ -203,7 +203,11 @@ function SPF2.ExpandTradeSkillSubClass(skillIndex)
 		local skillType = SPF2.Data[skillIndex]["skillType"];
 		local skillName = SPF2.Data[skillIndex]["skillName"];
 		
-		if (skillType == "header") then
+		if (skillType == "header") then		
+			if (SPF2.Collapsed == nil) then
+				SPF2.Collapsed = {};
+			end
+			
 			-- Remove if fom the list of collapsed headers
 			SPF2.Collapsed[skillName] = nil;
 		end
