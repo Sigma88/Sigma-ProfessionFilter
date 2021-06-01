@@ -1,3 +1,10 @@
+**v0.6.0**
+
+- Improvements to HasMats filter
+- Added buttons to craft the reagents of the current recipe
+- Minor bug fixes
+
+
 **v0.5.0**
 
 - Added First Aid module

@@ -65,7 +65,7 @@ function SPF2:GetSelected(side)
 	end
 	if SigmaProfessionFilter[GetTradeSkillName()]["Selected"] then
 		return SigmaProfessionFilter[GetTradeSkillName()]["Selected"][side] or 0;
-	end
+		end
 	return 0;
 end
 
@@ -207,7 +207,7 @@ end
 function SPF2.TradeSkillFrame_PostUpdate()
 	
 	-- Update the TradeSkillInputBox
-	SPF2.GetTradeskillRepeatCount();
+	-- SPF2.GetTradeskillRepeatCount();
 	
 	-- Check if there are any headers
 	if SPF2.Headers then
@@ -246,6 +246,92 @@ function SPF2.TradeSkillFrame_PostUpdate()
 end
 
 hooksecurefunc("TradeSkillFrame_Update", SPF2.TradeSkillFrame_PostUpdate);
+
+function SPF2.TradeSkillReagent_OnClick(self, button, down)
+	if button ~= "LeftButton" or IsShiftKeyDown() or IsControlKeyDown() or IsAltKeyDown() then
+		return;
+	end
+	for i=1, MAX_TRADE_SKILL_REAGENTS do
+		if _G["TradeSkillReagent"..i] == self then
+			local reagentName = GetTradeSkillReagentInfo(SPF2.SELECTED, i);
+			local reagentSkill = SPF2.GetTradeSkillFromName(reagentName);
+			if reagentSkill then
+				TradeSkillFrame_SetSelection(reagentSkill);
+				TradeSkillFrame_Update();
+				return;
+			end
+		end
+	end
+end
+
+function SPF2.GetTradeSkillFromName(targetName)
+	for j=1, GetNumTradeSkills() do
+		local skillName = GetTradeSkillInfo(j);
+		if targetName == skillName then
+			return j;
+		end
+	end
+end
+
+for i=1, MAX_TRADE_SKILL_REAGENTS do
+	local reagentButton = _G["TradeSkillReagent"..i];
+	local createButton = CreateFrame("Button", nil, reagentButton, "MagicButtonTemplate");
+	
+	reagentButton:HookScript("OnClick", SPF2.TradeSkillReagent_OnClick);
+	
+	-- Create the Button
+	_G["TradeSkillReagent"..i.."CreateButton"] = createButton;
+	createButton.LeftSeparator:Hide();
+	createButton.RightSeparator:Hide();
+	-- Set size and position
+	createButton:SetWidth(reagentButton:GetWidth());
+	createButton:SetPoint("TOPLEFT", reagentButton, "BOTTOMLEFT", 0, 2);
+	-- Set the text
+	createButton:SetText(CREATE);
+	-- Set Scripts
+	createButton.id = i;
+	
+	function createButton:OnClick()
+		local reagentName, _, reagentCount, playerReagentCount = SPF2.GetTradeSkillReagentInfo(SPF2.SELECTED, createButton.id);
+		
+		local skillIndex = SPF2.Recipes[reagentName];
+		if skillIndex then
+			DoTradeSkill(skillIndex, reagentCount * TradeSkillInputBox:GetNumber() - playerReagentCount);
+		end
+	end
+	
+	createButton:SetScript("OnClick", createButton.OnClick);
+	
+	function createButton:Update()
+		if not TradeSkillFrame:IsVisible() then return; end
+		local reagentName, _, reagentCount, playerReagentCount = SPF2.GetTradeSkillReagentInfo(SPF2.SELECTED, createButton.id);
+		if not SPF2.Recipes[reagentName] then
+			createButton:Hide();
+		else
+			createButton:Show();
+			local createAmount = reagentCount * TradeSkillInputBox:GetNumber() - playerReagentCount;
+			
+			if createAmount < 0 then
+				createAmount = 0;
+			end
+			
+			local _,_, numAvailable = SPF2.baseGetTradeSkillInfo(SPF2.Recipes[reagentName]);
+			
+			createButton:SetEnabled(numAvailable >= createAmount and createAmount > 0);
+			createButton:SetText(CREATE..": "..createAmount);
+		end
+	end
+	hooksecurefunc("TradeSkillFrame_Update", createButton.Update);
+end
+
+for i=1,MAX_TRADE_SKILL_REAGENTS / 2 - 1 do
+	-- left reagent
+	_G["TradeSkillReagent"..(i*2+1)]:ClearAllPoints();
+	_G["TradeSkillReagent"..(i*2+1)]:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i*2-1)], "BOTTOMLEFT", 0, -18);
+	-- right reagent
+	_G["TradeSkillReagent"..(i*2+2)]:ClearAllPoints();
+	_G["TradeSkillReagent"..(i*2+2)]:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i*2)], "BOTTOMLEFT", 0, -18);
+end
 
 function SPF2.ClearTradeSkill()
 	TradeSkillSkillName:Hide();
