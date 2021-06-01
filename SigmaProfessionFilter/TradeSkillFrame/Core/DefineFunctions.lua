@@ -207,6 +207,11 @@ function SPF2.ExpandTradeSkillSubClass(skillIndex)
 		
 		if (skillType == "header") then
 			-- Remove if fom the list of collapsed headers
+			
+			if (SPF2.Collapsed == nil) then
+				SPF2.Collapsed = {};
+			end
+			
 			SPF2.Collapsed[skillName] = nil;
 		end
 	end
