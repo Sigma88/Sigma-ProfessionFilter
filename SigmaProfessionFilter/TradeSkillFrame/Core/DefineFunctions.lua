@@ -22,6 +22,7 @@ function SPF2.GetNumTradeSkills()
 	-- Reset the Data
 	SPF2.FIRST = nil;
 	SPF2.Data = {};
+	SPF2.Recipes = SPF2.Recipes or {};
 	SPF2.Headers = {};
 	SPF2.OriginalHeaders = {};
 	
@@ -33,7 +34,8 @@ function SPF2.GetNumTradeSkills()
 	
 	for i=1, SPF2.baseGetNumTradeSkills() do
 		
-		local skillName, skillType = SPF2.baseGetTradeSkillInfo(i);
+		local skillName, skillType, numAvailable = SPF2.baseGetTradeSkillInfo(i);
+		SPF2.Recipes[skillName] = i; --{ skillIndex = i; }; --numAvailable = numAvailable; };
 		
 		if skillType == "header" then
 			headerIndex = headerIndex + 1;
