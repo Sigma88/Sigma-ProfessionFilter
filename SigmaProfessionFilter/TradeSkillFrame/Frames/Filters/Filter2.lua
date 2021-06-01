@@ -69,9 +69,14 @@ function SPF2.baseTradeSkillHasMats(skillIndex, requiredAmount)
 	for i=1, numReagents do
 		local reagentName, _, reagentCount, playerReagentCount = SPF2.baseGetTradeSkillReagentInfo(skillIndex, i);
 		
+		if not reagentName then
+			return false;
+		end
+		
 		if not requiredReagents[reagentName] then
 			requiredReagents[reagentName] = 0;
 		end
+		
 		requiredReagents[reagentName] = requiredReagents[reagentName] + reagentCount * requiredAmount - playerReagentCount;
 		
 		if SPF2.Recipes[reagentName] then			
