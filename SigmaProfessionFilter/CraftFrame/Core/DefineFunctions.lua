@@ -313,6 +313,17 @@ function SPF1.GetCraftReagentItemLink(id, reagId)
     return SPF1.baseGetCraftReagentItemLink(id, reagId);
 end
 
+function SPF1.GetCraftRecipeLink(id)
+	
+	-- If The Profession is supported
+	if (SPF1.Data and SPF1.Data[id]) and SPF1.Data[id]["original"] then
+		return SPF1.baseGetCraftRecipeLink(SPF1.Data[id]["original"]);
+	end
+	
+	-- Otherwise fall back to the original
+    return SPF1.baseGetCraftRecipeLink(id);
+end
+
 function SPF1.GetCraftIcon(id)
 	
 	local craftIndex = SPF1.GetCraftSelectionIndex();

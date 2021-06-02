@@ -33,6 +33,8 @@ SPF1.baseGetCraftItemLink = GetCraftItemLink;
 GetCraftItemLink = SPF1.GetCraftItemLink;
 SPF1.baseGetCraftReagentItemLink = GetCraftReagentItemLink;
 GetCraftReagentItemLink = SPF1.GetCraftReagentItemLink;
+SPF1.baseGetCraftRecipeLink = GetCraftRecipeLink;
+GetCraftRecipeLink = SPF1.GetCraftRecipeLink;
 
 --During SetSelection
 SPF1.baseGetCraftIcon = GetCraftIcon;

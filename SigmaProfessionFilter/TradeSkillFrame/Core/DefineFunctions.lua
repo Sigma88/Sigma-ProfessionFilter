@@ -374,6 +374,13 @@ function SPF2.GetTradeSkillReagentItemLink(skillIndex, reagentIndex)
 	return SPF2.baseGetTradeSkillReagentItemLink(skillIndex, reagentIndex);
 end
 
+function SPF2.GetTradeSkillRecipeLink(skillIndex)
+	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
+		return SPF2.baseGetTradeSkillRecipeLink(SPF2.Data[skillIndex]["original"]);
+	end
+	return SPF2.baseGetTradeSkillRecipeLink(skillIndex);
+end
+
 function SPF2.GetFirstTradeSkill()
 	
 	if not (SPF2.Data and #SPF2.Data > 0)then

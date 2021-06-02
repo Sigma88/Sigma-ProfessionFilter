@@ -33,6 +33,8 @@ SPF2.baseGetTradeSkillItemLink = GetTradeSkillItemLink;
 GetTradeSkillItemLink = SPF2.GetTradeSkillItemLink;
 SPF2.baseGetTradeSkillReagentItemLink = GetTradeSkillReagentItemLink;
 GetTradeSkillReagentItemLink = SPF2.GetTradeSkillReagentItemLink;
+SPF2.baseGetTradeSkillRecipeLink = GetTradeSkillRecipeLink;
+GetTradeSkillRecipeLink = SPF2.GetTradeSkillRecipeLink;
 
 --During SetSelection
 SPF2.baseGetTradeSkillIcon = GetTradeSkillIcon;
