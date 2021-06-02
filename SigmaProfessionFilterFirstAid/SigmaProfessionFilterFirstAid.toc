@@ -1,7 +1,7 @@
-## Interface: 20501
+## Interface: 11307
 ## Title: Sigma |cffbc5ff4Professions|r |cff888888|r|T135966:13|t |cffffffff[First Aid]|r
 ## Author: Sigma88
-## Notes: First Aid module for |cffffcf00Sigma|r |cffbc5ff4Profession Filter|r |cffb1f22e(TBC Classic)|r.
+## Notes: First Aid module for |cffffcf00Sigma|r |cffbc5ff4Profession Filter|r |cff2e91f3(Classic)|r.
 ## Dependencies: SigmaProfessionFilter
 
 Localization\enUS.lua
