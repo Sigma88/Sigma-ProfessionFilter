@@ -1,5 +1,5 @@
 ## Interface: 20501
-## Title: Sigma |cffbc5ff4Profession Filter|r |cff8ff32e(TBC Classic)|r
+## Title: Sigma |cffbc5ff4Profession Filter|r |cffb1f22e(TBC Classic)|r
 ## Author: Sigma88
 ## Notes: v0.6.0 |cff00ff00Release|r
 ## SavedVariablesPerCharacter: SigmaProfessionFilter_SavedVariables
