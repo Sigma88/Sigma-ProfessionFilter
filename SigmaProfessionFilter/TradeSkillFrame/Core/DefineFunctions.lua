@@ -217,6 +217,7 @@ function SPF2.ExpandTradeSkillSubClass(skillIndex)
 	end
 	
     SPF2.FullUpdate();
+	SPF2.ONCLICK = skillIndex;
 end
 
 -- Collapse
@@ -247,6 +248,7 @@ function SPF2.CollapseTradeSkillSubClass(skillIndex)
 	end
 	
     SPF2.FullUpdate();
+	SPF2.ONCLICK = skillIndex;
 end
 
 -- Select TradeSkill
@@ -263,6 +265,11 @@ function SPF2.GetTradeSkillSelectionIndex()
 		return SPF2.SELECTED;
 	end
 	return SPF2.baseGetTradeSkillSelectionIndex();
+end
+
+function SPF2.TradeSkillSkillButton_OnClick(self, ...)
+	SPF2.ONCLICK = self:GetID();
+	SPF2.baseTradeSkillSkillButton_OnClick(self, ...);
 end
 
 -- Crafting
