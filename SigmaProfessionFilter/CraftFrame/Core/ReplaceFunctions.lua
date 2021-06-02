@@ -56,6 +56,9 @@ SPF1.baseGetCraftSelectionIndex = GetCraftSelectionIndex;
 --SPF1.baseCraftFrame_SetSelection = CraftFrame_SetSelection; INCLUDED IN SigmaProfessionFilter/CraftFrame/Core/Blizzard_CraftUI.lua
 CraftFrame_SetSelection = SPF1.CraftFrame_SetSelection;
 
+SPF1.baseCraftButton_OnClick = CraftButton_OnClick;
+CraftButton_OnClick = SPF1.CraftButton_OnClick;
+
 -- Blizzard_CraftUI
 SPF1.baseCraftFrame_OnEvent = CraftFrame_OnEvent;
 CraftFrame_OnEvent = SPF1.CraftFrame_OnEvent;

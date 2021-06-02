@@ -179,6 +179,7 @@ function SPF1.ExpandCraftSkillLine(id)
 	end
 	
     SPF1.FullUpdate();
+	SPF1.ONCLICK = id;
 end
 
 -- Collapse
@@ -214,6 +215,7 @@ function SPF1.CollapseCraftSkillLine(id)
 	end
 	
     SPF1.FullUpdate();
+	SPF1.ONCLICK = id;
 end
 
 -- Select Craft
@@ -232,6 +234,11 @@ function SPF1.SelectCraft(id)
 	else
 		SPF1.baseSelectCraft(id);
 	end
+end
+
+function SPF1.CraftButton_OnClick(self, ...)
+	SPF1.ONCLICK = self:GetID();
+	SPF1.baseCraftButton_OnClick(self, ...);
 end
 
 -- Crafting
