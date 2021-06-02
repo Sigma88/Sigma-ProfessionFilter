@@ -215,6 +215,7 @@ function SPF2.TradeSkillFrame_PostUpdate()
 		if #SPF2.Headers > 0 then
 			-- If has headers then move all the names to the right
 			for i=1, TRADE_SKILLS_DISPLAYED, 1 do
+				_G["TradeSkillSkill"..i.."Text"]:ClearAllPoints();
 				if i == SPF2.ONCLICK then
 					SPF2.ONCLICK = nil;
 					_G["TradeSkillSkill"..i.."Text"]:SetPoint("LEFT", "TradeSkillSkill"..i, "LEFT", 22.65, -1.65);
