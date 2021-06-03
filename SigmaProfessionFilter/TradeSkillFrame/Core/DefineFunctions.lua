@@ -217,6 +217,7 @@ function SPF2.ExpandTradeSkillSubClass(skillIndex)
 	end
 	
     SPF2.FullUpdate();
+	SPF2.ONCLICK = skillIndex;
 end
 
 -- Collapse
@@ -247,6 +248,7 @@ function SPF2.CollapseTradeSkillSubClass(skillIndex)
 	end
 	
     SPF2.FullUpdate();
+	SPF2.ONCLICK = skillIndex;
 end
 
 -- Select TradeSkill
@@ -263,6 +265,11 @@ function SPF2.GetTradeSkillSelectionIndex()
 		return SPF2.SELECTED;
 	end
 	return SPF2.baseGetTradeSkillSelectionIndex();
+end
+
+function SPF2.TradeSkillSkillButton_OnClick(self, ...)
+	SPF2.ONCLICK = self:GetID();
+	SPF2.baseTradeSkillSkillButton_OnClick(self, ...);
 end
 
 -- Crafting
@@ -299,28 +306,28 @@ function SPF2.TradeSkillCreateAllButton_OnClick()
 end
 
 function SPF2.GetTradeSkillReagentInfo(skillIndex, i)
-	if SPF2.Data and SPF2.Data[skillIndex] then
+	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
 		return SPF2.baseGetTradeSkillReagentInfo(SPF2.Data[skillIndex]["original"], i);
 	end
 	return SPF2.baseGetTradeSkillReagentInfo(skillIndex, i);
 end
 
 function SPF2.GetTradeSkillIcon(skillIndex)
-	if SPF2.Data and SPF2.Data[skillIndex] then
+	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
 		return SPF2.baseGetTradeSkillIcon(SPF2.Data[skillIndex]["original"]);
 	end
 	return SPF2.baseGetTradeSkillIcon(skillIndex);
 end
 
 function SPF2.GetTradeSkillNumMade(skillIndex)
-	if SPF2.Data and SPF2.Data[skillIndex] then
+	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
 		return SPF2.baseGetTradeSkillNumMade(SPF2.Data[skillIndex]["original"]);
 	end
 	return SPF2.baseGetTradeSkillNumMade(skillIndex);
 end
 
 function SPF2.GetTradeSkillTools(skillIndex)
-	if SPF2.Data and SPF2.Data[skillIndex] then
+	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
 		return SPF2.baseGetTradeSkillTools(SPF2.Data[skillIndex]["original"]);
 	end
 	return SPF2.baseGetTradeSkillTools(skillIndex);
@@ -354,23 +361,24 @@ function SPF2.TradeSkillFrame_OnShow(self)
 end
 
 function SPF2.GetTradeSkillItemLink(skillIndex)
-	if SPF2.Data and SPF2.Data[skillIndex] then
-		if SPF2.Data[skillIndex]["original"] then
-			return SPF2.baseGetTradeSkillItemLink(SPF2.Data[skillIndex]["original"]);
-		else
-			return nil;
-		end
+	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
+		return SPF2.baseGetTradeSkillItemLink(SPF2.Data[skillIndex]["original"]);
 	end
 	return SPF2.baseGetTradeSkillItemLink(skillIndex);
 end
 
 function SPF2.GetTradeSkillReagentItemLink(skillIndex, reagentIndex)
-	if SPF2.Data and SPF2.Data[skillIndex] then
-		if SPF2.Data[skillIndex]["original"] then
-			return SPF2.baseGetTradeSkillReagentItemLink(SPF2.Data[skillIndex]["original"], reagentIndex);
-		end
+	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
+		return SPF2.baseGetTradeSkillReagentItemLink(SPF2.Data[skillIndex]["original"], reagentIndex);
 	end
 	return SPF2.baseGetTradeSkillReagentItemLink(skillIndex, reagentIndex);
+end
+
+function SPF2.GetTradeSkillRecipeLink(skillIndex)
+	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
+		return SPF2.baseGetTradeSkillRecipeLink(SPF2.Data[skillIndex]["original"]);
+	end
+	return SPF2.baseGetTradeSkillRecipeLink(skillIndex);
 end
 
 function SPF2.GetFirstTradeSkill()
@@ -407,7 +415,7 @@ end
 
 SPF2.GameTooltip = {};
 function SPF2.GameTooltip.SetTradeSkillItem(this, skillIndex, reagentIndex)
-	if SPF2.Data and SPF2.Data[skillIndex] then
+	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
 		return SPF2.GameTooltip.baseSetTradeSkillItem(this, SPF2.Data[skillIndex]["original"], reagentIndex);
 	end
 	return SPF2.GameTooltip.baseSetTradeSkillItem(this, skillIndex, reagentIndex);

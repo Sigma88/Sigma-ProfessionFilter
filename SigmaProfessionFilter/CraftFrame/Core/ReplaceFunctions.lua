@@ -33,6 +33,8 @@ SPF1.baseGetCraftItemLink = GetCraftItemLink;
 GetCraftItemLink = SPF1.GetCraftItemLink;
 SPF1.baseGetCraftReagentItemLink = GetCraftReagentItemLink;
 GetCraftReagentItemLink = SPF1.GetCraftReagentItemLink;
+SPF1.baseGetCraftRecipeLink = GetCraftRecipeLink;
+GetCraftRecipeLink = SPF1.GetCraftRecipeLink;
 
 --During SetSelection
 SPF1.baseGetCraftIcon = GetCraftIcon;
@@ -55,6 +57,9 @@ SPF1.baseGetCraftSelectionIndex = GetCraftSelectionIndex;
 
 --SPF1.baseCraftFrame_SetSelection = CraftFrame_SetSelection; INCLUDED IN SigmaProfessionFilter/CraftFrame/Core/Blizzard_CraftUI.lua
 CraftFrame_SetSelection = SPF1.CraftFrame_SetSelection;
+
+SPF1.baseCraftButton_OnClick = CraftButton_OnClick;
+CraftButton_OnClick = SPF1.CraftButton_OnClick;
 
 -- Blizzard_CraftUI
 SPF1.baseCraftFrame_OnEvent = CraftFrame_OnEvent;
