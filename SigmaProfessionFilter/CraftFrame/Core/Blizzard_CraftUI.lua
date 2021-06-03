@@ -221,13 +221,25 @@ function SPF1.CraftFrame_Update()
 	if ( numHeaders > 0 ) then
 		-- If has headers then move all the names to the right
 		for i=1, CRAFTS_DISPLAYED, 1 do
-			_G["Craft"..i.."Text"]:SetPoint("TOPLEFT", "Craft"..i, "TOPLEFT", 21, 0);
+			_G["Craft"..i.."Text"]:ClearAllPoints();
+			if i == SPF1.ONCLICK then
+				SPF1.ONCLICK = nil;
+				_G["Craft"..i.."Text"]:SetPoint("TOPLEFT", "Craft"..i, "TOPLEFT", 22.65, -1.65);
+			else
+				_G["Craft"..i.."Text"]:SetPoint("TOPLEFT", "Craft"..i, "TOPLEFT", 21, 0);
+			end
 		end
 		CraftExpandButtonFrame:Show();
 	else
 		-- If no headers then move all the names to the left
 		for i=1, CRAFTS_DISPLAYED, 1 do
-			_G["Craft"..i.."Text"]:SetPoint("TOPLEFT", "Craft"..i, "TOPLEFT", 3, 0);
+			_G["Craft"..i.."Text"]:ClearAllPoints();
+			if i == SPF1.ONCLICK then
+				SPF1.ONCLICK = nil;
+				_G["Craft"..i.."Text"]:SetPoint("TOPLEFT", "Craft"..i, "TOPLEFT", 4.65, -1.65);
+			else
+				_G["Craft"..i.."Text"]:SetPoint("TOPLEFT", "Craft"..i, "TOPLEFT", 3, 0);
+			end
 		end
 		CraftExpandButtonFrame:Hide();
 	end
