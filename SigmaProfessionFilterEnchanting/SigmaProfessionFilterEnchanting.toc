@@ -1,7 +1,7 @@
-## Interface: 11307
+## Interface: 20501
 ## Title: Sigma |cffbc5ff4Professions|r |cff333333|r|T136244:13|t |cffffffff[Enchanting]|r
 ## Author: Sigma88
-## Notes: Enchanting module for |cffffcf00Sigma|r |cffbc5ff4Profession Filter|r |cff2e91f3(Classic)|r.
+## Notes: Enchanting module for |cffffcf00Sigma|r |cffbc5ff4Profession Filter|r |cffb1f22e(TBC Classic)|r.
 ## Dependencies: SigmaProfessionFilter
 
 Localization\enUS.lua
