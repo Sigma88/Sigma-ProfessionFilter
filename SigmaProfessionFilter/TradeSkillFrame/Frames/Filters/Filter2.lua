@@ -66,7 +66,7 @@ function SPF2.baseTradeSkillHasMats(skillIndex, requiredAmount)
 		return true;
 	end
 	
-	if not SPF2:SavedData()["IncludeCraftableMats"] then
+	if SPF2:SavedData()["IncludeCraftableMats"] == false then
 		return false;
 	end
 	
