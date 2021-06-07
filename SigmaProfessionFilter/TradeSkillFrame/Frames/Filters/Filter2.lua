@@ -6,7 +6,7 @@ SPF2.Filter2 = CreateFrame("CheckButton", nil, TradeSkillFrame, "UICheckButtonTe
 function SPF2.Filter2.OnLoad()
 	SPF2.Filter2:SetWidth(15);
 	SPF2.Filter2:SetHeight(15);
-	SPF2.Filter2:SetPoint("TOPLEFT", TradeSkillFrame, "TOPLEFT", 225, -54);
+	SPF2.Filter2:SetPoint("LEFT", SPF2.Filter1.text, "RIGHT", 10, 0);
 	SPF2.Filter2:SetHitRectInsets(0, -60, 0, 0);
 	SPF2.Filter2:SetFrameLevel(4);
 	
@@ -16,17 +16,24 @@ function SPF2.Filter2.OnLoad()
 	SPF2.Filter2:SetScript("OnClick", SPF2.Filter2.OnClick);
 	SPF2.Filter2:SetScript("OnEnter", SPF2.Filter2.OnEnter);
 	SPF2.Filter2:SetScript("OnLeave", SPF2.Filter2.OnLeave);
-	
-	--LeatrixPlus compatibility
-    if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
-		SPF2.Filter2:SetPoint("TOPLEFT", TradeSkillFrame, "TOPLEFT", 225, -57);
-    end
 end
 
 function SPF2.Filter2:OnShow()
 	SPF2.Filter2:Show();
 	SPF2.Filter2.text:SetText(SPF2:Custom("Filter2")["text"] or L["HAVE_MATS"]);
 	SPF2.Filter2.tooltipText = SPF2:Custom("Filter2")["tooltip"] or L["HAVE_MATS_TOOLTIP"];
+	
+	-- When the text is too big, shrink it
+	if (SPF2.Filter1.text:GetWidth() + SPF2.Filter2.text:GetWidth() > 172) then
+		
+		-- Block text height
+		SPF2.Filter1.text:SetHeight(SPF2.Filter1.text:GetHeight());
+		SPF2.Filter2.text:SetHeight(SPF2.Filter2.text:GetHeight());
+		
+		-- Fancy way of saying (SPF2.Filter1.text:GetWidth() / (SPF2.Filter1.text:GetWidth() + SPF2.Filter2.text:GetWidth()) * 172)
+		SPF2.Filter1.text:SetWidth(172 / ( 1 + (SPF2.Filter2.text:GetWidth() / SPF2.Filter1.text:GetWidth())));
+		SPF2.Filter2.text:SetWidth(172 - SPF2.Filter1.text:GetWidth());
+	end
 end
 
 function SPF2.Filter2:OnClick()
