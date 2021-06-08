@@ -14,7 +14,7 @@ SigmaProfessionFilter.L = {
 	
 	-- CraftFrame\Frames\TextSearch\Search.lua
 	-- TradeSkillFrame\Frames\TextSearch\Search.lua
-	["SEARCH"] = "Search";
+	["SEARCH"] = SEARCH;
 	["SEARCH_TOOLTIP"] = "Toggle the Search Box.";
 	
 	-- TradeSkillFrame\Frames\DropDowns\LeftSort.lua
