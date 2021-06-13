@@ -6,8 +6,7 @@ SPF2.Filter1 = CreateFrame("CheckButton", nil, TradeSkillFrame, "UICheckButtonTe
 function SPF2.Filter1.OnLoad()
 	SPF2.Filter1:SetWidth(15);
 	SPF2.Filter1:SetHeight(15);
-	SPF2.Filter1:SetPoint("TOPLEFT", TradeSkillFrame, "TOPLEFT", 135, -54);
-	SPF2.Filter1:SetHitRectInsets(0, -60, 0, 0);
+	SPF2.Filter1:SetPoint("LEFT", SPF2.Search.text, "RIGHT", 15, 0);
 	SPF2.Filter1:SetFrameLevel(4);
 	
 	SPF2.Filter1:SetScript("OnShow", SPF2.Filter1.OnShow);
@@ -16,11 +15,6 @@ function SPF2.Filter1.OnLoad()
 	SPF2.Filter1:SetScript("OnClick", SPF2.Filter1.OnClick);
 	SPF2.Filter1:SetScript("OnEnter", SPF2.Filter1.OnEnter);
 	SPF2.Filter1:SetScript("OnLeave", SPF2.Filter1.OnLeave);
-	
-	--LeatrixPlus compatibility
-    if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
-		SPF2.Filter1:SetPoint("TOPLEFT", TradeSkillFrame, "TOPLEFT", 135, -57);
-    end
 end
 
 function SPF2.Filter1:OnShow()
