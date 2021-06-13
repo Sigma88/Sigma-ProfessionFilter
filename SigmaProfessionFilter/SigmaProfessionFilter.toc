@@ -37,10 +37,10 @@ TradeSkillFrame\Frames\DropDowns\LeftMenu.lua
 TradeSkillFrame\Frames\DropDowns\LeftSort.lua
 TradeSkillFrame\Frames\DropDowns\RightMenu.lua
 TradeSkillFrame\Frames\DropDowns\RightSort.lua
-TradeSkillFrame\Frames\Filters\Filter1.lua
-TradeSkillFrame\Frames\Filters\Filter2.lua
 TradeSkillFrame\Frames\TextSearch\SearchBox.lua
 TradeSkillFrame\Frames\TextSearch\Search.lua
+TradeSkillFrame\Frames\Filters\Filter1.lua
+TradeSkillFrame\Frames\Filters\Filter2.lua
 TradeSkillFrame\Frames\PortraitChanger.lua
 TradeSkillFrame\Frames\LeatrixPlusCompatibility.lua
 TradeSkillFrame\Frames\ElvUICompatibility.lua
