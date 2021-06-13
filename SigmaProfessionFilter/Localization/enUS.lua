@@ -11,6 +11,8 @@ SigmaProfessionFilter.L = {
 	-- TradeSkillFrame\Frames\Filters\Filter2.lua
 	["HAVE_MATS"] = CRAFT_IS_MAKEABLE;
 	["HAVE_MATS_TOOLTIP"] = CRAFT_IS_MAKEABLE_TOOLTIP;
+	["Filter2RightClickON"] = function() return "|cffbc5ff4[Sigma-ProfessionFilter]|r: Recursive '"..SigmaProfessionFilter[2].Filter2.text:GetText().."' = |cff00ff00ON|r"; end;
+	["Filter2RightClickOFF"] = function() return "|cffbc5ff4[Sigma-ProfessionFilter]|r: Recursive '"..SigmaProfessionFilter[2].Filter2.text:GetText().."' = |cffff0000OFF|r"; end;
 	
 	-- CraftFrame\Frames\TextSearch\Search.lua
 	-- TradeSkillFrame\Frames\TextSearch\Search.lua

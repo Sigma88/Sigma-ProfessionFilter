@@ -4,6 +4,8 @@ local SPF2 = SigmaProfessionFilter[2];
 SPF2.Filter2 = CreateFrame("CheckButton", nil, TradeSkillFrame, "UICheckButtonTemplate");
 
 function SPF2.Filter2.OnLoad()
+	SPF2.Filter2:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+	
 	SPF2.Filter2:SetWidth(15);
 	SPF2.Filter2:SetHeight(15);
 	SPF2.Filter2:SetPoint("LEFT", SPF2.Filter1.text, "RIGHT", 10, 0);
@@ -58,15 +60,34 @@ function SPF2.Filter2:OnShow()
 	end
 end
 
-function SPF2.Filter2:OnClick()
-	if (SPF2.Filter2:GetChecked()) then
-        PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
-		SPF2:SavedData()["Filter2"] = true;
-    else
-        PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
-		SPF2:SavedData()["Filter2"] = nil;
-    end
+function SPF2.Filter2:OnClick(button)
+	if (button == "LeftButton") then
+		if (SPF2.Filter2:GetChecked()) then
+			PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
+			SPF2:SavedData()["Filter2"] = true;
+		else
+			PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
+			SPF2:SavedData()["Filter2"] = nil;
+		end
+	else
+		SPF2.Filter2:SetChecked(not(SPF2.Filter2:GetChecked()));
+		if SPF2:Custom("Filter2")["OnRightClick"] then
+			SPF2:Custom("Filter2")["OnRightClick"]();
+		else
+			SPF2.Filter2:OnRightClick();
+		end
+	end
     SPF2.FullUpdate();
+end
+
+function SPF2.Filter2:OnRightClick()
+	if SPF2:SavedData()["IncludeCraftableMats"] == nil then
+		SPF2:SavedData()["IncludeCraftableMats"] = false;
+		print(L["Filter2RightClickOFF"]());
+	else
+		SPF2:SavedData()["IncludeCraftableMats"] = nil
+		print(L["Filter2RightClickON"]());
+	end
 end
 
 function SPF2.Filter2:OnEnter()
