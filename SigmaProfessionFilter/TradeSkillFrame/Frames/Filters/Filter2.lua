@@ -81,7 +81,7 @@ function SPF2.Filter2:OnClick(button)
 end
 
 function SPF2.Filter2:OnRightClick()
-	if SPF2:SavedData()["IncludeCraftableMats"] == nil then
+	if SPF2:SavedData()["IncludeCraftableMats"] ~= false then
 		SPF2:SavedData()["IncludeCraftableMats"] = false;
 		print(L["Filter2RightClickOFF"]());
 	else
