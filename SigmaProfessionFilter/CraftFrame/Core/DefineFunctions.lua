@@ -294,7 +294,7 @@ end
 function SPF1.GetCraftItemLink(id)
 	
 	-- If The Profession is supported
-	if (SPF1.Data and SPF1.Data[id]) then
+	if (SPF1.Data and SPF1.Data[id] and SPF1.Data[id]["original"]) then
 		return SPF1.baseGetCraftItemLink(SPF1.Data[id]["original"]);
 	end
 	
@@ -305,7 +305,7 @@ end
 function SPF1.GetCraftReagentItemLink(id, reagId)
 	
 	-- If The Profession is supported
-	if (SPF1.Data and SPF1.Data[id]) then
+	if (SPF1.Data and SPF1.Data[id] and SPF1.Data[id]["original"]) then
 		return SPF1.baseGetCraftReagentItemLink(SPF1.Data[id]["original"], reagId);
 	end
 	
@@ -329,7 +329,7 @@ function SPF1.GetCraftIcon(id)
 	local craftIndex = SPF1.GetCraftSelectionIndex();
 	
 	-- If The Profession is supported
-	if (SPF1.Data and SPF1.Data[craftIndex]) then
+	if (SPF1.Data and SPF1.Data[craftIndex] and SPF1.Data[craftIndex]["original"]) then
 		return SPF1.baseGetCraftIcon(SPF1.Data[craftIndex]["original"]);
 	end
 	
@@ -340,7 +340,7 @@ end
 function SPF1.GetCraftDescription(id)
 	
 	-- If The Profession is supported
-	if (SPF1.Data and SPF1.Data[id]) then
+	if (SPF1.Data and SPF1.Data[id] and SPF1.Data[id]["original"]) then
 		return SPF1.baseGetCraftDescription(SPF1.Data[id]["original"]);
 	end
 	
@@ -351,7 +351,7 @@ end
 function SPF1.GetCraftNumReagents(id)
 	
 	-- If The Profession is supported
-	if (SPF1.Data and SPF1.Data[id]) then
+	if (SPF1.Data and SPF1.Data[id] and SPF1.Data[id]["original"]) then
 		return SPF1.baseGetCraftNumReagents(SPF1.Data[id]["original"]);
 	end
 	
@@ -362,7 +362,7 @@ end
 function SPF1.GetCraftReagentInfo(id, reagId)
 	
 	-- If The Profession is supported
-	if (SPF1.Data and SPF1.Data[id]) then
+	if (SPF1.Data and SPF1.Data[id] and SPF1.Data[id]["original"]) then
 		return SPF1.baseGetCraftReagentInfo(SPF1.Data[id]["original"], reagId);
 	end
 	
@@ -373,7 +373,7 @@ end
 function SPF1.GetCraftSpellFocus(id)
 	
 	-- If The Profession is supported
-	if (SPF1.Data and SPF1.Data[id]) then
+	if (SPF1.Data and SPF1.Data[id] and SPF1.Data[id]["original"]) then
 		return SPF1.baseGetCraftSpellFocus(SPF1.Data[id]["original"]);
 	end
 	
