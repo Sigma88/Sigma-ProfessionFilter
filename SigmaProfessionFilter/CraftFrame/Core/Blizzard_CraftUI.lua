@@ -159,7 +159,7 @@ function SPF1.CraftFrame_Update()
 					craftButton:SetText(" "..craftName);
 				else
 					craftButton:SetText(" "..craftName.." ["..numAvailable.."]");
-					end
+				end
 				if ( craftSubSpellName and craftSubSpellName ~= "" ) then
 					craftButtonSubText:SetText(format(PARENS_TEMPLATE, craftSubSpellName));
 					craftButtonText:SetWidth(0);
@@ -272,6 +272,21 @@ function SPF1.baseCraftFrame_SetSelection(id)
 	CraftName:SetText(craftName);
 	CraftIcon:SetNormalTexture(GetCraftIcon(id));
 	
+	-- Set number of items that are generated
+	local minMade,maxMade = GetCraftNumMade(id);
+	if ( maxMade > 1 ) then
+		if ( minMade == maxMade ) then
+			CraftIconCount:SetText(minMade);
+		else
+			CraftIconCount:SetText(minMade.."-"..maxMade);
+		end
+		if ( CraftIconCount:GetWidth() > 39 ) then
+			CraftIconCount:SetText("~"..floor((minMade + maxMade)/2));
+		end
+	else
+		CraftIconCount:SetText("");
+	end
+
 	if ( GetCraftDescription(id) ) then
 		CraftDescription:SetText(GetCraftDescription(id));
 		CraftReagentLabel:SetPoint("TOPLEFT", "CraftDescription", "BOTTOMLEFT", 0, -10);
@@ -280,6 +295,13 @@ function SPF1.baseCraftFrame_SetSelection(id)
 		CraftReagentLabel:SetPoint("TOPLEFT", "CraftDescription", "TOPLEFT", 0, 0);
 	end
 	
+	-- Set cooldown data
+	local craftCooldownTime = GetCraftCooldown(id);
+	if craftCooldownTime then
+		CraftCooldown:SetText(COOLDOWN_REMAINING.." "..SecondsToTime(craftCooldownTime));
+	else
+		CraftCooldown:SetText("");
+	end
 	
 	-- Reagents
 	local creatable = 1;
