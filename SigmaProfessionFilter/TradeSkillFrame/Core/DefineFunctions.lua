@@ -312,6 +312,13 @@ function SPF2.GetTradeSkillReagentInfo(skillIndex, i)
 	return SPF2.baseGetTradeSkillReagentInfo(skillIndex, i);
 end
 
+function SPF2.GetTradeSkillCooldown(skillIndex)
+	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
+		return SPF2.baseGetTradeSkillCooldown(SPF2.Data[skillIndex]["original"]);
+	end
+	return SPF2.baseGetTradeSkillCooldown(skillIndex, i);
+end
+
 function SPF2.GetTradeSkillIcon(skillIndex)
 	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
 		return SPF2.baseGetTradeSkillIcon(SPF2.Data[skillIndex]["original"]);

@@ -380,3 +380,14 @@ function SPF1.GetCraftSpellFocus(id)
 	-- Otherwise fall back to the original
     return SPF1.baseGetCraftSpellFocus(id);
 end
+
+function SPF1.GetCraftCooldown(id)
+	
+	-- If The Profession is supported
+	if (SPF1.Data and SPF1.Data[id] and SPF1.Data[id]["original"]) then
+		return SPF1.baseGetCraftCooldown(SPF1.Data[id]["original"]);
+	end
+	
+	-- Otherwise fall back to the original
+    return SPF1.baseGetCraftCooldown(id);
+end

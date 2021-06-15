@@ -46,6 +46,9 @@ GetTradeSkillNumReagents = SPF2.GetTradeSkillNumReagents;
 SPF2.baseGetTradeSkillReagentInfo = GetTradeSkillReagentInfo;
 GetTradeSkillReagentInfo = SPF2.GetTradeSkillReagentInfo;
 
+SPF2.baseGetTradeSkillCooldown = GetTradeSkillCooldown;
+GetTradeSkillCooldown = SPF2.GetTradeSkillCooldown;
+
 
 SPF2.baseTradeSkillSkillButton_OnClick = TradeSkillSkillButton_OnClick;
 TradeSkillSkillButton_OnClick = SPF2.TradeSkillSkillButton_OnClick;
