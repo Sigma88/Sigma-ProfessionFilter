@@ -83,10 +83,10 @@ end
 function SPF2.Filter2:OnRightClick()
 	if SPF2:SavedData()["IncludeCraftableMats"] ~= false then
 		SPF2:SavedData()["IncludeCraftableMats"] = false;
-		print(L["Filter2RightClickOFF"]());
+		print("|cffbc5ff4[SPF]|r|cffffcf00["..GetTradeSkillName().."]|r: "..L["TradeSkillFilter2RightClickOFF"]);
 	else
-		SPF2:SavedData()["IncludeCraftableMats"] = nil
-		print(L["Filter2RightClickON"]());
+		SPF2:SavedData()["IncludeCraftableMats"] = nil;
+		print("|cffbc5ff4[SPF]|r|cffffcf00["..GetTradeSkillName().."]|r: "..L["TradeSkillFilter2RightClickON"]);
 	end
 end
 
@@ -95,6 +95,12 @@ function SPF2.Filter2:OnEnter()
         GameTooltip:SetOwner(SPF2.Filter2, "ANCHOR_TOPLEFT");
         GameTooltip:SetText(SPF2.Filter2.tooltipText, nil, nil, nil, nil, true);
     end
+	if (SPF2:Custom("Filter2")["Tooltip_OnEnter"]) then
+		SPF2:Custom("Filter2")["Tooltip_OnEnter"]();
+	else
+		GameTooltip:AddLine(L["MORE_OPTIONS"], 0.69, 0.69, 0.69, 1);
+		GameTooltip:Show();
+	end
 end
 
 function SPF2.Filter2.OnLeave()
