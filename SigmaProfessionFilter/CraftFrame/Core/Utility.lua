@@ -85,9 +85,11 @@ function SPF1:FilterWithSearchBox(craftIndex)
 		end
 		
 		-- Check the SubName
-		if (SPF1:SavedData()["SearchSubNames"] ~= false) then
-			if strmatch(craftSubSpellName:lower(), searchFilter) ~= nil then
-				return true;
+		if craftSubSpellName then
+			if (SPF1:SavedData()["SearchSubNames"] ~= false) then
+				if strmatch(craftSubSpellName:lower(), searchFilter) ~= nil then
+					return true;
+				end
 			end
 		end
 		
