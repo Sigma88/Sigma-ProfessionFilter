@@ -106,7 +106,7 @@ function SPF1.GetNumCrafts()
 					for j,craftIndex in ipairs(items) do
 						totalCount = totalCount + 1;
 						
-						if (not firstRecipe) then 
+						if (not firstRecipe) then
 							firstRecipe = totalCount;
 							SPF1.FIRST = totalCount;
 						end
@@ -127,7 +127,7 @@ function SPF1.GetNumCrafts()
 	if LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On" then
 		if SPF1.FIRST and #SPF1.Headers == 0 then
 			CRAFTS_DISPLAYED = 23;
-		else 
+		else
 			CRAFTS_DISPLAYED = 22;
 		end
 	end

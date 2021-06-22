@@ -151,7 +151,7 @@ function SPF2.GetNumTradeSkills()
 					for j,skillInfo in ipairs(items) do
 						totalCount = totalCount + 1;
 						
-						if (not SPF2.FIRST) then 
+						if (not SPF2.FIRST) then
 							SPF2.FIRST = totalCount;
 						end
 						
@@ -166,7 +166,7 @@ function SPF2.GetNumTradeSkills()
 	if LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On" then
 		if SPF2.FIRST and #SPF2.Headers == 0 then
 			TRADE_SKILLS_DISPLAYED = 23;
-		else 
+		else
 			TRADE_SKILLS_DISPLAYED = 22;
 		end
 	end

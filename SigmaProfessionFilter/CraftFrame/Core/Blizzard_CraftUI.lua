@@ -163,7 +163,7 @@ function SPF1.CraftFrame_Update()
 				if ( craftSubSpellName and craftSubSpellName ~= "" ) then
 					craftButtonSubText:SetText(format(PARENS_TEMPLATE, craftSubSpellName));
 					craftButtonText:SetWidth(0);
-				else 
+				else
 					craftButtonSubText:SetText("");
 
 					-- A bit of a hack. If there's no subtext, we'll set a width to ensure that we don't overflow.
