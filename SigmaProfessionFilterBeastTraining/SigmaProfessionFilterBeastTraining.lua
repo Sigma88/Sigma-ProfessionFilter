@@ -15,15 +15,31 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 		[06] = { name = L["LEFT_06_NAME"]; filter = L["LEFT_06_FILTER"]; };
 		[07] = { name = L["LEFT_07_NAME"]; filter = L["LEFT_07_FILTER"]; };
 		[08] = { name = L["LEFT_08_NAME"]; filter = L["LEFT_08_FILTER"]; };
+		[09] = { name = L["OTHER"]; filter = "" };
 	};
 	["RightMenu"] = {
 		["title"] = L["RIGHT_TITLE"];
 		["tooltip"] = L["RIGHT_TOOLTIP"];
 		["Filter"] = function(craftIndex, groupIndex)
+			if groupIndex < 4 then
+				SPF1:GetGroup("Right", SPF1.baseGetCraftInfo(craftIndex), groupIndex);
+			end
+			
+			if groupIndex == 4 then
+				local wildAnimals = SPF1:GetGroup("Right", SPF1.baseGetCraftInfo(craftIndex), 2);
+				local petTrainer = SPF1:GetGroup("Right", SPF1.baseGetCraftInfo(craftIndex), 3);
+				if #(wildAnimals..petTrainer) == 0 then
+					return "Other";
+				else
+					return "";
+				end
+			end
+			
 			local groupName = SPF1:GetGroup("Right", SPF1.baseGetCraftInfo(craftIndex), 3);
 			if #(SPF1:GetGroup("Right", SPF1.baseGetCraftInfo(craftIndex), groupIndex)) > 0 then
 				groupName = groupName..(SPF1:GetGroup("Right", SPF1.baseGetCraftInfo(craftIndex), 2));
 			end
+			
 			return groupName;
 		end;
 		["Initialize"] = function()
@@ -41,7 +57,7 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 					info.func = SPF1.RightMenu.OnClick;
 					info.checked = false;
 
-					if i > 2 then
+					if i > 3 then
 						if UnitExists("pet") then
 							local _,_,_,petFamily = GetStablePetInfo(0);
 							if info.text ~= petFamily then
@@ -58,29 +74,30 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 	["Right"] = {
 		[01] = { name = L["RIGHT_01_NAME"]; filter = L["RIGHT_01_FILTER"]; };
 		[02] = { name = L["RIGHT_02_NAME"]; filter = L["RIGHT_02_FILTER"]; };
-		[03] = { name = L["PET_FAMILY_01"]; filter = L["RIGHT_03_FILTER"]; };
-		[04] = { name = L["PET_FAMILY_02"]; filter = L["RIGHT_04_FILTER"]; };
-		[05] = { name = L["PET_FAMILY_03"]; filter = L["RIGHT_05_FILTER"]; };
-		[06] = { name = L["PET_FAMILY_04"]; filter = L["RIGHT_06_FILTER"]; };
-		[07] = { name = L["PET_FAMILY_05"]; filter = L["RIGHT_07_FILTER"]; };
-		[08] = { name = L["PET_FAMILY_06"]; filter = L["RIGHT_08_FILTER"]; };
-		[09] = { name = L["PET_FAMILY_07"]; filter = L["RIGHT_09_FILTER"]; };
-		[10] = { name = L["PET_FAMILY_08"]; filter = L["RIGHT_10_FILTER"]; };
-		[11] = { name = L["PET_FAMILY_09"]; filter = L["RIGHT_11_FILTER"]; };
-		[12] = { name = L["PET_FAMILY_10"]; filter = L["RIGHT_12_FILTER"]; };
-		[13] = { name = L["PET_FAMILY_11"]; filter = L["RIGHT_13_FILTER"]; };
-		[14] = { name = L["PET_FAMILY_12"]; filter = L["RIGHT_14_FILTER"]; };
-		[15] = { name = L["PET_FAMILY_13"]; filter = L["RIGHT_15_FILTER"]; };
-		[16] = { name = L["PET_FAMILY_14"]; filter = L["RIGHT_16_FILTER"]; };
-		[17] = { name = L["PET_FAMILY_15"]; filter = L["RIGHT_17_FILTER"]; };
-		[18] = { name = L["PET_FAMILY_16"]; filter = L["RIGHT_18_FILTER"]; };
-		[19] = { name = L["PET_FAMILY_17"]; filter = L["RIGHT_19_FILTER"]; };
+		[03] = { name = L["OTHER"]; filter = ""; };
+		[04] = { name = L["PET_FAMILY_01"]; filter = L["RIGHT_03_FILTER"]; };
+		[05] = { name = L["PET_FAMILY_02"]; filter = L["RIGHT_04_FILTER"]; };
+		[06] = { name = L["PET_FAMILY_03"]; filter = L["RIGHT_05_FILTER"]; };
+		[07] = { name = L["PET_FAMILY_04"]; filter = L["RIGHT_06_FILTER"]; };
+		[08] = { name = L["PET_FAMILY_05"]; filter = L["RIGHT_07_FILTER"]; };
+		[09] = { name = L["PET_FAMILY_06"]; filter = L["RIGHT_08_FILTER"]; };
+		[10] = { name = L["PET_FAMILY_07"]; filter = L["RIGHT_09_FILTER"]; };
+		[11] = { name = L["PET_FAMILY_08"]; filter = L["RIGHT_10_FILTER"]; };
+		[12] = { name = L["PET_FAMILY_09"]; filter = L["RIGHT_11_FILTER"]; };
+		[13] = { name = L["PET_FAMILY_10"]; filter = L["RIGHT_12_FILTER"]; };
+		[14] = { name = L["PET_FAMILY_11"]; filter = L["RIGHT_13_FILTER"]; };
+		[15] = { name = L["PET_FAMILY_12"]; filter = L["RIGHT_14_FILTER"]; };
+		[16] = { name = L["PET_FAMILY_13"]; filter = L["RIGHT_15_FILTER"]; };
+		[17] = { name = L["PET_FAMILY_14"]; filter = L["RIGHT_16_FILTER"]; };
+		[18] = { name = L["PET_FAMILY_15"]; filter = L["RIGHT_17_FILTER"]; };
+		[19] = { name = L["PET_FAMILY_16"]; filter = L["RIGHT_18_FILTER"]; };
+		[20] = { name = L["PET_FAMILY_17"]; filter = L["RIGHT_19_FILTER"]; };
 	};
 	["Portrait"] = {
 		["Icon"] = function()
 			if UnitExists("pet") then
 				local _,_,_,petFamily = GetStablePetInfo(0);
-				return SigmaProfessionFilter[L["PROFESSION"]]["PetFamily"][petFamily];
+				return SigmaProfessionFilter[L["PROFESSION"]]["PetFamily"][petFamily] or 134400;
 			end
 			return 132162;
 		end;

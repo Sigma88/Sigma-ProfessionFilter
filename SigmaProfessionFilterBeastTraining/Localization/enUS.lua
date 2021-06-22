@@ -88,3 +88,5 @@ L["RIGHT_16_FILTER"] = L["BITE"]..";"..L["COWER"]..";"..L["DIVE"]..";"..L["SCREE
 L["RIGHT_17_FILTER"] = L["BITE"]..";"..L["COWER"]..";"..L["DASH"];
 L["RIGHT_18_FILTER"] = L["CLAW"]..";"..L["COWER"]..";"..L["DIVE"]..";"..L["SCREECH"];
 L["RIGHT_19_FILTER"] = L["BITE"]..";"..L["COWER"]..";"..L["DIVE"]..";"..L["LIGHTNING_BREATH"];
+
+L["OTHER"] = OTHER;
