@@ -61,8 +61,9 @@ function SPF1.LeftMenu:Filter(craftIndex, groupIndex)
 	if SPF1:Custom("LeftMenu")["Filter"] then
 		return SPF1:Custom("LeftMenu")["Filter"](craftIndex, groupIndex);
 	else
-		local firstGroup = SPF1:GetGroup("Left", SPF1.baseGetCraftInfo(craftIndex), 1);
-		local requiredGroup = SPF1:GetGroup("Left", SPF1.baseGetCraftInfo(craftIndex), groupIndex);
+		local craftName = SPF1.baseGetCraftInfo(craftIndex);
+		local firstGroup = SPF1:GetGroup("Left", craftName, 1);
+		local requiredGroup = SPF1:GetGroup("Left", craftName, groupIndex);
 		
 		if (firstGroup == requiredGroup) then
 			return firstGroup;
