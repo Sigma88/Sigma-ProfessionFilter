@@ -178,7 +178,7 @@ end
 function SPF2.GetTradeSkillInfo(skillIndex)
 	
 	-- If The Profession is supported
-	if (SPF2.Data and SPF2.Data[skillIndex]) then
+	if (SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"]) then
 		if not SPF2.Data[skillIndex]["original"] then
 			return SPF2.Data[skillIndex]["skillName"], SPF2.Data[skillIndex]["skillType"], SPF2.Data[skillIndex]["numAvailable"], SPF2.Data[skillIndex]["isExpanded"];
 		else
@@ -274,7 +274,7 @@ end
 
 -- Crafting
 function SPF2.GetTradeSkillNumReagents(skillIndex)
-	if SPF2.Data and SPF2.Data[skillIndex] then
+	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
 		if SPF2.Data[skillIndex]["original"] then
 			return SPF2.baseGetTradeSkillNumReagents(SPF2.Data[skillIndex]["original"]);
 		else
@@ -286,7 +286,7 @@ end
 
 function SPF2.TradeSkillCreateButton_OnClick()
 
-	if SPF2.Data and SPF2.SELECTED and SPF2.Data[SPF2.SELECTED] then
+	if SPF2.Data and SPF2.SELECTED and SPF2.Data[SPF2.SELECTED] and SPF2.Data[SPF2.SELECTED]["original"] then
 		DoTradeSkill(SPF2.Data[SPF2.SELECTED]["original"], SPF2.GetTradeskillRepeatCount());
 	else
 		DoTradeSkill(TradeSkillFrame.selectedSkill, SPF2.GetTradeskillRepeatCount());
@@ -297,7 +297,7 @@ end
 function SPF2.TradeSkillCreateAllButton_OnClick()
 	TradeSkillInputBox:SetNumber(TradeSkillFrame.numAvailable);
 	
-	if SPF2.Data and SPF2.SELECTED and SPF2.Data[SPF2.SELECTED] then
+	if SPF2.Data and SPF2.SELECTED and SPF2.Data[SPF2.SELECTED] and SPF2.Data[SPF2.SELECTED]["original"] then
 		DoTradeSkill(SPF2.Data[SPF2.SELECTED]["original"], TradeSkillInputBox:GetNumber());
 	else
 		DoTradeSkill(TradeSkillFrame.selectedSkill, TradeSkillInputBox:GetNumber());
