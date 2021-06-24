@@ -1,3 +1,12 @@
+**v0.6.2**
+
+- Fixed text too large for the window
+- Added right click options for TradeSkillFrame filters
+- Fixed nullref errors for CraftFrame professions
+- Fixed profession cooldown visualization
+- Fixes for Hunter's Beast Training profession
+
+
 **v0.6.1**
 
 - Minor bug fixes
