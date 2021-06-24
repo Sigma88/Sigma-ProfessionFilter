@@ -285,9 +285,10 @@ function SPF2.GetTradeSkillFromName(targetName)
 	end
 end
 
+if SPF2.CRAFTREAGENTS ~= false then
 for i=1, MAX_TRADE_SKILL_REAGENTS do
 	local reagentButton = _G["TradeSkillReagent"..i];
-	local createButton = CreateFrame("Button", nil, reagentButton, "MagicButtonTemplate");
+	local createButton = CreateFrame("Button", "TradeSkillReagent"..i.."CreateButton", reagentButton, "MagicButtonTemplate");
 	
 	reagentButton:HookScript("OnClick", SPF2.TradeSkillReagent_OnClick);
 	
@@ -343,6 +344,7 @@ for i=1,MAX_TRADE_SKILL_REAGENTS / 2 - 1 do
 	-- right reagent
 	_G["TradeSkillReagent"..(i*2+2)]:ClearAllPoints();
 	_G["TradeSkillReagent"..(i*2+2)]:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i*2)], "BOTTOMLEFT", 0, -18);
+end
 end
 
 function SPF2.ClearTradeSkill()

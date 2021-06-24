@@ -30,5 +30,14 @@ if ElvUI then
 		end
 	end
 	
+	if SPF2.CRAFTREAGENTS ~= false then
+		for i=1, MAX_TRADE_SKILL_REAGENTS do
+			local createButton = _G["TradeSkillReagent"..i.."CreateButton"];
+			if createButton then
+				S:HandleButton(createButton);
+			end
+		end
+	end
+	
 	TradeSkillRankFrame:HookScript("OnShow", SPF2.TradeSkillRankFrameFix);
 end
