@@ -90,9 +90,8 @@ function SPF2.GetNumTradeSkills()
 	-- Divide the filtered recipes in groups
 	for i,skillType in ipairs(SkillTypes) do
 		table.sort(Names[skillType]);
-		for j,skillName in ipairs(Names[skillType]) do
+		for j,nameWithLevel in ipairs(Names[skillType]) do
 			
-			local nameWithLevel = Names[skillType][j];
 			local skillInfo = ByType[skillType][nameWithLevel];
 			local groupIndex = skillInfo[groupBy];
 			
