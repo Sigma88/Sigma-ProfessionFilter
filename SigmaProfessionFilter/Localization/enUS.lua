@@ -31,4 +31,5 @@ SigmaProfessionFilter.L = {
 	
 	-- TradeSkillFrame\Core\Utility.lua
 	["Mining_SpellName"] = "Smelting";
+	["CRAFT_REAGENT"] = "Craft Reagent";
 };

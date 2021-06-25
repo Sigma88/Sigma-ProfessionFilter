@@ -297,10 +297,11 @@ for i=1, MAX_TRADE_SKILL_REAGENTS do
 	createButton.LeftSeparator:Hide();
 	createButton.RightSeparator:Hide();
 	-- Set size and position
+	createButton:SetHeight(18);
 	createButton:SetWidth(reagentButton:GetWidth());
 	createButton:SetPoint("TOPLEFT", reagentButton, "BOTTOMLEFT", 0, 2);
 	-- Set the text
-	createButton:SetText(CREATE);
+	createButton:SetText(L["CRAFT_REAGENT"]);
 	-- Set Scripts
 	createButton.id = i;
 	
@@ -331,7 +332,7 @@ for i=1, MAX_TRADE_SKILL_REAGENTS do
 			local _,_, numAvailable = SPF2.baseGetTradeSkillInfo(SPF2.Recipes[reagentName]);
 			
 			createButton:SetEnabled(numAvailable >= createAmount and createAmount > 0);
-			createButton:SetText(CREATE..": "..createAmount);
+			createButton:SetText(L["CRAFT_REAGENT"]..": "..createAmount);
 		end
 	end
 	hooksecurefunc("TradeSkillFrame_Update", createButton.Update);
@@ -340,10 +341,10 @@ end
 for i=1,MAX_TRADE_SKILL_REAGENTS / 2 - 1 do
 	-- left reagent
 	_G["TradeSkillReagent"..(i*2+1)]:ClearAllPoints();
-	_G["TradeSkillReagent"..(i*2+1)]:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i*2-1)], "BOTTOMLEFT", 0, -18);
+	_G["TradeSkillReagent"..(i*2+1)]:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i*2-1)], "BOTTOMLEFT", 0, -20);
 	-- right reagent
 	_G["TradeSkillReagent"..(i*2+2)]:ClearAllPoints();
-	_G["TradeSkillReagent"..(i*2+2)]:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i*2)], "BOTTOMLEFT", 0, -18);
+	_G["TradeSkillReagent"..(i*2+2)]:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i*2)], "BOTTOMLEFT", 0, -20);
 end
 end
 
