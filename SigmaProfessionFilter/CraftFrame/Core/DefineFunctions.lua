@@ -139,7 +139,10 @@ end
 function SPF1.GetCraftInfo(id)
 	
 	-- If The Profession is supported
-	if (SPF1.Data and SPF1.Data[id] and SPF1.Data[id]["original"]) then
+	if (SPF1.Data and SPF1.Data[id]) then
+		if not SPF1.Data[id]["original"] then
+			return;
+		end
 		if (SPF1.Data[id]["original"] == 0) then
 			return SPF1.Data[id]["craftName"], SPF1.Data[id]["craftSubSpellName"], SPF1.Data[id]["craftType"], SPF1.Data[id]["numAvailable"], SPF1.Data[id]["isExpanded"], SPF1.Data[id]["trainingPointCost"], SPF1.Data[id]["requiredLevel"];
 		else
@@ -229,11 +232,13 @@ function SPF1.GetCraftSelectionIndex()
 end
 
 function SPF1.SelectCraft(id)
-	if SPF1.Data and SPF1.Data[id] and SPF1.Data[id]["original"] and SPF1.CRAFTING then
+	if SPF1.Data and SPF1.Data[id] and SPF1.CRAFTING then
+		if not SPF1.Data[id]["original"] then
+			return;
+		end
 		SPF1.baseSelectCraft(SPF1.Data[id]["original"]);
-	else
-		SPF1.baseSelectCraft(id);
 	end
+	SPF1.baseSelectCraft(id);
 end
 
 function SPF1.CraftButton_OnClick(self, ...)
@@ -270,7 +275,10 @@ function SPF1.SetCraftItem(obj, id, reagId)
 	-- If The Profession is supported
 	local craftIndex = SPF1.GetCraftSelectionIndex();
 	
-	if (SPF1.Data and SPF1.Data[craftIndex] and SPF1.Data[craftIndex]["original"]) then
+	if (SPF1.Data and SPF1.Data[craftIndex]) then
+		if not SPF1.Data[craftIndex]["original"] then
+			return;
+		end
 		return SPF1.baseSetCraftItem(obj, SPF1.Data[craftIndex]["original"], reagId);
 	end
 	
@@ -283,7 +291,10 @@ function SPF1.SetCraftSpell(obj, id)
 	local craftIndex = SPF1.GetCraftSelectionIndex();
 	
 	-- If The Profession is supported
-	if (SPF1.Data and SPF1.Data[craftIndex] and SPF1.Data[craftIndex]["original"]) then
+	if (SPF1.Data and SPF1.Data[craftIndex]) then
+		if not SPF1.Data[craftIndex]["original"] then
+			return;
+		end
 		return SPF1.baseSetCraftSpell(obj, SPF1.Data[craftIndex]["original"]);
 	end
 	
@@ -294,7 +305,10 @@ end
 function SPF1.GetCraftItemLink(id)
 	
 	-- If The Profession is supported
-	if (SPF1.Data and SPF1.Data[id] and SPF1.Data[id]["original"]) then
+	if (SPF1.Data and SPF1.Data[id]) then
+		if not SPF1.Data[id]["original"] then
+			return;
+		end
 		return SPF1.baseGetCraftItemLink(SPF1.Data[id]["original"]);
 	end
 	
@@ -305,7 +319,10 @@ end
 function SPF1.GetCraftReagentItemLink(id, reagId)
 	
 	-- If The Profession is supported
-	if (SPF1.Data and SPF1.Data[id] and SPF1.Data[id]["original"]) then
+	if (SPF1.Data and SPF1.Data[id]) then
+		if not SPF1.Data[id]["original"] then
+			return;
+		end
 		return SPF1.baseGetCraftReagentItemLink(SPF1.Data[id]["original"], reagId);
 	end
 	
@@ -316,7 +333,10 @@ end
 function SPF1.GetCraftRecipeLink(id)
 	
 	-- If The Profession is supported
-	if (SPF1.Data and SPF1.Data[id]) and SPF1.Data[id]["original"] then
+	if (SPF1.Data and SPF1.Data[id]) then
+		if not SPF1.Data[id]["original"] then
+			return;
+		end
 		return SPF1.baseGetCraftRecipeLink(SPF1.Data[id]["original"]);
 	end
 	
@@ -329,7 +349,10 @@ function SPF1.GetCraftIcon(id)
 	local craftIndex = SPF1.GetCraftSelectionIndex();
 	
 	-- If The Profession is supported
-	if (SPF1.Data and SPF1.Data[craftIndex] and SPF1.Data[craftIndex]["original"]) then
+	if (SPF1.Data and SPF1.Data[craftIndex]) then
+		if not SPF1.Data[craftIndex]["original"] then
+			return;
+		end
 		return SPF1.baseGetCraftIcon(SPF1.Data[craftIndex]["original"]);
 	end
 	
@@ -340,7 +363,10 @@ end
 function SPF1.GetCraftDescription(id)
 	
 	-- If The Profession is supported
-	if (SPF1.Data and SPF1.Data[id] and SPF1.Data[id]["original"]) then
+	if (SPF1.Data and SPF1.Data[id]) then
+		if not SPF1.Data[id]["original"] then
+			return;
+		end
 		return SPF1.baseGetCraftDescription(SPF1.Data[id]["original"]);
 	end
 	
@@ -351,7 +377,10 @@ end
 function SPF1.GetCraftNumReagents(id)
 	
 	-- If The Profession is supported
-	if (SPF1.Data and SPF1.Data[id] and SPF1.Data[id]["original"]) then
+	if (SPF1.Data and SPF1.Data[id]) then
+		if not SPF1.Data[id]["original"] then
+			return;
+		end
 		return SPF1.baseGetCraftNumReagents(SPF1.Data[id]["original"]);
 	end
 	
@@ -362,7 +391,10 @@ end
 function SPF1.GetCraftReagentInfo(id, reagId)
 	
 	-- If The Profession is supported
-	if (SPF1.Data and SPF1.Data[id] and SPF1.Data[id]["original"]) then
+	if (SPF1.Data and SPF1.Data[id]) then
+		if not SPF1.Data[id]["original"] then
+			return;
+		end
 		return SPF1.baseGetCraftReagentInfo(SPF1.Data[id]["original"], reagId);
 	end
 	
@@ -373,7 +405,10 @@ end
 function SPF1.GetCraftSpellFocus(id)
 	
 	-- If The Profession is supported
-	if (SPF1.Data and SPF1.Data[id] and SPF1.Data[id]["original"]) then
+	if (SPF1.Data and SPF1.Data[id]) then
+		if not SPF1.Data[id]["original"] then
+			return;
+		end
 		return SPF1.baseGetCraftSpellFocus(SPF1.Data[id]["original"]);
 	end
 	
@@ -384,7 +419,10 @@ end
 function SPF1.GetCraftCooldown(id)
 	
 	-- If The Profession is supported
-	if (SPF1.Data and SPF1.Data[id] and SPF1.Data[id]["original"]) then
+	if (SPF1.Data and SPF1.Data[id]) then
+		if not SPF1.Data[id]["original"] then
+			return;
+		end
 		return SPF1.baseGetCraftCooldown(SPF1.Data[id]["original"]);
 	end
 	
