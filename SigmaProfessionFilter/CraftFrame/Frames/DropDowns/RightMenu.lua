@@ -34,10 +34,10 @@ function SPF1.RightMenu.Initialize()
         info.text = SPF1:Custom("RightMenu")["title"];
         info.func = SPF1.RightMenu.OnClick;
         info.checked = false;
-        
+		
         UIDropDownMenu_AddButton(info);
-        
-        for i,button in ipairs(SPF1:GetMenu("Right")) do
+		
+		for i,button in ipairs(SPF1:GetMenu("Right")) do
             info = {};
             info.text = button.name;
             info.func = SPF1.RightMenu.OnClick;
@@ -48,11 +48,11 @@ function SPF1.RightMenu.Initialize()
 end
 
 function SPF1.RightMenu:OnClick(arg1, arg2, checked)
-    
+	
     UIDropDownMenu_SetSelectedID(SPF1.RightMenu, self:GetID());
-    
+	
 	SPF1:SetSelected("Right", self:GetID());
-    
+	
     SPF1.FullUpdate();
 end
 

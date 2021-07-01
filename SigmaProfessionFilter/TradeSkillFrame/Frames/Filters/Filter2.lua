@@ -4,10 +4,11 @@ local SPF2 = SigmaProfessionFilter[2];
 SPF2.Filter2 = CreateFrame("CheckButton", nil, TradeSkillFrame, "UICheckButtonTemplate");
 
 function SPF2.Filter2.OnLoad()
+	SPF2.Filter2:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+	
 	SPF2.Filter2:SetWidth(15);
 	SPF2.Filter2:SetHeight(15);
-	SPF2.Filter2:SetPoint("TOPLEFT", TradeSkillFrame, "TOPLEFT", 225, -54);
-	SPF2.Filter2:SetHitRectInsets(0, -60, 0, 0);
+	SPF2.Filter2:SetPoint("LEFT", SPF2.Filter1.text, "RIGHT", 10, 0);
 	SPF2.Filter2:SetFrameLevel(4);
 	
 	SPF2.Filter2:SetScript("OnShow", SPF2.Filter2.OnShow);
@@ -16,28 +17,77 @@ function SPF2.Filter2.OnLoad()
 	SPF2.Filter2:SetScript("OnClick", SPF2.Filter2.OnClick);
 	SPF2.Filter2:SetScript("OnEnter", SPF2.Filter2.OnEnter);
 	SPF2.Filter2:SetScript("OnLeave", SPF2.Filter2.OnLeave);
-	
-	--LeatrixPlus compatibility
-    if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
-		SPF2.Filter2:SetPoint("TOPLEFT", TradeSkillFrame, "TOPLEFT", 225, -57);
-    end
 end
 
 function SPF2.Filter2:OnShow()
 	SPF2.Filter2:Show();
+	SPF2.Filter2.text:SetWidth(0); -- reset width to automatic
+	
 	SPF2.Filter2.text:SetText(SPF2:Custom("Filter2")["text"] or L["HAVE_MATS"]);
 	SPF2.Filter2.tooltipText = SPF2:Custom("Filter2")["tooltip"] or L["HAVE_MATS_TOOLTIP"];
+	
+	-- Move the search button if there is no portrait
+	local w = 0;
+	if TradeSkillFramePortrait:IsVisible() and TradeSkillFramePortrait:GetAlpha() ~= 0 then
+		w = TradeSkillFramePortrait:GetWidth();
+	else
+		local a,b,c,d,e = SPF2.Search:GetPoint();
+		SPF2.Search:ClearAllPoints();
+		SPF2.Search:SetPoint(a,b,c,12 + w,e);
+	end
+	
+	-- When the text is too big, shrink it
+	local x,y,z = SPF2.Search.text:GetWidth(), SPF2.Filter1.text:GetWidth(), SPF2.Filter2.text:GetWidth();
+	if (x + y + z > 265 - w) then
+		
+		-- Block text height
+		SPF2.Search.text:SetHeight(SPF2.Search.text:GetHeight());
+		SPF2.Filter1.text:SetHeight(SPF2.Filter1.text:GetHeight());
+		SPF2.Filter2.text:SetHeight(SPF2.Filter2.text:GetHeight());
+		
+		-- Calculate relative size of each new text string
+		SPF2.Search.text:SetWidth( x / (x + y + z) * (265 - w));
+		SPF2.Search:SetHitRectInsets(0, -SPF2.Search.text:GetWidth(), 0, 0);
+		
+		SPF2.Filter1.text:SetWidth( y / (x + y + z) * (265 - w));
+		SPF2.Filter1:SetHitRectInsets(0, -SPF2.Filter1.text:GetWidth(), 0, 0);
+		
+		SPF2.Filter2.text:SetWidth( z / (x + y + z) * (265 - w));
+		SPF2.Filter2:SetHitRectInsets(0, -SPF2.Filter2.text:GetWidth(), 0, 0);
+		
+	else
+		SPF2.Filter2:SetHitRectInsets(0, -SPF2.Filter2.text:GetWidth(), 0, 0);
+	end
 end
 
-function SPF2.Filter2:OnClick()
-	if (SPF2.Filter2:GetChecked()) then
-        PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
-		SPF2:SavedData()["Filter2"] = true;
-    else
-        PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
-		SPF2:SavedData()["Filter2"] = nil;
-    end
+function SPF2.Filter2:OnClick(button)
+	if (button == "LeftButton") then
+		if (SPF2.Filter2:GetChecked()) then
+			PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
+			SPF2:SavedData()["Filter2"] = true;
+		else
+			PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
+			SPF2:SavedData()["Filter2"] = nil;
+		end
+	else
+		SPF2.Filter2:SetChecked(not(SPF2.Filter2:GetChecked()));
+		if SPF2:Custom("Filter2")["OnRightClick"] then
+			SPF2:Custom("Filter2")["OnRightClick"]();
+		else
+			SPF2.Filter2:OnRightClick();
+		end
+	end
     SPF2.FullUpdate();
+end
+
+function SPF2.Filter2:OnRightClick()
+	if SPF2:SavedData()["IncludeCraftableMats"] ~= false then
+		SPF2:SavedData()["IncludeCraftableMats"] = false;
+		print("|cffbc5ff4[SPF]|r|cffffcf00["..GetTradeSkillName().."]|r: "..L["TradeSkillFilter2RightClickOFF"]);
+	else
+		SPF2:SavedData()["IncludeCraftableMats"] = nil;
+		print("|cffbc5ff4[SPF]|r|cffffcf00["..GetTradeSkillName().."]|r: "..L["TradeSkillFilter2RightClickON"]);
+	end
 end
 
 function SPF2.Filter2:OnEnter()
@@ -45,6 +95,12 @@ function SPF2.Filter2:OnEnter()
         GameTooltip:SetOwner(SPF2.Filter2, "ANCHOR_TOPLEFT");
         GameTooltip:SetText(SPF2.Filter2.tooltipText, nil, nil, nil, nil, true);
     end
+	if (SPF2:Custom("Filter2")["Tooltip_OnEnter"]) then
+		SPF2:Custom("Filter2")["Tooltip_OnEnter"]();
+	else
+		GameTooltip:AddLine(L["MORE_OPTIONS"], 0.69, 0.69, 0.69, 1);
+		GameTooltip:Show();
+	end
 end
 
 function SPF2.Filter2.OnLeave()
@@ -59,7 +115,7 @@ function SPF2.baseTradeSkillHasMats(skillIndex, requiredAmount)
 		return true;
 	end
 	
-	if not SPF2:SavedData()["IncludeCraftableMats"] then
+	if SPF2:SavedData()["IncludeCraftableMats"] == false then
 		return false;
 	end
 	

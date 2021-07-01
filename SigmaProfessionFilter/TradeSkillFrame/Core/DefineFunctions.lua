@@ -90,9 +90,8 @@ function SPF2.GetNumTradeSkills()
 	-- Divide the filtered recipes in groups
 	for i,skillType in ipairs(SkillTypes) do
 		table.sort(Names[skillType]);
-		for j,skillName in ipairs(Names[skillType]) do
+		for j,nameWithLevel in ipairs(Names[skillType]) do
 			
-			local nameWithLevel = Names[skillType][j];
 			local skillInfo = ByType[skillType][nameWithLevel];
 			local groupIndex = skillInfo[groupBy];
 			
@@ -151,7 +150,7 @@ function SPF2.GetNumTradeSkills()
 					for j,skillInfo in ipairs(items) do
 						totalCount = totalCount + 1;
 						
-						if (not SPF2.FIRST) then 
+						if (not SPF2.FIRST) then
 							SPF2.FIRST = totalCount;
 						end
 						
@@ -166,7 +165,7 @@ function SPF2.GetNumTradeSkills()
 	if LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On" then
 		if SPF2.FIRST and #SPF2.Headers == 0 then
 			TRADE_SKILLS_DISPLAYED = 23;
-		else 
+		else
 			TRADE_SKILLS_DISPLAYED = 22;
 		end
 	end
@@ -286,7 +285,7 @@ end
 
 function SPF2.TradeSkillCreateButton_OnClick()
 
-	if SPF2.Data and SPF2.SELECTED and SPF2.Data[SPF2.SELECTED] then
+	if SPF2.Data and SPF2.SELECTED and SPF2.Data[SPF2.SELECTED] and SPF2.Data[SPF2.SELECTED]["original"] then
 		DoTradeSkill(SPF2.Data[SPF2.SELECTED]["original"], SPF2.GetTradeskillRepeatCount());
 	else
 		DoTradeSkill(TradeSkillFrame.selectedSkill, SPF2.GetTradeskillRepeatCount());
@@ -297,7 +296,7 @@ end
 function SPF2.TradeSkillCreateAllButton_OnClick()
 	TradeSkillInputBox:SetNumber(TradeSkillFrame.numAvailable);
 	
-	if SPF2.Data and SPF2.SELECTED and SPF2.Data[SPF2.SELECTED] then
+	if SPF2.Data and SPF2.SELECTED and SPF2.Data[SPF2.SELECTED] and SPF2.Data[SPF2.SELECTED]["original"] then
 		DoTradeSkill(SPF2.Data[SPF2.SELECTED]["original"], TradeSkillInputBox:GetNumber());
 	else
 		DoTradeSkill(TradeSkillFrame.selectedSkill, TradeSkillInputBox:GetNumber());
@@ -306,28 +305,50 @@ function SPF2.TradeSkillCreateAllButton_OnClick()
 end
 
 function SPF2.GetTradeSkillReagentInfo(skillIndex, i)
-	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
+	if SPF2.Data and SPF2.Data[skillIndex] then
+		if not SPF2.Data[skillIndex]["original"] then
+			return;
+		end
 		return SPF2.baseGetTradeSkillReagentInfo(SPF2.Data[skillIndex]["original"], i);
 	end
 	return SPF2.baseGetTradeSkillReagentInfo(skillIndex, i);
 end
 
+function SPF2.GetTradeSkillCooldown(skillIndex)
+	if SPF2.Data and SPF2.Data[skillIndex] then
+		if not SPF2.Data[skillIndex]["original"] then
+			return;
+		end
+		return SPF2.baseGetTradeSkillCooldown(SPF2.Data[skillIndex]["original"]);
+	end
+	return SPF2.baseGetTradeSkillCooldown(skillIndex, i);
+end
+
 function SPF2.GetTradeSkillIcon(skillIndex)
-	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
+	if SPF2.Data and SPF2.Data[skillIndex] then
+		if not SPF2.Data[skillIndex]["original"] then
+			return;
+		end
 		return SPF2.baseGetTradeSkillIcon(SPF2.Data[skillIndex]["original"]);
 	end
 	return SPF2.baseGetTradeSkillIcon(skillIndex);
 end
 
 function SPF2.GetTradeSkillNumMade(skillIndex)
-	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
+	if SPF2.Data and SPF2.Data[skillIndex] then
+		if not SPF2.Data[skillIndex]["original"] then
+			return;
+		end
 		return SPF2.baseGetTradeSkillNumMade(SPF2.Data[skillIndex]["original"]);
 	end
 	return SPF2.baseGetTradeSkillNumMade(skillIndex);
 end
 
 function SPF2.GetTradeSkillTools(skillIndex)
-	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
+	if SPF2.Data and SPF2.Data[skillIndex] then
+		if not SPF2.Data[skillIndex]["original"] then
+			return;
+		end
 		return SPF2.baseGetTradeSkillTools(SPF2.Data[skillIndex]["original"]);
 	end
 	return SPF2.baseGetTradeSkillTools(skillIndex);
@@ -361,21 +382,27 @@ function SPF2.TradeSkillFrame_OnShow(self)
 end
 
 function SPF2.GetTradeSkillItemLink(skillIndex)
-	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
+	if SPF2.Data and SPF2.Data[skillIndex] then
+		if not SPF2.Data[skillIndex]["original"] then
+			return;
+		end
 		return SPF2.baseGetTradeSkillItemLink(SPF2.Data[skillIndex]["original"]);
 	end
 	return SPF2.baseGetTradeSkillItemLink(skillIndex);
 end
 
 function SPF2.GetTradeSkillReagentItemLink(skillIndex, reagentIndex)
-	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
+	if SPF2.Data and SPF2.Data[skillIndex] then
+		if not SPF2.Data[skillIndex]["original"] then
+			return;
+		end
 		return SPF2.baseGetTradeSkillReagentItemLink(SPF2.Data[skillIndex]["original"], reagentIndex);
 	end
 	return SPF2.baseGetTradeSkillReagentItemLink(skillIndex, reagentIndex);
 end
 
 function SPF2.GetTradeSkillRecipeLink(skillIndex)
-	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
+	if SPF2.Data and SPF2.Data[skillIndex] then
 		return SPF2.baseGetTradeSkillRecipeLink(SPF2.Data[skillIndex]["original"]);
 	end
 	return SPF2.baseGetTradeSkillRecipeLink(skillIndex);
@@ -415,7 +442,10 @@ end
 
 SPF2.GameTooltip = {};
 function SPF2.GameTooltip.SetTradeSkillItem(this, skillIndex, reagentIndex)
-	if SPF2.Data and SPF2.Data[skillIndex] and SPF2.Data[skillIndex]["original"] then
+	if SPF2.Data and SPF2.Data[skillIndex] then
+		if not SPF2.Data[skillIndex]["original"] then
+			return;
+		end
 		return SPF2.GameTooltip.baseSetTradeSkillItem(this, SPF2.Data[skillIndex]["original"], reagentIndex);
 	end
 	return SPF2.GameTooltip.baseSetTradeSkillItem(this, skillIndex, reagentIndex);

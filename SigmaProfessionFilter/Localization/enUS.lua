@@ -4,6 +4,11 @@ SigmaProfessionFilter.L = {
 	
 	-- CraftFrame\Frames\Filters\Filter1.lua
 	-- TradeSkillFrame\Frames\Filters\Filter1.lua
+	["MORE_OPTIONS"] = "Right Click for more options.";
+	["TradeSkillFilter1RightClick"] = "Allowed types = ";
+	["ORANGE"] = "Optimal";
+	["YELLOW"] = "Medium";
+	["GREEN"] = "Easy";
 	["HAS_SKILL_UP"] = TRADESKILL_FILTER_HAS_SKILL_UP;
 	["HAS_SKILL_UP_TOOLTIP"] = "Only show the recipes that can make your skill go up.";
 	
@@ -11,10 +16,12 @@ SigmaProfessionFilter.L = {
 	-- TradeSkillFrame\Frames\Filters\Filter2.lua
 	["HAVE_MATS"] = CRAFT_IS_MAKEABLE;
 	["HAVE_MATS_TOOLTIP"] = CRAFT_IS_MAKEABLE_TOOLTIP;
+	["TradeSkillFilter2RightClickON"] = "Recursive 'Have Materials' = |cff00ff00ON|r";
+	["TradeSkillFilter2RightClickOFF"] = "Recursive 'Have Materials' = |cffff0000OFF|r";
 	
 	-- CraftFrame\Frames\TextSearch\Search.lua
 	-- TradeSkillFrame\Frames\TextSearch\Search.lua
-	["SEARCH"] = "Search";
+	["SEARCH"] = SEARCH;
 	["SEARCH_TOOLTIP"] = "Toggle the Search Box.";
 	
 	-- TradeSkillFrame\Frames\DropDowns\LeftSort.lua
@@ -24,4 +31,5 @@ SigmaProfessionFilter.L = {
 	
 	-- TradeSkillFrame\Core\Utility.lua
 	["Mining_SpellName"] = "Smelting";
+	["CRAFT_REAGENT"] = "Craft Reagent";
 };

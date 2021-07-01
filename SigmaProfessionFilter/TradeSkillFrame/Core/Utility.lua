@@ -43,14 +43,22 @@ function SPF2:GetSlot(TYPE)
 	return SPF2.INV[TYPE] or NONEQUIPSLOT;
 end
 
-function SPF2:SavedData()
+function SPF2:SavedData(professionSpecific)
 	if not SigmaProfessionFilter_SavedVariables then
 		SigmaProfessionFilter_SavedVariables = {};
 	end
-	if not SigmaProfessionFilter_SavedVariables[GetTradeSkillName()] then
-		SigmaProfessionFilter_SavedVariables[GetTradeSkillName()] = {};
+	
+	local professionName = GetTradeSkillName();
+	
+	if professionSpecific == false then
+		professionName = "ALL_PROFESSIONS";
 	end
-	return SigmaProfessionFilter_SavedVariables[GetTradeSkillName()];
+	
+	if not SigmaProfessionFilter_SavedVariables[professionName] then
+		SigmaProfessionFilter_SavedVariables[professionName] = {};
+	end
+	
+	return SigmaProfessionFilter_SavedVariables[professionName];
 end
 
 function SPF2:GetMenu(side)
@@ -287,7 +295,7 @@ end
 
 for i=1, MAX_TRADE_SKILL_REAGENTS do
 	local reagentButton = _G["TradeSkillReagent"..i];
-	local createButton = CreateFrame("Button", nil, reagentButton, "MagicButtonTemplate");
+	local createButton = CreateFrame("Button", "TradeSkillReagent"..i.."CreateButton", reagentButton, "MagicButtonTemplate");
 	
 	reagentButton:HookScript("OnClick", SPF2.TradeSkillReagent_OnClick);
 	
@@ -296,10 +304,11 @@ for i=1, MAX_TRADE_SKILL_REAGENTS do
 	createButton.LeftSeparator:Hide();
 	createButton.RightSeparator:Hide();
 	-- Set size and position
+	createButton:SetHeight(18);
 	createButton:SetWidth(reagentButton:GetWidth());
 	createButton:SetPoint("TOPLEFT", reagentButton, "BOTTOMLEFT", 0, 2);
 	-- Set the text
-	createButton:SetText(CREATE);
+	createButton:SetText(L["CRAFT_REAGENT"]);
 	-- Set Scripts
 	createButton.id = i;
 	
@@ -330,7 +339,7 @@ for i=1, MAX_TRADE_SKILL_REAGENTS do
 			local _,_, numAvailable = SPF2.baseGetTradeSkillInfo(SPF2.Recipes[reagentName]);
 			
 			createButton:SetEnabled(numAvailable >= createAmount and createAmount > 0);
-			createButton:SetText(CREATE..": "..createAmount);
+			createButton:SetText(L["CRAFT_REAGENT"]..": "..createAmount);
 		end
 	end
 	hooksecurefunc("TradeSkillFrame_Update", createButton.Update);
@@ -339,10 +348,10 @@ end
 for i=1,MAX_TRADE_SKILL_REAGENTS / 2 - 1 do
 	-- left reagent
 	_G["TradeSkillReagent"..(i*2+1)]:ClearAllPoints();
-	_G["TradeSkillReagent"..(i*2+1)]:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i*2-1)], "BOTTOMLEFT", 0, -18);
+	_G["TradeSkillReagent"..(i*2+1)]:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i*2-1)], "BOTTOMLEFT", 0, -20);
 	-- right reagent
 	_G["TradeSkillReagent"..(i*2+2)]:ClearAllPoints();
-	_G["TradeSkillReagent"..(i*2+2)]:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i*2)], "BOTTOMLEFT", 0, -18);
+	_G["TradeSkillReagent"..(i*2+2)]:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i*2)], "BOTTOMLEFT", 0, -20);
 end
 
 function SPF2.ClearTradeSkill()
