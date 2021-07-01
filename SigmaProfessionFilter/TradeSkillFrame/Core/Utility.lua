@@ -43,14 +43,22 @@ function SPF2:GetSlot(TYPE)
 	return SPF2.INV[TYPE] or NONEQUIPSLOT;
 end
 
-function SPF2:SavedData()
+function SPF2:SavedData(professionSpecific)
 	if not SigmaProfessionFilter_SavedVariables then
 		SigmaProfessionFilter_SavedVariables = {};
 	end
-	if not SigmaProfessionFilter_SavedVariables[GetTradeSkillName()] then
-		SigmaProfessionFilter_SavedVariables[GetTradeSkillName()] = {};
+	
+	local professionName = GetTradeSkillName();
+	
+	if professionSpecific == false then
+		professionName = "ALL_PROFESSIONS";
 	end
-	return SigmaProfessionFilter_SavedVariables[GetTradeSkillName()];
+	
+	if not SigmaProfessionFilter_SavedVariables[professionName] then
+		SigmaProfessionFilter_SavedVariables[professionName] = {};
+	end
+	
+	return SigmaProfessionFilter_SavedVariables[professionName];
 end
 
 function SPF2:GetMenu(side)
@@ -285,7 +293,6 @@ function SPF2.GetTradeSkillFromName(targetName)
 	end
 end
 
-if SPF2.CRAFTREAGENTS ~= false then
 for i=1, MAX_TRADE_SKILL_REAGENTS do
 	local reagentButton = _G["TradeSkillReagent"..i];
 	local createButton = CreateFrame("Button", "TradeSkillReagent"..i.."CreateButton", reagentButton, "MagicButtonTemplate");
@@ -345,7 +352,6 @@ for i=1,MAX_TRADE_SKILL_REAGENTS / 2 - 1 do
 	-- right reagent
 	_G["TradeSkillReagent"..(i*2+2)]:ClearAllPoints();
 	_G["TradeSkillReagent"..(i*2+2)]:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i*2)], "BOTTOMLEFT", 0, -20);
-end
 end
 
 function SPF2.ClearTradeSkill()

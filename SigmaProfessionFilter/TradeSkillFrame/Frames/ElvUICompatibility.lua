@@ -30,17 +30,15 @@ if ElvUI then
 		end
 	end
 	
-	if SPF2.CRAFTREAGENTS ~= false then
-		for i=1, MAX_TRADE_SKILL_REAGENTS do
-			local reagentButton = _G["TradeSkillReagent"..i];
-			local createButton = _G["TradeSkillReagent"..i.."CreateButton"];
-			if createButton then
-				createButton:SetWidth(reagentButton:GetWidth() - 4);
-				local a,b,c,x,y = createButton:GetPoint();
-				createButton:ClearAllPoints();
-				createButton:SetPoint(a,b,c,x,y-1);
-				S:HandleButton(createButton);
-			end
+	for i=1, MAX_TRADE_SKILL_REAGENTS do
+		local reagentButton = _G["TradeSkillReagent"..i];
+		local createButton = _G["TradeSkillReagent"..i.."CreateButton"];
+		if createButton then
+			createButton:SetWidth(reagentButton:GetWidth() - 4);
+			local a,b,c,x,y = createButton:GetPoint();
+			createButton:ClearAllPoints();
+			createButton:SetPoint(a,b,c,x,y-1);
+			S:HandleButton(createButton);
 		end
 	end
 	
