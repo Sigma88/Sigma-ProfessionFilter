@@ -85,9 +85,11 @@ function SPF1:FilterWithSearchBox(craftIndex)
 		end
 		
 		-- Check the SubName
-		if (SPF1:SavedData()["SearchSubNames"] ~= false) then
-			if strmatch(craftSubSpellName:lower(), searchFilter) ~= nil then
-				return true;
+		if craftSubSpellName then
+			if (SPF1:SavedData()["SearchSubNames"] ~= false) then
+				if strmatch(craftSubSpellName:lower(), searchFilter) ~= nil then
+					return true;
+				end
 			end
 		end
 		
@@ -98,7 +100,7 @@ function SPF1:FilterWithSearchBox(craftIndex)
 			if SPF1:GetMenu("Left") then
 				for	i,button in ipairs(SPF1:GetMenu("Left")) do
 					local groupName = SPF1.LeftMenu:Filter(craftIndex, i + 1);
-					if #groupName > 0 then
+					if groupName and #groupName > 0 then
 						if strmatch(button.name:lower(), searchFilter) ~= nil then
 							return true;
 						end
@@ -110,7 +112,7 @@ function SPF1:FilterWithSearchBox(craftIndex)
 			if SPF1:GetMenu("Right") then
 				for	i,button in ipairs(SPF1:GetMenu("Right")) do
 					local groupName = SPF1.RightMenu:Filter(craftIndex, i + 1);
-					if #groupName > 0 then
+					if groupName and #groupName > 0 then
 						if strmatch(button.name:lower(), searchFilter) ~= nil then
 							return true;
 						end

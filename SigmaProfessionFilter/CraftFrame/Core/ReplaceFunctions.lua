@@ -47,6 +47,8 @@ SPF1.baseGetCraftReagentInfo = GetCraftReagentInfo;
 GetCraftReagentInfo = SPF1.GetCraftReagentInfo;
 SPF1.baseGetCraftSpellFocus = GetCraftSpellFocus;
 GetCraftSpellFocus = SPF1.GetCraftSpellFocus;
+SPF1.baseGetCraftCooldown = GetCraftCooldown;
+GetCraftCooldown = SPF1.GetCraftCooldown;
 
 --Indexing
 SPF1.baseSelectCraft = SelectCraft;

@@ -34,9 +34,9 @@ function SPF1.LeftMenu:Initialize()
         info.text = SPF1:Custom("LeftMenu")["title"];
         info.func = SPF1.LeftMenu.OnClick;
         info.checked = false;
-        
+		
         UIDropDownMenu_AddButton(info);
-        
+		
         for i,button in ipairs(SPF1:GetMenu("Left")) do
             info = {};
             info.text = button.name;
@@ -48,11 +48,11 @@ function SPF1.LeftMenu:Initialize()
 end
 
 function SPF1.LeftMenu:OnClick(arg1, arg2, checked)
-    
+	
     UIDropDownMenu_SetSelectedID(SPF1.LeftMenu, self:GetID());
-    
+	
 	SPF1:SetSelected("Left", self:GetID());
-    
+	
     SPF1.FullUpdate();
 end
 
@@ -61,8 +61,9 @@ function SPF1.LeftMenu:Filter(craftIndex, groupIndex)
 	if SPF1:Custom("LeftMenu")["Filter"] then
 		return SPF1:Custom("LeftMenu")["Filter"](craftIndex, groupIndex);
 	else
-		local firstGroup = SPF1:GetGroup("Left", SPF1.baseGetCraftInfo(craftIndex), 1);
-		local requiredGroup = SPF1:GetGroup("Left", SPF1.baseGetCraftInfo(craftIndex), groupIndex);
+		local craftName = SPF1.baseGetCraftInfo(craftIndex);
+		local firstGroup = SPF1:GetGroup("Left", craftName, 1);
+		local requiredGroup = SPF1:GetGroup("Left", craftName, groupIndex);
 		
 		if (firstGroup == requiredGroup) then
 			return firstGroup;
