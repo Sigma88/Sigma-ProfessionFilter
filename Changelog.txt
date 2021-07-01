@@ -5,6 +5,8 @@
 - Fixed nullref errors for CraftFrame professions
 - Fixed profession cooldown visualization
 - Fixes for Hunter's Beast Training profession
+- Added new categories to the Enchanting left dropdown filter
+- Changed craft reagent buttons to read "Craft Reagent"
 
 
 **v0.6.1**
