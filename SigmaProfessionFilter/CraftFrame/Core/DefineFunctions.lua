@@ -7,6 +7,8 @@ function SPF1.GetNumCrafts()
 		return SPF1.baseGetNumCrafts();
 	end
 	
+	if not SPF1.FILTERED then
+	
 	if not SPF1:GetMenu("Right") then
 		SPF1:SavedData()["GroupBy"] = nil;
 		SPF1.LeftSort:OnShow();
@@ -132,7 +134,18 @@ function SPF1.GetNumCrafts()
 		end
 	end
 	
-    return totalCount, headerCount, firstRecipe;
+	if totalCount > 0 then
+		SPF1.FILTERED = {};
+		SPF1.FILTERED["totalCount"] = totalCount;
+		SPF1.FILTERED["headerCount"] = headerCount;
+		SPF1.FILTERED["firstRecipe"] = firstRecipe;
+	else
+		return totalCount, headerCount, firstRecipe;
+	end
+	
+	end
+	
+    return SPF1.FILTERED["totalCount"], SPF1.FILTERED["headerCount"], SPF1.FILTERED["firstRecipe"];
 end
 
 -- Get Craft Info
