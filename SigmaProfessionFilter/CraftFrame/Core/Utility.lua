@@ -157,6 +157,7 @@ function SPF1.ClearCraft()
 end
 
 function SPF1.FullUpdate()
+	SPF1.FILTERED = nil;
 	local totalCount, headerCount, firstRecipe = SPF1.GetNumCrafts();
 	
 	if firstRecipe then

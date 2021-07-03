@@ -7,170 +7,178 @@ function SPF2.GetNumTradeSkills()
 		return SPF2.baseGetNumTradeSkills();
 	end
 	
-	local LeftSelection = SPF2:GetSelected("Left");
-	if not SPF2:GetMenu("Left") and LeftSelection > 0 and #({GetTradeSkillSubClasses()}) > 1 and GetTradeSkillSubClassFilter(0) then
-		UIDropDownMenu_SetSelectedID(TradeSkillSubClassDropDown, LeftSelection + 1);
-		SetTradeSkillSubClassFilter(LeftSelection, 1, 1);
-	end
-	
-	local RightSelection = SPF2:GetSelected("Right");
-	if not SPF2:GetMenu("Right") and RightSelection > 0 and #({GetTradeSkillInvSlots()}) > 1 and GetTradeSkillInvSlotFilter(0) then
-		UIDropDownMenu_SetSelectedID(TradeSkillInvSlotDropDown, RightSelection + 1)
-		SetTradeSkillInvSlotFilter(RightSelection, 1, 1);
-	end
+	if not SPF2.FILTERED then
+		
+		local LeftSelection = SPF2:GetSelected("Left");
+		if not SPF2:GetMenu("Left") and LeftSelection > 0 and #({GetTradeSkillSubClasses()}) > 1 and GetTradeSkillSubClassFilter(0) then
+			UIDropDownMenu_SetSelectedID(TradeSkillSubClassDropDown, LeftSelection + 1);
+			SetTradeSkillSubClassFilter(LeftSelection, 1, 1);
+		end
+		
+		local RightSelection = SPF2:GetSelected("Right");
+		if not SPF2:GetMenu("Right") and RightSelection > 0 and #({GetTradeSkillInvSlots()}) > 1 and GetTradeSkillInvSlotFilter(0) then
+			UIDropDownMenu_SetSelectedID(TradeSkillInvSlotDropDown, RightSelection + 1)
+			SetTradeSkillInvSlotFilter(RightSelection, 1, 1);
+		end
 
-	-- Reset the Data
-	SPF2.FIRST = nil;
-	SPF2.Data = {};
-	SPF2.Recipes = SPF2.Recipes or {};
-	SPF2.Headers = {};
-	SPF2.OriginalHeaders = {};
-	
-	-- Start ordering the recipes
-	local SkillTypes = { [1] = "difficult"; [2] = "optimal"; [3] = "medium"; [4] = "easy"; [5] = "trivial" };
-	local ByType = { ["header"] = {}; ["difficult"] = {}; ["optimal"] = {}; ["medium"] = {}; ["easy"] = {}; ["trivial"] = {} };
-	local Names = { ["header"] = {}; ["difficult"] = {}; ["optimal"] = {}; ["medium"] = {}; ["easy"] = {}; ["trivial"] = {} };
-	local headerIndex = 0;
-	
-	for i=1, SPF2.baseGetNumTradeSkills() do
+		-- Reset the Data
+		SPF2.FIRST = nil;
+		SPF2.Data = {};
+		SPF2.Recipes = SPF2.Recipes or {};
+		SPF2.Headers = {};
+		SPF2.OriginalHeaders = {};
 		
-		local skillName, skillType, numAvailable = SPF2.baseGetTradeSkillInfo(i);
-		SPF2.Recipes[skillName] = i; --{ skillIndex = i; }; --numAvailable = numAvailable; };
+		-- Start ordering the recipes
+		local SkillTypes = { [1] = "difficult"; [2] = "optimal"; [3] = "medium"; [4] = "easy"; [5] = "trivial" };
+		local ByType = { ["header"] = {}; ["difficult"] = {}; ["optimal"] = {}; ["medium"] = {}; ["easy"] = {}; ["trivial"] = {} };
+		local Names = { ["header"] = {}; ["difficult"] = {}; ["optimal"] = {}; ["medium"] = {}; ["easy"] = {}; ["trivial"] = {} };
+		local headerIndex = 0;
 		
-		if skillType == "header" then
-			headerIndex = headerIndex + 1;
-			ByType["header"][headerIndex] = { name = skillName };
-		else
-			SPF2.OriginalHeaders[i] = ByType["header"][headerIndex].name;
+		for i=1, SPF2.baseGetNumTradeSkills() do
 			
-			-- IMPLEMENT CHECKS LATER
-			local leftGroupID = SPF2.LeftMenu:Filter(i, SPF2:GetSelected("Left")) or headerIndex;
-			local rightGroupID = SPF2.RightMenu:Filter(i, SPF2:GetSelected("Right")) or 0;
+			local skillName, skillType, numAvailable = SPF2.baseGetTradeSkillInfo(i);
+			SPF2.Recipes[skillName] = i; --{ skillIndex = i; }; --numAvailable = numAvailable; };
 			
-			-- FILTER_1
-			if (not SPF2.Filter1:Filter(i))
-			-- FILTER_2
-				or (not SPF2.Filter2:Filter(i))
-			-- SEARCH_BOX
-				or not(SPF2.SearchBox:Filter(i))
-			-- LEFT_DROPDOWN
-				or not (SPF2:GetSelected("Left") == 0 or leftGroupID > 0)
-			-- RIGHT_DROPDOWN
-				or not (SPF2:GetSelected("Right") == 0 or rightGroupID > 0)
-			then
-				-- SKIP ELEMENTS THAT FAIL TO MATCH ALL FILTERS
+			if skillType == "header" then
+				headerIndex = headerIndex + 1;
+				ByType["header"][headerIndex] = { name = skillName };
 			else
-				local itemLink = SPF2.baseGetTradeSkillItemLink(i);
+				SPF2.OriginalHeaders[i] = ByType["header"][headerIndex].name;
 				
-				if itemLink then
-					local _,_,_, itemLevel, _,_, itemSubType, _, itemEquipLoc = GetItemInfo(itemLink);
-					local nameWithLevel = string.format("%04d", 500 - itemLevel)..skillName;
-					local info = {
-						["original"] = i;
-						["Left"] = leftGroupID;
-						["Right"] = rightGroupID;
-					};
-					
-					ByType[skillType][nameWithLevel] = info;
-					table.insert(Names[skillType], nameWithLevel);
-				end
-			end
-		end
-	end
-	
-	-- Check the Chosen Grouping Scheme
-	local groupBy = SPF2:SavedData()["GroupBy"] or "Left";
-	
-	if (groupBy == "Right" and SPF2:Custom("RightMenu")["disabled"]) then
-		groupBy = "Left";
-	end
-	
-	local Ordered = {};
-	
-	-- Divide the filtered recipes in groups
-	for i,skillType in ipairs(SkillTypes) do
-		table.sort(Names[skillType]);
-		for j,nameWithLevel in ipairs(Names[skillType]) do
-			
-			local skillInfo = ByType[skillType][nameWithLevel];
-			local groupIndex = skillInfo[groupBy];
-			
-			if not Ordered[groupIndex] then
-				Ordered[groupIndex] = {};
-			end
-			
-			table.insert(Ordered[groupIndex], skillInfo);
-		end
-	end
-	
-	local totalCount = 0;
-	local headerCount = 0;
-	
-	-- Build the final order with headers
-	if Ordered then
-		
-		local Pairs = SPF2:GetMenu(groupBy) or ByType["header"];
-		
-		if (groupBy == "Right" and not SPF2:GetMenu("Right")) then
-			Pairs = {};
-			for i,slot in ipairs({GetTradeSkillInvSlots()}) do
-				table.insert( Pairs, { name = slot; } );
-			end
-		end
-		
-		if (groupBy == "Left" and SPF2:Custom("LeftMenu")["disabled"]) then
-			Pairs = { [1] = { name = ""; } };
-		end
-		
-		for i,button in ipairs(Pairs) do
-			local group = button.name;
-			local items = Ordered[i];
-			
-			if items then
-				-- Add the Header
-				if (#group > 0) then
-					headerCount = headerCount + 1;
-					totalCount = totalCount + 1;
-					SPF2.Headers[headerCount] = totalCount;
+				-- IMPLEMENT CHECKS LATER
+				local leftGroupID = SPF2.LeftMenu:Filter(i, SPF2:GetSelected("Left")) or headerIndex;
+				local rightGroupID = SPF2.RightMenu:Filter(i, SPF2:GetSelected("Right")) or 0;
 				
-					SPF2.Data[totalCount] = {
-						["skillName"] = group;
-						["skillType"] = "header";
-						["numAvailable"] = 0;
-					};
-				end
-				
-				if (SPF2.Collapsed and SPF2.Collapsed[group]) then
-					SPF2.Data[totalCount]["isExpanded"] = false;
+				-- FILTER_1
+				if (not SPF2.Filter1:Filter(i))
+				-- FILTER_2
+					or (not SPF2.Filter2:Filter(i))
+				-- SEARCH_BOX
+					or not(SPF2.SearchBox:Filter(i))
+				-- LEFT_DROPDOWN
+					or not (SPF2:GetSelected("Left") == 0 or leftGroupID > 0)
+				-- RIGHT_DROPDOWN
+					or not (SPF2:GetSelected("Right") == 0 or rightGroupID > 0)
+				then
+					-- SKIP ELEMENTS THAT FAIL TO MATCH ALL FILTERS
 				else
+					local itemLink = SPF2.baseGetTradeSkillItemLink(i);
+					
+					if itemLink then
+						local _,_,_, itemLevel, _,_, itemSubType, _, itemEquipLoc = GetItemInfo(itemLink);
+						local nameWithLevel = string.format("%04d", 500 - itemLevel)..skillName;
+						local info = {
+							["original"] = i;
+							["Left"] = leftGroupID;
+							["Right"] = rightGroupID;
+						};
+						
+						ByType[skillType][nameWithLevel] = info;
+						table.insert(Names[skillType], nameWithLevel);
+					end
+				end
+			end
+		end
+		
+		-- Check the Chosen Grouping Scheme
+		local groupBy = SPF2:SavedData()["GroupBy"] or "Left";
+		
+		if (groupBy == "Right" and SPF2:Custom("RightMenu")["disabled"]) then
+			groupBy = "Left";
+		end
+		
+		local Ordered = {};
+		
+		-- Divide the filtered recipes in groups
+		for i,skillType in ipairs(SkillTypes) do
+			table.sort(Names[skillType]);
+			for j,nameWithLevel in ipairs(Names[skillType]) do
+				
+				local skillInfo = ByType[skillType][nameWithLevel];
+				local groupIndex = skillInfo[groupBy];
+				
+				if not Ordered[groupIndex] then
+					Ordered[groupIndex] = {};
+				end
+				
+				table.insert(Ordered[groupIndex], skillInfo);
+			end
+		end
+		
+		local totalCount = 0;
+		local headerCount = 0;
+		
+		-- Build the final order with headers
+		if Ordered then
+			
+			local Pairs = SPF2:GetMenu(groupBy) or ByType["header"];
+			
+			if (groupBy == "Right" and not SPF2:GetMenu("Right")) then
+				Pairs = {};
+				for i,slot in ipairs({GetTradeSkillInvSlots()}) do
+					table.insert( Pairs, { name = slot; } );
+				end
+			end
+			
+			if (groupBy == "Left" and SPF2:Custom("LeftMenu")["disabled"]) then
+				Pairs = { [1] = { name = ""; } };
+			end
+			
+			for i,button in ipairs(Pairs) do
+				local group = button.name;
+				local items = Ordered[i];
+				
+				if items then
+					-- Add the Header
 					if (#group > 0) then
-						SPF2.Data[totalCount]["isExpanded"] = true;
+						headerCount = headerCount + 1;
+						totalCount = totalCount + 1;
+						SPF2.Headers[headerCount] = totalCount;
+					
+						SPF2.Data[totalCount] = {
+							["skillName"] = group;
+							["skillType"] = "header";
+							["numAvailable"] = 0;
+						};
 					end
 					
-					for j,skillInfo in ipairs(items) do
-						totalCount = totalCount + 1;
-						
-						if (not SPF2.FIRST) then
-							SPF2.FIRST = totalCount;
+					if (SPF2.Collapsed and SPF2.Collapsed[group]) then
+						SPF2.Data[totalCount]["isExpanded"] = false;
+					else
+						if (#group > 0) then
+							SPF2.Data[totalCount]["isExpanded"] = true;
 						end
 						
-						SPF2.Data[totalCount] = skillInfo;
+						for j,skillInfo in ipairs(items) do
+							totalCount = totalCount + 1;
+							
+							if (not SPF2.FIRST) then
+								SPF2.FIRST = totalCount;
+							end
+							
+							SPF2.Data[totalCount] = skillInfo;
+						end
 					end
 				end
 			end
 		end
-	end
-	
-	-- Leatrix Plus Compatibility
-	if LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On" then
-		if SPF2.FIRST and #SPF2.Headers == 0 then
-			TRADE_SKILLS_DISPLAYED = 23;
-		else
-			TRADE_SKILLS_DISPLAYED = 22;
+		
+		-- Leatrix Plus Compatibility
+		if LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On" then
+			if SPF2.FIRST and #SPF2.Headers == 0 then
+				TRADE_SKILLS_DISPLAYED = 23;
+			else
+				TRADE_SKILLS_DISPLAYED = 22;
+			end
 		end
+		
+		if totalCount > 0 then
+			SPF2.FILTERED = totalCount;
+		end
+		
 	end
 	
-	return totalCount;
+	return SPF2.FILTERED or 0;
 end
 
 -- Get TradeSkill Info
