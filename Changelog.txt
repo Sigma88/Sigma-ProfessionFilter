@@ -1,3 +1,9 @@
+**v0.6.3**
+
+- Fixed CraftFrame professions Craft button
+- Attempted to lower lag by reducing the number of calculations
+
+
 **v0.6.2**
 
 - Fixed text too large for the window
