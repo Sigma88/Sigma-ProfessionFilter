@@ -237,8 +237,9 @@ function SPF1.SelectCraft(id)
 			return;
 		end
 		SPF1.baseSelectCraft(SPF1.Data[id]["original"]);
+	else
+		SPF1.baseSelectCraft(id);
 	end
-	SPF1.baseSelectCraft(id);
 end
 
 function SPF1.CraftButton_OnClick(self, ...)
