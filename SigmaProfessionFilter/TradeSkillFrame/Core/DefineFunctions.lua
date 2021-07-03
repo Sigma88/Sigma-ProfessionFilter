@@ -7,6 +7,8 @@ function SPF2.GetNumTradeSkills()
 		return SPF2.baseGetNumTradeSkills();
 	end
 	
+	if not SPF2.FILTERED then
+	
 	local LeftSelection = SPF2:GetSelected("Left");
 	if not SPF2:GetMenu("Left") and LeftSelection > 0 and #({GetTradeSkillSubClasses()}) > 1 and GetTradeSkillSubClassFilter(0) then
 		UIDropDownMenu_SetSelectedID(TradeSkillSubClassDropDown, LeftSelection + 1);
@@ -170,7 +172,13 @@ function SPF2.GetNumTradeSkills()
 		end
 	end
 	
-	return totalCount;
+	if totalCount > 0 then
+		SPF2.FILTERED = totalCount;
+	end
+	
+	end
+	
+	return SPF2.FILTERED or 0;
 end
 
 -- Get TradeSkill Info

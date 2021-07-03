@@ -371,6 +371,7 @@ function SPF2.ClearTradeSkill()
 end
 
 function SPF2.FullUpdate()
+	SPF2.FILTERED = nil;
 	SPF2.GetNumTradeSkills();
 	TradeSkillListScrollFrameScrollBar:SetValue(0);
 	if SPF2.FIRST then
