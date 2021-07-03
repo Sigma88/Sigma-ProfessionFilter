@@ -8,141 +8,141 @@ function SPF1.GetNumCrafts()
 	end
 	
 	if not SPF1.FILTERED then
-	
-	if not SPF1:GetMenu("Right") then
-		SPF1:SavedData()["GroupBy"] = nil;
-		SPF1.LeftSort:OnShow();
-	end
-	
-	-- Check the Chosen Grouping Scheme
-	local groupBy = SPF1:SavedData()["GroupBy"] or "Left";
-	local Ordered = {["Left"] = {}, ["Right"] = {}}
-	
-    -- Find which items pass all filters
-    for i=1, SPF1.baseGetNumCrafts() do
-		-- IMPLEMENT CHECKS LATER
-		local leftGroupName = SPF1.LeftMenu:Filter(i, SPF1:GetSelected("Left"));
-		local rightGroupName = SPF1.RightMenu:Filter(i, SPF1:GetSelected("Right"));
+		
+		if not SPF1:GetMenu("Right") then
+			SPF1:SavedData()["GroupBy"] = nil;
+			SPF1.LeftSort:OnShow();
+		end
+		
+		-- Check the Chosen Grouping Scheme
+		local groupBy = SPF1:SavedData()["GroupBy"] or "Left";
+		local Ordered = {["Left"] = {}, ["Right"] = {}}
+		
+		-- Find which items pass all filters
+		for i=1, SPF1.baseGetNumCrafts() do
+			-- IMPLEMENT CHECKS LATER
+			local leftGroupName = SPF1.LeftMenu:Filter(i, SPF1:GetSelected("Left"));
+			local rightGroupName = SPF1.RightMenu:Filter(i, SPF1:GetSelected("Right"));
 
-		-- FILTER_1
-        if (not SPF1.Filter1:Filter(i))
-		-- FILTER_2
-			or (not SPF1.Filter2:Filter(i))
-		-- SEARCH_BOX
-			or not(SPF1.SearchBox:Filter(i))
-		-- LEFT_DROPDOWN
-			or not (SPF1:GetSelected("Left") == 1 or #leftGroupName > 0)
-		-- RIGHT_DROPDOWN
-			or not (SPF1:GetSelected("Right") == 1 or #rightGroupName > 0)
-		then
-			-- ELEMENTS THAT FAIL TO MATCH ALL FILTERS
-		else
-			-- ELEMENTS THAT MATCH ALL FILTERS
-			if (groupBy == "Left") then
-				if (Ordered["Left"][leftGroupName] == nil) then
-					Ordered["Left"][leftGroupName] = {};
-				end
-				table.insert(Ordered["Left"][leftGroupName], i);
+			-- FILTER_1
+			if (not SPF1.Filter1:Filter(i))
+			-- FILTER_2
+				or (not SPF1.Filter2:Filter(i))
+			-- SEARCH_BOX
+				or not(SPF1.SearchBox:Filter(i))
+			-- LEFT_DROPDOWN
+				or not (SPF1:GetSelected("Left") == 1 or #leftGroupName > 0)
+			-- RIGHT_DROPDOWN
+				or not (SPF1:GetSelected("Right") == 1 or #rightGroupName > 0)
+			then
+				-- ELEMENTS THAT FAIL TO MATCH ALL FILTERS
 			else
-				if (Ordered["Right"][rightGroupName] == nil) then
-					Ordered["Right"][rightGroupName] = {};
+				-- ELEMENTS THAT MATCH ALL FILTERS
+				if (groupBy == "Left") then
+					if (Ordered["Left"][leftGroupName] == nil) then
+						Ordered["Left"][leftGroupName] = {};
+					end
+					table.insert(Ordered["Left"][leftGroupName], i);
+				else
+					if (Ordered["Right"][rightGroupName] == nil) then
+						Ordered["Right"][rightGroupName] = {};
+					end
+					table.insert(Ordered["Right"][rightGroupName], i);
 				end
-				table.insert(Ordered["Right"][rightGroupName], i);
+			end
+			
+			-- Fix for BeastTraining headers not forgetting their old cost
+			if _G["Craft"..i.."Cost"] then
+				_G["Craft"..i.."Cost"]:SetText("");
 			end
 		end
 		
-		-- Fix for BeastTraining headers not forgetting their old cost
-		if _G["Craft"..i.."Cost"] then
-			_G["Craft"..i.."Cost"]:SetText("");
-		end
-    end
-	
-	-- Build the new ordered table
-	
-	SPF1.FIRST = nil;
-	SPF1.Data = {};
-	SPF1.Headers = {};
-	
-	local totalCount = 0;
-    local headerCount = 0;
-	local firstRecipe = nil;
-	
-	if Ordered[groupBy] ~= nil then
-		local Pairs = SPF1:GetMenu(groupBy);
+		-- Build the new ordered table
 		
-		if (groupBy == "Left" and not SPF1:GetMenu("Left")) then
-			Pairs = { [1] = { name = ""; } };
-		end
+		SPF1.FIRST = nil;
+		SPF1.Data = {};
+		SPF1.Headers = {};
 		
-		for i,button in ipairs(Pairs) do
-			local group = button.name;
+		local totalCount = 0;
+		local headerCount = 0;
+		local firstRecipe = nil;
+		
+		if Ordered[groupBy] ~= nil then
+			local Pairs = SPF1:GetMenu(groupBy);
 			
-			local items = Ordered[groupBy][group];
+			if (groupBy == "Left" and not SPF1:GetMenu("Left")) then
+				Pairs = { [1] = { name = ""; } };
+			end
 			
-			if (items) then
+			for i,button in ipairs(Pairs) do
+				local group = button.name;
 				
-				-- Add the Header
-				if (#group > 0) then
-					headerCount = headerCount + 1;
-					totalCount = totalCount + 1;
-					SPF1.Headers[headerCount] = totalCount;
+				local items = Ordered[groupBy][group];
 				
-					SPF1.Data[totalCount] = {
-						["craftName"] = group;
-						["craftSubSpellName"] = "";
-						["craftType"] = "header";
-						["numAvailable"] = 0;
-						["trainingPointCost"] = nil;
-						["requiredLevel"] = 0;
-						["original"] = 0;
-					};
-				end
-				
-				if (SPF1.Collapsed and SPF1.Collapsed[group]) then
-					SPF1.Data[totalCount]["isExpanded"] = false;
-				else
-					if (#group > 0) then
-						SPF1.Data[totalCount]["isExpanded"] = true;
-					end
+				if (items) then
 					
-					for j,craftIndex in ipairs(items) do
+					-- Add the Header
+					if (#group > 0) then
+						headerCount = headerCount + 1;
 						totalCount = totalCount + 1;
-						
-						if (not firstRecipe) then
-							firstRecipe = totalCount;
-							SPF1.FIRST = totalCount;
-						end
-						
+						SPF1.Headers[headerCount] = totalCount;
+					
 						SPF1.Data[totalCount] = {
-							["original"] = craftIndex;
+							["craftName"] = group;
+							["craftSubSpellName"] = "";
+							["craftType"] = "header";
+							["numAvailable"] = 0;
+							["trainingPointCost"] = nil;
+							["requiredLevel"] = 0;
+							["original"] = 0;
 						};
 					end
+					
+					if (SPF1.Collapsed and SPF1.Collapsed[group]) then
+						SPF1.Data[totalCount]["isExpanded"] = false;
+					else
+						if (#group > 0) then
+							SPF1.Data[totalCount]["isExpanded"] = true;
+						end
+						
+						for j,craftIndex in ipairs(items) do
+							totalCount = totalCount + 1;
+							
+							if (not firstRecipe) then
+								firstRecipe = totalCount;
+								SPF1.FIRST = totalCount;
+							end
+							
+							SPF1.Data[totalCount] = {
+								["original"] = craftIndex;
+							};
+						end
+					end
 				end
 			end
 		end
-	end
-	
-    SPF1.Data.n = totalCount;
-    SPF1.Headers.n = headerCount;
-	
-	-- Leatrix Plus Compatibility
-	if LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On" then
-		if SPF1.FIRST and #SPF1.Headers == 0 then
-			CRAFTS_DISPLAYED = 23;
-		else
-			CRAFTS_DISPLAYED = 22;
+		
+		SPF1.Data.n = totalCount;
+		SPF1.Headers.n = headerCount;
+		
+		-- Leatrix Plus Compatibility
+		if LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On" then
+			if SPF1.FIRST and #SPF1.Headers == 0 then
+				CRAFTS_DISPLAYED = 23;
+			else
+				CRAFTS_DISPLAYED = 22;
+			end
 		end
-	end
-	
-	if totalCount > 0 then
-		SPF1.FILTERED = {};
-		SPF1.FILTERED["totalCount"] = totalCount;
-		SPF1.FILTERED["headerCount"] = headerCount;
-		SPF1.FILTERED["firstRecipe"] = firstRecipe;
-	else
-		return totalCount, headerCount, firstRecipe;
-	end
-	
+		
+		if totalCount > 0 then
+			SPF1.FILTERED = {};
+			SPF1.FILTERED["totalCount"] = totalCount;
+			SPF1.FILTERED["headerCount"] = headerCount;
+			SPF1.FILTERED["firstRecipe"] = firstRecipe;
+		else
+			return totalCount, headerCount, firstRecipe;
+		end
+		
 	end
 	
     return SPF1.FILTERED["totalCount"], SPF1.FILTERED["headerCount"], SPF1.FILTERED["firstRecipe"];
