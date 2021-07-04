@@ -214,9 +214,6 @@ end
 
 function SPF2.TradeSkillFrame_PostUpdate()
 	
-	-- Update the TradeSkillInputBox
-	-- SPF2.GetTradeskillRepeatCount();
-	
 	-- Check if there are any headers
 	if SPF2.Headers then
 		-- If has headers show the expand all button
@@ -251,7 +248,7 @@ function SPF2.TradeSkillFrame_PostUpdate()
 		SPF2.ClearTradeSkill();
 	end
 	
-	--LeatrixPlus compatibility
+	-- LeatrixPlus compatibility
     if (LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On" and TradeSkillSkill23) then
 		if SPF2.Headers and #SPF2.Headers == 0 and SPF2.FIRST then
 			TradeSkillSkill1:SetPoint("TOPLEFT", TradeSkillFrame, "TOPLEFT", 22, -81);

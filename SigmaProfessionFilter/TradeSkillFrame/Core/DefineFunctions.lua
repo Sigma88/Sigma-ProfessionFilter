@@ -1,6 +1,6 @@
 local SPF2 = SigmaProfessionFilter[2];
 
---Set up data table
+-- Set up data table
 function SPF2.GetNumTradeSkills()
 	
 	if not TradeSkillFrame:IsVisible() then
@@ -37,7 +37,7 @@ function SPF2.GetNumTradeSkills()
 		for i=1, SPF2.baseGetNumTradeSkills() do
 			
 			local skillName, skillType, numAvailable = SPF2.baseGetTradeSkillInfo(i);
-			SPF2.Recipes[skillName] = i; --{ skillIndex = i; }; --numAvailable = numAvailable; };
+			SPF2.Recipes[skillName] = i; -- { skillIndex = i; }; -- numAvailable = numAvailable; };
 			
 			if skillType == "header" then
 				headerIndex = headerIndex + 1;
