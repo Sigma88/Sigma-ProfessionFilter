@@ -2,7 +2,7 @@ local SPF2 = SigmaProfessionFilter[2];
 
 --Set up data table
 function SPF2.GetNumTradeSkills()
-
+	
 	if not TradeSkillFrame:IsVisible() then
 		return SPF2.baseGetNumTradeSkills();
 	end
@@ -24,7 +24,7 @@ function SPF2.GetNumTradeSkills()
 		-- Reset the Data
 		SPF2.FIRST = nil;
 		SPF2.Data = {};
-		SPF2.Recipes = SPF2.Recipes or {};
+		SPF2.Recipes = {};
 		SPF2.Headers = {};
 		SPF2.OriginalHeaders = {};
 		
@@ -382,11 +382,7 @@ function SPF2.GetTradeskillRepeatCount()
 end;
 
 function SPF2.TradeSkillFrame_OnShow(self)
-	-- Check if the TradeSkill has changed
-	if SPF2.TradeSkillName and SPF2.TradeSkillName ~= GetTradeSkillName() then
-		SPF2.FullUpdate();
-	end
-	SPF2.TradeSkillName = GetTradeSkillName();
+	SPF2.FullUpdate();
 end
 
 function SPF2.GetTradeSkillItemLink(skillIndex)

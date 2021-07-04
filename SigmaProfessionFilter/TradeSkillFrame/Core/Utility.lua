@@ -263,6 +263,12 @@ function SPF2.TradeSkillFrame_PostUpdate()
 			TradeSkillSkill1:SetPoint("TOPLEFT", TradeSkillFrame, "TOPLEFT", 22, -96);
 		end
     end
+	
+	if SPF2.TradeSkillName ~= GetTradeSkillName() then
+		SPF2.TradeSkillName = GetTradeSkillName();
+		SPF2.FullUpdate();
+	end
+	
 end
 
 hooksecurefunc("TradeSkillFrame_Update", SPF2.TradeSkillFrame_PostUpdate);
@@ -325,7 +331,9 @@ for i=1, MAX_TRADE_SKILL_REAGENTS do
 	
 	function createButton:Update()
 		if not TradeSkillFrame:IsVisible() then return; end
-		local reagentName, _, reagentCount, playerReagentCount = SPF2.GetTradeSkillReagentInfo(SPF2.SELECTED, createButton.id);
+		if SPF2.SELECTED then
+			local reagentName, _, reagentCount, playerReagentCount = SPF2.GetTradeSkillReagentInfo(SPF2.SELECTED, createButton.id);
+		end
 		if not SPF2.Recipes[reagentName] then
 			createButton:Hide();
 		else
