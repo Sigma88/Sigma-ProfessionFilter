@@ -377,7 +377,7 @@ end
 
 function SPF2.FullUpdate()
 	SPF2.FILTERED = nil;
-	-- SPF2.GetNumTradeSkills();
+	SPF2.GetNumTradeSkills();
 	TradeSkillListScrollFrameScrollBar:SetValue(0);
 	if SPF2.FIRST then
 		FauxScrollFrame_SetOffset(TradeSkillListScrollFrame, 0);

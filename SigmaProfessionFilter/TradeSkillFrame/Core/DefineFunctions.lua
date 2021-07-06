@@ -20,7 +20,7 @@ function SPF2.GetNumTradeSkills()
 			UIDropDownMenu_SetSelectedID(TradeSkillInvSlotDropDown, RightSelection + 1)
 			SetTradeSkillInvSlotFilter(RightSelection, 1, 1);
 		end
-
+		
 		-- Reset the Data
 		SPF2.FIRST = nil;
 		SPF2.Data = {};
@@ -379,7 +379,7 @@ function SPF2.GetTradeskillRepeatCount()
 	end
 	
 	return TradeSkillInputBox:GetNumber();
-end;
+end
 
 function SPF2.TradeSkillFrame_OnShow(self)
 	SPF2.FullUpdate();
