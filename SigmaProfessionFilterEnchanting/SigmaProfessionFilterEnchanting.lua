@@ -44,3 +44,45 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 		[11] = { name = L["RIGHT_11_NAME"]; filter = L["RIGHT_11_FILTER"]; };
 	};
 };
+
+local InvSlots = {
+	[05] = "RIGHT_01_FILTER";
+	[08] = "RIGHT_02_FILTER";
+	[09] = "RIGHT_03_FILTER";
+	[10] = "RIGHT_04_FILTER";
+	[15] = "RIGHT_05_FILTER";
+}
+
+local InvButtons = {
+	[05] = CharacterChestSlot;
+	[08] = CharacterFeetSlot;
+	[09] = CharacterWristSlot;
+	[10] = CharacterHandsSlot;
+	[15] = CharacterBackSlot;
+}
+
+local AutoEnchant = function()
+	if CharacterFrame:IsVisible() then
+		local craftName = GetCraftInfo(GetCraftSelectionIndex());
+		for i,slot in pairs(InvSlots) do
+			if strfind(craftName, L[slot]) then
+				return UseInventoryItem(i);
+			end
+		end
+	end
+end
+
+local InvSlotHighlight = function()
+	local craftName = GetCraftInfo(GetCraftSelectionIndex());
+	for i,slot in pairs(InvSlots) do
+		if GetCraftName() == L["PROFESSION"] and CraftFrame:IsVisible() and CraftCreateButton:IsEnabled() and strfind(craftName or "", L[slot]) then
+			ActionButton_ShowOverlayGlow(InvButtons[i]);
+		else
+			ActionButton_HideOverlayGlow(InvButtons[i]);
+		end
+	end
+end
+
+hooksecurefunc("DoCraft", AutoEnchant);
+hooksecurefunc("CraftFrame_Update", InvSlotHighlight);
+hooksecurefunc("CloseCraft", InvSlotHighlight);
