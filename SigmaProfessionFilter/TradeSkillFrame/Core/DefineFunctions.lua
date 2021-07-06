@@ -138,11 +138,12 @@ function SPF2.GetNumTradeSkills()
 						SPF2.Data[totalCount] = {
 							["skillName"] = group;
 							["skillType"] = "header";
+							["headerIndex"] = headerCount;
 							["numAvailable"] = 0;
 						};
 					end
 					
-					if (SPF2.Collapsed and SPF2.Collapsed[group]) then
+					if (SPF2.Collapsed and SPF2.Collapsed[headerCount]) then
 						SPF2.Data[totalCount]["isExpanded"] = false;
 					else
 						if (#group > 0) then
@@ -219,7 +220,7 @@ function SPF2.ExpandTradeSkillSubClass(skillIndex)
 				SPF2.Collapsed = {};
 			end
 			
-			SPF2.Collapsed[skillName] = nil;
+			SPF2.Collapsed[SPF2.Data[skillIndex]["headerIndex"]] = nil;
 		end
 	end
 	
@@ -250,7 +251,7 @@ function SPF2.CollapseTradeSkillSubClass(skillIndex)
 				SPF2.Collapsed = {};
 			end
 			
-			SPF2.Collapsed[skillName] = true;
+			SPF2.Collapsed[SPF2.Data[skillIndex]["headerIndex"]] = true;
 		end
 	end
 	
