@@ -198,14 +198,16 @@ function SPF2.GetTradeSkillInfo(skillIndex)
 end
 
 -- Expand
-function SPF2.ExpandTradeSkillSubClass(skillIndex)
+function SPF2.ExpandTradeSkillSubClass(skillIndex, skipUpdate)
 	
 	-- if the skillIndex is zero we need to expand all headers
 	if (skillIndex == 0) then
 		-- Expand in reverse order otherwise it's a mess
 		for i=#SPF2.Headers, 1, -1 do
-			SPF2.ExpandTradeSkillSubClass(SPF2.Headers[i]);
+			SPF2.ExpandTradeSkillSubClass(SPF2.Headers[i], true);
 		end
+		SPF2.FullUpdate();
+		return;
 		
 	-- otherwise expand this header
 	elseif (SPF2.Data and SPF2.Data[skillIndex]) then
@@ -224,19 +226,24 @@ function SPF2.ExpandTradeSkillSubClass(skillIndex)
 		end
 	end
 	
-    SPF2.FullUpdate();
-	SPF2.ONCLICK = skillIndex;
+	if not skipUpdate then
+		SPF2.FullUpdate();
+		SPF2.ONCLICK = skillIndex;
+	end
 end
 
 -- Collapse
-function SPF2.CollapseTradeSkillSubClass(skillIndex)
+function SPF2.CollapseTradeSkillSubClass(skillIndex, skipUpdate)
 	
 	-- if the skillIndex is zero we need to collapse all headers
 	if (skillIndex == 0) then
 		-- Collapse in reverse order otherwise it's a mess
 		for i=#SPF2.Headers, 1, -1 do
-			SPF2.CollapseTradeSkillSubClass(SPF2.Headers[i]);
+			SPF2.CollapseTradeSkillSubClass(SPF2.Headers[i], true);
 		end
+		
+		SPF2.FullUpdate();
+		return;
 		
 	-- otherwise collapse this header
 	elseif (SPF2.Data and SPF2.Data[skillIndex]) then
@@ -255,8 +262,10 @@ function SPF2.CollapseTradeSkillSubClass(skillIndex)
 		end
 	end
 	
-    SPF2.FullUpdate();
-	SPF2.ONCLICK = skillIndex;
+	if not skipUpdate then
+		SPF2.FullUpdate();
+		SPF2.ONCLICK = skillIndex;
+	end
 end
 
 -- Select TradeSkill
