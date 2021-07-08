@@ -21,13 +21,15 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 		["title"] = L["RIGHT_TITLE"];
 		["tooltip"] = L["RIGHT_TOOLTIP"];
 		["Filter"] = function(craftIndex, groupIndex)
+			print("FILTER",craftIndex,groupIndex);
 			if groupIndex < 4 then
 				SPF1:GetGroup("Right", craftIndex, groupIndex);
 			end
 			
+			local wildAnimals = SPF1:GetGroup("Right", craftIndex, 2);
+			local petTrainer = SPF1:GetGroup("Right", craftIndex, 3);
+			
 			if groupIndex == 4 then
-				local wildAnimals = SPF1:GetGroup("Right", craftIndex, 2);
-				local petTrainer = SPF1:GetGroup("Right", craftIndex, 3);
 				if (not wildAnimals) and (not petTrainer) then
 					return 4;
 				else
@@ -35,12 +37,7 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 				end
 			end
 			
-			local groupName = SPF1:GetGroup("Right", craftIndex, 3);
-			if #(SPF1:GetGroup("Right", craftIndex, groupIndex)) > 0 then
-				groupName = groupName..(SPF1:GetGroup("Right", craftIndex), 2));
-			end
-			
-			return groupName;
+			return wildAnimals or petTrainer;
 		end;
 		["Initialize"] = function()
 			if (SPF1:GetMenu("Right")) then
