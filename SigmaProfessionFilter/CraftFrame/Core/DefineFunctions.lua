@@ -34,7 +34,7 @@ function SPF1.GetNumCrafts()
 		--SPF1.OriginalHeaders = {};
 		
 		-- Start ordering the recipes
-		local CraftTypes = { [1] = "difficult"; [2] = "optimal"; [3] = "medium"; [4] = "easy"; [5] = "trivial" ; [6] = "none" };
+		local CraftTypes = { [1] = "difficult"; [2] = "optimal"; [3] = "medium"; [4] = "easy"; [5] = "trivial"; [6] = "none"; };
 		local ByType = { ["header"] = {}; ["difficult"] = {}; ["optimal"] = {}; ["medium"] = {}; ["easy"] = {}; ["trivial"] = {}; ["none"] = {} };
 		local Names = { ["header"] = {}; ["difficult"] = {}; ["optimal"] = {}; ["medium"] = {}; ["easy"] = {}; ["trivial"] = {}; ["none"] = {} };
 		local headerIndex = 0;
@@ -68,20 +68,19 @@ function SPF1.GetNumCrafts()
 				then
 					-- SKIP ELEMENTS THAT FAIL TO MATCH ALL FILTERS
 				else
-					--local itemLink = SPF1.baseGetCraftRecipeLink(i);
-					
-					--if itemLink then
-						--local _,_,_, itemLevel, _,_, itemSubType, _, itemEquipLoc = GetItemInfo(itemLink);
-						local nameWithLevel = string.format("%04d", i)..craftName;
-						local info = {
-							["original"] = i;
-							["Left"] = leftGroupID;
-							["Right"] = rightGroupID;
-						};
-						
-						ByType[craftType][nameWithLevel] = info;
-						table.insert(Names[craftType], nameWithLevel);
-					--end
+					local nameWithLevel = string.format("%04d", i)..craftName;
+					local info = {
+						["original"] = i;
+						["Left"] = leftGroupID;
+						["Right"] = rightGroupID;
+					};
+					if not ByType[craftType] then
+						table.insert(CraftTypes, craftType);
+						ByType[craftType] = {};
+						Names[craftType] = {};
+					end
+					ByType[craftType][nameWithLevel] = info;
+					table.insert(Names[craftType], nameWithLevel);
 				end
 			end
 		end
@@ -195,7 +194,7 @@ function SPF1.GetCraftInfo(craftIndex)
 	-- If The Profession is supported
 	if (SPF1.Data and SPF1.Data[craftIndex]) then
 		if not SPF1.Data[craftIndex]["original"] then
-			return SPF1.Data[craftIndex]["craftName"], SPF1.Data[craftIndex]["craftSubSpellName"], SPF1.Data[craftIndex]["craftType"], SPF1.Data[craftIndex]["numAvailable"], SPF1.Data[craftIndex]["isExpanded"];
+			return SPF1.Data[craftIndex]["craftName"], SPF1.Data[craftIndex]["craftSubSpellName"], SPF1.Data[craftIndex]["craftType"], SPF1.Data[craftIndex]["numAvailable"];
 		else
 			return SPF1.baseGetCraftInfo(SPF1.Data[craftIndex]["original"]);
 		end
