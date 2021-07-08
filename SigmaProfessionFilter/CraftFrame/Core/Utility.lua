@@ -72,10 +72,9 @@ function SPF1:GetGroup(side, craftIndex, groupIndex)
 				return nil;
 			end
 		end
-	elseif SPF1:Custom(side.."Menu")["disabled"] then
+	else
 		return 0;
 	end
-	return nil;
 end
 
 function SPF1:FilterWithSearchBox(craftIndex)
