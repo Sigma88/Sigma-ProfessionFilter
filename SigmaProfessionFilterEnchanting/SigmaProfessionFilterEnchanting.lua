@@ -63,10 +63,9 @@ local InvButtons = {
 
 local AutoEnchant = function()
 	if CharacterFrame:IsVisible() then
-		local craftName = GetCraftInfo(GetCraftSelectionIndex());
+		local craftName = SigmaProfessionFilter[1].baseGetCraftInfo(GetCraftSelectionIndex());
 		for i,slot in pairs(InvSlots) do
 			if strfind(craftName, L[slot]) then
-				print("TRY TO ENCHANT",GetInventoryItemLink("player", i),"WITH",GetCraftItemLink(GetCraftSelectionIndex()));
 				return UseInventoryItem(i);
 			end
 		end
@@ -75,9 +74,13 @@ end
 
 local InvSlotHighlight = function()
 	local craftName = GetCraftInfo(GetCraftSelectionIndex());
+	CraftCreateButton:SetText(ENSCRIBE);
 	for i,slot in pairs(InvSlots) do
 		if GetCraftName() == L["PROFESSION"] and CraftFrame:IsVisible() and CraftCreateButton:IsEnabled() and strfind(craftName or "", L[slot]) then
 			ActionButton_ShowOverlayGlow(InvButtons[i]);
+			if CharacterFrame:IsVisible() then
+				CraftCreateButton:SetText(L["SELF_ENCH"]);
+			end
 		else
 			ActionButton_HideOverlayGlow(InvButtons[i]);
 		end
@@ -86,4 +89,6 @@ end
 
 hooksecurefunc("DoCraft", AutoEnchant);
 hooksecurefunc("CraftFrame_Update", InvSlotHighlight);
+CharacterFrame:HookScript("OnShow", InvSlotHighlight);
+CharacterFrame:HookScript("OnHide", InvSlotHighlight);
 hooksecurefunc("CloseCraft", InvSlotHighlight);

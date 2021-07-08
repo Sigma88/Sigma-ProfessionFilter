@@ -72,3 +72,5 @@ L["RIGHT_08_FILTER"] = SHIELDSLOT;
 L["RIGHT_09_FILTER"] = "Wand";
 L["RIGHT_10_FILTER"] = "Rod";
 L["RIGHT_11_FILTER"] = "";
+
+L["SELF_ENCH"] = "Self Ench";
