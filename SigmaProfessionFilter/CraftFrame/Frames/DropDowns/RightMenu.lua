@@ -51,26 +51,12 @@ function SPF1.RightMenu:OnClick(arg1, arg2, checked)
 	
     UIDropDownMenu_SetSelectedID(SPF1.RightMenu, self:GetID());
 	
-	SPF1:SetSelected("Right", self:GetID() + 1);
+	SPF1:SetSelected("Right", self:GetID() - 1);
 	
     SPF1.FullUpdate();
 end
 
 -- Return the group name if the craft matches the filter otherwise return ""
--- function SPF1.RightMenu:Filter(craftIndex, groupIndex)
-	-- if SPF1:Custom("RightMenu")["Filter"] then
-		-- return SPF1:Custom("RightMenu")["Filter"](craftIndex, groupIndex);
-	-- else
-		-- local firstGroup = SPF1:GetGroup("Right", SPF1.baseGetCraftInfo(craftIndex), 1);
-		-- local requiredGroup = SPF1:GetGroup("Right", SPF1.baseGetCraftInfo(craftIndex), groupIndex);
-		
-		-- if (firstGroup == requiredGroup) then
-			-- return firstGroup;
-		-- end
-		
-		-- return "";
-	-- end
--- end
 function SPF1.RightMenu:Filter(craftIndex, groupIndex)
 	if SPF1:Custom("RightMenu")["Filter"] then
 		return SPF1:Custom("RightMenu")["Filter"](craftIndex, groupIndex);
