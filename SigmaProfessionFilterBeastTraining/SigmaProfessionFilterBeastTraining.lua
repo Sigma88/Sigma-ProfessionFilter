@@ -21,17 +21,16 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 		["title"] = L["RIGHT_TITLE"];
 		["tooltip"] = L["RIGHT_TOOLTIP"];
 		["Filter"] = function(craftIndex, groupIndex)
-			print("FILTER",craftIndex,groupIndex);
-			if groupIndex < 4 then
+			if groupIndex < 3 then
 				SPF1:GetGroup("Right", craftIndex, groupIndex);
 			end
 			
-			local wildAnimals = SPF1:GetGroup("Right", craftIndex, 2);
-			local petTrainer = SPF1:GetGroup("Right", craftIndex, 3);
+			local wildAnimals = SPF1:GetGroup("Right", craftIndex, 1);
+			local petTrainer = SPF1:GetGroup("Right", craftIndex, 2);
 			
-			if groupIndex == 4 then
+			if groupIndex == 3 then
 				if (not wildAnimals) and (not petTrainer) then
-					return 4;
+					return 3;
 				else
 					return nil;
 				end
