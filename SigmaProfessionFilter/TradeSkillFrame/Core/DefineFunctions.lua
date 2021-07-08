@@ -206,7 +206,7 @@ function SPF2.ExpandTradeSkillSubClass(skillIndex, skipUpdate)
 		for i=#SPF2.Headers, 1, -1 do
 			SPF2.ExpandTradeSkillSubClass(SPF2.Headers[i], true);
 		end
-		SPF2.FullUpdate();
+		SPF2.FullUpdate(true);
 		return;
 		
 	-- otherwise expand this header
@@ -227,7 +227,7 @@ function SPF2.ExpandTradeSkillSubClass(skillIndex, skipUpdate)
 	end
 	
 	if not skipUpdate then
-		SPF2.FullUpdate();
+		SPF2.FullUpdate(true);
 		SPF2.ONCLICK = skillIndex;
 	end
 end
@@ -242,7 +242,7 @@ function SPF2.CollapseTradeSkillSubClass(skillIndex, skipUpdate)
 			SPF2.CollapseTradeSkillSubClass(SPF2.Headers[i], true);
 		end
 		
-		SPF2.FullUpdate();
+		SPF2.FullUpdate(true);
 		return;
 		
 	-- otherwise collapse this header
@@ -263,7 +263,7 @@ function SPF2.CollapseTradeSkillSubClass(skillIndex, skipUpdate)
 	end
 	
 	if not skipUpdate then
-		SPF2.FullUpdate();
+		SPF2.FullUpdate(true);
 		SPF2.ONCLICK = skillIndex;
 	end
 end

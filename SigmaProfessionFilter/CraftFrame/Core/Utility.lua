@@ -163,25 +163,19 @@ function SPF1.ClearCraft()
 	CraftCost:Hide();
 end
 
-function SPF1.FullUpdate()
-	SPF1.FILTERED = nil;
-	local totalCount, headerCount, firstRecipe = SPF1.GetNumCrafts();
+function SPF1.FullUpdate(keepCollapsed)
+	if not keepCollapsed then
+		SPF1.Collapsed = nil;
+	end
 	
+	SPF1.FILTERED = nil;
+	SPF1.GetNumCrafts();
+	CraftListScrollFrameScrollBar:SetValue(0);
 	if SPF1.FIRST then
-		FauxScrollFrame_SetOffset(TradeSkillListScrollFrame, 0);
+		FauxScrollFrame_SetOffset(CraftListScrollFrame, 0);
 		SPF1.CraftFrame_SetSelection(SPF1.FIRST);
 	end
-	-- if firstRecipe then
-		-- FauxScrollFrame_SetOffset(CraftListScrollFrame, 0);
-		-- SPF1.CraftFrame_SetSelection(firstRecipe);
-	-- end
-	--CraftListScrollFrameScrollBar:SetValue(0);
-	
 	CraftFrame_Update();
-	
-	-- if not firstRecipe then
-		-- SPF1.ClearCraft();
-	-- end
 	
 	--LeatrixPlus compatibility
     if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then

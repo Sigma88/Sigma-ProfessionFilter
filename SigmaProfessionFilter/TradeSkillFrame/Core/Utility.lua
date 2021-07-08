@@ -375,7 +375,11 @@ function SPF2.ClearTradeSkill()
 	TradeSkillCreateAllButton:Disable();
 end
 
-function SPF2.FullUpdate()
+function SPF2.FullUpdate(keepCollapsed)
+	if not keepCollapsed then
+		SPF2.Collapsed = nil;
+	end
+	
 	SPF2.FILTERED = nil;
 	SPF2.GetNumTradeSkills();
 	TradeSkillListScrollFrameScrollBar:SetValue(0);
