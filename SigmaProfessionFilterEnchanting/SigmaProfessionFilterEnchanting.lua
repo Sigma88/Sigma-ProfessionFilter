@@ -66,6 +66,7 @@ local AutoEnchant = function()
 		local craftName = GetCraftInfo(GetCraftSelectionIndex());
 		for i,slot in pairs(InvSlots) do
 			if strfind(craftName, L[slot]) then
+				print("TRY TO ENCHANT",GetInventoryItemLink("player", i),"WITH",GetCraftItemLink(GetCraftSelectionIndex()));
 				return UseInventoryItem(i);
 			end
 		end

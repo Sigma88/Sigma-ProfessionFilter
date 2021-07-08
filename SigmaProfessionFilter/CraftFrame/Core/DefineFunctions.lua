@@ -14,16 +14,31 @@ function SPF1.GetNumCrafts()
 			SPF1.LeftSort:OnShow();
 		end
 		
-		-- Check the Chosen Grouping Scheme
-		local groupBy = SPF1:SavedData()["GroupBy"] or "Left";
-		local Ordered = {["Left"] = {}, ["Right"] = {}}
+		-- -- Check the Chosen Grouping Scheme
+		-- local groupBy = SPF1:SavedData()["GroupBy"] or "Left";
+		-- local Ordered = {};
+		
+		-- Reset the Data
+		SPF1.FIRST = nil;
+		SPF1.Data = {};
+		SPF1.Recipes = {};
+		SPF1.Headers = {};
+		
+		local headerIndex = 0;
+		local Ordered = {};
+		
 		
 		-- Find which items pass all filters
 		for i=1, SPF1.baseGetNumCrafts() do
 			-- IMPLEMENT CHECKS LATER
-			local leftGroupName = SPF1.LeftMenu:Filter(i, SPF1:GetSelected("Left"));
-			local rightGroupName = SPF1.RightMenu:Filter(i, SPF1:GetSelected("Right"));
-
+			---local leftGroupName = SPF1.LeftMenu:Filter(i, SPF1:GetSelected("Left"));
+			---local rightGroupName = SPF1.RightMenu:Filter(i, SPF1:GetSelected("Right"));
+			local leftGroupID = SPF1.LeftMenu:Filter(i, SPF1:GetSelected("Left")) or 0;
+			local rightGroupID = SPF1.RightMenu:Filter(i, SPF1:GetSelected("Right")) or 0;
+			print("leftGroupID",leftGroupID > 0);
+			print("rightGroupID",rightGroupID>0);
+			print("SPF1:GetSelected(\"Left\")",SPF1:GetSelected("Left") == 0);
+			print("SPF1:GetSelected(\"Right\")",SPF1:GetSelected("Right")==0);
 			-- FILTER_1
 			if (not SPF1.Filter1:Filter(i))
 			-- FILTER_2
@@ -31,23 +46,24 @@ function SPF1.GetNumCrafts()
 			-- SEARCH_BOX
 				or not(SPF1.SearchBox:Filter(i))
 			-- LEFT_DROPDOWN
-				or not (SPF1:GetSelected("Left") == 1 or #leftGroupName > 0)
+				or not (SPF1:GetSelected("Left") == 0 or leftGroupID > 0)--#leftGroupName > 0)
 			-- RIGHT_DROPDOWN
-				or not (SPF1:GetSelected("Right") == 1 or #rightGroupName > 0)
+				or not (SPF1:GetSelected("Right") == 0 or rightGroupID > 0)--#rightGroupName > 0)
 			then
-				-- ELEMENTS THAT FAIL TO MATCH ALL FILTERS
+				-- SKIP ELEMENTS THAT FAIL TO MATCH ALL FILTERS
+				print("SKIP");
 			else
 				-- ELEMENTS THAT MATCH ALL FILTERS
 				if (groupBy == "Left") then
-					if (Ordered["Left"][leftGroupName] == nil) then
-						Ordered["Left"][leftGroupName] = {};
+					if (Ordered[leftGroupID] == nil) then
+						Ordered[leftGroupID] = {};
 					end
-					table.insert(Ordered["Left"][leftGroupName], i);
+					table.insert(Ordered[leftGroupID], i);
 				else
-					if (Ordered["Right"][rightGroupName] == nil) then
-						Ordered["Right"][rightGroupName] = {};
+					if (Ordered[rightGroupID] == nil) then
+						Ordered[rightGroupID] = {};
 					end
-					table.insert(Ordered["Right"][rightGroupName], i);
+					table.insert(Ordered[rightGroupID], i);
 				end
 			end
 			
@@ -59,28 +75,27 @@ function SPF1.GetNumCrafts()
 		
 		-- Build the new ordered table
 		
-		SPF1.FIRST = nil;
-		SPF1.Data = {};
-		SPF1.Headers = {};
+		-- SPF1.FIRST = nil;
+		-- SPF1.Data = {};
+		-- SPF1.Headers = {};
 		
 		local totalCount = 0;
 		local headerCount = 0;
-		local firstRecipe = nil;
+		-- local firstRecipe = nil;
 		
-		if Ordered[groupBy] ~= nil then
-			local Pairs = SPF1:GetMenu(groupBy);
+		if Ordered then
+			local Pairs = SPF1:GetMenu(groupBy) or { [1] = { name = ""; } };
 			
-			if (groupBy == "Left" and not SPF1:GetMenu("Left")) then
-				Pairs = { [1] = { name = ""; } };
-			end
+			-- if (groupBy == "Left" and not SPF1:GetMenu("Left")) then
+				-- Pairs = { [1] = { name = ""; } };
+			-- end
 			
 			for i,button in ipairs(Pairs) do
 				local group = button.name;
-				
-				local items = Ordered[groupBy][group];
-				
-				if (items) then
-					
+				local items = Ordered[i];
+				--print("i >",i,"<");
+				--print("group>",group,"<");
+				if items then
 					-- Add the Header
 					if (#group > 0) then
 						headerCount = headerCount + 1;
@@ -91,14 +106,15 @@ function SPF1.GetNumCrafts()
 							["craftName"] = group;
 							["craftSubSpellName"] = "";
 							["craftType"] = "header";
+							["headerIndex"] = headerCount;
 							["numAvailable"] = 0;
-							["trainingPointCost"] = nil;
-							["requiredLevel"] = 0;
-							["original"] = 0;
+							--["trainingPointCost"] = nil;
+							--["requiredLevel"] = 0;
+							--["original"] = 0;
 						};
 					end
 					
-					if (SPF1.Collapsed and SPF1.Collapsed[group]) then
+					if (SPF1.Collapsed and SPF1.Collapsed[headerCount]) then
 						SPF1.Data[totalCount]["isExpanded"] = false;
 					else
 						if (#group > 0) then
@@ -107,9 +123,9 @@ function SPF1.GetNumCrafts()
 						
 						for j,craftIndex in ipairs(items) do
 							totalCount = totalCount + 1;
-							
-							if (not firstRecipe) then
-								firstRecipe = totalCount;
+							--print("   item",craftIndex);
+							if (not SPF1.FIRST) then
+								--firstRecipe = totalCount;
 								SPF1.FIRST = totalCount;
 							end
 							
@@ -168,7 +184,7 @@ function SPF1.GetCraftInfo(id)
 end
 
 -- Expand
-function SPF1.ExpandCraftSkillLine(id)
+function SPF1.ExpandCraftSkillLine(id, skipUpdate)
 	
 	-- Check if the profession is supported
 	if (not SigmaProfessionFilter[GetCraftName()]) then
@@ -179,8 +195,10 @@ function SPF1.ExpandCraftSkillLine(id)
 	if (id == 0) then
 		-- Expand in reverse order otherwise it's a mess
 		for i=#SPF1.Headers, 1, -1 do
-			SPF1.ExpandCraftSkillLine(SPF1.Headers[i]);
+			SPF1.ExpandCraftSkillLine(SPF1.Headers[i], true);
 		end
+		SPF1.FullUpdate();
+		return;
 		
 	-- otherwise expand this header
 	elseif (SPF1.Data and SPF1.Data[id]) then
@@ -190,16 +208,23 @@ function SPF1.ExpandCraftSkillLine(id)
 		
 		if (craftType == "header") then
 			-- Remove if fom the list of collapsed headers
-			SPF1.Collapsed[craftName] = nil;
+			
+			if (SPF1.Collapsed == nil) then
+				SPF1.Collapsed = {};
+			end
+			
+			SPF1.Collapsed[SPF1.Data[id]["headerIndex"]] = nil;
 		end
 	end
 	
-    SPF1.FullUpdate();
-	SPF1.ONCLICK = id;
+	if not skipUpdate then
+		SPF1.FullUpdate();
+		SPF1.ONCLICK = id;
+	end
 end
 
 -- Collapse
-function SPF1.CollapseCraftSkillLine(id)
+function SPF1.CollapseCraftSkillLine(id, skipUpdate)
 	
 	-- Check if the profession is supported
 	if (not SigmaProfessionFilter[GetCraftName()]) then
@@ -210,8 +235,11 @@ function SPF1.CollapseCraftSkillLine(id)
 	if (id == 0) then
 		-- Collapse in reverse order otherwise it's a mess
 		for i=#SPF1.Headers, 1, -1 do
-			SPF1.CollapseCraftSkillLine(SPF1.Headers[i]);
+			SPF1.CollapseCraftSkillLine(SPF1.Headers[i], true);
 		end
+		
+		SPF1.FullUpdate();
+		return;
 		
 	-- otherwise collapse this header
 	elseif (SPF1.Data and SPF1.Data[id]) then
@@ -226,12 +254,14 @@ function SPF1.CollapseCraftSkillLine(id)
 				SPF1.Collapsed = {};
 			end
 			
-			SPF1.Collapsed[craftName] = true;
+			SPF1.Collapsed[SPF1.Data[id]["headerIndex"]] = true;
 		end
 	end
 	
-    SPF1.FullUpdate();
-	SPF1.ONCLICK = id;
+	if not skipUpdate then
+		SPF1.FullUpdate();
+		SPF1.ONCLICK = id;
+	end
 end
 
 -- Select Craft
@@ -241,7 +271,11 @@ function SPF1.CraftFrame_SetSelection(craftIndex)
 end
 
 function SPF1.GetCraftSelectionIndex()
-	return SPF1.SELECTED;
+	
+	if SPF1.SELECTED then
+		return SPF1.SELECTED;
+	end
+	return SPF1.baseGetCraftSelectionIndex();
 end
 
 function SPF1.SelectCraft(id)
@@ -249,8 +283,10 @@ function SPF1.SelectCraft(id)
 		if not SPF1.Data[id]["original"] then
 			return;
 		end
+		--print("SELECT CRAFT1",SPF1.Data[id]["original"]);
 		SPF1.baseSelectCraft(SPF1.Data[id]["original"]);
 	else
+		--print("SELECT CRAFT2",id);
 		SPF1.baseSelectCraft(id);
 	end
 end
@@ -263,6 +299,7 @@ end
 -- Crafting
 function SPF1.CraftCreateButton_OnMouseDown(self, mouseBtn)
 	if CraftCreateButton:IsEnabled() and mouseBtn == "LeftButton" then
+		--print("ON_MOUSE_DOWN",GetCraftSelectionIndex());
 		SPF1.CRAFTING = true;
 		SPF1.SelectCraft(SPF1.GetCraftSelectionIndex());
 	end
@@ -270,6 +307,7 @@ end
 
 function SPF1.CraftCreateButton_OnMouseUp()
 	if SPF1.CRAFTING then
+		--print("ON_MOUSE_UP",GetCraftSelectionIndex());
 		if not CraftCreateButton:IsMouseOver() then
 			SPF1.CRAFTING = nil;
 			SPF1.SelectCraft(SPF1.GetCraftSelectionIndex());
@@ -279,6 +317,7 @@ end
 
 function SPF1.CraftCreateButton_OnClick()
 	if SPF1.CRAFTING then
+		--print("ON_CLICK",GetCraftSelectionIndex());
 		SPF1.CRAFTING = nil;
 		SPF1.SelectCraft(SPF1.GetCraftSelectionIndex());
 	end

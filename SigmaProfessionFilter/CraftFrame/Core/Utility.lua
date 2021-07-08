@@ -20,7 +20,7 @@ function SPF1:GetSelected(side)
 	if SPF1:GetMenu(side) and SigmaProfessionFilter[GetCraftName()]["Selected"] then
 		return SigmaProfessionFilter[GetCraftName()]["Selected"][side] or 1;
 	end
-	return 1;
+	return 0;
 end
 
 function SPF1:SetSelected(side, id)
@@ -41,34 +41,41 @@ function trim(str)
 	return (str:gsub("^%s*(.-)%s*$", "%1"))
 end
 
-function SPF1:GetGroup(side, craftName, groupIndex)
-	if (SPF1:GetMenu(side) and type(craftName) == "string") then
-		local name = craftName:lower();
+function SPF1.match(str, filter)
+	if str and filter then
+		if #filter == 0 then
+			return true;
+		end
+		for f in string.gmatch(filter:lower(), "[^%;]+") do
+			if string.find(str:lower(), f) then
+				return true;
+			end
+		end
+	end
+end
+
+function SPF1:GetGroup(side, craftIndex, groupIndex)
+	if (SPF1:GetMenu(side)) then
+		local targetValue = SPF1.baseGetCraftInfo(craftIndex);
 		for i = 1, #SPF1:GetMenu(side), 1 do
-			if groupIndex > 1 then
-				i = groupIndex - 1;
+			if groupIndex > 0 then
+				i = groupIndex;
 			end
 			
 			local button = SPF1:GetMenu(side)[i];
 			
-			if string.find(button.filter, ";") then
-				for f in string.gmatch(button.filter, "[^%;]+") do
-					if type(f) == "string" and string.find(name, f:lower()) then
-						return button.name;
-					end
-				end
-			else
-				if (type(button.filter) == "string" and string.find(name, button.filter:lower())) then
-					return button.name;
-				end
+			if SPF1.match(targetValue, button.filter) then
+				return i;
 			end
 			
-			if groupIndex > 1 then
-				return "";
+			if groupIndex > 0 then
+				return nil;
 			end
 		end
+	elseif SPF1:Custom(side.."Menu")["disabled"] then
+		return 0;
 	end
-	return "";
+	return nil;
 end
 
 function SPF1:FilterWithSearchBox(craftIndex)
@@ -160,17 +167,21 @@ function SPF1.FullUpdate()
 	SPF1.FILTERED = nil;
 	local totalCount, headerCount, firstRecipe = SPF1.GetNumCrafts();
 	
-	if firstRecipe then
-		FauxScrollFrame_SetOffset(CraftListScrollFrame, 0);
-		SPF1.CraftFrame_SetSelection(firstRecipe);
+	if SPF1.FIRST then
+		FauxScrollFrame_SetOffset(TradeSkillListScrollFrame, 0);
+		SPF1.CraftFrame_SetSelection(SPF1.FIRST);
 	end
-	CraftListScrollFrameScrollBar:SetValue(0);
+	-- if firstRecipe then
+		-- FauxScrollFrame_SetOffset(CraftListScrollFrame, 0);
+		-- SPF1.CraftFrame_SetSelection(firstRecipe);
+	-- end
+	--CraftListScrollFrameScrollBar:SetValue(0);
 	
 	CraftFrame_Update();
 	
-	if not firstRecipe then
-		SPF1.ClearCraft();
-	end
+	-- if not firstRecipe then
+		-- SPF1.ClearCraft();
+	-- end
 	
 	--LeatrixPlus compatibility
     if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
