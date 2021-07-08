@@ -105,8 +105,8 @@ function SPF1:FilterWithSearchBox(craftIndex)
 			-- Check the LeftMenu
 			if SPF1:GetMenu("Left") then
 				for	i,button in ipairs(SPF1:GetMenu("Left")) do
-					local groupName = SPF1.LeftMenu:Filter(craftIndex, i + 1);
-					if groupName and #groupName > 0 then
+					local groupIndex = SPF1.LeftMenu:Filter(craftIndex, i) or 0;
+					if groupIndex > 0 then
 						if strmatch(button.name:lower(), searchFilter) ~= nil then
 							return true;
 						end
@@ -117,8 +117,8 @@ function SPF1:FilterWithSearchBox(craftIndex)
 			-- Check the RightMenu
 			if SPF1:GetMenu("Right") then
 				for	i,button in ipairs(SPF1:GetMenu("Right")) do
-					local groupName = SPF1.RightMenu:Filter(craftIndex, i + 1);
-					if groupName and #groupName > 0 then
+					local groupIndex = SPF1.RightMenu:Filter(craftIndex, i) or 0;
+					if groupIndex > 0 then
 						if strmatch(button.name:lower(), searchFilter) ~= nil then
 							return true;
 						end
@@ -126,8 +126,6 @@ function SPF1:FilterWithSearchBox(craftIndex)
 				end
 			end
 		end
-		
-		-- Check the RightMenu Groups
 		
 		-- Check the Reagents
 		if (SPF1:SavedData()["SearchReagents"] ~= false) then
