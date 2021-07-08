@@ -37,7 +37,7 @@ function SPF1:Custom(target)
 	return Profession[target] or {};
 end
 
-function trim(str)
+function SPF1.trim(str)
 	return (str:gsub("^%s*(.-)%s*$", "%1"))
 end
 
@@ -80,7 +80,7 @@ end
 function SPF1:FilterWithSearchBox(craftIndex)
 	
 	if SPF1.SearchBox ~= nil then
-		local searchFilter = trim(SPF1.SearchBox:GetText():lower());
+		local searchFilter = SPF1.trim(SPF1.SearchBox:GetText():lower());
 		local craftName, craftSubSpellName, craftType, numAvailable, isExpanded, trainingPointCost, requiredLevel = SPF1.baseGetCraftInfo(craftIndex);
 		
 		-- Check the Name
