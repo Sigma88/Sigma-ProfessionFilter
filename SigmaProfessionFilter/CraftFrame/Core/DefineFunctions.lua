@@ -194,7 +194,7 @@ function SPF1.GetCraftInfo(craftIndex)
 	-- If The Profession is supported
 	if (SPF1.Data and SPF1.Data[craftIndex]) then
 		if not SPF1.Data[craftIndex]["original"] then
-			return SPF1.Data[craftIndex]["craftName"], SPF1.Data[craftIndex]["craftSubSpellName"], SPF1.Data[craftIndex]["craftType"], SPF1.Data[craftIndex]["numAvailable"];
+			return SPF1.Data[craftIndex]["craftName"], SPF1.Data[craftIndex]["craftSubSpellName"], SPF1.Data[craftIndex]["craftType"], SPF1.Data[craftIndex]["numAvailable"], SPF1.Data[craftIndex]["isExpanded"];
 		else
 			return SPF1.baseGetCraftInfo(SPF1.Data[craftIndex]["original"]);
 		end
