@@ -167,11 +167,16 @@ function SPF1.FullUpdate(keepCollapsed)
 	
 	SPF1.FILTERED = nil;
 	SPF1.GetNumCrafts();
+	
 	if SPF1.FIRST then
 		FauxScrollFrame_SetOffset(CraftListScrollFrame, 0);
 		SPF1.CraftFrame_SetSelection(SPF1.FIRST);
 	end
 	CraftFrame_Update();
+	
+	if not SPF1.FIRST then
+		SPF1.ClearCraft();
+	end
 	
 	--LeatrixPlus compatibility
     if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
