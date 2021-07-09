@@ -167,7 +167,6 @@ function SPF1.FullUpdate(keepCollapsed)
 	
 	SPF1.FILTERED = nil;
 	SPF1.GetNumCrafts();
-	CraftListScrollFrameScrollBar:SetValue(0);
 	if SPF1.FIRST then
 		FauxScrollFrame_SetOffset(CraftListScrollFrame, 0);
 		SPF1.CraftFrame_SetSelection(SPF1.FIRST);

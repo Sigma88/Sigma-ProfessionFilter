@@ -255,7 +255,6 @@ function SPF1.CollapseCraftSkillLine(craftIndex, skipUpdate)
 	elseif (SPF1.Data and SPF1.Data[craftIndex]) then
 		-- if this is a header
 		local craftType = SPF1.Data[craftIndex]["craftType"];
-		local craftName = SPF1.Data[craftIndex]["craftName"];
 		
 		if (craftType == "header") then
 			-- Set Collapsed To False
