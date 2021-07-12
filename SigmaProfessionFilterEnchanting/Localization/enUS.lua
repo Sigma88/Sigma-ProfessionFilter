@@ -37,7 +37,7 @@ L["LEFT_08_FILTER"] = MANA;
 L["LEFT_09_FILTER"] = "Protection;Defense";
 L["LEFT_10_FILTER"] = RESISTANCE_LABEL;
 L["LEFT_11_FILTER"] = "Impact;Striking";
-L["LEFT_12_FILTER"] = STAT_SPELLPOWER..";spellpower;sunfire;soulfrost";
+L["LEFT_12_FILTER"] = STAT_SPELLPOWER..";spellpower;sunfire;soulfrost;wizard";
 L["LEFT_13_FILTER"] = SHOW_COMBAT_HEALING_TEXT;
 L["LEFT_14_FILTER"] = "slay";
 L["LEFT_15_FILTER"] = "Absorption;Chill;Crusader;Fiery;Unholy";
@@ -59,7 +59,8 @@ L["RIGHT_07_NAME"] = ENCHSLOT_WEAPON;
 L["RIGHT_08_NAME"] = SHIELDSLOT;
 L["RIGHT_09_NAME"] = "Create Wand";
 L["RIGHT_10_NAME"] = "Create Rod";
-L["RIGHT_11_NAME"] = MISCELLANEOUS;
+L["RIGHT_11_NAME"] = "Create Oil";
+L["RIGHT_12_NAME"] = MISCELLANEOUS;
 -- Filters
 L["RIGHT_01_FILTER"] = CHESTSLOT;
 L["RIGHT_02_FILTER"] = "Boots";
@@ -71,4 +72,7 @@ L["RIGHT_07_FILTER"] = ENCHSLOT_WEAPON;
 L["RIGHT_08_FILTER"] = SHIELDSLOT;
 L["RIGHT_09_FILTER"] = "Wand";
 L["RIGHT_10_FILTER"] = "Rod";
-L["RIGHT_11_FILTER"] = "";
+L["RIGHT_11_FILTER"] = "Oil";
+L["RIGHT_12_FILTER"] = "";
+
+L["SELF_ENCH"] = "Self Ench";

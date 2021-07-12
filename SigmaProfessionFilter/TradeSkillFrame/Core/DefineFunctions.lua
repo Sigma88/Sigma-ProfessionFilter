@@ -1,8 +1,8 @@
 local SPF2 = SigmaProfessionFilter[2];
 
---Set up data table
+-- Set up data table
 function SPF2.GetNumTradeSkills()
-
+	
 	if not TradeSkillFrame:IsVisible() then
 		return SPF2.baseGetNumTradeSkills();
 	end
@@ -20,11 +20,11 @@ function SPF2.GetNumTradeSkills()
 			UIDropDownMenu_SetSelectedID(TradeSkillInvSlotDropDown, RightSelection + 1)
 			SetTradeSkillInvSlotFilter(RightSelection, 1, 1);
 		end
-
+		
 		-- Reset the Data
 		SPF2.FIRST = nil;
 		SPF2.Data = {};
-		SPF2.Recipes = SPF2.Recipes or {};
+		SPF2.Recipes = {};
 		SPF2.Headers = {};
 		SPF2.OriginalHeaders = {};
 		
@@ -37,7 +37,7 @@ function SPF2.GetNumTradeSkills()
 		for i=1, SPF2.baseGetNumTradeSkills() do
 			
 			local skillName, skillType, numAvailable = SPF2.baseGetTradeSkillInfo(i);
-			SPF2.Recipes[skillName] = i; --{ skillIndex = i; }; --numAvailable = numAvailable; };
+			SPF2.Recipes[skillName] = i; -- { skillIndex = i; }; -- numAvailable = numAvailable; };
 			
 			if skillType == "header" then
 				headerIndex = headerIndex + 1;
@@ -138,11 +138,12 @@ function SPF2.GetNumTradeSkills()
 						SPF2.Data[totalCount] = {
 							["skillName"] = group;
 							["skillType"] = "header";
+							["headerIndex"] = headerCount;
 							["numAvailable"] = 0;
 						};
 					end
 					
-					if (SPF2.Collapsed and SPF2.Collapsed[group]) then
+					if (SPF2.Collapsed and SPF2.Collapsed[headerCount]) then
 						SPF2.Data[totalCount]["isExpanded"] = false;
 					else
 						if (#group > 0) then
@@ -197,14 +198,16 @@ function SPF2.GetTradeSkillInfo(skillIndex)
 end
 
 -- Expand
-function SPF2.ExpandTradeSkillSubClass(skillIndex)
+function SPF2.ExpandTradeSkillSubClass(skillIndex, skipUpdate)
 	
 	-- if the skillIndex is zero we need to expand all headers
 	if (skillIndex == 0) then
 		-- Expand in reverse order otherwise it's a mess
 		for i=#SPF2.Headers, 1, -1 do
-			SPF2.ExpandTradeSkillSubClass(SPF2.Headers[i]);
+			SPF2.ExpandTradeSkillSubClass(SPF2.Headers[i], true);
 		end
+		SPF2.FullUpdate(true);
+		return;
 		
 	-- otherwise expand this header
 	elseif (SPF2.Data and SPF2.Data[skillIndex]) then
@@ -219,23 +222,28 @@ function SPF2.ExpandTradeSkillSubClass(skillIndex)
 				SPF2.Collapsed = {};
 			end
 			
-			SPF2.Collapsed[skillName] = nil;
+			SPF2.Collapsed[SPF2.Data[skillIndex]["headerIndex"]] = nil;
 		end
 	end
 	
-    SPF2.FullUpdate();
-	SPF2.ONCLICK = skillIndex;
+	if not skipUpdate then
+		SPF2.FullUpdate(true);
+		SPF2.ONCLICK = skillIndex;
+	end
 end
 
 -- Collapse
-function SPF2.CollapseTradeSkillSubClass(skillIndex)
+function SPF2.CollapseTradeSkillSubClass(skillIndex, skipUpdate)
 	
 	-- if the skillIndex is zero we need to collapse all headers
 	if (skillIndex == 0) then
 		-- Collapse in reverse order otherwise it's a mess
 		for i=#SPF2.Headers, 1, -1 do
-			SPF2.CollapseTradeSkillSubClass(SPF2.Headers[i]);
+			SPF2.CollapseTradeSkillSubClass(SPF2.Headers[i], true);
 		end
+		
+		SPF2.FullUpdate(true);
+		return;
 		
 	-- otherwise collapse this header
 	elseif (SPF2.Data and SPF2.Data[skillIndex]) then
@@ -250,12 +258,14 @@ function SPF2.CollapseTradeSkillSubClass(skillIndex)
 				SPF2.Collapsed = {};
 			end
 			
-			SPF2.Collapsed[skillName] = true;
+			SPF2.Collapsed[SPF2.Data[skillIndex]["headerIndex"]] = true;
 		end
 	end
 	
-    SPF2.FullUpdate();
-	SPF2.ONCLICK = skillIndex;
+	if not skipUpdate then
+		SPF2.FullUpdate(true);
+		SPF2.ONCLICK = skillIndex;
+	end
 end
 
 -- Select TradeSkill
@@ -379,14 +389,10 @@ function SPF2.GetTradeskillRepeatCount()
 	end
 	
 	return TradeSkillInputBox:GetNumber();
-end;
+end
 
 function SPF2.TradeSkillFrame_OnShow(self)
-	-- Check if the TradeSkill has changed
-	if SPF2.TradeSkillName and SPF2.TradeSkillName ~= GetTradeSkillName() then
-		SPF2.FullUpdate();
-	end
-	SPF2.TradeSkillName = GetTradeSkillName();
+	SPF2.FullUpdate();
 end
 
 function SPF2.GetTradeSkillItemLink(skillIndex)

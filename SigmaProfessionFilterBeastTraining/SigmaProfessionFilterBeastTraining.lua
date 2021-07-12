@@ -21,26 +21,22 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 		["title"] = L["RIGHT_TITLE"];
 		["tooltip"] = L["RIGHT_TOOLTIP"];
 		["Filter"] = function(craftIndex, groupIndex)
-			if groupIndex < 4 then
-				SPF1:GetGroup("Right", SPF1.baseGetCraftInfo(craftIndex), groupIndex);
+			if groupIndex < 3 then
+				SPF1:GetGroup("Right", craftIndex, groupIndex);
 			end
 			
-			if groupIndex == 4 then
-				local wildAnimals = SPF1:GetGroup("Right", SPF1.baseGetCraftInfo(craftIndex), 2);
-				local petTrainer = SPF1:GetGroup("Right", SPF1.baseGetCraftInfo(craftIndex), 3);
-				if #(wildAnimals..petTrainer) == 0 then
-					return "Other";
+			local wildAnimals = SPF1:GetGroup("Right", craftIndex, 1);
+			local petTrainer = SPF1:GetGroup("Right", craftIndex, 2);
+			
+			if groupIndex == 3 then
+				if (not wildAnimals) and (not petTrainer) then
+					return 3;
 				else
-					return "";
+					return nil;
 				end
 			end
 			
-			local groupName = SPF1:GetGroup("Right", SPF1.baseGetCraftInfo(craftIndex), 3);
-			if #(SPF1:GetGroup("Right", SPF1.baseGetCraftInfo(craftIndex), groupIndex)) > 0 then
-				groupName = groupName..(SPF1:GetGroup("Right", SPF1.baseGetCraftInfo(craftIndex), 2));
-			end
-			
-			return groupName;
+			return wildAnimals or petTrainer;
 		end;
 		["Initialize"] = function()
 			if (SPF1:GetMenu("Right")) then
