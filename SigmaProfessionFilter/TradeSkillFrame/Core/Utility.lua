@@ -160,9 +160,9 @@ function SPF2:FilterWithSearchBox(skillIndex)
 			if not SPF2:Custom("LeftMenu")["disabled"] then
 				if SPF2:GetMenu("Left") then
 					for	i,button in ipairs(SPF2:GetMenu("Left")) do
-						local groupIndex = SPF2.LeftMenu:Filter(skillIndex, i) or 0;
-						if groupIndex > 0 then
-							if strmatch(button.name:lower(), searchFilter) ~= nil then
+						if strmatch(button.name:lower(), searchFilter) ~= nil then
+							local groupIndex = SPF2.LeftMenu:Filter(craftIndex, i) or 0;
+							if groupIndex > 0 then
 								return true;
 							end
 						end
@@ -180,9 +180,9 @@ function SPF2:FilterWithSearchBox(skillIndex)
 			if not SPF2:Custom("RightMenu")["disabled"] then
 				if SPF2:GetMenu("Right") then
 					for	i,button in ipairs(SPF2:GetMenu("Right")) do
-						local groupIndex = SPF2.RightMenu:Filter(skillIndex, i) or 0;
-						if groupIndex > 0 then
-							if strmatch(button.name:lower(), searchFilter) ~= nil then
+						if strmatch(button.name:lower(), searchFilter) ~= nil then
+							local groupIndex = SPF2.RightMenu:Filter(craftIndex, i) or 0;
+							if groupIndex > 0 then
 								return true;
 							end
 						end
@@ -213,9 +213,6 @@ function SPF2:FilterWithSearchBox(skillIndex)
 end
 
 function SPF2.TradeSkillFrame_PostUpdate()
-	
-	-- Update the TradeSkillInputBox
-	-- SPF2.GetTradeskillRepeatCount();
 	
 	-- Check if there are any headers
 	if SPF2.Headers then
@@ -251,7 +248,7 @@ function SPF2.TradeSkillFrame_PostUpdate()
 		SPF2.ClearTradeSkill();
 	end
 	
-	--LeatrixPlus compatibility
+	-- LeatrixPlus compatibility
     if (LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On" and TradeSkillSkill23) then
 		if SPF2.Headers and #SPF2.Headers == 0 and SPF2.FIRST then
 			TradeSkillSkill1:SetPoint("TOPLEFT", TradeSkillFrame, "TOPLEFT", 22, -81);
@@ -263,6 +260,12 @@ function SPF2.TradeSkillFrame_PostUpdate()
 			TradeSkillSkill1:SetPoint("TOPLEFT", TradeSkillFrame, "TOPLEFT", 22, -96);
 		end
     end
+	
+	if SPF2.TradeSkillName ~= GetTradeSkillName() then
+		SPF2.TradeSkillName = GetTradeSkillName();
+		SPF2.FullUpdate();
+	end
+	
 end
 
 hooksecurefunc("TradeSkillFrame_Update", SPF2.TradeSkillFrame_PostUpdate);
@@ -325,7 +328,9 @@ for i=1, MAX_TRADE_SKILL_REAGENTS do
 	
 	function createButton:Update()
 		if not TradeSkillFrame:IsVisible() then return; end
-		local reagentName, _, reagentCount, playerReagentCount = SPF2.GetTradeSkillReagentInfo(SPF2.SELECTED, createButton.id);
+		if SPF2.SELECTED then
+			local reagentName, _, reagentCount, playerReagentCount = SPF2.GetTradeSkillReagentInfo(SPF2.SELECTED, createButton.id);
+		end
 		if not SPF2.Recipes[reagentName] then
 			createButton:Hide();
 		else
@@ -370,7 +375,11 @@ function SPF2.ClearTradeSkill()
 	TradeSkillCreateAllButton:Disable();
 end
 
-function SPF2.FullUpdate()
+function SPF2.FullUpdate(keepCollapsed)
+	if not keepCollapsed then
+		SPF2.Collapsed = nil;
+	end
+	
 	SPF2.FILTERED = nil;
 	SPF2.GetNumTradeSkills();
 	TradeSkillListScrollFrameScrollBar:SetValue(0);

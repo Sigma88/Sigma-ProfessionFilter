@@ -9,9 +9,9 @@ function SPF1.LeftMenu:OnLoad()
 	hooksecurefunc("CraftFrame_OnShow", SPF1.LeftMenu.OnShow);
 
 	UIDropDownMenu_SetWidth(SPF1.LeftMenu, 120);
-	
-	UIDropDownMenu_Initialize(SPF1.LeftMenu, SPF1:Custom("LeftMenu")["Initialize"] or SPF1.LeftMenu.Initialize);
+	--UIDropDownMenu_Initialize(SPF1.LeftMenu, SPF1:Custom("LeftMenu")["Initialize"] or SPF1.LeftMenu.Initialize);
 	UIDropDownMenu_SetSelectedID(SPF1.LeftMenu, 1);
+	SPF1:SetSelected("Left", 0);
 	
 	-- LeatrixPlus compatibility
 	if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
@@ -24,7 +24,7 @@ function SPF1.LeftMenu:OnShow()
         SPF1.LeftMenu:Hide();
 	else
 		UIDropDownMenu_Initialize(SPF1.LeftMenu, SPF1:Custom("LeftMenu")["Initialize"] or SPF1.LeftMenu.Initialize);
-		UIDropDownMenu_SetSelectedID(SPF1.LeftMenu, SPF1:GetSelected("Left"));
+		UIDropDownMenu_SetSelectedID(SPF1.LeftMenu, SPF1:GetSelected("Left") + 1);
     end
 end
 
@@ -51,7 +51,7 @@ function SPF1.LeftMenu:OnClick(arg1, arg2, checked)
 	
     UIDropDownMenu_SetSelectedID(SPF1.LeftMenu, self:GetID());
 	
-	SPF1:SetSelected("Left", self:GetID());
+	SPF1:SetSelected("Left", self:GetID() - 1);
 	
     SPF1.FullUpdate();
 end
@@ -61,15 +61,24 @@ function SPF1.LeftMenu:Filter(craftIndex, groupIndex)
 	if SPF1:Custom("LeftMenu")["Filter"] then
 		return SPF1:Custom("LeftMenu")["Filter"](craftIndex, groupIndex);
 	else
-		local craftName = SPF1.baseGetCraftInfo(craftIndex);
-		local firstGroup = SPF1:GetGroup("Left", craftName, 1);
-		local requiredGroup = SPF1:GetGroup("Left", craftName, groupIndex);
-		
-		if (firstGroup == requiredGroup) then
-			return firstGroup;
+		if SPF1:GetMenu("Left") then
+			--local craftName = SPF1.baseGetCraftInfo(craftIndex);
+			local firstGroup = SPF1:GetGroup("Left", craftIndex, 0);
+			
+			if groupIndex == 0 then
+				return firstGroup;
+			end
+			
+			local requiredGroup = SPF1:GetGroup("Left", craftIndex, groupIndex);
+			
+			if (firstGroup == requiredGroup) then
+				return firstGroup;
+			end
+		else
+			return 1;
 		end
 		
-		return "";
+		return 0;
 	end
 end
 

@@ -45,7 +45,14 @@ end
 function SPF1.CraftFrame_Update()
 	SetPortraitTexture(CraftFramePortrait, "player");
 	CraftFrameTitleText:SetText(GetCraftName());
-
+	
+	-- Fix for BeastTraining headers not forgetting their old cost
+	for i=1, CRAFTS_DISPLAYED, 1 do
+		if _G["Craft"..i.."Cost"] then
+			_G["Craft"..i.."Cost"]:SetText("");
+		end
+	end
+	
 	local numCrafts = GetNumCrafts();
 	local craftOffset = FauxScrollFrame_GetOffset(CraftListScrollFrame);
 	-- Set the action button text
