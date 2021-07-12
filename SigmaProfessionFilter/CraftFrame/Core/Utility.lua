@@ -104,24 +104,24 @@ function SPF1:FilterWithSearchBox(craftIndex)
 			
 			-- Check the LeftMenu
 			if SPF1:GetMenu("Left") then
-				for	i,button in ipairs(SPF1:GetMenu("Left")) do
-					local groupIndex = SPF1.LeftMenu:Filter(craftIndex, i) or 0;
-					if groupIndex > 0 then
-						if strmatch(button.name:lower(), searchFilter) ~= nil then
-							return true;
-						end
+				local groupIndex = SPF1:GetGroup("Left", craftIndex, 0);
+				
+				if groupIndex and groupIndex > 0 then
+					local group = SPF1:GetMenu("Left")[groupIndex];
+					if strmatch(group.name:lower(), searchFilter) ~= nil then
+						return true;
 					end
 				end
 			end
 			
 			-- Check the RightMenu
 			if SPF1:GetMenu("Right") then
-				for	i,button in ipairs(SPF1:GetMenu("Right")) do
-					local groupIndex = SPF1.RightMenu:Filter(craftIndex, i) or 0;
-					if groupIndex > 0 then
-						if strmatch(button.name:lower(), searchFilter) ~= nil then
-							return true;
-						end
+				local groupIndex = SPF1:GetGroup("Right", craftIndex, 0);
+				
+				if groupIndex and groupIndex > 0 then
+					local group = SPF1:GetMenu("Right")[groupIndex];
+					if strmatch(group.name:lower(), searchFilter) ~= nil then
+						return true;
 					end
 				end
 			end
