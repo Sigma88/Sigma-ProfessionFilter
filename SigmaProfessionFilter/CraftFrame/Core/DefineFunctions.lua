@@ -173,9 +173,9 @@ function SPF1.GetNumCrafts()
 		-- Leatrix Plus Compatibility
 		if LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On" then
 			if SPF1.FIRST and #SPF1.Headers == 0 then
-				TRADE_SKILLS_DISPLAYED = 23;
+				CRAFTS_DISPLAYED = 23;
 			else
-				TRADE_SKILLS_DISPLAYED = 22;
+				CRAFTS_DISPLAYED = 22;
 			end
 		end
 		
