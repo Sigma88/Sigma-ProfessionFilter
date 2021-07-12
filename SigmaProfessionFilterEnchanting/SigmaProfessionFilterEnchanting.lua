@@ -42,6 +42,7 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 		[09] = { name = L["RIGHT_09_NAME"]; filter = L["RIGHT_09_FILTER"]; };
 		[10] = { name = L["RIGHT_10_NAME"]; filter = L["RIGHT_10_FILTER"]; };
 		[11] = { name = L["RIGHT_11_NAME"]; filter = L["RIGHT_11_FILTER"]; };
+		[12] = { name = L["RIGHT_12_NAME"]; filter = L["RIGHT_12_FILTER"]; };
 	};
 };
 
