@@ -159,12 +159,12 @@ function SPF2:FilterWithSearchBox(skillIndex)
 			-- Check the LeftMenu
 			if not SPF2:Custom("LeftMenu")["disabled"] then
 				if SPF2:GetMenu("Left") then
-					local groupIndex = SPF2:GetGroup("Left", craftIndex, 0);
-					
-					if groupIndex and groupIndex > 0 then
-						local group = SPF2:GetMenu("Left")[groupIndex];
-						if strmatch(group.name:lower(), searchFilter) ~= nil then
-							return true;
+					for	i,button in ipairs(SPF2:GetMenu("Left")) do
+						if strmatch(button.name:lower(), searchFilter) ~= nil then
+							local groupIndex = SPF2.LeftMenu:Filter(craftIndex, i) or 0;
+							if groupIndex > 0 then
+								return true;
+							end
 						end
 					end
 				else
@@ -179,12 +179,12 @@ function SPF2:FilterWithSearchBox(skillIndex)
 			-- Check the RightMenu
 			if not SPF2:Custom("RightMenu")["disabled"] then
 				if SPF2:GetMenu("Right") then
-					local groupIndex = SPF2:GetGroup("Right", craftIndex, 0);
-					
-					if groupIndex and groupIndex > 0 then
-						local group = SPF2:GetMenu("Right")[groupIndex];
-						if strmatch(group.name:lower(), searchFilter) ~= nil then
-							return true;
+					for	i,button in ipairs(SPF2:GetMenu("Right")) do
+						if strmatch(button.name:lower(), searchFilter) ~= nil then
+							local groupIndex = SPF2.RightMenu:Filter(craftIndex, i) or 0;
+							if groupIndex > 0 then
+								return true;
+							end
 						end
 					end
 				else
