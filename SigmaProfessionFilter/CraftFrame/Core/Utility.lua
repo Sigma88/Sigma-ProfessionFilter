@@ -18,7 +18,7 @@ end
 
 function SPF1:GetSelected(side)
 	if SPF1:GetMenu(side) and SigmaProfessionFilter[GetCraftName()]["Selected"] then
-		return SigmaProfessionFilter[GetCraftName()]["Selected"][side] or 1;
+		return SigmaProfessionFilter[GetCraftName()]["Selected"][side] or 0;
 	end
 	return 0;
 end
