@@ -1,3 +1,14 @@
+**v0.6.4**
+
+- Fixed issue when changing professions
+- Lowered lag by reducing the number of calculations
+- Track headers by index rather than by name
+- Added the "Auto Enchant" feature to enchanting
+- Overhauled CraftFrame code to be more similar to TradeSkillFrame
+- Added some more filters to Enchanting
+- Fixed an issue where the last recipe was not visible
+
+
 **v0.6.3**
 
 - Fixed CraftFrame professions Craft button
