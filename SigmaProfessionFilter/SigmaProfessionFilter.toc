@@ -1,14 +1,14 @@
 ## Interface: 20501
 ## Title: Sigma |cffbc5ff4Profession Filter|r |cffb1f22e(TBC Classic)|r
 ## Author: Sigma88
-## Notes: v0.6.4 |cff00ff00Release|r
+## Notes: v0.6.3 |cff00ff00Release|r
 ## SavedVariablesPerCharacter: SigmaProfessionFilter_SavedVariables
 ## Dependencies: Blizzard_CraftUI, Blizzard_TradeSkillUI
 ## OptionalDeps: ElvUI, Leatrix_Plus
 
 
 SigmaProfessionFilter.lua
-
+Enchanting_Data.lua
 Localization\enUS.lua
 
 CraftFrame\Core\Utility.lua

@@ -77,6 +77,29 @@ function SPF1:GetGroup(side, craftIndex, groupIndex)
 	end
 end
 
+function SPF1:GetGroupSpell(side, spellID, groupIndex)
+	if (SPF1:GetMenu(side)) then
+		local targetValue = GetSpellInfo(spellID);
+		for i = 1, #SPF1:GetMenu(side), 1 do
+			if groupIndex > 0 then
+				i = groupIndex;
+			end
+			
+			local button = SPF1:GetMenu(side)[i];
+			
+			if SPF1.match(targetValue, button.filter) then
+				return i;
+			end
+			
+			if groupIndex > 0 then
+				return nil;
+			end
+		end
+	else
+		return 0;
+	end
+end
+
 function SPF1:FilterWithSearchBox(craftIndex)
 	
 	if SPF1.SearchBox ~= nil then
@@ -135,6 +158,21 @@ function SPF1:FilterWithSearchBox(craftIndex)
 				if (reagentName and strmatch(reagentName:lower(), searchFilter)) then
 					return true
 				end
+			end
+		end
+	end
+	
+	return false;
+end
+function SPF1.FilterNameWithSearchBox(craftName)
+	
+	if SPF1.SearchBox ~= nil then
+		local searchFilter = SPF1.trim(SPF1.SearchBox:GetText():lower());
+		
+		-- Check the Name
+		if (SPF1:SavedData()["SearchNames"] ~= false) then
+			if strmatch(craftName:lower(), searchFilter) ~= nil then
+				return true;
 			end
 		end
 	end

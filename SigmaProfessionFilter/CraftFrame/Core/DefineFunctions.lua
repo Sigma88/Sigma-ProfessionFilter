@@ -1,5 +1,7 @@
 local SPF1 = SigmaProfessionFilter[1];
 
+CraftTypeColor["unlearned"] = { r = 1.00, g = 0, b = 0, font = "GameFontNormalLeftRed" };  
+
 -- Set up data table
 function SPF1.GetNumCrafts()
 	
@@ -34,9 +36,9 @@ function SPF1.GetNumCrafts()
 		--SPF1.OriginalHeaders = {};
 		
 		-- Start ordering the recipes
-		local CraftTypes = { [1] = "difficult"; [2] = "optimal"; [3] = "medium"; [4] = "easy"; [5] = "trivial"; [6] = "none"; };
-		local ByType = { ["header"] = {}; ["difficult"] = {}; ["optimal"] = {}; ["medium"] = {}; ["easy"] = {}; ["trivial"] = {}; ["none"] = {} };
-		local Names = { ["header"] = {}; ["difficult"] = {}; ["optimal"] = {}; ["medium"] = {}; ["easy"] = {}; ["trivial"] = {}; ["none"] = {} };
+		local CraftTypes = { [1] = "unlearned"; [2] = "difficult"; [3] = "optimal"; [4] = "medium"; [5] = "easy"; [6] = "trivial"; [7] = "none"; };
+		local ByType = { ["header"] = {}; ["unlearned"] = {}; ["difficult"] = {}; ["optimal"] = {}; ["medium"] = {}; ["easy"] = {}; ["trivial"] = {}; ["none"] = {} };
+		local Names = { ["header"] = {}; ["unlearned"] = {}; ["difficult"] = {}; ["optimal"] = {}; ["medium"] = {}; ["easy"] = {}; ["trivial"] = {}; ["none"] = {} };
 		local headerIndex = 0;
 		
 		for i=1, SPF1.baseGetNumCrafts() do
@@ -82,6 +84,41 @@ function SPF1.GetNumCrafts()
 					ByType[craftType][nameWithLevel] = info;
 					table.insert(Names[craftType], nameWithLevel);
 				end
+			end
+		end
+		
+		--for i,spellID in pairs(LibStub("LibCraftInfo-1.0"):GetProfessionCraftList("Enchanting", 2)) do
+		for spellID,spellData in pairs(SPFTEST["Enchanting"]) do
+			local craftName, craftSubSpellName, icon = GetSpellInfo(spellID);
+			
+			if not SPF1.Recipes[craftName] and SPF1.FilterNameWithSearchBox(craftName) then
+				local learnedAt = spellData["learnedAt"];
+				if craftName == "Enchant Ring - Stats" then
+					print(craftName, learnedAt, spellData["levels"]);
+				end
+				local nameWithLevel = string.format("%04d", 999 - learnedAt)..craftName;
+				local craftType = "unlearned";
+				local numReagents = #spellData["reagents"];
+				for j,reagent in ipairs(spellData["reagents"]) do
+					GetItemInfo(reagent["itemID"]);
+				end
+				local info = {
+					["craftName"] = craftName;
+					["craftSubSpellName"] = nil;
+					["craftType"] = craftType;
+					["numAvailable"] = 0;
+					["trainingPointCost"] = 0;
+					["requiredLevel"] = 0;
+					["icon"] = icon;
+					["spellID"] = spellID;
+					["spellDescription"] = GetSpellDescription(spellID);
+					["spellReagents"] = spellData["reagents"];
+					["numReagents"] = numReagents;
+					["Left"] = SPF1.LeftMenu:FilterSpell(spellID, SPF1:GetSelected("Left"));
+					["Right"] = 1;
+				};
+				ByType[craftType][nameWithLevel] = info;
+				table.insert(Names[craftType], nameWithLevel);
 			end
 		end
 		
@@ -194,7 +231,7 @@ function SPF1.GetCraftInfo(craftIndex)
 	-- If The Profession is supported
 	if (SPF1.Data and SPF1.Data[craftIndex]) then
 		if not SPF1.Data[craftIndex]["original"] then
-			return SPF1.Data[craftIndex]["craftName"], SPF1.Data[craftIndex]["craftSubSpellName"], SPF1.Data[craftIndex]["craftType"], SPF1.Data[craftIndex]["numAvailable"], SPF1.Data[craftIndex]["isExpanded"];
+			return SPF1.Data[craftIndex]["craftName"], SPF1.Data[craftIndex]["craftSubSpellName"], SPF1.Data[craftIndex]["craftType"], SPF1.Data[craftIndex]["numAvailable"], SPF1.Data[craftIndex]["isExpanded"], SPF1.Data[craftIndex]["trainingPointCost"], SPF1.Data[craftIndex]["requiredLevel"];
 		else
 			return SPF1.baseGetCraftInfo(SPF1.Data[craftIndex]["original"]);
 		end
@@ -300,7 +337,7 @@ function SPF1.GetCraftNumReagents(craftIndex)
 		if SPF1.Data[craftIndex]["original"] then
 			return SPF1.baseGetCraftNumReagents(SPF1.Data[craftIndex]["original"]);
 		else
-			return 0;
+			return SPF1.Data[craftIndex]["numReagents"] or 0;
 		end
 	end
 	return SPF1.baseGetCraftNumReagents(craftIndex);
@@ -317,14 +354,21 @@ function SPF1.CraftCreateAllButton_OnClick()
 	CraftInputBox:ClearFocus();
 end
 
-function SPF1.GetCraftReagentInfo(craftIndex, i)
+function SPF1.GetCraftReagentInfo(craftIndex, reagentIndex)
 	if SPF1.Data and SPF1.Data[craftIndex] then
 		if not SPF1.Data[craftIndex]["original"] then
+			if SPF1.Data[craftIndex]["spellReagents"] then
+				local reagentID = SPF1.Data[craftIndex]["spellReagents"][reagentIndex]["itemID"];
+				local reagentName, _,_,_,_,_,_,_,_, texturePath = GetItemInfo(reagentID);
+				local numRequired = SPF1.Data[craftIndex]["spellReagents"][reagentIndex]["numRequired"];
+				local numHave = GetItemCount(reagentID);
+				return reagentName, texturePath, numRequired, numHave;
+			end
 			return;
 		end
-		return SPF1.baseGetCraftReagentInfo(SPF1.Data[craftIndex]["original"], i);
+		return SPF1.baseGetCraftReagentInfo(SPF1.Data[craftIndex]["original"], reagentIndex);
 	end
-	return SPF1.baseGetCraftReagentInfo(craftIndex, i);
+	return SPF1.baseGetCraftReagentInfo(craftIndex, reagentIndex);
 end
 
 function SPF1.GetCraftCooldown(craftIndex)
@@ -340,7 +384,7 @@ end
 function SPF1.GetCraftIcon(craftIndex)
 	if SPF1.Data and SPF1.Data[craftIndex] then
 		if not SPF1.Data[craftIndex]["original"] then
-			return;
+			return SPF1.Data[craftIndex]["icon"];
 		end
 		return SPF1.baseGetCraftIcon(SPF1.Data[craftIndex]["original"]);
 	end
@@ -505,6 +549,9 @@ function SPF1.GetCraftDescription(id)
 	-- If The Profession is supported
 	if (SPF1.Data and SPF1.Data[id]) then
 		if not SPF1.Data[id]["original"] then
+			if SPF1.Data[id]["spellID"] then
+				return GetSpellDescription(SPF1.Data[id]["spellID"]);
+			end
 			return;
 		end
 		return SPF1.baseGetCraftDescription(SPF1.Data[id]["original"]);
@@ -535,6 +582,9 @@ function SPF1.SetCraftSpell(obj, id)
 	-- If The Profession is supported
 	if (SPF1.Data and SPF1.Data[craftIndex]) then
 		if not SPF1.Data[craftIndex]["original"] then
+			if SPF1.Data[craftIndex]["spellID"] then
+				return obj:SetSpellByID(SPF1.Data[craftIndex]["spellID"]);
+			end
 			return;
 		end
 		return SPF1.baseSetCraftSpell(obj, SPF1.Data[craftIndex]["original"]);
