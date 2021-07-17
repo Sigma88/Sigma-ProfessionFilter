@@ -504,46 +504,46 @@ function SPF1.CraftCreateButton_OnClick()
 	end
 end
 
-function SPF1.SelectCraft(id)
-	if SPF1.Data and SPF1.Data[id] and SPF1.CRAFTING then
-		if not SPF1.Data[id]["original"] then
+function SPF1.SelectCraft(craftIndex)
+	if SPF1.Data and SPF1.Data[craftIndex] and SPF1.CRAFTING then
+		if not SPF1.Data[craftIndex]["original"] then
 			return;
 		end
-		SPF1.baseSelectCraft(SPF1.Data[id]["original"]);
+		SPF1.baseSelectCraft(SPF1.Data[craftIndex]["original"]);
 	else
-		SPF1.baseSelectCraft(id);
+		SPF1.baseSelectCraft(craftIndex);
 	end
 end
 
-function SPF1.GetCraftDescription(id)
+function SPF1.GetCraftDescription(craftIndex)
 	
 	-- If The Profession is supported
-	if (SPF1.Data and SPF1.Data[id]) then
-		if not SPF1.Data[id]["original"] then
-			if SPF1.Data[id]["spellID"] then
-				return GetSpellDescription(SPF1.Data[id]["spellID"]);
+	if (SPF1.Data and SPF1.Data[craftIndex]) then
+		if not SPF1.Data[craftIndex]["original"] then
+			if SPF1.Data[craftIndex]["spellID"] then
+				return GetSpellDescription(SPF1.Data[craftIndex]["spellID"]);
 			end
 			return;
 		end
-		return SPF1.baseGetCraftDescription(SPF1.Data[id]["original"]);
+		return SPF1.baseGetCraftDescription(SPF1.Data[craftIndex]["original"]);
 	end
 	
 	-- Otherwise fall back to the original
-    return SPF1.baseGetCraftDescription(id);
+    return SPF1.baseGetCraftDescription(craftIndex);
 end
 
-function SPF1.GetCraftSpellFocus(id)
 	
+function SPF1.GetCraftSpellFocus(craftIndex)
 	-- If The Profession is supported
-	if (SPF1.Data and SPF1.Data[id]) then
-		if not SPF1.Data[id]["original"] then
-			return;
+	if (SPF1.Data and SPF1.Data[craftIndex]) then
+		if not SPF1.Data[craftIndex]["original"] then
 		end
 		return SPF1.baseGetCraftSpellFocus(SPF1.Data[id]["original"]);
+		return;
 	end
 	
 	-- Otherwise fall back to the original
-    return SPF1.baseGetCraftSpellFocus(id);
+    return SPF1.baseGetCraftSpellFocus(craftIndex);
 end
 
 function SPF1.SetCraftSpell(obj, id)
