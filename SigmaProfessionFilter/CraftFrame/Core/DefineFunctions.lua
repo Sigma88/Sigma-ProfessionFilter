@@ -108,7 +108,6 @@ function SPF1.GetNumCrafts()
 					["requiredLevel"] = 0;
 					["icon"] = icon;
 					["spellID"] = spellID;
-					["spellDescription"] = GetSpellDescription(spellID);
 					["spellReagents"] = spellData["reagents"];
 					["numReagents"] = numReagents;
 					["learnedAt"] = learnedAt;
