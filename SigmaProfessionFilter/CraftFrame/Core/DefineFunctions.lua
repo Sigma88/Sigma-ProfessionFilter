@@ -551,7 +551,7 @@ function SPF1.GetCraftSpellFocus(craftIndex)
 		if not SPF1.Data[craftIndex]["original"] then
 		end
 		return SPF1.baseGetCraftSpellFocus(SPF1.Data[id]["original"]);
-		return;
+			return;
 	end
 	
 	-- Otherwise fall back to the original
