@@ -111,6 +111,9 @@ function SPF1.GetNumCrafts()
 					["spellDescription"] = GetSpellDescription(spellID);
 					["spellReagents"] = spellData["reagents"];
 					["numReagents"] = numReagents;
+					["learnedAt"] = learnedAt;
+					["levels"] = spellData["levels"];
+					["tools"] = spellData["tools"];
 					["Left"] = SPF1.LeftMenu:FilterSpell(spellID, SPF1:GetSelected("Left"));
 					["Right"] = 1;
 				};
