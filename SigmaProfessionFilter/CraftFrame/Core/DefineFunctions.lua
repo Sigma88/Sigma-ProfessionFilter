@@ -523,11 +523,21 @@ function SPF1.GetCraftDescription(craftIndex)
 	if (SPF1.Data and SPF1.Data[craftIndex]) then
 		if not SPF1.Data[craftIndex]["original"] then
 			if SPF1.Data[craftIndex]["spellID"] then
-				return GetSpellDescription(SPF1.Data[craftIndex]["spellID"]);
+				local spellID = SPF1.Data[craftIndex]["spellID"];
+				local levels = SPFTEST["Enchanting"][spellID]["levels"];
+				local difficulty = "|cffffd100Difficulty:|r |cffff8040"..levels[1].."|r ".."|cffffff00"..levels[2].."|r ".."|cff40bf40"..levels[3].."|r ".."|cff808080"..levels[4].."|r\n\n";
+				
+				return difficulty..GetSpellDescription(SPF1.Data[craftIndex]["spellID"]);
 			end
 			return;
 		end
-		return SPF1.baseGetCraftDescription(SPF1.Data[craftIndex]["original"]);
+		
+		local spellName = SPF1.baseGetCraftInfo(SPF1.Data[craftIndex]["original"])
+		local _, _, _, _, _, _, spellID = GetSpellInfo(spellName);
+		local levels = SPFTEST["Enchanting"][spellID]["levels"];
+		local difficulty = "|cffffd100Difficulty:|r |cffff8040"..levels[1].."|r ".."|cffffff00"..levels[2].."|r ".."|cff40bf40"..levels[3].."|r ".."|cff808080"..levels[4].."|r\n\n";
+				
+		return difficulty..(SPF1.baseGetCraftDescription(SPF1.Data[craftIndex]["original"]) or "");
 	end
 	
 	-- Otherwise fall back to the original
