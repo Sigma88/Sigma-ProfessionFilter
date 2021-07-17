@@ -328,8 +328,9 @@ for i=1, MAX_TRADE_SKILL_REAGENTS do
 	
 	function createButton:Update()
 		if not TradeSkillFrame:IsVisible() then return; end
+		local reagentName, reagentCount, playerReagentCount;
 		if SPF2.SELECTED then
-			local reagentName, _, reagentCount, playerReagentCount = SPF2.GetTradeSkillReagentInfo(SPF2.SELECTED, createButton.id);
+			reagentName, _, reagentCount, playerReagentCount = SPF2.GetTradeSkillReagentInfo(SPF2.SELECTED, createButton.id);
 		end
 		if not SPF2.Recipes[reagentName] then
 			createButton:Hide();
