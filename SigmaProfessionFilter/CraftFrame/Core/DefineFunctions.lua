@@ -93,9 +93,6 @@ function SPF1.GetNumCrafts()
 			
 			if not SPF1.Recipes[craftName] and SPF1.FilterNameWithSearchBox(craftName) then
 				local learnedAt = spellData["learnedAt"];
-				if craftName == "Enchant Ring - Stats" then
-					print(craftName, learnedAt, spellData["levels"]);
-				end
 				local nameWithLevel = string.format("%04d", 999 - learnedAt)..craftName;
 				local craftType = "unlearned";
 				local numReagents = #spellData["reagents"];
