@@ -549,9 +549,9 @@ function SPF1.GetCraftSpellFocus(craftIndex)
 	-- If The Profession is supported
 	if (SPF1.Data and SPF1.Data[craftIndex]) then
 		if not SPF1.Data[craftIndex]["original"] then
+			return;
 		end
 		return SPF1.baseGetCraftSpellFocus(SPF1.Data[id]["original"]);
-			return;
 	end
 	
 	-- Otherwise fall back to the original
