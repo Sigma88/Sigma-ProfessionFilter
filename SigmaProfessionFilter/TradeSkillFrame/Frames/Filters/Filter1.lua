@@ -56,13 +56,13 @@ function SPF2.Filter1:OnRightClick()
 	
 	SPF2:SavedData()["IncludedSkillTypes"] = (SPF2:SavedData()["IncludedSkillTypes"] + 1) % 3;
 	
-	local message = "|cffbc5ff4[SPF]|r|cffffcf00["..GetTradeSkillName().."]|r: "..L["TradeSkillFilter1RightClick"].."|cffff7f3f["..L["ORANGE"].."] |r";
+	local message = "|cffbc5ff4[SPF]|r|cffffcf00["..GetTradeSkillName().."]|r: "..L["TradeSkillFilter1RightClick"].."|cffff8040["..L["ORANGE"].."] |r";
 	
 	if SPF2:SavedData()["IncludedSkillTypes"] < 2 then
 		message = message.."|cffffff00["..L["YELLOW"].."] |r";
 	end
 	if SPF2:SavedData()["IncludedSkillTypes"] < 1 then
-		message = message.."|cff3fbf3f["..L["GREEN"].."]|r";
+		message = message.."|cff40bf40["..L["GREEN"].."]|r";
 	end
 	
 	print(message);
