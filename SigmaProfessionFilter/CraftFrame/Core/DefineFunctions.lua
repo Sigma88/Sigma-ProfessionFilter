@@ -401,16 +401,6 @@ function SPF1.GetCraftNumMade(craftIndex)
 	return SPF1.baseGetCraftNumMade(craftIndex);
 end
 
-function SPF1.GetCraftTools(craftIndex)
-	if SPF1.Data and SPF1.Data[craftIndex] then
-		if not SPF1.Data[craftIndex]["original"] then
-			return;
-		end
-		return SPF1.baseGetCraftTools(SPF1.Data[craftIndex]["original"]);
-	end
-	return SPF1.baseGetCraftTools(craftIndex);
-end
-
 function SPF1.GetTradecraftRepeatCount()
 	
 	if not CraftFrame.numAvailable then
