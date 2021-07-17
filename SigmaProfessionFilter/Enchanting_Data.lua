@@ -1882,6 +1882,13 @@ SPFTEST = {
 };
 };
 
-for i,spellID in pairs(SPFTEST["Enchanting"]) do
+-- Load all spells into the cache
+for spellID,spell in pairs(SPFTEST["Enchanting"]) do
 	GetSpellInfo(spellID);
+	GetSpellDescription(spellID);
+	if spell["reagents"] then
+		for i,item in ipairs(spell["reagents"]) do
+			GetItemInfo(item["itemID"]);
+		end
+	end
 end
