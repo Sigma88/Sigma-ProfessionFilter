@@ -483,22 +483,6 @@ function SPF1.baseGetCraftItemSubClass(craftIndex)
 	return select(6,GetItemInfo(itemLink)).."_"..select(7,GetItemInfo(itemLink));
 end
 
-function SPF1.SetCraftItem(obj, id, reagId)
-	
-	-- If The Profession is supported
-	local craftIndex = SPF1.GetCraftSelectionIndex();
-	
-	if (SPF1.Data and SPF1.Data[craftIndex]) then
-		if not SPF1.Data[craftIndex]["original"] then
-			return;
-		end
-		return SPF1.baseSetCraftItem(obj, SPF1.Data[craftIndex]["original"], reagId);
-	end
-	
-	-- Otherwise fall back to the original
-    return SPF1.baseSetCraftItem(obj, id, reagId);
-end
-
 -- Crafting
 function SPF1.CraftCreateButton_OnMouseDown(self, mouseBtn)
 	if CraftCreateButton:IsEnabled() and mouseBtn == "LeftButton" then
@@ -582,4 +566,20 @@ function SPF1.SetCraftSpell(obj, id)
 	
 	-- Otherwise fall back to the original
     return SPF1.baseSetCraftSpell(obj, id);
+end
+
+function SPF1.SetCraftItem(obj, id, reagId)
+	
+	-- If The Profession is supported
+	local craftIndex = SPF1.GetCraftSelectionIndex();
+	
+	if (SPF1.Data and SPF1.Data[craftIndex]) then
+		if not SPF1.Data[craftIndex]["original"] then
+			return;
+		end
+		return SPF1.baseSetCraftItem(obj, SPF1.Data[craftIndex]["original"], reagId);
+	end
+	
+	-- Otherwise fall back to the original
+    return SPF1.baseSetCraftItem(obj, id, reagId);
 end
