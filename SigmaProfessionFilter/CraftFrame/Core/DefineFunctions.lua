@@ -592,3 +592,24 @@ function SPF1.SetCraftItem(obj, id, reagId)
 	-- Otherwise fall back to the original
     return SPF1.baseSetCraftItem(obj, id, reagId);
 end
+
+function SPF1.GetRecipeInfo(spellID, infoType)
+	
+	if SPFTEST then
+		local professionName = GetCraftName();
+		if professionName then
+			local professionRecipes = SPFTEST[professionName];
+			if professionRecipes then
+				if spellID then
+					if infoType then
+						return SPFTEST[professionName][spellID][infoType];
+					else
+						return SPFTEST[professionName][spellID];
+					end
+				else
+					return SPFTEST[professionName];
+				end
+			end
+		end
+	end
+end
