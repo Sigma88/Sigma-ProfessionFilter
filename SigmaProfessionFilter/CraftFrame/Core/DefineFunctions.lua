@@ -524,20 +524,37 @@ function SPF1.GetCraftDescription(craftIndex)
 		if not SPF1.Data[craftIndex]["original"] then
 			if SPF1.Data[craftIndex]["spellID"] then
 				local spellID = SPF1.Data[craftIndex]["spellID"];
-				local levels = SPFTEST["Enchanting"][spellID]["levels"];
-				local difficulty = "|cffffd100Difficulty:|r |cffff8040"..levels[1].."|r ".."|cffffff00"..levels[2].."|r ".."|cff40bf40"..levels[3].."|r ".."|cff808080"..levels[4].."|r\n\n";
 				
-				return difficulty..GetSpellDescription(SPF1.Data[craftIndex]["spellID"]);
+				local learnedAt = SPF1.Data[craftIndex]["learnedAt"];
+				if learnedAt then
+					local color = "|cffffffff";
+					if select(2,GetCraftDisplaySkillLine()) < learnedAt then
+						color = "|cffff0000";
+					end
+					learnedAt = color.."Requires "..GetCraftName().." ("..learnedAt..")|r\n\n";
+				end
+				
+				local levels = SPF1.Data[craftIndex]["levels"];
+				local difficulty = nil;
+				
+				if levels then
+					difficulty = "|cffffd100Difficulty:|r |cffff8040"..levels[1].."|r ".."|cffffff00"..levels[2].."|r ".."|cff40bf40"..levels[3].."|r ".."|cff808080"..levels[4].."|r\n\n";
+				end
+				
+				return (learnedAt or "")..(difficulty or "")..(GetSpellDescription(SPF1.Data[craftIndex]["spellID"]) or "");
 			end
 			return;
 		end
 		
 		local spellName = SPF1.baseGetCraftInfo(SPF1.Data[craftIndex]["original"])
 		local _, _, _, _, _, _, spellID = GetSpellInfo(spellName);
-		local levels = SPFTEST["Enchanting"][spellID]["levels"];
-		local difficulty = "|cffffd100Difficulty:|r |cffff8040"..levels[1].."|r ".."|cffffff00"..levels[2].."|r ".."|cff40bf40"..levels[3].."|r ".."|cff808080"..levels[4].."|r\n\n";
-				
-		return difficulty..(SPF1.baseGetCraftDescription(SPF1.Data[craftIndex]["original"]) or "");
+		local levels = SPF1.GetRecipeInfo(spellID, "levels");
+		local difficulty = nil;
+		if levels then
+			difficulty = "|cffffd100Difficulty:|r |cffff8040"..levels[1].."|r ".."|cffffff00"..levels[2].."|r ".."|cff40bf40"..levels[3].."|r ".."|cff808080"..levels[4].."|r\n\n";
+		end
+		
+		return (difficulty or "")..(SPF1.baseGetCraftDescription(SPF1.Data[craftIndex]["original"]) or "");
 	end
 	
 	-- Otherwise fall back to the original
