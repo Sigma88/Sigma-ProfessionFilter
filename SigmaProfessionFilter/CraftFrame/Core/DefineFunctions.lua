@@ -561,14 +561,23 @@ function SPF1.GetCraftDescription(craftIndex)
     return SPF1.baseGetCraftDescription(craftIndex);
 end
 
-	
+-- This will return the "Requires: Runed Copper Rod" text for Enchanting
 function SPF1.GetCraftSpellFocus(craftIndex)
 	-- If The Profession is supported
 	if (SPF1.Data and SPF1.Data[craftIndex]) then
 		if not SPF1.Data[craftIndex]["original"] then
-			return;
+			
+			if SPF1.Data[craftIndex]["tools"] then
+				local tools = {};
+				for i,toolID in ipairs(SPF1.Data[craftIndex]["tools"]) do
+					local toolName = GetItemInfo(toolID);
+					table.insert(tools, toolName);
+					table.insert(tools, GetItemCount(toolID) > 0);
+				end
+				return unpack(tools);
+			end
 		end
-		return SPF1.baseGetCraftSpellFocus(SPF1.Data[id]["original"]);
+		return;
 	end
 	
 	-- Otherwise fall back to the original
