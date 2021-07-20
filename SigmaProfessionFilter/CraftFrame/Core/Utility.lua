@@ -222,3 +222,28 @@ function SPF1.FullUpdate(keepCollapsed)
 		CraftFramePointsLabel:SetPoint("TOPLEFT", CraftFrame, "TOPLEFT", 355, -418);
     end
 end
+
+function SPF1.GetRecipeInfo(spellID, infoType)
+	
+	local RI = SigmaProfessionFilter_RecipeInfo;
+	
+	if RI and RI.Data then
+		local professionName = GetCraftName();
+		if professionName then
+			local Recipes = RI.Data[professionName];
+			if Recipes then
+				if spellID then
+					if  Recipes[spellID] then
+						if infoType then
+							return Recipes[spellID][infoType];
+						else
+							return Recipes[spellID];
+						end
+					end
+				else
+					return Recipes;
+				end
+			end
+		end
+	end
+end
