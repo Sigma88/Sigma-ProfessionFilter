@@ -88,7 +88,7 @@ function SPF1.GetNumCrafts()
 		end
 		
 		--for i,spellID in pairs(LibStub("LibCraftInfo-1.0"):GetProfessionCraftList("Enchanting", 2)) do
-		for spellID,spellData in pairs(SPFTEST["Enchanting"]) do
+		for spellID,spellData in pairs(SPF1.GetRecipeInfo() or {}) do
 			local craftName, craftSubSpellName, icon = GetSpellInfo(spellID);
 			
 			if not SPF1.Recipes[craftName] and SPF1.FilterNameWithSearchBox(craftName) then
