@@ -84,11 +84,10 @@ end
 
 -- Return the group name if the craft matches the filter otherwise return ""
 function SPF1.LeftMenu:FilterSpell(spellID, groupIndex)
-	if SPF1:Custom("LeftMenu")["Filter"] then
-		return SPF1:Custom("LeftMenu")["Filter"](craftIndex, groupIndex);
+	if SPF1:Custom("LeftMenu")["FilterSpell"] then
+		return SPF1:Custom("LeftMenu")["FilterSpell"](spellID, groupIndex);
 	else
 		if SPF1:GetMenu("Left") then
-			--local craftName = SPF1.baseGetCraftInfo(craftIndex);
 			local firstGroup = SPF1:GetGroupSpell("Left", spellID, 0);
 			
 			if groupIndex == 0 then
