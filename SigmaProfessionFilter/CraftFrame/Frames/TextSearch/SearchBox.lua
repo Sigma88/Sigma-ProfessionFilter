@@ -59,9 +59,18 @@ end
 -- Return a string if the filter matches
 function SPF1.SearchBox:Filter(craftIndex)
 	if SPF1:Custom("SearchBox")["Filter"] then
-		return SPF1:Custom("SearchBox")["Filter"];
+		return SPF1:Custom("SearchBox")["Filter"](craftIndex);
 	else
 		return SPF1:FilterWithSearchBox(craftIndex);
+	end
+end
+
+-- Return a string if the filter matches
+function SPF1.SearchBox:FilterSpell(spellID)
+	if SPF1:Custom("SearchBox")["FilterSpell"] then
+		return SPF1:Custom("SearchBox")["FilterSpell"](spellID);
+	else
+		return SPF1:FilterSpellWithSearchBox(spellID);
 	end
 end
 
