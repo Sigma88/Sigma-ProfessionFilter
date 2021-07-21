@@ -82,4 +82,29 @@ function SPF1.RightMenu:Filter(craftIndex, groupIndex)
 	end
 end
 
+-- Return the group name if the craft matches the filter otherwise return ""
+function SPF1.RightMenu:FilterSpell(spellID, groupIndex)
+	if SPF1:Custom("RightMenu")["FilterSpell"] then
+		return SPF1:Custom("RightMenu")["FilterSpell"](spellID, groupIndex);
+	else
+		if SPF1:GetMenu("Right") then
+			local firstGroup = SPF1:GetGroupSpell("Right", spellID, 0);
+			
+			if groupIndex == 0 then
+				return firstGroup;
+			end
+			
+			local requiredGroup = SPF1:GetGroupSpell("Right", spellID, groupIndex);
+			
+			if (firstGroup == requiredGroup) then
+				return firstGroup;
+			end
+		else
+			return 1;
+		end
+		
+		return 0;
+	end
+end
+
 SPF1.RightMenu:OnLoad();
