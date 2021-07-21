@@ -87,37 +87,55 @@ function SPF1.GetNumCrafts()
 			end
 		end
 		
-		--for i,spellID in pairs(LibStub("LibCraftInfo-1.0"):GetProfessionCraftList("Enchanting", 2)) do
 		for spellID,spellData in pairs(SPF1.GetRecipeInfo() or {}) do
 			local craftName, craftSubSpellName, icon = GetSpellInfo(spellID);
 			
-			if not SPF1.Recipes[craftName] and SPF1.FilterNameWithSearchBox(craftName) then
-				local learnedAt = spellData["learnedAt"];
-				local nameWithLevel = string.format("%04d", 999 - learnedAt)..craftName;
-				local craftType = "unlearned";
-				local numReagents = #spellData["reagents"];
-				for j,reagent in ipairs(spellData["reagents"]) do
-					GetItemInfo(reagent["itemID"]);
+			if not SPF1.Recipes[craftName] then
+				-- IMPLEMENT CHECKS LATER
+				local leftGroupID = SPF1.LeftMenu:FilterSpell(spellID, SPF1:GetSelected("Left")) or 0;
+				local rightGroupID = SPF1.RightMenu:FilterSpell(spellID, SPF1:GetSelected("Right")) or 0;
+				
+				-- FILTER_1
+				if (not SPF1.Filter1:FilterSpell(spellID))
+				-- FILTER_2
+					or (not SPF1.Filter2:FilterSpell(spellID))
+					-- SEARCH_BOX
+					or not(SPF1.SearchBox:FilterSpell(spellID))
+				-- LEFT_DROPDOWN
+					or not (SPF1:GetSelected("Left") == 0 or leftGroupID > 0)
+				-- RIGHT_DROPDOWN
+					or not (SPF1:GetSelected("Right") == 0 or rightGroupID > 0)
+				then
+					-- SKIP ELEMENTS THAT FAIL TO MATCH ALL FILTERS
+				else
+					local learnedAt = spellData["learnedAt"] or 0;
+					local nameWithLevel = string.format("%04d", 999 - learnedAt)..craftName;
+					local craftType = "unlearned";
+					local numReagents = 0;
+					if spellData["reagents"] then
+						numReagents = #spellData["reagents"];
+					end
+					local info = {
+						["craftName"] = craftName;
+						["craftSubSpellName"] = spellData["subSpellName"];
+						["craftType"] = craftType;
+						["numAvailable"] = 0;
+						["trainingPointCost"] = 0;
+						["requiredLevel"] = 0;
+						["icon"] = icon;
+						["spellID"] = spellID;
+						["reagents"] = spellData["reagents"];
+						["numReagents"] = numReagents;
+						["learnedAt"] = learnedAt;
+						["levels"] = spellData["levels"];
+						["tools"] = spellData["tools"];
+						["creates"] = spellData["creates"];
+						["Left"] = leftGroupID;
+						["Right"] = rightGroupID;
+					};
+					ByType[craftType][nameWithLevel] = info;
+					table.insert(Names[craftType], nameWithLevel);
 				end
-				local info = {
-					["craftName"] = craftName;
-					["craftSubSpellName"] = nil;
-					["craftType"] = craftType;
-					["numAvailable"] = 0;
-					["trainingPointCost"] = 0;
-					["requiredLevel"] = 0;
-					["icon"] = icon;
-					["spellID"] = spellID;
-					["spellReagents"] = spellData["reagents"];
-					["numReagents"] = numReagents;
-					["learnedAt"] = learnedAt;
-					["levels"] = spellData["levels"];
-					["tools"] = spellData["tools"];
-					["Left"] = SPF1.LeftMenu:FilterSpell(spellID, SPF1:GetSelected("Left"));
-					["Right"] = 1;
-				};
-				ByType[craftType][nameWithLevel] = info;
-				table.insert(Names[craftType], nameWithLevel);
 			end
 		end
 		
@@ -314,11 +332,16 @@ function SPF1.CraftFrame_SetSelection(craftIndex)
 	SPF1.SELECTED = craftIndex;
 	CraftFrame.selectedCraft = craftIndex;
 	
-	return SPF1.baseCraftFrame_SetSelection(craftIndex);
+	SPF1.baseCraftFrame_SetSelection(craftIndex);
+	
+	if (SPF1.Data and SPF1.Data[craftIndex]) then
+		if not SPF1.Data[craftIndex]["original"] then
+			CraftCreateButton:Disable();
+		end
+	end
 end
 
 function SPF1.GetCraftSelectionIndex()
-	
 	if SPF1.SELECTED then
 		return SPF1.SELECTED;
 	end
@@ -342,24 +365,13 @@ function SPF1.GetCraftNumReagents(craftIndex)
 	return SPF1.baseGetCraftNumReagents(craftIndex);
 end
 
-function SPF1.CraftCreateAllButton_OnClick()
-	CraftInputBox:SetNumber(CraftFrame.numAvailable);
-	
-	if SPF1.Data and SPF1.SELECTED and SPF1.Data[SPF1.SELECTED] and SPF1.Data[SPF1.SELECTED]["original"] then
-		DoCraft(SPF1.Data[SPF1.SELECTED]["original"], CraftInputBox:GetNumber());
-	else
-		DoCraft(CraftFrame.selectedCraft, CraftInputBox:GetNumber());
-	end
-	CraftInputBox:ClearFocus();
-end
-
 function SPF1.GetCraftReagentInfo(craftIndex, reagentIndex)
 	if SPF1.Data and SPF1.Data[craftIndex] then
 		if not SPF1.Data[craftIndex]["original"] then
-			if SPF1.Data[craftIndex]["spellReagents"] then
-				local reagentID = SPF1.Data[craftIndex]["spellReagents"][reagentIndex]["itemID"];
+			if SPF1.Data[craftIndex]["reagents"] then
+				local reagentID = SPF1.Data[craftIndex]["reagents"][reagentIndex]["itemID"];
 				local reagentName, _,_,_,_,_,_,_,_, texturePath = GetItemInfo(reagentID);
-				local numRequired = SPF1.Data[craftIndex]["spellReagents"][reagentIndex]["numRequired"];
+				local numRequired = SPF1.Data[craftIndex]["reagents"][reagentIndex]["numRequired"];
 				local numHave = GetItemCount(reagentID);
 				return reagentName, texturePath, numRequired, numHave;
 			end
@@ -426,8 +438,28 @@ end
 function SPF1.GetCraftItemLink(craftIndex)
 	if SPF1.Data and SPF1.Data[craftIndex] then
 		if not SPF1.Data[craftIndex]["original"] then
+			if SPF1.Data[craftIndex]["creates"] then
+				local itemName, itemLink = GetItemInfo(SPF1.Data[craftIndex]["creates"]);
+				return itemLink;
+			end
+			
+			local spellID = SPF1.Data[craftIndex]["spellID"];
+			if spellID then
+				local spellName = GetSpellInfo(spellID);
+				return "|cffffd000|Henchant:"..spellID.."|h["..spellName.."]|h|r";
+			end
 			return;
 		end
+		
+		local spellName = SPF1.baseGetCraftInfo(SPF1.Data[craftIndex]["original"]);
+		local _,_,_,_,_,_, spellID = GetSpellInfo(spellName);
+		local creates = SPF1.GetRecipeInfo(spellID, "creates");
+		
+		if creates then
+			local itemName, itemLink = GetItemInfo(creates);
+			return itemLink;
+		end
+		
 		return SPF1.baseGetCraftItemLink(SPF1.Data[craftIndex]["original"]);
 	end
 	return SPF1.baseGetCraftItemLink(craftIndex);
@@ -436,6 +468,16 @@ end
 function SPF1.GetCraftReagentItemLink(craftIndex, reagentIndex)
 	if SPF1.Data and SPF1.Data[craftIndex] then
 		if not SPF1.Data[craftIndex]["original"] then
+			
+			local reagents = SPF1.Data[craftIndex]["reagents"];
+			
+			if reagents then
+				if reagents[reagentIndex] then
+					local itemName, itemLink = GetItemInfo(reagents[reagentIndex]["itemID"]);
+					return itemLink;
+				end
+			end
+			
 			return;
 		end
 		return SPF1.baseGetCraftReagentItemLink(SPF1.Data[craftIndex]["original"], reagentIndex);
@@ -445,7 +487,25 @@ end
 
 function SPF1.GetCraftRecipeLink(craftIndex)
 	if SPF1.Data and SPF1.Data[craftIndex] then
-		return SPF1.baseGetCraftRecipeLink(SPF1.Data[craftIndex]["original"]);
+		if not SPF1.Data[craftIndex]["original"] then
+			local spellID = SPF1.Data[craftIndex]["spellID"];
+			if spellID then
+				local spellName = GetSpellInfo(spellID);
+				return "|cffffd000|Henchant:"..spellID.."|h["..GetCraftName()..": "..spellName.."]|h|r";
+			end
+			return;
+		end
+		
+		local spellLink = SPF1.baseGetCraftRecipeLink(SPF1.Data[craftIndex]["original"]);
+		if spellLink then
+			local spellName = SPF1.baseGetCraftInfo(SPF1.Data[craftIndex]["original"]);
+			local _,_,_,_,_,_, spellID = GetSpellInfo(spellLink);
+			if spellName and spellID then
+				return "|cffffd000|Henchant:"..spellID.."|h["..GetCraftName()..": "..spellName.."]|h|r";
+			end
+		end
+		
+		return spellLink;
 	end
 	return SPF1.baseGetCraftRecipeLink(craftIndex);
 end
@@ -604,12 +664,17 @@ function SPF1.SetCraftSpell(obj, id)
 end
 
 function SPF1.SetCraftItem(obj, id, reagId)
-	
 	-- If The Profession is supported
 	local craftIndex = SPF1.GetCraftSelectionIndex();
 	
 	if (SPF1.Data and SPF1.Data[craftIndex]) then
 		if not SPF1.Data[craftIndex]["original"] then
+			local reagents = SPF1.Data[craftIndex]["reagents"];
+			if reagents then
+				if reagents[reagId] then
+					return obj:SetItemByID(reagents[reagId]["itemID"]);
+				end
+			end
 			return;
 		end
 		return SPF1.baseSetCraftItem(obj, SPF1.Data[craftIndex]["original"], reagId);
