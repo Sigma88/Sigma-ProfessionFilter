@@ -11,5 +11,13 @@ for professionName,professionData in pairs(RI.Data) do
 				GetItemInfo(item["itemID"]);
 			end
 		end
+		if spell["tools"] then
+			for i,item in ipairs(spell["tools"]) do
+				GetItemInfo(item);
+			end
+		end
+		if spell["creates"] then
+			GetItemInfo(spell["creates"]);
+		end
 	end
 end
