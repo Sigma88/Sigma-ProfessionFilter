@@ -164,15 +164,62 @@ function SPF1:FilterWithSearchBox(craftIndex)
 	
 	return false;
 end
-function SPF1.FilterNameWithSearchBox(craftName)
+
+function SPF1:FilterSpellWithSearchBox(spellID)
 	
 	if SPF1.SearchBox ~= nil then
 		local searchFilter = SPF1.trim(SPF1.SearchBox:GetText():lower());
+		local spellName = GetSpellInfo(spellID);
 		
 		-- Check the Name
 		if (SPF1:SavedData()["SearchNames"] ~= false) then
-			if strmatch(craftName:lower(), searchFilter) ~= nil then
+			if spellName and strmatch(spellName:lower(), searchFilter) ~= nil then
 				return true;
+			end
+		end
+		
+		-- Check the Headers
+		if (SPF1:SavedData()["SearchHeaders"] ~= false) then
+			
+			-- Check the LeftMenu
+			if SPF1:GetMenu("Left") then
+				for	i,button in ipairs(SPF1:GetMenu("Left")) do
+					if strmatch(button.name:lower(), searchFilter) ~= nil then
+						local groupIndex = SPF1.LeftMenu:FilterSpell(spellID, i) or 0;
+						if groupIndex > 0 then
+							return true;
+						end
+					end
+				end
+			end
+			
+			-- Check the RightMenu
+			if SPF1:GetMenu("Right") then
+				for	i,button in ipairs(SPF1:GetMenu("Right")) do
+					if strmatch(button.name:lower(), searchFilter) ~= nil then
+						local groupIndex = SPF1.RightMenu:FilterSpell(spellID, i) or 0;
+						if groupIndex > 0 then
+							return true;
+						end
+					end
+				end
+			end
+		end
+		
+		-- Check the Reagents
+		if (SPF1:SavedData()["SearchReagents"] ~= false) then
+			
+			local reagents = SPF1.GetRecipeInfo(spellID, "reagents") or {};
+			
+			for i,reagentInfo in ipairs(reagents) do
+				local itemID = reagentInfo["itemID"];
+				if itemID then
+					local itemName = GetItemInfo(itemID);
+					
+					if (itemName and strmatch(itemName:lower(), searchFilter)) then
+						return true
+					end
+				end
 			end
 		end
 	end
