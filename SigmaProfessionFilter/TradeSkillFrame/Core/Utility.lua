@@ -73,7 +73,7 @@ function SPF2:GetSelected(side)
 	end
 	if SigmaProfessionFilter[GetTradeSkillName()]["Selected"] then
 		return SigmaProfessionFilter[GetTradeSkillName()]["Selected"][side] or 0;
-		end
+	end
 	return 0;
 end
 
@@ -91,7 +91,7 @@ function SPF2:Custom(target)
 	if SigmaProfessionFilter[GetTradeSkillName()] then
 		if SigmaProfessionFilter[GetTradeSkillName()][target] then
 			return SigmaProfessionFilter[GetTradeSkillName()][target];
-	end
+		end
 	end
 	return {};
 end
@@ -104,13 +104,13 @@ function SPF2.match(str, filter)
 	if str and filter then
 		if #filter == 0 then
 			return true;
-	end
+		end
 		for f in string.gmatch(filter:lower(), "[^%;]+") do
 			if string.find(str:lower(), f) then
 				return true;
 			end
 		end
-		end
+	end
 end
 
 -- Return the group index if the skill matches the filter
