@@ -30,7 +30,7 @@ function SPF2.GetNumTradeSkills()
 		
 		for i=1, SPF2.baseGetNumTradeSkills() do
 			
-			local skillName, skillType, numAvailable = SPF2.baseGetTradeSkillInfo(i);
+			local skillName, skillType = SPF2.baseGetTradeSkillInfo(i);
 			SPF2.Recipes[skillName] = i;
 			
 			local craftedItem = SPF2.baseGetTradeSkillItemInfo(i);
@@ -38,6 +38,11 @@ function SPF2.GetNumTradeSkills()
 			if craftedItem then
 				SPF2.CraftedItems[craftedItem] = i;
 			end
+		end
+		
+		for i=1, SPF2.baseGetNumTradeSkills() do
+			
+			local skillName, skillType = SPF2.baseGetTradeSkillInfo(i);
 			
 			if skillType == "header" then
 				headerIndex = headerIndex + 1;
