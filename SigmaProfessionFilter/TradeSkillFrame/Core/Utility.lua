@@ -104,13 +104,13 @@ function SPF2.match(str, filter)
 	if str and filter then
 		if #filter == 0 then
 			return true;
-		end
+	end
 		for f in string.gmatch(filter:lower(), "[^%;]+") do
 			if string.find(str:lower(), f) then
 				return true;
 			end
 		end
-	end
+		end
 end
 
 -- Return the group index if the skill matches the filter
