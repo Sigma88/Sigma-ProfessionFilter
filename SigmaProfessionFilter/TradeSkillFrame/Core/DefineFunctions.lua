@@ -1,5 +1,7 @@
 local SPF2 = SigmaProfessionFilter[2];
 
+TradeSkillTypeColor["unlearned"] = { r = 1.00, g = 0, b = 0, font = "GameFontNormalLeftRed" };  
+
 -- Set up data table
 function SPF2.GetNumTradeSkills()
 	
@@ -29,9 +31,9 @@ function SPF2.GetNumTradeSkills()
 		SPF2.OriginalHeaders = {};
 		
 		-- Start ordering the recipes
-		local SkillTypes = { [1] = "difficult"; [2] = "optimal"; [3] = "medium"; [4] = "easy"; [5] = "trivial" };
-		local ByType = { ["header"] = {}; ["difficult"] = {}; ["optimal"] = {}; ["medium"] = {}; ["easy"] = {}; ["trivial"] = {} };
-		local Names = { ["header"] = {}; ["difficult"] = {}; ["optimal"] = {}; ["medium"] = {}; ["easy"] = {}; ["trivial"] = {} };
+		local SkillTypes = { [1] = "unlearned"; [2] = "difficult"; [3] = "optimal"; [4] = "medium"; [5] = "easy"; [6] = "trivial"; [7] = "none"; };
+		local ByType = { ["header"] = {}; ["unlearned"] = {}; ["difficult"] = {}; ["optimal"] = {}; ["medium"] = {}; ["easy"] = {}; ["trivial"] = {}; ["none"] = {} };
+		local Names = { ["header"] = {}; ["unlearned"] = {}; ["difficult"] = {}; ["optimal"] = {}; ["medium"] = {}; ["easy"] = {}; ["trivial"] = {}; ["none"] = {} };
 		local headerIndex = 0;
 		
 		for i=1, SPF2.baseGetNumTradeSkills() do
@@ -72,10 +74,74 @@ function SPF2.GetNumTradeSkills()
 							["Left"] = leftGroupID;
 							["Right"] = rightGroupID;
 						};
-						
+						if not ByType[skillType] then
+							table.insert(SkillTypes, skillType);
+							ByType[skillType] = {};
+							Names[skillType] = {};
+						end
 						ByType[skillType][nameWithLevel] = info;
 						table.insert(Names[skillType], nameWithLevel);
 					end
+				end
+			end
+		end
+		
+		for spellID,spellData in pairs(SPF2.GetRecipeInfo() or {}) do
+			local skillName, rank, icon = GetSpellInfo(spellID);
+			
+			if not SPF2.Recipes[skillName] then
+				-- IMPLEMENT CHECKS LATER
+				local leftGroupID = SPF2.LeftMenu:FilterSpell(spellID, SPF2:GetSelected("Left")) or 0;
+				local rightGroupID = SPF2.RightMenu:FilterSpell(spellID, SPF2:GetSelected("Right")) or 0;
+				
+				-- FILTER_1
+				if (not SPF2.Filter1:FilterSpell(spellID))
+				-- FILTER_2
+					or (not SPF2.Filter2:FilterSpell(spellID))
+					-- SEARCH_BOX
+					or not(SPF2.SearchBox:FilterSpell(spellID))
+				-- LEFT_DROPDOWN
+					or not (SPF2:GetSelected("Left") == 0 or leftGroupID > 0)
+				-- RIGHT_DROPDOWN
+					or not (SPF2:GetSelected("Right") == 0 or rightGroupID > 0)
+				then
+					-- SKIP ELEMENTS THAT FAIL TO MATCH ALL FILTERS
+				else
+					local learnedAt = spellData["learnedAt"] or 0;
+					local nameWithLevel = string.format("%04d", 999 - learnedAt)..skillName;
+					local skillType = "unlearned";
+					local numReagents = 0;
+					if spellData["reagents"] then
+						numReagents = #spellData["reagents"];
+					end
+					if spellData["creates"] then
+						icon = select(10, GetItemInfo(spellData["creates"]));
+					end
+					local info = {
+						["skillName"] = skillName;
+						["rank"] = spellData["rank"];
+						["skillType"] = skillType;
+						["numAvailable"] = 0;
+						["trainingPointCost"] = 0;
+						["requiredLevel"] = 0;
+						["icon"] = icon;
+						["spellID"] = spellID;
+						["reagents"] = spellData["reagents"];
+						["numReagents"] = numReagents;
+						["learnedAt"] = learnedAt;
+						["levels"] = spellData["levels"];
+						["tools"] = spellData["tools"];
+						["creates"] = spellData["creates"];
+						["Left"] = leftGroupID;
+						["Right"] = rightGroupID;
+					};
+					if not ByType[skillType] then
+						table.insert(SkillTypes, skillType);
+						ByType[skillType] = {};
+						Names[skillType] = {};
+					end
+					ByType[skillType][nameWithLevel] = info;
+					table.insert(Names[skillType], nameWithLevel);
 				end
 			end
 		end
@@ -273,7 +339,15 @@ function SPF2.TradeSkillFrame_SetSelection(skillIndex)
 	SPF2.SELECTED = skillIndex;
 	TradeSkillFrame.selectedSkill = skillIndex;
 	
-	return SPF2.baseTradeSkillFrame_SetSelection(skillIndex);
+	SPF2.baseTradeSkillFrame_SetSelection(skillIndex);
+	SPF2.SetTradeSkillDescription(skillIndex);
+	
+	if (SPF2.Data and SPF2.Data[skillIndex]) then
+		if not SPF2.Data[skillIndex]["original"] then
+			TradeSkillCreateButton:Disable();
+			TradeSkillCreateAllButton:Disable();
+		end
+	end
 end
 
 function SPF2.GetTradeSkillSelectionIndex()
@@ -295,7 +369,7 @@ function SPF2.GetTradeSkillNumReagents(skillIndex)
 		if SPF2.Data[skillIndex]["original"] then
 			return SPF2.baseGetTradeSkillNumReagents(SPF2.Data[skillIndex]["original"]);
 		else
-			return 0;
+			return SPF2.Data[skillIndex]["numReagents"] or 0;
 		end
 	end
 	return SPF2.baseGetTradeSkillNumReagents(skillIndex);
@@ -322,14 +396,23 @@ function SPF2.TradeSkillCreateAllButton_OnClick()
 	TradeSkillInputBox:ClearFocus();
 end
 
-function SPF2.GetTradeSkillReagentInfo(skillIndex, i)
+function SPF2.GetTradeSkillReagentInfo(skillIndex, reagentIndex)
 	if SPF2.Data and SPF2.Data[skillIndex] then
 		if not SPF2.Data[skillIndex]["original"] then
+			if SPF2.Data[skillIndex]["reagents"] then
+				if SPF2.Data[skillIndex]["reagents"][reagentIndex] then
+					local reagentID = SPF2.Data[skillIndex]["reagents"][reagentIndex]["itemID"];
+					local reagentName, _,_,_,_,_,_,_,_, texturePath = GetItemInfo(reagentID);
+					local numRequired = SPF2.Data[skillIndex]["reagents"][reagentIndex]["numRequired"];
+					local numHave = GetItemCount(reagentID);
+					return reagentName, texturePath, numRequired, numHave;
+				end
+			end
 			return;
 		end
-		return SPF2.baseGetTradeSkillReagentInfo(SPF2.Data[skillIndex]["original"], i);
+		return SPF2.baseGetTradeSkillReagentInfo(SPF2.Data[skillIndex]["original"], reagentIndex);
 	end
-	return SPF2.baseGetTradeSkillReagentInfo(skillIndex, i);
+	return SPF2.baseGetTradeSkillReagentInfo(skillIndex, reagentIndex);
 end
 
 function SPF2.GetTradeSkillCooldown(skillIndex)
@@ -345,7 +428,7 @@ end
 function SPF2.GetTradeSkillIcon(skillIndex)
 	if SPF2.Data and SPF2.Data[skillIndex] then
 		if not SPF2.Data[skillIndex]["original"] then
-			return;
+			return SPF2.Data[skillIndex]["icon"];
 		end
 		return SPF2.baseGetTradeSkillIcon(SPF2.Data[skillIndex]["original"]);
 	end
@@ -355,7 +438,7 @@ end
 function SPF2.GetTradeSkillNumMade(skillIndex)
 	if SPF2.Data and SPF2.Data[skillIndex] then
 		if not SPF2.Data[skillIndex]["original"] then
-			return;
+			return 0, 0;
 		end
 		return SPF2.baseGetTradeSkillNumMade(SPF2.Data[skillIndex]["original"]);
 	end
@@ -365,6 +448,15 @@ end
 function SPF2.GetTradeSkillTools(skillIndex)
 	if SPF2.Data and SPF2.Data[skillIndex] then
 		if not SPF2.Data[skillIndex]["original"] then
+			if SPF2.Data[skillIndex]["tools"] then
+				local tools = {};
+				for i,toolID in ipairs(SPF2.Data[skillIndex]["tools"]) do
+					local toolName = GetItemInfo(toolID);
+					table.insert(tools, toolName);
+					table.insert(tools, GetItemCount(toolID));
+				end
+				return unpack(tools);
+			end
 			return;
 		end
 		return SPF2.baseGetTradeSkillTools(SPF2.Data[skillIndex]["original"]);
@@ -398,6 +490,16 @@ end
 function SPF2.GetTradeSkillItemLink(skillIndex)
 	if SPF2.Data and SPF2.Data[skillIndex] then
 		if not SPF2.Data[skillIndex]["original"] then
+			if SPF2.Data[skillIndex]["creates"] then
+				local itemName, itemLink = GetItemInfo(SPF2.Data[skillIndex]["creates"]);
+				return itemLink;
+			end
+			
+			local spellID = SPF2.Data[skillIndex]["spellID"];
+			if spellID then
+				local spellName = GetSpellInfo(spellID);
+				return "|cffffd000|Henchant:"..spellID.."|h["..spellName.."]|h|r";
+			end
 			return;
 		end
 		return SPF2.baseGetTradeSkillItemLink(SPF2.Data[skillIndex]["original"]);
@@ -408,6 +510,16 @@ end
 function SPF2.GetTradeSkillReagentItemLink(skillIndex, reagentIndex)
 	if SPF2.Data and SPF2.Data[skillIndex] then
 		if not SPF2.Data[skillIndex]["original"] then
+
+			local reagents = SPF2.Data[skillIndex]["reagents"];
+			
+			if reagents then
+				if reagents[reagentIndex] then
+					local itemName, itemLink = GetItemInfo(reagents[reagentIndex]["itemID"]);
+					return itemLink;
+				end
+			end
+			
 			return;
 		end
 		return SPF2.baseGetTradeSkillReagentItemLink(SPF2.Data[skillIndex]["original"], reagentIndex);
@@ -417,6 +529,15 @@ end
 
 function SPF2.GetTradeSkillRecipeLink(skillIndex)
 	if SPF2.Data and SPF2.Data[skillIndex] then
+		if not SPF2.Data[skillIndex]["original"] then
+			local spellID = SPF2.Data[skillIndex]["spellID"];
+			if spellID then
+				local spellName = GetSpellInfo(spellID);
+				return "|cffffd000|Henchant:"..spellID.."|h["..GetTradeSkillName()..": "..spellName.."]|h|r";
+			end
+			return;
+		end
+		
 		return SPF2.baseGetTradeSkillRecipeLink(SPF2.Data[skillIndex]["original"]);
 	end
 	return SPF2.baseGetTradeSkillRecipeLink(skillIndex);
@@ -454,13 +575,83 @@ function SPF2.baseGetTradeSkillItemSubClass(skillIndex)
 	return select(6,GetItemInfo(itemLink)).."_"..select(7,GetItemInfo(itemLink));
 end
 
-SPF2.GameTooltip = {};
-function SPF2.GameTooltip.SetTradeSkillItem(this, skillIndex, reagentIndex)
+function SPF2.SetTradeSkillItem(this, skillIndex, reagentIndex)
 	if SPF2.Data and SPF2.Data[skillIndex] then
 		if not SPF2.Data[skillIndex]["original"] then
+			if reagentIndex then
+				local reagents = SPF2.Data[skillIndex]["reagents"];
+				if reagents then
+					if reagents[reagentIndex] then
+						return this:SetItemByID(reagents[reagentIndex]["itemID"]);
+					end
+				end
+			else
+				if SPF2.Data[skillIndex]["creates"] then
+					return this:SetItemByID(SPF2.Data[skillIndex]["creates"]);
+				end
+				if SPF2.Data[skillIndex]["spellID"] then
+					return this:SetSpellByID(SPF2.Data[skillIndex]["spellID"]);
+				end
+			end
 			return;
 		end
-		return SPF2.GameTooltip.baseSetTradeSkillItem(this, SPF2.Data[skillIndex]["original"], reagentIndex);
+		return SPF2.baseSetTradeSkillItem(this, SPF2.Data[skillIndex]["original"], reagentIndex);
 	end
-	return SPF2.GameTooltip.baseSetTradeSkillItem(this, skillIndex, reagentIndex);
+	return SPF2.baseSetTradeSkillItem(this, skillIndex, reagentIndex);
+end
+
+function SPF2.SetTradeSkillDescription(skillIndex)
+	TradeSkillReagentLabel:Show();
+	TradeSkillReagentLabel:SetText("|cffffffff"..SPF2.GetTradeSkillDescription(skillIndex).."|r"..SPELL_REAGENTS);
+	TradeSkillReagentLabel:SetJustifyH("LEFT");
+end
+
+function SPF2.GetTradeSkillDescription(skillIndex)
+	-- If The Profession is supported
+	if (SPF2.Data and SPF2.Data[skillIndex]) then
+		if not SPF2.Data[skillIndex]["original"] then
+			if SPF2.Data[skillIndex]["spellID"] then
+				local spellID = SPF2.Data[skillIndex]["spellID"];
+				
+				local learnedAt = SPF2.Data[skillIndex]["learnedAt"];
+				if learnedAt then
+					local color = "|cffffffff";
+					if select(2,GetTradeSkillLine()) < learnedAt then
+						color = "|cffff0000";
+					end
+					learnedAt = color.."Requires "..GetTradeSkillName().." ("..learnedAt..")|r\n\n";
+				end
+				
+				local levels = SPF2.Data[skillIndex]["levels"];
+				local difficulty = nil;
+				
+				if levels then
+					difficulty = "|cffffd100Difficulty:|r |cffff8040"..levels[1].."|r ".."|cffffff00"..levels[2].."|r ".."|cff40bf40"..levels[3].."|r ".."|cff808080"..levels[4].."|r\n\n";
+				end
+				
+				return (learnedAt or "")..(difficulty or "");
+			end
+			return "";
+		end
+		
+		local difficulty = nil;
+		local link = SPF2.baseGetTradeSkillRecipeLink(SPF2.Data[skillIndex]["original"]);
+		
+		if link then
+			local spellID = tonumber(link:match("enchant:(%d*)"));
+			
+			if spellID then
+				local levels = SPF2.GetRecipeInfo(spellID, "levels");
+				
+				if levels then
+					difficulty = "|cffffd100Difficulty:|r |cffff8040"..(levels[1] or "0").."|r ".."|cffffff00"..(levels[2] or "0").."|r ".."|cff40bf40"..(levels[3] or "0").."|r ".."|cff808080"..(levels[4] or "0").."|r\n\n";
+				end
+			end
+		end
+		
+		return (difficulty or "");
+	end
+	
+	-- Otherwise fall back to the original
+    return "";
 end
