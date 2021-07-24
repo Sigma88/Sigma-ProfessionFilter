@@ -12,8 +12,8 @@ function SPF2.GetNumTradeSkills()
 	if not SPF2.FILTERED then
 		
 		local LeftSelection = SPF2:GetSelected("Left");
-		
 		local RightSelection = SPF2:GetSelected("Right");
+		
 		-- Reset the Data
 		SPF2.FIRST = nil;
 		SPF2.Data = {};
