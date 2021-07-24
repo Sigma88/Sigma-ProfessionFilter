@@ -133,6 +133,11 @@ function SPF1.GetNumCrafts()
 						["Left"] = leftGroupID;
 						["Right"] = rightGroupID;
 					};
+					if not ByType[craftType] then
+						table.insert(CraftTypes, craftType);
+						ByType[craftType] = {};
+						Names[craftType] = {};
+					end
 					ByType[craftType][nameWithLevel] = info;
 					table.insert(Names[craftType], nameWithLevel);
 				end
