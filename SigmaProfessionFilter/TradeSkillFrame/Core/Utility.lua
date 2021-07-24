@@ -393,6 +393,10 @@ end
 
 function SPF2.GetRecipeInfo(spellID, infoType)
 	
+	if not(spellID) and infoType then
+		return;
+	end
+	
 	local RI = SigmaProfessionFilter_RecipeInfo;
 	
 	if RI and RI.Data then
