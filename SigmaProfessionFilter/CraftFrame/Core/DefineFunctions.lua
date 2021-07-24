@@ -592,12 +592,16 @@ function SPF1.GetCraftDescription(craftIndex)
 			return;
 		end
 		
-		local spellName = SPF1.baseGetCraftInfo(SPF1.Data[craftIndex]["original"])
-		local _, _, _, _, _, _, spellID = GetSpellInfo(spellName);
-		local levels = SPF1.GetRecipeInfo(spellID, "levels");
 		local difficulty = nil;
-		if levels then
-			difficulty = "|cffffd100Difficulty:|r |cffff8040"..levels[1].."|r ".."|cffffff00"..levels[2].."|r ".."|cff40bf40"..levels[3].."|r ".."|cff808080"..levels[4].."|r\n\n";
+		local link = SPF1.baseGetCraftRecipeLink(SPF1.Data[craftIndex]["original"]);
+		if link then
+			local spellID = tonumber(link:match("enchant:(%d*)"));
+			if spellID then
+				local levels = SPF1.GetRecipeInfo(spellID, "levels");
+				if levels then
+					difficulty = "|cffffd100Difficulty:|r |cffff8040"..levels[1].."|r ".."|cffffff00"..levels[2].."|r ".."|cff40bf40"..levels[3].."|r ".."|cff808080"..levels[4].."|r\n\n";
+				end
+			end
 		end
 		
 		return (difficulty or "")..(SPF1.baseGetCraftDescription(SPF1.Data[craftIndex]["original"]) or "");
