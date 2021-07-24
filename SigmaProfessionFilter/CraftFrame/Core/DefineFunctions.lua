@@ -618,12 +618,12 @@ function SPF1.GetCraftSpellFocus(craftIndex)
 				for i,toolID in ipairs(SPF1.Data[craftIndex]["tools"]) do
 					local toolName = GetItemInfo(toolID);
 					table.insert(tools, toolName);
-					table.insert(tools, GetItemCount(toolID) > 0);
+					table.insert(tools, GetItemCount(toolID));
 				end
 				return unpack(tools);
 			end
 		end
-		return;
+		return SPF1.baseGetCraftSpellFocus(SPF1.Data[craftIndex]["original"]);
 	end
 	
 	-- Otherwise fall back to the original
