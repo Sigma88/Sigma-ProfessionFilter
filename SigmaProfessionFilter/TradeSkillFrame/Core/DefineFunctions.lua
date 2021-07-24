@@ -12,17 +12,8 @@ function SPF2.GetNumTradeSkills()
 	if not SPF2.FILTERED then
 		
 		local LeftSelection = SPF2:GetSelected("Left");
-		if not SPF2:GetMenu("Left") and LeftSelection > 0 and #({GetTradeSkillSubClasses()}) > 1 and GetTradeSkillSubClassFilter(0) then
-			UIDropDownMenu_SetSelectedID(TradeSkillSubClassDropDown, LeftSelection + 1);
-			SetTradeSkillSubClassFilter(LeftSelection, 1, 1);
-		end
 		
 		local RightSelection = SPF2:GetSelected("Right");
-		if not SPF2:GetMenu("Right") and RightSelection > 0 and #({GetTradeSkillInvSlots()}) > 1 and GetTradeSkillInvSlotFilter(0) then
-			UIDropDownMenu_SetSelectedID(TradeSkillInvSlotDropDown, RightSelection + 1)
-			SetTradeSkillInvSlotFilter(RightSelection, 1, 1);
-		end
-		
 		-- Reset the Data
 		SPF2.FIRST = nil;
 		SPF2.Data = {};
@@ -186,6 +177,12 @@ function SPF2.GetNumTradeSkills()
 			
 			local Pairs = SPF2:GetMenu(groupBy) or ByType["header"];
 			
+			if (groupBy == "Left" and not SPF2:GetMenu("Left")) then
+				Pairs = {};
+				for i,slot in ipairs({GetTradeSkillSubClasses()}) do
+					table.insert( Pairs, { name = slot; } );
+				end
+			end
 			if (groupBy == "Right" and not SPF2:GetMenu("Right")) then
 				Pairs = {};
 				for i,slot in ipairs({GetTradeSkillInvSlots()}) do
@@ -569,7 +566,9 @@ end
 
 function SPF2.baseGetTradeSkillItemInfo(skillIndex)
 	local itemLink = SPF2.baseGetTradeSkillItemLink(skillIndex);
-	return GetItemInfo(itemLink);
+	if itemLink then
+		return GetItemInfo(itemLink);
+	end
 end
 
 function SPF2.GetTradeSkillItemSubClass(skillIndex)

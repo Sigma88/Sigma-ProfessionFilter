@@ -83,10 +83,6 @@ function SPF2.LeftMenu:OnClick(arg1, arg2, checked)
 	UIDropDownMenu_SetSelectedID(SPF2.LeftMenu, self:GetID());
 	SPF2:SetSelected("Left", self:GetID() - 1);
 	
-	if not SPF2:GetMenu("Left") then
-		TradeSkillSubClassDropDownButton_OnClick(self);
-	end
-	
 	SPF2.FullUpdate();
 end
 
@@ -112,7 +108,23 @@ function SPF2.LeftMenu:Filter(skillIndex, groupIndex)
 				return firstGroup;
 			end
 		else
-			return nil;
+			local link = SPF2.GetTradeSkillItemLink(skillIndex);
+			if link then
+				local itemSubClass = select(7, GetItemInfo(link));
+				local lastID = 0;
+				for i,subClass in ipairs({GetTradeSkillSubClasses()}) do
+					lastID = i;
+					if itemSubClass == subClass then
+						if groupIndex == 0 or groupIndex == i then
+							return i;
+						end
+					end
+				end
+				
+				if groupIndex == 0 or groupIndex == lastID then
+					return lastID;
+				end
+			end
 		end
 		
 		return 0;
@@ -149,10 +161,15 @@ function SPF2.LeftMenu:FilterSpell(spellID, groupIndex)
 				for i,subClass in ipairs({GetTradeSkillSubClasses()}) do
 					lastID = i;
 					if itemSubClass == subClass then
-						return i;
+						if groupIndex == 0 or groupIndex == i then
+							return i;
+						end
 					end
 				end
-				return lastID;
+				
+				if groupIndex == 0 or groupIndex == lastID then
+					return lastID;
+				end
 			end
 		end
 		

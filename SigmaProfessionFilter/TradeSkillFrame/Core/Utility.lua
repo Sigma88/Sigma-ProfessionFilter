@@ -91,7 +91,7 @@ function SPF2:Custom(target)
 	if SigmaProfessionFilter[GetTradeSkillName()] then
 		if SigmaProfessionFilter[GetTradeSkillName()][target] then
 			return SigmaProfessionFilter[GetTradeSkillName()][target];
-		end
+	end
 	end
 	return {};
 end
@@ -117,7 +117,9 @@ end
 -- Return 0 to disable the filter
 -- Otherwise return nil
 function SPF2:GetGroup(side, skillIndex, groupIndex)
-	if (SPF2:GetMenu(side)) then
+	if SPF2:Custom(side.."Menu")["disabled"] then
+		return 0;
+	else
 		local targetValue = SPF2.baseGetTradeSkillInfo(skillIndex);
 		for i = 1, #SPF2:GetMenu(side), 1 do
 			if groupIndex > 0 then
@@ -134,8 +136,6 @@ function SPF2:GetGroup(side, skillIndex, groupIndex)
 				return nil;
 			end
 		end
-	elseif SPF2:Custom(side.."Menu")["disabled"] then
-		return 0;
 	end
 	return nil;
 end
