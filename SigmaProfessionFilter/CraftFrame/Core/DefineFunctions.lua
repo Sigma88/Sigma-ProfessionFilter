@@ -412,25 +412,6 @@ function SPF1.GetCraftNumMade(craftIndex)
 	return SPF1.baseGetCraftNumMade(craftIndex);
 end
 
-function SPF1.GetTradecraftRepeatCount()
-	
-	if not CraftFrame.numAvailable then
-		return 1;
-	end
-	
-	if CraftFrame.numAvailable < 1 then
-		return 1;
-	end
-	
-	local requiredNumber = CraftInputBox:GetNumber();
-	
-	if CraftFrame.numAvailable < requiredNumber then
-		CraftInputBox:SetNumber(CraftFrame.numAvailable);
-	end
-	
-	return CraftInputBox:GetNumber();
-end
-
 function SPF1.CraftFrame_OnShow(self)
 	SPF1.FullUpdate();
 end
