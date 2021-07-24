@@ -396,7 +396,7 @@ for i=1, MAX_TRADE_SKILL_REAGENTS do
 	function createButton:OnClick()
 		local reagentName, _, reagentCount, playerReagentCount = SPF2.GetTradeSkillReagentInfo(SPF2.SELECTED, createButton.id);
 		
-		local skillIndex = SPF2.Recipes[reagentName];
+		local skillIndex = SPF2.CraftedItems[reagentName];
 		if skillIndex then
 			DoTradeSkill(skillIndex, reagentCount * TradeSkillInputBox:GetNumber() - playerReagentCount);
 		end
@@ -410,7 +410,7 @@ for i=1, MAX_TRADE_SKILL_REAGENTS do
 		if SPF2.SELECTED then
 			reagentName, _, reagentCount, playerReagentCount = SPF2.GetTradeSkillReagentInfo(SPF2.SELECTED, createButton.id);
 		end
-		if not SPF2.Recipes[reagentName] then
+		if not SPF2.CraftedItems[reagentName] then
 			createButton:Hide();
 		else
 			createButton:Show();
@@ -420,7 +420,7 @@ for i=1, MAX_TRADE_SKILL_REAGENTS do
 				createAmount = 0;
 			end
 			
-			local _,_, numAvailable = SPF2.baseGetTradeSkillInfo(SPF2.Recipes[reagentName]);
+			local _,_, numAvailable = SPF2.baseGetTradeSkillInfo(SPF2.CraftedItems[reagentName]);
 			
 			createButton:SetEnabled(numAvailable >= createAmount and createAmount > 0);
 			createButton:SetText(L["CRAFT_REAGENT"]..": "..createAmount);
