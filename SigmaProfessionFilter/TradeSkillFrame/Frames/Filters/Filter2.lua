@@ -135,9 +135,9 @@ function SPF2.baseTradeSkillHasMats(skillIndex, requiredAmount)
 		
 		requiredReagents[reagentName] = requiredReagents[reagentName] + reagentCount * requiredAmount - playerReagentCount;
 		
-		if SPF2.Recipes[reagentName] then			
+		if SPF2.CraftedItems[reagentName] then			
 			
-			local recursiveHasMats = SPF2.baseTradeSkillHasMats(SPF2.Recipes[reagentName], requiredReagents[reagentName]);
+			local recursiveHasMats = SPF2.baseTradeSkillHasMats(SPF2.CraftedItems[reagentName], requiredReagents[reagentName]);
 			
 			if recursiveHasMats then
 				requiredReagents[reagentName] = nil;
