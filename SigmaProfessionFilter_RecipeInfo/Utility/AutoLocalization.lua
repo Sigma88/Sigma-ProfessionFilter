@@ -1,51 +1,60 @@
 -- Local Tables
 local RI = SigmaProfessionFilter_RecipeInfo;
-local L = RI.L;
 
 -- CraftFrame
-function RI.AutoLocalizeCraft()
+RI.Craft.Localize = {};
+
+function RI.Craft.Localize()
 	
 	local localName = GetCraftName();
 	
-	if not RI.Data[name] then
+	if not RI.Data[localName] then
 		
-		for i=1, 10, 1 do
-			local craftName = GetCraftInfo(i);
-			local _,_,_,_,_,_, spellID = GetSpellInfo(craftName);
-			
-			if spellID then
-				for usName,Data in pairs(RI.Data) do
-					if Data[spellID] then
-						L[localName] = L[usName];
-						return;
+		for i=1, 5, 1 do
+			local link = GetCraftRecipeLink(i);
+			if link then
+				local spellID = tonumber(link:match("enchant:(%d*)"));
+				if spellID then
+					for usName,Data in pairs(RI.Data) do
+						if Data[spellID] then
+							RI.Data[localName] = RI.Data[usName];
+							CraftFrame_OnShow();
+							return;
+						end
 					end
 				end
 			end
 		end
+		
+		RI.Data[localName] = {};
 	end
 end
-RI.Craft:SetScript("OnShow", RI.AutoLocalizeCraft);
+
+hooksecurefunc("CraftFrame_OnShow", RI.Craft.Localize);
 
 
 -- TradeSkillFrame
-function RI.AutoLocalizeSkill()
-	
+RI.TradeSkill = {};
+
+function RI.TradeSkill.Localize()
 	local localName = GetTradeSkillName();
-	
-	if not RI.Data[name] then
-		for i=1, 10, 1 do
-			local craftName = GetTradeSkillInfo(i);
-			local _,_,_,_,_,_, spellID = GetSpellInfo(craftName);
-			
-			if spellID then
-				for usName,Data in pairs(RI.Data) do
-					if Data[spellID] then
-						L[localName] = L[usName];
-						return;
+	if not RI.Data[localName] then
+		for i=1, 5, 1 do
+			local link = GetTradeSkillRecipeLink(i);
+			if link then
+				local spellID = tonumber(link:match("enchant:(%d*)"));
+				if spellID then
+					for usName,Data in pairs(RI.Data) do
+						if Data[spellID] then
+							RI.Data[localName] = RI.Data[usName];
+							TradeSkillFrame_OnShow();
+							return;
+						end
 					end
 				end
 			end
 		end
 	end
 end
-RI.Skill:SetScript("OnShow", RI.AutoLocalizeSkill);
+
+hooksecurefunc("TradeSkillFrame_OnShow", RI.TradeSkill.Localize);
