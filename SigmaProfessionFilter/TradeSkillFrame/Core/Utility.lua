@@ -212,6 +212,84 @@ function SPF2:FilterWithSearchBox(skillIndex)
 	return false;
 end
 
+function SPF2:FilterSpellWithSearchBox(spellID)
+	
+	if SPF2.SearchBox ~= nil then
+		local searchFilter = SPF2.trim(SPF2.SearchBox:GetText():lower());
+		local spellName = GetSpellInfo(spellID);
+		
+		-- Check the Name
+		if (SPF2:SavedData()["SearchNames"] ~= false) then
+			if strmatch(spellName:lower(), searchFilter) ~= nil then
+				return true;
+			end
+		end
+		
+		-- Check the Headers
+		if (SPF2:SavedData()["SearchHeaders"] ~= false) then
+			
+			-- Check the LeftMenu
+			if not SPF2:Custom("LeftMenu")["disabled"] then
+				if SPF2:GetMenu("Left") then
+					for	i,button in ipairs(SPF2:GetMenu("Left")) do
+						if strmatch(button.name:lower(), searchFilter) ~= nil then
+							local groupIndex = SPF2.LeftMenu:FilterSpell(spellID, i) or 0;
+							if groupIndex > 0 then
+								return true;
+							end
+						end
+					end
+				else
+					-- if SPF2.OriginalHeaders then
+						-- if strmatch(SPF2.OriginalHeaders[skillIndex]:lower(), searchFilter) ~= nil then
+							-- return true;
+						-- end
+					-- end
+				end
+			end
+			
+			-- Check the RightMenu
+			if not SPF2:Custom("RightMenu")["disabled"] then
+				if SPF2:GetMenu("Right") then
+					for	i,button in ipairs(SPF2:GetMenu("Right")) do
+						if strmatch(button.name:lower(), searchFilter) ~= nil then
+							local groupIndex = SPF2.RightMenu:FilterSpell(spellID, i) or 0;
+							if groupIndex > 0 then
+								return true;
+							end
+						end
+					end
+				else
+					local groupIndex = SPF2.RightMenu:FilterSpell(spellID, 0);
+					local groupName = select(groupIndex, GetTradeSkillInvSlots());						
+					if strmatch(groupName:lower(), searchFilter) ~= nil then
+						return true;
+					end
+				end
+			end
+		end
+		
+		-- Check the Reagents
+		if (SPF2:SavedData()["SearchReagents"] ~= false) then
+			
+			local reagents = SPF2.GetRecipeInfo(spellID, "reagents") or {};
+			
+			for i,reagentInfo in ipairs(reagents) do
+				local itemID = reagentInfo["itemID"];
+				if itemID then
+					local itemName = GetItemInfo(itemID);
+					
+					if (itemName and strmatch(itemName:lower(), searchFilter)) then
+						return true
+					end
+				end
+			end
+		end
+	end
+	
+	return false;
+end
+
 function SPF2.TradeSkillFrame_PostUpdate()
 	
 	-- Check if there are any headers

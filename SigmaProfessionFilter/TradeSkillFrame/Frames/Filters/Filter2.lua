@@ -170,4 +170,13 @@ function SPF2.Filter2:Filter(skillIndex)
 	return SPF2.baseTradeSkillHasMats(skillIndex, 1);
 end
 
+-- Return True if the skill matches the filter
+function SPF2.Filter2:FilterSpell(spellID)
+	if SPF2:Custom("Filter2").FilterSpell then
+		return (not SPF2.Filter2:GetChecked() or SPF2:Custom("Filter2").FilterSpell(spellID));
+	else
+		return not SPF2.Filter2:GetChecked();
+	end
+end
+
 SPF2.Filter2:OnLoad();

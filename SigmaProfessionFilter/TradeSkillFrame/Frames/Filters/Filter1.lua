@@ -114,4 +114,13 @@ function SPF2.Filter1:Filter(skillIndex)
 	end
 end
 
+-- Return True if the skill matches the filter
+function SPF2.Filter1:FilterSpell(spellID)
+	if SPF2:Custom("Filter1").FilterSpell then
+		return (not SPF2.Filter1:GetChecked() or SPF2:Custom("Filter1").FilterSpell(spellID));
+	else
+		return not SPF2.Filter1:GetChecked();
+	end
+end
+
 SPF2.Filter1:OnLoad();
