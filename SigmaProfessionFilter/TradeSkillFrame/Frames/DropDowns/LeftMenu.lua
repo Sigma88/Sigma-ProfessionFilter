@@ -108,9 +108,9 @@ function SPF2.LeftMenu:Filter(skillIndex, groupIndex)
 				return firstGroup;
 			end
 		else
-			local link = SPF2.GetTradeSkillItemLink(skillIndex);
-			if link then
-				local itemSubClass = select(7, GetItemInfo(link));
+			local itemSubClass = select(7, SPF2.baseGetTradeSkillItemInfo(skillIndex));
+			
+			if itemSubClass then
 				local lastID = 0;
 				for i,subClass in ipairs({GetTradeSkillSubClasses()}) do
 					lastID = i;
@@ -118,6 +118,7 @@ function SPF2.LeftMenu:Filter(skillIndex, groupIndex)
 						if groupIndex == 0 or groupIndex == i then
 							return i;
 						end
+						return 0;
 					end
 				end
 				
