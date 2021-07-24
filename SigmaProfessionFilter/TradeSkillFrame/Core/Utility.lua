@@ -452,6 +452,7 @@ function SPF2.ClearTradeSkill()
 	TradeSkillHighlightFrame:Hide();
 	TradeSkillCreateButton:Disable();
 	TradeSkillCreateAllButton:Disable();
+	TradeSkillReagentLabel:Hide();
 end
 
 function SPF2.FullUpdate(keepCollapsed)
