@@ -13,7 +13,6 @@ Localization\enUS.lua
 CraftFrame\Core\Utility.lua
 CraftFrame\Core\DefineFunctions.lua
 CraftFrame\Core\Blizzard_CraftUI.lua
-CraftFrame\Core\ReplaceFunctions.lua
 
 CraftFrame\Frames\DropDowns\LeftMenu.lua
 CraftFrame\Frames\DropDowns\LeftSort.lua
@@ -24,13 +23,15 @@ CraftFrame\Frames\Filters\Filter2.lua
 CraftFrame\Frames\TextSearch\SearchBox.lua
 CraftFrame\Frames\TextSearch\Search.lua
 CraftFrame\Frames\PortraitChanger.lua
+
+CraftFrame\Core\ReplaceFunctions.lua
+
 CraftFrame\Frames\LeatrixPlusCompatibility.lua
 CraftFrame\Frames\ElvUICompatibility.lua
 
 
 TradeSkillFrame\Core\Utility.lua
 TradeSkillFrame\Core\DefineFunctions.lua
-TradeSkillFrame\Core\ReplaceFunctions.lua
 
 TradeSkillFrame\Frames\DropDowns\LeftMenu.lua
 TradeSkillFrame\Frames\DropDowns\LeftSort.lua
@@ -41,5 +42,8 @@ TradeSkillFrame\Frames\TextSearch\Search.lua
 TradeSkillFrame\Frames\Filters\Filter1.lua
 TradeSkillFrame\Frames\Filters\Filter2.lua
 TradeSkillFrame\Frames\PortraitChanger.lua
+
+TradeSkillFrame\Core\ReplaceFunctions.lua
+
 TradeSkillFrame\Frames\LeatrixPlusCompatibility.lua
 TradeSkillFrame\Frames\ElvUICompatibility.lua
