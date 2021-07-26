@@ -148,6 +148,7 @@ function SPF2.LeftMenu:FilterSpell(spellID, groupIndex)
 						if groupIndex == 0 or groupIndex == i then
 							return i;
 						end
+						return 0;
 					end
 				end
 				
