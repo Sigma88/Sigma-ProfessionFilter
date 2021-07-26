@@ -155,15 +155,25 @@ function SPF2.RightMenu:FilterSpell(spellID, groupIndex)
 		else
 			local creates = SPF2.GetRecipeInfo(spellID, "creates");
 			if creates then
-				local invType = select(9, GetItemInfo(spellID));
-				local lastID = 0;
-				for i,slot in ipairs({GetTradeSkillInvSlots()}) do
-					lastID = i;
-					if SPF2:GetSlot(invType) == slot then
-						return i;
+				local invType = select(9, GetItemInfo(creates));
+				local itemSlot = SPF2:GetSlot(invType);
+				
+				if invType then
+					local lastID = 0;
+					for i,slot in ipairs({GetTradeSkillInvSlots()}) do
+						lastID = i;
+						if itemSlot == slot then
+							if groupIndex == 0 or groupIndex == i then
+								return i;
+							end
+							return 0;
+						end
+					end
+					
+					if groupIndex == 0 or groupIndex == lastID then
+						return lastID;
 					end
 				end
-				return lastID;
 			end
 		end
 		
