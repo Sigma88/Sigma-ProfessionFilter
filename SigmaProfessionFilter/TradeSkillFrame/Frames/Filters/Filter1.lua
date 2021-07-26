@@ -17,6 +17,8 @@ function SPF2.Filter1.OnLoad()
 	SPF2.Filter1:SetScript("OnClick", SPF2.Filter1.OnClick);
 	SPF2.Filter1:SetScript("OnEnter", SPF2.Filter1.OnEnter);
 	SPF2.Filter1:SetScript("OnLeave", SPF2.Filter1.OnLeave);
+	
+	SPF2.Filter1.Status = {};
 end
 
 function SPF2.Filter1:OnShow()
@@ -27,16 +29,22 @@ function SPF2.Filter1:OnShow()
 	SPF2.Filter1.tooltipText = SPF2:Custom("Filter1")["tooltip"] or L["HAS_SKILL_UP_TOOLTIP"];
 	
 	SPF2.Filter1:SetHitRectInsets(0, -SPF2.Filter1.text:GetWidth(), 0, 0);
+	
+	if GetTradeSkillName() then
+		SPF2.Filter1:SetChecked(SPF2.Filter1.Status[GetTradeSkillName()]);
+	end
 end
 
 function SPF2.Filter1:OnClick(button)
 	if (button == "LeftButton") then
 		if (SPF2.Filter1:GetChecked()) then
 			PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
-			SPF2:SavedData()["Filter1"] = true;
 		else
 			PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
-			SPF2:SavedData()["Filter1"] = nil;
+		end
+	
+		if GetTradeSkillName() then
+			SPF2.Filter1.Status[GetTradeSkillName()] = SPF2.Filter1:GetChecked();
 		end
 	else
 		SPF2.Filter1:SetChecked(not(SPF2.Filter1:GetChecked()));

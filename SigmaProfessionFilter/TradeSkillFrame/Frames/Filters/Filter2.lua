@@ -17,6 +17,8 @@ function SPF2.Filter2.OnLoad()
 	SPF2.Filter2:SetScript("OnClick", SPF2.Filter2.OnClick);
 	SPF2.Filter2:SetScript("OnEnter", SPF2.Filter2.OnEnter);
 	SPF2.Filter2:SetScript("OnLeave", SPF2.Filter2.OnLeave);
+	
+	SPF2.Filter2.Status = {};
 end
 
 function SPF2.Filter2:OnShow()
@@ -58,16 +60,22 @@ function SPF2.Filter2:OnShow()
 	else
 		SPF2.Filter2:SetHitRectInsets(0, -SPF2.Filter2.text:GetWidth(), 0, 0);
 	end
+	
+	if GetTradeSkillName() then
+		SPF2.Filter2:SetChecked(SPF2.Filter2.Status[GetTradeSkillName()]);
+	end
 end
 
 function SPF2.Filter2:OnClick(button)
 	if (button == "LeftButton") then
 		if (SPF2.Filter2:GetChecked()) then
 			PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
-			SPF2:SavedData()["Filter2"] = true;
 		else
 			PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
-			SPF2:SavedData()["Filter2"] = nil;
+		end
+	
+		if GetTradeSkillName() then
+			SPF2.Filter2.Status[GetTradeSkillName()] = SPF2.Filter2:GetChecked();
 		end
 	else
 		SPF2.Filter2:SetChecked(not(SPF2.Filter2:GetChecked()));
