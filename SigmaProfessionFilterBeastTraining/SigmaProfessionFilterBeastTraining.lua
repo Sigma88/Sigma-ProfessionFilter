@@ -22,7 +22,7 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 		["tooltip"] = L["RIGHT_TOOLTIP"];
 		["Filter"] = function(craftIndex, groupIndex)
 			if groupIndex < 3 then
-				SPF1:GetGroup("Right", craftIndex, groupIndex);
+				return SPF1:GetGroup("Right", craftIndex, groupIndex);
 			end
 			
 			local wildAnimals = SPF1:GetGroup("Right", craftIndex, 1);
