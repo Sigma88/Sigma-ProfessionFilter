@@ -40,7 +40,9 @@ SPF2.INV = {
 }
 
 function SPF2:GetSlot(TYPE)
-	return SPF2.INV[TYPE] or NONEQUIPSLOT;
+	if TYPE then
+		return SPF2.INV[TYPE] or NONEQUIPSLOT;
+	end
 end
 
 function SPF2:SavedData(professionSpecific)
