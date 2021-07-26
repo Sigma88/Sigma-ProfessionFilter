@@ -51,8 +51,8 @@ function SPF2.GetNumTradeSkills()
 				SPF2.OriginalHeaders[i] = ByType["header"][headerIndex].name;
 				
 				-- IMPLEMENT CHECKS LATER
-				local leftGroupID = SPF2.LeftMenu:Filter(i, SPF2:GetSelected("Left")) or headerIndex;
-				local rightGroupID = SPF2.RightMenu:Filter(i, SPF2:GetSelected("Right")) or 0;
+				local leftGroupID = SPF2.LeftMenu:Filter(i, LeftSelection) or headerIndex;
+				local rightGroupID = SPF2.RightMenu:Filter(i, RightSelection) or 0;
 				
 				-- FILTER_1
 				if (not SPF2.Filter1:Filter(i))
@@ -61,9 +61,9 @@ function SPF2.GetNumTradeSkills()
 				-- SEARCH_BOX
 					or not(SPF2.SearchBox:Filter(i))
 				-- LEFT_DROPDOWN
-					or not (SPF2:GetSelected("Left") == 0 or leftGroupID > 0)
+					or not (LeftSelection == 0 or LeftSelection == leftGroupID)
 				-- RIGHT_DROPDOWN
-					or not (SPF2:GetSelected("Right") == 0 or rightGroupID > 0)
+					or not (RightSelection == 0 or RightSelection == rightGroupID)
 				then
 					-- SKIP ELEMENTS THAT FAIL TO MATCH ALL FILTERS
 				else
@@ -94,8 +94,8 @@ function SPF2.GetNumTradeSkills()
 			
 			if not SPF2.Recipes[skillName] then
 				-- IMPLEMENT CHECKS LATER
-				local leftGroupID = SPF2.LeftMenu:FilterSpell(spellID, SPF2:GetSelected("Left")) or 0;
-				local rightGroupID = SPF2.RightMenu:FilterSpell(spellID, SPF2:GetSelected("Right")) or 0;
+				local leftGroupID = SPF2.LeftMenu:FilterSpell(spellID, LeftSelection) or 0;
+				local rightGroupID = SPF2.RightMenu:FilterSpell(spellID, RightSelection) or 0;
 				
 				-- FILTER_1
 				if (not SPF2.Filter1:FilterSpell(spellID))
@@ -104,9 +104,9 @@ function SPF2.GetNumTradeSkills()
 					-- SEARCH_BOX
 					or not(SPF2.SearchBox:FilterSpell(spellID))
 				-- LEFT_DROPDOWN
-					or not (SPF2:GetSelected("Left") == 0 or leftGroupID > 0)
+					or not (LeftSelection == 0 or LeftSelection == leftGroupID)
 				-- RIGHT_DROPDOWN
-					or not (SPF2:GetSelected("Right") == 0 or rightGroupID > 0)
+					or not (RightSelection == 0 or RightSelection == rightGroupID)
 				then
 					-- SKIP ELEMENTS THAT FAIL TO MATCH ALL FILTERS
 				else
