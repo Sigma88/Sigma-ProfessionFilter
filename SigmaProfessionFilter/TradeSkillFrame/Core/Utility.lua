@@ -139,6 +139,29 @@ function SPF2:GetGroup(side, skillIndex, groupIndex)
 	end
 	return nil;
 end
+function SPF2:GetGroupSpell(side, spellID, groupIndex)
+	if SPF2:Custom(side.."Menu")["disabled"] then
+		return 0;
+	else
+		local spellName = GetSpellInfo(spellID);
+		for i = 1, #SPF2:GetMenu(side), 1 do
+			if groupIndex > 0 then
+				i = groupIndex;
+			end
+			
+			local button = SPF2:GetMenu(side)[i];
+			
+			if SPF2.match(spellName, button.filter) then
+				return i;
+			end
+			
+			if groupIndex > 0 then
+				return nil;
+			end
+		end
+	end
+	return nil;
+end
 
 function SPF2:FilterWithSearchBox(skillIndex)
 	
