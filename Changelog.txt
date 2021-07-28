@@ -1,3 +1,13 @@
+**v0.6.5**
+
+- Added new module: SigmaProfessionFilter_RecipeInfo
+- Added visualization of unlearned recipes
+- Added visualization of difficulty levels for recipes
+- Fixed "Craft Reagent" buttons
+- Internal changes to how LeftMenu and RightMenu work
+- Minor bug fixes
+
+
 **v0.6.4**
 
 - Fixed issue when changing professions
