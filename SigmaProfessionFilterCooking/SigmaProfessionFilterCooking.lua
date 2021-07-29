@@ -21,6 +21,9 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 		["title"] = L["LEFT_TITLE"];
 		["tooltip"] = L["LEFT_TOOLTIP"];
 		["Filter"] = function(skillIndex, groupIndex)
+			if not(skillIndex and groupIndex) then
+				return 0;
+			end
 			local itemLink = SPF2.baseGetTradeSkillItemLink(skillIndex);
 			if not (LocalTooltips[itemLink] and #LocalTooltips[itemLink] > 0) then
 				SPF2.baseSetTradeSkillItem(LocalTooltip, skillIndex);
@@ -67,6 +70,9 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 		["title"] = L["RIGHT_TITLE"];
 		["tooltip"] = L["RIGHT_TOOLTIP"];
 		["Filter"] = function(skillIndex, groupIndex)
+			if not(skillIndex and groupIndex) then
+				return 0;
+			end
 			local itemLink = SPF2.baseGetTradeSkillItemLink(skillIndex);
 			if not (LocalTooltips[itemLink] and #LocalTooltips[itemLink] > 0) then
 				SPF2.baseSetTradeSkillItem(LocalTooltip, skillIndex);
