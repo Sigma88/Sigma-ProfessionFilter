@@ -186,7 +186,7 @@ function SPF2:FilterWithSearchBox(skillIndex)
 				if SPF2:GetMenu("Left") then
 					for	i,button in ipairs(SPF2:GetMenu("Left")) do
 						if strmatch(button.name:lower(), searchFilter) ~= nil then
-							local groupIndex = SPF2.LeftMenu:Filter(craftIndex, i) or 0;
+							local groupIndex = SPF2.LeftMenu:Filter(skillIndex, i) or 0;
 							if groupIndex > 0 then
 								return true;
 							end
@@ -206,7 +206,7 @@ function SPF2:FilterWithSearchBox(skillIndex)
 				if SPF2:GetMenu("Right") then
 					for	i,button in ipairs(SPF2:GetMenu("Right")) do
 						if strmatch(button.name:lower(), searchFilter) ~= nil then
-							local groupIndex = SPF2.RightMenu:Filter(craftIndex, i) or 0;
+							local groupIndex = SPF2.RightMenu:Filter(skillIndex, i) or 0;
 							if groupIndex > 0 then
 								return true;
 							end
