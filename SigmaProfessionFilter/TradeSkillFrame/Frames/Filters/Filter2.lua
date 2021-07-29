@@ -115,7 +115,7 @@ function SPF2.Filter2.OnLeave()
     GameTooltip:Hide();
 end
 
-function SPF2.baseTradeSkillHasMats(skillIndex, requiredAmount)
+function SPF2.baseTradeSkillHasMats(skillIndex, requiredAmount, layer)
 	
 	local skillName, _, numAvailable = SPF2.baseGetTradeSkillInfo(skillIndex);
 	
@@ -127,10 +127,22 @@ function SPF2.baseTradeSkillHasMats(skillIndex, requiredAmount)
 		return false;
 	end
 	
-	local numReagents = SPF2.baseGetTradeSkillNumReagents(skillIndex);
+	if not layer then
+		layer = 0;
+	end
+	
+	layer = layer + 1;
+	
+	if layer > 10 then
+		return false;
+	end
+	
 	local requiredReagents = {};
 	
+	local numReagents = SPF2.baseGetTradeSkillNumReagents(skillIndex);
+	
 	for i=1, numReagents do
+		
 		local reagentName, _, reagentCount, playerReagentCount = SPF2.baseGetTradeSkillReagentInfo(skillIndex, i);
 		
 		if not reagentName then
@@ -145,7 +157,7 @@ function SPF2.baseTradeSkillHasMats(skillIndex, requiredAmount)
 		
 		if SPF2.CraftedItems[reagentName] then			
 			
-			local recursiveHasMats = SPF2.baseTradeSkillHasMats(SPF2.CraftedItems[reagentName], requiredReagents[reagentName]);
+			local recursiveHasMats = SPF2.baseTradeSkillHasMats(SPF2.CraftedItems[reagentName], requiredReagents[reagentName], layer);
 			
 			if recursiveHasMats then
 				requiredReagents[reagentName] = nil;
