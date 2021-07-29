@@ -1,11 +1,6 @@
 local RI = SigmaProfessionFilter_RecipeInfo;
 
 RI.Data["Cooking"] = {
-	[818] = {
-		["reagents"] = {
-			[1] = { ["itemID"] = 4470; ["numRequired"] = 1; };
-		};
-	};
 	[2538] = {
 		["learnedAt"] = 0;
 		["levels"] = { 0, 45, 65, 85 };
