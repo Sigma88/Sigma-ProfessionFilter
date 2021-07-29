@@ -359,8 +359,8 @@ function SPF1.CraftButton_OnClick(self, ...)
 end
 
 -- Crafting
-function SPF1.GetCraftNumReagents(craftIndex)
-	if SPF1.Data and SPF1.Data[craftIndex] then
+function SPF1.GetCraftNumReagents(craftIndex, base)
+	if base ~= true and SPF1.Data and SPF1.Data[craftIndex] then
 		if SPF1.Data[craftIndex]["original"] then
 			return SPF1.baseGetCraftNumReagents(SPF1.Data[craftIndex]["original"]);
 		else
@@ -370,8 +370,8 @@ function SPF1.GetCraftNumReagents(craftIndex)
 	return SPF1.baseGetCraftNumReagents(craftIndex);
 end
 
-function SPF1.GetCraftReagentInfo(craftIndex, reagentIndex)
-	if SPF1.Data and SPF1.Data[craftIndex] then
+function SPF1.GetCraftReagentInfo(craftIndex, reagentIndex, base)
+	if base ~= true and SPF1.Data and SPF1.Data[craftIndex] then
 		if not SPF1.Data[craftIndex]["original"] then
 			if SPF1.Data[craftIndex]["reagents"] then
 				local reagentID = SPF1.Data[craftIndex]["reagents"][reagentIndex]["itemID"];
@@ -451,8 +451,8 @@ function SPF1.GetCraftItemLink(craftIndex)
 	return SPF1.baseGetCraftItemLink(craftIndex);
 end
 
-function SPF1.GetCraftReagentItemLink(craftIndex, reagentIndex)
-	if SPF1.Data and SPF1.Data[craftIndex] then
+function SPF1.GetCraftReagentItemLink(craftIndex, reagentIndex, base)
+	if base ~= true and SPF1.Data and SPF1.Data[craftIndex] then
 		if not SPF1.Data[craftIndex]["original"] then
 			
 			local reagents = SPF1.Data[craftIndex]["reagents"];

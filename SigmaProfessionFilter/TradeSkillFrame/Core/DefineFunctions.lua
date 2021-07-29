@@ -373,8 +373,8 @@ function SPF2.TradeSkillSkillButton_OnClick(self, ...)
 end
 
 -- Crafting
-function SPF2.GetTradeSkillNumReagents(skillIndex)
-	if SPF2.Data and SPF2.Data[skillIndex] then
+function SPF2.GetTradeSkillNumReagents(skillIndex, base)
+	if base ~= true and SPF2.Data and SPF2.Data[skillIndex] then
 		if SPF2.Data[skillIndex]["original"] then
 			return SPF2.baseGetTradeSkillNumReagents(SPF2.Data[skillIndex]["original"]);
 		else
@@ -405,8 +405,8 @@ function SPF2.TradeSkillCreateAllButton_OnClick()
 	TradeSkillInputBox:ClearFocus();
 end
 
-function SPF2.GetTradeSkillReagentInfo(skillIndex, reagentIndex)
-	if SPF2.Data and SPF2.Data[skillIndex] then
+function SPF2.GetTradeSkillReagentInfo(skillIndex, reagentIndex, base)
+	if base ~= true and SPF2.Data and SPF2.Data[skillIndex] then
 		if not SPF2.Data[skillIndex]["original"] then
 			if SPF2.Data[skillIndex]["reagents"] then
 				if SPF2.Data[skillIndex]["reagents"][reagentIndex] then
@@ -516,8 +516,8 @@ function SPF2.GetTradeSkillItemLink(skillIndex)
 	return SPF2.baseGetTradeSkillItemLink(skillIndex);
 end
 
-function SPF2.GetTradeSkillReagentItemLink(skillIndex, reagentIndex)
-	if SPF2.Data and SPF2.Data[skillIndex] then
+function SPF2.GetTradeSkillReagentItemLink(skillIndex, reagentIndex, base)
+	if base ~= true and SPF2.Data and SPF2.Data[skillIndex] then
 		if not SPF2.Data[skillIndex]["original"] then
 
 			local reagents = SPF2.Data[skillIndex]["reagents"];
