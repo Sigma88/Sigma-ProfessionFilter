@@ -10,7 +10,7 @@ L["LEFT_01_NAME"] = "Bandage";
 L["LEFT_02_NAME"] = "Anti-Venom";
 -- Filters
 L["LEFT_01_FILTER"] = "Bandage";
-L["LEFT_02_FILTER"] = "Anti-Venom";
+L["LEFT_02_FILTER"] = "Venom";
 -- Right Menu
 L["RIGHT_TITLE"] = "All Reagents";
 L["RIGHT_TOOLTIP"] = "Sort recipes by the reagents they require.";
