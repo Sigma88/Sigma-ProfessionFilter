@@ -23,8 +23,8 @@ TradeSkillCreateAllButton:SetScript("OnClick", SPF2.TradeSkillCreateAllButton_On
 
 
 -- Details
-SPF2.GameTooltip.baseSetTradeSkillItem = GameTooltip.SetTradeSkillItem;
-GameTooltip.SetTradeSkillItem = SPF2.GameTooltip.SetTradeSkillItem;
+SPF2.baseSetTradeSkillItem = GameTooltip.SetTradeSkillItem;
+GameTooltip.SetTradeSkillItem = SPF2.SetTradeSkillItem;
 
 
 

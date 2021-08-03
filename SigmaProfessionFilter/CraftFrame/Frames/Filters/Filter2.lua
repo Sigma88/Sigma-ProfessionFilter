@@ -58,4 +58,13 @@ function SPF1.Filter2:Filter(craftIndex)
 	end
 end
 
+-- Return True if the craft matches the filter
+function SPF1.Filter2:FilterSpell(spellID)
+	if SPF1:Custom("Filter2").FilterSpell then
+		return (not SPF1.Filter2:GetChecked() or SPF1:Custom("Filter2").FilterSpell(spellID));
+	else
+		return not SPF1.Filter2:GetChecked();
+	end
+end
+
 SPF1.Filter2:OnLoad();
