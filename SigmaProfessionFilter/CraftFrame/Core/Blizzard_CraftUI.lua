@@ -231,9 +231,9 @@ function SPF1.CraftFrame_Update()
 			_G["Craft"..i.."Text"]:ClearAllPoints();
 			if i == SPF1.ONCLICK then
 				SPF1.ONCLICK = nil;
-				_G["Craft"..i.."Text"]:SetPoint("TOPLEFT", "Craft"..i, "TOPLEFT", 22.65, -1.65);
+				_G["Craft"..i.."Text"]:SetPoint("LEFT", "Craft"..i, "LEFT", 22.65, -1.65);
 			else
-				_G["Craft"..i.."Text"]:SetPoint("TOPLEFT", "Craft"..i, "TOPLEFT", 21, 0);
+				_G["Craft"..i.."Text"]:SetPoint("LEFT", "Craft"..i, "LEFT", 21, 0);
 			end
 		end
 		CraftExpandButtonFrame:Show();

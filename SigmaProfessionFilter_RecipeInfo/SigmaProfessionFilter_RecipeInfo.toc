@@ -1,0 +1,23 @@
+## Interface: 20501
+## Title: Sigma |cffbc5ff4Professions|r |cff000000|r|cffffffff Recipe Info|r
+## Author: Sigma88
+## Notes: Additional Recipe Informations module for |cffffcf00Sigma|r |cffbc5ff4Profession Filter|r |cffb1f22e(TBC Classic)|r.
+## Dependencies: SigmaProfessionFilter
+
+SigmaProfessionFilter_RecipeInfo.lua
+Localization\enUS.lua
+
+Data\Alchemy.lua
+Data\Blacksmithing.lua
+Data\Cooking.lua
+Data\Enchanting.lua
+Data\Engineering.lua
+Data\First Aid.lua
+Data\Jewelcrafting.lua
+Data\Leatherworking.lua
+Data\Mining.lua
+Data\Poisons.lua
+Data\Tailoring.lua
+
+Utility\LoadIntoCache.lua
+Utility\AutoLocalization.lua
