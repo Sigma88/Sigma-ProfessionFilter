@@ -5,7 +5,6 @@
 ## Dependencies: SigmaProfessionFilter
 
 SigmaProfessionFilter_RecipeInfo.lua
-Localization\enUS.lua
 
 Data\Alchemy.lua
 Data\Blacksmithing.lua

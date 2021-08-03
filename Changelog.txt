@@ -8,6 +8,7 @@
 - Added compatibility fix for Auctionator
 - Capped the number of recursive calls for "Has mats" filter
 - Fixed First-Aid filters to show all items
+- Added Enchanting french localization, provided from user Evorage
 - Minor bug fixes
 
 
