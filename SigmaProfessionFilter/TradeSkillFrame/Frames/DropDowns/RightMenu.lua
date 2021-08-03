@@ -83,10 +83,6 @@ function SPF2.RightMenu:OnClick(arg1, arg2, checked)
 	UIDropDownMenu_SetSelectedID(SPF2.RightMenu, self:GetID());
 	SPF2:SetSelected("Right", self:GetID() - 1);
 	
-	if not SPF2:GetMenu("Right") then
-		TradeSkillInvSlotDropDownButton_OnClick(self);
-	end
-	
 	SPF2.FullUpdate();
 end
 
@@ -112,14 +108,73 @@ function SPF2.RightMenu:Filter(skillIndex, groupIndex)
 			end
 		else
 			local invType = select(9, SPF2.baseGetTradeSkillItemInfo(skillIndex));
-			local lastID = 0;
-			for i,slot in ipairs({GetTradeSkillInvSlots()}) do
-				lastID = i;
-				if SPF2:GetSlot(invType) == slot then
-					return i;
+			local itemSlot = SPF2:GetSlot(invType);
+			
+			if invType then
+				local lastID = 0;
+				for i,slot in ipairs({GetTradeSkillInvSlots()}) do
+					lastID = i;
+					if itemSlot == slot then
+						if groupIndex == 0 or groupIndex == i then
+							return i;
+						end
+						return 0;
+					end
+				end
+				
+				if groupIndex == 0 or groupIndex == lastID then
+					return lastID;
 				end
 			end
-			return lastID;
+		end
+		
+		return 0;
+	end
+end
+
+-- Return the group index if the skill matches the filter
+-- Otherwise return 0
+function SPF2.RightMenu:FilterSpell(spellID, groupIndex)
+	if SPF2:Custom("RightMenu")["FilterSpell"] then
+		return SPF2:Custom("RightMenu")["FilterSpell"](spellID, groupIndex);
+	else
+		if SPF2:Custom("RightMenu")["disabled"] then
+			return 1;
+		elseif SPF2:GetMenu("Right") then
+			local firstGroup = SPF2:GetGroupSpell("Right", spellID, 0);
+			
+			if groupIndex == 0 then
+				return firstGroup;
+			end
+			
+			local requiredGroup = SPF2:GetGroupSpell("Right", spellID, groupIndex);
+			
+			if (firstGroup == requiredGroup) then
+				return firstGroup;
+			end
+		else
+			local creates = SPF2.GetRecipeInfo(spellID, "creates");
+			if creates then
+				local invType = select(9, GetItemInfo(creates));
+				local itemSlot = SPF2:GetSlot(invType);
+				
+				if invType then
+					local lastID = 0;
+					for i,slot in ipairs({GetTradeSkillInvSlots()}) do
+						lastID = i;
+						if itemSlot == slot then
+							if groupIndex == 0 or groupIndex == i then
+								return i;
+							end
+							return 0;
+						end
+					end
+					
+					if groupIndex == 0 or groupIndex == lastID then
+						return lastID;
+					end
+				end
+			end
 		end
 		
 		return 0;

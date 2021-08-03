@@ -59,4 +59,13 @@ function SPF1.Filter1:Filter(craftIndex)
 	end
 end
 
+-- Return True if the craft matches the filter
+function SPF1.Filter1:FilterSpell(spellID)
+	if SPF1:Custom("Filter1").FilterSpell then
+		return (not SPF1.Filter1:GetChecked() or SPF1:Custom("Filter1").FilterSpell(spellID));
+	else
+		return not SPF1.Filter1:GetChecked();
+	end
+end
+
 SPF1.Filter1:OnLoad();

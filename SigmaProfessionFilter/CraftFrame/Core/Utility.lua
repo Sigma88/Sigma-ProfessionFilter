@@ -77,6 +77,29 @@ function SPF1:GetGroup(side, craftIndex, groupIndex)
 	end
 end
 
+function SPF1:GetGroupSpell(side, spellID, groupIndex)
+	if (SPF1:GetMenu(side)) then
+		local targetValue = GetSpellInfo(spellID);
+		for i = 1, #SPF1:GetMenu(side), 1 do
+			if groupIndex > 0 then
+				i = groupIndex;
+			end
+			
+			local button = SPF1:GetMenu(side)[i];
+			
+			if SPF1.match(targetValue, button.filter) then
+				return i;
+			end
+			
+			if groupIndex > 0 then
+				return nil;
+			end
+		end
+	else
+		return 0;
+	end
+end
+
 function SPF1:FilterWithSearchBox(craftIndex)
 	
 	if SPF1.SearchBox ~= nil then
@@ -142,6 +165,68 @@ function SPF1:FilterWithSearchBox(craftIndex)
 	return false;
 end
 
+function SPF1:FilterSpellWithSearchBox(spellID)
+	
+	if SPF1.SearchBox ~= nil then
+		local searchFilter = SPF1.trim(SPF1.SearchBox:GetText():lower());
+		local spellName = GetSpellInfo(spellID);
+		
+		-- Check the Name
+		if (SPF1:SavedData()["SearchNames"] ~= false) then
+			if spellName and strmatch(spellName:lower(), searchFilter) ~= nil then
+				return true;
+			end
+		end
+		
+		-- Check the Headers
+		if (SPF1:SavedData()["SearchHeaders"] ~= false) then
+			
+			-- Check the LeftMenu
+			if SPF1:GetMenu("Left") then
+				for	i,button in ipairs(SPF1:GetMenu("Left")) do
+					if strmatch(button.name:lower(), searchFilter) ~= nil then
+						local groupIndex = SPF1.LeftMenu:FilterSpell(spellID, i) or 0;
+						if groupIndex > 0 then
+							return true;
+						end
+					end
+				end
+			end
+			
+			-- Check the RightMenu
+			if SPF1:GetMenu("Right") then
+				for	i,button in ipairs(SPF1:GetMenu("Right")) do
+					if strmatch(button.name:lower(), searchFilter) ~= nil then
+						local groupIndex = SPF1.RightMenu:FilterSpell(spellID, i) or 0;
+						if groupIndex > 0 then
+							return true;
+						end
+					end
+				end
+			end
+		end
+		
+		-- Check the Reagents
+		if (SPF1:SavedData()["SearchReagents"] ~= false) then
+			
+			local reagents = SPF1.GetRecipeInfo(spellID, "reagents") or {};
+			
+			for i,reagentInfo in ipairs(reagents) do
+				local itemID = reagentInfo["itemID"];
+				if itemID then
+					local itemName = GetItemInfo(itemID);
+					
+					if (itemName and strmatch(itemName:lower(), searchFilter)) then
+						return true
+					end
+				end
+			end
+		end
+	end
+	
+	return false;
+end
+
 function SPF1.ClearCraft()
 	CraftName:Hide();
 	CraftRequirements:Hide();
@@ -183,4 +268,33 @@ function SPF1.FullUpdate(keepCollapsed)
 		CraftFramePointsLabel:ClearAllPoints();
 		CraftFramePointsLabel:SetPoint("TOPLEFT", CraftFrame, "TOPLEFT", 355, -418);
     end
+end
+
+function SPF1.GetRecipeInfo(spellID, infoType)
+	
+	if not(spellID) and infoType then
+		return;
+	end
+	
+	local RI = SigmaProfessionFilter_RecipeInfo;
+	
+	if RI and RI.Data then
+		local professionName = GetCraftName();
+		if professionName then
+			local Recipes = RI.Data[professionName];
+			if Recipes then
+				if spellID then
+					if  Recipes[spellID] then
+						if infoType then
+							return Recipes[spellID][infoType];
+						else
+							return Recipes[spellID];
+						end
+					end
+				else
+					return Recipes;
+				end
+			end
+		end
+	end
 end

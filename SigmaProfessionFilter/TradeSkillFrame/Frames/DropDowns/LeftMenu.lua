@@ -83,10 +83,6 @@ function SPF2.LeftMenu:OnClick(arg1, arg2, checked)
 	UIDropDownMenu_SetSelectedID(SPF2.LeftMenu, self:GetID());
 	SPF2:SetSelected("Left", self:GetID() - 1);
 	
-	if not SPF2:GetMenu("Left") then
-		TradeSkillSubClassDropDownButton_OnClick(self);
-	end
-	
 	SPF2.FullUpdate();
 end
 
@@ -113,6 +109,53 @@ function SPF2.LeftMenu:Filter(skillIndex, groupIndex)
 			end
 		else
 			return nil;
+		end
+		
+		return 0;
+	end
+end
+
+
+-- Return the group index if the skill matches the filter
+-- Return nil to disable the filter
+-- Otherwise return 0
+function SPF2.LeftMenu:FilterSpell(spellID, groupIndex)
+	if SPF2:Custom("LeftMenu")["FilterSpell"] then
+		return SPF2:Custom("LeftMenu")["FilterSpell"](spellID, groupIndex);
+	else
+		if SPF2:Custom("LeftMenu")["disabled"] then
+			return 1;
+		elseif SPF2:GetMenu("Left") then
+			local firstGroup = SPF2:GetGroupSpell("Left", spellID, 0);
+			
+			if groupIndex == 0 then
+				return firstGroup;
+			end
+			
+			local requiredGroup = SPF2:GetGroupSpell("Left", spellID, groupIndex);
+			
+			if (firstGroup == requiredGroup) then
+				return firstGroup;
+			end
+		else
+			local creates = SPF2.GetRecipeInfo(spellID, "creates");
+			if creates then
+				local itemSubClass = select(7, GetItemInfo(creates));
+				local lastID = 0;
+				for i,subClass in ipairs({GetTradeSkillSubClasses()}) do
+					lastID = i;
+					if itemSubClass == subClass then
+						if groupIndex == 0 or groupIndex == i then
+							return i;
+						end
+						return 0;
+					end
+				end
+				
+				if groupIndex == 0 or groupIndex == lastID then
+					return lastID;
+				end
+			end
 		end
 		
 		return 0;

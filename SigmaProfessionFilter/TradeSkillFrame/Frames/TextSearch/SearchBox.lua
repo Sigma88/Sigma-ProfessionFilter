@@ -66,4 +66,13 @@ function SPF2.SearchBox:Filter(skillIndex)
 	end
 end
 
+-- Return a string if the filter matches
+function SPF2.SearchBox:FilterSpell(spellID)	
+	if SPF2:Custom("SearchBox")["FilterSpell"] then
+		return SPF2:Custom("SearchBox")["FilterSpell"](spellID);
+	else
+		return SPF2:FilterSpellWithSearchBox(spellID);
+	end
+end
+
 SPF2.SearchBox.OnLoad();

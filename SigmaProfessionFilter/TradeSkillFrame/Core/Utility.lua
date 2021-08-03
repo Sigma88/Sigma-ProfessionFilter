@@ -40,7 +40,9 @@ SPF2.INV = {
 }
 
 function SPF2:GetSlot(TYPE)
-	return SPF2.INV[TYPE] or NONEQUIPSLOT;
+	if TYPE then
+		return SPF2.INV[TYPE] or NONEQUIPSLOT;
+	end
 end
 
 function SPF2:SavedData(professionSpecific)
@@ -73,7 +75,7 @@ function SPF2:GetSelected(side)
 	end
 	if SigmaProfessionFilter[GetTradeSkillName()]["Selected"] then
 		return SigmaProfessionFilter[GetTradeSkillName()]["Selected"][side] or 0;
-		end
+	end
 	return 0;
 end
 
@@ -117,7 +119,9 @@ end
 -- Return 0 to disable the filter
 -- Otherwise return nil
 function SPF2:GetGroup(side, skillIndex, groupIndex)
-	if (SPF2:GetMenu(side)) then
+	if SPF2:Custom(side.."Menu")["disabled"] then
+		return 0;
+	else
 		local targetValue = SPF2.baseGetTradeSkillInfo(skillIndex);
 		for i = 1, #SPF2:GetMenu(side), 1 do
 			if groupIndex > 0 then
@@ -134,8 +138,29 @@ function SPF2:GetGroup(side, skillIndex, groupIndex)
 				return nil;
 			end
 		end
-	elseif SPF2:Custom(side.."Menu")["disabled"] then
+	end
+	return nil;
+end
+function SPF2:GetGroupSpell(side, spellID, groupIndex)
+	if SPF2:Custom(side.."Menu")["disabled"] then
 		return 0;
+	else
+		local spellName = GetSpellInfo(spellID);
+		for i = 1, #SPF2:GetMenu(side), 1 do
+			if groupIndex > 0 then
+				i = groupIndex;
+			end
+			
+			local button = SPF2:GetMenu(side)[i];
+			
+			if SPF2.match(spellName, button.filter) then
+				return i;
+			end
+			
+			if groupIndex > 0 then
+				return nil;
+			end
+		end
 	end
 	return nil;
 end
@@ -161,7 +186,7 @@ function SPF2:FilterWithSearchBox(skillIndex)
 				if SPF2:GetMenu("Left") then
 					for	i,button in ipairs(SPF2:GetMenu("Left")) do
 						if strmatch(button.name:lower(), searchFilter) ~= nil then
-							local groupIndex = SPF2.LeftMenu:Filter(craftIndex, i) or 0;
+							local groupIndex = SPF2.LeftMenu:Filter(skillIndex, i) or 0;
 							if groupIndex > 0 then
 								return true;
 							end
@@ -181,7 +206,7 @@ function SPF2:FilterWithSearchBox(skillIndex)
 				if SPF2:GetMenu("Right") then
 					for	i,button in ipairs(SPF2:GetMenu("Right")) do
 						if strmatch(button.name:lower(), searchFilter) ~= nil then
-							local groupIndex = SPF2.RightMenu:Filter(craftIndex, i) or 0;
+							local groupIndex = SPF2.RightMenu:Filter(skillIndex, i) or 0;
 							if groupIndex > 0 then
 								return true;
 							end
@@ -204,6 +229,84 @@ function SPF2:FilterWithSearchBox(skillIndex)
 				
 				if (reagentName and strmatch(reagentName:lower(), searchFilter)) then
 					return true
+				end
+			end
+		end
+	end
+	
+	return false;
+end
+
+function SPF2:FilterSpellWithSearchBox(spellID)
+	
+	if SPF2.SearchBox ~= nil then
+		local searchFilter = SPF2.trim(SPF2.SearchBox:GetText():lower());
+		local spellName = GetSpellInfo(spellID);
+		
+		-- Check the Name
+		if (SPF2:SavedData()["SearchNames"] ~= false) then
+			if strmatch(spellName:lower(), searchFilter) ~= nil then
+				return true;
+			end
+		end
+		
+		-- Check the Headers
+		if (SPF2:SavedData()["SearchHeaders"] ~= false) then
+			
+			-- Check the LeftMenu
+			if not SPF2:Custom("LeftMenu")["disabled"] then
+				if SPF2:GetMenu("Left") then
+					for	i,button in ipairs(SPF2:GetMenu("Left")) do
+						if strmatch(button.name:lower(), searchFilter) ~= nil then
+							local groupIndex = SPF2.LeftMenu:FilterSpell(spellID, i) or 0;
+							if groupIndex > 0 then
+								return true;
+							end
+						end
+					end
+				else
+					-- if SPF2.OriginalHeaders then
+						-- if strmatch(SPF2.OriginalHeaders[skillIndex]:lower(), searchFilter) ~= nil then
+							-- return true;
+						-- end
+					-- end
+				end
+			end
+			
+			-- Check the RightMenu
+			if not SPF2:Custom("RightMenu")["disabled"] then
+				if SPF2:GetMenu("Right") then
+					for	i,button in ipairs(SPF2:GetMenu("Right")) do
+						if strmatch(button.name:lower(), searchFilter) ~= nil then
+							local groupIndex = SPF2.RightMenu:FilterSpell(spellID, i) or 0;
+							if groupIndex > 0 then
+								return true;
+							end
+						end
+					end
+				else
+					local groupIndex = SPF2.RightMenu:FilterSpell(spellID, 0);
+					local groupName = select(groupIndex, GetTradeSkillInvSlots());						
+					if strmatch(groupName:lower(), searchFilter) ~= nil then
+						return true;
+					end
+				end
+			end
+		end
+		
+		-- Check the Reagents
+		if (SPF2:SavedData()["SearchReagents"] ~= false) then
+			
+			local reagents = SPF2.GetRecipeInfo(spellID, "reagents") or {};
+			
+			for i,reagentInfo in ipairs(reagents) do
+				local itemID = reagentInfo["itemID"];
+				if itemID then
+					local itemName = GetItemInfo(itemID);
+					
+					if (itemName and strmatch(itemName:lower(), searchFilter)) then
+						return true
+					end
 				end
 			end
 		end
@@ -318,7 +421,7 @@ for i=1, MAX_TRADE_SKILL_REAGENTS do
 	function createButton:OnClick()
 		local reagentName, _, reagentCount, playerReagentCount = SPF2.GetTradeSkillReagentInfo(SPF2.SELECTED, createButton.id);
 		
-		local skillIndex = SPF2.Recipes[reagentName];
+		local skillIndex = SPF2.CraftedItems[reagentName];
 		if skillIndex then
 			DoTradeSkill(skillIndex, reagentCount * TradeSkillInputBox:GetNumber() - playerReagentCount);
 		end
@@ -332,7 +435,7 @@ for i=1, MAX_TRADE_SKILL_REAGENTS do
 		if SPF2.SELECTED then
 			reagentName, _, reagentCount, playerReagentCount = SPF2.GetTradeSkillReagentInfo(SPF2.SELECTED, createButton.id);
 		end
-		if not SPF2.Recipes[reagentName] then
+		if not SPF2.CraftedItems[reagentName] then
 			createButton:Hide();
 		else
 			createButton:Show();
@@ -342,22 +445,27 @@ for i=1, MAX_TRADE_SKILL_REAGENTS do
 				createAmount = 0;
 			end
 			
-			local _,_, numAvailable = SPF2.baseGetTradeSkillInfo(SPF2.Recipes[reagentName]);
+			local _,_, numAvailable = SPF2.baseGetTradeSkillInfo(SPF2.CraftedItems[reagentName]);
 			
 			createButton:SetEnabled(numAvailable >= createAmount and createAmount > 0);
 			createButton:SetText(L["CRAFT_REAGENT"]..": "..createAmount);
 		end
+		
+		if createButton.id == MAX_TRADE_SKILL_REAGENTS then
+			for i=4,MAX_TRADE_SKILL_REAGENTS,2 do
+				local leftReagent = _G["TradeSkillReagent"..(i-1)];
+				local rightReagent = _G["TradeSkillReagent"..(i)];
+				if _G["TradeSkillReagent"..(i-3).."CreateButton"]:IsVisible() or _G["TradeSkillReagent"..(i-2).."CreateButton"]:IsVisible() then
+					leftReagent:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i-3)], "BOTTOMLEFT", 0, -20);
+					rightReagent:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i-2)], "BOTTOMLEFT", 0, -20);
+				else
+					leftReagent:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i-3)], "BOTTOMLEFT", 0, -2);
+					rightReagent:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i-2)], "BOTTOMLEFT", 0, -2);
+				end
+			end
+		end
 	end
 	hooksecurefunc("TradeSkillFrame_Update", createButton.Update);
-end
-
-for i=1,MAX_TRADE_SKILL_REAGENTS / 2 - 1 do
-	-- left reagent
-	_G["TradeSkillReagent"..(i*2+1)]:ClearAllPoints();
-	_G["TradeSkillReagent"..(i*2+1)]:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i*2-1)], "BOTTOMLEFT", 0, -20);
-	-- right reagent
-	_G["TradeSkillReagent"..(i*2+2)]:ClearAllPoints();
-	_G["TradeSkillReagent"..(i*2+2)]:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i*2)], "BOTTOMLEFT", 0, -20);
 end
 
 function SPF2.ClearTradeSkill()
@@ -374,6 +482,7 @@ function SPF2.ClearTradeSkill()
 	TradeSkillHighlightFrame:Hide();
 	TradeSkillCreateButton:Disable();
 	TradeSkillCreateAllButton:Disable();
+	TradeSkillReagentLabel:Hide();
 end
 
 function SPF2.FullUpdate(keepCollapsed)
@@ -389,4 +498,33 @@ function SPF2.FullUpdate(keepCollapsed)
 		SPF2.TradeSkillFrame_SetSelection(SPF2.FIRST);
 	end
 	TradeSkillFrame_Update();
+end
+
+function SPF2.GetRecipeInfo(spellID, infoType)
+	
+	if not(spellID) and infoType then
+		return;
+	end
+	
+	local RI = SigmaProfessionFilter_RecipeInfo;
+	
+	if RI and RI.Data then
+		local professionName = GetTradeSkillName();
+		if professionName then
+			local Recipes = RI.Data[professionName];
+			if Recipes then
+				if spellID then
+					if  Recipes[spellID] then
+						if infoType then
+							return Recipes[spellID][infoType];
+						else
+							return Recipes[spellID];
+						end
+					end
+				else
+					return Recipes;
+				end
+			end
+		end
+	end
 end
