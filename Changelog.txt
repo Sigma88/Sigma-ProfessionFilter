@@ -1,10 +1,13 @@
-**v0.6.5**
+**v0.7.0**
 
 - Added new module: SigmaProfessionFilter_RecipeInfo
 - Added visualization of unlearned recipes
 - Added visualization of difficulty levels for recipes
 - Fixed "Craft Reagent" buttons
 - Internal changes to how LeftMenu and RightMenu work
+- Added compatibility fix for Auctionator
+- Capped the number of recursive calls for "Has mats" filter
+- Fixed First-Aid filters to show all items
 - Minor bug fixes
 
 
