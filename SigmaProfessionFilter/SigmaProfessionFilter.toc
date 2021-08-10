@@ -42,6 +42,7 @@ TradeSkillFrame\Frames\TextSearch\SearchBox.lua
 TradeSkillFrame\Frames\TextSearch\Search.lua
 TradeSkillFrame\Frames\Filters\Filter1.lua
 TradeSkillFrame\Frames\Filters\Filter2.lua
+TradeSkillFrame\Frames\Filters\Unlearned.lua
 TradeSkillFrame\Frames\Filters\Starred.lua
 TradeSkillFrame\Frames\PortraitChanger.lua
 

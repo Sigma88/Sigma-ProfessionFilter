@@ -89,6 +89,8 @@ function SPF2.GetNumTradeSkills()
 			end
 		end
 		
+		if SPF2:SavedData()["Unlearned"] then
+			
 		for spellID,spellData in pairs(SPF2.GetRecipeInfo() or {}) do
 			local skillName, rank, icon = GetSpellInfo(spellID);
 			
@@ -147,6 +149,7 @@ function SPF2.GetNumTradeSkills()
 					table.insert(Names[skillType], nameWithLevel);
 				end
 			end
+		end
 		end
 		
 		-- Check the Chosen Grouping Scheme
