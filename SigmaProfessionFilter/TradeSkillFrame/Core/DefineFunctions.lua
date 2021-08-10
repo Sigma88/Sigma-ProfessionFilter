@@ -91,65 +91,65 @@ function SPF2.GetNumTradeSkills()
 		
 		if SPF2:SavedData()["Unlearned"] then
 			
-		for spellID,spellData in pairs(SPF2.GetRecipeInfo() or {}) do
-			local skillName, rank, icon = GetSpellInfo(spellID);
-			
-			if not SPF2.Recipes[skillName] then
-				-- IMPLEMENT CHECKS LATER
-				local leftGroupID = SPF2.LeftMenu:FilterSpell(spellID, LeftSelection) or 0;
-				local rightGroupID = SPF2.RightMenu:FilterSpell(spellID, RightSelection) or 0;
+			for spellID,spellData in pairs(SPF2.GetRecipeInfo() or {}) do
+				local skillName, rank, icon = GetSpellInfo(spellID);
 				
-				-- FILTER_1
-				if (not SPF2.Filter1:FilterSpell(spellID))
-				-- FILTER_2
-					or (not SPF2.Filter2:FilterSpell(spellID))
-					-- SEARCH_BOX
-					or not(SPF2.SearchBox:FilterSpell(spellID))
-				-- LEFT_DROPDOWN
-					or not (LeftSelection == 0 or LeftSelection == leftGroupID)
-				-- RIGHT_DROPDOWN
-					or not (RightSelection == 0 or RightSelection == rightGroupID)
-				then
-					-- SKIP ELEMENTS THAT FAIL TO MATCH ALL FILTERS
-				else
-					local learnedAt = spellData["learnedAt"] or 0;
-					local nameWithLevel = string.format("%04d", 999 - learnedAt)..skillName;
-					local skillType = "unlearned";
-					local numReagents = 0;
-					if spellData["reagents"] then
-						numReagents = #spellData["reagents"];
+				if not SPF2.Recipes[skillName] then
+					-- IMPLEMENT CHECKS LATER
+					local leftGroupID = SPF2.LeftMenu:FilterSpell(spellID, LeftSelection) or 0;
+					local rightGroupID = SPF2.RightMenu:FilterSpell(spellID, RightSelection) or 0;
+					
+					-- FILTER_1
+					if (not SPF2.Filter1:FilterSpell(spellID))
+					-- FILTER_2
+						or (not SPF2.Filter2:FilterSpell(spellID))
+						-- SEARCH_BOX
+						or not(SPF2.SearchBox:FilterSpell(spellID))
+					-- LEFT_DROPDOWN
+						or not (LeftSelection == 0 or LeftSelection == leftGroupID)
+					-- RIGHT_DROPDOWN
+						or not (RightSelection == 0 or RightSelection == rightGroupID)
+					then
+						-- SKIP ELEMENTS THAT FAIL TO MATCH ALL FILTERS
+					else
+						local learnedAt = spellData["learnedAt"] or 0;
+						local nameWithLevel = string.format("%04d", 999 - learnedAt)..skillName;
+						local skillType = "unlearned";
+						local numReagents = 0;
+						if spellData["reagents"] then
+							numReagents = #spellData["reagents"];
+						end
+						if spellData["creates"] then
+							icon = select(10, GetItemInfo(spellData["creates"]));
+						end
+						local info = {
+							["skillName"] = skillName;
+							["rank"] = spellData["rank"];
+							["skillType"] = skillType;
+							["numAvailable"] = 0;
+							["trainingPointCost"] = 0;
+							["requiredLevel"] = 0;
+							["icon"] = icon;
+							["spellID"] = spellID;
+							["reagents"] = spellData["reagents"];
+							["numReagents"] = numReagents;
+							["learnedAt"] = learnedAt;
+							["levels"] = spellData["levels"];
+							["tools"] = spellData["tools"];
+							["creates"] = spellData["creates"];
+							["Left"] = leftGroupID;
+							["Right"] = rightGroupID;
+						};
+						if not ByType[skillType] then
+							table.insert(SkillTypes, skillType);
+							ByType[skillType] = {};
+							Names[skillType] = {};
+						end
+						ByType[skillType][nameWithLevel] = info;
+						table.insert(Names[skillType], nameWithLevel);
 					end
-					if spellData["creates"] then
-						icon = select(10, GetItemInfo(spellData["creates"]));
-					end
-					local info = {
-						["skillName"] = skillName;
-						["rank"] = spellData["rank"];
-						["skillType"] = skillType;
-						["numAvailable"] = 0;
-						["trainingPointCost"] = 0;
-						["requiredLevel"] = 0;
-						["icon"] = icon;
-						["spellID"] = spellID;
-						["reagents"] = spellData["reagents"];
-						["numReagents"] = numReagents;
-						["learnedAt"] = learnedAt;
-						["levels"] = spellData["levels"];
-						["tools"] = spellData["tools"];
-						["creates"] = spellData["creates"];
-						["Left"] = leftGroupID;
-						["Right"] = rightGroupID;
-					};
-					if not ByType[skillType] then
-						table.insert(SkillTypes, skillType);
-						ByType[skillType] = {};
-						Names[skillType] = {};
-					end
-					ByType[skillType][nameWithLevel] = info;
-					table.insert(Names[skillType], nameWithLevel);
 				end
 			end
-		end
 		end
 		
 		-- Check the Chosen Grouping Scheme
