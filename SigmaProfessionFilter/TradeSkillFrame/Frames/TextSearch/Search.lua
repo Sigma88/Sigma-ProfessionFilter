@@ -6,9 +6,8 @@ SPF2.Search = CreateFrame("CheckButton", nil, TradeSkillFrame, "UICheckButtonTem
 function SPF2.Search.OnLoad()
 	SPF2.Search:SetWidth(15);
 	SPF2.Search:SetHeight(15);
-	SPF2.Search:SetPoint("TOPLEFT", TradeSkillFrame, "TOPLEFT", 72, -54);
-	SPF2.Search:SetHitRectInsets(0, -32, 0, 0);
 	SPF2.Search:SetFrameLevel(4);
+	SPF2.CheckBoxBar:AddButton(SPF2.Search);
 	
 	SPF2.Search:SetScript("OnShow", SPF2.Search.OnShow);
 	hooksecurefunc("TradeSkillFrame_OnShow", SPF2.Search.OnShow);
@@ -16,15 +15,9 @@ function SPF2.Search.OnLoad()
 	SPF2.Search:SetScript("OnClick", SPF2.Search.OnClick);
 	SPF2.Search:SetScript("OnEnter", SPF2.Search.OnEnter);
 	SPF2.Search:SetScript("OnLeave", SPF2.Search.OnLeave);
-	
-	--LeatrixPlus compatibility
-    if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
-		SPF2.Search:SetPoint("TOPLEFT", TradeSkillFrame, 72, -57);
-    end
 end
 
 function SPF2.Search:OnShow()
-	
 	SPF2.Search:Show();
 	SPF2.Search.text:SetWidth(0); -- reset width to automatic
 	SPF2.Search.text:SetText(L["SEARCH"]); -- set the text even when hidden
@@ -32,9 +25,10 @@ function SPF2.Search:OnShow()
 	if not(SPF2:Custom("LeftMenu")["disabled"] and SPF2:Custom("RightMenu")["disabled"]) then
 		SPF2.Search.tooltipText = L["SEARCH_TOOLTIP"];
 		SPF2.Search:SetChecked(SPF2:SavedData()["SearchBox"]);
-		SPF2.Search:SetHitRectInsets(0, -SPF2.Search.text:GetWidth(), 0, 0);
+		SPF2.Search.disabled = nil;
 	else
 		SPF2.Search:Hide();
+		SPF2.Search.disabled = true;
 	end
 end
 
