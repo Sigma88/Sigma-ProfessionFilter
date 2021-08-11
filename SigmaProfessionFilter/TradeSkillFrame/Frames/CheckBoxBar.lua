@@ -5,7 +5,7 @@ SPF2.CheckBoxBar = CreateFrame("Frame", "CheckBoxBar", TradeSkillFrame);
 
 function SPF2.CheckBoxBar.OnLoad()
 	SPF2.CheckBoxBar:SetScript("OnShow", SPF2.CheckBoxBar.OnShow);
-	hooksecurefunc("TradeSkillFrame_OnShow", SPF2.CheckBoxBar.OnShow);
+	-- Moved to TradeSkillFrame/Core/ReplaceFunctions --hooksecurefunc("TradeSkillFrame_OnShow", SPF2.CheckBoxBar.OnShow);
 	
 	SPF2.CheckBoxBar:SetHeight(16);
 	
@@ -55,16 +55,16 @@ function SPF2.CheckBoxBar.OnShow()
 		if not item.frame.disabled then
 			maxText = maxText - item.frame:GetWidth();
 			totWidth = totWidth + item.frame:GetWidth();
-			
 			if item.frame.text then
-				item.frame.text:SetWidth(0);
+				item.frame.text:SetHeight(0); -- automatic height
+				item.frame.text:SetWidth(0); -- automatic width
 				textWidth = textWidth + item.frame.text:GetWidth();
 				totWidth = totWidth + item.frame.text:GetWidth();
 			end
 		end
 	end
 	
-	-- Measure the Buttons
+	-- Resize the Buttons
 	for i,item in ipairs(SPF2.CheckBoxBar.Buttons) do
 		
 		if item.frame.disabled then
@@ -75,7 +75,8 @@ function SPF2.CheckBoxBar.OnShow()
 				local width = item.frame:GetWidth();
 				if item.frame.text then
 					local label = item.frame.text:GetWidth();
-					item.frame.text:SetWidth(label / textWidth * maxText);
+					item.frame.text:SetHeight(item.frame.text:GetHeight()); -- fix height
+					item.frame.text:SetWidth(label / textWidth * maxText); -- fix width
 					width = width + item.frame.text:GetWidth();
 				end
 				item:SetWidth(width);

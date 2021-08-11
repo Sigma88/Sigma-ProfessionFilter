@@ -33,11 +33,11 @@ CraftFrame\Frames\ElvUICompatibility.lua
 TradeSkillFrame\Core\Utility.lua
 TradeSkillFrame\Core\DefineFunctions.lua
 
-TradeSkillFrame\Frames\CheckBoxBar.lua
 TradeSkillFrame\Frames\DropDowns\LeftMenu.lua
 TradeSkillFrame\Frames\DropDowns\LeftSort.lua
 TradeSkillFrame\Frames\DropDowns\RightMenu.lua
 TradeSkillFrame\Frames\DropDowns\RightSort.lua
+TradeSkillFrame\Frames\CheckBoxBar.lua
 TradeSkillFrame\Frames\TextSearch\SearchBox.lua
 TradeSkillFrame\Frames\TextSearch\Search.lua
 TradeSkillFrame\Frames\Filters\Filter1.lua
