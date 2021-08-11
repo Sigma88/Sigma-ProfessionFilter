@@ -76,4 +76,69 @@ function SPF2.Starred.OnLeave()
     GameTooltip:Hide();
 end
 
+function SPF2.Starred.OnUpdate()
+	for i=1, TRADE_SKILLS_DISPLAYED do
+		local button = _G["TradeSkillSkill"..i];
+		if button then
+			local star = _G["TradeSkillSkill"..i.."Star"];
+			if not star then
+				-- star = CreateFrame("Frame", "TradeSkillSkill"..i.."Star", button);
+				star = CreateFrame("CheckButton", "TradeSkillSkill"..i.."Star", button, "UICheckButtonTemplate");
+				star:SetWidth(button:GetHeight());
+				star:SetHeight(button:GetHeight());
+				star:SetFrameLevel(4);
+				
+				function star:OnClick()
+					if not SPF2:SavedData()["StarredRecipes"] then
+						SPF2:SavedData()["StarredRecipes"] = {};
+					end
+					SPF2:SavedData()["StarredRecipes"][GetTradeSkillInfo(button:GetID())] = star:GetChecked();
+				end
+				star:SetScript("OnClick", star.OnClick);
+				
+				star.normal = star:CreateTexture(nil, "ARTWORK");
+				star.normal:SetTexture("Interface/Common/ReputationStar", false);
+				star.normal:SetAllPoints();
+				star.normal:SetTexCoord(0.5,1,0,0.5);
+				
+				star.checked = star:CreateTexture(nil, "ARTWORK");
+				star.checked:SetTexture("Interface/Common/ReputationStar", false);
+				star.checked:SetAllPoints();
+				star.checked:SetTexCoord(0,0.5,0,0.5);
+				
+				star.highlight = star:CreateTexture(nil, "ARTWORK");
+				star.highlight:SetTexture("Interface/Common/ReputationStar", false);
+				star.highlight:SetAllPoints();
+				star.highlight:SetTexCoord(0,0.5,0.5,1);
+				
+				star.pushed = star:CreateTexture(nil, "ARTWORK");
+				star.pushed:SetTexture("Interface/Common/ReputationStar", false);
+				star.pushed:SetAllPoints();
+				star.pushed:SetTexCoord(0,0.5,0.5,1);
+				
+				star:SetNormalTexture(star.normal);
+				star:SetCheckedTexture(star.checked);
+				star:SetHighlightTexture(star.highlight);
+				star:SetPushedTexture(star.pushed);
+			end
+			star:ClearAllPoints();
+			if TradeSkillListScrollFrameScrollBar:IsVisible() or (LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On")then
+				star:SetPoint("RIGHT", button, "RIGHT", 0, 0);
+			else
+				star:SetPoint("RIGHT", button, "RIGHT", -7, 0);
+			end
+			
+			local skillName, skillType = GetTradeSkillInfo(button:GetID());
+			
+			if skillType == "header" then
+				star:Hide();
+			else
+				star:Show();
+			end
+			
+			star:SetChecked(SPF2:SavedData()["StarredRecipes"] and SPF2:SavedData()["StarredRecipes"][skillName]);
+		end
+	end
+end
+
 SPF2.Starred.OnLoad();
