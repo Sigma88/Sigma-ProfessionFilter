@@ -39,6 +39,14 @@ RI.TradeSkill = {};
 function RI.TradeSkill.Localize()
 	local localName = GetTradeSkillName();
 	if not RI.Data[localName] then
+		
+		if not RI.LOCALIZE then
+			RI.LOCALIZE = true;
+			return;
+		end
+		
+		RI.LOCALIZE = nil;
+		
 		for i=1, 5, 1 do
 			local link = GetTradeSkillRecipeLink(i);
 			if link then
