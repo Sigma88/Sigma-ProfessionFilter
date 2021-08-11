@@ -141,4 +141,17 @@ function SPF2.Starred.OnUpdate()
 	end
 end
 
+function SPF2.Starred:Filter(skillName)
+	
+	if not SPF2.Starred.button:GetChecked() or not skillName then
+		return true;
+	end
+	
+	if SPF2:SavedData()["StarredRecipes"] and SPF2:SavedData()["StarredRecipes"][skillName] then
+		return true;
+	end
+	
+	return false;
+end
+
 SPF2.Starred.OnLoad();

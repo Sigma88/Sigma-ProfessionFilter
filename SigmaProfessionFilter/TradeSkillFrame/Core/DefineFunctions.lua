@@ -58,6 +58,8 @@ function SPF2.GetNumTradeSkills()
 				if (not SPF2.Filter1:Filter(i))
 				-- FILTER_2
 					or (not SPF2.Filter2:Filter(i))
+				-- STARRED
+					or (not SPF2.Starred:Filter(skillName))
 				-- SEARCH_BOX
 					or not(SPF2.SearchBox:Filter(i))
 				-- LEFT_DROPDOWN
@@ -94,7 +96,7 @@ function SPF2.GetNumTradeSkills()
 			for spellID,spellData in pairs(SPF2.GetRecipeInfo() or {}) do
 				local skillName, rank, icon = GetSpellInfo(spellID);
 				
-				if not SPF2.Recipes[skillName] then
+				if not SPF2.Recipes[skillName] and SPF2.Starred:Filter(skillName) then
 					-- IMPLEMENT CHECKS LATER
 					local leftGroupID = SPF2.LeftMenu:FilterSpell(spellID, LeftSelection) or 0;
 					local rightGroupID = SPF2.RightMenu:FilterSpell(spellID, RightSelection) or 0;
