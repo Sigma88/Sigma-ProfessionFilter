@@ -8,10 +8,17 @@ if ElvUI then
 	-- TradeSkillFrame
 	S:HandleCheckBox(SPF2.Filter1);
 	S:HandleCheckBox(SPF2.Filter2);
+	S:HandleCheckBox(SPF2.Unlearned.button);
+	S:HandleCheckBox(SPF2.Starred.button);
 	S:HandleCheckBox(SPF2.LeftSort);
 	S:HandleCheckBox(SPF2.RightSort);
 	S:HandleCheckBox(SPF2.Search);
 	S:HandleEditBox(SPF2.SearchBox);
+	SPF2.SearchBox:SetHeight(18);
+	SPF2.SearchBox:SetPoint("TOPRIGHT", TradeSkillFrame, "TOPRIGHT", -44, -76);
+    if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
+        SPF2.SearchBox:SetPoint("TOPRIGHT", TradeSkillFrame, "TOPRIGHT", -50, -49);
+    end
 
 	if (LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On") then
 		S:HandleDropDownBox(SPF2.LeftMenu, 170);
