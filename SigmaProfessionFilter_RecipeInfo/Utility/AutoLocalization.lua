@@ -2,12 +2,10 @@
 local RI = SigmaProfessionFilter_RecipeInfo;
 
 -- CraftFrame
-RI.Craft.Localize = {};
+RI.Craft = {};
 
 function RI.Craft.Localize()
-	
 	local localName = GetCraftName();
-	
 	if not RI.Data[localName] then
 		
 		for i=1, 5, 1 do
@@ -34,19 +32,15 @@ hooksecurefunc("CraftFrame_OnShow", RI.Craft.Localize);
 
 
 -- TradeSkillFrame
-RI.TradeSkill = {};
+RI.TradeSkill = CreateFrame("Frame", nil, TradeSkillFrame);
 
 function RI.TradeSkill.Localize()
+	if not RI.TradeSkill.LOCALIZE then
+		RI.TradeSkill.LOCALIZE = true;
+		return;
+	end
 	local localName = GetTradeSkillName();
 	if not RI.Data[localName] then
-		
-		if not RI.LOCALIZE then
-			RI.LOCALIZE = true;
-			return;
-		end
-		
-		RI.LOCALIZE = nil;
-		
 		for i=1, 5, 1 do
 			local link = GetTradeSkillRecipeLink(i);
 			if link then
@@ -65,4 +59,9 @@ function RI.TradeSkill.Localize()
 	end
 end
 
+function RI.TradeSkill.Reset()
+	RI.TradeSkill.LOCALIZE = nil;
+end
+
+RI.TradeSkill:SetScript("OnHide", RI.TradeSkill.Reset);
 hooksecurefunc("TradeSkillFrame_OnShow", RI.TradeSkill.Localize);
