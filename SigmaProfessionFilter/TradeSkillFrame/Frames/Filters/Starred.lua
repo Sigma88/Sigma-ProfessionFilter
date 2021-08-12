@@ -122,8 +122,11 @@ function SPF2.Starred.OnUpdate()
 				star:SetPushedTexture(star.pushed);
 			end
 			star:ClearAllPoints();
-			if TradeSkillListScrollFrameScrollBar:IsVisible() or (LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On")then
+			
+			if TradeSkillListScrollFrameScrollBar:IsVisible() then
 				star:SetPoint("RIGHT", button, "RIGHT", 0, 0);
+			elseif (LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On") then
+				star:SetPoint("RIGHT", button, "RIGHT", -30, 0);
 			else
 				star:SetPoint("RIGHT", button, "RIGHT", -7, 0);
 			end
