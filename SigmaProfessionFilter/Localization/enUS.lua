@@ -32,4 +32,12 @@ SigmaProfessionFilter.L = {
 	-- TradeSkillFrame\Core\Utility.lua
 	["Mining_SpellName"] = "Smelting";
 	["CRAFT_REAGENT"] = "Craft Reagent";
+	
+	-- TradeSkillFrame\Frames\Starred.lua
+	["STARRED_TOOLTIP"] = "Toggle Favorite Recipes Filter";
+	["SET_FAVORITE"] = BATTLE_PET_FAVORITE;
+	["UNSET_FAVORITE"] = BATTLE_PET_UNFAVORITE;
+	
+	-- TradeSkillFrame\Frames\Unlearned.lua
+	["UNLEARNED_TOOLTIP"] = "Toggle Unlearned Recipes Filter";
 };

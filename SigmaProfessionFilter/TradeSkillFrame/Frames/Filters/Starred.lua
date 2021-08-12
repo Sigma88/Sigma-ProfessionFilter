@@ -42,7 +42,7 @@ function SPF2.Starred:OnShow()
 	SPF2.Starred:Show();
 	
 	if not(SPF2:Custom("Starred")["disabled"]) then
-		SPF2.Starred.tooltipText = L["STARRED_TOOLTIP"] or "Toggle Starred Recipes Filter";
+		SPF2.Starred.tooltipText = SPF2:Custom("Starred")["tooltip"] or L["STARRED_TOOLTIP"];
 		SPF2.Starred.button:SetChecked(SPF2:SavedData()["Starred"]);
 		SPF2.Starred.disabled = nil;
 	else
@@ -63,6 +63,7 @@ function SPF2.Starred.OnClick()
 	
 	TradeSkillFrame_OnShow();
 	SPF2.FullUpdate();
+	SPF2.Starred.OnEnter();
 end
 
 function SPF2.Starred.OnEnter()
@@ -82,7 +83,6 @@ function SPF2.Starred.OnUpdate()
 		if button then
 			local star = _G["TradeSkillSkill"..i.."Star"];
 			if not star then
-				-- star = CreateFrame("Frame", "TradeSkillSkill"..i.."Star", button);
 				star = CreateFrame("CheckButton", "TradeSkillSkill"..i.."Star", button, "UICheckButtonTemplate");
 				star:SetWidth(button:GetHeight());
 				star:SetHeight(button:GetHeight());
@@ -93,8 +93,24 @@ function SPF2.Starred.OnUpdate()
 						SPF2:SavedData()["StarredRecipes"] = {};
 					end
 					SPF2:SavedData()["StarredRecipes"][GetTradeSkillInfo(button:GetID())] = star:GetChecked();
+					star:OnEnter();
 				end
 				star:SetScript("OnClick", star.OnClick);
+				
+				function star:OnEnter()
+					GameTooltip:SetOwner(star, "ANCHOR_TOPLEFT");
+					if star:GetChecked() then
+						GameTooltip:SetText(L["UNSET_FAVORITE"], nil, nil, nil, nil, true);
+					else
+						GameTooltip:SetText(L["SET_FAVORITE"], nil, nil, nil, nil, true);
+					end
+				end
+				star:SetScript("OnEnter", star.OnEnter);
+				
+				function star:OnLeave()
+					
+				end
+				star:SetScript("OnLeave", star.OnLeave);
 				
 				star.normal = star:CreateTexture(nil, "ARTWORK");
 				star.normal:SetTexture("Interface/Common/ReputationStar", false);

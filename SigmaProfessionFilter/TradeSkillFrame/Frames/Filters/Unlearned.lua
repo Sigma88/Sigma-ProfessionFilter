@@ -40,7 +40,7 @@ end
 function SPF2.Unlearned:OnShow()
 	SPF2.Unlearned:Show();
 	if not(SPF2:Custom("Unlearned")["disabled"]) and SPF2.GetRecipeInfo() then
-		SPF2.Unlearned.tooltipText = L["UNLEARNED_TOOLTIP"] or "Toggle Unlearned Recipes Filter";
+		SPF2.Unlearned.tooltipText = SPF2:Custom("Unlearned")["tooltip"] or L["UNLEARNED_TOOLTIP"];
 		SPF2.Unlearned.button:SetChecked(SPF2:SavedData()["Unlearned"]);
 		SPF2.Unlearned.disabled = nil;
 	else
@@ -61,6 +61,7 @@ function SPF2.Unlearned.OnClick()
 	
 	TradeSkillFrame_OnShow();
 	SPF2.FullUpdate();
+	SPF2.Unlearned:OnEnter();
 end
 
 function SPF2.Unlearned.OnEnter()
