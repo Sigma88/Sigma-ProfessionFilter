@@ -89,6 +89,11 @@ function SPF2.Starred.OnUpdate()
 				star:SetFrameLevel(4);
 				
 				function star:OnClick()
+					if (star:GetChecked()) then
+						PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
+					else
+						PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
+					end
 					if not SPF2:SavedData()["StarredRecipes"] then
 						SPF2:SavedData()["StarredRecipes"] = {};
 					end
@@ -108,7 +113,7 @@ function SPF2.Starred.OnUpdate()
 				star:SetScript("OnEnter", star.OnEnter);
 				
 				function star:OnLeave()
-					
+					GameTooltip:Hide();
 				end
 				star:SetScript("OnLeave", star.OnLeave);
 				
