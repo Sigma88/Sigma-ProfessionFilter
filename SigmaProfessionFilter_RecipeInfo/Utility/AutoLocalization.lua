@@ -16,7 +16,9 @@ function RI.Craft.Localize()
 					for usName,Data in pairs(RI.Data) do
 						if Data[spellID] then
 							RI.Data[localName] = RI.Data[usName];
+							RI.LoadIntoCache(localName);
 							CraftFrame_OnShow();
+							SigmaProfessionFilter[1].FullUpdate();
 							return;
 						end
 					end

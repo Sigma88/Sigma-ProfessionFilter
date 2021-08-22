@@ -102,7 +102,9 @@ function SPF1.GetNumCrafts()
 				if (not SPF1.Filter1:FilterSpell(spellID))
 				-- FILTER_2
 					or (not SPF1.Filter2:FilterSpell(spellID))
-					-- SEARCH_BOX
+				-- STARRED
+					or (not SPF1.Starred:Filter(craftName, craftSubSpellName))
+				-- SEARCH_BOX
 					or not(SPF1.SearchBox:FilterSpell(spellID))
 				-- LEFT_DROPDOWN
 					or not (SPF1:GetSelected("Left") == 0 or leftGroupID > 0)

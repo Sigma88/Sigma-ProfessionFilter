@@ -6,34 +6,40 @@ SPF1.Filter2 = CreateFrame("CheckButton", nil, CraftFrame, "UICheckButtonTemplat
 function SPF1.Filter2:OnLoad()
 	SPF1.Filter2:SetWidth(15);
 	SPF1.Filter2:SetHeight(15);
-	SPF1.Filter2:SetPoint("TOPLEFT", CraftFrame, "TOPLEFT", 225, -54);
-	SPF1.Filter2:SetHitRectInsets(0, -60, 0, 0);
 	SPF1.Filter2:SetFrameLevel(4);
+	SPF1.CheckBoxBar:AddButton(SPF1.Filter2);
 	
 	SPF1.Filter2:SetScript("OnShow", SPF1.Filter2.OnShow);
+	hooksecurefunc("CraftFrame_OnShow", SPF1.Filter2.OnShow);
+	
 	SPF1.Filter2:SetScript("OnClick", SPF1.Filter2.OnClick);
 	SPF1.Filter2:SetScript("OnEnter", SPF1.Filter2.OnEnter);
 	SPF1.Filter2:SetScript("OnLeave", SPF1.Filter2.OnLeave);
 	
-	--LeatrixPlus compatibility
-    if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
-		SPF1.Filter2:SetPoint("TOPLEFT", CraftFrame, "TOPLEFT", 225, -57);
-    end
+	SPF1.Filter2.Status = {};
 end
 
 function SPF1.Filter2:OnShow()
+	SPF1.Filter2:Show();
+	SPF1.Filter2.text:SetWidth(0); -- reset width to automatic
+	
 	SPF1.Filter2.text:SetText(SPF1:Custom("Filter2")["text"] or L["HAVE_MATS"]);
 	SPF1.Filter2.tooltipText = SPF1:Custom("Filter2")["tooltip"] or L["HAVE_MATS_TOOLTIP"];
+	
+	if GetCraftName() then
+		SPF1.Filter2:SetChecked(SPF1.Filter2.Status[GetCraftName()]);
+	end
 end
 
 function SPF1.Filter2:OnClick()
 	if (SPF1.Filter2:GetChecked()) then
         PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
-		SPF1:SavedData()["Filter2"] = true;
     else
         PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
-		SPF1:SavedData()["Filter2"] = nil;
     end
+	if GetCraftName() then
+		SPF1.Filter2.Status[GetCraftName()] = SPF1.Filter2:GetChecked();
+	end
     SPF1.FullUpdate();
 end
 
