@@ -18,10 +18,13 @@ CraftFrame\Frames\DropDowns\LeftMenu.lua
 CraftFrame\Frames\DropDowns\LeftSort.lua
 CraftFrame\Frames\DropDowns\RightMenu.lua
 CraftFrame\Frames\DropDowns\RightSort.lua
-CraftFrame\Frames\Filters\Filter1.lua
-CraftFrame\Frames\Filters\Filter2.lua
+CraftFrame\Frames\CheckBoxBar.lua
 CraftFrame\Frames\TextSearch\SearchBox.lua
 CraftFrame\Frames\TextSearch\Search.lua
+CraftFrame\Frames\Filters\Filter1.lua
+CraftFrame\Frames\Filters\Filter2.lua
+CraftFrame\Frames\Filters\Unlearned.lua
+CraftFrame\Frames\Filters\Starred.lua
 CraftFrame\Frames\PortraitChanger.lua
 
 CraftFrame\Core\ReplaceFunctions.lua
