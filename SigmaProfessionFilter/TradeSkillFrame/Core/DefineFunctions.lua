@@ -122,7 +122,7 @@ function SPF2.GetNumTradeSkills()
 							numReagents = #spellData["reagents"];
 						end
 						if spellData["creates"] then
-							icon = select(10, GetItemInfo(spellData["creates"]));
+							icon = select(5, GetItemInfoInstant(spellData["creates"]));
 						end
 						local info = {
 							["skillName"] = skillName;
