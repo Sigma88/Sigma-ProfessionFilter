@@ -39,7 +39,7 @@ end
 
 function SPF2.Unlearned:OnShow()
 	SPF2.Unlearned:Show();
-	if not(SPF2:Custom("Unlearned")["disabled"]) and SPF2.GetRecipeInfo() then
+	if not(SPF2:Custom("Unlearned")["disabled"]) and SPF2.GetRecipeInfo() and next(SPF2.GetRecipeInfo()) then
 		SPF2.Unlearned.tooltipText = SPF2:Custom("Unlearned")["tooltip"] or L["UNLEARNED_TOOLTIP"];
 		SPF2.Unlearned.button:SetChecked(SPF2:SavedData()["Unlearned"]);
 		SPF2.Unlearned.disabled = nil;
