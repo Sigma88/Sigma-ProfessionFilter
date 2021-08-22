@@ -49,6 +49,7 @@ function RI.TradeSkill.Localize()
 					for usName,Data in pairs(RI.Data) do
 						if Data[spellID] then
 							RI.Data[localName] = RI.Data[usName];
+							RI.LoadIntoCache(localName);
 							TradeSkillFrame_OnShow();
 							return;
 						end
