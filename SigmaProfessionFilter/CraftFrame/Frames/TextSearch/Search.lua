@@ -44,15 +44,15 @@ function SPF1.Search.OnClick()
 	
 	SPF1.SearchBox:SetText("");
 	
-	-- if SPF1:SavedData()["SearchBox"] then		
-		-- SPF1.SearchBox:Show();
-		-- SPF1.LeftMenu:Hide();
-		-- SPF1.RightMenu:Hide();
-	-- else
-		-- SPF1.SearchBox:Hide();
-		-- SPF1.LeftMenu:Show();
-		-- SPF1.RightMenu:Show();
-	-- end
+	if SPF1:SavedData()["SearchBox"] then		
+		SPF1.SearchBox:Show();
+		SPF1.LeftMenu:Hide();
+		SPF1.RightMenu:Hide();
+	else
+		SPF1.SearchBox:Hide();
+		SPF1.LeftMenu:Show();
+		SPF1.RightMenu:Show();
+	end
 	
 	CraftFrame_OnShow();
 	
