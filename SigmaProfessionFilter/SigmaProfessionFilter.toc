@@ -25,9 +25,9 @@ CraftFrame\Frames\Filters\Filter1.lua
 CraftFrame\Frames\Filters\Filter2.lua
 CraftFrame\Frames\Filters\Unlearned.lua
 CraftFrame\Frames\Filters\Starred.lua
-CraftFrame\Frames\PortraitChanger.lua
 
 CraftFrame\Core\ReplaceFunctions.lua
+CraftFrame\Frames\PortraitChanger.lua
 
 CraftFrame\Frames\LeatrixPlusCompatibility.lua
 CraftFrame\Frames\ElvUICompatibility.lua
