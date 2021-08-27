@@ -8,7 +8,7 @@ if GetLocale() == "frFR" then
 	L["PROFESSION"] = "Cuisine";
 	-- Left Menu
 	L["LEFT_TITLE"] = "Toutes les sous-classes";
-	L["LEFT_TOOLTIP"] = "Trie les recettes en fonction du produit.";
+	L["LEFT_TOOLTIP"] = "Trie les recettes en fonction de l'objet produit.";
 	-- Names
 	L["LEFT_01_NAME"] = "Bien nourri";
 	L["LEFT_02_NAME"] = "Amélioration instantanée";

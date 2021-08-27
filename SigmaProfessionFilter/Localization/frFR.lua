@@ -7,12 +7,12 @@ if GetLocale() == "frFR" then
 	-- CraftFrame\Frames\Filters\Filter1.lua
 	-- TradeSkillFrame\Frames\Filters\Filter1.lua
 	L["MORE_OPTIONS"] = "Effectuez un clic droit pour activer des options supplémentaires.";
-	L["TradeSkillFilter1RightClick"] = "Type de progrès : ";
+	L["TradeSkillFilter1RightClick"] = "Niveau de progrès : ";
 	L["ORANGE"] = "Maximal";
 	L["YELLOW"] = "Moyen";
 	L["GREEN"] = "Faible";
 	L["HAS_SKILL_UP"] = "Gain de compétence";
-	L["HAS_SKILL_UP_TOOLTIP"] = "Ne montrer que les recettes qui possèdent la capacité de monter votre compétence de métier.";
+	L["HAS_SKILL_UP_TOOLTIP"] = "Ne montrer que les recettes qui peuvent monter votre compétence de métier.";
 	
 	-- CraftFrame\Frames\Filters\Filter2.lua
 	-- TradeSkillFrame\Frames\Filters\Filter2.lua
@@ -27,7 +27,7 @@ if GetLocale() == "frFR" then
 	L["SEARCH_TOOLTIP"] = "Affiche la barre de recherche.";
 	
 	-- TradeSkillFrame\Frames\DropDowns\LeftSort.lua
-	L["ALL_SUBCLASSES_TOOLTIP"] = "Trie les recettes en fonction de la catégorie de l'objet produit.";
+	L["ALL_SUBCLASSES_TOOLTIP"] = "Trie les recettes en fonction de la catégorie d'objet produit.";
 	-- TradeSkillFrame\Frames\DropDowns\RightSort.lua
 	L["ALL_INVENTORY_SLOTS_TOOLTIP"] = "Trie les recettes en fonction de l’emplacement d’inventaire de l’objet produit.";
 	

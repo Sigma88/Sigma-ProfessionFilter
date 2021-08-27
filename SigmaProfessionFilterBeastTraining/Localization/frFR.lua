@@ -29,7 +29,7 @@ if GetLocale() == "frFR" then
 	L["FILTER1_TOOLTIP"] = "Montrer uniquement les capacités que votre familier actif peut apprendre actuellement.";
 	-- Filter2
 	L["FILTER2"] = "Enseignable";
-	L["FILTER2_TOOLTIP"] = "Montrer uniquement les capacités dont votre familier actif possède le niveau et les points d’apprentissages requis.";
+	L["FILTER2_TOOLTIP"] = "Montrer uniquement les capacités pour votre familier actif possédant le niveau et les points d’apprentissages requis.";
 	-- Spells
 	L["BITE"] = GetSpellInfo(17253);
 	L["CHARGE"] = GetSpellInfo(7371);
