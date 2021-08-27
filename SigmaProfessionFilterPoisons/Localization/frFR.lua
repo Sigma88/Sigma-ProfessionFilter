@@ -1,4 +1,4 @@
--- Thanks to user Quantaz for providing french localization
+-- Thanks to user Javus-Amnennar for providing french localization
 
 if GetLocale() == "frFR" then
 	
