@@ -29,9 +29,9 @@ if GetLocale() == "frFR" then
 	L["RIGHT_06_NAME"] = "Lin";
 	L["RIGHT_07_NAME"] = "Sac de venin";
 	-- Filters
-	L["RIGHT_01_FILTER"] = "Tisse-néant";
-	L["RIGHT_02_FILTER"] = "Etoffe runique";
-	L["RIGHT_03_FILTER"] = "Tisse-mage";
+	L["RIGHT_01_FILTER"] = "néant";
+	L["RIGHT_02_FILTER"] = "runique";
+	L["RIGHT_03_FILTER"] = "mage";
 	L["RIGHT_04_FILTER"] = "Soie";
 	L["RIGHT_05_FILTER"] = "Laine";
 	L["RIGHT_06_FILTER"] = "Lin";

@@ -24,7 +24,7 @@ if GetLocale() == "frFR" then
 	-- CraftFrame\Frames\TextSearch\Search.lua
 	-- TradeSkillFrame\Frames\TextSearch\Search.lua
 	L["SEARCH"] = "Rechercher";
-	L["SEARCH_TOOLTIP"] = "Affiche la barre de recherche.";
+	L["SEARCH_TOOLTIP"] = "Afficher la barre de recherche.";
 	
 	-- TradeSkillFrame\Frames\DropDowns\LeftSort.lua
 	L["ALL_SUBCLASSES_TOOLTIP"] = "Trie les recettes en fonction de la catégorie d'objet produit.";
@@ -34,5 +34,13 @@ if GetLocale() == "frFR" then
 	-- TradeSkillFrame\Core\Utility.lua
 	L["Mining_SpellName"] = "Fondre";
 	L["CRAFT_REAGENT"] = "Produire composant";
+	
+	-- TradeSkillFrame\Frames\Starred.lua
+	L["STARRED_TOOLTIP"] = "Ne montrer que les recettes favorites";
+	L["SET_FAVORITE"] = BATTLE_PET_FAVORITE;
+	L["UNSET_FAVORITE"] = BATTLE_PET_UNFAVORITE;
+	
+	-- TradeSkillFrame\Frames\Unlearned.lua
+	L["UNLEARNED_TOOLTIP"] = "Afficher les recettes non connues";
 	
 end

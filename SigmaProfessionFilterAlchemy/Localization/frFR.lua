@@ -14,10 +14,10 @@ if GetLocale() == "frFR" then
 	L["RIGHT_02_NAME"] = "Flacons";
 	L["RIGHT_03_NAME"] = "Potions";
 	L["RIGHT_04_NAME"] = "Transmutations";
-	L["RIGHT_05_NAME"] = "Huiles";
+	L["RIGHT_05_NAME"] = "Huile";
 	L["RIGHT_06_NAME"] = "Ingénierie";
 	L["RIGHT_07_NAME"] = "Couture";
-	L["RIGHT_08_NAME"] = "Pierres";
+	L["RIGHT_08_NAME"] = "Pierre";
 	L["RIGHT_09_NAME"] = MISCELLANEOUS;
 	-- Filters
 	L["RIGHT_01_FILTER"] = "Elixir;Potion de sang de troll majeure";
