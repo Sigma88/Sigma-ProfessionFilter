@@ -9,6 +9,7 @@
 
 SigmaProfessionFilter.lua
 Localization\enUS.lua
+Localization\frFR.lua
 
 CraftFrame\Core\Utility.lua
 CraftFrame\Core\DefineFunctions.lua
