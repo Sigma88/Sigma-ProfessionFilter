@@ -26,7 +26,7 @@ if GetLocale() == "ruRU" then
 	L["LEFT_14_NAME"] = SPECIAL;
 	L["LEFT_15_NAME"] = "Прок";
 	L["LEFT_16_NAME"] = SKILL;
-	L["LEFT_17_NAME"] = "Рунические жезлы́";
+	L["LEFT_17_NAME"] = "Рунические жезлы";
 	L["LEFT_18_NAME"] = INVTYPE_RANGED;
 	L["LEFT_19_NAME"] = MISCELLANEOUS;
 	-- Filters
@@ -61,7 +61,7 @@ if GetLocale() == "ruRU" then
 	L["RIGHT_06_NAME"] = ENCHSLOT_2HWEAPON;
 	L["RIGHT_07_NAME"] = ENCHSLOT_WEAPON;
 	L["RIGHT_08_NAME"] = SHIELDSLOT;
-	L["RIGHT_09_NAME"] = "Рунические жезлы́";
+	L["RIGHT_09_NAME"] = "Рунические жезлы";
 	L["RIGHT_10_NAME"] = INVTYPE_RANGED;
 	L["RIGHT_11_NAME"] = "Создать масло";
 	L["RIGHT_12_NAME"] = MISCELLANEOUS;
