@@ -61,6 +61,8 @@ function SPF1.GetNumCrafts()
 				if (not SPF1.Filter1:Filter(i))
 				-- FILTER_2
 					or (not SPF1.Filter2:Filter(i))
+				-- STARRED
+					or (not SPF1.Starred:Filter(craftName, craftSubSpellName))
 				-- SEARCH_BOX
 					or not(SPF1.SearchBox:Filter(i))
 				-- LEFT_DROPDOWN
@@ -87,6 +89,7 @@ function SPF1.GetNumCrafts()
 			end
 		end
 		
+		if SPF1:SavedData()["Unlearned"] then
 		for spellID,spellData in pairs(SPF1.GetRecipeInfo() or {}) do
 			local craftName, craftSubSpellName, icon = GetSpellInfo(spellID);
 			
@@ -99,7 +102,9 @@ function SPF1.GetNumCrafts()
 				if (not SPF1.Filter1:FilterSpell(spellID))
 				-- FILTER_2
 					or (not SPF1.Filter2:FilterSpell(spellID))
-					-- SEARCH_BOX
+				-- STARRED
+					or (not SPF1.Starred:Filter(craftName, craftSubSpellName))
+				-- SEARCH_BOX
 					or not(SPF1.SearchBox:FilterSpell(spellID))
 				-- LEFT_DROPDOWN
 					or not (SPF1:GetSelected("Left") == 0 or leftGroupID > 0)
@@ -142,6 +147,7 @@ function SPF1.GetNumCrafts()
 					table.insert(Names[craftType], nameWithLevel);
 				end
 			end
+		end
 		end
 		
 		-- Check the Chosen Grouping Scheme

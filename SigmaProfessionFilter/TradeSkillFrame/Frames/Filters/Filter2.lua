@@ -8,8 +8,8 @@ function SPF2.Filter2.OnLoad()
 	
 	SPF2.Filter2:SetWidth(15);
 	SPF2.Filter2:SetHeight(15);
-	SPF2.Filter2:SetPoint("LEFT", SPF2.Filter1.text, "RIGHT", 10, 0);
 	SPF2.Filter2:SetFrameLevel(4);
+	SPF2.CheckBoxBar:AddButton(SPF2.Filter2);
 	
 	SPF2.Filter2:SetScript("OnShow", SPF2.Filter2.OnShow);
 	hooksecurefunc("TradeSkillFrame_OnShow", SPF2.Filter2.OnShow);
@@ -27,39 +27,6 @@ function SPF2.Filter2:OnShow()
 	
 	SPF2.Filter2.text:SetText(SPF2:Custom("Filter2")["text"] or L["HAVE_MATS"]);
 	SPF2.Filter2.tooltipText = SPF2:Custom("Filter2")["tooltip"] or L["HAVE_MATS_TOOLTIP"];
-	
-	-- Move the search button if there is no portrait
-	local w = 0;
-	if TradeSkillFramePortrait:IsVisible() and TradeSkillFramePortrait:GetAlpha() ~= 0 then
-		w = TradeSkillFramePortrait:GetWidth();
-	else
-		local a,b,c,d,e = SPF2.Search:GetPoint();
-		SPF2.Search:ClearAllPoints();
-		SPF2.Search:SetPoint(a,b,c,12 + w,e);
-	end
-	
-	-- When the text is too big, shrink it
-	local x,y,z = SPF2.Search.text:GetWidth(), SPF2.Filter1.text:GetWidth(), SPF2.Filter2.text:GetWidth();
-	if (x + y + z > 265 - w) then
-		
-		-- Block text height
-		SPF2.Search.text:SetHeight(SPF2.Search.text:GetHeight());
-		SPF2.Filter1.text:SetHeight(SPF2.Filter1.text:GetHeight());
-		SPF2.Filter2.text:SetHeight(SPF2.Filter2.text:GetHeight());
-		
-		-- Calculate relative size of each new text string
-		SPF2.Search.text:SetWidth( x / (x + y + z) * (265 - w));
-		SPF2.Search:SetHitRectInsets(0, -SPF2.Search.text:GetWidth(), 0, 0);
-		
-		SPF2.Filter1.text:SetWidth( y / (x + y + z) * (265 - w));
-		SPF2.Filter1:SetHitRectInsets(0, -SPF2.Filter1.text:GetWidth(), 0, 0);
-		
-		SPF2.Filter2.text:SetWidth( z / (x + y + z) * (265 - w));
-		SPF2.Filter2:SetHitRectInsets(0, -SPF2.Filter2.text:GetWidth(), 0, 0);
-		
-	else
-		SPF2.Filter2:SetHitRectInsets(0, -SPF2.Filter2.text:GetWidth(), 0, 0);
-	end
 	
 	if GetTradeSkillName() then
 		SPF2.Filter2:SetChecked(SPF2.Filter2.Status[GetTradeSkillName()]);

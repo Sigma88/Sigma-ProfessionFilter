@@ -76,3 +76,4 @@ GetTradeskillRepeatCount = SPF2.GetTradeskillRepeatCount;
 
 -- Hooks
 hooksecurefunc("TradeSkillFrame_OnShow", SPF2.TradeSkillFrame_OnShow);
+hooksecurefunc("TradeSkillFrame_OnShow", SPF2.CheckBoxBar.OnShow);

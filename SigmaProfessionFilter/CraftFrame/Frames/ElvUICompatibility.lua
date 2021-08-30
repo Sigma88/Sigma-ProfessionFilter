@@ -7,11 +7,18 @@ if ElvUI then
 
 	S:HandleCheckBox(SPF1.Filter1);
 	S:HandleCheckBox(SPF1.Filter2);
+	S:HandleCheckBox(SPF1.Unlearned.button);
+	S:HandleCheckBox(SPF1.Starred.button);
 	S:HandleCheckBox(SPF1.LeftSort);
 	S:HandleCheckBox(SPF1.RightSort);
 	S:HandleCheckBox(SPF1.Search);
 	S:HandleEditBox(SPF1.SearchBox);
-
+	SPF1.SearchBox:SetHeight(18);
+	SPF1.SearchBox:SetPoint("TOPRIGHT", CraftFrame, "TOPRIGHT", -44, -76);
+    if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
+        SPF1.SearchBox:SetPoint("TOPRIGHT", CraftFrame, "TOPRIGHT", -50, -49);
+    end
+	
 	if (LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On") then
 		S:HandleDropDownBox(SPF1.LeftMenu, 170);
 		S:HandleDropDownBox(SPF1.RightMenu, 170);
