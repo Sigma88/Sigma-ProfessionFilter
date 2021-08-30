@@ -5,4 +5,5 @@
 ## Dependencies: SigmaProfessionFilter
 
 Localization\enUS.lua
+Localization\frFR.lua
 SigmaProfessionFilterAlchemy.lua

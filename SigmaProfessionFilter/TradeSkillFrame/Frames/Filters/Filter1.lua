@@ -8,8 +8,8 @@ function SPF2.Filter1.OnLoad()
 	
 	SPF2.Filter1:SetWidth(15);
 	SPF2.Filter1:SetHeight(15);
-	SPF2.Filter1:SetPoint("LEFT", SPF2.Search.text, "RIGHT", 15, 0);
 	SPF2.Filter1:SetFrameLevel(4);
+	SPF2.CheckBoxBar:AddButton(SPF2.Filter1);
 	
 	SPF2.Filter1:SetScript("OnShow", SPF2.Filter1.OnShow);
 	hooksecurefunc("TradeSkillFrame_OnShow", SPF2.Filter1.OnShow);
@@ -27,8 +27,6 @@ function SPF2.Filter1:OnShow()
 	
 	SPF2.Filter1.text:SetText(SPF2:Custom("Filter1")["text"] or L["HAS_SKILL_UP"]);
 	SPF2.Filter1.tooltipText = SPF2:Custom("Filter1")["tooltip"] or L["HAS_SKILL_UP_TOOLTIP"];
-	
-	SPF2.Filter1:SetHitRectInsets(0, -SPF2.Filter1.text:GetWidth(), 0, 0);
 	
 	if GetTradeSkillName() then
 		SPF2.Filter1:SetChecked(SPF2.Filter1.Status[GetTradeSkillName()]);

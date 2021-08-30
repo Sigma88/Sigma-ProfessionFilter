@@ -6,4 +6,5 @@
 
 Localization\enUS.lua
 Localization\frFR.lua
+Localization\ruRU.lua
 SigmaProfessionFilterEnchanting.lua

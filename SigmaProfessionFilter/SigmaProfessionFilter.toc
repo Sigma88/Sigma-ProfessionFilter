@@ -1,7 +1,7 @@
 ## Interface: 20501
 ## Title: Sigma |cffbc5ff4Profession Filter|r |cffb1f22e(TBC Classic)|r
 ## Author: Sigma88
-## Notes: v0.7.0 |cff00ff00Release|r
+## Notes: v0.7.1 |cff00ff00Release|r
 ## SavedVariablesPerCharacter: SigmaProfessionFilter_SavedVariables
 ## Dependencies: Blizzard_CraftUI, Blizzard_TradeSkillUI
 ## OptionalDeps: ElvUI, Leatrix_Plus
@@ -9,6 +9,7 @@
 
 SigmaProfessionFilter.lua
 Localization\enUS.lua
+Localization\frFR.lua
 
 CraftFrame\Core\Utility.lua
 CraftFrame\Core\DefineFunctions.lua
@@ -18,13 +19,16 @@ CraftFrame\Frames\DropDowns\LeftMenu.lua
 CraftFrame\Frames\DropDowns\LeftSort.lua
 CraftFrame\Frames\DropDowns\RightMenu.lua
 CraftFrame\Frames\DropDowns\RightSort.lua
-CraftFrame\Frames\Filters\Filter1.lua
-CraftFrame\Frames\Filters\Filter2.lua
+CraftFrame\Frames\CheckBoxBar.lua
 CraftFrame\Frames\TextSearch\SearchBox.lua
 CraftFrame\Frames\TextSearch\Search.lua
-CraftFrame\Frames\PortraitChanger.lua
+CraftFrame\Frames\Filters\Filter1.lua
+CraftFrame\Frames\Filters\Filter2.lua
+CraftFrame\Frames\Filters\Unlearned.lua
+CraftFrame\Frames\Filters\Starred.lua
 
 CraftFrame\Core\ReplaceFunctions.lua
+CraftFrame\Frames\PortraitChanger.lua
 
 CraftFrame\Frames\LeatrixPlusCompatibility.lua
 CraftFrame\Frames\ElvUICompatibility.lua
@@ -37,10 +41,13 @@ TradeSkillFrame\Frames\DropDowns\LeftMenu.lua
 TradeSkillFrame\Frames\DropDowns\LeftSort.lua
 TradeSkillFrame\Frames\DropDowns\RightMenu.lua
 TradeSkillFrame\Frames\DropDowns\RightSort.lua
+TradeSkillFrame\Frames\CheckBoxBar.lua
 TradeSkillFrame\Frames\TextSearch\SearchBox.lua
 TradeSkillFrame\Frames\TextSearch\Search.lua
 TradeSkillFrame\Frames\Filters\Filter1.lua
 TradeSkillFrame\Frames\Filters\Filter2.lua
+TradeSkillFrame\Frames\Filters\Unlearned.lua
+TradeSkillFrame\Frames\Filters\Starred.lua
 TradeSkillFrame\Frames\PortraitChanger.lua
 
 TradeSkillFrame\Core\ReplaceFunctions.lua

@@ -2,12 +2,10 @@
 local RI = SigmaProfessionFilter_RecipeInfo;
 
 -- CraftFrame
-RI.Craft.Localize = {};
+RI.Craft = {};
 
 function RI.Craft.Localize()
-	
 	local localName = GetCraftName();
-	
 	if not RI.Data[localName] then
 		
 		for i=1, 5, 1 do
@@ -18,7 +16,9 @@ function RI.Craft.Localize()
 					for usName,Data in pairs(RI.Data) do
 						if Data[spellID] then
 							RI.Data[localName] = RI.Data[usName];
+							RI.LoadIntoCache(localName);
 							CraftFrame_OnShow();
+							SigmaProfessionFilter[1].FullUpdate();
 							return;
 						end
 					end
@@ -34,9 +34,13 @@ hooksecurefunc("CraftFrame_OnShow", RI.Craft.Localize);
 
 
 -- TradeSkillFrame
-RI.TradeSkill = {};
+RI.TradeSkill = CreateFrame("Frame", nil, TradeSkillFrame);
 
 function RI.TradeSkill.Localize()
+	if not RI.TradeSkill.LOCALIZE then
+		RI.TradeSkill.LOCALIZE = true;
+		return;
+	end
 	local localName = GetTradeSkillName();
 	if not RI.Data[localName] then
 		for i=1, 5, 1 do
@@ -47,6 +51,7 @@ function RI.TradeSkill.Localize()
 					for usName,Data in pairs(RI.Data) do
 						if Data[spellID] then
 							RI.Data[localName] = RI.Data[usName];
+							RI.LoadIntoCache(localName);
 							TradeSkillFrame_OnShow();
 							return;
 						end
@@ -57,4 +62,9 @@ function RI.TradeSkill.Localize()
 	end
 end
 
+function RI.TradeSkill.Reset()
+	RI.TradeSkill.LOCALIZE = nil;
+end
+
+RI.TradeSkill:SetScript("OnHide", RI.TradeSkill.Reset);
 hooksecurefunc("TradeSkillFrame_OnShow", RI.TradeSkill.Localize);

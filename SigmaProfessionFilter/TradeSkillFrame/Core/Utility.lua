@@ -369,6 +369,7 @@ function SPF2.TradeSkillFrame_PostUpdate()
 		SPF2.FullUpdate();
 	end
 	
+	SPF2.Starred.OnUpdate();
 end
 
 hooksecurefunc("TradeSkillFrame_Update", SPF2.TradeSkillFrame_PostUpdate);

@@ -1,3 +1,13 @@
+**v0.7.1**
+
+- Added a toggle for Favorite recipes
+- Added a toggle for Unlearned recipes
+- Added internal CheckBoxBar to handle CheckBox buttons
+- Added french localization, provided by user Javus-Amnennar
+- Added Enchanting russian localization, provided by user Нанотрон
+- Minor bug fixes
+
+
 **v0.7.0**
 
 - Added new module: SigmaProfessionFilter_RecipeInfo
@@ -8,7 +18,7 @@
 - Added compatibility fix for Auctionator
 - Capped the number of recursive calls for "Has mats" filter
 - Fixed First-Aid filters to show all items
-- Added Enchanting french localization, provided from user Evorage
+- Added Enchanting french localization, provided by user Evorage
 - Minor bug fixes
 
 
