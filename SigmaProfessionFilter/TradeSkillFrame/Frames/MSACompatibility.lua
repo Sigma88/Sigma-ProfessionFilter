@@ -10,32 +10,32 @@ end
 
 function SPF2.DropDownMenu_SetWidth(...)
 	if MSA_DropDownMenu_SetWidth then
-		MSA_DropDownMenu_SetWidth(...);
+		return MSA_DropDownMenu_SetWidth(...);
 	else
-		UIDropDownMenu_SetWidth(...);
+		return UIDropDownMenu_SetWidth(...);
 	end
 end
 
 function SPF2.DropDownMenu_SetSelectedID(...)
 	if MSA_DropDownMenu_SetSelectedID then
-		MSA_DropDownMenu_SetSelectedID(...);
+		return MSA_DropDownMenu_SetSelectedID(...);
 	else
-		UIDropDownMenu_SetSelectedID(...);
+		return UIDropDownMenu_SetSelectedID(...);
 	end
 end
 
 function SPF2.DropDownMenu_Initialize(...)
 	if MSA_DropDownMenu_Initialize then
-		MSA_DropDownMenu_Initialize(...);
+		return MSA_DropDownMenu_Initialize(...);
 	else
-		UIDropDownMenu_Initialize(...);
+		return UIDropDownMenu_Initialize(...);
 	end
 end
 
 function SPF2.DropDownMenu_AddButton(...)
 	if MSA_DropDownMenu_AddButton then
-		MSA_DropDownMenu_AddButton(...);
+		return MSA_DropDownMenu_AddButton(...);
 	else
-		UIDropDownMenu_AddButton(...);
+		return UIDropDownMenu_AddButton(...);
 	end
 end
