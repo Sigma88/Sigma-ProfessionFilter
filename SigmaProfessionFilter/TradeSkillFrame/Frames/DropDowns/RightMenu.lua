@@ -1,6 +1,6 @@
 local SPF2 = SigmaProfessionFilter[2];
 
-SPF2.RightMenu = CreateFrame("Frame", nil, TradeSkillFrame, "UIDropDownMenuTemplate");
+SPF2.RightMenu = SPF2.DropDownMenu_Create("SPF2RightMenuDropDown", TradeSkillFrame);
 
 function SPF2.RightMenu.OnLoad()
 	SPF2.RightMenu:SetPoint("TOPRIGHT", TradeSkillFrame, "TOPRIGHT", -25, -66);
@@ -8,9 +8,9 @@ function SPF2.RightMenu.OnLoad()
 	SPF2.RightMenu:SetScript("OnShow", SPF2.RightMenu.OnShow);
 	hooksecurefunc("TradeSkillFrame_OnShow", SPF2.RightMenu.OnShow);
 	
-	UIDropDownMenu_SetWidth(SPF2.RightMenu, 120);
+	SPF2.DropDownMenu_SetWidth(SPF2.RightMenu, 120);
 	
-	UIDropDownMenu_SetSelectedID(SPF2.RightMenu, 1);
+	SPF2.DropDownMenu_SetSelectedID(SPF2.RightMenu, 1);
 	SPF2:SetSelected("Right", 0);
 	
 	-- LeatrixPlus compatibility
@@ -32,8 +32,8 @@ function SPF2.RightMenu:OnShow()
 		end
 	else
 		TradeSkillInvSlotDropDown:Hide();
-		UIDropDownMenu_Initialize(SPF2.RightMenu, SPF2:Custom("RightMenu")["Initialize"] or SPF2.RightMenu.Initialize);
-		UIDropDownMenu_SetSelectedID(SPF2.RightMenu, SPF2:GetSelected("Right") + 1);
+		SPF2.DropDownMenu_Initialize(SPF2.RightMenu, SPF2:Custom("RightMenu")["Initialize"] or SPF2.RightMenu.Initialize);
+		SPF2.DropDownMenu_SetSelectedID(SPF2.RightMenu, SPF2:GetSelected("Right") + 1);
 	end
 	
 	if SPF2:SavedData()["SearchBox"] then
@@ -50,14 +50,14 @@ function SPF2.RightMenu.Initialize()
 			info.func = SPF2.RightMenu.OnClick;
 			info.checked = false;
 			
-			UIDropDownMenu_AddButton(info);
+			SPF2.DropDownMenu_AddButton(info);
 			
 			for i,button in ipairs(SPF2:GetMenu("Right")) do
 				info = {};
 				info.text = button.name;
 				info.func = SPF2.RightMenu.OnClick;
 				info.checked = false;
-				UIDropDownMenu_AddButton(info);
+				SPF2.DropDownMenu_AddButton(info);
 			end
 		else
 			local info = {};
@@ -65,14 +65,14 @@ function SPF2.RightMenu.Initialize()
 			info.func = SPF2.RightMenu.OnClick;
 			info.checked = false;
 			
-			UIDropDownMenu_AddButton(info);
+			SPF2.DropDownMenu_AddButton(info);
 			
 			for i,slot in ipairs({GetTradeSkillInvSlots()}) do
 				info = {};
 				info.text = slot;
 				info.func = SPF2.RightMenu.OnClick;
 				info.checked = false;
-				UIDropDownMenu_AddButton(info);
+				SPF2.DropDownMenu_AddButton(info);
 			end
 		end
 	end
@@ -80,7 +80,7 @@ end
 
 function SPF2.RightMenu:OnClick(arg1, arg2, checked)
 	
-	UIDropDownMenu_SetSelectedID(SPF2.RightMenu, self:GetID());
+	SPF2.DropDownMenu_SetSelectedID(SPF2.RightMenu, self:GetID());
 	SPF2:SetSelected("Right", self:GetID() - 1);
 	
 	SPF2.FullUpdate();

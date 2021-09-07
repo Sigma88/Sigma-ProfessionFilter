@@ -1,6 +1,6 @@
 local SPF2 = SigmaProfessionFilter[2];
 
-SPF2.LeftMenu = CreateFrame("Frame", nil, TradeSkillFrame, "UIDropDownMenuTemplate");
+SPF2.LeftMenu = SPF2.DropDownMenu_Create("SPF2LeftMenuDropDown", TradeSkillFrame);
 
 function SPF2.LeftMenu:OnLoad()
 	SPF2.LeftMenu:SetPoint("TOPRIGHT", TradeSkillFrame, "TOPRIGHT", -160, -66);
@@ -8,9 +8,9 @@ function SPF2.LeftMenu:OnLoad()
 	SPF2.LeftMenu:SetScript("OnShow", SPF2.LeftMenu.OnShow);
 	hooksecurefunc("TradeSkillFrame_OnShow", SPF2.LeftMenu.OnShow);
 	
-	UIDropDownMenu_SetWidth(SPF2.LeftMenu, 120);
+	SPF2.DropDownMenu_SetWidth(SPF2.LeftMenu, 120);
 
-	UIDropDownMenu_SetSelectedID(SPF2.LeftMenu, 1);
+	SPF2.DropDownMenu_SetSelectedID(SPF2.LeftMenu, 1);
 	SPF2:SetSelected("Left", 0);
 	
 	-- LeatrixPlus compatibility
@@ -32,8 +32,8 @@ function SPF2.LeftMenu:OnShow()
 		end
 	else
 		TradeSkillSubClassDropDown:Hide();
-		UIDropDownMenu_Initialize(SPF2.LeftMenu, SPF2:Custom("LeftMenu")["Initialize"] or SPF2.LeftMenu.Initialize);
-		UIDropDownMenu_SetSelectedID(SPF2.LeftMenu, SPF2:GetSelected("Left") + 1);
+		SPF2.DropDownMenu_Initialize(SPF2.LeftMenu, SPF2.LeftMenu.Initialize);
+		SPF2.DropDownMenu_SetSelectedID(SPF2.LeftMenu, SPF2:GetSelected("Left") + 1);
 	end
 	
     if SPF2:SavedData()["SearchBox"] then
@@ -50,14 +50,14 @@ function SPF2.LeftMenu:Initialize()
 			info.func = SPF2.LeftMenu.OnClick;
 			info.checked = false;
 			
-			UIDropDownMenu_AddButton(info);
+			SPF2.DropDownMenu_AddButton(info);
 			
 			for i,button in ipairs(SPF2:GetMenu("Left")) do
 				info = {};
 				info.text = button.name;
 				info.func = SPF2.LeftMenu.OnClick;
 				info.checked = false;
-				UIDropDownMenu_AddButton(info);
+				SPF2.DropDownMenu_AddButton(info);
 			end
 		else
 			local info = {};
@@ -65,14 +65,14 @@ function SPF2.LeftMenu:Initialize()
 			info.func = SPF2.LeftMenu.OnClick;
 			info.checked = false;
 			
-			UIDropDownMenu_AddButton(info);
+			SPF2.DropDownMenu_AddButton(info);
 			
 			for i,subclass in ipairs({GetTradeSkillSubClasses()}) do
 				info = {};
 				info.text = subclass;
 				info.func = SPF2.LeftMenu.OnClick;
 				info.checked = false;
-				UIDropDownMenu_AddButton(info);
+				SPF2.DropDownMenu_AddButton(info);
 			end
 		end
 	end
@@ -80,7 +80,7 @@ end
 
 function SPF2.LeftMenu:OnClick(arg1, arg2, checked)
 	
-	UIDropDownMenu_SetSelectedID(SPF2.LeftMenu, self:GetID());
+	SPF2.DropDownMenu_SetSelectedID(SPF2.LeftMenu, self:GetID());
 	SPF2:SetSelected("Left", self:GetID() - 1);
 	
 	SPF2.FullUpdate();
