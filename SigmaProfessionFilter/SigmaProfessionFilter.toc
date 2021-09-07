@@ -15,6 +15,7 @@ CraftFrame\Core\Utility.lua
 CraftFrame\Core\DefineFunctions.lua
 CraftFrame\Core\Blizzard_CraftUI.lua
 
+CraftFrame\Frames\MSACompatibility.lua
 CraftFrame\Frames\DropDowns\LeftMenu.lua
 CraftFrame\Frames\DropDowns\LeftSort.lua
 CraftFrame\Frames\DropDowns\RightMenu.lua
@@ -37,6 +38,7 @@ CraftFrame\Frames\ElvUICompatibility.lua
 TradeSkillFrame\Core\Utility.lua
 TradeSkillFrame\Core\DefineFunctions.lua
 
+TradeSkillFrame\Frames\MSACompatibility.lua
 TradeSkillFrame\Frames\DropDowns\LeftMenu.lua
 TradeSkillFrame\Frames\DropDowns\LeftSort.lua
 TradeSkillFrame\Frames\DropDowns\RightMenu.lua

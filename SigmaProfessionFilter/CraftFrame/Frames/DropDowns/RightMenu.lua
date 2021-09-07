@@ -1,6 +1,6 @@
 local SPF1 = SigmaProfessionFilter[1];
 
-SPF1.RightMenu = CreateFrame("Frame", nil, CraftFrame, "UIDropDownMenuTemplate");
+SPF1.RightMenu = SPF1.DropDownMenu_Create("SPF1RightMenuDropDown", CraftFrame);
 
 function SPF1.RightMenu.OnLoad()
 	SPF1.RightMenu:SetPoint("TOPRIGHT", CraftFrame, "TOPRIGHT", -25, -66);
@@ -8,9 +8,8 @@ function SPF1.RightMenu.OnLoad()
 	SPF1.RightMenu:SetScript("OnShow", SPF1.RightMenu.OnShow);
 	hooksecurefunc("CraftFrame_OnShow", SPF1.RightMenu.OnShow);
 	
-	UIDropDownMenu_SetWidth(SPF1.RightMenu, 120);
-	--UIDropDownMenu_Initialize(SPF1.RightMenu, SPF1:Custom("RightMenu")["Initialize"] or SPF1.RightMenu.Initialize);
-	UIDropDownMenu_SetSelectedID(SPF1.RightMenu, 1);
+	SPF1.DropDownMenu_SetWidth(SPF1.RightMenu, 120);
+	SPF1.DropDownMenu_SetSelectedID(SPF1.RightMenu, 1);
 	SPF1:SetSelected("Right", 0);
 	
 	-- LeatrixPlus compatibility
@@ -23,8 +22,8 @@ function SPF1.RightMenu.OnShow()
     if ((not SPF1:GetMenu("Right")) or (SPF1:SavedData()["SearchBox"])) then
         SPF1.RightMenu:Hide();
 	else
-		UIDropDownMenu_Initialize(SPF1.RightMenu, SPF1:Custom("RightMenu")["Initialize"] or SPF1.RightMenu.Initialize);
-		UIDropDownMenu_SetSelectedID(SPF1.RightMenu, SPF1:GetSelected("Right") + 1);
+		SPF1.DropDownMenu_Initialize(SPF1.RightMenu, SPF1:Custom("RightMenu")["Initialize"] or SPF1.RightMenu.Initialize);
+		SPF1.DropDownMenu_SetSelectedID(SPF1.RightMenu, SPF1:GetSelected("Right") + 1);
     end
 end
 
@@ -35,21 +34,21 @@ function SPF1.RightMenu.Initialize()
         info.func = SPF1.RightMenu.OnClick;
         info.checked = false;
 		
-        UIDropDownMenu_AddButton(info);
+        SPF1.DropDownMenu_AddButton(info);
 		
 		for i,button in ipairs(SPF1:GetMenu("Right")) do
             info = {};
             info.text = button.name;
             info.func = SPF1.RightMenu.OnClick;
             info.checked = false;
-            UIDropDownMenu_AddButton(info);
+            SPF1.DropDownMenu_AddButton(info);
         end
     end
 end
 
 function SPF1.RightMenu:OnClick(arg1, arg2, checked)
 	
-    UIDropDownMenu_SetSelectedID(SPF1.RightMenu, self:GetID());
+    SPF1.DropDownMenu_SetSelectedID(SPF1.RightMenu, self:GetID());
 	
 	SPF1:SetSelected("Right", self:GetID() - 1);
 	
