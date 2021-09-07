@@ -245,6 +245,16 @@ function SPF1.ClearCraft()
 	CraftCost:Hide();
 end
 
+CraftFrameFilterDropDown:SetScript("OnShow", function(self) self:Hide() end);
+CraftFrameAvailableFilterCheckButton:SetScript("OnShow", function(self) self:Hide() end);
+
+function SPF1.ClearNewFeatures()
+	CraftFrameFilterDropDown:Hide();
+	CraftFrameAvailableFilterCheckButton:SetChecked(false);
+	CraftFrameAvailableFilterCheckButton:Hide();
+	CraftOnlyShowMakeable(false);
+end
+
 function SPF1.FullUpdate(keepCollapsed)
 	if not keepCollapsed then
 		SPF1.Collapsed = nil;
