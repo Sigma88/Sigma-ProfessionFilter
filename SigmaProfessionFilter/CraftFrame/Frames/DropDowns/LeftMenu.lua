@@ -1,6 +1,6 @@
 local SPF1 = SigmaProfessionFilter[1];
 
-SPF1.LeftMenu = CreateFrame("Frame", nil, CraftFrame, "UIDropDownMenuTemplate");
+SPF1.LeftMenu = SPF1.DropDownMenu_Create("SPF1LeftMenuDropDown", CraftFrame);
 
 function SPF1.LeftMenu:OnLoad()
 	SPF1.LeftMenu:SetPoint("TOPRIGHT", CraftFrame, "TOPRIGHT", -160, -66);
@@ -8,9 +8,8 @@ function SPF1.LeftMenu:OnLoad()
 	SPF1.LeftMenu:SetScript("OnShow", SPF1.LeftMenu.OnShow);
 	hooksecurefunc("CraftFrame_OnShow", SPF1.LeftMenu.OnShow);
 
-	UIDropDownMenu_SetWidth(SPF1.LeftMenu, 120);
-	--UIDropDownMenu_Initialize(SPF1.LeftMenu, SPF1:Custom("LeftMenu")["Initialize"] or SPF1.LeftMenu.Initialize);
-	UIDropDownMenu_SetSelectedID(SPF1.LeftMenu, 1);
+	SPF1.DropDownMenu_SetWidth(SPF1.LeftMenu, 120);
+	SPF1.DropDownMenu_SetSelectedID(SPF1.LeftMenu, 1);
 	SPF1:SetSelected("Left", 0);
 	
 	-- LeatrixPlus compatibility
@@ -23,8 +22,8 @@ function SPF1.LeftMenu:OnShow()
     if ((not SPF1:GetMenu("Left")) or (SPF1:SavedData()["SearchBox"])) then
         SPF1.LeftMenu:Hide();
 	else
-		UIDropDownMenu_Initialize(SPF1.LeftMenu, SPF1:Custom("LeftMenu")["Initialize"] or SPF1.LeftMenu.Initialize);
-		UIDropDownMenu_SetSelectedID(SPF1.LeftMenu, SPF1:GetSelected("Left") + 1);
+		SPF1.DropDownMenu_Initialize(SPF1.LeftMenu, SPF1:Custom("LeftMenu")["Initialize"] or SPF1.LeftMenu.Initialize);
+		SPF1.DropDownMenu_SetSelectedID(SPF1.LeftMenu, SPF1:GetSelected("Left") + 1);
     end
 end
 
@@ -35,21 +34,21 @@ function SPF1.LeftMenu:Initialize()
         info.func = SPF1.LeftMenu.OnClick;
         info.checked = false;
 		
-        UIDropDownMenu_AddButton(info);
+        SPF1.DropDownMenu_AddButton(info);
 		
         for i,button in ipairs(SPF1:GetMenu("Left")) do
             info = {};
             info.text = button.name;
             info.func = SPF1.LeftMenu.OnClick;
             info.checked = false;
-            UIDropDownMenu_AddButton(info);
+            SPF1.DropDownMenu_AddButton(info);
 		end
     end
 end
 
 function SPF1.LeftMenu:OnClick(arg1, arg2, checked)
 	
-    UIDropDownMenu_SetSelectedID(SPF1.LeftMenu, self:GetID());
+    SPF1.DropDownMenu_SetSelectedID(SPF1.LeftMenu, self:GetID());
 	
 	SPF1:SetSelected("Left", self:GetID() - 1);
 	
