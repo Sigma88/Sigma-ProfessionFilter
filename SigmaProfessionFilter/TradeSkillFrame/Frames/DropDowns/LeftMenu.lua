@@ -32,7 +32,7 @@ function SPF2.LeftMenu:OnShow()
 		end
 	else
 		TradeSkillSubClassDropDown:Hide();
-		SPF2.DropDownMenu_Initialize(SPF2.LeftMenu, SPF2.LeftMenu.Initialize);
+		SPF2.DropDownMenu_Initialize(SPF2.LeftMenu, SPF2:Custom("LeftMenu")["Initialize"] or SPF2.LeftMenu.Initialize);
 		SPF2.DropDownMenu_SetSelectedID(SPF2.LeftMenu, SPF2:GetSelected("Left") + 1);
 	end
 	
