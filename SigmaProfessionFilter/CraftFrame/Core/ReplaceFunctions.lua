@@ -74,3 +74,4 @@ CraftFrame_Update = SPF1.CraftFrame_Update;
 -- hooks
 hooksecurefunc("CraftFrame_OnShow", SPF1.CheckBoxBar.OnShow);
 hooksecurefunc("CraftFrame_Update", SPF1.Starred.OnUpdate);
+hooksecurefunc("CraftFrame_OnShow", SPF1.ClearNewFeatures);
