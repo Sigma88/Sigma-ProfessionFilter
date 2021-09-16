@@ -1,7 +1,7 @@
-## Interface: 20501
+## Interface: 20502
 ## Title: Sigma |cffbc5ff4Profession Filter|r |cffb1f22e(TBC Classic)|r
 ## Author: Sigma88
-## Notes: v0.7.1 |cff00ff00Release|r
+## Notes: v0.7.2 |cff00ff00Release|r
 ## SavedVariablesPerCharacter: SigmaProfessionFilter_SavedVariables
 ## Dependencies: Blizzard_CraftUI, Blizzard_TradeSkillUI
 ## OptionalDeps: ElvUI, Leatrix_Plus
@@ -15,6 +15,7 @@ CraftFrame\Core\Utility.lua
 CraftFrame\Core\DefineFunctions.lua
 CraftFrame\Core\Blizzard_CraftUI.lua
 
+CraftFrame\Frames\MSACompatibility.lua
 CraftFrame\Frames\DropDowns\LeftMenu.lua
 CraftFrame\Frames\DropDowns\LeftSort.lua
 CraftFrame\Frames\DropDowns\RightMenu.lua
@@ -37,6 +38,7 @@ CraftFrame\Frames\ElvUICompatibility.lua
 TradeSkillFrame\Core\Utility.lua
 TradeSkillFrame\Core\DefineFunctions.lua
 
+TradeSkillFrame\Frames\MSACompatibility.lua
 TradeSkillFrame\Frames\DropDowns\LeftMenu.lua
 TradeSkillFrame\Frames\DropDowns\LeftSort.lua
 TradeSkillFrame\Frames\DropDowns\RightMenu.lua

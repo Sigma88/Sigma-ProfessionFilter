@@ -1,3 +1,9 @@
+**v0.7.2**
+
+- Added compatibility with MSA-DropDownMenu-1.0
+- Fixed interaction with new CraftFrame features
+
+
 **v0.7.1**
 
 - Added a toggle for Favorite recipes
