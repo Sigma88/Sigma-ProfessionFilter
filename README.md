@@ -6,25 +6,25 @@
 ## Changelog
 
 <a href="https://raw.githubusercontent.com/Sigma88/Sigma-ProfessionFilter/master/Changelog.txt">
-  <img title="Changelog" src="https://imgur.com/6fs860H.png" height=40 /></a>
+  <img title="Changelog" src="https://imgur.com/6fs860H.png" width=40 /></a>
 
 ## Downloads
 
 <a href="https://github.com/Sigma88/Sigma-ProfessionFilter/releases">
-  <img title="GitHub" src="https://imgur.com/07dazzP.png" height=40 /></a>
+  <img title="GitHub" src="https://imgur.com/07dazzP.png" width=40 /></a>
 <a href="https://www.curseforge.com/wow/addons/sigma-profession-filter-classic/files">
-  <img title="CurseForge" src="https://imgur.com/2Ht0vvb.png" height=40 /></a>
+  <img title="CurseForge" src="https://imgur.com/2Ht0vvb.png" width=40 /></a>
 <a href="https://addons.wago.io/addons/sigma-professionfilter/versions?stability=stable">
-  <img title="Wago.io" src="https://imgur.com/k5aOE07.png" height=40 /></a>
+  <img title="Wago.io" src="https://imgur.com/k5aOE07.png" width=40 /></a>
 <a href="https://wowup.io/addons/1112919">
-  <img title="WowUp" src="https://imgur.com/UnhfWCj.png" height=40 /></a>
+  <img title="WowUp" src="https://imgur.com/UnhfWCj.png" width=40 /></a>
 
 ## Other Links
 
 <a href="https://github.com/Sigma88/Sigma-ProfessionFilter/blob/master/Support.md#sigma-professionfilter">
-  <img title="Discord" src="https://imgur.com/J7bFWCu.png" height=40 /></a>
+  <img title="Discord" src="https://imgur.com/J7bFWCu.png" width=40 /></a>
 <a href="https://github.com/Sigma88/Sigma-ProfessionFilter/blob/master/Support.md#sigma-professionfilter">
-  <img title="Support" src="https://imgur.com/VUap0WN.png" height=40 /></a>
+  <img title="Support" src="https://imgur.com/VUap0WN.png" width=40 /></a>
 
 
 ## Features
