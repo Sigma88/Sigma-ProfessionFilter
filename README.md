@@ -10,7 +10,7 @@
 
 ## Downloads
 
-<a href="https://github.com/Sigma88/Sigma-ProfessionFilter/releases"><img title="GitHub" src="https://imgur.com/07dazzP.png" width=40 /></a><a href="https://www.curseforge.com/wow/addons/sigma-profession-filter-classic/files"><img title="CurseForge" src="https://imgur.com/2Ht0vvb.png" width=40 /></a><a href="https://addons.wago.io/addons/sigma-professionfilter/versions?stability=stable"><img title="Wago.io" src="https://imgur.com/k5aOE07.png" width=40 /></a><a href="https://wowup.io/addons/1112919"><img title="WowUp" src="https://imgur.com/UnhfWCj.png" width=40 /></a>
+<a href="https://github.com/Sigma88/Sigma-ProfessionFilter/releases"><img title="GitHub" src="https://imgur.com/07dazzP.png" width=40 /></a><a href="https://www.curseforge.com/wow/addons/sigma-profession-filter-classic/files"><img title="CurseForge" src="https://imgur.com/2Ht0vvb.png" width=40 /></a><a href="https://www.wowinterface.com/downloads/info25549-SigmaProfessionFilter.html"><img title="WoWInterface" src="https://imgur.com/sfOJ2OS.png" width=50 /></a><a href="https://addons.wago.io/addons/sigma-professionfilter/versions?stability=stable"><img title="Wago.io" src="https://imgur.com/k5aOE07.png" width=40 /></a><a href="https://wowup.io/addons/1112919"><img title="WowUp" src="https://imgur.com/UnhfWCj.png" width=40 /></a>
 
 ## Other Links
 
