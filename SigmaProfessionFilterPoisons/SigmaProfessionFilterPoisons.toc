@@ -1,4 +1,4 @@
-## Interface: 20502
+## Interface: 20503
 ## Title: Sigma |cffbc5ff4Professions|r |cff888888|r|T136242:13|t |cffffffff[Poisons]|r
 ## Author: Sigma88
 ## Notes: Poisons module for |cffffcf00Sigma|r |cffbc5ff4Profession Filter|r |cffb1f22e(TBC Classic)|r.
