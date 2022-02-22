@@ -91,11 +91,11 @@ You can choose your favorite recipes.
 
 ![favorites](https://imgur.com/u2JNsv1.png "Favorite Recipes")
 
-### Unknown Recipes
+### Unlearned Recipes
 
-An optional filter can enable the visualization of Unknown recipes, including informations about the required skill to learn the recipe.
+An optional filter can enable the visualization of unlearned recipes, including informations about the required skill to learn the recipe.
 
-<img alt="unlearned" src="https://imgur.com/dU9pqJf.png" width="620" title="Unknown Recipes">
+<img alt="unlearned" src="https://imgur.com/dU9pqJf.png" width="620" title="Unlearned Recipes">
 
 ### Other Custom Features
 
