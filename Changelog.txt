@@ -1,3 +1,8 @@
+**v0.7.3**
+
+- Fixed overlap with default filters
+
+
 **v0.7.2**
 
 - Added compatibility with MSA-DropDownMenu-1.0

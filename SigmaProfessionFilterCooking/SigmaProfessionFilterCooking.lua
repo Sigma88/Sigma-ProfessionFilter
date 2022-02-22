@@ -1,7 +1,7 @@
 local _, L = ...;
 local SPF2 = SigmaProfessionFilter[2];
 
-local LocalTooltip = CreateFrame("GameTooltip", nil, WorldFrame, "GameTooltipTemplate");
+local LocalTooltip = CreateFrame("GameTooltip", "SPF2CookingTooltip", WorldFrame, "GameTooltipTemplate");
 LocalTooltip:SetOwner(WorldFrame, "ANCHOR_NONE");
 local LocalTooltipText = {
 	[1] = LocalTooltip:CreateFontString(nil, nil, "GameTooltipText");
