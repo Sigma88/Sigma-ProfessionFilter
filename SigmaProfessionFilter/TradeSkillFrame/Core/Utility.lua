@@ -486,6 +486,14 @@ function SPF2.ClearTradeSkill()
 	TradeSkillReagentLabel:Hide();
 end
 
+function SPF2.ClearNewFeatures()
+	TradeSkillFrameAvailableFilterCheckButton:SetChecked(false);
+	TradeSkillFrameAvailableFilterCheckButton:Hide();
+	TradeSkillOnlyShowMakeable(false);
+end
+
+TradeSkillFrameAvailableFilterCheckButton:SetScript("OnShow", SPF2.ClearNewFeatures);
+
 function SPF2.FullUpdate(keepCollapsed)
 	if not keepCollapsed then
 		SPF2.Collapsed = nil;

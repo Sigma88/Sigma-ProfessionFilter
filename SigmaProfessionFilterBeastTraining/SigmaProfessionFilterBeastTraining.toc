@@ -1,4 +1,4 @@
-## Interface: 20502
+## Interface: 20503
 ## Title: Sigma |cffbc5ff4Professions|r |cffeeeeee|r|T132162:13|t |cffffffff[Training]|r
 ## Author: Sigma88
 ## Notes: Beast Training module for |cffffcf00Sigma|r |cffbc5ff4Profession Filter|r |cff2e91f3(Classic)|r.
