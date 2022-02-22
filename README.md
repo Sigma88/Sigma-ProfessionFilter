@@ -73,6 +73,30 @@ When hovering with the mouse over the profession's portrait frame the tooltip of
 
 ![tooltip](https://i.imgur.com/Zjap4Jo.png "Portrait Tooltips")
 
+### Difficulty Levels Information
+
+The description of the recipe now includes information about the difficulty levels.
+
+![difficulty](https://imgur.com/nxSj6Ri.png "Difficulty Levels")
+
+### Craft Reagent Buttons
+
+If the profession allows you to craft one of the reagents of the selected recipe, you will get a button to craft those reagents.
+
+![CraftReagent](https://imgur.com/qcGdMMd.png "Craft Reagent Buttons")
+
+### Favorite Recipes
+
+You can choose your favorite recipes.
+
+![favorites](https://imgur.com/u2JNsv1.png "Favorite Recipes")
+
+### Unknown Recipes
+
+An optional filter can enable the visualization of Unknown recipes, including informations about the required skill to learn the recipe.
+
+<img alt="unlearned" src="https://imgur.com/dU9pqJf.png" width="620" title="Unknown Recipes">
+
 ### Other Custom Features
 
 This addon is highly modular and it allows to define a lot of custom behaviours for any profession. As an example, when using Beast Training with an active pet the portrait will change to the icon of the pet's family and the tooltip will display the pet's unit tooltip. The right drop down menu also will change to highlight the family of your active pet. Filters are also customized for Beast Training.
