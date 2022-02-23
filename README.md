@@ -19,7 +19,7 @@ WoWClassic Addon to filter the recipes of professions
 
 ## Features
 
-### Choose how to group your recipes:
+### Choose how to group your recipes
 
 The standard UI automatically groups recipes by their ItemSubClass (left drop down menu), with this addon you can choose between ItemSubClass and ItemSlot (right drop down menu).
 
