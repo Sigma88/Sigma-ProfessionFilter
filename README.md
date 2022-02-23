@@ -1,7 +1,7 @@
-# *Sigma ProfessionFilter*
+# Sigma Profession Filter (Classic)
 
+WoWClassic Addon to filter the recipes of professions
 
-*WoWClassic Addon to filter the recipes of professions*
 
 ## Changelog
 
