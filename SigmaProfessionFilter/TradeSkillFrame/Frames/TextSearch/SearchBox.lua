@@ -21,6 +21,7 @@ function SPF2.SearchBox.OnLoad()
     if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
         SPF2.SearchBox:SetPoint("TOPRIGHT", TradeSkillFrame, "TOPRIGHT", -50, -40);
 		SPF2.SearchBox:SetWidth(300);
+		TradeSkillListScrollFrame:HookScript("OnUpdate", SPF2.SearchBox.HideStockSearch);
     end
 end
 
@@ -73,6 +74,10 @@ function SPF2.SearchBox:FilterSpell(spellID)
 	else
 		return SPF2:FilterSpellWithSearchBox(spellID);
 	end
+end
+
+function SPF2.SearchBox:HideStockSearch()
+	TradeSearchInputBox:Hide()
 end
 
 SPF2.SearchBox.OnLoad();
