@@ -55,11 +55,11 @@ local InvSlots = {
 }
 
 local InvButtons = {
-	[05] = CharacterChestSlot;
-	[08] = CharacterFeetSlot;
-	[09] = CharacterWristSlot;
-	[10] = CharacterHandsSlot;
-	[15] = CharacterBackSlot;
+	[05] = INVSLOT_CHEST;
+	[08] = INVSLOT_FEET;
+	[09] = INVSLOT_WRIST;
+	[10] = INVSLOT_HAND;
+	[15] = INVSLOT_BACK;
 }
 
 local AutoEnchant = function()
@@ -73,17 +73,84 @@ local AutoEnchant = function()
 	end
 end
 
+local _ActionButton_ShowOverlayGlow = ActionButton_ShowOverlayGlow;
+local _ActionButton_HideOverlayGlow = ActionButton_HideOverlayGlow
+
+local ClassicSlotNames = {
+	[INVSLOT_CHEST] = "CharacterChestSlot",
+	[INVSLOT_FEET] = "CharacterFeetSlot",
+	[INVSLOT_WRIST] = "CharacterWristSlot",
+	[INVSLOT_HAND] = "CharacterHandsSlot",
+	[INVSLOT_BACK] = "CharacterBackSlot",
+}
+
+local slotGlow = {}
+
+local function GetOrCreateSlotGlowButton(slotId)
+	local slotName = ClassicSlotNames[slotId]
+	if not slotName then
+		return nil
+	end
+
+	local button = _G[slotName]
+	if not button then
+		return nil
+	end
+
+	if not slotGlow[slotId] then
+		slotGlow[slotId] = button:CreateTexture(nil, "OVERLAY")
+		slotGlow[slotId]:SetPoint("TOPLEFT", button, "TOPLEFT", -2, 2)
+		slotGlow[slotId]:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 2, -2)
+		slotGlow[slotId]:SetTexture("Interface\\Buttons\\UI-ActionButton-Border")
+		slotGlow[slotId]:SetVertexColor(1, 0.8, 0, 0.8)
+		slotGlow[slotId]:Hide()
+	end
+
+	return slotGlow[slotId]
+end
+
+local function ShowSlotGlow(slotId)
+	if _ActionButton_ShowOverlayGlow then
+		_ActionButton_ShowOverlayGlow(InvButtons[slotId])
+	end
+	if not _ActionButton_ShowOverlayGlow then
+		local glow = GetOrCreateSlotGlowButton(slotId)
+		if glow then
+			glow:Show()
+		end
+	end
+end
+
+local function HideSlotGlow(slotId)
+	if _ActionButton_HideOverlayGlow then
+		_ActionButton_HideOverlayGlow(InvButtons[slotId])
+	end
+	if not _ActionButton_HideOverlayGlow then
+		local glow = GetOrCreateSlotGlowButton(slotId)
+		if glow then
+			glow:Hide()
+		end
+	end
+end
+
+if not _ActionButton_ShowOverlayGlow then
+	_ActionButton_ShowOverlayGlow = function() end
+end
+if not _ActionButton_HideOverlayGlow then
+	_ActionButton_HideOverlayGlow = function() end
+end
+
 local InvSlotHighlight = function()
 	local craftName = GetCraftInfo(GetCraftSelectionIndex());
 	CraftCreateButton:SetText(ENSCRIBE);
 	for i,slot in pairs(InvSlots) do
 		if GetCraftName() == L["PROFESSION"] and CraftFrame:IsVisible() and CraftCreateButton:IsEnabled() and strfind(craftName or "", L[slot]) then
-			ActionButton_ShowOverlayGlow(InvButtons[i]);
+			ShowSlotGlow(i)
 			if CharacterFrame:IsVisible() then
 				CraftCreateButton:SetText(L["SELF_ENCH"]);
 			end
 		else
-			ActionButton_HideOverlayGlow(InvButtons[i]);
+			HideSlotGlow(i)
 		end
 	end
 end

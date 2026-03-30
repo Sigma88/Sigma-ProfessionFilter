@@ -21,24 +21,32 @@ end
 
 function SPF2.LeftMenu:OnShow()
 	SPF2.LeftMenu:Show();
-	TradeSkillSubClassDropDown:Show();
+	if TradeSkillSubClassDropDown then
+		TradeSkillSubClassDropDown:Show();
+	end
 	
 	if SPF2:Custom("LeftMenu")["disabled"] then
 		SPF2.LeftMenu:Hide();
-		TradeSkillSubClassDropDown:Hide();
+		if TradeSkillSubClassDropDown then
+			TradeSkillSubClassDropDown:Hide();
+		end
 		
 		if SPF2:Custom("RightMenu")["disabled"] then
 			SPF2:SavedData()["SearchBox"] = true;
 		end
 	else
-		TradeSkillSubClassDropDown:Hide();
+		if TradeSkillSubClassDropDown then
+			TradeSkillSubClassDropDown:Hide();
+		end
 		SPF2.DropDownMenu_Initialize(SPF2.LeftMenu, SPF2:Custom("LeftMenu")["Initialize"] or SPF2.LeftMenu.Initialize);
 		SPF2.DropDownMenu_SetSelectedID(SPF2.LeftMenu, SPF2:GetSelected("Left") + 1);
 	end
 	
     if SPF2:SavedData()["SearchBox"] then
         SPF2.LeftMenu:Hide();
-		TradeSkillSubClassDropDown:Hide();
+		if TradeSkillSubClassDropDown then
+			TradeSkillSubClassDropDown:Hide();
+		end
     end
 end
 

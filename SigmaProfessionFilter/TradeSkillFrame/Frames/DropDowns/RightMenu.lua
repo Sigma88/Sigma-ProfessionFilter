@@ -20,25 +20,34 @@ function SPF2.RightMenu.OnLoad()
 end
 
 function SPF2.RightMenu:OnShow()
+	local invDrop = TradeSkillInvSlotDropDown or TradeSkillInvSlotDropdown
 	SPF2.RightMenu:Show();
-	TradeSkillInvSlotDropDown:Show();
+	if invDrop then
+		invDrop:Show();
+	end
 	
 	if SPF2:Custom("RightMenu")["disabled"] then
 		SPF2.RightMenu:Hide();
-		TradeSkillInvSlotDropDown:Hide();
+		if invDrop then
+			invDrop:Hide();
+		end
 		
 		if SPF2:Custom("LeftMenu")["disabled"] then
 			SPF2:SavedData()["SearchBox"] = true;
 		end
 	else
-		TradeSkillInvSlotDropDown:Hide();
+		if invDrop then
+			invDrop:Hide();
+		end
 		SPF2.DropDownMenu_Initialize(SPF2.RightMenu, SPF2:Custom("RightMenu")["Initialize"] or SPF2.RightMenu.Initialize);
 		SPF2.DropDownMenu_SetSelectedID(SPF2.RightMenu, SPF2:GetSelected("Right") + 1);
 	end
 	
-	if SPF2:SavedData()["SearchBox"] then
+    if SPF2:SavedData()["SearchBox"] then
         SPF2.RightMenu:Hide();
-		TradeSkillInvSlotDropDown:Hide();
+		if invDrop then
+			invDrop:Hide();
+		end
     end
 end
 

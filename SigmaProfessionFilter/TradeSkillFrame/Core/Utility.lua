@@ -486,13 +486,84 @@ function SPF2.ClearTradeSkill()
 	TradeSkillReagentLabel:Hide();
 end
 
+local function hideOldTradeSkillControls()
+	local function hide(f)
+		f:SetScript("OnShow", function(self) self:Hide() end)
+		f:Hide()
+		f:ClearAllPoints()
+		f:SetPoint("TOPLEFT", UIParent, "BOTTOMLEFT", -10000, -10000)
+		if f.SetAlpha then f:SetAlpha(0) end
+		if f.EnableMouse then f:EnableMouse(false) end
+	end
+
+	local lookups = {
+		TradeSkillFrameFilterDropDown,
+		TradeSkillFrameAvailableFilterCheckButton,
+		TradeSkillInvSlotDropDown,
+		TradeSkillInvSlotDropdown,
+		TradeSkillSubClassDropDown,
+		TradeSkillSubClassDropdown,
+	}
+	for _, frame in ipairs(lookups) do
+		if frame then hide(frame) end
+	end
+end
+
 function SPF2.ClearNewFeatures()
-	TradeSkillFrameAvailableFilterCheckButton:SetChecked(false);
-	TradeSkillFrameAvailableFilterCheckButton:Hide();
+	hideOldTradeSkillControls()
+	if TradeSkillFrameAvailableFilterCheckButton then
+		TradeSkillFrameAvailableFilterCheckButton:SetChecked(false);
+	end
 	TradeSkillOnlyShowMakeable(false);
 end
 
-TradeSkillFrameAvailableFilterCheckButton:SetScript("OnShow", SPF2.ClearNewFeatures);
+hooksecurefunc("TradeSkillFrame_Update", hideOldTradeSkillControls);
+
+local function forceHideOldTradeSkillDropdowns()
+	local frames = {
+		"TradeSkillSubClassDropDown",
+		"TradeSkillSubClassDropdown",
+		"TradeSkillInvSlotDropDown",
+		"TradeSkillInvSlotDropdown",
+		"TradeSkillFrameFilterDropDown",
+		"TradeSkillFrameAvailableFilterCheckButton",
+	}
+	for _, name in ipairs(frames) do
+		local f = _G[name]
+		if f then
+			f:SetScript("OnShow", function(self) self:Hide() end)
+			if f:IsVisible() then
+				f:Hide()
+			end
+		end
+	end
+end
+
+if TradeSkillFrameFilterDropDown then
+	TradeSkillFrameFilterDropDown:SetScript("OnShow", function(self) self:Hide() end);
+	TradeSkillFrameFilterDropDown:Hide();
+end
+if TradeSkillFrameAvailableFilterCheckButton then
+	TradeSkillFrameAvailableFilterCheckButton:SetScript("OnShow", SPF2.ClearNewFeatures);
+	TradeSkillFrameAvailableFilterCheckButton:Hide();
+end
+if TradeSkillInvSlotDropDown then
+	TradeSkillInvSlotDropDown:SetScript("OnShow", function(self) self:Hide() end);
+	TradeSkillInvSlotDropDown:Hide();
+end
+if TradeSkillSubClassDropDown then
+	TradeSkillSubClassDropDown:SetScript("OnShow", function(self) self:Hide() end);
+	TradeSkillSubClassDropDown:Hide();
+end
+
+local frameEnforcer = CreateFrame("Frame")
+frameEnforcer:SetScript("OnUpdate", function()
+	forceHideOldTradeSkillDropdowns()
+end)
+
+hooksecurefunc("TradeSkillFrame_Update", forceHideOldTradeSkillDropdowns)
+hooksecurefunc("TradeSkillFrame_OnShow", forceHideOldTradeSkillDropdowns)
+
 
 function SPF2.FullUpdate(keepCollapsed)
 	if not keepCollapsed then

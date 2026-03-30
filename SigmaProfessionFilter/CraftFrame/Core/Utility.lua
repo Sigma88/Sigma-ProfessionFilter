@@ -245,13 +245,23 @@ function SPF1.ClearCraft()
 	CraftCost:Hide();
 end
 
-CraftFrameFilterDropDown:SetScript("OnShow", function(self) self:Hide() end);
-CraftFrameAvailableFilterCheckButton:SetScript("OnShow", function(self) self:Hide() end);
+if CraftFrameFilterDropDown then
+	CraftFrameFilterDropDown:SetScript("OnShow", function(self) self:Hide() end);
+	CraftFrameFilterDropDown:Hide();
+end
+if CraftFrameAvailableFilterCheckButton then
+	CraftFrameAvailableFilterCheckButton:SetScript("OnShow", function(self) self:Hide() end);
+	CraftFrameAvailableFilterCheckButton:Hide();
+end
 
 function SPF1.ClearNewFeatures()
-	CraftFrameFilterDropDown:Hide();
-	CraftFrameAvailableFilterCheckButton:SetChecked(false);
-	CraftFrameAvailableFilterCheckButton:Hide();
+	if CraftFrameFilterDropDown then
+		CraftFrameFilterDropDown:Hide();
+	end
+	if CraftFrameAvailableFilterCheckButton then
+		CraftFrameAvailableFilterCheckButton:SetChecked(false);
+		CraftFrameAvailableFilterCheckButton:Hide();
+	end
 	CraftOnlyShowMakeable(false);
 end
 
