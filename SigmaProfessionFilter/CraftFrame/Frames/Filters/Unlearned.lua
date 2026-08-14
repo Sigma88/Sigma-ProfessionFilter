@@ -10,7 +10,7 @@ function SPF1.Unlearned.OnLoad()
 	SPF1.CheckBoxBar:AddButton(SPF1.Unlearned);
 	
 	SPF1.Unlearned:SetScript("OnShow", SPF1.Unlearned.OnShow);
-	hooksecurefunc("CraftFrame_OnShow", SPF1.Unlearned.OnShow);
+	SPF1["CFOnShow"]["SPF1.Unlearned.OnShow"] = SPF1.Unlearned.OnShow;
 	
 	local button = CreateFrame("CheckButton", nil, SPF1.Unlearned, "UICheckButtonTemplate");
 	button:SetWidth(15);
@@ -51,16 +51,21 @@ end
 
 function SPF1.Unlearned.OnClick()
 	
+	SPF1:SetSelected("Left", 0);
+	SPF1:SetSelected("Right", 0);
+	
 	if (SPF1.Unlearned.button:GetChecked()) then
-        PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
+        --PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
+		PlaySound("igMainMenuOptionCheckBoxOn");
 		SPF1:SavedData()["Unlearned"] = true;
     else
-        PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
+        --PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
+		PlaySound("igMainMenuOptionCheckBoxOff");
 		SPF1:SavedData()["Unlearned"] = nil;
 	end
 	
-	CraftFrame_OnShow();
-	SPF1.FullUpdate();
+	SPF1.CraftFrame_OnShow(CraftFrame, true);
+	-- SPF1.FullUpdate();
 	SPF1.Unlearned:OnEnter();
 end
 

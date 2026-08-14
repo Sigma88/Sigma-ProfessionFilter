@@ -1,4 +1,6 @@
-local _, L = ...;
+SigmaProfessionFilterPoisons = {};
+SigmaProfessionFilterPoisons.L = {};
+local L = SigmaProfessionFilterPoisons.L;
 
 -- Profession
 L["PROFESSION"] = "Poisons";
@@ -10,8 +12,8 @@ L["LEFT_01_NAME"] = "Damage";
 L["LEFT_02_NAME"] = "Debuff";
 L["LEFT_03_NAME"] = "No Effect";
 -- Filters
-L["LEFT_01_FILTER"] = GetSpellInfo(8681)..";"..GetSpellInfo(2835);
-L["LEFT_02_FILTER"] = GetSpellInfo(3420)..";"..GetSpellInfo(5763)..";"..GetSpellInfo(13220);
+L["LEFT_01_FILTER"] = "Instant;Deadly";
+L["LEFT_02_FILTER"] = "Crippling;numbing;Wound";
 L["LEFT_03_FILTER"] = "";
 
 -- RIGHT Menu

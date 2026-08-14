@@ -1,20 +1,24 @@
 local SPF1 = SigmaProfessionFilter[1];
 
-SPF1.SearchBox = CreateFrame("EditBox", nil, CraftFrame, "SearchBoxTemplate");
+SPF1.SearchBox = CreateFrame("EditBox", nil, CraftFrame, "InputBoxTemplate");
 
-function SPF1.SearchBox:OnLoad()
+function SPF1.SearchBox.OnLoad()
 	SPF1.SearchBox:SetWidth(260);
 	SPF1.SearchBox:SetHeight(27);
 	SPF1.SearchBox:SetPoint("TOPRIGHT", CraftFrame, "TOPRIGHT", -44, -67);
 	SPF1.SearchBox:SetFrameLevel(4);
+	SPF1.SearchBox:SetAutoFocus(false);
 	
 	SPF1.SearchBox:SetScript("OnShow", SPF1.SearchBox.OnShow);
-	SPF1.SearchBox:SetScript("OnEscapePressed", SPF1.SearchBox.OnEscapePressed);
+	SPF1["CFOnShow"]["SPF1.SearchBox.OnShow"] = SPF1.SearchBox.OnShow;
 	
-	SPF1.SearchBox:HookScript("OnTextChanged", SPF1.SearchBox.OnTextChanged);
-	CraftFrame:HookScript("OnHide", SPF1.SearchBox.Clear);
-	StackSplitFrame:HookScript("OnShow", SPF1.SearchBox.StackSplitHandler);
-	hooksecurefunc("ChatEdit_InsertLink", SPF1.SearchBox.InsertItemName)
+	SPF1.SearchBox:SetScript("OnEscapePressed", SPF1.SearchBox.OnEscapePressed);
+	SPF1.SearchBox:SetScript("OnEnterPressed", SPF1.SearchBox.OnEnterPressed);
+	SPF1.SearchBox:SetScript("OnTextChanged", SPF1.SearchBox.OnTextChanged);
+	SPF1.SearchBox:SetScript("OnEditFocusGained", function() SPF1.SearchBox.HasFocus = true; end);
+	SPF1.SearchBox:SetScript("OnEditFocusLost", function() SPF1.SearchBox.HasFocus = false; end);
+	CraftFrame:SetScript("OnHide", SPF1.CraftFrame_OnHide);
+	SPF1.hooksecurefunc("ChatEdit_InsertLink", SPF1.SearchBox.InsertItemName)
 	
     -- LeatrixPlus compatibility
     if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
@@ -23,22 +27,27 @@ function SPF1.SearchBox:OnLoad()
     end
 end
 
-function SPF1.SearchBox.StackSplitHandler()
-	if SPF1.SearchBox:IsVisible() and SPF1.SearchBox:HasFocus() then
-		StackSplitFrame:Hide()
-	end
+
+function SPF1.CraftFrame_OnHide()
+	CloseCraft();
+	PlaySound("igCharacterInfoClose");
+	SPF1.SearchBox.Clear();
 end
 
 function SPF1.SearchBox.Clear()
 	SPF1.SearchBox:SetText("");
 end
 
-function SPF1.SearchBox.OnShow()
-	if SPF1:GetMenu("Left") or SPF1:GetMenu("Right") then
-		if not SPF1:SavedData()["SearchBox"] then
-			SPF1.SearchBox:Hide();
-		end
+function SPF1.SearchBox:OnShow()
+	SPF1.SearchBox:Show();
+	
+	if not SPF1:SavedData()["SearchBox"] then
+		SPF1.SearchBox:Hide();
 	end
+end
+
+function SPF1.SearchBox.OnEnterPressed()
+    SPF1.SearchBox:ClearFocus();
 end
 
 function SPF1.SearchBox.OnEscapePressed()
@@ -51,22 +60,22 @@ function SPF1.SearchBox.OnTextChanged()
 end
 
 function SPF1.SearchBox.InsertItemName(itemLink)
-	if SPF1.SearchBox:IsVisible() and SPF1.SearchBox:HasFocus() then
-		SPF1.SearchBox:Insert(GetItemInfo(itemLink));
+	if SPF1.SearchBox:IsVisible() and SPF1.SearchBox.HasFocus then
+		SPF1.SearchBox:Insert(SPF1.GetItemInfo(itemLink));
 	end
 end
 
 -- Return a string if the filter matches
-function SPF1.SearchBox:Filter(craftIndex)
+function SPF1.SearchBox:Filter(skillIndex)	
 	if SPF1:Custom("SearchBox")["Filter"] then
-		return SPF1:Custom("SearchBox")["Filter"](craftIndex);
+		return SPF1:Custom("SearchBox")["Filter"](skillIndex);
 	else
-		return SPF1:FilterWithSearchBox(craftIndex);
+		return SPF1:FilterWithSearchBox(skillIndex);
 	end
 end
 
 -- Return a string if the filter matches
-function SPF1.SearchBox:FilterSpell(spellID)
+function SPF1.SearchBox:FilterSpell(spellID)	
 	if SPF1:Custom("SearchBox")["FilterSpell"] then
 		return SPF1:Custom("SearchBox")["FilterSpell"](spellID);
 	else
@@ -74,4 +83,8 @@ function SPF1.SearchBox:FilterSpell(spellID)
 	end
 end
 
-SPF1.SearchBox:OnLoad();
+if not CraftFrame:IsVisible() then
+	SPF1.CraftFrame_OnHide();
+end
+
+SPF1.SearchBox.OnLoad();

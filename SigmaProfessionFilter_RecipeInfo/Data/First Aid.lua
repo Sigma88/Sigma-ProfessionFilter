@@ -2,123 +2,250 @@ local RI = SigmaProfessionFilter_RecipeInfo;
 
 RI.Data["First Aid"] = {
 	[3275] = {
-		["learnedAt"] = 1;
-		["levels"] = { 1, 30, 45, 60 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2589; ["numRequired"] = 1; };
-		};
-		["creates"] = 1251;
-	};
+		creates = 1251,
+		icon = "Interface\\Icons\\inv_misc_bandage_15",
+		name = "Linen Bandage",
+		reagents = {
+			{
+				itemID = 2589,
+				icon = "Interface\\Icons\\inv_fabric_linen_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 1,
+		levels = {
+			1,
+			30,
+			45,
+			60,
+		},
+	},
 	[3276] = {
-		["learnedAt"] = 40;
-		["levels"] = { 40, 50, 75, 100 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2589; ["numRequired"] = 2; };
-		};
-		["creates"] = 2581;
-	};
+		creates = 2581,
+		icon = "Interface\\Icons\\inv_misc_bandage_18",
+		name = "Heavy Linen Bandage",
+		reagents = {
+			{
+				itemID = 2589,
+				icon = "Interface\\Icons\\inv_fabric_linen_01",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 40,
+		levels = {
+			40,
+			50,
+			75,
+			100,
+		},
+	},
 	[3277] = {
-		["learnedAt"] = 80;
-		["levels"] = { 80, 80, 115, 150 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2592; ["numRequired"] = 1; };
-		};
-		["creates"] = 3530;
-	};
+		creates = 3530,
+		icon = "Interface\\Icons\\inv_misc_bandage_14",
+		name = "Wool Bandage",
+		reagents = {
+			{
+				itemID = 2592,
+				icon = "Interface\\Icons\\inv_fabric_wool_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 80,
+		levels = {
+			80,
+			80,
+			115,
+			150,
+		},
+	},
 	[3278] = {
-		["learnedAt"] = 115;
-		["levels"] = { 115, 115, 150, 185 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2592; ["numRequired"] = 2; };
-		};
-		["creates"] = 3531;
-	};
+		creates = 3531,
+		icon = "Interface\\Icons\\inv_misc_bandage_17",
+		name = "Heavy Wool Bandage",
+		reagents = {
+			{
+				itemID = 2592,
+				icon = "Interface\\Icons\\inv_fabric_wool_01",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 115,
+		levels = {
+			115,
+			115,
+			150,
+			185,
+		},
+	},
 	[7928] = {
-		["learnedAt"] = 150;
-		["levels"] = { 150, 150, 180, 210 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4306; ["numRequired"] = 1; };
-		};
-		["creates"] = 6450;
-	};
+		creates = 6450,
+		icon = "Interface\\Icons\\inv_misc_bandage_01",
+		name = "Silk Bandage",
+		reagents = {
+			{
+				itemID = 4306,
+				icon = "Interface\\Icons\\inv_fabric_silk_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 150,
+		levels = {
+			150,
+			150,
+			180,
+			210,
+		},
+	},
 	[7929] = {
-		["learnedAt"] = 180;
-		["levels"] = { 180, 180, 210, 240 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4306; ["numRequired"] = 2; };
-		};
-		["creates"] = 6451;
-	};
+		creates = 6451,
+		icon = "Interface\\Icons\\inv_misc_bandage_02",
+		name = "Heavy Silk Bandage",
+		reagents = {
+			{
+				itemID = 4306,
+				icon = "Interface\\Icons\\inv_fabric_silk_01",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 180,
+		levels = {
+			180,
+			180,
+			210,
+			240,
+		},
+	},
 	[7934] = {
-		["learnedAt"] = 80;
-		["levels"] = { 80, 80, 115, 150 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 1475; ["numRequired"] = 1; };
-		};
-		["creates"] = 6452;
-	};
+		creates = 6452,
+		icon = "Interface\\Icons\\inv_misc_slime_01",
+		name = "Anti-Venom",
+		reagents = {
+			{
+				itemID = 1475,
+				icon = "Interface\\Icons\\inv_misc_organ_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 80,
+		levels = {
+			80,
+			80,
+			115,
+			150,
+		},
+	},
 	[7935] = {
-		["learnedAt"] = 130;
-		["levels"] = { 130, 130, 165, 200 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 1288; ["numRequired"] = 1; };
-		};
-		["creates"] = 6453;
-	};
+		creates = 6453,
+		icon = "Interface\\Icons\\inv_misc_slime_01",
+		name = "Strong Anti-Venom",
+		reagents = {
+			{
+				itemID = 1288,
+				icon = "Interface\\Icons\\inv_misc_organ_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 130,
+		levels = {
+			130,
+			130,
+			165,
+			200,
+		},
+	},
 	[10840] = {
-		["learnedAt"] = 210;
-		["levels"] = { 210, 210, 240, 270 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4338; ["numRequired"] = 1; };
-		};
-		["creates"] = 8544;
-	};
+		creates = 8544,
+		icon = "Interface\\Icons\\inv_misc_bandage_19",
+		name = "Mageweave Bandage",
+		reagents = {
+			{
+				itemID = 4338,
+				icon = "Interface\\Icons\\inv_fabric_mageweave_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 210,
+		levels = {
+			210,
+			210,
+			240,
+			270,
+		},
+	},
 	[10841] = {
-		["learnedAt"] = 240;
-		["levels"] = { 240, 240, 270, 300 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4338; ["numRequired"] = 2; };
-		};
-		["creates"] = 8545;
-	};
+		creates = 8545,
+		icon = "Interface\\Icons\\inv_misc_bandage_20",
+		name = "Heavy Mageweave Bandage",
+		reagents = {
+			{
+				itemID = 4338,
+				icon = "Interface\\Icons\\inv_fabric_mageweave_01",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 240,
+		levels = {
+			240,
+			240,
+			270,
+			300,
+		},
+	},
 	[18629] = {
-		["learnedAt"] = 260;
-		["levels"] = { 260, 260, 290, 320 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 14047; ["numRequired"] = 1; };
-		};
-		["creates"] = 14529;
-	};
+		creates = 14529,
+		icon = "Interface\\Icons\\inv_misc_bandage_11",
+		name = "Runecloth Bandage",
+		reagents = {
+			{
+				itemID = 14047,
+				icon = "Interface\\Icons\\inv_fabric_purplefire_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 260,
+		levels = {
+			260,
+			260,
+			290,
+			320,
+		},
+	},
 	[18630] = {
-		["learnedAt"] = 290;
-		["levels"] = { 290, 290, 320, 350 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 14047; ["numRequired"] = 2; };
-		};
-		["creates"] = 14530;
-	};
+		creates = 14530,
+		icon = "Interface\\Icons\\inv_misc_bandage_12",
+		name = "Heavy Runecloth Bandage",
+		reagents = {
+			{
+				itemID = 14047,
+				icon = "Interface\\Icons\\inv_fabric_purplefire_01",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 290,
+		levels = {
+			290,
+			290,
+			320,
+			350,
+		},
+	},
 	[23787] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 300, 330, 360 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 19441; ["numRequired"] = 1; };
-		};
-		["creates"] = 19440;
-	};
-	[27032] = {
-		["learnedAt"] = 330;
-		["levels"] = { 330, 330, 360, 390 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 21877; ["numRequired"] = 1; };
-		};
-		["creates"] = 21990;
-	};
-	[27033] = {
-		["learnedAt"] = 360;
-		["levels"] = { 360, 360, 385, 410 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 21877; ["numRequired"] = 2; };
-		};
-		["creates"] = 21991;
-	};
-};
+		creates = 19440,
+		icon = "Interface\\Icons\\inv_drink_14",
+		name = "Powerful Anti-Venom",
+		reagents = {
+			{
+				itemID = 19441,
+				icon = "Interface\\Icons\\inv_misc_organ_04",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 300,
+		levels = {
+			300,
+			300,
+			330,
+			360,
+		},
+	},
+}

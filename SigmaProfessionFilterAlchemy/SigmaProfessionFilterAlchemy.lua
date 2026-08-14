@@ -1,4 +1,4 @@
-local _, L = ...;
+local L = SigmaProfessionFilterAlchemy.L;
 local SPF2 = SigmaProfessionFilter[2];
 
 SigmaProfessionFilter[L["PROFESSION"]] = {
@@ -44,10 +44,10 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 		[09] = { name = L["RIGHT_09_NAME"]; filter = L["RIGHT_09_FILTER"]; };
 	};
 	["Exceptions"] = {
-		[GetSpellInfo(2336)] = 11;
-		[GetSpellInfo(3174)] = 3;
-		[GetSpellInfo(11447)] = 11;
-		[GetSpellInfo(17634)] = 3;
-		[GetSpellInfo(24365)] = 1;
+		["Elixir of Tongues"] = 11;
+		["Elixir of Poison Resistance"] = 3;
+		["Elixir of Waterwalking"] = 11;
+		["Flask of Petrification"] = 3;
+		["Mageblood Potion"] = 1;
 	};
 };

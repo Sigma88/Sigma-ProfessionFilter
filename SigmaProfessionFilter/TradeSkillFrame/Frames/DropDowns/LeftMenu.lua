@@ -6,9 +6,9 @@ function SPF2.LeftMenu:OnLoad()
 	SPF2.LeftMenu:SetPoint("TOPRIGHT", TradeSkillFrame, "TOPRIGHT", -160, -66);
 	
 	SPF2.LeftMenu:SetScript("OnShow", SPF2.LeftMenu.OnShow);
-	hooksecurefunc("TradeSkillFrame_OnShow", SPF2.LeftMenu.OnShow);
+	SPF2["TSFOnShow"]["SPF2.LeftMenu.OnShow"] = SPF2.LeftMenu.OnShow;
 	
-	SPF2.DropDownMenu_SetWidth(SPF2.LeftMenu, 120);
+	SPF2.DropDownMenu_SetWidth(120, SPF2.LeftMenu);
 
 	SPF2.DropDownMenu_SetSelectedID(SPF2.LeftMenu, 1);
 	SPF2:SetSelected("Left", 0);
@@ -17,28 +17,26 @@ function SPF2.LeftMenu:OnLoad()
 	if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
 		SPF2.LeftMenu:SetPoint("TOPRIGHT", TradeSkillFrame, "TOPRIGHT", -204, -40);
 	end
+	
+	TradeSkillSubClassDropDown:SetScript("OnShow", function() TradeSkillSubClassDropDown:Hide() end );
 end
 
 function SPF2.LeftMenu:OnShow()
 	SPF2.LeftMenu:Show();
-	TradeSkillSubClassDropDown:Show();
 	
 	if SPF2:Custom("LeftMenu")["disabled"] then
 		SPF2.LeftMenu:Hide();
-		TradeSkillSubClassDropDown:Hide();
 		
 		if SPF2:Custom("RightMenu")["disabled"] then
 			SPF2:SavedData()["SearchBox"] = true;
 		end
 	else
-		TradeSkillSubClassDropDown:Hide();
 		SPF2.DropDownMenu_Initialize(SPF2.LeftMenu, SPF2:Custom("LeftMenu")["Initialize"] or SPF2.LeftMenu.Initialize);
 		SPF2.DropDownMenu_SetSelectedID(SPF2.LeftMenu, SPF2:GetSelected("Left") + 1);
 	end
 	
     if SPF2:SavedData()["SearchBox"] then
         SPF2.LeftMenu:Hide();
-		TradeSkillSubClassDropDown:Hide();
     end
 end
 
@@ -67,7 +65,7 @@ function SPF2.LeftMenu:Initialize()
 			
 			SPF2.DropDownMenu_AddButton(info);
 			
-			for i,subclass in ipairs({GetTradeSkillSubClasses()}) do
+			for i,subclass in ipairs(SPF2.GetTradeSkillSubClasses()) do
 				info = {};
 				info.text = subclass;
 				info.func = SPF2.LeftMenu.OnClick;
@@ -80,8 +78,8 @@ end
 
 function SPF2.LeftMenu:OnClick(arg1, arg2, checked)
 	
-	SPF2.DropDownMenu_SetSelectedID(SPF2.LeftMenu, self:GetID());
-	SPF2:SetSelected("Left", self:GetID() - 1);
+	SPF2.DropDownMenu_SetSelectedID(SPF2.LeftMenu, this:GetID());
+	SPF2:SetSelected("Left", this:GetID() - 1);
 	
 	SPF2.FullUpdate();
 end
@@ -108,7 +106,24 @@ function SPF2.LeftMenu:Filter(skillIndex, groupIndex)
 				return firstGroup;
 			end
 		else
-			return nil;
+			local _,_,_,_,_,itemSubClass = SPF2.baseGetTradeSkillItemInfo(skillIndex);
+			
+			if itemSubClass then
+				local lastID = 0;
+				for i,subClass in ipairs(SPF2.GetTradeSkillSubClasses()) do
+					lastID = i;
+					if itemSubClass == subClass then
+						if groupIndex == 0 or groupIndex == i then
+							return i;
+						end
+						return 0;
+					end
+				end
+				
+				if groupIndex == 0 or groupIndex == lastID then
+					return lastID;
+				end
+			end
 		end
 		
 		return 0;
@@ -140,9 +155,9 @@ function SPF2.LeftMenu:FilterSpell(spellID, groupIndex)
 		else
 			local creates = SPF2.GetRecipeInfo(spellID, "creates");
 			if creates then
-				local itemSubClass = select(7, GetItemInfo(creates));
+				local _,_,_,_,_,itemSubClass = SPF2.GetItemInfo(creates);
 				local lastID = 0;
-				for i,subClass in ipairs({GetTradeSkillSubClasses()}) do
+				for i,subClass in ipairs(SPF2.GetTradeSkillSubClasses()) do
 					lastID = i;
 					if itemSubClass == subClass then
 						if groupIndex == 0 or groupIndex == i then

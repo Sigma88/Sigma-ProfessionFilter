@@ -1,54 +1,76 @@
 local SPF1 = SigmaProfessionFilter[1];
 
-SPF1.PortraitChanger = CreateFrame("Frame", nil, CraftFrame);
+SPF1.PortraitChanger = CreateFrame("Button", nil, CraftFrame);
 
 function SPF1.PortraitChanger:OnLoad()
 	SPF1.PortraitChanger:SetWidth(CraftFramePortrait:GetWidth());
 	SPF1.PortraitChanger:SetHeight(CraftFramePortrait:GetHeight());
 	SPF1.PortraitChanger:SetPoint("TOPLEFT", CraftFramePortrait, "TOPLEFT", 0, 0);
-	
-	SPF1.PortraitChanger:RegisterEvent("UNIT_PET");
-	SPF1.PortraitChanger:SetScript("OnEvent", SPF1.PortraitChanger.OnEvent);
-	SPF1.PortraitChanger:SetScript("OnMouseDown", SPF1.PortraitChanger.OnMouseDown);
+	SPF1.PortraitChanger:EnableMouse(true);
+	SPF1.PortraitChanger:RegisterForDrag("LeftButton");
+	SPF1.PortraitChanger:RegisterForClicks("RightButtonUp");
+	SPF1.PortraitChanger:SetScript("OnShow", SPF1.PortraitChanger.OnShow);
+	SPF1.PortraitChanger:SetScript("OnDragStart", SPF1.PortraitChanger.OnMouseDown);
+	SPF1.PortraitChanger:SetScript("OnDragStop", SPF1.PortraitChanger.OnMouseUp);
+	SPF1.PortraitChanger:SetScript("OnClick", SPF1.PortraitChanger.OnClick);
 	SPF1.PortraitChanger:SetScript("OnEnter", SPF1.PortraitChanger.OnEnter);
 	SPF1.PortraitChanger:SetScript("OnLeave", SPF1.PortraitChanger.OnLeave);
 	
-	hooksecurefunc("CraftFrame_Update", SPF1.PortraitChanger.OnUpdate);
+	SPF1["CFOnShow"]["SPF1.PortraitChanger.OnShow"] = SPF1.PortraitChanger.OnShow;
+	
+	-- SPF1.PortraitChanger:SetScript("OnEvent", SPF1.PortraitChanger.OnEvent); -- Keep for debug purposes
+end
+
+function SPF1.PortraitChanger:OnMouseUp()
+	CraftFrame:StopMovingOrSizing();
 end
 
 function SPF1.PortraitChanger:OnMouseDown()
+	CraftFrame:StartMoving();
+end
+
+function SPF1.PortraitChanger:OnClick()
 	SPF1:SavedData()["ReplacePortrait"] = not (SPF1:SavedData()["ReplacePortrait"] ~= false);
-	CraftFrame_Update();
+	SPF1.PortraitChanger:OnShow();
 end
 
-function SPF1.PortraitChanger:OnUpdate()
-	-- Replace the Portrait Icon
-	if CraftFrame:IsVisible() then
-		if SPF1:SavedData()["ReplacePortrait"] ~= false then
+function SPF1.PortraitChanger:OnShow()
+	-- Default Portrait Icon
+	CraftFramePortrait:SetTexCoord(0,1,0,1);
+	SPF1.baseSetPortraitTexture(CraftFramePortrait, "player");
+	
+	-- Replace Portrait Icon
+	if SPF1:SavedData()["ReplacePortrait"] ~= false then
+		local icon = SPF1.PortraitChanger:GetIcon();
+		if icon then
 			CraftFramePortrait:SetTexCoord(0.02,0.96,0.05,0.97);
-			local icon = SPF1.PortraitChanger:GetIcon();
-			if icon then
-				SetPortraitToTexture(CraftFramePortrait, icon);
-				return;
-			end
+			SetPortraitToTexture(CraftFramePortrait, icon);
 		end
-		CraftFramePortrait:SetTexCoord(0,1,0,1);
+	end
+	
+	-- Update the Tooltip
+	if SPF1.PortraitChanger.IsMouseOver then
+		SPF1.PortraitChanger:OnEnter();
+	else
+		SPF1.PortraitChanger:OnLeave();
 	end
 end
 
+--[[ Keep For Debug Purposes
 function SPF1.PortraitChanger:OnEvent(event, arg1, ...)
-	if (CraftFrame:IsVisible() and event == "UNIT_PET" and arg1 == "player") then
-		SPF1.FullUpdate();
-	end
+	print("OnEvent",event, arg1, ...);
 end
+--]]
 
 function SPF1.PortraitChanger:OnEnter()
 	GameTooltip:SetOwner(SPF1.PortraitChanger, "ANCHOR_TOPLEFT");
 	SPF1.PortraitChanger:SetTooltip();
+	SPF1.PortraitChanger.IsMouseOver = true;
 end
 
 function SPF1.PortraitChanger:OnLeave()
     GameTooltip:Hide();
+	SPF1.PortraitChanger.IsMouseOver = false;
 end
 
 function SPF1.PortraitChanger:GetIcon()
@@ -56,12 +78,12 @@ function SPF1.PortraitChanger:GetIcon()
 	if SPF1:Custom("Portrait")["Icon"] then
 		return SPF1:Custom("Portrait"):Icon();
 	end
-	
+
 	if SigmaProfessionFilter[GetCraftName()] and SigmaProfessionFilter[GetCraftName()]["icon"] then
 		return SigmaProfessionFilter[GetCraftName()]["icon"];
 	end
 	
-	local _,_,icon = GetSpellInfo(GetCraftName());
+	local icon = SPF1.GetProfessionIcon();
 	return icon;
 end
 
@@ -77,7 +99,7 @@ function SPF1.PortraitChanger:DefaultTooltip()
 	local spellBookIndex, spellRank = SPF1.PortraitChanger.GetTooltipInfo();
 	
 	if spellBookIndex then
-		GameTooltip:SetSpellBookItem(spellBookIndex, BOOKTYPE_SPELL);
+		GameTooltip:SetSpell(spellBookIndex, BOOKTYPE_SPELL);
 		GameTooltipTextRight1:SetText(spellRank);
 		GameTooltipTextRight1:SetTextColor(0.5, 0.5, 0.5, 1);
 		GameTooltipTextRight1:Show();
@@ -89,17 +111,24 @@ end
 function SPF1.PortraitChanger.GetTooltipInfo()
 	
 	local craftName = GetCraftName();
-	local spellRank = GetSpellSubtext(craftName);
-	local spellBookIndex = 0;
-	local spellName = true;
-	
-	while spellName and spellBookIndex < 500 do
-		spellBookIndex = spellBookIndex + 1;
-		spellName = GetSpellBookItemName(spellBookIndex, BOOKTYPE_SPELL);
-		if craftName == spellName then
-			return spellBookIndex, spellRank;
+	if craftName then
+		for i = 1, 200, 1 do
+			local spellName, subSpellName = GetSpellName(i, BOOKTYPE_SPELL)
+			if spellName == craftName then
+				return i, subSpellName;
+			end
 		end
 	end
 end
+
+function SPF1.SetPortraitTexture(frame, arg1, arg2, arg3)
+	if frame and frame:GetName() == "CraftFramePortrait" then
+		return;
+	end
+	return SPF1.baseSetPortraitTexture(frame, arg1, arg2, arg3);
+end
+
+SPF1.baseSetPortraitTexture = SetPortraitTexture;
+SetPortraitTexture = SPF1.SetPortraitTexture;
 
 SPF1.PortraitChanger:OnLoad();

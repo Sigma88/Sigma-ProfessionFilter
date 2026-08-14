@@ -1,51 +1,91 @@
 local L = SigmaProfessionFilter.L;
+local SPF = SigmaProfessionFilter[2];
 
 function GetTradeSkillName()
 	local skillName = GetTradeSkillLine();
-	
 	return L[skillName.."_SpellName"] or skillName;
 end
 
-local SPF2 = SigmaProfessionFilter[2];
-
-SPF2.INV = {
-	["INVTYPE_AMMO"] = AMMOSLOT;
-	["INVTYPE_BAG"] = BAGSLOT;
-	["INVTYPE_BODY"] = SHIRTSLOT;
-	["INVTYPE_CHEST"] = CHESTSLOT;
-	["INVTYPE_CLOAK"] = BACKSLOT;
-	["INVTYPE_FEET"] = FEETSLOT;
-	["INVTYPE_FINGER"] = FINGER0SLOT;
-	["INVTYPE_HAND"] = HANDSSLOT;
-	["INVTYPE_HEAD"] = HEADSLOT;
-	["INVTYPE_HOLDABLE"] = SECONDARYHANDSLOT;
-	["INVTYPE_LEGS"] = LEGSSLOT;
-	["INVTYPE_NECK"] = NECKSLOT;
-	["INVTYPE_QUIVER"] = BAGSLOT;
-	["INVTYPE_RANGED"] = RANGEDSLOT;
-	["INVTYPE_RANGEDRIGHT"] = RANGEDSLOT;
-	["INVTYPE_RELIC"] = RELICSLOT;
-	["INVTYPE_ROBE"] = CHESTSLOT;
-	["INVTYPE_SHIELD"] = SHIELDSLOT;
-	["INVTYPE_SHOULDER"] = SHOULDERSLOT;
-	["INVTYPE_TABARD"] = TABARDSLOT;
-	["INVTYPE_THROWN"] = RANGEDSLOT;
-	["INVTYPE_TRINKET"] = TRINKET0SLOT;
-	["INVTYPE_WAIST"] = WAISTSLOT;
-	["INVTYPE_WEAPON"] = SECONDARYHANDSLOT;
-	["INVTYPE_WEAPONMAINHAND"] = MAINHANDSLOT;
-	["INVTYPE_WEAPONOFFHAND"] = SECONDARYHANDSLOT;
-	["INVTYPE_2HWEAPON"] = MAINHANDSLOT;
-	["INVTYPE_WRIST"] = WRISTSLOT;
-}
-
-function SPF2:GetSlot(TYPE)
-	if TYPE then
-		return SPF2.INV[TYPE] or NONEQUIPSLOT;
+function SPF.GetProfessionIcon()
+	local spellName = GetTradeSkillName();
+	if spellName then
+		for i = 1, 200, 1 do
+			local buttonName = GetSpellName(i, BOOKTYPE_SPELL)
+			if buttonName == spellName then
+				return GetSpellTexture(i, BOOKTYPE_SPELL)
+			end
+		end
 	end
 end
 
-function SPF2:SavedData(professionSpecific)
+SPF.INV = {
+	["INVTYPE_AMMO"] = 0;
+	["INVTYPE_HEAD"] = 1;
+	["INVTYPE_NECK"] = 2;
+	["INVTYPE_SHOULDER"] = 3;
+	["INVTYPE_BODY"] = 4;
+	["INVTYPE_ROBE"] = 5;
+	["INVTYPE_CHEST"] = 5;
+	["INVTYPE_WAIST"] = 6;
+	["INVTYPE_LEGS"] = 7;
+	["INVTYPE_FEET"] = 8;
+	["INVTYPE_WRIST"] = 9;
+	["INVTYPE_HAND"] = 10;
+	["INVTYPE_FINGER"] = 11;
+	["INVTYPE_TRINKET"] = 13;
+	["INVTYPE_CLOAK"] = 15;
+	["INVTYPE_WEAPONMAINHAND"] = 16;
+	["INVTYPE_2HWEAPON"] = 16;
+	["INVTYPE_HOLDABLE"] = 17;
+	["INVTYPE_WEAPON"] = 17;
+	["INVTYPE_WEAPONOFFHAND"] = 17;
+	["INVTYPE_SHIELD"] = 17;
+	["INVTYPE_RANGED"] = 18;
+	["INVTYPE_RANGEDRIGHT"] = 18;
+	["INVTYPE_THROWN"] = 18;
+	["INVTYPE_RELIC"] = 18;
+	["INVTYPE_TABARD"] = 19;
+	["INVTYPE_BAG"] = 20;
+	["INVTYPE_QUIVER"] = 20;
+}
+
+SPF.SLOTS = {
+	[0] = AMMOSLOT;
+	[1] = HEADSLOT;
+	[2] = NECKSLOT;
+	[3] = SHOULDERSLOT;
+	[4] = SHIRTSLOT;
+	[5] = CHESTSLOT;
+	[6] = WAISTSLOT;
+	[7] = LEGSSLOT;
+	[8] = FEETSLOT;
+	[9] = WRISTSLOT;
+	[10] = HANDSSLOT;
+	[11] = FINGER0SLOT;
+	[13] = TRINKET0SLOT;
+	[15] = BACKSLOT;
+	[16] = MAINHANDSLOT;
+	[17] = SECONDARYHANDSLOT;
+	[18] = RANGEDSLOT;
+	[19] = TABARDSLOT;
+	[20] = BAGSLOT;
+}
+
+
+function SPF:GetSlot(TYPE)
+	if TYPE then
+		local invtype = SPF.INV[TYPE];
+		if invtype then
+			local invslot = SPF.SLOTS[invtype];
+			if invslot then
+				return invslot;
+			end
+		end
+		return NONEQUIPSLOT;
+	end
+end
+
+function SPF:SavedData(professionSpecific)
 	if not SigmaProfessionFilter_SavedVariables then
 		SigmaProfessionFilter_SavedVariables = {};
 	end
@@ -56,40 +96,49 @@ function SPF2:SavedData(professionSpecific)
 		professionName = "ALL_PROFESSIONS";
 	end
 	
-	if not SigmaProfessionFilter_SavedVariables[professionName] then
-		SigmaProfessionFilter_SavedVariables[professionName] = {};
+	if professionName then
+		
+		if not SigmaProfessionFilter_SavedVariables[professionName] then
+			SigmaProfessionFilter_SavedVariables[professionName] = {};
+		end
+		
+		return SigmaProfessionFilter_SavedVariables[professionName];
 	end
-	
-	return SigmaProfessionFilter_SavedVariables[professionName];
 end
 
-function SPF2:GetMenu(side)
+function SPF:GetMenu(side)
 	if SigmaProfessionFilter[GetTradeSkillName()] and SigmaProfessionFilter[GetTradeSkillName()][side] then
 		return SigmaProfessionFilter[GetTradeSkillName()][side];
 	end
 end
 
-function SPF2:GetSelected(side)
-	if not SigmaProfessionFilter[GetTradeSkillName()] then
-		SigmaProfessionFilter[GetTradeSkillName()] = {};
-	end
-	if SigmaProfessionFilter[GetTradeSkillName()]["Selected"] then
-		return SigmaProfessionFilter[GetTradeSkillName()]["Selected"][side] or 0;
+function SPF:GetSelected(side)
+	local skillName = GetTradeSkillName();
+	if skillName then
+		if not SigmaProfessionFilter[skillName] then
+			SigmaProfessionFilter[skillName] = {};
+		end
+		if SigmaProfessionFilter[skillName]["Selected"] then
+			return SigmaProfessionFilter[skillName]["Selected"][side] or 0;
+		end
 	end
 	return 0;
 end
 
-function SPF2:SetSelected(side, id)
-	if not SigmaProfessionFilter[GetTradeSkillName()] then
-		SigmaProfessionFilter[GetTradeSkillName()] = {};
+function SPF:SetSelected(side, id)
+	local skillName = GetTradeSkillName();
+	if skillName then
+		if not SigmaProfessionFilter[skillName] then
+			SigmaProfessionFilter[skillName] = {};
+		end
+		if not SigmaProfessionFilter[skillName]["Selected"] then
+			SigmaProfessionFilter[skillName]["Selected"] = {};
+		end
+		SigmaProfessionFilter[skillName]["Selected"][side] = id;
 	end
-	if not SigmaProfessionFilter[GetTradeSkillName()]["Selected"] then
-		SigmaProfessionFilter[GetTradeSkillName()]["Selected"] = {};
-	end
-	SigmaProfessionFilter[GetTradeSkillName()]["Selected"][side] = id;
 end
 
-function SPF2:Custom(target)
+function SPF:Custom(target)
 	if SigmaProfessionFilter[GetTradeSkillName()] then
 		if SigmaProfessionFilter[GetTradeSkillName()][target] then
 			return SigmaProfessionFilter[GetTradeSkillName()][target];
@@ -98,19 +147,47 @@ function SPF2:Custom(target)
 	return {};
 end
 
-function SPF2.trim(str)
-	return (str:gsub("^%s*(.-)%s*$", "%1"))
+function SPF.trim(str)
+	return (string.gsub(str,"^%s*(.-)%s*$", "%1"))
 end
 
-function SPF2.match(str, filter)
-	if str and filter then
-		if #filter == 0 then
-			return true;
+function SPF.split(str, sep)
+	if not str or strlen(str) == 0 or not sep or strlen(sep) == 0 then
+		return str;
+	end
+	local output = {};
+	while string.len(str) > 0 do
+		local start,stop = string.find(str, sep);
+		if start then
+			if start > 1 then
+				table.insert(output, string.sub(str,1,start-1));
+			end
+			str = string.sub(str,stop+1);
+		else
+			table.insert(output, str);
+			str = "";
 		end
-		for f in string.gmatch(filter:lower(), "[^%;]+") do
-			if string.find(str:lower(), f) then
+	end
+	return unpack(output);
+end
+
+function SPF.match(str, filter)
+	if not str or strlen(str) == 0 or not filter or strlen(filter) == 0 then
+		return true;
+	end
+	str = strlower(str);
+	filter = strlower(string.gsub(filter, ";+", ";"));
+	while strlen(filter) > 0 do
+		local startPos, endPos = strfind(filter, "[^%;]+");
+		if startPos then
+			local f = strsub(filter, startPos, endPos);
+			if strfind(str, f) then
 				return true;
 			end
+			filter = strsub(filter,endPos+2);
+		else
+			-- This only happens when filter == ";"
+			return true;
 		end
 	end
 end
@@ -118,42 +195,19 @@ end
 -- Return the group index if the skill matches the filter
 -- Return 0 to disable the filter
 -- Otherwise return nil
-function SPF2:GetGroup(side, skillIndex, groupIndex)
-	if SPF2:Custom(side.."Menu")["disabled"] then
+function SPF:GetGroup(side, skillIndex, groupIndex)
+	if SPF:Custom(side.."Menu")["disabled"] then
 		return 0;
 	else
-		local targetValue = SPF2.baseGetTradeSkillInfo(skillIndex);
-		for i = 1, #SPF2:GetMenu(side), 1 do
+		local targetValue = SPF.baseGetTradeSkillInfo(skillIndex);
+		for i = 1, getn(SPF:GetMenu(side)), 1 do
 			if groupIndex > 0 then
 				i = groupIndex;
 			end
 			
-			local button = SPF2:GetMenu(side)[i];
+			local button = SPF:GetMenu(side)[i];
 			
-			if SPF2.match(targetValue, button.filter) then
-				return i;
-			end
-			
-			if groupIndex > 0 then
-				return nil;
-			end
-		end
-	end
-	return nil;
-end
-function SPF2:GetGroupSpell(side, spellID, groupIndex)
-	if SPF2:Custom(side.."Menu")["disabled"] then
-		return 0;
-	else
-		local spellName = GetSpellInfo(spellID);
-		for i = 1, #SPF2:GetMenu(side), 1 do
-			if groupIndex > 0 then
-				i = groupIndex;
-			end
-			
-			local button = SPF2:GetMenu(side)[i];
-			
-			if SPF2.match(spellName, button.filter) then
+			if SPF.match(targetValue, button.filter) then
 				return i;
 			end
 			
@@ -165,57 +219,88 @@ function SPF2:GetGroupSpell(side, spellID, groupIndex)
 	return nil;
 end
 
-function SPF2:FilterWithSearchBox(skillIndex)
+function SPF:GetGroupSpell(side, spellID, groupIndex)
+	if SPF:Custom(side.."Menu")["disabled"] then
+		return 0;
+	else
+		local spellName = SPF.GetRecipeInfo(spellID, "name");
+		for i = 1, getn(SPF:GetMenu(side)), 1 do
+			if groupIndex > 0 then
+				i = groupIndex;
+			end
+			
+			local button = SPF:GetMenu(side)[i];
+			
+			if SPF.match(spellName, button.filter) then
+				return i;
+			end
+			
+			if groupIndex > 0 then
+				return nil;
+			end
+		end
+	end
+	return nil;
+end
+
+function SPF:FilterWithSearchBox(skillIndex)
 	
-	if SPF2.SearchBox ~= nil then
-		local searchFilter = SPF2.trim(SPF2.SearchBox:GetText():lower());
-		local skillName, skillType, numAvailable, isExpanded, altVerb, numSkillUps = SPF2.baseGetTradeSkillInfo(skillIndex);
+	if SPF.SearchBox ~= nil then
+		local searchFilter = SPF.trim(strlower(SPF.SearchBox:GetText()));
+		if not searchFilter or strlen(searchFilter) == 0 then
+			return true;
+		end
+		
+		local skillName = SPF.baseGetTradeSkillInfo(skillIndex);
+		if not skillName or strlen(skillName) == 0 then
+			return true;
+		end
 		
 		-- Check the Name
-		if (SPF2:SavedData()["SearchNames"] ~= false) then
-			if strmatch(skillName:lower(), searchFilter) ~= nil then
+		if (SPF:SavedData()["SearchNames"] ~= false) then
+			if SPF.match(skillName, searchFilter) then
 				return true;
 			end
 		end
 		
 		-- Check the Headers
-		if (SPF2:SavedData()["SearchHeaders"] ~= false) then
+		if (SPF:SavedData()["SearchHeaders"] ~= false) then
 			
 			-- Check the LeftMenu
-			if not SPF2:Custom("LeftMenu")["disabled"] then
-				if SPF2:GetMenu("Left") then
-					for	i,button in ipairs(SPF2:GetMenu("Left")) do
-						if strmatch(button.name:lower(), searchFilter) ~= nil then
-							local groupIndex = SPF2.LeftMenu:Filter(skillIndex, i) or 0;
-							if groupIndex > 0 then
-								return true;
-							end
-						end
-					end
-				else
-					if SPF2.OriginalHeaders then
-						if strmatch(SPF2.OriginalHeaders[skillIndex]:lower(), searchFilter) ~= nil then
+			if not SPF:Custom("LeftMenu")["disabled"] then
+				if SPF:GetMenu("Left") then
+					local leftHeaderID = SPF.LeftMenu:Filter(skillIndex, 0);
+					if leftHeaderID and leftHeaderID > 0 then
+						local leftHeaderName = SPF:GetMenu("Left")[leftHeaderID].name;
+						if SPF.match(leftHeaderName, searchFilter) then
 							return true;
 						end
 					end
+				else
+					-- TODO: filter default DropDown
 				end
 			end
 			
 			-- Check the RightMenu
-			if not SPF2:Custom("RightMenu")["disabled"] then
-				if SPF2:GetMenu("Right") then
-					for	i,button in ipairs(SPF2:GetMenu("Right")) do
-						if strmatch(button.name:lower(), searchFilter) ~= nil then
-							local groupIndex = SPF2.RightMenu:Filter(skillIndex, i) or 0;
-							if groupIndex > 0 then
-								return true;
-							end
+			if not SPF:Custom("RightMenu")["disabled"] then
+				if SPF:GetMenu("Right") then
+					local rightHeaderID = SPF.RightMenu:Filter(skillIndex, 0);
+					if rightHeaderID and rightHeaderID > 0 then
+						local rightHeaderName = SPF:GetMenu("Right")[rightHeaderID].name;
+						if SPF.match(rightHeaderName, searchFilter) then
+							return true;
 						end
 					end
 				else
-					local groupIndex = SPF2.RightMenu:Filter(skillIndex, 0);
-					local groupName = select(groupIndex, GetTradeSkillInvSlots());						
-					if strmatch(groupName:lower(), searchFilter) ~= nil then
+					local groupIndex = SPF.RightMenu:Filter(skillIndex, 0);
+					for i,gN in pairs(SPF.GetTradeSkillInvSlots()) do
+						if groupIndex == i then
+							groupName = gN;
+							break;
+						end
+					end
+					
+					if groupName and SPF.match(groupName, searchFilter) then
 						return true;
 					end
 				end
@@ -223,11 +308,11 @@ function SPF2:FilterWithSearchBox(skillIndex)
 		end
 		
 		-- Check the Reagents
-		if (SPF2:SavedData()["SearchReagents"] ~= false) then
-			for i = 1, SPF2.baseGetTradeSkillNumReagents(skillIndex), 1 do
-				local reagentName, reagentTexture, reagentCount, playerReagentCount = SPF2.baseGetTradeSkillReagentInfo(skillIndex, i);
+		if (SPF:SavedData()["SearchReagents"] ~= false) then
+			for i = 1, SPF.baseGetTradeSkillNumReagents(skillIndex), 1 do
+				local reagentName, reagentTexture, reagentCount, playerReagentCount = SPF.baseGetTradeSkillReagentInfo(skillIndex, i);
 				
-				if (reagentName and strmatch(reagentName:lower(), searchFilter)) then
+				if (reagentName and SPF.match(reagentName, searchFilter)) then
 					return true
 				end
 			end
@@ -237,57 +322,73 @@ function SPF2:FilterWithSearchBox(skillIndex)
 	return false;
 end
 
-function SPF2:FilterSpellWithSearchBox(spellID)
+function SPF:FilterSpellWithSearchBox(spellID)
 	
-	if SPF2.SearchBox ~= nil then
-		local searchFilter = SPF2.trim(SPF2.SearchBox:GetText():lower());
-		local spellName = GetSpellInfo(spellID);
+	if SPF.SearchBox ~= nil then
+		
+		local searchFilter = SPF.trim(strlower(SPF.SearchBox:GetText()));
+		if not searchFilter or strlen(searchFilter) == 0 then
+			return true;
+		end
+		
+		local spellName = SPF.GetRecipeInfo(spellID, "name");
+		if not spellName or strlen(spellName) == 0 then
+			return true;
+		end
 		
 		-- Check the Name
-		if (SPF2:SavedData()["SearchNames"] ~= false) then
-			if strmatch(spellName:lower(), searchFilter) ~= nil then
+		if (SPF:SavedData()["SearchNames"] ~= false) then
+			if SPF.match(spellName, searchFilter) then
 				return true;
 			end
 		end
 		
 		-- Check the Headers
-		if (SPF2:SavedData()["SearchHeaders"] ~= false) then
+		if (SPF:SavedData()["SearchHeaders"] ~= false) then
 			
 			-- Check the LeftMenu
-			if not SPF2:Custom("LeftMenu")["disabled"] then
-				if SPF2:GetMenu("Left") then
-					for	i,button in ipairs(SPF2:GetMenu("Left")) do
-						if strmatch(button.name:lower(), searchFilter) ~= nil then
-							local groupIndex = SPF2.LeftMenu:FilterSpell(spellID, i) or 0;
-							if groupIndex > 0 then
-								return true;
-							end
+			if not SPF:Custom("LeftMenu")["disabled"] then
+				if SPF:GetMenu("Left") then
+					local leftHeaderID = SPF.LeftMenu:FilterSpell(spellID, 0);
+					if leftHeaderID and leftHeaderID > 0 then
+						local leftHeaderName = SPF:GetMenu("Left")[leftHeaderID].name;
+						if SPF.match(leftHeaderName, searchFilter) then
+							return true;
 						end
 					end
 				else
-					-- if SPF2.OriginalHeaders then
-						-- if strmatch(SPF2.OriginalHeaders[skillIndex]:lower(), searchFilter) ~= nil then
-							-- return true;
-						-- end
-					-- end
+					local groupIndex = SPF.LeftMenu:FilterSpell(spellID, 0);
+					for i,gN in ipairs(SPF.GetTradeSkillSubClasses()) do
+						if groupIndex == i then
+							groupName = gN;
+							break;
+						end
+					end
+					if groupName and SPF.match(groupName, searchFilter) then
+						return true;
+					end
 				end
 			end
 			
 			-- Check the RightMenu
-			if not SPF2:Custom("RightMenu")["disabled"] then
-				if SPF2:GetMenu("Right") then
-					for	i,button in ipairs(SPF2:GetMenu("Right")) do
-						if strmatch(button.name:lower(), searchFilter) ~= nil then
-							local groupIndex = SPF2.RightMenu:FilterSpell(spellID, i) or 0;
-							if groupIndex > 0 then
-								return true;
-							end
+			if not SPF:Custom("RightMenu")["disabled"] then
+				if SPF:GetMenu("Right") then
+					local rightHeaderID = SPF.RightMenu:FilterSpell(spellID, 0);
+					if rightHeaderID and rightHeaderID > 0 then
+						local rightHeaderName = SPF:GetMenu("Right")[rightHeaderID].name;
+						if SPF.match(rightHeaderName, searchFilter) then
+							return true;
 						end
 					end
 				else
-					local groupIndex = SPF2.RightMenu:FilterSpell(spellID, 0);
-					local groupName = select(groupIndex, GetTradeSkillInvSlots());						
-					if strmatch(groupName:lower(), searchFilter) ~= nil then
+					local groupIndex = SPF.RightMenu:FilterSpell(spellID, 0);
+					for i,gN in ipairs(SPF.GetTradeSkillInvSlots()) do
+						if groupIndex == i then
+							groupName = gN;
+							break;
+						end
+					end
+					if groupName and SPF.match(groupName, searchFilter) then
 						return true;
 					end
 				end
@@ -295,93 +396,36 @@ function SPF2:FilterSpellWithSearchBox(spellID)
 		end
 		
 		-- Check the Reagents
-		if (SPF2:SavedData()["SearchReagents"] ~= false) then
+		if (SPF:SavedData()["SearchReagents"] ~= false) then
 			
-			local reagents = SPF2.GetRecipeInfo(spellID, "reagents") or {};
+			local reagents = SPF.GetRecipeInfo(spellID, "reagents") or {};
 			
 			for i,reagentInfo in ipairs(reagents) do
 				local itemID = reagentInfo["itemID"];
 				if itemID then
-					local itemName = GetItemInfo(itemID);
+					local itemName = SPF.GetItemInfo(itemID);
 					
-					if (itemName and strmatch(itemName:lower(), searchFilter)) then
-						return true
+					if (itemName and SPF.match(itemName, searchFilter)) then
+						return true;
 					end
 				end
 			end
 		end
+
+		return false;
 	end
 	
-	return false;
+	return true;
 end
 
-function SPF2.TradeSkillFrame_PostUpdate()
-	
-	-- Check if there are any headers
-	if SPF2.Headers then
-		-- If has headers show the expand all button
-		if #SPF2.Headers > 0 then
-			-- If has headers then move all the names to the right
-			for i=1, TRADE_SKILLS_DISPLAYED, 1 do
-				_G["TradeSkillSkill"..i.."Text"]:ClearAllPoints();
-				if i == SPF2.ONCLICK then
-					SPF2.ONCLICK = nil;
-					_G["TradeSkillSkill"..i.."Text"]:SetPoint("LEFT", "TradeSkillSkill"..i, "LEFT", 22.65, -1.65);
-				else
-					_G["TradeSkillSkill"..i.."Text"]:SetPoint("LEFT", "TradeSkillSkill"..i, "LEFT", 21, 0);
-				end
-			end
-			TradeSkillExpandButtonFrame:Show();
-		else
-			-- If no headers then move all the names to the left
-			for i=1, TRADE_SKILLS_DISPLAYED, 1 do
-				_G["TradeSkillSkill"..i.."Text"]:ClearAllPoints();
-				if i == SPF2.ONCLICK then
-					SPF2.ONCLICK = nil;
-					_G["TradeSkillSkill"..i.."Text"]:SetPoint("LEFT", "TradeSkillSkill"..i, "LEFT", 4.65, -1.65);
-				else
-					_G["TradeSkillSkill"..i.."Text"]:SetPoint("LEFT", "TradeSkillSkill"..i, "LEFT", 3, 0);
-				end
-			end
-			TradeSkillExpandButtonFrame:Hide();
-		end
-	end
-	
-	if not SPF2.FIRST then
-		SPF2.ClearTradeSkill();
-	end
-	
-	-- LeatrixPlus compatibility
-    if (LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On" and TradeSkillSkill23) then
-		if SPF2.Headers and #SPF2.Headers == 0 and SPF2.FIRST then
-			TradeSkillSkill1:SetPoint("TOPLEFT", TradeSkillFrame, "TOPLEFT", 22, -81);
-			if SPF2.Data and #SPF2.Data > 22  then
-				TradeSkillSkill23:Show();
-			end
-		else
-			TradeSkillSkill23:Hide();
-			TradeSkillSkill1:SetPoint("TOPLEFT", TradeSkillFrame, "TOPLEFT", 22, -96);
-		end
-    end
-	
-	if SPF2.TradeSkillName ~= GetTradeSkillName() then
-		SPF2.TradeSkillName = GetTradeSkillName();
-		SPF2.FullUpdate();
-	end
-	
-	SPF2.Starred.OnUpdate();
-end
-
-hooksecurefunc("TradeSkillFrame_Update", SPF2.TradeSkillFrame_PostUpdate);
-
-function SPF2.TradeSkillReagent_OnClick(self, button, down)
+function SPF.TradeSkillReagent_OnClick(self, button, down)
 	if button ~= "LeftButton" or IsShiftKeyDown() or IsControlKeyDown() or IsAltKeyDown() then
 		return;
 	end
 	for i=1, MAX_TRADE_SKILL_REAGENTS do
-		if _G["TradeSkillReagent"..i] == self then
-			local reagentName = GetTradeSkillReagentInfo(SPF2.SELECTED, i);
-			local reagentSkill = SPF2.GetTradeSkillFromName(reagentName);
+		if getfenv()["TradeSkillReagent"..i] == self then
+			local reagentName = GetTradeSkillReagentInfo(SPF.SELECTED, i);
+			local reagentSkill = SPF.GetTradeSkillFromName(reagentName);
 			if reagentSkill then
 				TradeSkillFrame_SetSelection(reagentSkill);
 				TradeSkillFrame_Update();
@@ -391,7 +435,7 @@ function SPF2.TradeSkillReagent_OnClick(self, button, down)
 	end
 end
 
-function SPF2.GetTradeSkillFromName(targetName)
+function SPF.GetTradeSkillFromName(targetName)
 	for j=1, GetNumTradeSkills() do
 		local skillName = GetTradeSkillInfo(j);
 		if targetName == skillName then
@@ -399,15 +443,15 @@ function SPF2.GetTradeSkillFromName(targetName)
 		end
 	end
 end
-
+--[[
 for i=1, MAX_TRADE_SKILL_REAGENTS do
-	local reagentButton = _G["TradeSkillReagent"..i];
+	local reagentButton = getfenv()["TradeSkillReagent"..i];
 	local createButton = CreateFrame("Button", "TradeSkillReagent"..i.."CreateButton", reagentButton, "MagicButtonTemplate");
 	
-	reagentButton:HookScript("OnClick", SPF2.TradeSkillReagent_OnClick);
+	reagentButton:HookScript("OnClick", SPF.TradeSkillReagent_OnClick);
 	
 	-- Create the Button
-	_G["TradeSkillReagent"..i.."CreateButton"] = createButton;
+	getfenv()["TradeSkillReagent"..i.."CreateButton"] = createButton;
 	createButton.LeftSeparator:Hide();
 	createButton.RightSeparator:Hide();
 	-- Set size and position
@@ -420,9 +464,9 @@ for i=1, MAX_TRADE_SKILL_REAGENTS do
 	createButton.id = i;
 	
 	function createButton:OnClick()
-		local reagentName, _, reagentCount, playerReagentCount = SPF2.GetTradeSkillReagentInfo(SPF2.SELECTED, createButton.id);
+		local reagentName, _, reagentCount, playerReagentCount = SPF.GetTradeSkillReagentInfo(SPF.SELECTED, createButton.id);
 		
-		local skillIndex = SPF2.CraftedItems[reagentName];
+		local skillIndex = SPF.CraftedItems[reagentName];
 		if skillIndex then
 			DoTradeSkill(skillIndex, reagentCount * TradeSkillInputBox:GetNumber() - playerReagentCount);
 		end
@@ -433,10 +477,10 @@ for i=1, MAX_TRADE_SKILL_REAGENTS do
 	function createButton:Update()
 		if not TradeSkillFrame:IsVisible() then return; end
 		local reagentName, reagentCount, playerReagentCount;
-		if SPF2.SELECTED then
-			reagentName, _, reagentCount, playerReagentCount = SPF2.GetTradeSkillReagentInfo(SPF2.SELECTED, createButton.id);
+		if SPF.SELECTED then
+			reagentName, _, reagentCount, playerReagentCount = SPF.GetTradeSkillReagentInfo(SPF.SELECTED, createButton.id);
 		end
-		if not SPF2.CraftedItems[reagentName] then
+		if not SPF.CraftedItems[reagentName] then
 			createButton:Hide();
 		else
 			createButton:Show();
@@ -446,7 +490,7 @@ for i=1, MAX_TRADE_SKILL_REAGENTS do
 				createAmount = 0;
 			end
 			
-			local _,_, numAvailable = SPF2.baseGetTradeSkillInfo(SPF2.CraftedItems[reagentName]);
+			local _,_, numAvailable = SPF.baseGetTradeSkillInfo(SPF.CraftedItems[reagentName]);
 			
 			createButton:SetEnabled(numAvailable >= createAmount and createAmount > 0);
 			createButton:SetText(L["CRAFT_REAGENT"]..": "..createAmount);
@@ -454,28 +498,28 @@ for i=1, MAX_TRADE_SKILL_REAGENTS do
 		
 		if createButton.id == MAX_TRADE_SKILL_REAGENTS then
 			for i=4,MAX_TRADE_SKILL_REAGENTS,2 do
-				local leftReagent = _G["TradeSkillReagent"..(i-1)];
-				local rightReagent = _G["TradeSkillReagent"..(i)];
-				if _G["TradeSkillReagent"..(i-3).."CreateButton"]:IsVisible() or _G["TradeSkillReagent"..(i-2).."CreateButton"]:IsVisible() then
-					leftReagent:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i-3)], "BOTTOMLEFT", 0, -20);
-					rightReagent:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i-2)], "BOTTOMLEFT", 0, -20);
+				local leftReagent = getfenv()["TradeSkillReagent"..(i-1)];
+				local rightReagent = getfenv()["TradeSkillReagent"..(i)];
+				if getfenv()["TradeSkillReagent"..(i-3).."CreateButton"]:IsVisible() or getfenv()["TradeSkillReagent"..(i-2).."CreateButton"]:IsVisible() then
+					leftReagent:SetPoint("TOPLEFT", getfenv()["TradeSkillReagent"..(i-3)], "BOTTOMLEFT", 0, -20);
+					rightReagent:SetPoint("TOPLEFT", getfenv()["TradeSkillReagent"..(i-2)], "BOTTOMLEFT", 0, -20);
 				else
-					leftReagent:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i-3)], "BOTTOMLEFT", 0, -2);
-					rightReagent:SetPoint("TOPLEFT", _G["TradeSkillReagent"..(i-2)], "BOTTOMLEFT", 0, -2);
+					leftReagent:SetPoint("TOPLEFT", getfenv()["TradeSkillReagent"..(i-3)], "BOTTOMLEFT", 0, -2);
+					rightReagent:SetPoint("TOPLEFT", getfenv()["TradeSkillReagent"..(i-2)], "BOTTOMLEFT", 0, -2);
 				end
 			end
 		end
 	end
-	hooksecurefunc("TradeSkillFrame_Update", createButton.Update);
+	SPF.hooksecurefunc("TradeSkillFrame_Update", createButton.Update);
 end
-
-function SPF2.ClearTradeSkill()
+]]--
+function SPF.ClearTradeSkill()
 	TradeSkillSkillName:Hide();
 	TradeSkillSkillIcon:Hide();
 	TradeSkillRequirementLabel:Hide();
 	TradeSkillRequirementText:SetText("");
 	for i=1, MAX_TRADE_SKILL_REAGENTS, 1 do
-		_G["TradeSkillReagent"..i]:Hide();
+		getfenv()["TradeSkillReagent"..i]:Hide();
 	end
 	TradeSkillDetailScrollFrameScrollBar:Hide();
 	TradeSkillDetailScrollFrameTop:Hide();
@@ -484,34 +528,43 @@ function SPF2.ClearTradeSkill()
 	TradeSkillCreateButton:Disable();
 	TradeSkillCreateAllButton:Disable();
 	TradeSkillReagentLabel:Hide();
+	-- TradeSkillDescription:Hide();
+	-- TradeSkillCost:Hide();
 end
-
-function SPF2.ClearNewFeatures()
+--[[
+function SPF.ClearNewFeatures()
 	TradeSkillFrameAvailableFilterCheckButton:SetChecked(false);
 	TradeSkillFrameAvailableFilterCheckButton:Hide();
 	TradeSkillOnlyShowMakeable(false);
 end
 
-TradeSkillFrameAvailableFilterCheckButton:SetScript("OnShow", SPF2.ClearNewFeatures);
+TradeSkillFrameAvailableFilterCheckButton:SetScript("OnShow", SPF.ClearNewFeatures);
+]]--
+function SPF.FullUpdate(keepCollapsed)
+	if not TradeSkillFrame:IsVisible() then
+		return;
+	end
 
-function SPF2.FullUpdate(keepCollapsed)
 	if not keepCollapsed then
-		SPF2.Collapsed = nil;
+		SPF.Collapsed = nil;
 	end
 	
-	SPF2.FILTERED = nil;
-	SPF2.GetNumTradeSkills();
+	SPF.FILTERED = nil;
+	
+	SPF.GetNumTradeSkills();
 	TradeSkillListScrollFrameScrollBar:SetValue(0);
-	if SPF2.FIRST then
+	if SPF.FIRST then
 		FauxScrollFrame_SetOffset(TradeSkillListScrollFrame, 0);
-		SPF2.TradeSkillFrame_SetSelection(SPF2.FIRST);
+		SPF.TradeSkillFrame_SetSelection(SPF.FIRST);
 	end
 	TradeSkillFrame_Update();
+	SPF.PortraitChanger.OnShow();
+	SPF.CheckBoxBar.OnShow();
 end
 
-function SPF2.GetRecipeInfo(spellID, infoType)
+function SPF.GetRecipeInfo(spellID, infoType1, infoType2)
 	
-	if not(spellID) and infoType then
+	if not(spellID) and (infoType1 or infoType2) then
 		return;
 	end
 	
@@ -524,8 +577,12 @@ function SPF2.GetRecipeInfo(spellID, infoType)
 			if Recipes then
 				if spellID then
 					if  Recipes[spellID] then
-						if infoType then
-							return Recipes[spellID][infoType];
+						if infoType1 then
+							if infoType2 then
+								return Recipes[spellID][infoType1], Recipes[spellID][infoType2];
+							else
+								return Recipes[spellID][infoType1];
+							end
 						else
 							return Recipes[spellID];
 						end
@@ -533,6 +590,57 @@ function SPF2.GetRecipeInfo(spellID, infoType)
 				else
 					return Recipes;
 				end
+			end
+		end
+	end
+end
+
+function SPF.GetRecipeSpellID(spellName)
+	
+	if not(spellName) then
+		return;
+	end
+	
+	local RI = SigmaProfessionFilter_RecipeInfo;
+	
+	if RI and RI.Data then
+		local professionName = GetTradeSkillName();
+		if professionName then
+			local Recipes = RI.Data[professionName];
+			if Recipes then
+				for id,spell in pairs(Recipes) do
+					if spell and spell.name == spellName then
+						return id;
+					end
+				end
+			end
+		end
+	end
+end
+
+function SPF.baseGetTradeSkillItemLevel(index)
+	for i,value in pairs({GetTradeSkillItemStats(index)}) do
+		if strfind(value, "^Level (%d+)$") then
+			return string.gsub(value, "^Level (%d+)$", "%1");
+		end
+	end
+
+end
+
+function SPF.GetRequiresText(skillIndex)
+	local learnedAt = SPF.Data[skillIndex]["learnedAt"];
+	if learnedAt then
+		if SPF:Custom("Functions")["requiresText"] then
+			return SPF:Custom("Functions")["requiresText"](learnedAt);
+		else
+			if learnedAt then
+				local color = "|cffffffff";
+				_, currentLevel = GetTradeSkillLine();
+				if currentLevel < learnedAt then
+					color = "|cffff0000";
+				end
+				local requiresText = "Requires "..GetTradeSkillName().." ("..learnedAt..")";
+				return color..requiresText.."|r\n\n";
 			end
 		end
 	end

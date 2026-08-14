@@ -1,4 +1,6 @@
-local _, L = ...;
+SigmaProfessionFilterAlchemy = {};
+SigmaProfessionFilterAlchemy.L = {};
+local L = SigmaProfessionFilterAlchemy.L;
 
 -- Profession
 L["PROFESSION"] = "Alchemy";
@@ -21,7 +23,7 @@ L["RIGHT_02_FILTER"] = "Flask";
 L["RIGHT_03_FILTER"] = "Potion";
 L["RIGHT_04_FILTER"] = "Transmute";
 L["RIGHT_05_FILTER"] = "Oil";
-L["RIGHT_06_FILTER"] = GetSpellInfo(11456);
-L["RIGHT_07_FILTER"] = GetSpellInfo(11473);
-L["RIGHT_08_FILTER"] = GetSpellInfo(11459)..";"..GetSpellInfo(17632);
+L["RIGHT_06_FILTER"] = "Rocket";
+L["RIGHT_07_FILTER"] = "Ghost";
+L["RIGHT_08_FILTER"] = "Philosopher;Alchemist";
 L["RIGHT_09_FILTER"] = "";

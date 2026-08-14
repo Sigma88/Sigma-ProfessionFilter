@@ -5,8 +5,8 @@ SPF1.CheckBoxBar = CreateFrame("Frame", "CheckBoxBar", CraftFrame);
 
 function SPF1.CheckBoxBar.OnLoad()
 	SPF1.CheckBoxBar:SetScript("OnShow", SPF1.CheckBoxBar.OnShow);
-	-- Moved to CraftFrame/Core/ReplaceFunctions --hooksecurefunc("CraftFrame_OnShow", SPF1.CheckBoxBar.OnShow);
-	SPF1.CheckBoxBar:SetScript("OnUpdate", SPF1.CheckBoxBar.OnShow);
+	SPF1["CFOnShow"]["SPF1.CheckBoxBar.OnShow"] = SPF1.CheckBoxBar.OnShow;
+	
 	SPF1.CheckBoxBar:SetHeight(16);
 	
 	SPF1.CheckBoxBar.Buttons = {};

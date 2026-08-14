@@ -13,7 +13,7 @@ Localization\frFR.lua
 
 CraftFrame\Core\Utility.lua
 CraftFrame\Core\DefineFunctions.lua
-CraftFrame\Core\Blizzard_CraftUI.lua
+CraftFrame\Core\LocalTooltip.lua
 
 CraftFrame\Frames\MSACompatibility.lua
 CraftFrame\Frames\DropDowns\LeftMenu.lua

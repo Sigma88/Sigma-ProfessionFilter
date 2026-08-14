@@ -1,7 +1,103 @@
-local _, L = ...;
-local SPF1 = SigmaProfessionFilter[1];
+local SPFBT = SigmaProfessionFilterBeastTraining;
+local L = SPFBT.L;
+local SPF = SigmaProfessionFilter[1];
+
+function SPFBT.Pets()
+	local pets = nil;
+	for i = 0, 2, 1 do
+		local pet = ({GetStablePetInfo(i)})[2] or UnitCreatureFamily("pet");
+		if pet then
+			if not pets then
+				pets = pet;
+			else
+				pets = pets..";"..pet;
+			end
+		end
+	end
+	return pets;
+end
 
 SigmaProfessionFilter[L["PROFESSION"]] = {
+	["Functions"] = {
+		["GetCraftDescription"] = function(skillIndex)
+			if SPF.Data and SPF.Data[skillIndex] then
+				if SPF.Data[skillIndex]["original"] then
+					return;
+				end
+				
+				if SPF.Data[skillIndex]["creates"] then
+					return "";
+				end
+				
+				if SPF.Data[skillIndex]["spellID"] and SPF.Data[skillIndex]["skillSubSpellName"] then
+					SPF.LocalTooltip:SetCraftItem(skillIndex);
+					return "|cffffd100"..SPFCraftLocalTooltipTextLeft3:GetText().."\n".."|cffffd100"..SPFCraftLocalTooltipTextLeft4:GetText();
+				end
+			end
+		end;
+		["nameWithLevel"] = function(skillIndex, unlearned)
+			if unlearned then
+				local skillName, skillSubSpellName = SPF.GetRecipeInfo(skillIndex, "name", "skillSubSpellName");
+				return (skillName or "")..string.gsub(skillSubSpellName or "", " (%d)$", " 0%1");
+			else
+				local skillName, skillSubSpellName  = SPF.baseGetCraftInfo(skillIndex);
+				return (skillName or "")..string.gsub(skillSubSpellName or "", " (%d)$", " 0%1");
+			end
+		end;
+		["requiresText"] = function(learnedAt)
+			local color = "|cffffffff";
+			if UnitLevel("pet") > 0 and UnitLevel("pet") < learnedAt then
+				color = "|cffff0000";
+			end
+			local requiresText = "|cffffffff".."Requires: Pet Level "..color..learnedAt.."|r";
+			CraftRequirements:SetText(requiresText);
+			CraftReagentLabel:Hide();
+			return requiresText;
+		end;
+		["SetCraftItem"] = function(tooltip, skillIndex, reagentIndex)
+			local skillName, skillSubSpellName = GetCraftInfo(skillIndex);
+			if not SPF.Data[skillIndex]["original"] then
+				if skillName then
+					tooltip:SetText(skillName);
+					tooltip:AddLine(SPF.GetRequiresText(skillIndex));
+					local spellID = SPF.Data[skillIndex]["spellID"];
+					local source = SPF:GetGroupSpell("Right", spellID, 0);
+					tooltip:AddLine("Learned From: |cffffffff"..(SPF:GetMenu("Right")[source].name or "").."|r");
+					
+					local usedBy = nil;
+					local pets = SPFBT.Pets();
+					for i = 4, getn(SPF:GetMenu("Right")), 1 do
+						if (SPF:GetGroupSpell("Right", spellID, i) == i) then
+							local color = "|cffffffff";
+							local family = SPF:GetMenu("Right")[i].name;
+							if pets and not SPF.match(family, pets) then
+								color = "|cff808080";
+							end
+							if not usedBy then
+								usedBy = "Used by Pets: ";
+							else
+								usedBy = usedBy..", ";
+							end
+							usedBy = usedBy..color..family.."|cffffffff";
+						end
+					end
+					if not usedBy then
+						usedBy = "Used by Pets: ".."|cffffffff".."All Families";
+					end
+					tooltip:AddLine(usedBy..".", nil, nil, nil, true);
+				end
+			end
+			if skillSubSpellName then
+				local rankText = getfenv()[(tooltip:GetName() or "-").."TextRight1"];
+				if rankText then
+					rankText:Show();
+					rankText:SetText(skillSubSpellName);
+					rankText:SetTextColor(0.5, 0.5, 0.5, 1);
+				end
+			end
+			tooltip:Show();
+		end;
+	};
 	["LeftMenu"] = {
 		["title"] = L["LEFT_TITLE"];
 		["tooltip"] = L["LEFT_TOOLTIP"];
@@ -21,44 +117,78 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 		["title"] = L["RIGHT_TITLE"];
 		["tooltip"] = L["RIGHT_TOOLTIP"];
 		["Filter"] = function(craftIndex, groupIndex)
-			if groupIndex < 3 then
-				return SPF1:GetGroup("Right", craftIndex, groupIndex);
-			end
-			
-			local wildAnimals = SPF1:GetGroup("Right", craftIndex, 1);
-			local petTrainer = SPF1:GetGroup("Right", craftIndex, 2);
-			
-			if groupIndex == 3 then
-				if (not wildAnimals) and (not petTrainer) then
-					return 3;
-				else
-					return nil;
+			-- 0 == AllSources
+			-- 1 == WildAnimals
+			-- 2 == PetTrainer
+			-- 3 == Other
+			if groupIndex == 0 or groupIndex == 3 then
+				local wildAnimals = SPF:GetGroup("Right", craftIndex, 1);
+				local petTrainer = SPF:GetGroup("Right", craftIndex, 2);
+				
+				-- when "Other" is selected the filter matches only if the source is unknown
+				if groupIndex == 3 then
+					if (not wildAnimals) and (not petTrainer) then
+						return 3;
+					else
+						return nil;
+					end
 				end
+				
+				-- when there is no selection return "wildAnimals" or "PetTrainer" or "Other"
+				return wildAnimals or petTrainer or 3;
 			end
-			
-			return wildAnimals or petTrainer;
+
+			-- when "wildAnimals" or "PetTrainer" or a specific pet family is selected
+			-- the filter matches with the normal rules
+			return SPF:GetGroup("Right", craftIndex, groupIndex);
+		end;
+		["FilterSpell"] = function(spellID, groupIndex)
+			-- 0 == AllSources
+			-- 1 == WildAnimals
+			-- 2 == PetTrainer
+			-- 3 == Other
+			if groupIndex == 0 or groupIndex == 3 then
+				local wildAnimals = SPF:GetGroupSpell("Right", spellID, 1);
+				local petTrainer = SPF:GetGroupSpell("Right", spellID, 2);
+				
+				-- when "Other" is selected the filter matches only if the source is unknown
+				if groupIndex == 3 then
+					if (not wildAnimals) and (not petTrainer) then
+						return 3;
+					else
+						return nil;
+					end
+				end
+				
+				-- when there is no selection return "wildAnimals" or "PetTrainer" or "Other"
+				return wildAnimals or petTrainer or 3;
+			end
+
+			-- when "wildAnimals" or "PetTrainer" or a specific pet family is selected
+			-- the filter matches with the normal rules
+			return SPF:GetGroupSpell("Right", spellID, groupIndex);
 		end;
 		["Initialize"] = function()
-			if (SPF1:GetMenu("Right")) then
+			if (SPF:GetMenu("Right")) then
 				local info = {};
 				info.text = L["RIGHT_TITLE"];
-				info.func = SPF1.RightMenu.OnClick;
+				info.func = SPF.RightMenu.OnClick;
 				info.checked = false;
 
 				UIDropDownMenu_AddButton(info);
 
-				for i,button in ipairs(SPF1:GetMenu("Right")) do
+				for i,button in ipairs(SPF:GetMenu("Right")) do
 					info = {};
 					info.text = button.name;
-					info.func = SPF1.RightMenu.OnClick;
+					info.func = SPF.RightMenu.OnClick;
 					info.checked = false;
 
 					if i > 3 then
-						if UnitExists("pet") then
-							local _,_,_,petFamily = GetStablePetInfo(0);
-							if info.text ~= petFamily then
-								info.colorCode = "|cff808080";
-							end
+						local pets = SPFBT.Pets();
+						if pets and not SPF.match(info.text, pets) then
+							info.textR = 0.5;
+							info.textG = 0.5;
+							info.textB = 0.5;
 						end
 					end
 					
@@ -92,40 +222,20 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 	["Portrait"] = {
 		["Icon"] = function()
 			if UnitExists("pet") then
-				local _,_,_,petFamily = GetStablePetInfo(0);
-				return SigmaProfessionFilter[L["PROFESSION"]]["PetFamily"][petFamily] or 134400;
+				return GetPetIcon();
 			end
-			return 132162;
+			return SPF.GetProfessionIcon();
 		end;
-	};
-	["PetFamily"] = {
-		[L["PET_FAMILY_01"]] = 132203;
-		[L["PET_FAMILY_02"]] = 132185;
-		[L["PET_FAMILY_03"]] = 132196;
-		[L["PET_FAMILY_04"]] = 132183;
-		[L["PET_FAMILY_05"]] = 132184;
-		[L["PET_FAMILY_06"]] = 132187;
-		[L["PET_FAMILY_07"]] = 132200;
-		[L["PET_FAMILY_08"]] = 132186;
-		[L["PET_FAMILY_09"]] = 132189;
-		[L["PET_FAMILY_10"]] = 132193;
-		[L["PET_FAMILY_11"]] = 132198;
-		[L["PET_FAMILY_12"]] = 132195;
-		[L["PET_FAMILY_13"]] = 132199;
-		[L["PET_FAMILY_14"]] = 132182;
-		[L["PET_FAMILY_15"]] = 132190;
-		[L["PET_FAMILY_16"]] = 132192;
-		[L["PET_FAMILY_17"]] = 132202;
 	};
 	["Filter1"] = {
 		["text"] = L["FILTER1"];
 		["tooltip"] = L["FILTER1_TOOLTIP"];
 		["Filter"] = function(craftIndex)
-			local craftName, _, craftType, _, _, trainingPointCost = SPF1.baseGetCraftInfo(craftIndex);
-			
 			if not UnitExists("pet") then
 				return false;
 			end
+			
+			local craftName, _, craftType, _, _, trainingPointCost = SPF.baseGetCraftInfo(craftIndex);
 			
 			if craftType == "used" then
 				return false;
@@ -141,19 +251,20 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 		end;
 	};
 	["Filter2"] = {
-		["text"] = L["FILTER2"];"Trainable";
-		["tooltip"] = L["FILTER2_TOOLTIP"];"Only show the abilities for which your active pet has the required level and training points.";
+		["text"] = L["FILTER2"];--"Trainable";
+		["tooltip"] = L["FILTER2_TOOLTIP"];--"Only show the abilities for which your active pet has the required level and training points.";
 		["Filter"] = function(craftIndex)
-			local craftName, _, craftType, _, _, trainingPointCost, requiredLevel = SPF1.baseGetCraftInfo(craftIndex);
-			local _, _, petLevel = GetStablePetInfo(0);
-			
 			if not UnitExists("pet") then
 				return false;
 			end
 			
+			local craftName, _, craftType, _, _, trainingPointCost, requiredLevel = SPF.baseGetCraftInfo(craftIndex);
+			
 			if craftType == "used" then
 				return false;
 			end
+			
+			local petLevel = UnitLevel("pet");
 			
 			if petLevel < requiredLevel then
 				return false;
@@ -169,8 +280,8 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 				local trainingPointsAvailable = totalPoints - pointsSpent;
 				local trainingPointsRefund = 0;
 				
-				for i=SPF1.baseGetNumCrafts(), 1, -1 do
-					local cN, _, cT, _, _, tpC = SPF1.baseGetCraftInfo(craftIndex);
+				for i=SPF.baseGetNumCrafts(), 1, -1 do
+					local cN, _, cT, _, _, tpC = SPF.baseGetCraftInfo(craftIndex);
 					if cT == "used" then
 						if cN == craftName then
 							trainingPointsRefund = tpC;
@@ -194,7 +305,7 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 			if UnitExists("pet") then
 				GameTooltip:SetUnit("pet");
 			else
-				SPF1.PortraitChanger:DefaultTooltip();
+				SPF.PortraitChanger:DefaultTooltip();
 			end
 		end
 	};

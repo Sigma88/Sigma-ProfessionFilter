@@ -10,7 +10,7 @@ function SPF2.Unlearned.OnLoad()
 	SPF2.CheckBoxBar:AddButton(SPF2.Unlearned);
 	
 	SPF2.Unlearned:SetScript("OnShow", SPF2.Unlearned.OnShow);
-	hooksecurefunc("TradeSkillFrame_OnShow", SPF2.Unlearned.OnShow);
+	SPF2["TSFOnShow"]["SPF2.Unlearned.OnShow"] = SPF2.Unlearned.OnShow;
 	
 	local button = CreateFrame("CheckButton", nil, SPF2.Unlearned, "UICheckButtonTemplate");
 	button:SetWidth(15);
@@ -51,16 +51,21 @@ end
 
 function SPF2.Unlearned.OnClick()
 	
+	SPF2:SetSelected("Left", 0);
+	SPF2:SetSelected("Right", 0);
+	
 	if (SPF2.Unlearned.button:GetChecked()) then
-        PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
+        --PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
+		PlaySound("igMainMenuOptionCheckBoxOn");
 		SPF2:SavedData()["Unlearned"] = true;
     else
-        PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
+        --PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
+		PlaySound("igMainMenuOptionCheckBoxOff");
 		SPF2:SavedData()["Unlearned"] = nil;
 	end
 	
-	TradeSkillFrame_OnShow();
-	SPF2.FullUpdate();
+	SPF2.TradeSkillFrame_OnShow(TradeSkillFrame, true);
+	-- SPF2.FullUpdate();
 	SPF2.Unlearned:OnEnter();
 end
 

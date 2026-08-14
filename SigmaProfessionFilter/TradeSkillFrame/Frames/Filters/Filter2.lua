@@ -1,7 +1,9 @@
 local L = SigmaProfessionFilter.L;
 local SPF2 = SigmaProfessionFilter[2];
 
-SPF2.Filter2 = CreateFrame("CheckButton", nil, TradeSkillFrame, "UICheckButtonTemplate");
+SPF2.Filter2 = CreateFrame("CheckButton", "TradeSkillFilter2Button", TradeSkillFrame, "UICheckButtonTemplate");
+SPF2.Filter2.text = SPF2.Filter2:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall");
+SPF2.Filter2.text:SetPoint("LEFT", SPF2.Filter2, "RIGHT", 0, 0);
 
 function SPF2.Filter2.OnLoad()
 	SPF2.Filter2:RegisterForClicks("LeftButtonUp", "RightButtonUp");
@@ -12,7 +14,7 @@ function SPF2.Filter2.OnLoad()
 	SPF2.CheckBoxBar:AddButton(SPF2.Filter2);
 	
 	SPF2.Filter2:SetScript("OnShow", SPF2.Filter2.OnShow);
-	hooksecurefunc("TradeSkillFrame_OnShow", SPF2.Filter2.OnShow);
+	SPF2["TSFOnShow"]["SPF2.Filter2.OnShow"] = SPF2.Filter2.OnShow;
 	
 	SPF2.Filter2:SetScript("OnClick", SPF2.Filter2.OnClick);
 	SPF2.Filter2:SetScript("OnEnter", SPF2.Filter2.OnEnter);
@@ -33,24 +35,24 @@ function SPF2.Filter2:OnShow()
 	end
 end
 
-function SPF2.Filter2:OnClick(button)
-	if (button == "LeftButton") then
-		if (SPF2.Filter2:GetChecked()) then
-			PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
-		else
-			PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
-		end
-	
-		if GetTradeSkillName() then
-			SPF2.Filter2.Status[GetTradeSkillName()] = SPF2.Filter2:GetChecked();
-		end
-	else
+function SPF2.Filter2:OnClick()
+	if (arg1 == "RightButton") then
 		SPF2.Filter2:SetChecked(not(SPF2.Filter2:GetChecked()));
 		if SPF2:Custom("Filter2")["OnRightClick"] then
 			SPF2:Custom("Filter2")["OnRightClick"]();
 		else
 			SPF2.Filter2:OnRightClick();
 		end
+	else
+		if GetTradeSkillName() then
+			SPF2.Filter2.Status[GetTradeSkillName()] = SPF2.Filter2:GetChecked();
+		end
+	end
+
+	if (SPF2.Filter2:GetChecked()) then
+		PlaySound("igMainMenuOptionCheckBoxOn");
+	else
+		PlaySound("igMainMenuOptionCheckBoxOff");
 	end
     SPF2.FullUpdate();
 end
@@ -58,10 +60,12 @@ end
 function SPF2.Filter2:OnRightClick()
 	if SPF2:SavedData()["IncludeCraftableMats"] ~= false then
 		SPF2:SavedData()["IncludeCraftableMats"] = false;
-		print("|cffbc5ff4[SPF]|r|cffffcf00["..GetTradeSkillName().."]|r: "..L["TradeSkillFilter2RightClickOFF"]);
+		message = ("|cffbc5ff4[SPF]|r|cffffcf00["..GetTradeSkillName().."]|r: "..L["Filter2RightClickOFF"]);
+		DEFAULT_CHAT_FRAME:AddMessage(message, 1, 1, 1);
 	else
 		SPF2:SavedData()["IncludeCraftableMats"] = nil;
-		print("|cffbc5ff4[SPF]|r|cffffcf00["..GetTradeSkillName().."]|r: "..L["TradeSkillFilter2RightClickON"]);
+		message = "|cffbc5ff4[SPF]|r|cffffcf00["..GetTradeSkillName().."]|r: "..L["Filter2RightClickON"];
+		DEFAULT_CHAT_FRAME:AddMessage(message, 1, 1, 1);
 	end
 end
 

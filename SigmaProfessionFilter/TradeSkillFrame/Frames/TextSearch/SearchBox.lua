@@ -1,21 +1,24 @@
 local SPF2 = SigmaProfessionFilter[2];
 
-SPF2.SearchBox = CreateFrame("EditBox", nil, TradeSkillFrame, "SearchBoxTemplate");
+SPF2.SearchBox = CreateFrame("EditBox", nil, TradeSkillFrame, "InputBoxTemplate");
 
 function SPF2.SearchBox.OnLoad()
 	SPF2.SearchBox:SetWidth(260);
 	SPF2.SearchBox:SetHeight(27);
 	SPF2.SearchBox:SetPoint("TOPRIGHT", TradeSkillFrame, "TOPRIGHT", -44, -67);
 	SPF2.SearchBox:SetFrameLevel(4);
+	SPF2.SearchBox:SetAutoFocus(false);
 	
 	SPF2.SearchBox:SetScript("OnShow", SPF2.SearchBox.OnShow);
-	hooksecurefunc("TradeSkillFrame_OnShow", SPF2.SearchBox.OnShow);
+	SPF2["TSFOnShow"]["SPF2.SearchBox.OnShow"] = SPF2.SearchBox.OnShow;
 	
 	SPF2.SearchBox:SetScript("OnEscapePressed", SPF2.SearchBox.OnEscapePressed);
-	SPF2.SearchBox:HookScript("OnTextChanged", SPF2.SearchBox.OnTextChanged);
-	TradeSkillFrame:HookScript("OnHide", SPF2.SearchBox.Clear);
-	StackSplitFrame:HookScript("OnShow", SPF2.SearchBox.StackSplitHandler);
-	hooksecurefunc("ChatEdit_InsertLink", SPF2.SearchBox.InsertItemName)
+	SPF2.SearchBox:SetScript("OnEnterPressed", SPF2.SearchBox.OnEnterPressed);
+	SPF2.SearchBox:SetScript("OnTextChanged", SPF2.SearchBox.OnTextChanged);
+	SPF2.SearchBox:SetScript("OnEditFocusGained", function() SPF2.SearchBox.HasFocus = true; end);
+	SPF2.SearchBox:SetScript("OnEditFocusLost", function() SPF2.SearchBox.HasFocus = false; end);
+	TradeSkillFrame:SetScript("OnHide", SPF2.TradeSkillFrame_OnHide);
+	SPF2.hooksecurefunc("ChatEdit_InsertLink", SPF2.SearchBox.InsertItemName)
 	
     -- LeatrixPlus compatibility
     if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
@@ -24,10 +27,11 @@ function SPF2.SearchBox.OnLoad()
     end
 end
 
-function SPF2.SearchBox.StackSplitHandler()
-	if SPF2.SearchBox:IsVisible() and SPF2.SearchBox:HasFocus() then
-		StackSplitFrame:Hide()
-	end
+
+function SPF2.TradeSkillFrame_OnHide()
+	CloseTradeSkill();
+	PlaySound("igCharacterInfoClose");
+	SPF2.SearchBox.Clear();
 end
 
 function SPF2.SearchBox.Clear()
@@ -42,6 +46,10 @@ function SPF2.SearchBox:OnShow()
 	end
 end
 
+function SPF2.SearchBox.OnEnterPressed()
+    SPF2.SearchBox:ClearFocus();
+end
+
 function SPF2.SearchBox.OnEscapePressed()
     SPF2.SearchBox:SetText("");
     SPF2.SearchBox:ClearFocus();
@@ -52,8 +60,8 @@ function SPF2.SearchBox.OnTextChanged()
 end
 
 function SPF2.SearchBox.InsertItemName(itemLink)
-	if SPF2.SearchBox:IsVisible() and SPF2.SearchBox:HasFocus() then
-		SPF2.SearchBox:Insert(GetItemInfo(itemLink));
+	if SPF2.SearchBox:IsVisible() and SPF2.SearchBox.HasFocus then
+		SPF2.SearchBox:Insert(SPF2.GetItemInfo(itemLink));
 	end
 end
 
@@ -73,6 +81,10 @@ function SPF2.SearchBox:FilterSpell(spellID)
 	else
 		return SPF2:FilterSpellWithSearchBox(spellID);
 	end
+end
+
+if not TradeSkillFrame:IsVisible() then
+	SPF2.TradeSkillFrame_OnHide();
 end
 
 SPF2.SearchBox.OnLoad();

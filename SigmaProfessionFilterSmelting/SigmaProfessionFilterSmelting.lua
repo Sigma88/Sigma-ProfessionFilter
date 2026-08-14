@@ -1,4 +1,4 @@
-local _, L = ...;
+local L = SigmaProfessionFilterSmelting.L;
 local SPF2 = SigmaProfessionFilter[2];
 
 SigmaProfessionFilter[L["PROFESSION"]] = {
@@ -9,6 +9,18 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 			local skillName = SPF2.baseGetTradeSkillInfo(skillIndex);
 			for i=3, 1, -1 do
 				if SPF2.match(skillName, L["LEFT_0"..i.."_FILTER"]) then
+					if groupIndex == 0 or groupIndex == i then
+						return i;
+					else
+						return 0;
+					end
+				end
+			end
+			return 0;
+		end;
+		["FilterSpell"] = function(spellID, groupIndex)
+			for i=3, 1, -1 do
+				if SPF2:GetGroupSpell("Left", spellID, i) == i then
 					if groupIndex == 0 or groupIndex == i then
 						return i;
 					else

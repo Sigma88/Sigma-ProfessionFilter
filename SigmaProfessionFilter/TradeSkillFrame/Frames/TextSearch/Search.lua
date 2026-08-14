@@ -1,7 +1,9 @@
 local L = SigmaProfessionFilter.L;
 local SPF2 = SigmaProfessionFilter[2];
 
-SPF2.Search = CreateFrame("CheckButton", nil, TradeSkillFrame, "UICheckButtonTemplate");
+SPF2.Search = CreateFrame("CheckButton", "TradeSkillFrameSearchButton", TradeSkillFrame, "UICheckButtonTemplate");
+SPF2.Search.text = SPF2.Search:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall");
+SPF2.Search.text:SetPoint("LEFT", SPF2.Search, "RIGHT", 0, 0);
 
 function SPF2.Search.OnLoad()
 	SPF2.Search:SetWidth(15);
@@ -10,7 +12,7 @@ function SPF2.Search.OnLoad()
 	SPF2.CheckBoxBar:AddButton(SPF2.Search);
 	
 	SPF2.Search:SetScript("OnShow", SPF2.Search.OnShow);
-	hooksecurefunc("TradeSkillFrame_OnShow", SPF2.Search.OnShow);
+	SPF2["TSFOnShow"]["SPF2.Search.OnShow"] = SPF2.Search.OnShow;
 	
 	SPF2.Search:SetScript("OnClick", SPF2.Search.OnClick);
 	SPF2.Search:SetScript("OnEnter", SPF2.Search.OnEnter);
@@ -35,18 +37,20 @@ end
 function SPF2.Search.OnClick()
 	
 	if (SPF2.Search:GetChecked()) then
-        PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
+        --PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
+		PlaySound("igMainMenuOptionCheckBoxOn");
 		SPF2:SavedData()["SearchBox"] = true;
     else
-        PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
+        --PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
+		PlaySound("igMainMenuOptionCheckBoxOff");
 		SPF2:SavedData()["SearchBox"] = nil;
 	end
 	
 	SPF2.SearchBox:SetText("");
 	
-	TradeSkillFrame_OnShow();
+	SPF2.TradeSkillFrame_OnShow(TradeSkillFrame, true);
 	
-	SPF2.FullUpdate();
+	-- SPF2.FullUpdate();
 end
 
 function SPF2.Search.OnEnter()

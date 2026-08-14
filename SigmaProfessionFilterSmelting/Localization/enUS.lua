@@ -1,4 +1,6 @@
-local _, L = ...;
+SigmaProfessionFilterSmelting = {};
+SigmaProfessionFilterSmelting.L = {};
+local L = SigmaProfessionFilterSmelting.L;
 
 -- Profession
 L["PROFESSION"] = "Smelting";
@@ -11,8 +13,8 @@ L["LEFT_02_NAME"] = "Alloys";
 L["LEFT_03_NAME"] = "Rare Metals";
 -- Filters
 L["LEFT_01_FILTER"] = "";
-L["LEFT_02_FILTER"] = GetSpellInfo(2659)..";"..GetSpellInfo(3569)..";"..GetSpellInfo(22967);
-L["LEFT_03_FILTER"] = GetSpellInfo(2658)..";"..GetSpellInfo(3308)..";"..GetSpellInfo(10098);
+L["LEFT_02_FILTER"] = "Bronze;Steel;Elementium";
+L["LEFT_03_FILTER"] = "Silver;Gold";
 -- Right Menu
 L["RIGHT_TITLE"] = "All Products";
 L["RIGHT_TOOLTIP"] = "Sort recipes by the item they produce.";

@@ -1,5 +1,6 @@
 -- Local Tables
 local RI = SigmaProfessionFilter_RecipeInfo;
+local SPF = SigmaProfessionFilter;
 
 -- CraftFrame
 RI.Craft = {};
@@ -30,7 +31,7 @@ function RI.Craft.Localize()
 	end
 end
 
-hooksecurefunc("CraftFrame_OnShow", RI.Craft.Localize);
+SPF[1]["CFOnShow"]["RI.Craft.Localize"] = RI.Craft.Localize;
 
 
 -- TradeSkillFrame
@@ -67,4 +68,4 @@ function RI.TradeSkill.Reset()
 end
 
 RI.TradeSkill:SetScript("OnHide", RI.TradeSkill.Reset);
-hooksecurefunc("TradeSkillFrame_OnShow", RI.TradeSkill.Localize);
+SPF[2]["TSFOnShow"]["RI.TradeSkill.Localize"] = RI.TradeSkill.Localize;

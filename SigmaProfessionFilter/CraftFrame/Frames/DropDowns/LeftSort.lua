@@ -1,6 +1,7 @@
+local L = SigmaProfessionFilter.L;
 local SPF1 = SigmaProfessionFilter[1];
 
-SPF1.LeftSort = CreateFrame("CheckButton", nil, SPF1.LeftMenu, "UICheckButtonTemplate");
+SPF1.LeftSort = CreateFrame("CheckButton", nil, CraftFrame, "UICheckButtonTemplate");
 
 function SPF1.LeftSort:OnLoad()
 	SPF1.LeftSort:SetWidth(15);
@@ -10,30 +11,38 @@ function SPF1.LeftSort:OnLoad()
 	SPF1.LeftSort:SetFrameLevel(4);
 	
 	SPF1.LeftSort:SetScript("OnShow", SPF1.LeftSort.OnShow);
+	SPF1["CFOnShow"]["SPF1.LeftSort.OnShow"] = SPF1.LeftSort.OnShow;
+	
 	SPF1.LeftSort:SetScript("OnClick", SPF1.LeftSort.OnClick);
 	SPF1.LeftSort:SetScript("OnEnter", SPF1.LeftSort.OnEnter);
 	SPF1.LeftSort:SetScript("OnLeave", SPF1.LeftSort.OnLeave);
 end
 
 function SPF1.LeftSort:OnShow()
-	if (SPF1:GetMenu("Left")) then
-		SPF1.LeftSort.tooltipText = SPF1:Custom("LeftMenu")["tooltip"];
+	SPF1.LeftSort:Show();
+	
+	if not SPF1:GetMenu("Left") then
+		SPF1.LeftSort:Hide();
+	else
+		if not SPF1:GetMenu("Right") then
+			SPF1:SavedData()["GroupBy"] = nil;
+		end
+		SPF1.LeftSort.tooltipText = SPF1:Custom("LeftMenu")["tooltip"] or L["ALL_SUBCLASSES_TOOLTIP"];
 		SPF1.LeftSort:SetChecked(SPF1:SavedData()["GroupBy"] ~= "Right");
 	end
+	
+    if SPF1:SavedData()["SearchBox"] then
+        SPF1.LeftSort:Hide();
+    end
 end
 
 function SPF1.LeftSort:OnClick(mod)
-	if SPF1:GetMenu("Left") then
-		SPF1.LeftSort:SetChecked(true);
-		
-		SPF1:SavedData()["GroupBy"] = nil;
-		
-		if (mod ~= "silent") then
-			PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
-			SPF1.RightSort.OnShow();
-			SPF1.FullUpdate();
-		end
-	end
+	--PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
+	PlaySound("igMainMenuOptionCheckBoxOn");
+	SPF1.LeftSort:SetChecked(true);
+	SPF1:SavedData()["GroupBy"] = nil;
+	SPF1.RightSort:OnShow();
+	SPF1.FullUpdate();
 end
 
 function SPF1.LeftSort:OnEnter()
@@ -47,4 +56,4 @@ function SPF1.LeftSort:OnLeave()
     GameTooltip:Hide();
 end
 
-SPF1.LeftSort:OnLoad();
+SPF1.LeftSort.OnLoad();

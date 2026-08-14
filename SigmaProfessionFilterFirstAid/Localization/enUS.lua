@@ -1,4 +1,6 @@
-local _, L = ...;
+SigmaProfessionFilterFirstAid = {};
+SigmaProfessionFilterFirstAid.L = {};
+local L = SigmaProfessionFilterFirstAid.L;
 
 -- Profession
 L["PROFESSION"] = "First Aid";

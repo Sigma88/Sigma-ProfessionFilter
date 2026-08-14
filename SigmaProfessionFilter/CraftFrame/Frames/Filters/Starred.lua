@@ -1,110 +1,132 @@
 local L = SigmaProfessionFilter.L;
-local SPF1 = SigmaProfessionFilter[1];
+local SPF = SigmaProfessionFilter[1];
 
-SPF1.Starred = CreateFrame("Frame", nil, CraftFrame);
+SPF.Starred = CreateFrame("Frame", nil, CraftFrame);
 
-function SPF1.Starred.OnLoad()
-	SPF1.Starred:SetWidth(27);
-	SPF1.Starred:SetHeight(15);
-	SPF1.Starred:SetFrameLevel(4);
-	SPF1.CheckBoxBar:AddButton(SPF1.Starred);
+function SPF.Starred.OnLoad()
+	SPF.Starred:SetWidth(27);
+	SPF.Starred:SetHeight(15);
+	SPF.Starred:SetFrameLevel(4);
+	SPF.CheckBoxBar:AddButton(SPF.Starred);
 	
-	SPF1.Starred:SetScript("OnShow", SPF1.Starred.OnShow);
-	hooksecurefunc("CraftFrame_OnShow", SPF1.Starred.OnShow);
+	SPF.Starred:SetScript("OnShow", SPF.Starred.OnShow);
+	SPF["CFOnShow"]["SPF.Starred.OnShow"] = SPF.Starred.OnShow;
 	
-	local button = CreateFrame("CheckButton", nil, SPF1.Starred, "UICheckButtonTemplate");
+	local button = CreateFrame("CheckButton", nil, SPF.Starred, "UICheckButtonTemplate");
 	button:SetWidth(15);
 	button:SetHeight(15);
-	button:SetPoint("LEFT", SPF1.Starred, "LEFT", 0, 0);
+	button:SetPoint("LEFT", SPF.Starred, "LEFT", 0, 0);
 	button:SetHitRectInsets(0, -15, 0, 0);
 	
-	button:SetScript("OnClick", SPF1.Starred.OnClick);
-	button:SetScript("OnEnter", SPF1.Starred.OnEnter);
-	button:SetScript("OnLeave", SPF1.Starred.OnLeave);
+	button:SetScript("OnClick", SPF.Starred.OnClick);
+	button:SetScript("OnEnter", SPF.Starred.OnEnter);
+	button:SetScript("OnLeave", SPF.Starred.OnLeave);
 	
-	local icon = CreateFrame("Frame", nil, SPF1.Starred);
+	local icon = CreateFrame("Frame", nil, SPF.Starred);
 	icon:SetWidth(14);
 	icon:SetHeight(14);
-	icon:SetPoint("TOPRIGHT", SPF1.Starred, "TOPRIGHT", 0, 0);
+	icon:SetPoint("TOPRIGHT", SPF.Starred, "TOPRIGHT", 0, 0);
 	
 	local texture = icon:CreateTexture(nil, "ARTWORK");
-	texture:SetTexture("Interface/Common/ReputationStar", false);
+	texture:SetTexture("Interface\\AddOns\\SigmaProfessionFilter\\Icons\\ReputationStar.tga", false);
 	texture:SetAllPoints();
 	texture:SetTexCoord(0,0.5,0,0.5);
 	
-	SPF1.Starred.button = button;
-	SPF1.Starred.icon = icon;
-	SPF1.Starred.texture = texture;
+	SPF.Starred.button = button;
+	SPF.Starred.icon = icon;
+	SPF.Starred.texture = texture;
 end
 
-function SPF1.Starred:OnShow()
+function SPF.Starred:OnShow()
 	
-	SPF1.Starred:Show();
+	SPF.Starred:Show();
 	
-	if not(SPF1:Custom("Starred")["disabled"]) then
-		SPF1.Starred.tooltipText = SPF1:Custom("Starred")["tooltip"] or L["STARRED_TOOLTIP"];
-		SPF1.Starred.button:SetChecked(SPF1:SavedData()["Starred"]);
-		SPF1.Starred.disabled = nil;
+	if not(SPF:Custom("Starred")["disabled"]) then
+		SPF.Starred.tooltipText = SPF:Custom("Starred")["tooltip"] or L["STARRED_TOOLTIP"];
+		SPF.Starred.button:SetChecked(SPF:SavedData()["Starred"]);
+		SPF.Starred.disabled = nil;
 	else
-		SPF1.Starred:Hide();
-		SPF1.Starred.disabled = true;
+		SPF.Starred:Hide();
+		SPF.Starred.disabled = true;
 	end
 end
 
-function SPF1.Starred.OnClick()
+function SPF.Starred.OnClick()
 	
-	if (SPF1.Starred.button:GetChecked()) then
-        PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
-		SPF1:SavedData()["Starred"] = true;
+	if (SPF.Starred.button:GetChecked()) then
+        --PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
+		PlaySound("igMainMenuOptionCheckBoxOn");
+		SPF:SavedData()["Starred"] = true;
     else
-        PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
-		SPF1:SavedData()["Starred"] = nil;
+        --PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
+		PlaySound("igMainMenuOptionCheckBoxOff");
+		SPF:SavedData()["Starred"] = nil;
 	end
 	
-	CraftFrame_OnShow();
-	SPF1.FullUpdate();
-	SPF1.Starred.OnEnter();
+	SPF.CraftFrame_OnShow(CraftFrame, true);
+	-- SPF.FullUpdate();
+	SPF.Starred.OnEnter();
 end
 
-function SPF1.Starred.OnEnter()
-    if (SPF1.Starred.tooltipText) then
-        GameTooltip:SetOwner(SPF1.Starred, "ANCHOR_TOPLEFT");
-        GameTooltip:SetText(SPF1.Starred.tooltipText, nil, nil, nil, nil, true);
+function SPF.Starred.OnEnter()
+    if (SPF.Starred.tooltipText) then
+        GameTooltip:SetOwner(SPF.Starred, "ANCHOR_TOPLEFT");
+        GameTooltip:SetText(SPF.Starred.tooltipText, nil, nil, nil, nil, true);
     end
 end
 
-function SPF1.Starred.OnLeave()
+function SPF.Starred.OnLeave()
     GameTooltip:Hide();
 end
 
-function SPF1.Starred.OnUpdate()
-	if CraftFrame:IsVisible() then
+function SPF.Starred.OnUpdate()
 	for i=1, CRAFTS_DISPLAYED do
-		local button = _G["Craft"..i];
+		local button = getfenv()["Craft"..i];
 		if button then
-			local star = _G["Craft"..i.."Star"];
+			local star = getfenv()["Craft"..i.."Star"];
 			if not star then
 				star = CreateFrame("CheckButton", "Craft"..i.."Star", button, "UICheckButtonTemplate");
 				star:SetWidth(button:GetHeight());
 				star:SetHeight(button:GetHeight());
-				star:SetFrameLevel(4);
+				star:SetFrameLevel(button:GetFrameLevel()+1);
 				
+				star:SetID(i);
+				local _,_,_,costXoffset = (getfenv()["Craft"..i.."Cost"]):GetPoint();
+				star.costXoffset = costXoffset;
+
+				function star:OnShow()
+					local costButton = getfenv()["Craft"..this:GetID().."Cost"];
+					if costButton then
+						local point, relativeTo, relativePoint, offsetX, offsetY = costButton:GetPoint();
+						costButton:SetPoint(point, costButton:GetParent(), relativePoint, this.costXoffset - this:GetWidth(), offsetY);
+					end
+				end
+				star:SetScript("OnShow", star.OnShow);
+
+				function star:OnHide()
+					local costButton = getfenv()["Craft"..this:GetID().."Cost"];
+					if costButton then
+						local point, relativeTo, relativePoint, offsetX, offsetY = costButton:GetPoint();
+						costButton:SetPoint(point, costButton:GetParent(), relativePoint, this.costXoffset, offsetY);
+					end
+				end
+				star:SetScript("OnHide", star.OnHide);
+
 				function star:OnClick()
 					if (star:GetChecked()) then
-						PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
+						--PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
+						PlaySound("igMainMenuOptionCheckBoxOn");
 					else
-						PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
+						--PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
+						PlaySound("igMainMenuOptionCheckBoxOff");
 					end
-					if not SPF1:SavedData()["StarredRecipes"] then
-						SPF1:SavedData()["StarredRecipes"] = {};
+					if not SPF:SavedData()["StarredRecipes"] then
+						SPF:SavedData()["StarredRecipes"] = {};
 					end
-					local craftName, craftSubSpellName = GetCraftInfo(button:GetID());
-					
-					if craftName then
-						if not SPF1:SavedData()["StarredRecipes"][craftName] then
-							SPF1:SavedData()["StarredRecipes"][craftName] = {};
-						end
-						SPF1:SavedData()["StarredRecipes"][craftName][craftSubSpellName or ""] = star:GetChecked();
+					local skillName, skillSubSpellName = GetCraftInfo(button:GetID());
+					if skillName then
+						SPF:SavedData()["StarredRecipes"][skillName..string.gsub(skillSubSpellName or "", "(.+)", " %1")] = star:GetChecked();
+						-- SPF:SavedData()["StarredRecipes"][skillName..string.gsub(skillSubSpellName or "", "(.+)", " %1")] = star:GetChecked();
 					end
 					star:OnEnter();
 				end
@@ -126,22 +148,22 @@ function SPF1.Starred.OnUpdate()
 				star:SetScript("OnLeave", star.OnLeave);
 				
 				star.normal = star:CreateTexture(nil, "ARTWORK");
-				star.normal:SetTexture("Interface/Common/ReputationStar", false);
+				star.normal:SetTexture("Interface\\AddOns\\SigmaProfessionFilter\\Icons\\ReputationStar.tga", false);
 				star.normal:SetAllPoints();
 				star.normal:SetTexCoord(0.5,1,0,0.5);
 				
 				star.checked = star:CreateTexture(nil, "ARTWORK");
-				star.checked:SetTexture("Interface/Common/ReputationStar", false);
+				star.checked:SetTexture("Interface\\AddOns\\SigmaProfessionFilter\\Icons\\ReputationStar.tga", false);
 				star.checked:SetAllPoints();
 				star.checked:SetTexCoord(0,0.5,0,0.5);
 				
 				star.highlight = star:CreateTexture(nil, "ARTWORK");
-				star.highlight:SetTexture("Interface/Common/ReputationStar", false);
+				star.highlight:SetTexture("Interface\\AddOns\\SigmaProfessionFilter\\Icons\\ReputationStar.tga", false);
 				star.highlight:SetAllPoints();
 				star.highlight:SetTexCoord(0,0.5,0.5,1);
 				
 				star.pushed = star:CreateTexture(nil, "ARTWORK");
-				star.pushed:SetTexture("Interface/Common/ReputationStar", false);
+				star.pushed:SetTexture("Interface\\AddOns\\SigmaProfessionFilter\\Icons\\ReputationStar.tga", false);
 				star.pushed:SetAllPoints();
 				star.pushed:SetTexCoord(0,0.5,0.5,1);
 				
@@ -155,38 +177,36 @@ function SPF1.Starred.OnUpdate()
 			if CraftListScrollFrameScrollBar:IsVisible() then
 				star:SetPoint("RIGHT", button, "RIGHT", 0, 0);
 			elseif (LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On") then
-				star:SetPoint("RIGHT", button, "RIGHT", 0, 0);
+				star:SetPoint("RIGHT", button, "RIGHT", -30, 0);
 			else
 				star:SetPoint("RIGHT", button, "RIGHT", -7, 0);
 			end
 			
-			local craftName, craftSubSpellName, craftType = GetCraftInfo(button:GetID());
+			local skillName, skillSubSpellName, skillType = GetCraftInfo(button:GetID());
 			
-			if craftType == "header" then
+			if skillType == "header" then
 				star:Hide();
 			else
 				star:Show();
 			end
-			
-			if craftName then
-				star:SetChecked(SPF1:SavedData()["StarredRecipes"] and SPF1:SavedData()["StarredRecipes"][craftName] and SPF1:SavedData()["StarredRecipes"][craftName][craftSubSpellName or ""]);
+			if GetCraftName() and skillName then
+				star:SetChecked(SPF:SavedData()["StarredRecipes"] and SPF:SavedData()["StarredRecipes"][skillName..string.gsub(skillSubSpellName or "", "(.+)", " %1")]);
 			end
 		end
 	end
-	end
 end
 
-function SPF1.Starred:Filter(craftName, craftSubSpellName)
+function SPF.Starred:Filter(skillName, skillSubSpellName)
 	
-	if not SPF1.Starred.button:GetChecked() or not craftName then
+	if not SPF.Starred.button:GetChecked() or not skillName then
 		return true;
 	end
 	
-	if SPF1:SavedData()["StarredRecipes"] and SPF1:SavedData()["StarredRecipes"][craftName] and SPF1:SavedData()["StarredRecipes"][craftName][craftSubSpellName or ""] then
+	if SPF:SavedData()["StarredRecipes"] and SPF:SavedData()["StarredRecipes"][skillName..string.gsub(skillSubSpellName or "", "(.+)", " %1")] then
 		return true;
 	end
 	
 	return false;
 end
 
-SPF1.Starred.OnLoad();
+SPF.Starred.OnLoad();

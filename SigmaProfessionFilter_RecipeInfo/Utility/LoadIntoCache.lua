@@ -1,25 +1,29 @@
 -- Local Tables
 local RI = SigmaProfessionFilter_RecipeInfo;
+local SPF = SigmaProfessionFilter;
+
+local LocalTooltip = CreateFrame("GameTooltip", "SPFRILocalTooltip", WorldFrame, "GameTooltipTemplate");
+LocalTooltip:SetOwner(WorldFrame, "ANCHOR_NONE");
 
 -- Load Into Cache
 function RI.LoadIntoCache(professionName)
 	local professionData = RI.Data[professionName];
 	if professionData then
 		for spellID,spell in pairs(professionData) do
-			GetSpellInfo(spellID);
-			GetSpellDescription(spellID);
+			--GetSpellInfo(spellID);
+			--GetSpellDescription(spellID);
 			if spell["reagents"] then
 				for i,item in ipairs(spell["reagents"]) do
-					GetItemInfo(item["itemID"]);
+					LocalTooltip:SetHyperlink("item:"..item["itemID"]);
 				end
 			end
-			if spell["tools"] then
-				for i,item in ipairs(spell["tools"]) do
-					GetItemInfo(item);
-				end
-			end
+			-- if spell["tools"] then
+				-- for i,item in ipairs(spell["tools"]) do
+					-- SPF[2].GetItemInfo(item);
+				-- end
+			-- end
 			if spell["creates"] then
-				GetItemInfo(spell["creates"]);
+				LocalTooltip:SetHyperlink("item:"..spell["creates"]);
 			end
 		end
 		return professionName;
@@ -38,7 +42,7 @@ CraftCache.Load = function()
 	end
 end
 
-hooksecurefunc("CraftFrame_OnShow", CraftCache.Load);
+SPF[1]["CFOnShow"]["CraftCache.Load"] = CraftCache.Load;
 
 
 -- TradeSkillFrame
@@ -52,4 +56,4 @@ TradeSkillCache.Load = function()
 	end
 end
 
-hooksecurefunc("TradeSkillFrame_OnShow", TradeSkillCache.Load);
+SPF[2]["TSFOnShow"]["TradeSkillCache.Load"] = TradeSkillCache.Load;

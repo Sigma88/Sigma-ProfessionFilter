@@ -1,7 +1,9 @@
 local L = SigmaProfessionFilter.L;
 local SPF2 = SigmaProfessionFilter[2];
 
-SPF2.Filter1 = CreateFrame("CheckButton", nil, TradeSkillFrame, "UICheckButtonTemplate");
+SPF2.Filter1 = CreateFrame("CheckButton", "TradeSkillFilter1Button", TradeSkillFrame, "UICheckButtonTemplate");
+SPF2.Filter1.text = SPF2.Filter1:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall");
+SPF2.Filter1.text:SetPoint("LEFT", SPF2.Filter1, "RIGHT", 0, 0);
 
 function SPF2.Filter1.OnLoad()
 	SPF2.Filter1:RegisterForClicks("LeftButtonUp", "RightButtonUp");
@@ -12,7 +14,7 @@ function SPF2.Filter1.OnLoad()
 	SPF2.CheckBoxBar:AddButton(SPF2.Filter1);
 	
 	SPF2.Filter1:SetScript("OnShow", SPF2.Filter1.OnShow);
-	hooksecurefunc("TradeSkillFrame_OnShow", SPF2.Filter1.OnShow);
+	SPF2["TSFOnShow"]["SPF2.Filter1.OnShow"] = SPF2.Filter1.OnShow;
 	
 	SPF2.Filter1:SetScript("OnClick", SPF2.Filter1.OnClick);
 	SPF2.Filter1:SetScript("OnEnter", SPF2.Filter1.OnEnter);
@@ -33,24 +35,23 @@ function SPF2.Filter1:OnShow()
 	end
 end
 
-function SPF2.Filter1:OnClick(button)
-	if (button == "LeftButton") then
-		if (SPF2.Filter1:GetChecked()) then
-			PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
-		else
-			PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
-		end
-	
-		if GetTradeSkillName() then
-			SPF2.Filter1.Status[GetTradeSkillName()] = SPF2.Filter1:GetChecked();
-		end
-	else
+function SPF2.Filter1.OnClick()
+	if (arg1 == "RightButton") then
 		SPF2.Filter1:SetChecked(not(SPF2.Filter1:GetChecked()));
 		if SPF2:Custom("Filter1")["OnRightClick"] then
 			SPF2:Custom("Filter1")["OnRightClick"]();
 		else
 			SPF2.Filter1:OnRightClick();
 		end
+	else
+		if GetTradeSkillName() then
+			SPF2.Filter1.Status[GetTradeSkillName()] = SPF2.Filter1:GetChecked();
+		end
+	end
+	if (SPF2.Filter1:GetChecked()) then
+		PlaySound("igMainMenuOptionCheckBoxOn");
+	else
+		PlaySound("igMainMenuOptionCheckBoxOff");
 	end
     SPF2.FullUpdate();
 end
@@ -60,9 +61,12 @@ function SPF2.Filter1:OnRightClick()
 		SPF2:SavedData()["IncludedSkillTypes"] = 0;
 	end
 	
-	SPF2:SavedData()["IncludedSkillTypes"] = (SPF2:SavedData()["IncludedSkillTypes"] + 1) % 3;
+	SPF2:SavedData()["IncludedSkillTypes"] = (SPF2:SavedData()["IncludedSkillTypes"] + 1);
+	if SPF2:SavedData()["IncludedSkillTypes"] >= 3 then
+		SPF2:SavedData()["IncludedSkillTypes"] = 0;
+	end
 	
-	local message = "|cffbc5ff4[SPF]|r|cffffcf00["..GetTradeSkillName().."]|r: "..L["TradeSkillFilter1RightClick"].."|cffff8040["..L["ORANGE"].."] |r";
+	local message = "|cffbc5ff4[SPF]|r|cffffcf00["..GetTradeSkillName().."]|r: "..L["Filter1RightClick"].."|cffff8040["..L["ORANGE"].."] |r";
 	
 	if SPF2:SavedData()["IncludedSkillTypes"] < 2 then
 		message = message.."|cffffff00["..L["YELLOW"].."] |r";
@@ -70,8 +74,7 @@ function SPF2.Filter1:OnRightClick()
 	if SPF2:SavedData()["IncludedSkillTypes"] < 1 then
 		message = message.."|cff40bf40["..L["GREEN"].."]|r";
 	end
-	
-	print(message);
+	DEFAULT_CHAT_FRAME:AddMessage(message, 1, 1, 1);
 end
 
 function SPF2.Filter1:OnEnter()
@@ -96,11 +99,11 @@ function SPF2.Filter1:Filter(skillIndex)
 	if SPF2:Custom("Filter1").Filter then
 		return (not SPF2.Filter1:GetChecked() or SPF2:Custom("Filter1").Filter(skillIndex));
 	else
-		local _, skillType = SPF2.baseGetTradeSkillInfo(skillIndex);
-		
 		if not SPF2.Filter1:GetChecked() then
 			return true;
 		end
+		
+		local _, skillType = SPF2.baseGetTradeSkillInfo(skillIndex);
 		
 		if skillType == "trivial" then
 			return false;

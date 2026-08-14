@@ -5,6 +5,7 @@ if ElvUI then
 	local E = unpack(ElvUI);
 	local S = E:GetModule('Skins');
 
+	-- CraftFrame
 	S:HandleCheckBox(SPF1.Filter1);
 	S:HandleCheckBox(SPF1.Filter2);
 	S:HandleCheckBox(SPF1.Unlearned.button);
@@ -18,7 +19,7 @@ if ElvUI then
     if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
         SPF1.SearchBox:SetPoint("TOPRIGHT", CraftFrame, "TOPRIGHT", -50, -49);
     end
-	
+
 	if (LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On") then
 		S:HandleDropDownBox(SPF1.LeftMenu, 170);
 		S:HandleDropDownBox(SPF1.RightMenu, 170);
@@ -27,7 +28,7 @@ if ElvUI then
 		S:HandleDropDownBox(SPF1.RightMenu, 155);
 	end
 	
-	function SPF1:RankFrameFix()
+	function SPF1:CraftRankFrameFix()
 		CraftRankFrame:ClearAllPoints();
 		if (LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On") then
 			CraftRankFrame:SetPoint("TOPLEFT", CraftFrame, "TOPLEFT", 24, -37);
@@ -36,5 +37,17 @@ if ElvUI then
 		end
 	end
 	
-	CraftRankFrame:HookScript("OnShow", SPF1.RankFrameFix);
+	for i=1, MAX_CRAFT_REAGENTS do
+		local reagentButton = getfenv()["CraftReagent"..i];
+		local createButton = getfenv()["CraftReagent"..i.."CreateButton"];
+		if createButton then
+			createButton:SetWidth(reagentButton:GetWidth() - 4);
+			local a,b,c,x,y = createButton:GetPoint();
+			createButton:ClearAllPoints();
+			createButton:SetPoint(a,b,c,x,y-1);
+			S:HandleButton(createButton);
+		end
+	end
+	
+	CraftRankFrame:HookScript("OnShow", SPF1.CraftRankFrameFix);
 end

@@ -6,9 +6,9 @@ function SPF2.RightMenu.OnLoad()
 	SPF2.RightMenu:SetPoint("TOPRIGHT", TradeSkillFrame, "TOPRIGHT", -25, -66);
 	
 	SPF2.RightMenu:SetScript("OnShow", SPF2.RightMenu.OnShow);
-	hooksecurefunc("TradeSkillFrame_OnShow", SPF2.RightMenu.OnShow);
+	SPF2["TSFOnShow"]["SPF2.RightMenu.OnShow"] = SPF2.RightMenu.OnShow;
 	
-	SPF2.DropDownMenu_SetWidth(SPF2.RightMenu, 120);
+	SPF2.DropDownMenu_SetWidth(120, SPF2.RightMenu);
 	
 	SPF2.DropDownMenu_SetSelectedID(SPF2.RightMenu, 1);
 	SPF2:SetSelected("Right", 0);
@@ -17,28 +17,26 @@ function SPF2.RightMenu.OnLoad()
 	if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
 		SPF2.RightMenu:SetPoint("TOPRIGHT", TradeSkillFrame, "TOPRIGHT", -34, -40);
 	end
+	
+	TradeSkillInvSlotDropDown:SetScript("OnShow", function() TradeSkillInvSlotDropDown:Hide() end );
 end
 
 function SPF2.RightMenu:OnShow()
 	SPF2.RightMenu:Show();
-	TradeSkillInvSlotDropDown:Show();
 	
 	if SPF2:Custom("RightMenu")["disabled"] then
 		SPF2.RightMenu:Hide();
-		TradeSkillInvSlotDropDown:Hide();
 		
 		if SPF2:Custom("LeftMenu")["disabled"] then
 			SPF2:SavedData()["SearchBox"] = true;
 		end
 	else
-		TradeSkillInvSlotDropDown:Hide();
 		SPF2.DropDownMenu_Initialize(SPF2.RightMenu, SPF2:Custom("RightMenu")["Initialize"] or SPF2.RightMenu.Initialize);
 		SPF2.DropDownMenu_SetSelectedID(SPF2.RightMenu, SPF2:GetSelected("Right") + 1);
 	end
 	
 	if SPF2:SavedData()["SearchBox"] then
         SPF2.RightMenu:Hide();
-		TradeSkillInvSlotDropDown:Hide();
     end
 end
 
@@ -67,7 +65,7 @@ function SPF2.RightMenu.Initialize()
 			
 			SPF2.DropDownMenu_AddButton(info);
 			
-			for i,slot in ipairs({GetTradeSkillInvSlots()}) do
+			for i,slot in ipairs(SPF2.GetTradeSkillInvSlots()) do
 				info = {};
 				info.text = slot;
 				info.func = SPF2.RightMenu.OnClick;
@@ -80,8 +78,8 @@ end
 
 function SPF2.RightMenu:OnClick(arg1, arg2, checked)
 	
-	SPF2.DropDownMenu_SetSelectedID(SPF2.RightMenu, self:GetID());
-	SPF2:SetSelected("Right", self:GetID() - 1);
+	SPF2.DropDownMenu_SetSelectedID(SPF2.RightMenu, this:GetID());
+	SPF2:SetSelected("Right", this:GetID() - 1);
 	
 	SPF2.FullUpdate();
 end
@@ -107,12 +105,12 @@ function SPF2.RightMenu:Filter(skillIndex, groupIndex)
 				return firstGroup;
 			end
 		else
-			local invType = select(9, SPF2.baseGetTradeSkillItemInfo(skillIndex));
+			local _,_,_,_,_,_,_,invType = SPF2.baseGetTradeSkillItemInfo(skillIndex);
 			local itemSlot = SPF2:GetSlot(invType);
 			
 			if invType then
 				local lastID = 0;
-				for i,slot in ipairs({GetTradeSkillInvSlots()}) do
+				for i,slot in ipairs(SPF2.GetTradeSkillInvSlots()) do
 					lastID = i;
 					if itemSlot == slot then
 						if groupIndex == 0 or groupIndex == i then
@@ -155,12 +153,12 @@ function SPF2.RightMenu:FilterSpell(spellID, groupIndex)
 		else
 			local creates = SPF2.GetRecipeInfo(spellID, "creates");
 			if creates then
-				local invType = select(9, GetItemInfo(creates));
+				local _,_,_,_,_,_,_,invType = SPF2.GetItemInfo(creates);
 				local itemSlot = SPF2:GetSlot(invType);
 				
 				if invType then
 					local lastID = 0;
-					for i,slot in ipairs({GetTradeSkillInvSlots()}) do
+					for i,slot in ipairs(SPF2.GetTradeSkillInvSlots()) do
 						lastID = i;
 						if itemSlot == slot then
 							if groupIndex == 0 or groupIndex == i then

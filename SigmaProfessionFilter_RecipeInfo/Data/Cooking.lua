@@ -2,1023 +2,1917 @@ local RI = SigmaProfessionFilter_RecipeInfo;
 
 RI.Data["Cooking"] = {
 	[2538] = {
-		["learnedAt"] = 0;
-		["levels"] = { 0, 45, 65, 85 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2672; ["numRequired"] = 1; };
-		};
-		["creates"] = 2679;
-	};
+		creates = 2679,
+		icon = "Interface\\Icons\\inv_misc_food_18",
+		name = "Charred Wolf Meat",
+		reagents = {
+			{
+				itemID = 2672,
+				icon = "Interface\\Icons\\inv_misc_food_14",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 0,
+		levels = {
+			0,
+			45,
+			65,
+			85,
+		},
+	},
 	[2539] = {
-		["learnedAt"] = 10;
-		["levels"] = { 10, 50, 70, 90 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2672; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2678; ["numRequired"] = 1; };
-		};
-		["creates"] = 2680;
-	};
+		creates = 2680,
+		icon = "Interface\\Icons\\inv_misc_food_65",
+		name = "Spiced Wolf Meat",
+		reagents = {
+			{
+				itemID = 2672,
+				icon = "Interface\\Icons\\inv_misc_food_14",
+				numRequired = 1,
+			},
+			{
+				itemID = 2678,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 10,
+		levels = {
+			10,
+			50,
+			70,
+			90,
+		},
+	},
 	[2540] = {
-		["learnedAt"] = 0;
-		["levels"] = { 0, 45, 65, 85 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 769; ["numRequired"] = 1; };
-		};
-		["creates"] = 2681;
-	};
+		creates = 2681,
+		icon = "Interface\\Icons\\inv_misc_food_18",
+		name = "Roasted Boar Meat",
+		reagents = {
+			{
+				itemID = 769,
+				icon = "Interface\\Icons\\inv_misc_food_14",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 0,
+		levels = {
+			0,
+			45,
+			65,
+			85,
+		},
+	},
 	[2541] = {
-		["learnedAt"] = 50;
-		["levels"] = { 50, 90, 110, 130 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2673; ["numRequired"] = 1; };
-		};
-		["creates"] = 2684;
-	};
+		creates = 2684,
+		icon = "Interface\\Icons\\inv_misc_food_65",
+		name = "Coyote Steak",
+		reagents = {
+			{
+				itemID = 2673,
+				icon = "Interface\\Icons\\inv_misc_food_69",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 50,
+		levels = {
+			50,
+			90,
+			110,
+			130,
+		},
+	},
 	[2542] = {
-		["learnedAt"] = 50;
-		["levels"] = { 50, 90, 110, 130 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 723; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2678; ["numRequired"] = 1; };
-		};
-		["creates"] = 724;
-	};
+		creates = 724,
+		icon = "Interface\\Icons\\inv_misc_food_10",
+		name = "Goretusk Liver Pie",
+		reagents = {
+			{
+				itemID = 723,
+				icon = "Interface\\Icons\\inv_misc_organ_04",
+				numRequired = 1,
+			},
+			{
+				itemID = 2678,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 50,
+		levels = {
+			50,
+			90,
+			110,
+			130,
+		},
+	},
 	[2543] = {
-		["learnedAt"] = 75;
-		["levels"] = { 75, 115, 135, 155 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 729; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 730; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 731; ["numRequired"] = 1; };
-		};
-		["creates"] = 733;
-	};
+		creates = 733,
+		icon = "Interface\\Icons\\inv_misc_bowl_01",
+		name = "Westfall Stew",
+		reagents = {
+			{
+				itemID = 729,
+				icon = "Interface\\Icons\\inv_misc_food_16",
+				numRequired = 1,
+			},
+			{
+				itemID = 730,
+				icon = "Interface\\Icons\\inv_misc_eye_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 731,
+				icon = "Interface\\Icons\\spell_magic_polymorphpig",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 75,
+		levels = {
+			75,
+			115,
+			135,
+			155,
+		},
+	},
 	[2544] = {
-		["learnedAt"] = 75;
-		["levels"] = { 75, 115, 135, 155 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2674; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2678; ["numRequired"] = 1; };
-		};
-		["creates"] = 2683;
-	};
+		creates = 2683,
+		icon = "Interface\\Icons\\inv_misc_food_08",
+		name = "Crab Cake",
+		reagents = {
+			{
+				itemID = 2674,
+				icon = "Interface\\Icons\\inv_misc_food_51",
+				numRequired = 1,
+			},
+			{
+				itemID = 2678,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 75,
+		levels = {
+			75,
+			115,
+			135,
+			155,
+		},
+	},
 	[2545] = {
-		["learnedAt"] = 85;
-		["levels"] = { 85, 125, 145, 165 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2675; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2678; ["numRequired"] = 1; };
-		};
-		["creates"] = 2682;
-	};
+		creates = 2682,
+		icon = "Interface\\Icons\\inv_misc_birdbeck_02",
+		name = "Cooked Crab Claw",
+		reagents = {
+			{
+				itemID = 2675,
+				icon = "Interface\\Icons\\inv_misc_birdbeck_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 2678,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 85,
+		levels = {
+			85,
+			125,
+			145,
+			165,
+		},
+	},
 	[2546] = {
-		["learnedAt"] = 80;
-		["levels"] = { 80, 120, 140, 160 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2677; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2678; ["numRequired"] = 1; };
-		};
-		["creates"] = 2687;
-	};
+		creates = 2687,
+		icon = "Interface\\Icons\\inv_misc_food_48",
+		name = "Dry Pork Ribs",
+		reagents = {
+			{
+				itemID = 2677,
+				icon = "Interface\\Icons\\inv_misc_food_16",
+				numRequired = 1,
+			},
+			{
+				itemID = 2678,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 80,
+		levels = {
+			80,
+			120,
+			140,
+			160,
+		},
+	},
 	[2547] = {
-		["learnedAt"] = 100;
-		["levels"] = { 100, 135, 155, 175 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 1081; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 1080; ["numRequired"] = 1; };
-		};
-		["creates"] = 1082;
-	};
+		creates = 1082,
+		icon = "Interface\\Icons\\inv_misc_bowl_01",
+		name = "Redridge Goulash",
+		reagents = {
+			{
+				itemID = 1081,
+				icon = "Interface\\Icons\\inv_misc_monsterspidercarapace_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 1080,
+				icon = "Interface\\Icons\\inv_misc_food_72",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 100,
+		levels = {
+			100,
+			135,
+			155,
+			175,
+		},
+	},
 	[2548] = {
-		["learnedAt"] = 110;
-		["levels"] = { 110, 130, 150, 170 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2677; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 2692; ["numRequired"] = 1; };
-		};
-		["creates"] = 2685;
-	};
+		creates = 2685,
+		icon = "Interface\\Icons\\inv_misc_food_16",
+		name = "Succulent Pork Ribs",
+		reagents = {
+			{
+				itemID = 2677,
+				icon = "Interface\\Icons\\inv_misc_food_16",
+				numRequired = 2,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 110,
+		levels = {
+			110,
+			130,
+			150,
+			170,
+		},
+	},
 	[2549] = {
-		["learnedAt"] = 100;
-		["levels"] = { 100, 140, 160, 180 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 1015; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 2665; ["numRequired"] = 1; };
-		};
-		["creates"] = 1017;
-	};
+		creates = 1017,
+		icon = "Interface\\Icons\\inv_misc_food_16",
+		name = "Seasoned Wolf Kabob",
+		reagents = {
+			{
+				itemID = 1015,
+				icon = "Interface\\Icons\\inv_misc_food_14",
+				numRequired = 2,
+			},
+			{
+				itemID = 2665,
+				icon = "Interface\\Icons\\inv_misc_dust_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 100,
+		levels = {
+			100,
+			140,
+			160,
+			180,
+		},
+	},
 	[2795] = {
-		["learnedAt"] = 25;
-		["levels"] = { 25, 60, 80, 100 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2886; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2894; ["numRequired"] = 1; };
-		};
-		["creates"] = 2888;
-	};
+		creates = 2888,
+		icon = "Interface\\Icons\\inv_misc_food_48",
+		name = "Beer Basted Boar Ribs",
+		reagents = {
+			{
+				itemID = 2886,
+				icon = "Interface\\Icons\\inv_misc_food_16",
+				numRequired = 1,
+			},
+			{
+				itemID = 2894,
+				icon = "Interface\\Icons\\inv_drink_13",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 25,
+		levels = {
+			25,
+			60,
+			80,
+			100,
+		},
+	},
 	[3370] = {
-		["learnedAt"] = 80;
-		["levels"] = { 80, 120, 140, 160 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2924; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2678; ["numRequired"] = 1; };
-		};
-		["creates"] = 3662;
-	};
+		creates = 3662,
+		icon = "Interface\\Icons\\inv_misc_food_47",
+		name = "Crocolisk Steak",
+		reagents = {
+			{
+				itemID = 2924,
+				icon = "Interface\\Icons\\inv_misc_food_14",
+				numRequired = 1,
+			},
+			{
+				itemID = 2678,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 80,
+		levels = {
+			80,
+			120,
+			140,
+			160,
+		},
+	},
 	[3371] = {
-		["learnedAt"] = 60;
-		["levels"] = { 60, 100, 120, 140 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3173; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3172; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 3174; ["numRequired"] = 1; };
-		};
-		["creates"] = 3220;
-	};
+		creates = 3220,
+		icon = "Interface\\Icons\\inv_misc_food_49",
+		name = "Blood Sausage",
+		reagents = {
+			{
+				itemID = 3173,
+				icon = "Interface\\Icons\\inv_misc_food_71",
+				numRequired = 1,
+			},
+			{
+				itemID = 3172,
+				icon = "Interface\\Icons\\inv_misc_organ_05",
+				numRequired = 1,
+			},
+			{
+				itemID = 3174,
+				icon = "Interface\\Icons\\inv_misc_slime_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 60,
+		levels = {
+			60,
+			100,
+			120,
+			140,
+		},
+	},
 	[3372] = {
-		["learnedAt"] = 90;
-		["levels"] = { 90, 130, 150, 170 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 1468; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 2692; ["numRequired"] = 1; };
-		};
-		["creates"] = 3663;
-	};
+		creates = 3663,
+		icon = "Interface\\Icons\\inv_misc_bowl_01",
+		name = "Murloc Fin Soup",
+		reagents = {
+			{
+				itemID = 1468,
+				icon = "Interface\\Icons\\inv_misc_monsterscales_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 90,
+		levels = {
+			90,
+			130,
+			150,
+			170,
+		},
+	},
 	[3373] = {
-		["learnedAt"] = 120;
-		["levels"] = { 120, 160, 180, 200 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3667; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2692; ["numRequired"] = 1; };
-		};
-		["creates"] = 3664;
-	};
+		creates = 3664,
+		icon = "Interface\\Icons\\inv_misc_bowl_01",
+		name = "Crocolisk Gumbo",
+		reagents = {
+			{
+				itemID = 3667,
+				icon = "Interface\\Icons\\inv_misc_food_14",
+				numRequired = 1,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 120,
+		levels = {
+			120,
+			160,
+			180,
+			200,
+		},
+	},
 	[3376] = {
-		["learnedAt"] = 130;
-		["levels"] = { 130, 170, 190, 210 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3685; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2692; ["numRequired"] = 1; };
-		};
-		["creates"] = 3665;
-	};
+		creates = 3665,
+		icon = "Interface\\Icons\\inv_egg_04",
+		name = "Curiously Tasty Omelet",
+		reagents = {
+			{
+				itemID = 3685,
+				icon = "Interface\\Icons\\inv_egg_03",
+				numRequired = 1,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 130,
+		levels = {
+			130,
+			170,
+			190,
+			210,
+		},
+	},
 	[3377] = {
-		["learnedAt"] = 110;
-		["levels"] = { 110, 150, 170, 190 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2251; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 2692; ["numRequired"] = 1; };
-		};
-		["creates"] = 3666;
-	};
+		creates = 3666,
+		icon = "Interface\\Icons\\inv_misc_food_10",
+		name = "Gooey Spider Cake",
+		reagents = {
+			{
+				itemID = 2251,
+				icon = "Interface\\Icons\\inv_misc_monsterspidercarapace_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 110,
+		levels = {
+			110,
+			150,
+			170,
+			190,
+		},
+	},
 	[3397] = {
-		["learnedAt"] = 110;
-		["levels"] = { 110, 150, 170, 190 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3730; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2692; ["numRequired"] = 1; };
-		};
-		["creates"] = 3726;
-	};
+		creates = 3726,
+		icon = "Interface\\Icons\\inv_misc_food_47",
+		name = "Big Bear Steak",
+		reagents = {
+			{
+				itemID = 3730,
+				icon = "Interface\\Icons\\inv_misc_food_14",
+				numRequired = 1,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 110,
+		levels = {
+			110,
+			150,
+			170,
+			190,
+		},
+	},
 	[3398] = {
-		["learnedAt"] = 125;
-		["levels"] = { 125, 175, 195, 215 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3731; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2692; ["numRequired"] = 1; };
-		};
-		["creates"] = 3727;
-	};
+		creates = 3727,
+		icon = "Interface\\Icons\\inv_misc_food_18",
+		name = "Hot Lion Chops",
+		reagents = {
+			{
+				itemID = 3731,
+				icon = "Interface\\Icons\\inv_misc_food_71",
+				numRequired = 1,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 125,
+		levels = {
+			125,
+			175,
+			195,
+			215,
+		},
+	},
 	[3399] = {
-		["learnedAt"] = 150;
-		["levels"] = { 150, 190, 210, 230 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3731; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 3713; ["numRequired"] = 1; };
-		};
-		["creates"] = 3728;
-	};
+		creates = 3728,
+		icon = "Interface\\Icons\\inv_misc_food_14",
+		name = "Tasty Lion Steak",
+		reagents = {
+			{
+				itemID = 3731,
+				icon = "Interface\\Icons\\inv_misc_food_71",
+				numRequired = 2,
+			},
+			{
+				itemID = 3713,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 150,
+		levels = {
+			150,
+			190,
+			210,
+			230,
+		},
+	},
 	[3400] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 215, 235, 255 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3712; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3713; ["numRequired"] = 1; };
-		};
-		["creates"] = 3729;
-	};
+		creates = 3729,
+		icon = "Interface\\Icons\\inv_misc_bowl_01",
+		name = "Soothing Turtle Bisque",
+		reagents = {
+			{
+				itemID = 3712,
+				icon = "Interface\\Icons\\inv_misc_food_70",
+				numRequired = 1,
+			},
+			{
+				itemID = 3713,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			215,
+			235,
+			255,
+		},
+	},
 	[4094] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 215, 235, 255 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3404; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2692; ["numRequired"] = 1; };
-		};
-		["creates"] = 4457;
-	};
+		creates = 4457,
+		icon = "Interface\\Icons\\inv_misc_food_18",
+		name = "Barbecued Buzzard Wing",
+		reagents = {
+			{
+				itemID = 3404,
+				icon = "Interface\\Icons\\inv_misc_monsterscales_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			215,
+			235,
+			255,
+		},
+	},
 	[6412] = {
-		["learnedAt"] = 10;
-		["levels"] = { 10, 50, 70, 90 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 5465; ["numRequired"] = 1; };
-		};
-		["creates"] = 5472;
-	};
+		creates = 5472,
+		icon = "Interface\\Icons\\inv_misc_food_68",
+		name = "Kaldorei Spider Kabob",
+		reagents = {
+			{
+				itemID = 5465,
+				icon = "Interface\\Icons\\inv_misc_monsterspidercarapace_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 10,
+		levels = {
+			10,
+			50,
+			70,
+			90,
+		},
+	},
 	[6413] = {
-		["learnedAt"] = 20;
-		["levels"] = { 20, 60, 80, 100 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 5466; ["numRequired"] = 1; };
-		};
-		["creates"] = 5473;
-	};
+		creates = 5473,
+		icon = "Interface\\Icons\\inv_misc_food_10",
+		name = "Scorpid Surprise",
+		reagents = {
+			{
+				itemID = 5466,
+				icon = "Interface\\Icons\\spell_nature_nullifypoison",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 20,
+		levels = {
+			20,
+			60,
+			80,
+			100,
+		},
+	},
 	[6414] = {
-		["learnedAt"] = 35;
-		["levels"] = { 35, 75, 95, 115 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 5467; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2678; ["numRequired"] = 1; };
-		};
-		["creates"] = 5474;
-	};
+		creates = 5474,
+		icon = "Interface\\Icons\\inv_misc_food_60",
+		name = "Roasted Kodo Meat",
+		reagents = {
+			{
+				itemID = 5467,
+				icon = "Interface\\Icons\\inv_misc_food_14",
+				numRequired = 1,
+			},
+			{
+				itemID = 2678,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 35,
+		levels = {
+			35,
+			75,
+			95,
+			115,
+		},
+	},
 	[6415] = {
-		["learnedAt"] = 50;
-		["levels"] = { 50, 90, 110, 130 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 5468; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2678; ["numRequired"] = 1; };
-		};
-		["creates"] = 5476;
-	};
+		creates = 5476,
+		icon = "Interface\\Icons\\inv_misc_fish_05",
+		name = "Fillet of Frenzy",
+		reagents = {
+			{
+				itemID = 5468,
+				icon = "Interface\\Icons\\inv_misc_fish_04",
+				numRequired = 1,
+			},
+			{
+				itemID = 2678,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 50,
+		levels = {
+			50,
+			90,
+			110,
+			130,
+		},
+	},
 	[6416] = {
-		["learnedAt"] = 50;
-		["levels"] = { 50, 90, 110, 130 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 5469; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4536; ["numRequired"] = 1; };
-		};
-		["creates"] = 5477;
-	};
+		creates = 5477,
+		icon = "Interface\\Icons\\inv_misc_bowl_01",
+		name = "Strider Stew",
+		reagents = {
+			{
+				itemID = 5469,
+				icon = "Interface\\Icons\\inv_misc_food_16",
+				numRequired = 1,
+			},
+			{
+				itemID = 4536,
+				icon = "Interface\\Icons\\inv_misc_food_19",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 50,
+		levels = {
+			50,
+			90,
+			110,
+			130,
+		},
+	},
 	[6417] = {
-		["learnedAt"] = 90;
-		["levels"] = { 90, 130, 150, 170 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 5051; ["numRequired"] = 1; };
-		};
-		["creates"] = 5478;
-	};
+		creates = 5478,
+		icon = "Interface\\Icons\\inv_misc_bowl_01",
+		name = "Dig Rat Stew",
+		reagents = {
+			{
+				itemID = 5051,
+				icon = "Interface\\Icons\\inv_misc_pelt_bear_ruin_04",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 90,
+		levels = {
+			90,
+			130,
+			150,
+			170,
+		},
+	},
 	[6418] = {
-		["learnedAt"] = 100;
-		["levels"] = { 100, 140, 160, 180 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 5470; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2692; ["numRequired"] = 1; };
-		};
-		["creates"] = 5479;
-	};
+		creates = 5479,
+		icon = "Interface\\Icons\\inv_misc_food_17",
+		name = "Crispy Lizard Tail",
+		reagents = {
+			{
+				itemID = 5470,
+				icon = "Interface\\Icons\\inv_misc_bone_04",
+				numRequired = 1,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 100,
+		levels = {
+			100,
+			140,
+			160,
+			180,
+		},
+	},
 	[6419] = {
-		["learnedAt"] = 110;
-		["levels"] = { 110, 150, 170, 190 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 5471; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2678; ["numRequired"] = 4; };
-		};
-		["creates"] = 5480;
-	};
+		creates = 5480,
+		icon = "Interface\\Icons\\inv_misc_food_72",
+		name = "Lean Venison",
+		reagents = {
+			{
+				itemID = 5471,
+				icon = "Interface\\Icons\\inv_misc_pelt_wolf_ruin_03",
+				numRequired = 1,
+			},
+			{
+				itemID = 2678,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 4,
+			},
+		},
+		learnedAt = 110,
+		levels = {
+			110,
+			150,
+			170,
+			190,
+		},
+	},
 	[6499] = {
-		["learnedAt"] = 50;
-		["levels"] = { 50, 90, 110, 130 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 5503; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 159; ["numRequired"] = 1; };
-		};
-		["creates"] = 5525;
-	};
+		creates = 5525,
+		icon = "Interface\\Icons\\inv_misc_shell_02",
+		name = "Boiled Clams",
+		reagents = {
+			{
+				itemID = 5503,
+				icon = "Interface\\Icons\\inv_misc_food_51",
+				numRequired = 1,
+			},
+			{
+				itemID = 159,
+				icon = "Interface\\Icons\\inv_drink_07",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 50,
+		levels = {
+			50,
+			90,
+			110,
+			130,
+		},
+	},
 	[6500] = {
-		["learnedAt"] = 125;
-		["levels"] = { 125, 165, 185, 205 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 5504; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2692; ["numRequired"] = 1; };
-		};
-		["creates"] = 5527;
-	};
+		creates = 5527,
+		icon = "Interface\\Icons\\inv_misc_shell_01",
+		name = "Goblin Deviled Clams",
+		reagents = {
+			{
+				itemID = 5504,
+				icon = "Interface\\Icons\\inv_misc_food_51",
+				numRequired = 1,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 125,
+		levels = {
+			125,
+			165,
+			185,
+			205,
+		},
+	},
 	[6501] = {
-		["learnedAt"] = 90;
-		["levels"] = { 90, 130, 150, 170 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 5503; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 1179; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 2678; ["numRequired"] = 1; };
-		};
-		["creates"] = 5526;
-	};
+		creates = 5526,
+		icon = "Interface\\Icons\\inv_potion_01",
+		name = "Clam Chowder",
+		reagents = {
+			{
+				itemID = 5503,
+				icon = "Interface\\Icons\\inv_misc_food_51",
+				numRequired = 1,
+			},
+			{
+				itemID = 1179,
+				icon = "Interface\\Icons\\inv_drink_milk_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 2678,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 90,
+		levels = {
+			90,
+			130,
+			150,
+			170,
+		},
+	},
 	[7213] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 215, 235, 255 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4655; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2692; ["numRequired"] = 1; };
-		};
-		["creates"] = 6038;
-	};
+		creates = 6038,
+		icon = "Interface\\Icons\\inv_ammo_firetar",
+		name = "Giant Clam Scorcho",
+		reagents = {
+			{
+				itemID = 4655,
+				icon = "Interface\\Icons\\inv_misc_food_51",
+				numRequired = 1,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			215,
+			235,
+			255,
+		},
+	},
 	[7751] = {
-		["learnedAt"] = 1;
-		["levels"] = { 1, 45, 65, 85 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 6291; ["numRequired"] = 1; };
-		};
-		["creates"] = 6290;
-	};
+		creates = 6290,
+		icon = "Interface\\Icons\\inv_misc_fish_07",
+		name = "Brilliant Smallfish",
+		reagents = {
+			{
+				itemID = 6291,
+				icon = "Interface\\Icons\\inv_misc_fish_08",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 1,
+		levels = {
+			1,
+			45,
+			65,
+			85,
+		},
+	},
 	[7752] = {
-		["learnedAt"] = 1;
-		["levels"] = { 1, 45, 65, 85 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 6303; ["numRequired"] = 1; };
-		};
-		["creates"] = 787;
-	};
+		creates = 787,
+		icon = "Interface\\Icons\\inv_misc_fish_24",
+		name = "Slitherskin Mackerel",
+		reagents = {
+			{
+				itemID = 6303,
+				icon = "Interface\\Icons\\inv_misc_fish_24",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 1,
+		levels = {
+			1,
+			45,
+			65,
+			85,
+		},
+	},
 	[7753] = {
-		["learnedAt"] = 50;
-		["levels"] = { 50, 90, 110, 130 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 6289; ["numRequired"] = 1; };
-		};
-		["creates"] = 4592;
-	};
+		creates = 4592,
+		icon = "Interface\\Icons\\inv_misc_fish_32",
+		name = "Longjaw Mud Snapper",
+		reagents = {
+			{
+				itemID = 6289,
+				icon = "Interface\\Icons\\inv_misc_fish_32",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 50,
+		levels = {
+			50,
+			90,
+			110,
+			130,
+		},
+	},
 	[7754] = {
-		["learnedAt"] = 50;
-		["levels"] = { 50, 90, 110, 130 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 6317; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2678; ["numRequired"] = 1; };
-		};
-		["creates"] = 6316;
-	};
+		creates = 6316,
+		icon = "Interface\\Icons\\inv_potion_01",
+		name = "Loch Frenzy Delight",
+		reagents = {
+			{
+				itemID = 6317,
+				icon = "Interface\\Icons\\inv_misc_fish_03",
+				numRequired = 1,
+			},
+			{
+				itemID = 2678,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 50,
+		levels = {
+			50,
+			90,
+			110,
+			130,
+		},
+	},
 	[7755] = {
-		["learnedAt"] = 100;
-		["levels"] = { 100, 140, 160, 180 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 6308; ["numRequired"] = 1; };
-		};
-		["creates"] = 4593;
-	};
+		creates = 4593,
+		icon = "Interface\\Icons\\inv_misc_fish_30",
+		name = "Bristle Whisker Catfish",
+		reagents = {
+			{
+				itemID = 6308,
+				icon = "Interface\\Icons\\inv_misc_fish_30",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 100,
+		levels = {
+			100,
+			140,
+			160,
+			180,
+		},
+	},
 	[7827] = {
-		["learnedAt"] = 50;
-		["levels"] = { 50, 90, 110, 130 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 6361; ["numRequired"] = 1; };
-		};
-		["creates"] = 5095;
-	};
+		creates = 5095,
+		icon = "Interface\\Icons\\inv_misc_fish_27",
+		name = "Rainbow Fin Albacore",
+		reagents = {
+			{
+				itemID = 6361,
+				icon = "Interface\\Icons\\inv_misc_fish_25",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 50,
+		levels = {
+			50,
+			90,
+			110,
+			130,
+		},
+	},
 	[7828] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 190, 210, 230 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 6362; ["numRequired"] = 1; };
-		};
-		["creates"] = 4594;
-	};
+		creates = 4594,
+		icon = "Interface\\Icons\\inv_misc_fish_04",
+		name = "Rockscale Cod",
+		reagents = {
+			{
+				itemID = 6362,
+				icon = "Interface\\Icons\\inv_misc_fish_04",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			190,
+			210,
+			230,
+		},
+	},
 	[8238] = {
-		["learnedAt"] = 85;
-		["levels"] = { 85, 125, 145, 165 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 6522; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2678; ["numRequired"] = 1; };
-		};
-		["creates"] = 6657;
-	};
+		creates = 6657,
+		icon = "Interface\\Icons\\inv_misc_monsterhead_04",
+		name = "Savory Deviate Delight",
+		reagents = {
+			{
+				itemID = 6522,
+				icon = "Interface\\Icons\\inv_misc_monsterhead_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 2678,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 85,
+		levels = {
+			85,
+			125,
+			145,
+			165,
+		},
+	},
 	[8604] = {
-		["learnedAt"] = 1;
-		["levels"] = { 1, 45, 65, 85 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 6889; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2678; ["numRequired"] = 1; };
-		};
-		["creates"] = 6888;
-	};
+		creates = 6888,
+		icon = "Interface\\Icons\\inv_egg_03",
+		name = "Herb Baked Egg",
+		reagents = {
+			{
+				itemID = 6889,
+				icon = "Interface\\Icons\\inv_egg_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 2678,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 1,
+		levels = {
+			1,
+			45,
+			65,
+			85,
+		},
+	},
 	[8607] = {
-		["learnedAt"] = 40;
-		["levels"] = { 40, 80, 100, 120 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3173; ["numRequired"] = 1; };
-		};
-		["creates"] = 6890;
-	};
+		creates = 6890,
+		icon = "Interface\\Icons\\inv_misc_food_13",
+		name = "Smoked Bear Meat",
+		reagents = {
+			{
+				itemID = 3173,
+				icon = "Interface\\Icons\\inv_misc_food_71",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 40,
+		levels = {
+			40,
+			80,
+			100,
+			120,
+		},
+	},
 	[9513] = {
-		["learnedAt"] = 60;
-		["levels"] = { 60, 100, 120, 140 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2452; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 159; ["numRequired"] = 1; };
-		};
-		["creates"] = 7676;
-	};
+		creates = 7676,
+		icon = "Interface\\Icons\\inv_drink_milk_05",
+		name = "Thistle Tea",
+		reagents = {
+			{
+				itemID = 2452,
+				icon = "Interface\\Icons\\inv_misc_herb_04",
+				numRequired = 1,
+			},
+			{
+				itemID = 159,
+				icon = "Interface\\Icons\\inv_drink_07",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 60,
+		levels = {
+			60,
+			100,
+			120,
+			140,
+		},
+	},
 	[13028] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 175, 190, 205 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3821; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 159; ["numRequired"] = 1; };
-		};
-		["creates"] = 10841;
-	};
+		creates = 10841,
+		icon = "Interface\\Icons\\inv_drink_15",
+		name = "Goldthorn Tea",
+		reagents = {
+			{
+				itemID = 3821,
+				icon = "Interface\\Icons\\inv_misc_herb_15",
+				numRequired = 1,
+			},
+			{
+				itemID = 159,
+				icon = "Interface\\Icons\\inv_drink_07",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			215,
+			235,
+			255,
+		},
+	},
 	[15853] = {
-		["learnedAt"] = 125;
-		["levels"] = { 125, 165, 185, 205 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 1015; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2678; ["numRequired"] = 1; };
-		};
-		["creates"] = 12209;
-	};
+		creates = 12209,
+		icon = "Interface\\Icons\\inv_misc_food_47",
+		name = "Lean Wolf Steak",
+		reagents = {
+			{
+				itemID = 1015,
+				icon = "Interface\\Icons\\inv_misc_food_14",
+				numRequired = 1,
+			},
+			{
+				itemID = 2678,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 125,
+		levels = {
+			125,
+			165,
+			185,
+			205,
+		},
+	},
 	[15855] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 215, 235, 255 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12184; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2692; ["numRequired"] = 1; };
-		};
-		["creates"] = 12210;
-	};
+		creates = 12210,
+		icon = "Interface\\Icons\\inv_misc_food_50",
+		name = "Roast Raptor",
+		reagents = {
+			{
+				itemID = 12184,
+				icon = "Interface\\Icons\\inv_misc_food_69",
+				numRequired = 1,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			215,
+			235,
+			255,
+		},
+	},
 	[15856] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 215, 235, 255 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12203; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2692; ["numRequired"] = 1; };
-		};
-		["creates"] = 13851;
-	};
+		creates = 13851,
+		icon = "Interface\\Icons\\inv_misc_food_48",
+		name = "Hot Wolf Ribs",
+		reagents = {
+			{
+				itemID = 12203,
+				icon = "Interface\\Icons\\inv_misc_food_71",
+				numRequired = 1,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			215,
+			235,
+			255,
+		},
+	},
 	[15861] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 215, 235, 255 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12202; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 159; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 4536; ["numRequired"] = 2; };
-		};
-		["creates"] = 12212;
-	};
+		creates = 12212,
+		icon = "Interface\\Icons\\inv_drink_17",
+		name = "Jungle Stew",
+		reagents = {
+			{
+				itemID = 12202,
+				icon = "Interface\\Icons\\inv_misc_food_14",
+				numRequired = 1,
+			},
+			{
+				itemID = 159,
+				icon = "Interface\\Icons\\inv_drink_07",
+				numRequired = 1,
+			},
+			{
+				itemID = 4536,
+				icon = "Interface\\Icons\\inv_misc_food_19",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			215,
+			235,
+			255,
+		},
+	},
 	[15863] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 215, 235, 255 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12037; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2692; ["numRequired"] = 1; };
-		};
-		["creates"] = 12213;
-	};
+		creates = 12213,
+		icon = "Interface\\Icons\\inv_misc_food_49",
+		name = "Carrion Surprise",
+		reagents = {
+			{
+				itemID = 12037,
+				icon = "Interface\\Icons\\inv_misc_food_67",
+				numRequired = 1,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			215,
+			235,
+			255,
+		},
+	},
 	[15865] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 215, 235, 255 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12037; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2596; ["numRequired"] = 1; };
-		};
-		["creates"] = 12214;
-	};
+		creates = 12214,
+		icon = "Interface\\Icons\\inv_drink_19",
+		name = "Mystery Stew",
+		reagents = {
+			{
+				itemID = 12037,
+				icon = "Interface\\Icons\\inv_misc_food_67",
+				numRequired = 1,
+			},
+			{
+				itemID = 2596,
+				icon = "Interface\\Icons\\inv_drink_milk_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			215,
+			235,
+			255,
+		},
+	},
 	[15906] = {
-		["learnedAt"] = 200;
-		["levels"] = { 200, 225, 237, 250 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12037; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4402; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 2692; ["numRequired"] = 1; };
-		};
-		["creates"] = 12217;
-	};
+		creates = 12217,
+		icon = "Interface\\Icons\\inv_drink_17",
+		name = "Dragonbreath Chili",
+		reagents = {
+			{
+				itemID = 12037,
+				icon = "Interface\\Icons\\inv_misc_food_67",
+				numRequired = 1,
+			},
+			{
+				itemID = 4402,
+				icon = "Interface\\Icons\\inv_misc_organ_06",
+				numRequired = 1,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 200,
+		levels = {
+			200,
+			240,
+			260,
+			280,
+		},
+	},
 	[15910] = {
-		["learnedAt"] = 200;
-		["levels"] = { 200, 225, 237, 250 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12204; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 3713; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 159; ["numRequired"] = 1; };
-		};
-		["creates"] = 12215;
-	};
+		creates = 12215,
+		icon = "Interface\\Icons\\inv_drink_19",
+		name = "Heavy Kodo Stew",
+		reagents = {
+			{
+				itemID = 12204,
+				icon = "Interface\\Icons\\inv_misc_food_70",
+				numRequired = 2,
+			},
+			{
+				itemID = 3713,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 159,
+				icon = "Interface\\Icons\\inv_drink_07",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 200,
+		levels = {
+			200,
+			240,
+			260,
+			280,
+		},
+	},
 	[15915] = {
-		["learnedAt"] = 225;
-		["levels"] = { 225, 250, 262, 275 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12206; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2692; ["numRequired"] = 2; };
-		};
-		["creates"] = 12216;
-	};
+		creates = 12216,
+		icon = "Interface\\Icons\\inv_misc_food_48",
+		name = "Spiced Chili Crab",
+		reagents = {
+			{
+				itemID = 12206,
+				icon = "Interface\\Icons\\inv_misc_food_51",
+				numRequired = 1,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 225,
+		levels = {
+			225,
+			265,
+			285,
+			305,
+		},
+	},
 	[15933] = {
-		["learnedAt"] = 225;
-		["levels"] = { 225, 250, 262, 275 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12207; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3713; ["numRequired"] = 2; };
-		};
-		["creates"] = 12218;
-	};
+		creates = 12218,
+		icon = "Interface\\Icons\\inv_misc_food_06",
+		name = "Monster Omelet",
+		reagents = {
+			{
+				itemID = 12207,
+				icon = "Interface\\Icons\\inv_egg_03",
+				numRequired = 1,
+			},
+			{
+				itemID = 3713,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 225,
+		levels = {
+			225,
+			265,
+			285,
+			305,
+		},
+	},
 	[15935] = {
-		["learnedAt"] = 1;
-		["levels"] = { 1, 45, 65, 85 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12223; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2678; ["numRequired"] = 1; };
-		};
-		["creates"] = 12224;
-	};
+		creates = 12224,
+		icon = "Interface\\Icons\\inv_misc_food_46",
+		name = "Crispy Bat Wing",
+		reagents = {
+			{
+				itemID = 12223,
+				icon = "Interface\\Icons\\inv_misc_pelt_bear_ruin_05",
+				numRequired = 1,
+			},
+			{
+				itemID = 2678,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 1,
+		levels = {
+			1,
+			45,
+			65,
+			85,
+		},
+	},
 	[18238] = {
-		["learnedAt"] = 225;
-		["levels"] = { 225, 250, 262, 275 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4603; ["numRequired"] = 1; };
-		};
-		["creates"] = 6887;
-	};
+		creates = 6887,
+		icon = "Interface\\Icons\\inv_misc_fish_01",
+		name = "Spotted Yellowtail",
+		reagents = {
+			{
+				itemID = 4603,
+				icon = "Interface\\Icons\\inv_misc_fish_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 225,
+		levels = {
+			225,
+			265,
+			285,
+			305,
+		},
+	},
 	[18239] = {
-		["learnedAt"] = 225;
-		["levels"] = { 225, 250, 262, 275 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 13754; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3713; ["numRequired"] = 1; };
-		};
-		["creates"] = 13927;
-	};
+		creates = 13927,
+		icon = "Interface\\Icons\\inv_misc_monsterhead_03",
+		name = "Cooked Glossy Mightfish",
+		reagents = {
+			{
+				itemID = 13754,
+				icon = "Interface\\Icons\\inv_misc_monsterhead_03",
+				numRequired = 1,
+			},
+			{
+				itemID = 3713,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 225,
+		levels = {
+			225,
+			265,
+			285,
+			305,
+		},
+	},
 	[18240] = {
-		["learnedAt"] = 240;
-		["levels"] = { 240, 265, 277, 290 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 13755; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3713; ["numRequired"] = 1; };
-		};
-		["creates"] = 13928;
-	};
+		creates = 13928,
+		icon = "Interface\\Icons\\inv_misc_fish_13",
+		name = "Grilled Squid",
+		reagents = {
+			{
+				itemID = 13755,
+				icon = "Interface\\Icons\\inv_misc_fish_13",
+				numRequired = 1,
+			},
+			{
+				itemID = 3713,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 240,
+		levels = {
+			240,
+			280,
+			300,
+			320,
+		},
+	},
 	[18241] = {
-		["learnedAt"] = 225;
-		["levels"] = { 225, 250, 262, 275 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 13758; ["numRequired"] = 1; };
-		};
-		["creates"] = 13930;
-	};
+		creates = 13930,
+		icon = "Interface\\Icons\\inv_misc_fish_06",
+		name = "Filet of Redgill",
+		reagents = {
+			{
+				itemID = 13758,
+				icon = "Interface\\Icons\\inv_misc_fish_06",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 225,
+		levels = {
+			225,
+			265,
+			285,
+			305,
+		},
+	},
 	[18242] = {
-		["learnedAt"] = 240;
-		["levels"] = { 240, 265, 277, 290 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 13756; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2692; ["numRequired"] = 2; };
-		};
-		["creates"] = 13929;
-	};
+		creates = 13929,
+		icon = "Interface\\Icons\\inv_misc_fish_03",
+		name = "Hot Smoked Bass",
+		reagents = {
+			{
+				itemID = 13756,
+				icon = "Interface\\Icons\\inv_misc_fish_03",
+				numRequired = 1,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 240,
+		levels = {
+			240,
+			280,
+			300,
+			320,
+		},
+	},
 	[18243] = {
-		["learnedAt"] = 250;
-		["levels"] = { 250, 275, 285, 295 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 13759; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 159; ["numRequired"] = 1; };
-		};
-		["creates"] = 13931;
-	};
+		creates = 13931,
+		icon = "Interface\\Icons\\inv_drink_17",
+		name = "Nightfin Soup",
+		reagents = {
+			{
+				itemID = 13759,
+				icon = "Interface\\Icons\\inv_misc_fish_23",
+				numRequired = 1,
+			},
+			{
+				itemID = 159,
+				icon = "Interface\\Icons\\inv_drink_07",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 250,
+		levels = {
+			250,
+			290,
+			310,
+			330,
+		},
+	},
 	[18244] = {
-		["learnedAt"] = 250;
-		["levels"] = { 250, 275, 285, 295 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 13760; ["numRequired"] = 1; };
-		};
-		["creates"] = 13932;
-	};
+		creates = 13932,
+		icon = "Interface\\Icons\\inv_misc_fish_19",
+		name = "Poached Sunscale Salmon",
+		reagents = {
+			{
+				itemID = 13760,
+				icon = "Interface\\Icons\\inv_misc_fish_19",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 250,
+		levels = {
+			250,
+			290,
+			310,
+			330,
+		},
+	},
 	[18245] = {
-		["learnedAt"] = 275;
-		["levels"] = { 275, 300, 312, 325 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 13888; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 159; ["numRequired"] = 1; };
-		};
-		["creates"] = 13933;
-	};
+		creates = 13933,
+		icon = "Interface\\Icons\\inv_drink_17",
+		name = "Lobster Stew",
+		reagents = {
+			{
+				itemID = 13888,
+				icon = "Interface\\Icons\\inv_misc_fish_14",
+				numRequired = 1,
+			},
+			{
+				itemID = 159,
+				icon = "Interface\\Icons\\inv_drink_07",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 275,
+		levels = {
+			275,
+			315,
+			335,
+			355,
+		},
+	},
 	[18246] = {
-		["learnedAt"] = 275;
-		["levels"] = { 275, 300, 312, 325 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 13893; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2692; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 3713; ["numRequired"] = 1; };
-		};
-		["creates"] = 13934;
-	};
+		creates = 13934,
+		icon = "Interface\\Icons\\inv_misc_food_47",
+		name = "Mightfish Steak",
+		reagents = {
+			{
+				itemID = 13893,
+				icon = "Interface\\Icons\\inv_misc_monsterhead_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 3713,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 275,
+		levels = {
+			275,
+			315,
+			335,
+			355,
+		},
+	},
 	[18247] = {
-		["learnedAt"] = 275;
-		["levels"] = { 275, 300, 312, 325 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 13889; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3713; ["numRequired"] = 1; };
-		};
-		["creates"] = 13935;
-	};
+		creates = 13935,
+		icon = "Interface\\Icons\\inv_misc_fish_20",
+		name = "Baked Salmon",
+		reagents = {
+			{
+				itemID = 13889,
+				icon = "Interface\\Icons\\inv_misc_fish_20",
+				numRequired = 1,
+			},
+			{
+				itemID = 3713,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 275,
+		levels = {
+			275,
+			315,
+			335,
+			355,
+		},
+	},
 	[20626] = {
-		["learnedAt"] = 225;
-		["levels"] = { 225, 250, 262, 275 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 7974; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 2692; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 1179; ["numRequired"] = 1; };
-		};
-		["creates"] = 16766;
-	};
+		creates = 16766,
+		icon = "Interface\\Icons\\inv_drink_17",
+		name = "Undermine Clam Chowder",
+		reagents = {
+			{
+				itemID = 7974,
+				icon = "Interface\\Icons\\inv_misc_food_51",
+				numRequired = 2,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 1179,
+				icon = "Interface\\Icons\\inv_drink_milk_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 225,
+		levels = {
+			225,
+			265,
+			285,
+			305,
+		},
+	},
 	[20916] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 215, 235, 255 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 8365; ["numRequired"] = 1; };
-		};
-		["creates"] = 8364;
-	};
+		creates = 8364,
+		icon = "Interface\\Icons\\inv_misc_fish_02",
+		name = "Mithril Headed Trout",
+		reagents = {
+			{
+				itemID = 8365,
+				icon = "Interface\\Icons\\inv_misc_fish_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			215,
+			235,
+			255,
+		},
+	},
 	[21143] = {
-		["learnedAt"] = 1;
-		["levels"] = { 1, 45, 65, 85 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 6889; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 17194; ["numRequired"] = 1; };
-		};
-		["creates"] = 17197;
-	};
+		creates = 17197,
+		icon = "Interface\\Icons\\inv_misc_food_62",
+		name = "Gingerbread Cookie",
+		reagents = {
+			{
+				itemID = 6889,
+				icon = "Interface\\Icons\\inv_egg_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 17194,
+				icon = "Interface\\Icons\\inv_misc_bag_11",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 1,
+		levels = {
+			1,
+			45,
+			65,
+			85,
+		},
+	},
 	[21144] = {
-		["learnedAt"] = 35;
-		["levels"] = { 35, 75, 95, 115 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 6889; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 1179; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 17196; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 17194; ["numRequired"] = 1; };
-		};
-		["creates"] = 17198;
-	};
+		creates = 17198,
+		icon = "Interface\\Icons\\inv_drink_04",
+		name = "Egg Nog",
+		reagents = {
+			{
+				itemID = 6889,
+				icon = "Interface\\Icons\\inv_egg_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 1179,
+				icon = "Interface\\Icons\\inv_drink_milk_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 17196,
+				icon = "Interface\\Icons\\inv_drink_10",
+				numRequired = 1,
+			},
+			{
+				itemID = 17194,
+				icon = "Interface\\Icons\\inv_misc_bag_11",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 35,
+		levels = {
+			35,
+			75,
+			95,
+			115,
+		},
+	},
 	[21175] = {
-		["learnedAt"] = 200;
-		["levels"] = { 200, 225, 237, 250 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12205; ["numRequired"] = 2; };
-		};
-		["creates"] = 17222;
-	};
+		creates = 17222,
+		icon = "Interface\\Icons\\inv_misc_food_66",
+		name = "Spider Sausage",
+		reagents = {
+			{
+				itemID = 12205,
+				icon = "Interface\\Icons\\inv_misc_food_51",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 200,
+		levels = {
+			200,
+			240,
+			260,
+			280,
+		},
+	},
 	[22480] = {
-		["learnedAt"] = 225;
-		["levels"] = { 225, 250, 262, 275 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12208; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3713; ["numRequired"] = 1; };
-		};
-		["creates"] = 18045;
-	};
+		creates = 18045,
+		icon = "Interface\\Icons\\inv_misc_food_47",
+		name = "Tender Wolf Steak",
+		reagents = {
+			{
+				itemID = 12208,
+				icon = "Interface\\Icons\\inv_misc_food_14",
+				numRequired = 1,
+			},
+			{
+				itemID = 3713,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 225,
+		levels = {
+			225,
+			265,
+			285,
+			305,
+		},
+	},
 	[22761] = {
-		["learnedAt"] = 275;
-		["levels"] = { 275, 300, 312, 325 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 18255; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3713; ["numRequired"] = 1; };
-		};
-		["creates"] = 18254;
-	};
+		creates = 18254,
+		icon = "Interface\\Icons\\inv_misc_food_63",
+		name = "Runn Tum Tuber Surprise",
+		reagents = {
+			{
+				itemID = 18255,
+				icon = "Interface\\Icons\\inv_misc_food_55",
+				numRequired = 1,
+			},
+			{
+				itemID = 3713,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 275,
+		levels = {
+			275,
+			315,
+			335,
+			355,
+		},
+	},
 	[24418] = {
-		["learnedAt"] = 150;
-		["levels"] = { 150, 160, 180, 200 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3667; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 3713; ["numRequired"] = 1; };
-		};
-		["creates"] = 20074;
-	};
+		creates = 20074,
+		icon = "Interface\\Icons\\inv_misc_food_64",
+		name = "Heavy Crocolisk Stew",
+		reagents = {
+			{
+				itemID = 3667,
+				icon = "Interface\\Icons\\inv_misc_food_14",
+				numRequired = 2,
+			},
+			{
+				itemID = 3713,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 150,
+		levels = {
+			150,
+			160,
+			180,
+			200,
+		},
+	},
 	[24801] = {
-		["learnedAt"] = 285;
-		["levels"] = { 285, 310, 322, 335 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 20424; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3713; ["numRequired"] = 1; };
-		};
-		["creates"] = 20452;
-	};
+		creates = 20452,
+		icon = "Interface\\Icons\\inv_misc_food_64",
+		name = "Smoked Desert Dumplings",
+		reagents = {
+			{
+				itemID = 20424,
+				icon = "Interface\\Icons\\inv_misc_food_51",
+				numRequired = 1,
+			},
+			{
+				itemID = 3713,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 285,
+		levels = {
+			285,
+			325,
+			345,
+			365,
+		},
+	},
 	[25659] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 325, 337, 350 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2692; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 9061; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 8150; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 21024; ["numRequired"] = 1; };
-		};
-		["creates"] = 21023;
-	};
+		creates = 21023,
+		icon = "Interface\\Icons\\inv_misc_food_65",
+		name = "Dirge's Kickin' Chimaerok Chops",
+		reagents = {
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 9061,
+				icon = "Interface\\Icons\\inv_cask_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 8150,
+				icon = "Interface\\Icons\\inv_misc_dust_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 21024,
+				icon = "Interface\\Icons\\inv_misc_food_70",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 300,
+		levels = {
+			300,
+			325,
+			345,
+			365,
+		},
+	},
 	[25704] = {
-		["learnedAt"] = 80;
-		["levels"] = { 80, 120, 140, 160 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 21071; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2678; ["numRequired"] = 1; };
-		};
-		["creates"] = 21072;
-	};
+		creates = 21072,
+		icon = "Interface\\Icons\\inv_misc_fish_20",
+		name = "Smoked Sagefish",
+		reagents = {
+			{
+				itemID = 21071,
+				icon = "Interface\\Icons\\inv_misc_fish_20",
+				numRequired = 1,
+			},
+			{
+				itemID = 2678,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 80,
+		levels = {
+			80,
+			120,
+			140,
+			160,
+		},
+	},
 	[25954] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 215, 235, 255 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 21153; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2692; ["numRequired"] = 1; };
-		};
-		["creates"] = 21217;
-	};
-	[28267] = {
-		["learnedAt"] = 60;
-		["levels"] = { 60, 100, 120, 140 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 22644; ["numRequired"] = 1; };
-		};
-		["creates"] = 22645;
-	};
-	[33276] = {
-		["learnedAt"] = 1;
-		["levels"] = { 1, 45, 65, 85 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27668; ["numRequired"] = 1; };
-		};
-		["creates"] = 27635;
-	};
-	[33277] = {
-		["learnedAt"] = 1;
-		["levels"] = { 1, 45, 65, 85 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23676; ["numRequired"] = 1; };
-		};
-		["creates"] = 24105;
-	};
-	[33278] = {
-		["learnedAt"] = 50;
-		["levels"] = { 50, 90, 110, 130 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27669; ["numRequired"] = 1; };
-		};
-		["creates"] = 27636;
-	};
-	[33279] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 320, 330, 340 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27671; ["numRequired"] = 1; };
-		};
-		["creates"] = 27651;
-	};
-	[33284] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 320, 330, 340 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27674; ["numRequired"] = 1; };
-		};
-		["creates"] = 27655;
-	};
-	[33285] = {
-		["learnedAt"] = 310;
-		["levels"] = { 310, 330, 340, 350 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27676; ["numRequired"] = 1; };
-		};
-		["creates"] = 27656;
-	};
-	[33286] = {
-		["learnedAt"] = 315;
-		["levels"] = { 315, 335, 345, 355 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27677; ["numRequired"] = 1; };
-		};
-		["creates"] = 27657;
-	};
-	[33287] = {
-		["learnedAt"] = 325;
-		["levels"] = { 325, 345, 355, 365 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27678; ["numRequired"] = 1; };
-		};
-		["creates"] = 27658;
-	};
-	[33288] = {
-		["learnedAt"] = 325;
-		["levels"] = { 325, 345, 355, 365 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27681; ["numRequired"] = 1; };
-		};
-		["creates"] = 27659;
-	};
-	[33289] = {
-		["learnedAt"] = 325;
-		["levels"] = { 325, 345, 355, 365 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27682; ["numRequired"] = 1; };
-		};
-		["creates"] = 27660;
-	};
-	[33290] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 320, 330, 340 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27422; ["numRequired"] = 1; };
-		};
-		["creates"] = 27661;
-	};
-	[33291] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 320, 330, 340 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27425; ["numRequired"] = 1; };
-		};
-		["creates"] = 27662;
-	};
-	[33292] = {
-		["learnedAt"] = 310;
-		["levels"] = { 310, 330, 340, 350 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27429; ["numRequired"] = 1; };
-		};
-		["creates"] = 27663;
-	};
-	[33293] = {
-		["learnedAt"] = 320;
-		["levels"] = { 320, 340, 350, 360 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27435; ["numRequired"] = 1; };
-		};
-		["creates"] = 27664;
-	};
-	[33294] = {
-		["learnedAt"] = 320;
-		["levels"] = { 320, 340, 350, 360 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27437; ["numRequired"] = 1; };
-		};
-		["creates"] = 27665;
-	};
-	[33295] = {
-		["learnedAt"] = 325;
-		["levels"] = { 325, 345, 355, 365 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27438; ["numRequired"] = 1; };
-		};
-		["creates"] = 27666;
-	};
-	[33296] = {
-		["learnedAt"] = 350;
-		["levels"] = { 350, 370, 380, 390 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27439; ["numRequired"] = 1; };
-		};
-		["creates"] = 27667;
-	};
-	[36210] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 320, 330, 340 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 24477; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 3713; ["numRequired"] = 1; };
-		};
-		["creates"] = 30155;
-	};
-	[37836] = {
-		["learnedAt"] = 1;
-		["levels"] = { 1, 30, 35, 40 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 30817; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2678; ["numRequired"] = 1; };
-		};
-		["creates"] = 30816;
-	};
-	[38867] = {
-		["learnedAt"] = 335;
-		["levels"] = { 335, 355, 365, 375 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 31670; ["numRequired"] = 1; };
-		};
-		["creates"] = 31672;
-	};
-	[38868] = {
-		["learnedAt"] = 335;
-		["levels"] = { 335, 355, 365, 375 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 31671; ["numRequired"] = 1; };
-		};
-		["creates"] = 31673;
-	};
-	[42296] = {
-		["learnedAt"] = 335;
-		["levels"] = { 0, 335, 345, 355 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27422; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2593; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 3713; ["numRequired"] = 1; };
-		};
-		["creates"] = 33048;
-	};
-	[42302] = {
-		["learnedAt"] = 375;
-		["levels"] = { 0, 375, 380, 385 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27515; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4539; ["numRequired"] = 5; };
-			[3] = { ["itemID"] = 3713; ["numRequired"] = 5; };
-		};
-		["creates"] = 33052;
-	};
-	[42305] = {
-		["learnedAt"] = 375;
-		["levels"] = { 0, 375, 380, 385 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27516; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3713; ["numRequired"] = 2; };
-		};
-		["creates"] = 33053;
-	};
-	[43707] = {
-		["learnedAt"] = 325;
-		["levels"] = { 325, 335, 345, 355 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 33824; ["numRequired"] = 1; };
-		};
-		["creates"] = 33825;
-	};
-	[43758] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 320, 330, 340 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27678; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 13757; ["numRequired"] = 1; };
-		};
-		["creates"] = 33866;
-	};
-	[43761] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 320, 330, 340 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 33823; ["numRequired"] = 1; };
-		};
-		["creates"] = 33867;
-	};
-	[43765] = {
-		["learnedAt"] = 325;
-		["levels"] = { 325, 335, 345, 355 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27682; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2692; ["numRequired"] = 1; };
-		};
-		["creates"] = 33872;
-	};
-	[43772] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 345, 355, 365 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 27671; ["numRequired"] = 1; };
-		};
-		["creates"] = 33874;
-	};
-	[43779] = {
-		["learnedAt"] = 1;
-		["levels"] = { 1, 50, 62, 75 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 30817; ["numRequired"] = 8; };
-			[2] = { ["itemID"] = 1179; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 2678; ["numRequired"] = 4; };
-			[4] = { ["itemID"] = 6889; ["numRequired"] = 8; };
-			[5] = { ["itemID"] = 2593; ["numRequired"] = 1; };
-			[6] = { ["itemID"] = 785; ["numRequired"] = 3; };
-		};
-		["creates"] = 33924;
-	};
-	[45022] = {
-		["learnedAt"] = 325;
-		["levels"] = { 325, 325, 325, 325 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 34412; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 17196; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 17194; ["numRequired"] = 1; };
-		};
-		["creates"] = 34411;
-	};
-	[45695] = {
-		["learnedAt"] = 100;
-		["levels"] = { 100, 100, 105, 110 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2596; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2594; ["numRequired"] = 1; };
-		};
-		["creates"] = 34832;
-	};
-	[46684] = {
-		["learnedAt"] = 250;
-		["levels"] = { 250, 275, 285, 295 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 35562; ["numRequired"] = 1; };
-		};
-		["creates"] = 35563;
-	};
-	[46688] = {
-		["learnedAt"] = 250;
-		["levels"] = { 250, 275, 285, 295 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 35562; ["numRequired"] = 1; };
-		};
-		["creates"] = 35565;
-	};
-};
+		creates = 21217,
+		icon = "Interface\\Icons\\inv_misc_fish_21",
+		name = "Sagefish Delight",
+		reagents = {
+			{
+				itemID = 21153,
+				icon = "Interface\\Icons\\inv_misc_fish_21",
+				numRequired = 1,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			215,
+			235,
+			255,
+		},
+	},
+}

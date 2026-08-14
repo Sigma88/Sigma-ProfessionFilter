@@ -1,5 +1,5 @@
-local _, L = ...;
-local SPF2 = SigmaProfessionFilter[2];
+local L = SigmaProfessionFilterCooking.L;
+local SPF = SigmaProfessionFilter[2];
 
 local LocalTooltip = CreateFrame("GameTooltip", "SPF2CookingTooltip", WorldFrame, "GameTooltipTemplate");
 LocalTooltip:SetOwner(WorldFrame, "ANCHOR_NONE");
@@ -21,29 +21,64 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 		["title"] = L["LEFT_TITLE"];
 		["tooltip"] = L["LEFT_TOOLTIP"];
 		["Filter"] = function(skillIndex, groupIndex)
-			local itemLink = SPF2.baseGetTradeSkillItemLink(skillIndex);
-			if not (LocalTooltips[itemLink] and #LocalTooltips[itemLink] > 0) then
-				SPF2.baseSetTradeSkillItem(LocalTooltip, skillIndex);
+			local itemLink = SPF.baseGetTradeSkillItemLink(skillIndex);
+			if not (LocalTooltips[itemLink] and strlen(LocalTooltips[itemLink]) > 0) then
+				SPF.baseSetTradeSkillItem(LocalTooltip, skillIndex);
 				LocalTooltips[itemLink] = "";
 				for i=2,4 do
-					if not strmatch(LocalTooltips[itemLink], "Use:") then
+					if not SPF.match(LocalTooltips[itemLink], "Use:") then
 						LocalTooltips[itemLink] = LocalTooltipText[i]:GetText() or "";
 					end
 				end
 			end
-			if SPF2.match(itemLink, L["LEFT_05_FILTER"]) then
+			if SPF.match(itemLink, L["LEFT_05_FILTER"]) then
 				if groupIndex == 0 or groupIndex == 5 then
 					return 5;
 				end
-			elseif SPF2.match(LocalTooltips[itemLink], L["LEFT_01_FILTER"]) then
+			elseif SPF.match(LocalTooltips[itemLink], L["LEFT_01_FILTER"]) then
 				if groupIndex == 0 or groupIndex == 1 then
 					return 1;
 				end
-			elseif SPF2.match(LocalTooltips[itemLink], L["LEFT_02_FILTER"]) then
+			elseif SPF.match(LocalTooltips[itemLink], L["LEFT_02_FILTER"]) then
 				if groupIndex == 0 or groupIndex == 2 then
 					return 2;
 				end
-			elseif SPF2.match(LocalTooltips[itemLink], L["LEFT_04_FILTER"]) then
+			elseif SPF.match(LocalTooltips[itemLink], L["LEFT_04_FILTER"]) then
+				if groupIndex == 0 or groupIndex == 4 then
+					return 4;
+				end
+			else
+				if groupIndex == 0 or groupIndex == 3 then
+					return 3;
+				end
+			end
+			
+			return 0;
+		end;
+		["FilterSpell"] = function(spellID, groupIndex)
+			local itemLink = "item:"..SPF.GetRecipeInfo(spellID, "creates");
+			if not (LocalTooltips[itemLink] and strlen(LocalTooltips[itemLink]) > 0) then
+				LocalTooltip:SetHyperlink(itemLink);
+				LocalTooltips[itemLink] = "";
+				for i=2,4 do
+					if strlen(LocalTooltips[itemLink]) == 0 or not SPF.match(LocalTooltips[itemLink], "Use:") then
+						LocalTooltips[itemLink] = (getfenv()["SPF2CookingTooltipTextLeft"..i]):GetText() or "";
+					end
+				end
+			end
+			if SPF.match(itemLink, L["LEFT_05_FILTER"]) then
+				if groupIndex == 0 or groupIndex == 5 then
+					return 5;
+				end
+			elseif SPF.match(LocalTooltips[itemLink], L["LEFT_01_FILTER"]) then
+				if groupIndex == 0 or groupIndex == 1 then
+					return 1;
+				end
+			elseif SPF.match(LocalTooltips[itemLink], L["LEFT_02_FILTER"]) then
+				if groupIndex == 0 or groupIndex == 2 then
+					return 2;
+				end
+			elseif SPF.match(LocalTooltips[itemLink], L["LEFT_04_FILTER"]) then
 				if groupIndex == 0 or groupIndex == 4 then
 					return 4;
 				end
@@ -67,23 +102,23 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 		["title"] = L["RIGHT_TITLE"];
 		["tooltip"] = L["RIGHT_TOOLTIP"];
 		["Filter"] = function(skillIndex, groupIndex)
-			local itemLink = SPF2.baseGetTradeSkillItemLink(skillIndex);
-			if not (LocalTooltips[itemLink] and #LocalTooltips[itemLink] > 0) then
-				SPF2.baseSetTradeSkillItem(LocalTooltip, skillIndex);
+			local itemLink = SPF.baseGetTradeSkillItemLink(skillIndex);
+			if not (LocalTooltips[itemLink] and strlen(LocalTooltips[itemLink]) > 0) then
+				SPF.baseSetTradeSkillItem(LocalTooltip, skillIndex);
 				LocalTooltips[itemLink] = "";
 				for i=2,4 do
-					if not strmatch(LocalTooltips[itemLink], "Use:") then
+					if not SPF.match(LocalTooltips[itemLink], "Use:") then
 						LocalTooltips[itemLink] = LocalTooltipText[i]:GetText() or "";
 					end
 				end
 			end
-			if SPF2.match(LocalTooltips[itemLink], L["RIGHT_04_FILTER"]) and SPF2.match(LocalTooltips[itemLink], L["RIGHT_06_FILTER"]) then
+			if SPF.match(LocalTooltips[itemLink], L["RIGHT_04_FILTER"]) and SPF.match(LocalTooltips[itemLink], L["RIGHT_06_FILTER"]) then
 				if groupIndex == 0 or groupIndex == 1 or groupIndex == 4 or groupIndex == 6 then
 					return 1;
 				end
 			else
 				for i=2,9 do
-					if SPF2.match(LocalTooltips[itemLink], L["RIGHT_0"..i.."_FILTER"]) then
+					if SPF.match(LocalTooltips[itemLink], L["RIGHT_0"..i.."_FILTER"]) then
 						if groupIndex == 0 or groupIndex == i then
 							return i;
 						else
@@ -92,7 +127,46 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 					end
 				end
 			
-				if SPF2.match(LocalTooltips[itemLink], L["RIGHT_11_FILTER"]) then
+				if SPF.match(LocalTooltips[itemLink], L["RIGHT_11_FILTER"]) then
+					if groupIndex == 0 or groupIndex == 11 then
+						return 11;
+					end
+				else
+					if groupIndex == 0 or groupIndex == 10 then
+						return 10;
+					end
+				end
+			end
+			
+			return 0;
+		end;
+		["FilterSpell"] = function(spellID, groupIndex)
+			local itemLink = "item:"..SPF.GetRecipeInfo(spellID, "creates");
+			if not (LocalTooltips[itemLink] and strlen(LocalTooltips[itemLink]) > 0) then
+				LocalTooltip:SetHyperlink(itemLink);
+				LocalTooltips[itemLink] = "";
+				for i=2,4 do
+					if strlen(LocalTooltips[itemLink]) == 0 or not SPF.match(LocalTooltips[itemLink], "Use:") then
+						LocalTooltips[itemLink] = (getfenv()["SPF2CookingTooltipTextLeft"..i]):GetText() or "";
+					end
+				end
+			end
+			if SPF.match(LocalTooltips[itemLink], L["RIGHT_04_FILTER"]) and SPF.match(LocalTooltips[itemLink], L["RIGHT_06_FILTER"]) then
+				if groupIndex == 0 or groupIndex == 1 or groupIndex == 4 or groupIndex == 6 then
+					return 1;
+				end
+			else
+				for i=2,9 do
+					if SPF.match(LocalTooltips[itemLink], L["RIGHT_0"..i.."_FILTER"]) then
+						if groupIndex == 0 or groupIndex == i then
+							return i;
+						else
+							return 0;
+						end
+					end
+				end
+			
+				if SPF.match(LocalTooltips[itemLink], L["RIGHT_11_FILTER"]) then
 					if groupIndex == 0 or groupIndex == 11 then
 						return 11;
 					end

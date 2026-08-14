@@ -2,2696 +2,5019 @@ local RI = SigmaProfessionFilter_RecipeInfo;
 
 RI.Data["Engineering"] = {
 	[3918] = {
-		["learnedAt"] = 1;
-		["levels"] = { 1, 20, 30, 40 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2835; ["numRequired"] = 1; };
-		};
-		["creates"] = 4357;
-	};
+		creates = 4357,
+		icon = "Interface\\Icons\\inv_misc_dust_01",
+		name = "Rough Blasting Powder",
+		reagents = {
+			{
+				itemID = 2835,
+				icon = "Interface\\Icons\\inv_stone_06",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 1,
+		levels = {
+			1,
+			20,
+			30,
+			40,
+		},
+	},
 	[3919] = {
-		["learnedAt"] = 1;
-		["levels"] = { 1, 30, 45, 60 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4357; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 2589; ["numRequired"] = 1; };
-		};
-		["creates"] = 4358;
-	};
+		creates = 4358,
+		icon = "Interface\\Icons\\inv_misc_bomb_06",
+		name = "Rough Dynamite",
+		reagents = {
+			{
+				itemID = 4357,
+				icon = "Interface\\Icons\\inv_misc_dust_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 2589,
+				icon = "Interface\\Icons\\inv_fabric_linen_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 1,
+		levels = {
+			1,
+			30,
+			45,
+			60,
+		},
+	},
 	[3920] = {
-		["learnedAt"] = 30;
-		["levels"] = { 0, 30, 45, 60 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4357; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2840; ["numRequired"] = 1; };
-		};
-		["creates"] = 8067;
-	};
+		creates = 8067,
+		icon = "Interface\\Icons\\inv_ammo_bullet_02",
+		name = "Crafted Light Shot",
+		reagents = {
+			{
+				itemID = 4357,
+				icon = "Interface\\Icons\\inv_misc_dust_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 2840,
+				icon = "Interface\\Icons\\inv_ingot_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 30,
+		levels = {
+			0,
+			30,
+			45,
+			60,
+		},
+	},
 	[3922] = {
-		["learnedAt"] = 30;
-		["levels"] = { 30, 45, 52, 60 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2840; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 4359;
-	};
+		creates = 4359,
+		icon = "Interface\\Icons\\inv_misc_gear_06",
+		name = "Handful of Copper Bolts",
+		reagents = {
+			{
+				itemID = 2840,
+				icon = "Interface\\Icons\\inv_ingot_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 30,
+		levels = {
+			30,
+			45,
+			52,
+			60,
+		},
+	},
 	[3923] = {
-		["learnedAt"] = 30;
-		["levels"] = { 30, 60, 75, 90 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2840; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4359; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 4357; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 2589; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 4360;
-	};
+		creates = 4360,
+		icon = "Interface\\Icons\\inv_misc_bomb_09",
+		name = "Rough Copper Bomb",
+		reagents = {
+			{
+				itemID = 2840,
+				icon = "Interface\\Icons\\inv_ingot_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 4359,
+				icon = "Interface\\Icons\\inv_misc_gear_06",
+				numRequired = 1,
+			},
+			{
+				itemID = 4357,
+				icon = "Interface\\Icons\\inv_misc_dust_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 2589,
+				icon = "Interface\\Icons\\inv_fabric_linen_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 30,
+		levels = {
+			30,
+			60,
+			75,
+			90,
+		},
+	},
 	[3924] = {
-		["learnedAt"] = 50;
-		["levels"] = { 50, 80, 95, 110 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2840; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 2880; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 4361;
-	};
+		creates = 4361,
+		icon = "Interface\\Icons\\inv_gizmo_pipe_02",
+		name = "Copper Tube",
+		reagents = {
+			{
+				itemID = 2840,
+				icon = "Interface\\Icons\\inv_ingot_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 2880,
+				icon = "Interface\\Icons\\inv_misc_ammo_gunpowder_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 50,
+		levels = {
+			50,
+			80,
+			95,
+			110,
+		},
+	},
 	[3925] = {
-		["learnedAt"] = 50;
-		["levels"] = { 50, 80, 95, 110 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4361; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4359; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 4399; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 4362;
-	};
+		creates = 4362,
+		icon = "Interface\\Icons\\inv_weapon_rifle_03",
+		name = "Rough Boomstick",
+		reagents = {
+			{
+				itemID = 4361,
+				icon = "Interface\\Icons\\inv_gizmo_pipe_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 4359,
+				icon = "Interface\\Icons\\inv_misc_gear_06",
+				numRequired = 1,
+			},
+			{
+				itemID = 4399,
+				icon = "Interface\\Icons\\inv_mace_11",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 50,
+		levels = {
+			50,
+			80,
+			95,
+			110,
+		},
+	},
 	[3926] = {
-		["learnedAt"] = 65;
-		["levels"] = { 65, 95, 110, 125 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4359; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 2840; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 2589; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 4363;
-	};
+		creates = 4363,
+		icon = "Interface\\Icons\\inv_gizmo_03",
+		name = "Copper Modulator",
+		reagents = {
+			{
+				itemID = 4359,
+				icon = "Interface\\Icons\\inv_misc_gear_06",
+				numRequired = 2,
+			},
+			{
+				itemID = 2840,
+				icon = "Interface\\Icons\\inv_ingot_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 2589,
+				icon = "Interface\\Icons\\inv_fabric_linen_01",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 65,
+		levels = {
+			65,
+			95,
+			110,
+			125,
+		},
+	},
 	[3928] = {
-		["learnedAt"] = 75;
-		["levels"] = { 75, 105, 120, 135 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4363; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4359; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 2840; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 774; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 4401;
-	};
+		creates = 4401,
+		icon = "Interface\\Icons\\inv_crate_01",
+		name = "Mechanical Squirrel",
+		reagents = {
+			{
+				itemID = 4363,
+				icon = "Interface\\Icons\\inv_gizmo_03",
+				numRequired = 1,
+			},
+			{
+				itemID = 4359,
+				icon = "Interface\\Icons\\inv_misc_gear_06",
+				numRequired = 1,
+			},
+			{
+				itemID = 2840,
+				icon = "Interface\\Icons\\inv_ingot_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 774,
+				icon = "Interface\\Icons\\inv_misc_gem_emerald_03",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 75,
+		levels = {
+			75,
+			105,
+			120,
+			135,
+		},
+	},
 	[3929] = {
-		["learnedAt"] = 75;
-		["levels"] = { 75, 85, 90, 95 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2836; ["numRequired"] = 1; };
-		};
-		["creates"] = 4364;
-	};
+		creates = 4364,
+		icon = "Interface\\Icons\\inv_misc_dust_02",
+		name = "Coarse Blasting Powder",
+		reagents = {
+			{
+				itemID = 2836,
+				icon = "Interface\\Icons\\inv_stone_09",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 75,
+		levels = {
+			75,
+			85,
+			90,
+			95,
+		},
+	},
 	[3930] = {
-		["learnedAt"] = 75;
-		["levels"] = { 75, 85, 90, 95 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4364; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2840; ["numRequired"] = 1; };
-		};
-		["creates"] = 8068;
-	};
+		creates = 8068,
+		icon = "Interface\\Icons\\inv_ammo_bullet_02",
+		name = "Crafted Heavy Shot",
+		reagents = {
+			{
+				itemID = 4364,
+				icon = "Interface\\Icons\\inv_misc_dust_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 2840,
+				icon = "Interface\\Icons\\inv_ingot_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 75,
+		levels = {
+			75,
+			85,
+			90,
+			95,
+		},
+	},
 	[3931] = {
-		["learnedAt"] = 75;
-		["levels"] = { 75, 90, 97, 105 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4364; ["numRequired"] = 3; };
-			[2] = { ["itemID"] = 2589; ["numRequired"] = 1; };
-		};
-		["creates"] = 4365;
-	};
+		creates = 4365,
+		icon = "Interface\\Icons\\inv_misc_bomb_06",
+		name = "Coarse Dynamite",
+		reagents = {
+			{
+				itemID = 4364,
+				icon = "Interface\\Icons\\inv_misc_dust_02",
+				numRequired = 3,
+			},
+			{
+				itemID = 2589,
+				icon = "Interface\\Icons\\inv_fabric_linen_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 75,
+		levels = {
+			75,
+			90,
+			97,
+			105,
+		},
+	},
 	[3932] = {
-		["learnedAt"] = 85;
-		["levels"] = { 85, 115, 130, 145 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4363; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4359; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 2841; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 2592; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 4366;
-	};
+		creates = 4366,
+		icon = "Interface\\Icons\\inv_crate_06",
+		name = "Target Dummy",
+		reagents = {
+			{
+				itemID = 4363,
+				icon = "Interface\\Icons\\inv_gizmo_03",
+				numRequired = 1,
+			},
+			{
+				itemID = 4359,
+				icon = "Interface\\Icons\\inv_misc_gear_06",
+				numRequired = 2,
+			},
+			{
+				itemID = 2841,
+				icon = "Interface\\Icons\\inv_ingot_bronze",
+				numRequired = 1,
+			},
+			{
+				itemID = 2592,
+				icon = "Interface\\Icons\\inv_fabric_wool_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 85,
+		levels = {
+			85,
+			115,
+			130,
+			145,
+		},
+	},
 	[3933] = {
-		["learnedAt"] = 100;
-		["levels"] = { 100, 130, 145, 160 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4364; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 4363; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 2318; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 159; ["numRequired"] = 1; };
-		};
-		["creates"] = 4367;
-	};
+		creates = 4367,
+		icon = "Interface\\Icons\\inv_misc_urn_01",
+		name = "Small Seaforium Charge",
+		reagents = {
+			{
+				itemID = 4364,
+				icon = "Interface\\Icons\\inv_misc_dust_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 4363,
+				icon = "Interface\\Icons\\inv_gizmo_03",
+				numRequired = 1,
+			},
+			{
+				itemID = 2318,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_03",
+				numRequired = 1,
+			},
+			{
+				itemID = 159,
+				icon = "Interface\\Icons\\inv_drink_07",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 100,
+		levels = {
+			100,
+			130,
+			145,
+			160,
+		},
+	},
 	[3934] = {
-		["learnedAt"] = 100;
-		["levels"] = { 100, 130, 145, 160 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2318; ["numRequired"] = 6; };
-			[2] = { ["itemID"] = 818; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219 };
-		["creates"] = 4368;
-	};
+		creates = 4368,
+		icon = "Interface\\Icons\\inv_helmet_47",
+		name = "Flying Tiger Goggles",
+		reagents = {
+			{
+				itemID = 2318,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_03",
+				numRequired = 6,
+			},
+			{
+				itemID = 818,
+				icon = "Interface\\Icons\\inv_misc_gem_opal_03",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 100,
+		levels = {
+			100,
+			130,
+			145,
+			160,
+		},
+	},
 	[3936] = {
-		["learnedAt"] = 105;
-		["levels"] = { 105, 130, 142, 155 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4361; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 4359; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 4399; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 2319; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 4369;
-	};
+		creates = 4369,
+		icon = "Interface\\Icons\\inv_weapon_rifle_07",
+		name = "Deadly Blunderbuss",
+		reagents = {
+			{
+				itemID = 4361,
+				icon = "Interface\\Icons\\inv_gizmo_pipe_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 4359,
+				icon = "Interface\\Icons\\inv_misc_gear_06",
+				numRequired = 4,
+			},
+			{
+				itemID = 4399,
+				icon = "Interface\\Icons\\inv_mace_11",
+				numRequired = 1,
+			},
+			{
+				itemID = 2319,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_05",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 105,
+		levels = {
+			105,
+			130,
+			142,
+			155,
+		},
+	},
 	[3937] = {
-		["learnedAt"] = 105;
-		["levels"] = { 105, 105, 130, 155 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2840; ["numRequired"] = 3; };
-			[2] = { ["itemID"] = 4364; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 4404; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 4370;
-	};
+		creates = 4370,
+		icon = "Interface\\Icons\\inv_misc_bomb_01",
+		name = "Large Copper Bomb",
+		reagents = {
+			{
+				itemID = 2840,
+				icon = "Interface\\Icons\\inv_ingot_02",
+				numRequired = 3,
+			},
+			{
+				itemID = 4364,
+				icon = "Interface\\Icons\\inv_misc_dust_02",
+				numRequired = 4,
+			},
+			{
+				itemID = 4404,
+				icon = "Interface\\Icons\\inv_ingot_04",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 105,
+		levels = {
+			105,
+			105,
+			130,
+			155,
+		},
+	},
 	[3938] = {
-		["learnedAt"] = 105;
-		["levels"] = { 105, 105, 130, 155 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2841; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 2880; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 4371;
-	};
+		creates = 4371,
+		icon = "Interface\\Icons\\inv_gizmo_pipe_01",
+		name = "Bronze Tube",
+		reagents = {
+			{
+				itemID = 2841,
+				icon = "Interface\\Icons\\inv_ingot_bronze",
+				numRequired = 2,
+			},
+			{
+				itemID = 2880,
+				icon = "Interface\\Icons\\inv_misc_ammo_gunpowder_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 105,
+		levels = {
+			105,
+			105,
+			130,
+			155,
+		},
+	},
 	[3939] = {
-		["learnedAt"] = 120;
-		["levels"] = { 120, 145, 157, 170 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4371; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 4359; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 4400; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 1206; ["numRequired"] = 3; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 4372;
-	};
+		creates = 4372,
+		icon = "Interface\\Icons\\inv_weapon_rifle_07",
+		name = "Lovingly Crafted Boomstick",
+		reagents = {
+			{
+				itemID = 4371,
+				icon = "Interface\\Icons\\inv_gizmo_pipe_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 4359,
+				icon = "Interface\\Icons\\inv_misc_gear_06",
+				numRequired = 2,
+			},
+			{
+				itemID = 4400,
+				icon = "Interface\\Icons\\inv_mace_11",
+				numRequired = 1,
+			},
+			{
+				itemID = 1206,
+				icon = "Interface\\Icons\\inv_misc_gem_emerald_02",
+				numRequired = 3,
+			},
+		},
+		learnedAt = 120,
+		levels = {
+			120,
+			145,
+			157,
+			170,
+		},
+	},
 	[3940] = {
-		["learnedAt"] = 120;
-		["levels"] = { 120, 145, 157, 170 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2319; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 1210; ["numRequired"] = 2; };
-		};
-		["creates"] = 4373;
-	};
+		creates = 4373,
+		icon = "Interface\\Icons\\inv_helmet_47",
+		name = "Shadow Goggles",
+		reagents = {
+			{
+				itemID = 2319,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_05",
+				numRequired = 4,
+			},
+			{
+				itemID = 1210,
+				icon = "Interface\\Icons\\inv_misc_gem_amethyst_01",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 120,
+		levels = {
+			120,
+			145,
+			157,
+			170,
+		},
+	},
 	[3941] = {
-		["learnedAt"] = 120;
-		["levels"] = { 120, 120, 145, 170 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4364; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 2841; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 4404; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 2592; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 4374;
-	};
+		creates = 4374,
+		icon = "Interface\\Icons\\inv_misc_bomb_09",
+		name = "Small Bronze Bomb",
+		reagents = {
+			{
+				itemID = 4364,
+				icon = "Interface\\Icons\\inv_misc_dust_02",
+				numRequired = 4,
+			},
+			{
+				itemID = 2841,
+				icon = "Interface\\Icons\\inv_ingot_bronze",
+				numRequired = 2,
+			},
+			{
+				itemID = 4404,
+				icon = "Interface\\Icons\\inv_ingot_04",
+				numRequired = 1,
+			},
+			{
+				itemID = 2592,
+				icon = "Interface\\Icons\\inv_fabric_wool_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 120,
+		levels = {
+			120,
+			120,
+			145,
+			170,
+		},
+	},
 	[3942] = {
-		["learnedAt"] = 125;
-		["levels"] = { 125, 125, 150, 175 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2841; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 2592; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 4375;
-	};
+		creates = 4375,
+		icon = "Interface\\Icons\\inv_gizmo_02",
+		name = "Whirring Bronze Gizmo",
+		reagents = {
+			{
+				itemID = 2841,
+				icon = "Interface\\Icons\\inv_ingot_bronze",
+				numRequired = 2,
+			},
+			{
+				itemID = 2592,
+				icon = "Interface\\Icons\\inv_fabric_wool_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 125,
+		levels = {
+			125,
+			125,
+			150,
+			175,
+		},
+	},
 	[3944] = {
-		["learnedAt"] = 125;
-		["levels"] = { 125, 125, 150, 175 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4375; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4402; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 4376;
-	};
+		creates = 4376,
+		icon = "Interface\\Icons\\inv_gizmo_01",
+		name = "Flame Deflector",
+		reagents = {
+			{
+				itemID = 4375,
+				icon = "Interface\\Icons\\inv_gizmo_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 4402,
+				icon = "Interface\\Icons\\inv_misc_organ_06",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 125,
+		levels = {
+			125,
+			125,
+			150,
+			175,
+		},
+	},
 	[3945] = {
-		["learnedAt"] = 125;
-		["levels"] = { 125, 125, 135, 145 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2838; ["numRequired"] = 1; };
-		};
-		["creates"] = 4377;
-	};
+		creates = 4377,
+		icon = "Interface\\Icons\\classic_inv_misc_dust_06",
+		name = "Heavy Blasting Powder",
+		reagents = {
+			{
+				itemID = 2838,
+				icon = "Interface\\Icons\\inv_stone_12",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 125,
+		levels = {
+			125,
+			125,
+			135,
+			145,
+		},
+	},
 	[3946] = {
-		["learnedAt"] = 125;
-		["levels"] = { 125, 125, 135, 145 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4377; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 2592; ["numRequired"] = 1; };
-		};
-		["creates"] = 4378;
-	};
+		creates = 4378,
+		icon = "Interface\\Icons\\inv_misc_bomb_06",
+		name = "Heavy Dynamite",
+		reagents = {
+			{
+				itemID = 4377,
+				icon = "Interface\\Icons\\classic_inv_misc_dust_06",
+				numRequired = 2,
+			},
+			{
+				itemID = 2592,
+				icon = "Interface\\Icons\\inv_fabric_wool_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 125,
+		levels = {
+			125,
+			125,
+			135,
+			145,
+		},
+	},
 	[3947] = {
-		["learnedAt"] = 125;
-		["levels"] = { 125, 125, 135, 145 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4377; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2841; ["numRequired"] = 1; };
-		};
-		["creates"] = 8069;
-	};
+		creates = 8069,
+		icon = "Interface\\Icons\\inv_ammo_bullet_02",
+		name = "Crafted Solid Shot",
+		reagents = {
+			{
+				itemID = 4377,
+				icon = "Interface\\Icons\\classic_inv_misc_dust_06",
+				numRequired = 1,
+			},
+			{
+				itemID = 2841,
+				icon = "Interface\\Icons\\inv_ingot_bronze",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 125,
+		levels = {
+			125,
+			125,
+			135,
+			145,
+		},
+	},
 	[3949] = {
-		["learnedAt"] = 130;
-		["levels"] = { 130, 155, 167, 180 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4371; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 4375; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 4400; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 2842; ["numRequired"] = 3; };
-		};
-		["creates"] = 4379;
-	};
+		creates = 4379,
+		icon = "Interface\\Icons\\inv_weapon_rifle_07",
+		name = "Silver-plated Shotgun",
+		reagents = {
+			{
+				itemID = 4371,
+				icon = "Interface\\Icons\\inv_gizmo_pipe_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 4375,
+				icon = "Interface\\Icons\\inv_gizmo_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 4400,
+				icon = "Interface\\Icons\\inv_mace_11",
+				numRequired = 1,
+			},
+			{
+				itemID = 2842,
+				icon = "Interface\\Icons\\inv_ingot_01",
+				numRequired = 3,
+			},
+		},
+		learnedAt = 130,
+		levels = {
+			130,
+			155,
+			167,
+			180,
+		},
+	},
 	[3950] = {
-		["learnedAt"] = 140;
-		["levels"] = { 140, 140, 165, 190 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4377; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 2841; ["numRequired"] = 3; };
-			[3] = { ["itemID"] = 4404; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 4380;
-	};
+		creates = 4380,
+		icon = "Interface\\Icons\\inv_misc_bomb_05",
+		name = "Big Bronze Bomb",
+		reagents = {
+			{
+				itemID = 4377,
+				icon = "Interface\\Icons\\classic_inv_misc_dust_06",
+				numRequired = 2,
+			},
+			{
+				itemID = 2841,
+				icon = "Interface\\Icons\\inv_ingot_bronze",
+				numRequired = 3,
+			},
+			{
+				itemID = 4404,
+				icon = "Interface\\Icons\\inv_ingot_04",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 140,
+		levels = {
+			140,
+			140,
+			165,
+			190,
+		},
+	},
 	[3952] = {
-		["learnedAt"] = 140;
-		["levels"] = { 140, 165, 177, 190 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4371; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4375; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 2319; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 1206; ["numRequired"] = 1; };
-		};
-		["creates"] = 4381;
-	};
+		creates = 4381,
+		icon = "Interface\\Icons\\inv_gizmo_07",
+		name = "Minor Recombobulator",
+		reagents = {
+			{
+				itemID = 4371,
+				icon = "Interface\\Icons\\inv_gizmo_pipe_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 4375,
+				icon = "Interface\\Icons\\inv_gizmo_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 2319,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_05",
+				numRequired = 2,
+			},
+			{
+				itemID = 1206,
+				icon = "Interface\\Icons\\inv_misc_gem_emerald_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 140,
+		levels = {
+			140,
+			165,
+			177,
+			190,
+		},
+	},
 	[3953] = {
-		["learnedAt"] = 145;
-		["levels"] = { 145, 145, 170, 195 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2841; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 2319; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 2592; ["numRequired"] = 1; };
-		};
-		["creates"] = 4382;
-	};
+		creates = 4382,
+		icon = "Interface\\Icons\\inv_gizmo_bronzeframework_01",
+		name = "Bronze Framework",
+		reagents = {
+			{
+				itemID = 2841,
+				icon = "Interface\\Icons\\inv_ingot_bronze",
+				numRequired = 2,
+			},
+			{
+				itemID = 2319,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_05",
+				numRequired = 1,
+			},
+			{
+				itemID = 2592,
+				icon = "Interface\\Icons\\inv_fabric_wool_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 145,
+		levels = {
+			145,
+			145,
+			170,
+			195,
+		},
+	},
 	[3954] = {
-		["learnedAt"] = 145;
-		["levels"] = { 145, 170, 182, 195 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4371; ["numRequired"] = 3; };
-			[2] = { ["itemID"] = 4375; ["numRequired"] = 3; };
-			[3] = { ["itemID"] = 4400; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 1705; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 4383;
-	};
+		creates = 4383,
+		icon = "Interface\\Icons\\inv_weapon_rifle_06",
+		name = "Moonsight Rifle",
+		reagents = {
+			{
+				itemID = 4371,
+				icon = "Interface\\Icons\\inv_gizmo_pipe_01",
+				numRequired = 3,
+			},
+			{
+				itemID = 4375,
+				icon = "Interface\\Icons\\inv_gizmo_02",
+				numRequired = 3,
+			},
+			{
+				itemID = 4400,
+				icon = "Interface\\Icons\\inv_mace_11",
+				numRequired = 1,
+			},
+			{
+				itemID = 1705,
+				icon = "Interface\\Icons\\inv_misc_gem_crystal_01",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 145,
+		levels = {
+			145,
+			170,
+			182,
+			195,
+		},
+	},
 	[3955] = {
-		["learnedAt"] = 150;
-		["levels"] = { 150, 175, 187, 200 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4382; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4375; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 4377; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 2592; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 4384;
-	};
+		creates = 4384,
+		icon = "Interface\\Icons\\spell_nature_polymorph",
+		name = "Explosive Sheep",
+		reagents = {
+			{
+				itemID = 4382,
+				icon = "Interface\\Icons\\inv_gizmo_bronzeframework_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 4375,
+				icon = "Interface\\Icons\\inv_gizmo_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 4377,
+				icon = "Interface\\Icons\\classic_inv_misc_dust_06",
+				numRequired = 2,
+			},
+			{
+				itemID = 2592,
+				icon = "Interface\\Icons\\inv_fabric_wool_01",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 150,
+		levels = {
+			150,
+			175,
+			187,
+			200,
+		},
+	},
 	[3956] = {
-		["learnedAt"] = 150;
-		["levels"] = { 150, 175, 187, 200 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2319; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 1206; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 4368; ["numRequired"] = 1; };
-		};
-		["tools"] = { 6219 };
-		["creates"] = 4385;
-	};
+		creates = 4385,
+		icon = "Interface\\Icons\\inv_helmet_47",
+		name = "Green Tinted Goggles",
+		reagents = {
+			{
+				itemID = 2319,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_05",
+				numRequired = 4,
+			},
+			{
+				itemID = 1206,
+				icon = "Interface\\Icons\\inv_misc_gem_emerald_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 4368,
+				icon = "Interface\\Icons\\inv_helmet_47",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 150,
+		levels = {
+			150,
+			175,
+			187,
+			200,
+		},
+	},
 	[3957] = {
-		["learnedAt"] = 155;
-		["levels"] = { 155, 175, 185, 195 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4375; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3829; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 4386;
-	};
+		creates = 4386,
+		icon = "Interface\\Icons\\inv_gizmo_01",
+		name = "Ice Deflector",
+		reagents = {
+			{
+				itemID = 4375,
+				icon = "Interface\\Icons\\inv_gizmo_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 3829,
+				icon = "Interface\\Icons\\inv_potion_20",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 155,
+		levels = {
+			155,
+			175,
+			185,
+			195,
+		},
+	},
 	[3958] = {
-		["learnedAt"] = 160;
-		["levels"] = { 160, 160, 170, 180 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3575; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 4387;
-	};
+		creates = 4387,
+		icon = "Interface\\Icons\\inv_spear_05",
+		name = "Iron Strut",
+		reagents = {
+			{
+				itemID = 3575,
+				icon = "Interface\\Icons\\inv_ingot_iron",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 160,
+		levels = {
+			160,
+			160,
+			170,
+			180,
+		},
+	},
 	[3959] = {
-		["learnedAt"] = 160;
-		["levels"] = { 160, 180, 190, 200 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4375; ["numRequired"] = 3; };
-			[2] = { ["itemID"] = 4306; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 1529; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 4371; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 4388;
-	};
+		creates = 4388,
+		icon = "Interface\\Icons\\inv_misc_spyglass_02",
+		name = "Discombobulator Ray",
+		reagents = {
+			{
+				itemID = 4375,
+				icon = "Interface\\Icons\\inv_gizmo_02",
+				numRequired = 3,
+			},
+			{
+				itemID = 4306,
+				icon = "Interface\\Icons\\inv_fabric_silk_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 1529,
+				icon = "Interface\\Icons\\inv_misc_gem_stone_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 4371,
+				icon = "Interface\\Icons\\inv_gizmo_pipe_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 160,
+		levels = {
+			160,
+			180,
+			190,
+			200,
+		},
+	},
 	[3960] = {
-		["learnedAt"] = 165;
-		["levels"] = { 165, 185, 195, 205 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4371; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 4387; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 4377; ["numRequired"] = 4; };
-			[4] = { ["itemID"] = 2319; ["numRequired"] = 4; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 4403;
-	};
+		creates = 4403,
+		icon = "Interface\\Icons\\inv_musket_01",
+		name = "Portable Bronze Mortar",
+		reagents = {
+			{
+				itemID = 4371,
+				icon = "Interface\\Icons\\inv_gizmo_pipe_01",
+				numRequired = 4,
+			},
+			{
+				itemID = 4387,
+				icon = "Interface\\Icons\\inv_spear_05",
+				numRequired = 1,
+			},
+			{
+				itemID = 4377,
+				icon = "Interface\\Icons\\classic_inv_misc_dust_06",
+				numRequired = 4,
+			},
+			{
+				itemID = 2319,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_05",
+				numRequired = 4,
+			},
+		},
+		learnedAt = 165,
+		levels = {
+			165,
+			185,
+			195,
+			205,
+		},
+	},
 	[3961] = {
-		["learnedAt"] = 170;
-		["levels"] = { 170, 170, 190, 210 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3575; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 10558; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 4389;
-	};
+		creates = 4389,
+		icon = "Interface\\Icons\\inv_misc_pocketwatch_02",
+		name = "Gyrochronatom",
+		reagents = {
+			{
+				itemID = 3575,
+				icon = "Interface\\Icons\\inv_ingot_iron",
+				numRequired = 1,
+			},
+			{
+				itemID = 10558,
+				icon = "Interface\\Icons\\inv_battery_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 170,
+		levels = {
+			170,
+			170,
+			190,
+			210,
+		},
+	},
 	[3962] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 175, 195, 215 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3575; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4377; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 4306; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 4390;
-	};
+		creates = 4390,
+		icon = "Interface\\Icons\\inv_misc_bomb_08",
+		name = "Iron Grenade",
+		reagents = {
+			{
+				itemID = 3575,
+				icon = "Interface\\Icons\\inv_ingot_iron",
+				numRequired = 1,
+			},
+			{
+				itemID = 4377,
+				icon = "Interface\\Icons\\classic_inv_misc_dust_06",
+				numRequired = 1,
+			},
+			{
+				itemID = 4306,
+				icon = "Interface\\Icons\\inv_fabric_silk_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			175,
+			195,
+			215,
+		},
+	},
 	[3963] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 175, 195, 215 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4387; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 4382; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 4389; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 4234; ["numRequired"] = 4; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 4391;
-	};
+		creates = 4391,
+		icon = "Interface\\Icons\\inv_helmet_08",
+		name = "Compact Harvest Reaper Kit",
+		reagents = {
+			{
+				itemID = 4387,
+				icon = "Interface\\Icons\\inv_spear_05",
+				numRequired = 2,
+			},
+			{
+				itemID = 4382,
+				icon = "Interface\\Icons\\inv_gizmo_bronzeframework_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 4389,
+				icon = "Interface\\Icons\\inv_misc_pocketwatch_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 4234,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_07",
+				numRequired = 4,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			175,
+			195,
+			215,
+		},
+	},
 	[3965] = {
-		["learnedAt"] = 185;
-		["levels"] = { 185, 185, 205, 225 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4387; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4382; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 4389; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 4234; ["numRequired"] = 4; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 4392;
-	};
+		creates = 4392,
+		icon = "Interface\\Icons\\inv_crate_05",
+		name = "Advanced Target Dummy",
+		reagents = {
+			{
+				itemID = 4387,
+				icon = "Interface\\Icons\\inv_spear_05",
+				numRequired = 1,
+			},
+			{
+				itemID = 4382,
+				icon = "Interface\\Icons\\inv_gizmo_bronzeframework_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 4389,
+				icon = "Interface\\Icons\\inv_misc_pocketwatch_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 4234,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_07",
+				numRequired = 4,
+			},
+		},
+		learnedAt = 185,
+		levels = {
+			185,
+			185,
+			205,
+			225,
+		},
+	},
 	[3966] = {
-		["learnedAt"] = 185;
-		["levels"] = { 185, 205, 215, 225 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4234; ["numRequired"] = 6; };
-			[2] = { ["itemID"] = 3864; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 4393;
-	};
+		creates = 4393,
+		icon = "Interface\\Icons\\inv_helmet_44",
+		name = "Craftsman's Monocle",
+		reagents = {
+			{
+				itemID = 4234,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_07",
+				numRequired = 6,
+			},
+			{
+				itemID = 3864,
+				icon = "Interface\\Icons\\inv_misc_gem_opal_02",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 185,
+		levels = {
+			185,
+			205,
+			215,
+			225,
+		},
+	},
 	[3967] = {
-		["learnedAt"] = 190;
-		["levels"] = { 190, 190, 210, 230 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3575; ["numRequired"] = 3; };
-			[2] = { ["itemID"] = 4377; ["numRequired"] = 3; };
-			[3] = { ["itemID"] = 4404; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 4394;
-	};
+		creates = 4394,
+		icon = "Interface\\Icons\\inv_misc_bomb_01",
+		name = "Big Iron Bomb",
+		reagents = {
+			{
+				itemID = 3575,
+				icon = "Interface\\Icons\\inv_ingot_iron",
+				numRequired = 3,
+			},
+			{
+				itemID = 4377,
+				icon = "Interface\\Icons\\classic_inv_misc_dust_06",
+				numRequired = 3,
+			},
+			{
+				itemID = 4404,
+				icon = "Interface\\Icons\\inv_ingot_04",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 190,
+		levels = {
+			190,
+			190,
+			210,
+			230,
+		},
+	},
 	[3968] = {
-		["learnedAt"] = 195;
-		["levels"] = { 195, 215, 225, 235 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4377; ["numRequired"] = 3; };
-			[2] = { ["itemID"] = 3575; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 4389; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 4395;
-	};
+		creates = 4395,
+		icon = "Interface\\Icons\\inv_shield_08",
+		name = "Goblin Land Mine",
+		reagents = {
+			{
+				itemID = 4377,
+				icon = "Interface\\Icons\\classic_inv_misc_dust_06",
+				numRequired = 3,
+			},
+			{
+				itemID = 3575,
+				icon = "Interface\\Icons\\inv_ingot_iron",
+				numRequired = 2,
+			},
+			{
+				itemID = 4389,
+				icon = "Interface\\Icons\\inv_misc_pocketwatch_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 195,
+		levels = {
+			195,
+			215,
+			225,
+			235,
+		},
+	},
 	[3969] = {
-		["learnedAt"] = 200;
-		["levels"] = { 200, 220, 230, 240 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4382; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4387; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 4389; ["numRequired"] = 4; };
-			[4] = { ["itemID"] = 3864; ["numRequired"] = 2; };
-			[5] = { ["itemID"] = 7191; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 4396;
-	};
+		creates = 4396,
+		icon = "Interface\\Icons\\inv_misc_head_dragon_01",
+		name = "Mechanical Dragonling",
+		reagents = {
+			{
+				itemID = 4382,
+				icon = "Interface\\Icons\\inv_gizmo_bronzeframework_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 4387,
+				icon = "Interface\\Icons\\inv_spear_05",
+				numRequired = 4,
+			},
+			{
+				itemID = 4389,
+				icon = "Interface\\Icons\\inv_misc_pocketwatch_02",
+				numRequired = 4,
+			},
+			{
+				itemID = 3864,
+				icon = "Interface\\Icons\\inv_misc_gem_opal_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 7191,
+				icon = "Interface\\Icons\\inv_misc_gear_03",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 200,
+		levels = {
+			200,
+			220,
+			230,
+			240,
+		},
+	},
 	[3971] = {
-		["learnedAt"] = 200;
-		["levels"] = { 200, 220, 230, 240 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4389; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 1529; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 1705; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 3864; ["numRequired"] = 2; };
-			[5] = { ["itemID"] = 7191; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 4397;
-	};
+		creates = 4397,
+		icon = "Interface\\Icons\\inv_gizmo_01",
+		name = "Gnomish Cloaking Device",
+		reagents = {
+			{
+				itemID = 4389,
+				icon = "Interface\\Icons\\inv_misc_pocketwatch_02",
+				numRequired = 4,
+			},
+			{
+				itemID = 1529,
+				icon = "Interface\\Icons\\inv_misc_gem_stone_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 1705,
+				icon = "Interface\\Icons\\inv_misc_gem_crystal_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 3864,
+				icon = "Interface\\Icons\\inv_misc_gem_opal_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 7191,
+				icon = "Interface\\Icons\\inv_misc_gear_03",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 200,
+		levels = {
+			200,
+			220,
+			230,
+			240,
+		},
+	},
 	[3972] = {
-		["learnedAt"] = 200;
-		["levels"] = { 200, 200, 220, 240 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10505; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 4234; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 159; ["numRequired"] = 1; };
-		};
-		["creates"] = 4398;
-	};
+		creates = 4398,
+		icon = "Interface\\Icons\\inv_misc_urn_01",
+		name = "Large Seaforium Charge",
+		reagents = {
+			{
+				itemID = 10505,
+				icon = "Interface\\Icons\\inv_misc_powder_black",
+				numRequired = 2,
+			},
+			{
+				itemID = 4234,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_07",
+				numRequired = 2,
+			},
+			{
+				itemID = 159,
+				icon = "Interface\\Icons\\inv_drink_07",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 200,
+		levels = {
+			200,
+			200,
+			220,
+			240,
+		},
+	},
 	[3973] = {
-		["learnedAt"] = 90;
-		["levels"] = { 90, 110, 125, 140 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2842; ["numRequired"] = 1; };
-		};
-		["creates"] = 4404;
-	};
+		creates = 4404,
+		icon = "Interface\\Icons\\inv_ingot_04",
+		name = "Silver Contact",
+		reagents = {
+			{
+				itemID = 2842,
+				icon = "Interface\\Icons\\inv_ingot_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 90,
+		levels = {
+			90,
+			110,
+			125,
+			140,
+		},
+	},
 	[3977] = {
-		["learnedAt"] = 60;
-		["levels"] = { 60, 90, 105, 120 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4361; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 774; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 4359; ["numRequired"] = 1; };
-		};
-		["tools"] = { 6219 };
-		["creates"] = 4405;
-	};
+		creates = 4405,
+		icon = "Interface\\Icons\\inv_misc_spyglass_02",
+		name = "Crude Scope",
+		reagents = {
+			{
+				itemID = 4361,
+				icon = "Interface\\Icons\\inv_gizmo_pipe_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 774,
+				icon = "Interface\\Icons\\inv_misc_gem_emerald_03",
+				numRequired = 1,
+			},
+			{
+				itemID = 4359,
+				icon = "Interface\\Icons\\inv_misc_gear_06",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 60,
+		levels = {
+			60,
+			90,
+			105,
+			120,
+		},
+	},
 	[3978] = {
-		["learnedAt"] = 110;
-		["levels"] = { 110, 135, 147, 160 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4371; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 1206; ["numRequired"] = 1; };
-		};
-		["tools"] = { 6219 };
-		["creates"] = 4406;
-	};
+		creates = 4406,
+		icon = "Interface\\Icons\\inv_misc_spyglass_02",
+		name = "Standard Scope",
+		reagents = {
+			{
+				itemID = 4371,
+				icon = "Interface\\Icons\\inv_gizmo_pipe_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 1206,
+				icon = "Interface\\Icons\\inv_misc_gem_emerald_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 110,
+		levels = {
+			110,
+			135,
+			147,
+			160,
+		},
+	},
 	[3979] = {
-		["learnedAt"] = 180;
-		["levels"] = { 180, 200, 210, 220 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4371; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 1529; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 3864; ["numRequired"] = 1; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 4407;
-	};
+		creates = 4407,
+		icon = "Interface\\Icons\\inv_misc_spyglass_02",
+		name = "Accurate Scope",
+		reagents = {
+			{
+				itemID = 4371,
+				icon = "Interface\\Icons\\inv_gizmo_pipe_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 1529,
+				icon = "Interface\\Icons\\inv_misc_gem_stone_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 3864,
+				icon = "Interface\\Icons\\inv_misc_gem_opal_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 180,
+		levels = {
+			180,
+			200,
+			210,
+			220,
+		},
+	},
 	[6458] = {
-		["learnedAt"] = 135;
-		["levels"] = { 135, 160, 172, 185 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4371; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 4375; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 4363; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 1206; ["numRequired"] = 1; };
-		};
-		["creates"] = 5507;
-	};
+		creates = 5507,
+		icon = "Interface\\Icons\\inv_misc_spyglass_01",
+		name = "Ornate Spyglass",
+		reagents = {
+			{
+				itemID = 4371,
+				icon = "Interface\\Icons\\inv_gizmo_pipe_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 4375,
+				icon = "Interface\\Icons\\inv_gizmo_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 4363,
+				icon = "Interface\\Icons\\inv_gizmo_03",
+				numRequired = 1,
+			},
+			{
+				itemID = 1206,
+				icon = "Interface\\Icons\\inv_misc_gem_emerald_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 135,
+		levels = {
+			135,
+			160,
+			172,
+			185,
+		},
+	},
 	[7430] = {
-		["learnedAt"] = 50;
-		["levels"] = { 50, 70, 80, 90 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2840; ["numRequired"] = 6; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 6219;
-	};
+		creates = 6219,
+		icon = "Interface\\Icons\\inv_misc_wrench_01",
+		name = "Arclight Spanner",
+		reagents = {
+			{
+				itemID = 2840,
+				icon = "Interface\\Icons\\inv_ingot_02",
+				numRequired = 6,
+			},
+		},
+		learnedAt = 50,
+		levels = {
+			50,
+			70,
+			80,
+			90,
+		},
+	},
 	[8243] = {
-		["learnedAt"] = 185;
-		["levels"] = { 185, 185, 205, 225 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4611; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4377; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 4306; ["numRequired"] = 1; };
-		};
-		["creates"] = 4852;
-	};
+		creates = 4852,
+		icon = "Interface\\Icons\\inv_misc_ammo_bullet_01",
+		name = "Flash Bomb",
+		reagents = {
+			{
+				itemID = 4611,
+				icon = "Interface\\Icons\\inv_ore_arcanite_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 4377,
+				icon = "Interface\\Icons\\classic_inv_misc_dust_06",
+				numRequired = 1,
+			},
+			{
+				itemID = 4306,
+				icon = "Interface\\Icons\\inv_fabric_silk_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 185,
+		levels = {
+			185,
+			185,
+			205,
+			225,
+		},
+	},
 	[8334] = {
-		["learnedAt"] = 100;
-		["levels"] = { 100, 115, 122, 130 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2841; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4359; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 2880; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 6712;
-	};
+		creates = 6712,
+		icon = "Interface\\Icons\\inv_box_01",
+		name = "Practice Lock",
+		reagents = {
+			{
+				itemID = 2841,
+				icon = "Interface\\Icons\\inv_ingot_bronze",
+				numRequired = 1,
+			},
+			{
+				itemID = 4359,
+				icon = "Interface\\Icons\\inv_misc_gear_06",
+				numRequired = 2,
+			},
+			{
+				itemID = 2880,
+				icon = "Interface\\Icons\\inv_misc_ammo_gunpowder_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 100,
+		levels = {
+			100,
+			115,
+			122,
+			130,
+		},
+	},
 	[8339] = {
-		["learnedAt"] = 100;
-		["levels"] = { 100, 115, 122, 130 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4364; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 2592; ["numRequired"] = 1; };
-		};
-		["creates"] = 6714;
-	};
+		creates = 6714,
+		icon = "Interface\\Icons\\inv_misc_bomb_06",
+		name = "EZ-Thro Dynamite",
+		reagents = {
+			{
+				itemID = 4364,
+				icon = "Interface\\Icons\\inv_misc_dust_02",
+				numRequired = 4,
+			},
+			{
+				itemID = 2592,
+				icon = "Interface\\Icons\\inv_fabric_wool_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 100,
+		levels = {
+			100,
+			115,
+			122,
+			130,
+		},
+	},
 	[8895] = {
-		["learnedAt"] = 225;
-		["levels"] = { 225, 245, 255, 265 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10026; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 10559; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 4234; ["numRequired"] = 4; };
-			[4] = { ["itemID"] = 9061; ["numRequired"] = 2; };
-			[5] = { ["itemID"] = 10560; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 7189;
-	};
+		creates = 7189,
+		icon = "Interface\\Icons\\inv_gizmo_rocketboot_01",
+		name = "Goblin Rocket Boots",
+		reagents = {
+			{
+				itemID = 10026,
+				icon = "Interface\\Icons\\inv_boots_05",
+				numRequired = 1,
+			},
+			{
+				itemID = 10559,
+				icon = "Interface\\Icons\\inv_musket_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 4234,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_07",
+				numRequired = 4,
+			},
+			{
+				itemID = 9061,
+				icon = "Interface\\Icons\\inv_cask_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 10560,
+				icon = "Interface\\Icons\\inv_battery_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 225,
+		levels = {
+			225,
+			245,
+			255,
+			265,
+		},
+	},
 	[9269] = {
-		["learnedAt"] = 125;
-		["levels"] = { 125, 150, 162, 175 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2841; ["numRequired"] = 6; };
-			[2] = { ["itemID"] = 4375; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 814; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 818; ["numRequired"] = 1; };
-			[5] = { ["itemID"] = 774; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 7506;
-	};
+		creates = 7506,
+		icon = "Interface\\Icons\\inv_misc_pocketwatch_01",
+		name = "Gnomish Universal Remote",
+		reagents = {
+			{
+				itemID = 2841,
+				icon = "Interface\\Icons\\inv_ingot_bronze",
+				numRequired = 6,
+			},
+			{
+				itemID = 4375,
+				icon = "Interface\\Icons\\inv_gizmo_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 814,
+				icon = "Interface\\Icons\\inv_drink_07",
+				numRequired = 2,
+			},
+			{
+				itemID = 818,
+				icon = "Interface\\Icons\\inv_misc_gem_opal_03",
+				numRequired = 1,
+			},
+			{
+				itemID = 774,
+				icon = "Interface\\Icons\\inv_misc_gem_emerald_03",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 125,
+		levels = {
+			125,
+			150,
+			162,
+			175,
+		},
+	},
 	[9271] = {
-		["learnedAt"] = 150;
-		["levels"] = { 150, 150, 160, 170 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2841; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 6530; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 4364; ["numRequired"] = 1; };
-		};
-		["creates"] = 6533;
-	};
+		creates = 6533,
+		icon = "Interface\\Icons\\inv_misc_food_26",
+		name = "Aquadynamic Fish Attractor",
+		reagents = {
+			{
+				itemID = 2841,
+				icon = "Interface\\Icons\\inv_ingot_bronze",
+				numRequired = 2,
+			},
+			{
+				itemID = 6530,
+				icon = "Interface\\Icons\\inv_misc_monstertail_03",
+				numRequired = 1,
+			},
+			{
+				itemID = 4364,
+				icon = "Interface\\Icons\\inv_misc_dust_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 150,
+		levels = {
+			150,
+			150,
+			160,
+			170,
+		},
+	},
 	[9273] = {
-		["learnedAt"] = 165;
-		["levels"] = { 165, 165, 180, 200 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3575; ["numRequired"] = 6; };
-			[2] = { ["itemID"] = 4375; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 814; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 4306; ["numRequired"] = 2; };
-			[5] = { ["itemID"] = 1210; ["numRequired"] = 2; };
-			[6] = { ["itemID"] = 7191; ["numRequired"] = 1; };
-		};
-		["creates"] = 7148;
-	};
+		creates = 7148,
+		icon = "Interface\\Icons\\inv_misc_enggizmos_10",
+		name = "Goblin Jumper Cables",
+		reagents = {
+			{
+				itemID = 3575,
+				icon = "Interface\\Icons\\inv_ingot_iron",
+				numRequired = 6,
+			},
+			{
+				itemID = 4375,
+				icon = "Interface\\Icons\\inv_gizmo_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 814,
+				icon = "Interface\\Icons\\inv_drink_07",
+				numRequired = 2,
+			},
+			{
+				itemID = 4306,
+				icon = "Interface\\Icons\\inv_fabric_silk_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 1210,
+				icon = "Interface\\Icons\\inv_misc_gem_amethyst_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 7191,
+				icon = "Interface\\Icons\\inv_misc_gear_03",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 165,
+		levels = {
+			165,
+			165,
+			180,
+			200,
+		},
+	},
 	[12584] = {
-		["learnedAt"] = 150;
-		["levels"] = { 150, 150, 170, 190 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3577; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10558;
-	};
+		creates = 10558,
+		icon = "Interface\\Icons\\inv_battery_02",
+		name = "Gold Power Core",
+		reagents = {
+			{
+				itemID = 3577,
+				icon = "Interface\\Icons\\inv_ingot_03",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 150,
+		levels = {
+			150,
+			150,
+			170,
+			190,
+		},
+	},
 	[12585] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 175, 185, 195 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 7912; ["numRequired"] = 2; };
-		};
-		["creates"] = 10505;
-	};
+		creates = 10505,
+		icon = "Interface\\Icons\\inv_misc_powder_black",
+		name = "Solid Blasting Powder",
+		reagents = {
+			{
+				itemID = 7912,
+				icon = "Interface\\Icons\\inv_stone_10",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			175,
+			185,
+			195,
+		},
+	},
 	[12586] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 175, 185, 195 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10505; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4306; ["numRequired"] = 1; };
-		};
-		["creates"] = 10507;
-	};
+		creates = 10507,
+		icon = "Interface\\Icons\\inv_misc_bomb_06",
+		name = "Solid Dynamite",
+		reagents = {
+			{
+				itemID = 10505,
+				icon = "Interface\\Icons\\inv_misc_powder_black",
+				numRequired = 1,
+			},
+			{
+				itemID = 4306,
+				icon = "Interface\\Icons\\inv_fabric_silk_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			175,
+			185,
+			195,
+		},
+	},
 	[12587] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 195, 205, 215 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4234; ["numRequired"] = 6; };
-			[2] = { ["itemID"] = 3864; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 10499;
-	};
+		creates = 10499,
+		icon = "Interface\\Icons\\inv_helmet_47",
+		name = "Bright-Eye Goggles",
+		reagents = {
+			{
+				itemID = 4234,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_07",
+				numRequired = 6,
+			},
+			{
+				itemID = 3864,
+				icon = "Interface\\Icons\\inv_misc_gem_opal_02",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			195,
+			205,
+			215,
+		},
+	},
 	[12589] = {
-		["learnedAt"] = 195;
-		["levels"] = { 195, 195, 215, 235 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3860; ["numRequired"] = 3; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 10559;
-	};
+		creates = 10559,
+		icon = "Interface\\Icons\\inv_musket_01",
+		name = "Mithril Tube",
+		reagents = {
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 3,
+			},
+		},
+		learnedAt = 195,
+		levels = {
+			195,
+			195,
+			215,
+			235,
+		},
+	},
 	[12590] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 175, 195, 215 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3859; ["numRequired"] = 4; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 10498;
-	};
+		creates = 10498,
+		icon = "Interface\\Icons\\inv_misc_screwdriver_02",
+		name = "Gyromatic Micro-Adjustor",
+		reagents = {
+			{
+				itemID = 3859,
+				icon = "Interface\\Icons\\inv_ingot_steel",
+				numRequired = 4,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			175,
+			195,
+			215,
+		},
+	},
 	[12591] = {
-		["learnedAt"] = 200;
-		["levels"] = { 200, 200, 220, 240 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3860; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4338; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 10505; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10560;
-	};
+		creates = 10560,
+		icon = "Interface\\Icons\\inv_battery_01",
+		name = "Unstable Trigger",
+		reagents = {
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 1,
+			},
+			{
+				itemID = 4338,
+				icon = "Interface\\Icons\\inv_fabric_mageweave_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 10505,
+				icon = "Interface\\Icons\\inv_misc_powder_black",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 200,
+		levels = {
+			200,
+			200,
+			220,
+			240,
+		},
+	},
 	[12594] = {
-		["learnedAt"] = 205;
-		["levels"] = { 205, 225, 235, 245 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4385; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3864; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 7068; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 4234; ["numRequired"] = 4; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 10500;
-	};
+		creates = 10500,
+		icon = "Interface\\Icons\\inv_helmet_47",
+		name = "Fire Goggles",
+		reagents = {
+			{
+				itemID = 4385,
+				icon = "Interface\\Icons\\inv_helmet_47",
+				numRequired = 1,
+			},
+			{
+				itemID = 3864,
+				icon = "Interface\\Icons\\inv_misc_gem_opal_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 7068,
+				icon = "Interface\\Icons\\spell_fire_fire",
+				numRequired = 2,
+			},
+			{
+				itemID = 4234,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_07",
+				numRequired = 4,
+			},
+		},
+		learnedAt = 205,
+		levels = {
+			205,
+			225,
+			235,
+			245,
+		},
+	},
 	[12595] = {
-		["learnedAt"] = 205;
-		["levels"] = { 205, 225, 235, 245 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10559; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 10560; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 4400; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 3860; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 7068; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10508;
-	};
+		creates = 10508,
+		icon = "Interface\\Icons\\inv_weapon_rifle_07",
+		name = "Mithril Blunderbuss",
+		reagents = {
+			{
+				itemID = 10559,
+				icon = "Interface\\Icons\\inv_musket_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 10560,
+				icon = "Interface\\Icons\\inv_battery_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 4400,
+				icon = "Interface\\Icons\\inv_mace_11",
+				numRequired = 1,
+			},
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 4,
+			},
+			{
+				itemID = 7068,
+				icon = "Interface\\Icons\\spell_fire_fire",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 205,
+		levels = {
+			205,
+			225,
+			235,
+			245,
+		},
+	},
 	[12596] = {
-		["learnedAt"] = 210;
-		["levels"] = { 210, 210, 230, 250 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3860; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 10505; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 10512;
-	};
+		creates = 10512,
+		icon = "Interface\\Icons\\inv_ammo_bullet_01",
+		name = "Hi-Impact Mithril Slugs",
+		reagents = {
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 1,
+			},
+			{
+				itemID = 10505,
+				icon = "Interface\\Icons\\inv_misc_powder_black",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 210,
+		levels = {
+			210,
+			210,
+			230,
+			250,
+		},
+	},
 	[12597] = {
-		["learnedAt"] = 210;
-		["levels"] = { 210, 230, 240, 250 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10559; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 7909; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 4304; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10546;
-	};
+		creates = 10546,
+		icon = "Interface\\Icons\\inv_misc_spyglass_02",
+		name = "Deadly Scope",
+		reagents = {
+			{
+				itemID = 10559,
+				icon = "Interface\\Icons\\inv_musket_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 7909,
+				icon = "Interface\\Icons\\inv_misc_gem_crystal_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 4304,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_08",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 210,
+		levels = {
+			210,
+			230,
+			240,
+			250,
+		},
+	},
 	[12599] = {
-		["learnedAt"] = 215;
-		["levels"] = { 215, 215, 235, 255 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3860; ["numRequired"] = 3; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10561;
-	};
+		creates = 10561,
+		icon = "Interface\\Icons\\inv_gizmo_mithrilcasing_01",
+		name = "Mithril Casing",
+		reagents = {
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 3,
+			},
+		},
+		learnedAt = 215,
+		levels = {
+			215,
+			215,
+			235,
+			255,
+		},
+	},
 	[12603] = {
-		["learnedAt"] = 215;
-		["levels"] = { 215, 215, 235, 255 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10561; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 10560; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 10505; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10514;
-	};
+		creates = 10514,
+		icon = "Interface\\Icons\\inv_misc_bomb_02",
+		name = "Mithril Frag Bomb",
+		reagents = {
+			{
+				itemID = 10561,
+				icon = "Interface\\Icons\\inv_gizmo_mithrilcasing_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 10560,
+				icon = "Interface\\Icons\\inv_battery_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 10505,
+				icon = "Interface\\Icons\\inv_misc_powder_black",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 215,
+		levels = {
+			215,
+			215,
+			235,
+			255,
+		},
+	},
 	[12607] = {
-		["learnedAt"] = 220;
-		["levels"] = { 220, 240, 250, 260 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4304; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 7909; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 10592; ["numRequired"] = 1; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 10501;
-	};
+		creates = 10501,
+		icon = "Interface\\Icons\\inv_helmet_47",
+		name = "Catseye Ultra Goggles",
+		reagents = {
+			{
+				itemID = 4304,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_08",
+				numRequired = 4,
+			},
+			{
+				itemID = 7909,
+				icon = "Interface\\Icons\\inv_misc_gem_crystal_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 10592,
+				icon = "Interface\\Icons\\inv_potion_36",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 220,
+		levels = {
+			220,
+			240,
+			250,
+			260,
+		},
+	},
 	[12614] = {
-		["learnedAt"] = 220;
-		["levels"] = { 220, 240, 250, 260 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10559; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 10560; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 4400; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 3860; ["numRequired"] = 6; };
-			[5] = { ["itemID"] = 3864; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10510;
-	};
+		creates = 10510,
+		icon = "Interface\\Icons\\inv_weapon_rifle_07",
+		name = "Mithril Heavy-bore Rifle",
+		reagents = {
+			{
+				itemID = 10559,
+				icon = "Interface\\Icons\\inv_musket_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 10560,
+				icon = "Interface\\Icons\\inv_battery_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 4400,
+				icon = "Interface\\Icons\\inv_mace_11",
+				numRequired = 1,
+			},
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 6,
+			},
+			{
+				itemID = 3864,
+				icon = "Interface\\Icons\\inv_misc_gem_opal_02",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 220,
+		levels = {
+			220,
+			240,
+			250,
+			260,
+		},
+	},
 	[12615] = {
-		["learnedAt"] = 225;
-		["levels"] = { 225, 245, 255, 265 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4304; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 7910; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 10502;
-	};
+		creates = 10502,
+		icon = "Interface\\Icons\\inv_helmet_47",
+		name = "Spellpower Goggles Xtreme",
+		reagents = {
+			{
+				itemID = 4304,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_08",
+				numRequired = 4,
+			},
+			{
+				itemID = 7910,
+				icon = "Interface\\Icons\\inv_misc_gem_ruby_02",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 225,
+		levels = {
+			225,
+			245,
+			255,
+			265,
+		},
+	},
 	[12616] = {
-		["learnedAt"] = 225;
-		["levels"] = { 225, 245, 255, 265 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4339; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 10285; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 10560; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 10505; ["numRequired"] = 4; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 10518;
-	};
+		creates = 10518,
+		icon = "Interface\\Icons\\inv_misc_cape_11",
+		name = "Parachute Cloak",
+		reagents = {
+			{
+				itemID = 4339,
+				icon = "Interface\\Icons\\inv_fabric_mageweave_03",
+				numRequired = 4,
+			},
+			{
+				itemID = 10285,
+				icon = "Interface\\Icons\\spell_nature_web",
+				numRequired = 2,
+			},
+			{
+				itemID = 10560,
+				icon = "Interface\\Icons\\inv_battery_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 10505,
+				icon = "Interface\\Icons\\inv_misc_powder_black",
+				numRequired = 4,
+			},
+		},
+		learnedAt = 225,
+		levels = {
+			225,
+			245,
+			255,
+			265,
+		},
+	},
 	[12617] = {
-		["learnedAt"] = 230;
-		["levels"] = { 230, 250, 260, 270 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3860; ["numRequired"] = 8; };
-			[2] = { ["itemID"] = 10561; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 6037; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 818; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 774; ["numRequired"] = 4; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10506;
-	};
+		creates = 10506,
+		icon = "Interface\\Icons\\inv_helmet_49",
+		name = "Deepdive Helmet",
+		reagents = {
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 8,
+			},
+			{
+				itemID = 10561,
+				icon = "Interface\\Icons\\inv_gizmo_mithrilcasing_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 6037,
+				icon = "Interface\\Icons\\inv_ingot_08",
+				numRequired = 1,
+			},
+			{
+				itemID = 818,
+				icon = "Interface\\Icons\\inv_misc_gem_opal_03",
+				numRequired = 4,
+			},
+			{
+				itemID = 774,
+				icon = "Interface\\Icons\\inv_misc_gem_emerald_03",
+				numRequired = 4,
+			},
+		},
+		learnedAt = 230,
+		levels = {
+			230,
+			250,
+			260,
+			270,
+		},
+	},
 	[12618] = {
-		["learnedAt"] = 230;
-		["levels"] = { 230, 250, 260, 270 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4304; ["numRequired"] = 6; };
-			[2] = { ["itemID"] = 7910; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 10503;
-	};
+		creates = 10503,
+		icon = "Interface\\Icons\\inv_helmet_47",
+		name = "Rose Colored Goggles",
+		reagents = {
+			{
+				itemID = 4304,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_08",
+				numRequired = 6,
+			},
+			{
+				itemID = 7910,
+				icon = "Interface\\Icons\\inv_misc_gem_ruby_02",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 230,
+		levels = {
+			230,
+			250,
+			260,
+			270,
+		},
+	},
 	[12619] = {
-		["learnedAt"] = 235;
-		["levels"] = { 235, 235, 255, 275 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10561; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 10560; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 10505; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10562;
-	};
+		creates = 10562,
+		icon = "Interface\\Icons\\inv_misc_bomb_07",
+		name = "Hi-Explosive Bomb",
+		reagents = {
+			{
+				itemID = 10561,
+				icon = "Interface\\Icons\\inv_gizmo_mithrilcasing_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 10560,
+				icon = "Interface\\Icons\\inv_battery_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 10505,
+				icon = "Interface\\Icons\\inv_misc_powder_black",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 235,
+		levels = {
+			235,
+			235,
+			255,
+			275,
+		},
+	},
 	[12620] = {
-		["learnedAt"] = 240;
-		["levels"] = { 240, 260, 270, 280 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10559; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 7910; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 6037; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10548;
-	};
+		creates = 10548,
+		icon = "Interface\\Icons\\inv_misc_spyglass_02",
+		name = "Sniper Scope",
+		reagents = {
+			{
+				itemID = 10559,
+				icon = "Interface\\Icons\\inv_musket_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 7910,
+				icon = "Interface\\Icons\\inv_misc_gem_ruby_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 6037,
+				icon = "Interface\\Icons\\inv_ingot_08",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 240,
+		levels = {
+			240,
+			260,
+			270,
+			280,
+		},
+	},
 	[12621] = {
-		["learnedAt"] = 245;
-		["levels"] = { 245, 245, 265, 285 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3860; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 10505; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 10513;
-	};
+		creates = 10513,
+		icon = "Interface\\Icons\\inv_ammo_bullet_01",
+		name = "Mithril Gyro-Shot",
+		reagents = {
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 2,
+			},
+			{
+				itemID = 10505,
+				icon = "Interface\\Icons\\inv_misc_powder_black",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 245,
+		levels = {
+			245,
+			245,
+			265,
+			285,
+		},
+	},
 	[12622] = {
-		["learnedAt"] = 245;
-		["levels"] = { 245, 265, 275, 285 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4304; ["numRequired"] = 8; };
-			[2] = { ["itemID"] = 1529; ["numRequired"] = 3; };
-			[3] = { ["itemID"] = 7909; ["numRequired"] = 3; };
-			[4] = { ["itemID"] = 10286; ["numRequired"] = 2; };
-			[5] = { ["itemID"] = 8153; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 10504;
-	};
+		creates = 10504,
+		icon = "Interface\\Icons\\inv_helmet_44",
+		name = "Green Lens",
+		reagents = {
+			{
+				itemID = 4304,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_08",
+				numRequired = 8,
+			},
+			{
+				itemID = 1529,
+				icon = "Interface\\Icons\\inv_misc_gem_stone_01",
+				numRequired = 3,
+			},
+			{
+				itemID = 7909,
+				icon = "Interface\\Icons\\inv_misc_gem_crystal_02",
+				numRequired = 3,
+			},
+			{
+				itemID = 10286,
+				icon = "Interface\\Icons\\inv_misc_herb_08",
+				numRequired = 2,
+			},
+			{
+				itemID = 8153,
+				icon = "Interface\\Icons\\inv_misc_herb_03",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 245,
+		levels = {
+			245,
+			265,
+			275,
+			285,
+		},
+	},
 	[12624] = {
-		["learnedAt"] = 250;
-		["levels"] = { 250, 270, 280, 290 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3860; ["numRequired"] = 14; };
-			[2] = { ["itemID"] = 7077; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 6037; ["numRequired"] = 4; };
-			[4] = { ["itemID"] = 9060; ["numRequired"] = 2; };
-			[5] = { ["itemID"] = 9061; ["numRequired"] = 2; };
-			[6] = { ["itemID"] = 7910; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10576;
-	};
+		creates = 10576,
+		icon = "Interface\\Icons\\inv_misc_head_dragon_01",
+		name = "Mithril Mechanical Dragonling",
+		reagents = {
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 14,
+			},
+			{
+				itemID = 7077,
+				icon = "Interface\\Icons\\spell_fire_lavaspawn",
+				numRequired = 4,
+			},
+			{
+				itemID = 6037,
+				icon = "Interface\\Icons\\inv_ingot_08",
+				numRequired = 4,
+			},
+			{
+				itemID = 9060,
+				icon = "Interface\\Icons\\inv_musket_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 9061,
+				icon = "Interface\\Icons\\inv_cask_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 7910,
+				icon = "Interface\\Icons\\inv_misc_gem_ruby_02",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 250,
+		levels = {
+			250,
+			270,
+			280,
+			290,
+		},
+	},
 	[12715] = {
-		["learnedAt"] = 205;
-		["levels"] = { 205, 205, 205, 205 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10648; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 10647; ["numRequired"] = 1; };
-		};
-		["creates"] = 10644;
-	};
+		creates = 10644,
+		icon = "Interface\\Icons\\inv_scroll_03",
+		name = "Goblin Rocket Fuel Recipe",
+		reagents = {
+			{
+				itemID = 10648,
+				icon = "Interface\\Icons\\inv_misc_note_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 10647,
+				icon = "Interface\\Icons\\inv_potion_65",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 205,
+		levels = {
+			205,
+			205,
+			205,
+			205,
+		},
+	},
 	[12716] = {
-		["learnedAt"] = 225;
-		["levels"] = { 0, 225, 235, 245 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10559; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 3860; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 10505; ["numRequired"] = 5; };
-			[4] = { ["itemID"] = 10558; ["numRequired"] = 1; };
-			[5] = { ["itemID"] = 7068; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10577;
-	};
+		creates = 10577,
+		icon = "Interface\\Icons\\inv_musket_01",
+		name = "Goblin Mortar",
+		reagents = {
+			{
+				itemID = 10559,
+				icon = "Interface\\Icons\\inv_musket_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 4,
+			},
+			{
+				itemID = 10505,
+				icon = "Interface\\Icons\\inv_misc_powder_black",
+				numRequired = 5,
+			},
+			{
+				itemID = 10558,
+				icon = "Interface\\Icons\\inv_battery_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 7068,
+				icon = "Interface\\Icons\\spell_fire_fire",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 225,
+		levels = {
+			0,
+			225,
+			235,
+			245,
+		},
+	},
 	[12717] = {
-		["learnedAt"] = 205;
-		["levels"] = { 205, 225, 235, 245 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3860; ["numRequired"] = 8; };
-			[2] = { ["itemID"] = 3864; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 7067; ["numRequired"] = 4; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10542;
-	};
+		creates = 10542,
+		icon = "Interface\\Icons\\inv_helmet_25",
+		name = "Goblin Mining Helmet",
+		reagents = {
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 8,
+			},
+			{
+				itemID = 3864,
+				icon = "Interface\\Icons\\inv_misc_gem_opal_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 7067,
+				icon = "Interface\\Icons\\inv_ore_iron_01",
+				numRequired = 4,
+			},
+		},
+		learnedAt = 205,
+		levels = {
+			205,
+			225,
+			235,
+			245,
+		},
+	},
 	[12718] = {
-		["learnedAt"] = 205;
-		["levels"] = { 205, 225, 235, 245 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3860; ["numRequired"] = 8; };
-			[2] = { ["itemID"] = 3864; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 7068; ["numRequired"] = 4; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10543;
-	};
+		creates = 10543,
+		icon = "Interface\\Icons\\inv_helmet_60",
+		name = "Goblin Construction Helmet",
+		reagents = {
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 8,
+			},
+			{
+				itemID = 3864,
+				icon = "Interface\\Icons\\inv_misc_gem_opal_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 7068,
+				icon = "Interface\\Icons\\spell_fire_fire",
+				numRequired = 4,
+			},
+		},
+		learnedAt = 205,
+		levels = {
+			205,
+			225,
+			235,
+			245,
+		},
+	},
 	[12754] = {
-		["learnedAt"] = 235;
-		["levels"] = { 235, 235, 255, 275 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10561; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 9061; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 10507; ["numRequired"] = 6; };
-			[4] = { ["itemID"] = 10560; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10586;
-	};
+		creates = 10586,
+		icon = "Interface\\Icons\\inv_misc_bomb_04",
+		name = "The Big One",
+		reagents = {
+			{
+				itemID = 10561,
+				icon = "Interface\\Icons\\inv_gizmo_mithrilcasing_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 9061,
+				icon = "Interface\\Icons\\inv_cask_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 10507,
+				icon = "Interface\\Icons\\inv_misc_bomb_06",
+				numRequired = 6,
+			},
+			{
+				itemID = 10560,
+				icon = "Interface\\Icons\\inv_battery_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 235,
+		levels = {
+			235,
+			235,
+			255,
+			275,
+		},
+	},
 	[12755] = {
-		["learnedAt"] = 230;
-		["levels"] = { 230, 230, 250, 270 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10561; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 10505; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 6037; ["numRequired"] = 6; };
-			[4] = { ["itemID"] = 10560; ["numRequired"] = 1; };
-			[5] = { ["itemID"] = 4407; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10587;
-	};
+		creates = 10587,
+		icon = "Interface\\Icons\\inv_gizmo_06",
+		name = "Goblin Bomb Dispenser",
+		reagents = {
+			{
+				itemID = 10561,
+				icon = "Interface\\Icons\\inv_gizmo_mithrilcasing_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 10505,
+				icon = "Interface\\Icons\\inv_misc_powder_black",
+				numRequired = 4,
+			},
+			{
+				itemID = 6037,
+				icon = "Interface\\Icons\\inv_ingot_08",
+				numRequired = 6,
+			},
+			{
+				itemID = 10560,
+				icon = "Interface\\Icons\\inv_battery_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 4407,
+				icon = "Interface\\Icons\\inv_misc_spyglass_02",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 230,
+		levels = {
+			230,
+			230,
+			250,
+			270,
+		},
+	},
 	[12758] = {
-		["learnedAt"] = 245;
-		["levels"] = { 245, 265, 275, 285 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10543; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 9061; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 3860; ["numRequired"] = 4; };
-			[4] = { ["itemID"] = 10560; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10588;
-	};
+		creates = 10588,
+		icon = "Interface\\Icons\\inv_helmet_49",
+		name = "Goblin Rocket Helmet",
+		reagents = {
+			{
+				itemID = 10543,
+				icon = "Interface\\Icons\\inv_helmet_60",
+				numRequired = 1,
+			},
+			{
+				itemID = 9061,
+				icon = "Interface\\Icons\\inv_cask_02",
+				numRequired = 4,
+			},
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 4,
+			},
+			{
+				itemID = 10560,
+				icon = "Interface\\Icons\\inv_battery_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 245,
+		levels = {
+			245,
+			265,
+			275,
+			285,
+		},
+	},
 	[12759] = {
-		["learnedAt"] = 240;
-		["levels"] = { 240, 260, 270, 280 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10559; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 10560; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 12808; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 7972; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 9060; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10645;
-	};
+		creates = 10645,
+		icon = "Interface\\Icons\\inv_gizmo_08",
+		name = "Gnomish Death Ray",
+		reagents = {
+			{
+				itemID = 10559,
+				icon = "Interface\\Icons\\inv_musket_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 10560,
+				icon = "Interface\\Icons\\inv_battery_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 12808,
+				icon = "Interface\\Icons\\spell_shadow_shadetruesight",
+				numRequired = 1,
+			},
+			{
+				itemID = 7972,
+				icon = "Interface\\Icons\\inv_misc_slime_01",
+				numRequired = 4,
+			},
+			{
+				itemID = 9060,
+				icon = "Interface\\Icons\\inv_musket_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 240,
+		levels = {
+			240,
+			260,
+			270,
+			280,
+		},
+	},
 	[12760] = {
-		["learnedAt"] = 205;
-		["levels"] = { 205, 205, 225, 245 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4338; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 10505; ["numRequired"] = 3; };
-			[3] = { ["itemID"] = 10560; ["numRequired"] = 1; };
-		};
-		["creates"] = 10646;
-	};
+		creates = 10646,
+		icon = "Interface\\Icons\\spell_fire_selfdestruct",
+		name = "Goblin Sapper Charge",
+		reagents = {
+			{
+				itemID = 4338,
+				icon = "Interface\\Icons\\inv_fabric_mageweave_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 10505,
+				icon = "Interface\\Icons\\inv_misc_powder_black",
+				numRequired = 3,
+			},
+			{
+				itemID = 10560,
+				icon = "Interface\\Icons\\inv_battery_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 205,
+		levels = {
+			205,
+			205,
+			225,
+			245,
+		},
+	},
 	[12895] = {
-		["learnedAt"] = 205;
-		["levels"] = { 205, 205, 205, 205 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10648; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 10647; ["numRequired"] = 1; };
-		};
-		["creates"] = 10713;
-	};
+		creates = 10713,
+		icon = "Interface\\Icons\\inv_scroll_05",
+		name = "Inlaid Mithril Cylinder Plans",
+		reagents = {
+			{
+				itemID = 10648,
+				icon = "Interface\\Icons\\inv_misc_note_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 10647,
+				icon = "Interface\\Icons\\inv_potion_65",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 205,
+		levels = {
+			205,
+			205,
+			205,
+			205,
+		},
+	},
 	[12897] = {
-		["learnedAt"] = 210;
-		["levels"] = { 210, 230, 240, 250 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10500; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 10559; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 10558; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 8151; ["numRequired"] = 2; };
-			[5] = { ["itemID"] = 4234; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 10545;
-	};
+		creates = 10545,
+		icon = "Interface\\Icons\\inv_helmet_47",
+		name = "Gnomish Goggles",
+		reagents = {
+			{
+				itemID = 10500,
+				icon = "Interface\\Icons\\inv_helmet_47",
+				numRequired = 1,
+			},
+			{
+				itemID = 10559,
+				icon = "Interface\\Icons\\inv_musket_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 10558,
+				icon = "Interface\\Icons\\inv_battery_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 8151,
+				icon = "Interface\\Icons\\inv_potion_15",
+				numRequired = 2,
+			},
+			{
+				itemID = 4234,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_07",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 210,
+		levels = {
+			210,
+			230,
+			240,
+			250,
+		},
+	},
 	[12899] = {
-		["learnedAt"] = 205;
-		["levels"] = { 205, 225, 235, 245 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10559; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 10560; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 3860; ["numRequired"] = 4; };
-			[4] = { ["itemID"] = 8151; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 1529; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10716;
-	};
+		creates = 10716,
+		icon = "Interface\\Icons\\inv_gizmo_09",
+		name = "Gnomish Shrink Ray",
+		reagents = {
+			{
+				itemID = 10559,
+				icon = "Interface\\Icons\\inv_musket_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 10560,
+				icon = "Interface\\Icons\\inv_battery_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 4,
+			},
+			{
+				itemID = 8151,
+				icon = "Interface\\Icons\\inv_potion_15",
+				numRequired = 4,
+			},
+			{
+				itemID = 1529,
+				icon = "Interface\\Icons\\inv_misc_gem_stone_01",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 205,
+		levels = {
+			205,
+			225,
+			235,
+			245,
+		},
+	},
 	[12902] = {
-		["learnedAt"] = 210;
-		["levels"] = { 210, 230, 240, 250 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10559; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 10285; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 4337; ["numRequired"] = 4; };
-			[4] = { ["itemID"] = 10505; ["numRequired"] = 2; };
-			[5] = { ["itemID"] = 3860; ["numRequired"] = 4; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10720;
-	};
+		creates = 10720,
+		icon = "Interface\\Icons\\inv_misc_net_01",
+		name = "Gnomish Net-o-Matic Projector",
+		reagents = {
+			{
+				itemID = 10559,
+				icon = "Interface\\Icons\\inv_musket_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 10285,
+				icon = "Interface\\Icons\\spell_nature_web",
+				numRequired = 2,
+			},
+			{
+				itemID = 4337,
+				icon = "Interface\\Icons\\spell_nature_web",
+				numRequired = 4,
+			},
+			{
+				itemID = 10505,
+				icon = "Interface\\Icons\\inv_misc_powder_black",
+				numRequired = 2,
+			},
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 4,
+			},
+		},
+		learnedAt = 210,
+		levels = {
+			210,
+			230,
+			240,
+			250,
+		},
+	},
 	[12903] = {
-		["learnedAt"] = 215;
-		["levels"] = { 215, 235, 245, 255 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 7387; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3860; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 6037; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 10560; ["numRequired"] = 1; };
-			[5] = { ["itemID"] = 7909; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10721;
-	};
+		creates = 10721,
+		icon = "Interface\\Icons\\inv_belt_06",
+		name = "Gnomish Harm Prevention Belt",
+		reagents = {
+			{
+				itemID = 7387,
+				icon = "Interface\\Icons\\inv_belt_06",
+				numRequired = 1,
+			},
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 4,
+			},
+			{
+				itemID = 6037,
+				icon = "Interface\\Icons\\inv_ingot_08",
+				numRequired = 2,
+			},
+			{
+				itemID = 10560,
+				icon = "Interface\\Icons\\inv_battery_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 7909,
+				icon = "Interface\\Icons\\inv_misc_gem_crystal_02",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 215,
+		levels = {
+			215,
+			235,
+			245,
+			255,
+		},
+	},
 	[12905] = {
-		["learnedAt"] = 225;
-		["levels"] = { 225, 245, 255, 265 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10026; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 10559; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 4234; ["numRequired"] = 4; };
-			[4] = { ["itemID"] = 10505; ["numRequired"] = 8; };
-			[5] = { ["itemID"] = 4389; ["numRequired"] = 4; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10724;
-	};
+		creates = 10724,
+		icon = "Interface\\Icons\\inv_boots_02",
+		name = "Gnomish Rocket Boots",
+		reagents = {
+			{
+				itemID = 10026,
+				icon = "Interface\\Icons\\inv_boots_05",
+				numRequired = 1,
+			},
+			{
+				itemID = 10559,
+				icon = "Interface\\Icons\\inv_musket_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 4234,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_07",
+				numRequired = 4,
+			},
+			{
+				itemID = 10505,
+				icon = "Interface\\Icons\\inv_misc_powder_black",
+				numRequired = 8,
+			},
+			{
+				itemID = 4389,
+				icon = "Interface\\Icons\\inv_misc_pocketwatch_02",
+				numRequired = 4,
+			},
+		},
+		learnedAt = 225,
+		levels = {
+			225,
+			245,
+			255,
+			265,
+		},
+	},
 	[12906] = {
-		["learnedAt"] = 230;
-		["levels"] = { 230, 250, 260, 270 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10561; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 6037; ["numRequired"] = 6; };
-			[3] = { ["itemID"] = 3860; ["numRequired"] = 6; };
-			[4] = { ["itemID"] = 9060; ["numRequired"] = 2; };
-			[5] = { ["itemID"] = 10558; ["numRequired"] = 1; };
-			[6] = { ["itemID"] = 1529; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10725;
-	};
+		creates = 10725,
+		icon = "Interface\\Icons\\spell_magic_polymorphchicken",
+		name = "Gnomish Battle Chicken",
+		reagents = {
+			{
+				itemID = 10561,
+				icon = "Interface\\Icons\\inv_gizmo_mithrilcasing_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 6037,
+				icon = "Interface\\Icons\\inv_ingot_08",
+				numRequired = 6,
+			},
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 6,
+			},
+			{
+				itemID = 9060,
+				icon = "Interface\\Icons\\inv_musket_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 10558,
+				icon = "Interface\\Icons\\inv_battery_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 1529,
+				icon = "Interface\\Icons\\inv_misc_gem_stone_01",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 230,
+		levels = {
+			230,
+			250,
+			260,
+			270,
+		},
+	},
 	[12907] = {
-		["learnedAt"] = 235;
-		["levels"] = { 235, 255, 265, 275 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3860; ["numRequired"] = 10; };
-			[2] = { ["itemID"] = 6037; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 10558; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 7910; ["numRequired"] = 2; };
-			[5] = { ["itemID"] = 4338; ["numRequired"] = 4; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10726;
-	};
+		creates = 10726,
+		icon = "Interface\\Icons\\inv_helmet_49",
+		name = "Gnomish Mind Control Cap",
+		reagents = {
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 10,
+			},
+			{
+				itemID = 6037,
+				icon = "Interface\\Icons\\inv_ingot_08",
+				numRequired = 4,
+			},
+			{
+				itemID = 10558,
+				icon = "Interface\\Icons\\inv_battery_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 7910,
+				icon = "Interface\\Icons\\inv_misc_gem_ruby_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 4338,
+				icon = "Interface\\Icons\\inv_fabric_mageweave_01",
+				numRequired = 4,
+			},
+		},
+		learnedAt = 235,
+		levels = {
+			235,
+			255,
+			265,
+			275,
+		},
+	},
 	[12908] = {
-		["learnedAt"] = 240;
-		["levels"] = { 240, 260, 270, 280 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10559; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 9061; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 3860; ["numRequired"] = 6; };
-			[4] = { ["itemID"] = 6037; ["numRequired"] = 6; };
-			[5] = { ["itemID"] = 10560; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10727;
-	};
+		creates = 10727,
+		icon = "Interface\\Icons\\spell_fire_flamebolt",
+		name = "Goblin Dragon Gun",
+		reagents = {
+			{
+				itemID = 10559,
+				icon = "Interface\\Icons\\inv_musket_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 9061,
+				icon = "Interface\\Icons\\inv_cask_02",
+				numRequired = 4,
+			},
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 6,
+			},
+			{
+				itemID = 6037,
+				icon = "Interface\\Icons\\inv_ingot_08",
+				numRequired = 6,
+			},
+			{
+				itemID = 10560,
+				icon = "Interface\\Icons\\inv_battery_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 240,
+		levels = {
+			240,
+			260,
+			270,
+			280,
+		},
+	},
 	[13240] = {
-		["learnedAt"] = 205;
-		["levels"] = { 0, 0, 0, 205 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10577; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3860; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 10505; ["numRequired"] = 3; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 10577;
-	};
+		creates = 10577,
+		icon = "Interface\\Icons\\inv_musket_01",
+		name = "The Mortar: Reloaded",
+		reagents = {
+			{
+				itemID = 10577,
+				icon = "Interface\\Icons\\inv_musket_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 1,
+			},
+			{
+				itemID = 10505,
+				icon = "Interface\\Icons\\inv_misc_powder_black",
+				numRequired = 3,
+			},
+		},
+		learnedAt = 205,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
 	[15255] = {
-		["learnedAt"] = 200;
-		["levels"] = { 200, 200, 220, 240 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3860; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4338; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 10505; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 11590;
-	};
+		creates = 11590,
+		icon = "Interface\\Icons\\inv_gizmo_03",
+		name = "Mechanical Repair Kit",
+		reagents = {
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 1,
+			},
+			{
+				itemID = 4338,
+				icon = "Interface\\Icons\\inv_fabric_mageweave_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 10505,
+				icon = "Interface\\Icons\\inv_misc_powder_black",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 200,
+		levels = {
+			200,
+			200,
+			220,
+			240,
+		},
+	},
 	[15628] = {
-		["learnedAt"] = 205;
-		["levels"] = { 205, 205, 205, 205 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4394; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 7077; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 7191; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 3860; ["numRequired"] = 6; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 11825;
-	};
+		creates = 11825,
+		icon = "Interface\\Icons\\inv_misc_bomb_04",
+		name = "Pet Bombling",
+		reagents = {
+			{
+				itemID = 4394,
+				icon = "Interface\\Icons\\inv_misc_bomb_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 7077,
+				icon = "Interface\\Icons\\spell_fire_lavaspawn",
+				numRequired = 1,
+			},
+			{
+				itemID = 7191,
+				icon = "Interface\\Icons\\inv_misc_gear_03",
+				numRequired = 1,
+			},
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 6,
+			},
+		},
+		learnedAt = 205,
+		levels = {
+			205,
+			205,
+			205,
+			205,
+		},
+	},
 	[15633] = {
-		["learnedAt"] = 205;
-		["levels"] = { 205, 205, 205, 205 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 7075; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4389; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 7191; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 3860; ["numRequired"] = 2; };
-			[5] = { ["itemID"] = 6037; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 11826;
-	};
+		creates = 11826,
+		icon = "Interface\\Icons\\inv_misc_idol_02",
+		name = "Lil' Smoky",
+		reagents = {
+			{
+				itemID = 7075,
+				icon = "Interface\\Icons\\inv_stone_05",
+				numRequired = 1,
+			},
+			{
+				itemID = 4389,
+				icon = "Interface\\Icons\\inv_misc_pocketwatch_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 7191,
+				icon = "Interface\\Icons\\inv_misc_gear_03",
+				numRequired = 1,
+			},
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 2,
+			},
+			{
+				itemID = 6037,
+				icon = "Interface\\Icons\\inv_ingot_08",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 205,
+		levels = {
+			205,
+			205,
+			205,
+			205,
+		},
+	},
 	[19567] = {
-		["learnedAt"] = 250;
-		["levels"] = { 250, 270, 280, 290 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10561; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 12359; ["numRequired"] = 6; };
-			[3] = { ["itemID"] = 10558; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 10560; ["numRequired"] = 4; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 15846;
-	};
+		creates = 15846,
+		icon = "Interface\\Icons\\inv_egg_05",
+		name = "Salt Shaker",
+		reagents = {
+			{
+				itemID = 10561,
+				icon = "Interface\\Icons\\inv_gizmo_mithrilcasing_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 12359,
+				icon = "Interface\\Icons\\inv_ingot_07",
+				numRequired = 6,
+			},
+			{
+				itemID = 10558,
+				icon = "Interface\\Icons\\inv_battery_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 10560,
+				icon = "Interface\\Icons\\inv_battery_01",
+				numRequired = 4,
+			},
+		},
+		learnedAt = 250,
+		levels = {
+			250,
+			270,
+			280,
+			290,
+		},
+	},
 	[19788] = {
-		["learnedAt"] = 250;
-		["levels"] = { 250, 250, 255, 260 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12365; ["numRequired"] = 2; };
-		};
-		["creates"] = 15992;
-	};
+		creates = 15992,
+		icon = "Interface\\Icons\\inv_misc_ammo_gunpowder_01",
+		name = "Dense Blasting Powder",
+		reagents = {
+			{
+				itemID = 12365,
+				icon = "Interface\\Icons\\inv_misc_stonetablet_07",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 250,
+		levels = {
+			250,
+			250,
+			255,
+			260,
+		},
+	},
 	[19790] = {
-		["learnedAt"] = 260;
-		["levels"] = { 260, 280, 290, 300 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 15994; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 12359; ["numRequired"] = 3; };
-			[3] = { ["itemID"] = 15992; ["numRequired"] = 3; };
-			[4] = { ["itemID"] = 14047; ["numRequired"] = 3; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 15993;
-	};
+		creates = 15993,
+		icon = "Interface\\Icons\\inv_misc_bomb_08",
+		name = "Thorium Grenade",
+		reagents = {
+			{
+				itemID = 15994,
+				icon = "Interface\\Icons\\inv_gizmo_04",
+				numRequired = 1,
+			},
+			{
+				itemID = 12359,
+				icon = "Interface\\Icons\\inv_ingot_07",
+				numRequired = 3,
+			},
+			{
+				itemID = 15992,
+				icon = "Interface\\Icons\\inv_misc_ammo_gunpowder_01",
+				numRequired = 3,
+			},
+			{
+				itemID = 14047,
+				icon = "Interface\\Icons\\inv_fabric_purplefire_01",
+				numRequired = 3,
+			},
+		},
+		learnedAt = 260,
+		levels = {
+			260,
+			280,
+			290,
+			300,
+		},
+	},
 	[19791] = {
-		["learnedAt"] = 260;
-		["levels"] = { 260, 280, 290, 300 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12359; ["numRequired"] = 3; };
-			[2] = { ["itemID"] = 14047; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 15994;
-	};
+		creates = 15994,
+		icon = "Interface\\Icons\\inv_gizmo_04",
+		name = "Thorium Widget",
+		reagents = {
+			{
+				itemID = 12359,
+				icon = "Interface\\Icons\\inv_ingot_07",
+				numRequired = 3,
+			},
+			{
+				itemID = 14047,
+				icon = "Interface\\Icons\\inv_fabric_purplefire_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 260,
+		levels = {
+			260,
+			280,
+			290,
+			300,
+		},
+	},
 	[19792] = {
-		["learnedAt"] = 260;
-		["levels"] = { 260, 280, 290, 300 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10559; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 10561; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 15994; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 12359; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 10546; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 15995;
-	};
+		creates = 15995,
+		icon = "Interface\\Icons\\inv_weapon_rifle_07",
+		name = "Thorium Rifle",
+		reagents = {
+			{
+				itemID = 10559,
+				icon = "Interface\\Icons\\inv_musket_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 10561,
+				icon = "Interface\\Icons\\inv_gizmo_mithrilcasing_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 15994,
+				icon = "Interface\\Icons\\inv_gizmo_04",
+				numRequired = 2,
+			},
+			{
+				itemID = 12359,
+				icon = "Interface\\Icons\\inv_ingot_07",
+				numRequired = 4,
+			},
+			{
+				itemID = 10546,
+				icon = "Interface\\Icons\\inv_misc_spyglass_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 260,
+		levels = {
+			260,
+			280,
+			290,
+			300,
+		},
+	},
 	[19793] = {
-		["learnedAt"] = 265;
-		["levels"] = { 265, 285, 295, 305 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12803; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 15994; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 10558; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 8170; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 15996;
-	};
+		creates = 15996,
+		icon = "Interface\\Icons\\inv_misc_monsterhead_03",
+		name = "Lifelike Mechanical Toad",
+		reagents = {
+			{
+				itemID = 12803,
+				icon = "Interface\\Icons\\spell_nature_abolishmagic",
+				numRequired = 1,
+			},
+			{
+				itemID = 15994,
+				icon = "Interface\\Icons\\inv_gizmo_04",
+				numRequired = 4,
+			},
+			{
+				itemID = 10558,
+				icon = "Interface\\Icons\\inv_battery_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 8170,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 265,
+		levels = {
+			265,
+			285,
+			295,
+			305,
+		},
+	},
 	[19794] = {
-		["learnedAt"] = 270;
-		["levels"] = { 270, 290, 300, 310 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10502; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 7910; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 12810; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 14047; ["numRequired"] = 8; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 15999;
-	};
+		creates = 15999,
+		icon = "Interface\\Icons\\inv_helmet_47",
+		name = "Spellpower Goggles Xtreme Plus",
+		reagents = {
+			{
+				itemID = 10502,
+				icon = "Interface\\Icons\\inv_helmet_47",
+				numRequired = 1,
+			},
+			{
+				itemID = 7910,
+				icon = "Interface\\Icons\\inv_misc_gem_ruby_02",
+				numRequired = 4,
+			},
+			{
+				itemID = 12810,
+				icon = "Interface\\Icons\\inv_misc_rune_05",
+				numRequired = 2,
+			},
+			{
+				itemID = 14047,
+				icon = "Interface\\Icons\\inv_fabric_purplefire_01",
+				numRequired = 8,
+			},
+		},
+		learnedAt = 270,
+		levels = {
+			270,
+			290,
+			300,
+			310,
+		},
+	},
 	[19795] = {
-		["learnedAt"] = 275;
-		["levels"] = { 275, 295, 305, 315 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12359; ["numRequired"] = 6; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 16000;
-	};
+		creates = 16000,
+		icon = "Interface\\Icons\\inv_gizmo_pipe_04",
+		name = "Thorium Tube",
+		reagents = {
+			{
+				itemID = 12359,
+				icon = "Interface\\Icons\\inv_ingot_07",
+				numRequired = 6,
+			},
+		},
+		learnedAt = 275,
+		levels = {
+			275,
+			295,
+			305,
+			315,
+		},
+	},
 	[19796] = {
-		["learnedAt"] = 275;
-		["levels"] = { 275, 295, 305, 315 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 16000; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 11371; ["numRequired"] = 6; };
-			[3] = { ["itemID"] = 10546; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 12361; ["numRequired"] = 2; };
-			[5] = { ["itemID"] = 12799; ["numRequired"] = 2; };
-			[6] = { ["itemID"] = 8170; ["numRequired"] = 4; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 16004;
-	};
+		creates = 16004,
+		icon = "Interface\\Icons\\inv_weapon_rifle_08",
+		name = "Dark Iron Rifle",
+		reagents = {
+			{
+				itemID = 16000,
+				icon = "Interface\\Icons\\inv_gizmo_pipe_04",
+				numRequired = 2,
+			},
+			{
+				itemID = 11371,
+				icon = "Interface\\Icons\\inv_ingot_mithril",
+				numRequired = 6,
+			},
+			{
+				itemID = 10546,
+				icon = "Interface\\Icons\\inv_misc_spyglass_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 12361,
+				icon = "Interface\\Icons\\inv_misc_gem_sapphire_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 12799,
+				icon = "Interface\\Icons\\inv_misc_gem_opal_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 8170,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_02",
+				numRequired = 4,
+			},
+		},
+		learnedAt = 275,
+		levels = {
+			275,
+			295,
+			305,
+			315,
+		},
+	},
 	[19799] = {
-		["learnedAt"] = 285;
-		["levels"] = { 285, 305, 315, 325 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 15994; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 11371; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 15992; ["numRequired"] = 3; };
-			[4] = { ["itemID"] = 14047; ["numRequired"] = 3; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 16005;
-	};
+		creates = 16005,
+		icon = "Interface\\Icons\\inv_misc_bomb_05",
+		name = "Dark Iron Bomb",
+		reagents = {
+			{
+				itemID = 15994,
+				icon = "Interface\\Icons\\inv_gizmo_04",
+				numRequired = 2,
+			},
+			{
+				itemID = 11371,
+				icon = "Interface\\Icons\\inv_ingot_mithril",
+				numRequired = 1,
+			},
+			{
+				itemID = 15992,
+				icon = "Interface\\Icons\\inv_misc_ammo_gunpowder_01",
+				numRequired = 3,
+			},
+			{
+				itemID = 14047,
+				icon = "Interface\\Icons\\inv_fabric_purplefire_01",
+				numRequired = 3,
+			},
+		},
+		learnedAt = 285,
+		levels = {
+			285,
+			305,
+			315,
+			325,
+		},
+	},
 	[19800] = {
-		["learnedAt"] = 285;
-		["levels"] = { 285, 295, 300, 305 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12359; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 15992; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 15997;
-	};
+		creates = 15997,
+		icon = "Interface\\Icons\\inv_ammo_bullet_03",
+		name = "Thorium Shells",
+		reagents = {
+			{
+				itemID = 12359,
+				icon = "Interface\\Icons\\inv_ingot_07",
+				numRequired = 2,
+			},
+			{
+				itemID = 15992,
+				icon = "Interface\\Icons\\inv_misc_ammo_gunpowder_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 285,
+		levels = {
+			285,
+			305,
+			315,
+			325,
+		},
+	},
 	[19814] = {
-		["learnedAt"] = 275;
-		["levels"] = { 275, 295, 305, 315 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10561; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 16000; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 15994; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 6037; ["numRequired"] = 1; };
-			[5] = { ["itemID"] = 8170; ["numRequired"] = 2; };
-			[6] = { ["itemID"] = 14047; ["numRequired"] = 4; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 16023;
-	};
+		creates = 16023,
+		icon = "Interface\\Icons\\inv_crate_02",
+		name = "Masterwork Target Dummy",
+		reagents = {
+			{
+				itemID = 10561,
+				icon = "Interface\\Icons\\inv_gizmo_mithrilcasing_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 16000,
+				icon = "Interface\\Icons\\inv_gizmo_pipe_04",
+				numRequired = 1,
+			},
+			{
+				itemID = 15994,
+				icon = "Interface\\Icons\\inv_gizmo_04",
+				numRequired = 2,
+			},
+			{
+				itemID = 6037,
+				icon = "Interface\\Icons\\inv_ingot_08",
+				numRequired = 1,
+			},
+			{
+				itemID = 8170,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 14047,
+				icon = "Interface\\Icons\\inv_fabric_purplefire_01",
+				numRequired = 4,
+			},
+		},
+		learnedAt = 275,
+		levels = {
+			275,
+			295,
+			305,
+			315,
+		},
+	},
 	[19815] = {
-		["learnedAt"] = 285;
-		["levels"] = { 285, 305, 315, 325 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12360; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 14227; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 16006;
-	};
+		creates = 16006,
+		icon = "Interface\\Icons\\inv_gizmo_07",
+		name = "Delicate Arcanite Converter",
+		reagents = {
+			{
+				itemID = 12360,
+				icon = "Interface\\Icons\\inv_misc_stonetablet_05",
+				numRequired = 1,
+			},
+			{
+				itemID = 14227,
+				icon = "Interface\\Icons\\spell_nature_web",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 285,
+		levels = {
+			285,
+			305,
+			315,
+			325,
+		},
+	},
 	[19819] = {
-		["learnedAt"] = 290;
-		["levels"] = { 290, 310, 320, 330 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 16006; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 10558; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 15994; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 12799; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 16009;
-	};
+		creates = 16009,
+		icon = "Interface\\Icons\\inv_jewelry_amulet_07",
+		name = "Voice Amplification Modulator",
+		reagents = {
+			{
+				itemID = 16006,
+				icon = "Interface\\Icons\\inv_gizmo_07",
+				numRequired = 2,
+			},
+			{
+				itemID = 10558,
+				icon = "Interface\\Icons\\inv_battery_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 15994,
+				icon = "Interface\\Icons\\inv_gizmo_04",
+				numRequired = 1,
+			},
+			{
+				itemID = 12799,
+				icon = "Interface\\Icons\\inv_misc_gem_opal_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 290,
+		levels = {
+			290,
+			310,
+			320,
+			330,
+		},
+	},
 	[19825] = {
-		["learnedAt"] = 290;
-		["levels"] = { 290, 310, 320, 330 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10500; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 12364; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 12810; ["numRequired"] = 4; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 16008;
-	};
+		creates = 16008,
+		icon = "Interface\\Icons\\inv_helmet_47",
+		name = "Master Engineer's Goggles",
+		reagents = {
+			{
+				itemID = 10500,
+				icon = "Interface\\Icons\\inv_helmet_47",
+				numRequired = 1,
+			},
+			{
+				itemID = 12364,
+				icon = "Interface\\Icons\\inv_misc_gem_emerald_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 12810,
+				icon = "Interface\\Icons\\inv_misc_rune_05",
+				numRequired = 4,
+			},
+		},
+		learnedAt = 290,
+		levels = {
+			290,
+			310,
+			320,
+			330,
+		},
+	},
 	[19830] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 320, 330, 340 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10576; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 16006; ["numRequired"] = 8; };
-			[3] = { ["itemID"] = 12655; ["numRequired"] = 10; };
-			[4] = { ["itemID"] = 15994; ["numRequired"] = 6; };
-			[5] = { ["itemID"] = 10558; ["numRequired"] = 4; };
-			[6] = { ["itemID"] = 12810; ["numRequired"] = 6; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 16022;
-	};
+		creates = 16022,
+		icon = "Interface\\Icons\\inv_misc_head_dragon_01",
+		name = "Arcanite Dragonling",
+		reagents = {
+			{
+				itemID = 10576,
+				icon = "Interface\\Icons\\inv_misc_head_dragon_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 16006,
+				icon = "Interface\\Icons\\inv_gizmo_07",
+				numRequired = 8,
+			},
+			{
+				itemID = 12655,
+				icon = "Interface\\Icons\\inv_ingot_eternium",
+				numRequired = 10,
+			},
+			{
+				itemID = 15994,
+				icon = "Interface\\Icons\\inv_gizmo_04",
+				numRequired = 6,
+			},
+			{
+				itemID = 10558,
+				icon = "Interface\\Icons\\inv_battery_02",
+				numRequired = 4,
+			},
+			{
+				itemID = 12810,
+				icon = "Interface\\Icons\\inv_misc_rune_05",
+				numRequired = 6,
+			},
+		},
+		learnedAt = 300,
+		levels = {
+			300,
+			320,
+			330,
+			340,
+		},
+	},
 	[19831] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 320, 330, 340 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 16006; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 12359; ["numRequired"] = 3; };
-			[3] = { ["itemID"] = 14047; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 16040;
-	};
+		creates = 16040,
+		icon = "Interface\\Icons\\spell_shadow_mindbomb",
+		name = "Arcane Bomb",
+		reagents = {
+			{
+				itemID = 16006,
+				icon = "Interface\\Icons\\inv_gizmo_07",
+				numRequired = 1,
+			},
+			{
+				itemID = 12359,
+				icon = "Interface\\Icons\\inv_ingot_07",
+				numRequired = 3,
+			},
+			{
+				itemID = 14047,
+				icon = "Interface\\Icons\\inv_fabric_purplefire_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 300,
+		levels = {
+			300,
+			320,
+			330,
+			340,
+		},
+	},
 	[19833] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 320, 330, 340 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12360; ["numRequired"] = 10; };
-			[2] = { ["itemID"] = 16000; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 7078; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 7076; ["numRequired"] = 2; };
-			[5] = { ["itemID"] = 12800; ["numRequired"] = 2; };
-			[6] = { ["itemID"] = 12810; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 16007;
-	};
+		creates = 16007,
+		icon = "Interface\\Icons\\inv_weapon_rifle_03",
+		name = "Flawless Arcanite Rifle",
+		reagents = {
+			{
+				itemID = 12360,
+				icon = "Interface\\Icons\\inv_misc_stonetablet_05",
+				numRequired = 10,
+			},
+			{
+				itemID = 16000,
+				icon = "Interface\\Icons\\inv_gizmo_pipe_04",
+				numRequired = 2,
+			},
+			{
+				itemID = 7078,
+				icon = "Interface\\Icons\\spell_fire_volcano",
+				numRequired = 2,
+			},
+			{
+				itemID = 7076,
+				icon = "Interface\\Icons\\spell_nature_strengthofearthtotem02",
+				numRequired = 2,
+			},
+			{
+				itemID = 12800,
+				icon = "Interface\\Icons\\inv_misc_gem_diamond_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 12810,
+				icon = "Interface\\Icons\\inv_misc_rune_05",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 300,
+		levels = {
+			300,
+			320,
+			330,
+			340,
+		},
+	},
 	[21940] = {
-		["learnedAt"] = 190;
-		["levels"] = { 190, 190, 210, 230 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3860; ["numRequired"] = 8; };
-			[2] = { ["itemID"] = 4389; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 17202; ["numRequired"] = 4; };
-			[4] = { ["itemID"] = 3829; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 17716;
-	};
+		creates = 17716,
+		icon = "Interface\\Icons\\spell_frost_windwalkon",
+		name = "SnowMaster 9000",
+		reagents = {
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 8,
+			},
+			{
+				itemID = 4389,
+				icon = "Interface\\Icons\\inv_misc_pocketwatch_02",
+				numRequired = 4,
+			},
+			{
+				itemID = 17202,
+				icon = "Interface\\Icons\\inv_ammo_snowball",
+				numRequired = 4,
+			},
+			{
+				itemID = 3829,
+				icon = "Interface\\Icons\\inv_potion_20",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 190,
+		levels = {
+			190,
+			190,
+			210,
+			230,
+		},
+	},
 	[22704] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 320, 330, 340 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12359; ["numRequired"] = 16; };
-			[2] = { ["itemID"] = 7191; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 18232;
-	};
+		creates = 18232,
+		icon = "Interface\\Icons\\inv_egg_05",
+		name = "Field Repair Bot 74A",
+		reagents = {
+			{
+				itemID = 12359,
+				icon = "Interface\\Icons\\inv_ingot_07",
+				numRequired = 12,
+			},
+			{
+				itemID = 8170,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_02",
+				numRequired = 4,
+			},
+			{
+				itemID = 7191,
+				icon = "Interface\\Icons\\inv_misc_gear_03",
+				numRequired = 1,
+			},
+			{
+				itemID = 7067,
+				icon = "Interface\\Icons\\inv_ore_iron_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 7068,
+				icon = "Interface\\Icons\\spell_fire_fire",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 300,
+		levels = {
+			300,
+			320,
+			330,
+			340,
+		},
+	},
 	[22793] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 320, 330, 340 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 17011; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 7076; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 16006; ["numRequired"] = 4; };
-			[4] = { ["itemID"] = 11371; ["numRequired"] = 6; };
-			[5] = { ["itemID"] = 16000; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 18283;
-	};
+		creates = 18283,
+		icon = "Interface\\Icons\\inv_misc_spyglass_02",
+		name = "Biznicks 247x128 Accurascope",
+		reagents = {
+			{
+				itemID = 17011,
+				icon = "Interface\\Icons\\spell_nature_earthquake",
+				numRequired = 2,
+			},
+			{
+				itemID = 7076,
+				icon = "Interface\\Icons\\spell_nature_strengthofearthtotem02",
+				numRequired = 2,
+			},
+			{
+				itemID = 16006,
+				icon = "Interface\\Icons\\inv_gizmo_07",
+				numRequired = 4,
+			},
+			{
+				itemID = 11371,
+				icon = "Interface\\Icons\\inv_ingot_mithril",
+				numRequired = 6,
+			},
+			{
+				itemID = 16000,
+				icon = "Interface\\Icons\\inv_gizmo_pipe_04",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 300,
+		levels = {
+			300,
+			320,
+			330,
+			340,
+		},
+	},
 	[22795] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 320, 330, 340 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 17010; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 17011; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 12360; ["numRequired"] = 6; };
-			[4] = { ["itemID"] = 16006; ["numRequired"] = 2; };
-			[5] = { ["itemID"] = 16000; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 18282;
-	};
+		creates = 18282,
+		icon = "Interface\\Icons\\inv_weapon_rifle_05",
+		name = "Core Marksman Rifle",
+		reagents = {
+			{
+				itemID = 17010,
+				icon = "Interface\\Icons\\spell_fire_flamebolt",
+				numRequired = 4,
+			},
+			{
+				itemID = 17011,
+				icon = "Interface\\Icons\\spell_nature_earthquake",
+				numRequired = 2,
+			},
+			{
+				itemID = 12360,
+				icon = "Interface\\Icons\\inv_misc_stonetablet_05",
+				numRequired = 6,
+			},
+			{
+				itemID = 16006,
+				icon = "Interface\\Icons\\inv_gizmo_07",
+				numRequired = 2,
+			},
+			{
+				itemID = 16000,
+				icon = "Interface\\Icons\\inv_gizmo_pipe_04",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 300,
+		levels = {
+			300,
+			320,
+			330,
+			340,
+		},
+	},
 	[22797] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 320, 330, 340 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12360; ["numRequired"] = 6; };
-			[2] = { ["itemID"] = 16006; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 7082; ["numRequired"] = 8; };
-			[4] = { ["itemID"] = 12803; ["numRequired"] = 12; };
-			[5] = { ["itemID"] = 7076; ["numRequired"] = 8; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 18168;
-	};
+		creates = 18168,
+		icon = "Interface\\Icons\\spell_arcane_portaldarnassus",
+		name = "Force Reactive Disk",
+		reagents = {
+			{
+				itemID = 12360,
+				icon = "Interface\\Icons\\inv_misc_stonetablet_05",
+				numRequired = 6,
+			},
+			{
+				itemID = 16006,
+				icon = "Interface\\Icons\\inv_gizmo_07",
+				numRequired = 2,
+			},
+			{
+				itemID = 7082,
+				icon = "Interface\\Icons\\spell_nature_earthbind",
+				numRequired = 8,
+			},
+			{
+				itemID = 12803,
+				icon = "Interface\\Icons\\spell_nature_abolishmagic",
+				numRequired = 12,
+			},
+			{
+				itemID = 7076,
+				icon = "Interface\\Icons\\spell_nature_strengthofearthtotem02",
+				numRequired = 8,
+			},
+		},
+		learnedAt = 300,
+		levels = {
+			300,
+			320,
+			330,
+			340,
+		},
+	},
 	[23066] = {
-		["learnedAt"] = 150;
-		["levels"] = { 150, 150, 162, 175 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4377; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4234; ["numRequired"] = 1; };
-		};
-		["creates"] = 9318;
-	};
+		creates = 9318,
+		icon = "Interface\\Icons\\spell_fire_fireball02",
+		name = "Red Firework",
+		reagents = {
+			{
+				itemID = 4377,
+				icon = "Interface\\Icons\\classic_inv_misc_dust_06",
+				numRequired = 1,
+			},
+			{
+				itemID = 4234,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_07",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 150,
+		levels = {
+			150,
+			150,
+			162,
+			175,
+		},
+	},
 	[23067] = {
-		["learnedAt"] = 150;
-		["levels"] = { 150, 150, 162, 175 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4377; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4234; ["numRequired"] = 1; };
-		};
-		["creates"] = 9312;
-	};
+		creates = 9312,
+		icon = "Interface\\Icons\\spell_ice_magicdamage",
+		name = "Blue Firework",
+		reagents = {
+			{
+				itemID = 4377,
+				icon = "Interface\\Icons\\classic_inv_misc_dust_06",
+				numRequired = 1,
+			},
+			{
+				itemID = 4234,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_07",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 150,
+		levels = {
+			150,
+			150,
+			162,
+			175,
+		},
+	},
 	[23068] = {
-		["learnedAt"] = 150;
-		["levels"] = { 150, 150, 162, 175 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4377; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4234; ["numRequired"] = 1; };
-		};
-		["creates"] = 9313;
-	};
+		creates = 9313,
+		icon = "Interface\\Icons\\spell_nature_abolishmagic",
+		name = "Green Firework",
+		reagents = {
+			{
+				itemID = 4377,
+				icon = "Interface\\Icons\\classic_inv_misc_dust_06",
+				numRequired = 1,
+			},
+			{
+				itemID = 4234,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_07",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 150,
+		levels = {
+			150,
+			150,
+			162,
+			175,
+		},
+	},
 	[23069] = {
-		["learnedAt"] = 200;
-		["levels"] = { 200, 200, 210, 220 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10505; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4338; ["numRequired"] = 2; };
-		};
-		["creates"] = 18588;
-	};
+		creates = 18588,
+		icon = "Interface\\Icons\\inv_misc_bomb_03",
+		name = "EZ-Thro Dynamite II",
+		reagents = {
+			{
+				itemID = 10505,
+				icon = "Interface\\Icons\\inv_misc_powder_black",
+				numRequired = 1,
+			},
+			{
+				itemID = 4338,
+				icon = "Interface\\Icons\\inv_fabric_mageweave_01",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 200,
+		levels = {
+			200,
+			200,
+			210,
+			220,
+		},
+	},
 	[23070] = {
-		["learnedAt"] = 250;
-		["levels"] = { 250, 250, 260, 270 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 15992; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 14047; ["numRequired"] = 3; };
-		};
-		["creates"] = 18641;
-	};
+		creates = 18641,
+		icon = "Interface\\Icons\\inv_misc_bomb_06",
+		name = "Dense Dynamite",
+		reagents = {
+			{
+				itemID = 15992,
+				icon = "Interface\\Icons\\inv_misc_ammo_gunpowder_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 14047,
+				icon = "Interface\\Icons\\inv_fabric_purplefire_01",
+				numRequired = 3,
+			},
+		},
+		learnedAt = 250,
+		levels = {
+			250,
+			250,
+			260,
+			270,
+		},
+	},
 	[23071] = {
-		["learnedAt"] = 260;
-		["levels"] = { 260, 270, 275, 280 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 6037; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 7067; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 7069; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 18631;
-	};
+		creates = 18631,
+		icon = "Interface\\Icons\\inv_staff_18",
+		name = "Truesilver Transformer",
+		reagents = {
+			{
+				itemID = 6037,
+				icon = "Interface\\Icons\\inv_ingot_08",
+				numRequired = 2,
+			},
+			{
+				itemID = 7067,
+				icon = "Interface\\Icons\\inv_ore_iron_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 7069,
+				icon = "Interface\\Icons\\spell_nature_tranquility",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 260,
+		levels = {
+			260,
+			270,
+			275,
+			280,
+		},
+	},
 	[23077] = {
-		["learnedAt"] = 260;
-		["levels"] = { 260, 280, 290, 300 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 15994; ["numRequired"] = 6; };
-			[2] = { ["itemID"] = 18631; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 12361; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 7078; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 3829; ["numRequired"] = 2; };
-			[6] = { ["itemID"] = 13467; ["numRequired"] = 4; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 18634;
-	};
+		creates = 18634,
+		icon = "Interface\\Icons\\inv_misc_enggizmos_02",
+		name = "Gyrofreeze Ice Reflector",
+		reagents = {
+			{
+				itemID = 15994,
+				icon = "Interface\\Icons\\inv_gizmo_04",
+				numRequired = 6,
+			},
+			{
+				itemID = 18631,
+				icon = "Interface\\Icons\\inv_staff_18",
+				numRequired = 2,
+			},
+			{
+				itemID = 12361,
+				icon = "Interface\\Icons\\inv_misc_gem_sapphire_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 7078,
+				icon = "Interface\\Icons\\spell_fire_volcano",
+				numRequired = 4,
+			},
+			{
+				itemID = 3829,
+				icon = "Interface\\Icons\\inv_potion_20",
+				numRequired = 2,
+			},
+			{
+				itemID = 13467,
+				icon = "Interface\\Icons\\inv_misc_herb_icecap",
+				numRequired = 4,
+			},
+		},
+		learnedAt = 260,
+		levels = {
+			260,
+			280,
+			290,
+			300,
+		},
+	},
 	[23078] = {
-		["learnedAt"] = 265;
-		["levels"] = { 265, 285, 295, 305 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 15994; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 18631; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 7191; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 14227; ["numRequired"] = 2; };
-			[5] = { ["itemID"] = 7910; ["numRequired"] = 2; };
-		};
-		["creates"] = 18587;
-	};
+		creates = 18587,
+		icon = "Interface\\Icons\\inv_misc_enggizmos_11",
+		name = "Goblin Jumper Cables XL",
+		reagents = {
+			{
+				itemID = 15994,
+				icon = "Interface\\Icons\\inv_gizmo_04",
+				numRequired = 2,
+			},
+			{
+				itemID = 18631,
+				icon = "Interface\\Icons\\inv_staff_18",
+				numRequired = 2,
+			},
+			{
+				itemID = 7191,
+				icon = "Interface\\Icons\\inv_misc_gear_03",
+				numRequired = 2,
+			},
+			{
+				itemID = 14227,
+				icon = "Interface\\Icons\\spell_nature_web",
+				numRequired = 2,
+			},
+			{
+				itemID = 7910,
+				icon = "Interface\\Icons\\inv_misc_gem_ruby_02",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 265,
+		levels = {
+			265,
+			285,
+			295,
+			305,
+		},
+	},
 	[23079] = {
-		["learnedAt"] = 275;
-		["levels"] = { 275, 285, 290, 295 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 16000; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 18631; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 14047; ["numRequired"] = 2; };
-		};
-		["creates"] = 18637;
-	};
+		creates = 18637,
+		icon = "Interface\\Icons\\inv_misc_enggizmos_09",
+		name = "Major Recombobulator",
+		reagents = {
+			{
+				itemID = 16000,
+				icon = "Interface\\Icons\\inv_gizmo_pipe_04",
+				numRequired = 2,
+			},
+			{
+				itemID = 18631,
+				icon = "Interface\\Icons\\inv_staff_18",
+				numRequired = 1,
+			},
+			{
+				itemID = 14047,
+				icon = "Interface\\Icons\\inv_fabric_purplefire_01",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 275,
+		levels = {
+			275,
+			285,
+			290,
+			295,
+		},
+	},
 	[23080] = {
-		["learnedAt"] = 275;
-		["levels"] = { 275, 275, 285, 295 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 15994; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 15992; ["numRequired"] = 3; };
-			[3] = { ["itemID"] = 8170; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 159; ["numRequired"] = 1; };
-		};
-		["creates"] = 18594;
-	};
+		creates = 18594,
+		icon = "Interface\\Icons\\spell_shadow_detectinvisibility",
+		name = "Powerful Seaforium Charge",
+		reagents = {
+			{
+				itemID = 15994,
+				icon = "Interface\\Icons\\inv_gizmo_04",
+				numRequired = 2,
+			},
+			{
+				itemID = 15992,
+				icon = "Interface\\Icons\\inv_misc_ammo_gunpowder_01",
+				numRequired = 3,
+			},
+			{
+				itemID = 8170,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 159,
+				icon = "Interface\\Icons\\inv_drink_07",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 275,
+		levels = {
+			275,
+			275,
+			285,
+			295,
+		},
+	},
 	[23081] = {
-		["learnedAt"] = 290;
-		["levels"] = { 290, 310, 320, 330 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 11371; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 18631; ["numRequired"] = 3; };
-			[3] = { ["itemID"] = 7080; ["numRequired"] = 6; };
-			[4] = { ["itemID"] = 7910; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 12800; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 18638;
-	};
+		creates = 18638,
+		icon = "Interface\\Icons\\inv_misc_enggizmos_04",
+		name = "Hyper-Radiant Flame Reflector",
+		reagents = {
+			{
+				itemID = 11371,
+				icon = "Interface\\Icons\\inv_ingot_mithril",
+				numRequired = 4,
+			},
+			{
+				itemID = 18631,
+				icon = "Interface\\Icons\\inv_staff_18",
+				numRequired = 3,
+			},
+			{
+				itemID = 7080,
+				icon = "Interface\\Icons\\spell_nature_acid_01",
+				numRequired = 6,
+			},
+			{
+				itemID = 7910,
+				icon = "Interface\\Icons\\inv_misc_gem_ruby_02",
+				numRequired = 4,
+			},
+			{
+				itemID = 12800,
+				icon = "Interface\\Icons\\inv_misc_gem_diamond_01",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 290,
+		levels = {
+			290,
+			310,
+			320,
+			330,
+		},
+	},
 	[23082] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 320, 330, 340 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 11371; ["numRequired"] = 8; };
-			[2] = { ["itemID"] = 18631; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 12803; ["numRequired"] = 6; };
-			[4] = { ["itemID"] = 12808; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 12800; ["numRequired"] = 2; };
-			[6] = { ["itemID"] = 12799; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 18639;
-	};
+		creates = 18639,
+		icon = "Interface\\Icons\\inv_misc_enggizmos_16",
+		name = "Ultra-Flash Shadow Reflector",
+		reagents = {
+			{
+				itemID = 11371,
+				icon = "Interface\\Icons\\inv_ingot_mithril",
+				numRequired = 8,
+			},
+			{
+				itemID = 18631,
+				icon = "Interface\\Icons\\inv_staff_18",
+				numRequired = 4,
+			},
+			{
+				itemID = 12803,
+				icon = "Interface\\Icons\\spell_nature_abolishmagic",
+				numRequired = 6,
+			},
+			{
+				itemID = 12808,
+				icon = "Interface\\Icons\\spell_shadow_shadetruesight",
+				numRequired = 4,
+			},
+			{
+				itemID = 12800,
+				icon = "Interface\\Icons\\inv_misc_gem_diamond_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 12799,
+				icon = "Interface\\Icons\\inv_misc_gem_opal_01",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 300,
+		levels = {
+			300,
+			320,
+			330,
+			340,
+		},
+	},
 	[23096] = {
-		["learnedAt"] = 265;
-		["levels"] = { 265, 275, 280, 285 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 12359; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 15994; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 8170; ["numRequired"] = 4; };
-			[4] = { ["itemID"] = 7910; ["numRequired"] = 1; };
-			[5] = { ["itemID"] = 7191; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 18645;
-	};
+		creates = 18645,
+		icon = "Interface\\Icons\\inv_misc_enggizmos_13",
+		name = "Alarm-O-Bot",
+		reagents = {
+			{
+				itemID = 12359,
+				icon = "Interface\\Icons\\inv_ingot_07",
+				numRequired = 4,
+			},
+			{
+				itemID = 15994,
+				icon = "Interface\\Icons\\inv_gizmo_04",
+				numRequired = 2,
+			},
+			{
+				itemID = 8170,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_02",
+				numRequired = 4,
+			},
+			{
+				itemID = 7910,
+				icon = "Interface\\Icons\\inv_misc_gem_ruby_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 7191,
+				icon = "Interface\\Icons\\inv_misc_gear_03",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 265,
+		levels = {
+			265,
+			275,
+			280,
+			285,
+		},
+	},
 	[23129] = {
-		["learnedAt"] = 260;
-		["levels"] = { 260, 260, 265, 270 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10561; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 15994; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 10558; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 10560; ["numRequired"] = 1; };
-			[5] = { ["itemID"] = 3864; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 18660;
-	};
+		creates = 18660,
+		icon = "Interface\\Icons\\inv_misc_enggizmos_08",
+		name = "World Enlarger",
+		reagents = {
+			{
+				itemID = 10561,
+				icon = "Interface\\Icons\\inv_gizmo_mithrilcasing_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 15994,
+				icon = "Interface\\Icons\\inv_gizmo_04",
+				numRequired = 2,
+			},
+			{
+				itemID = 10558,
+				icon = "Interface\\Icons\\inv_battery_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 10560,
+				icon = "Interface\\Icons\\inv_battery_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 3864,
+				icon = "Interface\\Icons\\inv_misc_gem_opal_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 260,
+		levels = {
+			260,
+			260,
+			265,
+			270,
+		},
+	},
 	[23486] = {
-		["learnedAt"] = 285;
-		["levels"] = { 0, 285, 295, 305 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3860; ["numRequired"] = 10; };
-			[2] = { ["itemID"] = 18631; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 7077; ["numRequired"] = 4; };
-			[4] = { ["itemID"] = 7910; ["numRequired"] = 2; };
-			[5] = { ["itemID"] = 10586; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 18984;
-	};
+		creates = 18984,
+		icon = "Interface\\Icons\\inv_misc_enggizmos_07",
+		name = "Dimensional Ripper - Everlook",
+		reagents = {
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 10,
+			},
+			{
+				itemID = 18631,
+				icon = "Interface\\Icons\\inv_staff_18",
+				numRequired = 1,
+			},
+			{
+				itemID = 7077,
+				icon = "Interface\\Icons\\spell_fire_lavaspawn",
+				numRequired = 4,
+			},
+			{
+				itemID = 7910,
+				icon = "Interface\\Icons\\inv_misc_gem_ruby_02",
+				numRequired = 2,
+			},
+			{
+				itemID = 10586,
+				icon = "Interface\\Icons\\inv_misc_bomb_04",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 285,
+		levels = {
+			0,
+			285,
+			295,
+			305,
+		},
+	},
 	[23489] = {
-		["learnedAt"] = 285;
-		["levels"] = { 0, 285, 295, 305 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3860; ["numRequired"] = 12; };
-			[2] = { ["itemID"] = 18631; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 7075; ["numRequired"] = 4; };
-			[4] = { ["itemID"] = 7079; ["numRequired"] = 2; };
-			[5] = { ["itemID"] = 7909; ["numRequired"] = 4; };
-			[6] = { ["itemID"] = 9060; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 18986;
-	};
+		creates = 18986,
+		icon = "Interface\\Icons\\inv_misc_enggizmos_12",
+		name = "Ultrasafe Transporter - Gadgetzan",
+		reagents = {
+			{
+				itemID = 3860,
+				icon = "Interface\\Icons\\inv_ingot_06",
+				numRequired = 12,
+			},
+			{
+				itemID = 18631,
+				icon = "Interface\\Icons\\inv_staff_18",
+				numRequired = 2,
+			},
+			{
+				itemID = 7075,
+				icon = "Interface\\Icons\\inv_stone_05",
+				numRequired = 4,
+			},
+			{
+				itemID = 7079,
+				icon = "Interface\\Icons\\inv_misc_orb_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 7909,
+				icon = "Interface\\Icons\\inv_misc_gem_crystal_02",
+				numRequired = 4,
+			},
+			{
+				itemID = 9060,
+				icon = "Interface\\Icons\\inv_musket_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 285,
+		levels = {
+			0,
+			285,
+			295,
+			305,
+		},
+	},
 	[23507] = {
-		["learnedAt"] = 250;
-		["levels"] = { 250, 250, 260, 270 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 15992; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 14047; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 8150; ["numRequired"] = 1; };
-		};
-		["creates"] = 19026;
-	};
+		creates = 19026,
+		icon = "Interface\\Icons\\spell_holy_holybolt",
+		name = "Snake Burst Firework",
+		reagents = {
+			{
+				itemID = 15992,
+				icon = "Interface\\Icons\\inv_misc_ammo_gunpowder_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 14047,
+				icon = "Interface\\Icons\\inv_fabric_purplefire_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 8150,
+				icon = "Interface\\Icons\\inv_misc_dust_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 250,
+		levels = {
+			250,
+			250,
+			260,
+			270,
+		},
+	},
 	[24356] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 320, 330, 340 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 19726; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 19774; ["numRequired"] = 5; };
-			[3] = { ["itemID"] = 16006; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 12804; ["numRequired"] = 8; };
-			[5] = { ["itemID"] = 12810; ["numRequired"] = 4; };
-		};
-		["tools"] = { 10498, 6219 };
-		["creates"] = 19999;
-	};
+		creates = 19999,
+		icon = "Interface\\Icons\\inv_helmet_47",
+		name = "Bloodvine Goggles",
+		reagents = {
+			{
+				itemID = 19726,
+				icon = "Interface\\Icons\\inv_misc_herb_09",
+				numRequired = 4,
+			},
+			{
+				itemID = 19774,
+				icon = "Interface\\Icons\\inv_misc_gem_01",
+				numRequired = 5,
+			},
+			{
+				itemID = 16006,
+				icon = "Interface\\Icons\\inv_gizmo_07",
+				numRequired = 2,
+			},
+			{
+				itemID = 12804,
+				icon = "Interface\\Icons\\spell_nature_astralrecalgroup",
+				numRequired = 8,
+			},
+			{
+				itemID = 12810,
+				icon = "Interface\\Icons\\inv_misc_rune_05",
+				numRequired = 4,
+			},
+		},
+		learnedAt = 300,
+		levels = {
+			300,
+			320,
+			330,
+			340,
+		},
+	},
 	[24357] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 320, 330, 340 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 19726; ["numRequired"] = 5; };
-			[2] = { ["itemID"] = 19774; ["numRequired"] = 5; };
-			[3] = { ["itemID"] = 16006; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 12804; ["numRequired"] = 8; };
-			[5] = { ["itemID"] = 12810; ["numRequired"] = 4; };
-		};
-		["tools"] = { 10498, 6219 };
-		["creates"] = 19998;
-	};
+		creates = 19998,
+		icon = "Interface\\Icons\\inv_helmet_44",
+		name = "Bloodvine Lens",
+		reagents = {
+			{
+				itemID = 19726,
+				icon = "Interface\\Icons\\inv_misc_herb_09",
+				numRequired = 5,
+			},
+			{
+				itemID = 19774,
+				icon = "Interface\\Icons\\inv_misc_gem_01",
+				numRequired = 5,
+			},
+			{
+				itemID = 16006,
+				icon = "Interface\\Icons\\inv_gizmo_07",
+				numRequired = 1,
+			},
+			{
+				itemID = 12804,
+				icon = "Interface\\Icons\\spell_nature_astralrecalgroup",
+				numRequired = 8,
+			},
+			{
+				itemID = 12810,
+				icon = "Interface\\Icons\\inv_misc_rune_05",
+				numRequired = 4,
+			},
+		},
+		learnedAt = 300,
+		levels = {
+			300,
+			320,
+			330,
+			340,
+		},
+	},
 	[26011] = {
-		["learnedAt"] = 250;
-		["levels"] = { 250, 320, 330, 340 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 15407; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 15994; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 7079; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 18631; ["numRequired"] = 2; };
-			[5] = { ["itemID"] = 10558; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 21277;
-	};
+		creates = 21277,
+		icon = "Interface\\Icons\\ability_hunter_pet_gorilla",
+		name = "Tranquil Mechanical Yeti",
+		reagents = {
+			{
+				itemID = 15407,
+				icon = "Interface\\Icons\\inv_misc_pelt_bear_03",
+				numRequired = 1,
+			},
+			{
+				itemID = 15994,
+				icon = "Interface\\Icons\\inv_gizmo_04",
+				numRequired = 4,
+			},
+			{
+				itemID = 7079,
+				icon = "Interface\\Icons\\inv_misc_orb_01",
+				numRequired = 2,
+			},
+			{
+				itemID = 18631,
+				icon = "Interface\\Icons\\inv_staff_18",
+				numRequired = 2,
+			},
+			{
+				itemID = 10558,
+				icon = "Interface\\Icons\\inv_battery_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 250,
+		levels = {
+			250,
+			320,
+			330,
+			340,
+		},
+	},
 	[26416] = {
-		["learnedAt"] = 125;
-		["levels"] = { 125, 125, 137, 150 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4364; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2319; ["numRequired"] = 1; };
-		};
-		["creates"] = 21558;
-	};
+		creates = 21558,
+		icon = "Interface\\Icons\\inv_misc_missilesmall_blue",
+		name = "Small Blue Rocket",
+		reagents = {
+			{
+				itemID = 4364,
+				icon = "Interface\\Icons\\inv_misc_dust_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 2319,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_05",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 125,
+		levels = {
+			125,
+			125,
+			137,
+			150,
+		},
+	},
 	[26417] = {
-		["learnedAt"] = 125;
-		["levels"] = { 125, 125, 137, 150 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4364; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2319; ["numRequired"] = 1; };
-		};
-		["creates"] = 21559;
-	};
+		creates = 21559,
+		icon = "Interface\\Icons\\inv_misc_missilesmall_green",
+		name = "Small Green Rocket",
+		reagents = {
+			{
+				itemID = 4364,
+				icon = "Interface\\Icons\\inv_misc_dust_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 2319,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_05",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 125,
+		levels = {
+			125,
+			125,
+			137,
+			150,
+		},
+	},
 	[26418] = {
-		["learnedAt"] = 125;
-		["levels"] = { 125, 125, 137, 150 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4364; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 2319; ["numRequired"] = 1; };
-		};
-		["creates"] = 21557;
-	};
+		creates = 21557,
+		icon = "Interface\\Icons\\inv_misc_missilesmall_red",
+		name = "Small Red Rocket",
+		reagents = {
+			{
+				itemID = 4364,
+				icon = "Interface\\Icons\\inv_misc_dust_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 2319,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_05",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 125,
+		levels = {
+			125,
+			125,
+			137,
+			150,
+		},
+	},
 	[26420] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 175, 187, 200 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4377; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4234; ["numRequired"] = 1; };
-		};
-		["creates"] = 21589;
-	};
+		creates = 21589,
+		icon = "Interface\\Icons\\inv_misc_missilelarge_blue",
+		name = "Large Blue Rocket",
+		reagents = {
+			{
+				itemID = 4377,
+				icon = "Interface\\Icons\\classic_inv_misc_dust_06",
+				numRequired = 1,
+			},
+			{
+				itemID = 4234,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_07",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			175,
+			187,
+			200,
+		},
+	},
 	[26421] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 175, 187, 200 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4377; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4234; ["numRequired"] = 1; };
-		};
-		["creates"] = 21590;
-	};
+		creates = 21590,
+		icon = "Interface\\Icons\\inv_misc_missilelarge_green",
+		name = "Large Green Rocket",
+		reagents = {
+			{
+				itemID = 4377,
+				icon = "Interface\\Icons\\classic_inv_misc_dust_06",
+				numRequired = 1,
+			},
+			{
+				itemID = 4234,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_07",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			175,
+			187,
+			200,
+		},
+	},
 	[26422] = {
-		["learnedAt"] = 175;
-		["levels"] = { 175, 175, 187, 200 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4377; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4234; ["numRequired"] = 1; };
-		};
-		["creates"] = 21592;
-	};
+		creates = 21592,
+		icon = "Interface\\Icons\\inv_misc_missilelarge_red",
+		name = "Large Red Rocket",
+		reagents = {
+			{
+				itemID = 4377,
+				icon = "Interface\\Icons\\classic_inv_misc_dust_06",
+				numRequired = 1,
+			},
+			{
+				itemID = 4234,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_07",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 175,
+		levels = {
+			175,
+			175,
+			187,
+			200,
+		},
+	},
 	[26423] = {
-		["learnedAt"] = 225;
-		["levels"] = { 225, 225, 237, 250 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10505; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4304; ["numRequired"] = 1; };
-		};
-		["creates"] = 21571;
-	};
+		creates = 21571,
+		icon = "Interface\\Icons\\inv_misc_missilesmallcluster_blue",
+		name = "Blue Rocket Cluster",
+		reagents = {
+			{
+				itemID = 10505,
+				icon = "Interface\\Icons\\inv_misc_powder_black",
+				numRequired = 1,
+			},
+			{
+				itemID = 4304,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_08",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 225,
+		levels = {
+			225,
+			225,
+			237,
+			250,
+		},
+	},
 	[26424] = {
-		["learnedAt"] = 225;
-		["levels"] = { 225, 225, 237, 250 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10505; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4304; ["numRequired"] = 1; };
-		};
-		["creates"] = 21574;
-	};
+		creates = 21574,
+		icon = "Interface\\Icons\\inv_misc_missilesmallcluster_green",
+		name = "Green Rocket Cluster",
+		reagents = {
+			{
+				itemID = 10505,
+				icon = "Interface\\Icons\\inv_misc_powder_black",
+				numRequired = 1,
+			},
+			{
+				itemID = 4304,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_08",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 225,
+		levels = {
+			225,
+			225,
+			237,
+			250,
+		},
+	},
 	[26425] = {
-		["learnedAt"] = 225;
-		["levels"] = { 225, 225, 237, 250 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 10505; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4304; ["numRequired"] = 1; };
-		};
-		["creates"] = 21576;
-	};
+		creates = 21576,
+		icon = "Interface\\Icons\\inv_misc_missilesmallcluster_red",
+		name = "Red Rocket Cluster",
+		reagents = {
+			{
+				itemID = 10505,
+				icon = "Interface\\Icons\\inv_misc_powder_black",
+				numRequired = 1,
+			},
+			{
+				itemID = 4304,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_08",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 225,
+		levels = {
+			225,
+			225,
+			237,
+			250,
+		},
+	},
 	[26426] = {
-		["learnedAt"] = 275;
-		["levels"] = { 275, 275, 280, 285 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 15992; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 8170; ["numRequired"] = 1; };
-		};
-		["creates"] = 21714;
-	};
+		creates = 21714,
+		icon = "Interface\\Icons\\inv_misc_missilelargecluster_blue",
+		name = "Large Blue Rocket Cluster",
+		reagents = {
+			{
+				itemID = 15992,
+				icon = "Interface\\Icons\\inv_misc_ammo_gunpowder_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 8170,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 275,
+		levels = {
+			275,
+			275,
+			280,
+			285,
+		},
+	},
 	[26427] = {
-		["learnedAt"] = 275;
-		["levels"] = { 275, 275, 280, 285 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 15992; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 8170; ["numRequired"] = 1; };
-		};
-		["creates"] = 21716;
-	};
+		creates = 21716,
+		icon = "Interface\\Icons\\inv_misc_missilelargecluster_green",
+		name = "Large Green Rocket Cluster",
+		reagents = {
+			{
+				itemID = 15992,
+				icon = "Interface\\Icons\\inv_misc_ammo_gunpowder_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 8170,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 275,
+		levels = {
+			275,
+			275,
+			280,
+			285,
+		},
+	},
 	[26428] = {
-		["learnedAt"] = 275;
-		["levels"] = { 275, 275, 280, 285 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 15992; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 8170; ["numRequired"] = 1; };
-		};
-		["creates"] = 21718;
-	};
+		creates = 21718,
+		icon = "Interface\\Icons\\inv_misc_missilelargecluster_red",
+		name = "Large Red Rocket Cluster",
+		reagents = {
+			{
+				itemID = 15992,
+				icon = "Interface\\Icons\\inv_misc_ammo_gunpowder_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 8170,
+				icon = "Interface\\Icons\\inv_misc_leatherscrap_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 275,
+		levels = {
+			275,
+			275,
+			280,
+			285,
+		},
+	},
 	[26442] = {
-		["learnedAt"] = 225;
-		["levels"] = { 225, 245, 255, 265 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 9060; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 9061; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 10560; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 10561; ["numRequired"] = 1; };
-		};
-		["creates"] = 21569;
-	};
+		creates = 21569,
+		icon = "Interface\\Icons\\inv_musket_04",
+		name = "Firework Launcher",
+		reagents = {
+			{
+				itemID = 9060,
+				icon = "Interface\\Icons\\inv_musket_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 9061,
+				icon = "Interface\\Icons\\inv_cask_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 10560,
+				icon = "Interface\\Icons\\inv_battery_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 10561,
+				icon = "Interface\\Icons\\inv_gizmo_mithrilcasing_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 225,
+		levels = {
+			225,
+			245,
+			255,
+			265,
+		},
+	},
 	[26443] = {
-		["learnedAt"] = 275;
-		["levels"] = { 275, 295, 305, 315 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 9060; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 9061; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 18631; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 10561; ["numRequired"] = 1; };
-		};
-		["creates"] = 21570;
-	};
+		creates = 21570,
+		icon = "Interface\\Icons\\inv_misc_enggizmos_03",
+		name = "Firework Cluster Launcher",
+		reagents = {
+			{
+				itemID = 9060,
+				icon = "Interface\\Icons\\inv_musket_01",
+				numRequired = 4,
+			},
+			{
+				itemID = 9061,
+				icon = "Interface\\Icons\\inv_cask_02",
+				numRequired = 4,
+			},
+			{
+				itemID = 18631,
+				icon = "Interface\\Icons\\inv_staff_18",
+				numRequired = 2,
+			},
+			{
+				itemID = 10561,
+				icon = "Interface\\Icons\\inv_gizmo_mithrilcasing_01",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 275,
+		levels = {
+			275,
+			295,
+			305,
+			315,
+		},
+	},
 	[28327] = {
-		["learnedAt"] = 275;
-		["levels"] = { 275, 275, 280, 285 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 3860; ["numRequired"] = 3; };
-			[2] = { ["itemID"] = 10558; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 22728;
-	};
-	[30303] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 300, 310, 320 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 22574; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 22573; ["numRequired"] = 2; };
-		};
-		["creates"] = 23781;
-	};
-	[30304] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 300, 310, 320 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23445; ["numRequired"] = 3; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23782;
-	};
-	[30305] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 300, 305, 310 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23445; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23783;
-	};
-	[30306] = {
-		["learnedAt"] = 325;
-		["levels"] = { 325, 325, 330, 335 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23446; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 22452; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23784;
-	};
-	[30307] = {
-		["learnedAt"] = 340;
-		["levels"] = { 340, 350, 360, 370 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23573; ["numRequired"] = 3; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23785;
-	};
-	[30308] = {
-		["learnedAt"] = 340;
-		["levels"] = { 340, 350, 360, 370 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23449; ["numRequired"] = 3; };
-			[2] = { ["itemID"] = 21884; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23786;
-	};
-	[30309] = {
-		["learnedAt"] = 340;
-		["levels"] = { 340, 350, 360, 370 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23448; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23787;
-	};
-	[30310] = {
-		["learnedAt"] = 300;
-		["levels"] = { 300, 320, 330, 340 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23782; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 23783; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 23781; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 23736;
-	};
-	[30311] = {
-		["learnedAt"] = 325;
-		["levels"] = { 325, 335, 345, 355 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23446; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 23783; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 23781; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 23737;
-	};
-	[30312] = {
-		["learnedAt"] = 320;
-		["levels"] = { 320, 330, 340, 350 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 4400; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 23782; ["numRequired"] = 3; };
-			[3] = { ["itemID"] = 23783; ["numRequired"] = 6; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23742;
-	};
-	[30313] = {
-		["learnedAt"] = 350;
-		["levels"] = { 350, 360, 370, 380 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23782; ["numRequired"] = 3; };
-			[2] = { ["itemID"] = 23784; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 23783; ["numRequired"] = 4; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23746;
-	};
-	[30314] = {
-		["learnedAt"] = 360;
-		["levels"] = { 360, 370, 380, 390 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23785; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 23787; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 23783; ["numRequired"] = 4; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23747;
-	};
-	[30315] = {
-		["learnedAt"] = 375;
-		["levels"] = { 375, 385, 395, 405 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23785; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 23449; ["numRequired"] = 12; };
-			[3] = { ["itemID"] = 23783; ["numRequired"] = 4; };
-			[4] = { ["itemID"] = 23439; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23748;
-	};
-	[30316] = {
-		["learnedAt"] = 340;
-		["levels"] = { 340, 350, 360, 370 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23793; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 23077; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 22445; ["numRequired"] = 8; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 23758;
-	};
-	[30317] = {
-		["learnedAt"] = 340;
-		["levels"] = { 340, 350, 360, 370 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23793; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 21929; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 22445; ["numRequired"] = 8; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 23761;
-	};
-	[30318] = {
-		["learnedAt"] = 350;
-		["levels"] = { 350, 360, 370, 380 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23793; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 23449; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 23079; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 22448; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 23762;
-	};
-	[30325] = {
-		["learnedAt"] = 360;
-		["levels"] = { 360, 370, 380, 390 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23793; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 23449; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 23441; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 22449; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 23763;
-	};
-	[30329] = {
-		["learnedAt"] = 335;
-		["levels"] = { 335, 345, 355, 365 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23446; ["numRequired"] = 8; };
-			[2] = { ["itemID"] = 23112; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23764;
-	};
-	[30332] = {
-		["learnedAt"] = 360;
-		["levels"] = { 360, 370, 380, 390 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23785; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 23449; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 23440; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23765;
-	};
-	[30334] = {
-		["learnedAt"] = 375;
-		["levels"] = { 375, 385, 395, 405 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23785; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 23787; ["numRequired"] = 6; };
-			[3] = { ["itemID"] = 23438; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23766;
-	};
-	[30337] = {
-		["learnedAt"] = 325;
-		["levels"] = { 325, 335, 345, 355 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23784; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 23782; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 10558; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 23783; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23767;
-	};
-	[30341] = {
-		["learnedAt"] = 335;
-		["levels"] = { 335, 335, 345, 355 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23781; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 21877; ["numRequired"] = 1; };
-		};
-		["creates"] = 23768;
-	};
-	[30344] = {
-		["learnedAt"] = 335;
-		["levels"] = { 335, 335, 345, 355 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23781; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 21877; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 2605; ["numRequired"] = 1; };
-		};
-		["creates"] = 23771;
-	};
-	[30346] = {
-		["learnedAt"] = 310;
-		["levels"] = { 310, 310, 320, 330 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23445; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 23781; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 23772;
-	};
-	[30347] = {
-		["learnedAt"] = 335;
-		["levels"] = { 335, 335, 345, 355 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23446; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 23781; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 4470; ["numRequired"] = 4; };
-		};
-		["tools"] = { 6219 };
-		["creates"] = 34504;
-	};
-	[30348] = {
-		["learnedAt"] = 325;
-		["levels"] = { 325, 325, 335, 345 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23782; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 23445; ["numRequired"] = 5; };
-			[3] = { ["itemID"] = 23783; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23774;
-	};
-	[30349] = {
-		["learnedAt"] = 350;
-		["levels"] = { 350, 360, 370, 380 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23782; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 23449; ["numRequired"] = 5; };
-			[3] = { ["itemID"] = 23783; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23775;
-	};
-	[30547] = {
-		["learnedAt"] = 350;
-		["levels"] = { 350, 350, 355, 360 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23781; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 23782; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 23783; ["numRequired"] = 1; };
-		};
-		["creates"] = 23819;
-	};
-	[30548] = {
-		["learnedAt"] = 305;
-		["levels"] = { 305, 305, 315, 325 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23782; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 23783; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 21886; ["numRequired"] = 4; };
-			[4] = { ["itemID"] = 16006; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23821;
-	};
-	[30551] = {
-		["learnedAt"] = 330;
-		["levels"] = { 330, 330, 340, 350 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23782; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 23783; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 21887; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 22829; ["numRequired"] = 20; };
-		};
-		["tools"] = { 6219 };
-		["creates"] = 33092;
-	};
-	[30552] = {
-		["learnedAt"] = 345;
-		["levels"] = { 345, 345, 355, 365 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23782; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 23783; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 21887; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 22832; ["numRequired"] = 20; };
-		};
-		["tools"] = { 6219 };
-		["creates"] = 33093;
-	};
-	[30556] = {
-		["learnedAt"] = 355;
-		["levels"] = { 355, 365, 375, 385 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23793; ["numRequired"] = 8; };
-			[2] = { ["itemID"] = 23786; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 23785; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 23787; ["numRequired"] = 4; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23824;
-	};
-	[30558] = {
-		["learnedAt"] = 325;
-		["levels"] = { 325, 325, 335, 345 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23782; ["numRequired"] = 3; };
-			[2] = { ["itemID"] = 23781; ["numRequired"] = 6; };
-			[3] = { ["itemID"] = 17020; ["numRequired"] = 3; };
-			[4] = { ["itemID"] = 23783; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23826;
-	};
-	[30560] = {
-		["learnedAt"] = 340;
-		["levels"] = { 340, 340, 350, 360 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 21877; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 23781; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 22457; ["numRequired"] = 1; };
-		};
-		["creates"] = 23827;
-	};
-	[30563] = {
-		["learnedAt"] = 350;
-		["levels"] = { 350, 360, 370, 380 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23785; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 23786; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 23787; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 21884; ["numRequired"] = 6; };
-			[5] = { ["itemID"] = 22452; ["numRequired"] = 6; };
-			[6] = { ["itemID"] = 16006; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23836;
-	};
-	[30565] = {
-		["learnedAt"] = 375;
-		["levels"] = { 375, 375, 385, 395 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 24272; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 22457; ["numRequired"] = 12; };
-			[3] = { ["itemID"] = 22451; ["numRequired"] = 12; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23838;
-	};
-	[30566] = {
-		["learnedAt"] = 375;
-		["levels"] = { 375, 375, 385, 395 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23573; ["numRequired"] = 8; };
-			[2] = { ["itemID"] = 22452; ["numRequired"] = 12; };
-			[3] = { ["itemID"] = 21884; ["numRequired"] = 12; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23839;
-	};
-	[30568] = {
-		["learnedAt"] = 325;
-		["levels"] = { 325, 335, 345, 355 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23784; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 23783; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 23781; ["numRequired"] = 3; };
-			[4] = { ["itemID"] = 23782; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23841;
-	};
-	[30569] = {
-		["learnedAt"] = 340;
-		["levels"] = { 340, 360, 370, 380 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23785; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 23786; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 22445; ["numRequired"] = 10; };
-			[4] = { ["itemID"] = 22449; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23835;
-	};
-	[30570] = {
-		["learnedAt"] = 350;
-		["levels"] = { 350, 360, 370, 380 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23793; ["numRequired"] = 8; };
-			[2] = { ["itemID"] = 23786; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 21886; ["numRequired"] = 10; };
-			[4] = { ["itemID"] = 22456; ["numRequired"] = 10; };
-			[5] = { ["itemID"] = 16006; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 23825;
-	};
-	[30574] = {
-		["learnedAt"] = 375;
-		["levels"] = { 375, 375, 385, 395 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 24271; ["numRequired"] = 4; };
-			[2] = { ["itemID"] = 21884; ["numRequired"] = 8; };
-			[3] = { ["itemID"] = 22451; ["numRequired"] = 8; };
-			[4] = { ["itemID"] = 22452; ["numRequired"] = 8; };
-			[5] = { ["itemID"] = 21885; ["numRequired"] = 8; };
-			[6] = { ["itemID"] = 23437; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 23828;
-	};
-	[30575] = {
-		["learnedAt"] = 375;
-		["levels"] = { 375, 375, 385, 395 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23793; ["numRequired"] = 8; };
-			[2] = { ["itemID"] = 22456; ["numRequired"] = 12; };
-			[3] = { ["itemID"] = 22452; ["numRequired"] = 12; };
-			[4] = { ["itemID"] = 21884; ["numRequired"] = 12; };
-			[5] = { ["itemID"] = 23436; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 23829;
-	};
-	[32814] = {
-		["learnedAt"] = 335;
-		["levels"] = { 335, 335, 345, 355 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23781; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 21877; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 4342; ["numRequired"] = 1; };
-		};
-		["creates"] = 25886;
-	};
-	[36954] = {
-		["learnedAt"] = 350;
-		["levels"] = { 0, 350, 360, 370 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23784; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 21884; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 23826; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 23783; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 23786; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 30542;
-	};
-	[36955] = {
-		["learnedAt"] = 350;
-		["levels"] = { 0, 350, 360, 370 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23784; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 22451; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 23787; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 23783; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 23786; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 30544;
-	};
-	[39895] = {
-		["learnedAt"] = 275;
-		["levels"] = { 275, 275, 280, 285 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 20816; ["numRequired"] = 3; };
-			[2] = { ["itemID"] = 7078; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219 };
-		["creates"] = 7191;
-	};
-	[39971] = {
-		["learnedAt"] = 335;
-		["levels"] = { 335, 335, 340, 345 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 21885; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 23781; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 21877; ["numRequired"] = 2; };
-		};
-		["tools"] = { 5956 };
-		["creates"] = 32423;
-	};
-	[39973] = {
-		["learnedAt"] = 335;
-		["levels"] = { 335, 345, 355, 365 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 32423; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 23782; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 23783; ["numRequired"] = 1; };
-		};
-		["creates"] = 32413;
-	};
-	[40274] = {
-		["learnedAt"] = 370;
-		["levels"] = { 0, 370, 380, 390 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23793; ["numRequired"] = 6; };
-			[2] = { ["itemID"] = 23786; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 23785; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 23787; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 23572; ["numRequired"] = 1; };
-			[6] = { ["itemID"] = 23436; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 32461;
-	};
-	[41307] = {
-		["learnedAt"] = 375;
-		["levels"] = { 375, 375, 392, 410 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23785; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 23449; ["numRequired"] = 20; };
-			[3] = { ["itemID"] = 23787; ["numRequired"] = 4; };
-			[4] = { ["itemID"] = 21884; ["numRequired"] = 12; };
-			[5] = { ["itemID"] = 22451; ["numRequired"] = 12; };
-			[6] = { ["itemID"] = 23572; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 32756;
-	};
-	[41311] = {
-		["learnedAt"] = 370;
-		["levels"] = { 0, 370, 380, 390 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23793; ["numRequired"] = 6; };
-			[2] = { ["itemID"] = 23786; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 23785; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 23787; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 23572; ["numRequired"] = 1; };
-			[6] = { ["itemID"] = 23440; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 32472;
-	};
-	[41312] = {
-		["learnedAt"] = 370;
-		["levels"] = { 0, 370, 380, 390 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23793; ["numRequired"] = 6; };
-			[2] = { ["itemID"] = 23786; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 23785; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 23787; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 23572; ["numRequired"] = 1; };
-			[6] = { ["itemID"] = 23437; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 32473;
-	};
-	[41314] = {
-		["learnedAt"] = 370;
-		["levels"] = { 0, 370, 380, 390 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23793; ["numRequired"] = 6; };
-			[2] = { ["itemID"] = 23786; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 23785; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 23787; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 23572; ["numRequired"] = 1; };
-			[6] = { ["itemID"] = 23441; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 32474;
-	};
-	[41315] = {
-		["learnedAt"] = 370;
-		["levels"] = { 0, 370, 380, 390 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23793; ["numRequired"] = 6; };
-			[2] = { ["itemID"] = 23786; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 23785; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 23787; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 23572; ["numRequired"] = 1; };
-			[6] = { ["itemID"] = 23436; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 32476;
-	};
-	[41316] = {
-		["learnedAt"] = 370;
-		["levels"] = { 0, 370, 380, 390 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23793; ["numRequired"] = 6; };
-			[2] = { ["itemID"] = 23786; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 23785; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 23787; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 23572; ["numRequired"] = 1; };
-			[6] = { ["itemID"] = 23439; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 32475;
-	};
-	[41317] = {
-		["learnedAt"] = 370;
-		["levels"] = { 0, 370, 380, 390 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23793; ["numRequired"] = 6; };
-			[2] = { ["itemID"] = 23786; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 23785; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 23787; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 23572; ["numRequired"] = 1; };
-			[6] = { ["itemID"] = 23436; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 32478;
-	};
-	[41318] = {
-		["learnedAt"] = 370;
-		["levels"] = { 0, 370, 380, 390 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23793; ["numRequired"] = 6; };
-			[2] = { ["itemID"] = 23786; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 23785; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 23787; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 23572; ["numRequired"] = 1; };
-			[6] = { ["itemID"] = 23440; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 32479;
-	};
-	[41319] = {
-		["learnedAt"] = 370;
-		["levels"] = { 0, 370, 380, 390 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23793; ["numRequired"] = 6; };
-			[2] = { ["itemID"] = 23786; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 23785; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 23787; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 23572; ["numRequired"] = 1; };
-			[6] = { ["itemID"] = 23437; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 32480;
-	};
-	[41320] = {
-		["learnedAt"] = 370;
-		["levels"] = { 0, 370, 380, 390 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23793; ["numRequired"] = 6; };
-			[2] = { ["itemID"] = 23786; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 23785; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 23787; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 23572; ["numRequired"] = 1; };
-			[6] = { ["itemID"] = 23438; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 32494;
-	};
-	[41321] = {
-		["learnedAt"] = 370;
-		["levels"] = { 0, 370, 380, 390 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23793; ["numRequired"] = 6; };
-			[2] = { ["itemID"] = 23786; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 23785; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 23787; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 23572; ["numRequired"] = 1; };
-			[6] = { ["itemID"] = 23439; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 32495;
-	};
-	[43676] = {
-		["learnedAt"] = 335;
-		["levels"] = { 335, 335, 345, 355 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23446; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 4470; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 23783; ["numRequired"] = 2; };
-		};
-		["tools"] = { 6219 };
-		["creates"] = 20475;
-	};
-	[44155] = {
-		["learnedAt"] = 350;
-		["levels"] = { 350, 375, 380, 385 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23784; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 23445; ["numRequired"] = 30; };
-			[3] = { ["itemID"] = 23783; ["numRequired"] = 8; };
-			[4] = { ["itemID"] = 11291; ["numRequired"] = 8; };
-			[5] = { ["itemID"] = 23446; ["numRequired"] = 5; };
-			[6] = { ["itemID"] = 23819; ["numRequired"] = 4; };
-		};
-		["tools"] = { 6219, 5956 };
-		["creates"] = 34060;
-	};
-	[44157] = {
-		["learnedAt"] = 375;
-		["levels"] = { 375, 385, 390, 395 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 34060; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 23786; ["numRequired"] = 8; };
-			[3] = { ["itemID"] = 23787; ["numRequired"] = 8; };
-			[4] = { ["itemID"] = 34249; ["numRequired"] = 1; };
-		};
-		["tools"] = { 6219, 5956 };
-		["creates"] = 34061;
-	};
-	[44391] = {
-		["learnedAt"] = 360;
-		["levels"] = { 360, 370, 380, 390 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 23446; ["numRequired"] = 8; };
-			[2] = { ["itemID"] = 23783; ["numRequired"] = 8; };
-			[3] = { ["itemID"] = 23786; ["numRequired"] = 1; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 34113;
-	};
-	[46106] = {
-		["learnedAt"] = 375;
-		["levels"] = { 375, 390, 410, 430 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 32479; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 21885; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 22457; ["numRequired"] = 8; };
-			[4] = { ["itemID"] = 23572; ["numRequired"] = 4; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 35183;
-	};
-	[46107] = {
-		["learnedAt"] = 375;
-		["levels"] = { 375, 390, 410, 430 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 32472; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 21886; ["numRequired"] = 8; };
-			[3] = { ["itemID"] = 22457; ["numRequired"] = 8; };
-			[4] = { ["itemID"] = 22452; ["numRequired"] = 8; };
-			[5] = { ["itemID"] = 23572; ["numRequired"] = 4; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 35185;
-	};
-	[46108] = {
-		["learnedAt"] = 375;
-		["levels"] = { 375, 390, 410, 430 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 32495; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 21886; ["numRequired"] = 8; };
-			[3] = { ["itemID"] = 22457; ["numRequired"] = 8; };
-			[4] = { ["itemID"] = 23572; ["numRequired"] = 4; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 35181;
-	};
-	[46109] = {
-		["learnedAt"] = 375;
-		["levels"] = { 375, 390, 410, 430 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 32480; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 21885; ["numRequired"] = 6; };
-			[3] = { ["itemID"] = 21886; ["numRequired"] = 12; };
-			[4] = { ["itemID"] = 23572; ["numRequired"] = 4; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 35182;
-	};
-	[46110] = {
-		["learnedAt"] = 375;
-		["levels"] = { 375, 390, 410, 430 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 32475; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 21886; ["numRequired"] = 5; };
-			[3] = { ["itemID"] = 22457; ["numRequired"] = 5; };
-			[4] = { ["itemID"] = 21885; ["numRequired"] = 5; };
-			[5] = { ["itemID"] = 23572; ["numRequired"] = 4; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 35184;
-	};
-	[46111] = {
-		["learnedAt"] = 375;
-		["levels"] = { 375, 390, 410, 430 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 32494; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 22456; ["numRequired"] = 4; };
-			[3] = { ["itemID"] = 21884; ["numRequired"] = 4; };
-			[4] = { ["itemID"] = 22457; ["numRequired"] = 4; };
-			[5] = { ["itemID"] = 23572; ["numRequired"] = 4; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 34847;
-	};
-	[46112] = {
-		["learnedAt"] = 375;
-		["levels"] = { 375, 390, 410, 430 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 32476; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 23571; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 22451; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 23572; ["numRequired"] = 4; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 34355;
-	};
-	[46113] = {
-		["learnedAt"] = 375;
-		["levels"] = { 375, 390, 410, 430 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 32474; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 22451; ["numRequired"] = 12; };
-			[3] = { ["itemID"] = 23572; ["numRequired"] = 4; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 34356;
-	};
-	[46114] = {
-		["learnedAt"] = 375;
-		["levels"] = { 375, 390, 410, 430 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 32461; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 21884; ["numRequired"] = 10; };
-			[3] = { ["itemID"] = 23572; ["numRequired"] = 4; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 34354;
-	};
-	[46115] = {
-		["learnedAt"] = 375;
-		["levels"] = { 375, 390, 410, 430 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 32473; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 35128; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 23571; ["numRequired"] = 1; };
-			[4] = { ["itemID"] = 23572; ["numRequired"] = 4; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 34357;
-	};
-	[46116] = {
-		["learnedAt"] = 375;
-		["levels"] = { 375, 390, 410, 430 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 32478; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 22456; ["numRequired"] = 12; };
-			[3] = { ["itemID"] = 23572; ["numRequired"] = 4; };
-		};
-		["tools"] = { 6219, 10498 };
-		["creates"] = 34353;
-	};
-	[46697] = {
-		["learnedAt"] = 355;
-		["levels"] = { 355, 365, 375, 385 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 21840; ["numRequired"] = 8; };
-			[2] = { ["itemID"] = 23786; ["numRequired"] = 2; };
-			[3] = { ["itemID"] = 23785; ["numRequired"] = 2; };
-			[4] = { ["itemID"] = 23787; ["numRequired"] = 4; };
-		};
-		["tools"] = { 5956, 6219 };
-		["creates"] = 35581;
-	};
-};
+		creates = 22728,
+		icon = "Interface\\Icons\\inv_misc_enggizmos_20",
+		name = "Steam Tonk Controller",
+		reagents = {
+			{
+				itemID = 15994,
+				icon = "Interface\\Icons\\inv_gizmo_04",
+				numRequired = 2,
+			},
+			{
+				itemID = 10561,
+				icon = "Interface\\Icons\\inv_gizmo_mithrilcasing_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 10558,
+				icon = "Interface\\Icons\\inv_battery_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 275,
+		levels = {
+			275,
+			295,
+			305,
+			315,
+		},
+	},
+}

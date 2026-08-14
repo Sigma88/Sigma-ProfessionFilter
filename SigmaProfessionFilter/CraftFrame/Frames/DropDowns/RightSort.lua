@@ -1,6 +1,7 @@
+local L = SigmaProfessionFilter.L;
 local SPF1 = SigmaProfessionFilter[1];
 
-SPF1.RightSort = CreateFrame("CheckButton", nil, SPF1.RightMenu, "UICheckButtonTemplate");
+SPF1.RightSort = CreateFrame("CheckButton", nil, CraftFrame, "UICheckButtonTemplate");
 
 function SPF1.RightSort:OnLoad()
 	SPF1.RightSort:SetWidth(15);
@@ -10,28 +11,37 @@ function SPF1.RightSort:OnLoad()
 	SPF1.RightSort:SetFrameLevel(4);
 	
 	SPF1.RightSort:SetScript("OnShow", SPF1.RightSort.OnShow);
+	SPF1["CFOnShow"]["SPF1.RightSort.OnShow"] = SPF1.RightSort.OnShow;
+	
 	SPF1.RightSort:SetScript("OnClick", SPF1.RightSort.OnClick);
 	SPF1.RightSort:SetScript("OnEnter", SPF1.RightSort.OnEnter);
 	SPF1.RightSort:SetScript("OnLeave", SPF1.RightSort.OnLeave);
 end
 
-function SPF1.RightSort.OnShow()
-	if (SPF1:GetMenu("Right")) then
-		SPF1.RightSort.tooltipText = SPF1:Custom("RightMenu")["tooltip"];
-		SPF1.RightSort:SetChecked(SPF1:SavedData()["GroupBy"] == "Right");
+function SPF1.RightSort:OnShow()
+	SPF1.RightSort:Show();
+	if not SPF1:GetMenu("Right") then
+		SPF1.RightSort:Hide();
 	else
-		SPF1.RightSort:OnClick("silent");
+		if not SPF1:GetMenu("Left") then
+			SPF1:SavedData()["GroupBy"] = "Right";
+		end
+		SPF1.RightSort.tooltipText = SPF1:Custom("RightMenu")["tooltip"] or L["ALL_INVENTORY_SLOTS_TOOLTIP"];
+		SPF1.RightSort:SetChecked(SPF1:SavedData()["GroupBy"] == "Right");
 	end
+	
+    if SPF1:SavedData()["SearchBox"] then
+        SPF1.RightSort:Hide();
+    end
 end
 
 function SPF1.RightSort.OnClick()
-	if SPF1:GetMenu("Right") then
-		PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
-		SPF1.RightSort:SetChecked(true);
-		SPF1:SavedData()["GroupBy"] = "Right";
-		SPF1.LeftSort.OnShow();
-		SPF1.FullUpdate();
-	end
+	--PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
+	PlaySound("igMainMenuOptionCheckBoxOn");
+	SPF1.RightSort:SetChecked(true);
+	SPF1:SavedData()["GroupBy"] = "Right";
+	SPF1.LeftSort:OnShow();
+	SPF1.FullUpdate();
 end
 
 function SPF1.RightSort.OnEnter()
@@ -45,4 +55,4 @@ function SPF1.RightSort.OnLeave()
     GameTooltip:Hide();
 end
 
-SPF1.RightSort:OnLoad();
+SPF1.RightSort.OnLoad();

@@ -11,7 +11,7 @@ function SPF2.RightSort:OnLoad()
 	SPF2.RightSort:SetFrameLevel(4);
 	
 	SPF2.RightSort:SetScript("OnShow", SPF2.RightSort.OnShow);
-	hooksecurefunc("TradeSkillFrame_OnShow", SPF2.RightSort.OnShow);
+	SPF2["TSFOnShow"]["SPF2.RightSort.OnShow"] = SPF2.RightSort.OnShow;
 	
 	SPF2.RightSort:SetScript("OnClick", SPF2.RightSort.OnClick);
 	SPF2.RightSort:SetScript("OnEnter", SPF2.RightSort.OnEnter);
@@ -36,7 +36,8 @@ function SPF2.RightSort:OnShow()
 end
 
 function SPF2.RightSort.OnClick()
-	PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
+	--PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
+	PlaySound("igMainMenuOptionCheckBoxOn");
 	SPF2.RightSort:SetChecked(true);
 	SPF2:SavedData()["GroupBy"] = "Right";
 	SPF2.LeftSort:OnShow();

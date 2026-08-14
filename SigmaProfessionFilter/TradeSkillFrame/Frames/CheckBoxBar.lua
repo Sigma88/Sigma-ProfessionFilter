@@ -5,7 +5,7 @@ SPF2.CheckBoxBar = CreateFrame("Frame", "CheckBoxBar", TradeSkillFrame);
 
 function SPF2.CheckBoxBar.OnLoad()
 	SPF2.CheckBoxBar:SetScript("OnShow", SPF2.CheckBoxBar.OnShow);
-	-- Moved to TradeSkillFrame/Core/ReplaceFunctions --hooksecurefunc("TradeSkillFrame_OnShow", SPF2.CheckBoxBar.OnShow);
+	SPF2["TSFOnShow"]["SPF2.CheckBoxBar.OnShow"] = SPF2.CheckBoxBar.OnShow;
 	
 	SPF2.CheckBoxBar:SetHeight(16);
 	

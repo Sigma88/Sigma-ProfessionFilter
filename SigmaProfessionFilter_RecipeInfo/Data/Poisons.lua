@@ -1,232 +1,277 @@
 local RI = SigmaProfessionFilter_RecipeInfo;
 
 RI.Data["Poisons"] = {
-	[2835] = {
-		["learnedAt"] = 175;
-		["levels"] = { 0, 175, 200, 225 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 5173; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3372; ["numRequired"] = 1; };
-		};
-		["creates"] = 2892;
-	};
-	[2837] = {
-		["learnedAt"] = 215;
-		["levels"] = { 0, 215, 240, 265 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 5173; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 3372; ["numRequired"] = 1; };
-		};
-		["creates"] = 2893;
-	};
-	[3420] = {
-		["learnedAt"] = 125;
-		["levels"] = { 0, 125, 150, 175 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2930; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3371; ["numRequired"] = 1; };
-		};
-		["creates"] = 3775;
-	};
-	[3421] = {
-		["learnedAt"] = 275;
-		["levels"] = { 0, 275, 300, 325 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 8923; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 8925; ["numRequired"] = 1; };
-		};
-		["creates"] = 3776;
-	};
-	[5763] = {
-		["learnedAt"] = 150;
-		["levels"] = { 0, 150, 175, 200 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2928; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3371; ["numRequired"] = 1; };
-		};
-		["creates"] = 5237;
-	};
 	[8681] = {
-		["learnedAt"] = 125;
-		["levels"] = { 0, 125, 150, 175 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2928; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3371; ["numRequired"] = 1; };
-		};
-		["creates"] = 6947;
-	};
+		creates = 6947,
+		icon = "Interface\\Icons\\ability_poisons",
+		name = "Instant Poison",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[3420] = {
+		creates = 3775,
+		icon = "Interface\\Icons\\ability_poisonsting",
+		name = "Crippling Poison",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[5763] = {
+		creates = 5237,
+		icon = "Interface\\Icons\\spell_nature_nullifydisease",
+		name = "Mind-numbing Poison",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
 	[8687] = {
-		["learnedAt"] = 165;
-		["levels"] = { 0, 165, 190, 215 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2928; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3372; ["numRequired"] = 1; };
-		};
-		["creates"] = 6949;
-	};
-	[8691] = {
-		["learnedAt"] = 205;
-		["levels"] = { 0, 205, 230, 255 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 8924; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 3372; ["numRequired"] = 1; };
-		};
-		["creates"] = 6950;
-	};
-	[8694] = {
-		["learnedAt"] = 215;
-		["levels"] = { 0, 215, 240, 265 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 8923; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3372; ["numRequired"] = 1; };
-		};
-		["creates"] = 6951;
-	};
-	[11341] = {
-		["learnedAt"] = 245;
-		["levels"] = { 0, 245, 270, 295 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 8924; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 8925; ["numRequired"] = 1; };
-		};
-		["creates"] = 8926;
-	};
-	[11342] = {
-		["learnedAt"] = 285;
-		["levels"] = { 0, 285, 310, 335 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 8924; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 8925; ["numRequired"] = 1; };
-		};
-		["creates"] = 8927;
-	};
-	[11343] = {
-		["learnedAt"] = 325;
-		["levels"] = { 0, 325, 350, 375 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 8924; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 8925; ["numRequired"] = 1; };
-		};
-		["creates"] = 8928;
-	};
-	[11357] = {
-		["learnedAt"] = 255;
-		["levels"] = { 0, 255, 280, 305 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 5173; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 8925; ["numRequired"] = 1; };
-		};
-		["creates"] = 8984;
-	};
-	[11358] = {
-		["learnedAt"] = 295;
-		["levels"] = { 0, 295, 320, 345 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 5173; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 8925; ["numRequired"] = 1; };
-		};
-		["creates"] = 8985;
-	};
-	[11400] = {
-		["learnedAt"] = 285;
-		["levels"] = { 0, 285, 310, 335 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 8923; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 8925; ["numRequired"] = 1; };
-		};
-		["creates"] = 9186;
-	};
+		creates = 6949,
+		icon = "Interface\\Icons\\ability_poisons",
+		name = "Instant Poison II",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[2835] = {
+		creates = 2892,
+		icon = "Interface\\Icons\\ability_rogue_dualweild",
+		name = "Deadly Poison",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
 	[13220] = {
-		["learnedAt"] = 185;
-		["levels"] = { 0, 185, 210, 235 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2930; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 3372; ["numRequired"] = 1; };
-		};
-		["creates"] = 10918;
-	};
+		creates = 10918,
+		icon = "Interface\\Icons\\ability_poisonsting",
+		name = "Wound Poison",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[6510] = {
+		creates = 5530,
+		icon = "Interface\\Icons\\inv_misc_ammo_gunpowder_01",
+		name = "Blinding Powder",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[8691] = {
+		creates = 6950,
+		icon = "Interface\\Icons\\ability_poisons",
+		name = "Instant Poison III",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[8694] = {
+		creates = 6951,
+		icon = "Interface\\Icons\\spell_nature_nullifydisease",
+		name = "Mind-numbing Poison II",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[2837] = {
+		creates = 2893,
+		icon = "Interface\\Icons\\ability_rogue_dualweild",
+		name = "Deadly Poison II",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
 	[13228] = {
-		["learnedAt"] = 225;
-		["levels"] = { 0, 225, 250, 275 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2930; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 5173; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 3372; ["numRequired"] = 1; };
-		};
-		["creates"] = 10920;
-	};
+		creates = 10920,
+		icon = "Interface\\Icons\\ability_poisonsting",
+		name = "Wound Poison II",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[11341] = {
+		creates = 8926,
+		icon = "Interface\\Icons\\ability_poisons",
+		name = "Instant Poison IV",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[11357] = {
+		creates = 8984,
+		icon = "Interface\\Icons\\ability_rogue_dualweild",
+		name = "Deadly Poison III",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
 	[13229] = {
-		["learnedAt"] = 265;
-		["levels"] = { 0, 265, 290, 315 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 8923; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 8925; ["numRequired"] = 1; };
-		};
-		["creates"] = 10921;
-	};
+		creates = 10921,
+		icon = "Interface\\Icons\\ability_poisonsting",
+		name = "Wound Poison III",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[3421] = {
+		creates = 3776,
+		icon = "Interface\\Icons\\inv_potion_19",
+		name = "Crippling Poison II",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[11342] = {
+		creates = 8927,
+		icon = "Interface\\Icons\\ability_poisons",
+		name = "Instant Poison V",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[11400] = {
+		creates = 9186,
+		icon = "Interface\\Icons\\spell_nature_nullifydisease",
+		name = "Mind-numbing Poison III",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[11358] = {
+		creates = 8985,
+		icon = "Interface\\Icons\\ability_rogue_dualweild",
+		name = "Deadly Poison IV",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
 	[13230] = {
-		["learnedAt"] = 305;
-		["levels"] = { 0, 305, 330, 355 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 8923; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 5173; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 8925; ["numRequired"] = 1; };
-		};
-		["creates"] = 10922;
-	};
+		creates = 10922,
+		icon = "Interface\\Icons\\ability_poisonsting",
+		name = "Wound Poison IV",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[11343] = {
+		creates = 8928,
+		icon = "Interface\\Icons\\ability_poisons",
+		name = "Instant Poison VI",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
 	[25347] = {
-		["learnedAt"] = 300;
-		["levels"] = { 0, 300, 325, 350 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 5173; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 8925; ["numRequired"] = 1; };
-		};
-		["creates"] = 20844;
-	};
-	[26786] = {
-		["learnedAt"] = 340;
-		["levels"] = { 0, 340, 355, 370 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2931; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 5173; ["numRequired"] = 1; };
-			[3] = { ["itemID"] = 8925; ["numRequired"] = 1; };
-		};
-		["creates"] = 21835;
-	};
-	[26892] = {
-		["learnedAt"] = 365;
-		["levels"] = { 0, 365, 390, 415 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2931; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 8925; ["numRequired"] = 1; };
-		};
-		["creates"] = 21927;
-	};
-	[26969] = {
-		["learnedAt"] = 345;
-		["levels"] = { 0, 345, 365, 385 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2931; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 8925; ["numRequired"] = 1; };
-		};
-		["creates"] = 22053;
-	};
-	[27282] = {
-		["learnedAt"] = 385;
-		["levels"] = { 0, 385, 405, 425 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 2931; ["numRequired"] = 1; };
-			[2] = { ["itemID"] = 8925; ["numRequired"] = 1; };
-		};
-		["creates"] = 22054;
-	};
-	[27283] = {
-		["learnedAt"] = 345;
-		["levels"] = { 0, 345, 370, 395 };
-		["reagents"] = {
-			[1] = { ["itemID"] = 8923; ["numRequired"] = 2; };
-			[2] = { ["itemID"] = 8925; ["numRequired"] = 1; };
-		};
-		["creates"] = 22055;
-	};
-};
+		creates = 20844,
+		icon = "Interface\\Icons\\ability_rogue_dualweild",
+		name = "Deadly Poison V",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+}

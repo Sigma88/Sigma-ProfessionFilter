@@ -53,6 +53,9 @@ GetTradeSkillCooldown = SPF2.GetTradeSkillCooldown;
 SPF2.baseTradeSkillSkillButton_OnClick = TradeSkillSkillButton_OnClick;
 TradeSkillSkillButton_OnClick = SPF2.TradeSkillSkillButton_OnClick;
 
+SPF2.baseTradeSkillFrame_Update = TradeSkillFrame_Update;
+TradeSkillFrame_Update = SPF2.TradeSkillFrame_Update;
+
 
 -- Indexing
 SPF2.baseGetFirstTradeSkill = GetFirstTradeSkill;
@@ -74,6 +77,46 @@ GetTradeSkillTools = SPF2.GetTradeSkillTools;
 SPF2.baseGetTradeskillRepeatCount = GetTradeskillRepeatCount;
 GetTradeskillRepeatCount = SPF2.GetTradeskillRepeatCount;
 
--- Hooks
-hooksecurefunc("TradeSkillFrame_OnShow", SPF2.TradeSkillFrame_OnShow);
-hooksecurefunc("TradeSkillFrame_OnShow", SPF2.CheckBoxBar.OnShow);
+-- TradeSkillFrame_OnShow
+SPF2.baseTradeSkillFrame_OnShow = TradeSkillFrame_OnShow;
+TradeSkillFrame_OnShow = SPF2.TradeSkillFrame_OnShow;
+TradeSkillFrame:SetScript("OnShow", TradeSkillFrame_OnShow);
+
+
+function SPF2.ContainerFrameItemButton_OnClick(button, ignoreModifiers)
+	if SPF2.SearchBox:IsVisible() and SPF2.SearchBox.HasFocus and IsShiftKeyDown() then
+		SPF2.SearchBox.InsertItemName(GetContainerItemLink(this:GetParent():GetID(), this:GetID()));
+	else
+		SPF2.baseContainerFrameItemButton_OnClick(button, ignoreModifiers);
+	end
+end
+
+SPF2.baseContainerFrameItemButton_OnClick = ContainerFrameItemButton_OnClick;
+ContainerFrameItemButton_OnClick = SPF2.ContainerFrameItemButton_OnClick;
+
+
+--[[ KEEP FOR DEBUG PURPOSES
+
+function SPF2.SetItemRef(link, text, button, fourth)
+	DEFAULT_CHAT_FRAME:AddMessage("SetItemRef:",1,0,0);
+	DEFAULT_CHAT_FRAME:AddMessage("   link: "..(link or "NULL"),1,0,0);
+	DEFAULT_CHAT_FRAME:AddMessage("   text: "..(text or "NULL"),1,0,0);
+	DEFAULT_CHAT_FRAME:AddMessage("   button: "..(button or "NULL"),1,0,0);
+	DEFAULT_CHAT_FRAME:AddMessage("   fourth: "..(fourth or "NULL"),1,0,0);
+	SPF2.baseSetItemRef(link,text,button,fourth);
+end
+
+SPF2.baseSetItemRef = SetItemRef;
+SetItemRef = SPF2.SetItemRef;
+
+
+function SPF2.GTSetHyperlink(self,link)
+	DEFAULT_CHAT_FRAME:AddMessage("GTSetHyperlink:",1,0,0);
+	DEFAULT_CHAT_FRAME:AddMessage("   link: "..(link or "NULL"),1,0,0);
+	SPF2.baseGTSetHyperlink(self,link);
+end
+
+SPF2.baseGTSetHyperlink = ItemRefTooltip.SetHyperlink;
+ItemRefTooltip.SetHyperlink = SPF2.GTSetHyperlink;
+
+--]]--

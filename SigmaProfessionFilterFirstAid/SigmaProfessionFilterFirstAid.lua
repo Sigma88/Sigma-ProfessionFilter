@@ -1,4 +1,4 @@
-local _, L = ...;
+local L = SigmaProfessionFilterFirstAid.L;
 
 SigmaProfessionFilter[L["PROFESSION"]] = {
 	["LeftMenu"] = {
