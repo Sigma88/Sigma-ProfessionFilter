@@ -1,114 +1,10 @@
 local RI = SigmaProfessionFilter_RecipeInfo;
 
 RI.Data["Poisons"] = {
-	[8681] = {
-		creates = 6947,
-		icon = "Interface\\Icons\\ability_poisons",
-		name = "Instant Poison",
-		reagents = {},
-		learnedAt = 0,
-		levels = {
-			0,
-			0,
-			0,
-			0,
-		},
-	},
-	[3420] = {
-		creates = 3775,
-		icon = "Interface\\Icons\\ability_poisonsting",
-		name = "Crippling Poison",
-		reagents = {},
-		learnedAt = 0,
-		levels = {
-			0,
-			0,
-			0,
-			0,
-		},
-	},
-	[5763] = {
-		creates = 5237,
-		icon = "Interface\\Icons\\spell_nature_nullifydisease",
-		name = "Mind-numbing Poison",
-		reagents = {},
-		learnedAt = 0,
-		levels = {
-			0,
-			0,
-			0,
-			0,
-		},
-	},
-	[8687] = {
-		creates = 6949,
-		icon = "Interface\\Icons\\ability_poisons",
-		name = "Instant Poison II",
-		reagents = {},
-		learnedAt = 0,
-		levels = {
-			0,
-			0,
-			0,
-			0,
-		},
-	},
 	[2835] = {
 		creates = 2892,
 		icon = "Interface\\Icons\\ability_rogue_dualweild",
 		name = "Deadly Poison",
-		reagents = {},
-		learnedAt = 0,
-		levels = {
-			0,
-			0,
-			0,
-			0,
-		},
-	},
-	[13220] = {
-		creates = 10918,
-		icon = "Interface\\Icons\\ability_poisonsting",
-		name = "Wound Poison",
-		reagents = {},
-		learnedAt = 0,
-		levels = {
-			0,
-			0,
-			0,
-			0,
-		},
-	},
-	[6510] = {
-		creates = 5530,
-		icon = "Interface\\Icons\\inv_misc_ammo_gunpowder_01",
-		name = "Blinding Powder",
-		reagents = {},
-		learnedAt = 0,
-		levels = {
-			0,
-			0,
-			0,
-			0,
-		},
-	},
-	[8691] = {
-		creates = 6950,
-		icon = "Interface\\Icons\\ability_poisons",
-		name = "Instant Poison III",
-		reagents = {},
-		learnedAt = 0,
-		levels = {
-			0,
-			0,
-			0,
-			0,
-		},
-	},
-	[8694] = {
-		creates = 6951,
-		icon = "Interface\\Icons\\spell_nature_nullifydisease",
-		name = "Mind-numbing Poison II",
 		reagents = {},
 		learnedAt = 0,
 		levels = {
@@ -131,49 +27,10 @@ RI.Data["Poisons"] = {
 			0,
 		},
 	},
-	[13228] = {
-		creates = 10920,
+	[3420] = {
+		creates = 3775,
 		icon = "Interface\\Icons\\ability_poisonsting",
-		name = "Wound Poison II",
-		reagents = {},
-		learnedAt = 0,
-		levels = {
-			0,
-			0,
-			0,
-			0,
-		},
-	},
-	[11341] = {
-		creates = 8926,
-		icon = "Interface\\Icons\\ability_poisons",
-		name = "Instant Poison IV",
-		reagents = {},
-		learnedAt = 0,
-		levels = {
-			0,
-			0,
-			0,
-			0,
-		},
-	},
-	[11357] = {
-		creates = 8984,
-		icon = "Interface\\Icons\\ability_rogue_dualweild",
-		name = "Deadly Poison III",
-		reagents = {},
-		learnedAt = 0,
-		levels = {
-			0,
-			0,
-			0,
-			0,
-		},
-	},
-	[13229] = {
-		creates = 10921,
-		icon = "Interface\\Icons\\ability_poisonsting",
-		name = "Wound Poison III",
+		name = "Crippling Poison",
 		reagents = {},
 		learnedAt = 0,
 		levels = {
@@ -196,50 +53,108 @@ RI.Data["Poisons"] = {
 			0,
 		},
 	},
+	[5763] = {
+		creates = 5237,
+		icon = "Interface\\Icons\\spell_nature_nullifydisease",
+		name = "Mind-numbing Poison",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[6510] = {
+		creates = 5530,
+		icon = "Interface\\Icons\\inv_misc_ammo_gunpowder_01",
+		name = "Blinding Powder",
+		reagents = {},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[8681] = {
+		creates = 6947,
+		icon = "Interface\\Icons\\ability_poisons",
+		name = "Instant Poison",
+		reagents = {
+		},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[8687] = {
+		creates = 6949,
+		icon = "Interface\\Icons\\ability_poisons",
+		name = "Instant Poison II",
+		reagents = {
+		},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[8691] = {
+		creates = 6950,
+		icon = "Interface\\Icons\\ability_poisons",
+		name = "Instant Poison III",
+		reagents = {
+		},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[8694] = {
+		creates = 6951,
+		icon = "Interface\\Icons\\spell_nature_nullifydisease",
+		name = "Mind-numbing Poison II",
+		reagents = {
+		},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[11341] = {
+		creates = 8926,
+		icon = "Interface\\Icons\\ability_poisons",
+		name = "Instant Poison IV",
+		reagents = {
+		},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
 	[11342] = {
 		creates = 8927,
 		icon = "Interface\\Icons\\ability_poisons",
 		name = "Instant Poison V",
-		reagents = {},
-		learnedAt = 0,
-		levels = {
-			0,
-			0,
-			0,
-			0,
+		reagents = {
 		},
-	},
-	[11400] = {
-		creates = 9186,
-		icon = "Interface\\Icons\\spell_nature_nullifydisease",
-		name = "Mind-numbing Poison III",
-		reagents = {},
-		learnedAt = 0,
-		levels = {
-			0,
-			0,
-			0,
-			0,
-		},
-	},
-	[11358] = {
-		creates = 8985,
-		icon = "Interface\\Icons\\ability_rogue_dualweild",
-		name = "Deadly Poison IV",
-		reagents = {},
-		learnedAt = 0,
-		levels = {
-			0,
-			0,
-			0,
-			0,
-		},
-	},
-	[13230] = {
-		creates = 10922,
-		icon = "Interface\\Icons\\ability_poisonsting",
-		name = "Wound Poison IV",
-		reagents = {},
 		learnedAt = 0,
 		levels = {
 			0,
@@ -252,7 +167,106 @@ RI.Data["Poisons"] = {
 		creates = 8928,
 		icon = "Interface\\Icons\\ability_poisons",
 		name = "Instant Poison VI",
-		reagents = {},
+		reagents = {
+		},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[11357] = {
+		creates = 8984,
+		icon = "Interface\\Icons\\ability_rogue_dualweild",
+		name = "Deadly Poison III",
+		reagents = {
+		},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[11358] = {
+		creates = 8985,
+		icon = "Interface\\Icons\\ability_rogue_dualweild",
+		name = "Deadly Poison IV",
+		reagents = {
+		},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[11400] = {
+		creates = 9186,
+		icon = "Interface\\Icons\\spell_nature_nullifydisease",
+		name = "Mind-numbing Poison III",
+		reagents = {
+		},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[13220] = {
+		creates = 10918,
+		icon = "Interface\\Icons\\ability_poisonsting",
+		name = "Wound Poison",
+		reagents = {
+		},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[13228] = {
+		creates = 10920,
+		icon = "Interface\\Icons\\ability_poisonsting",
+		name = "Wound Poison II",
+		reagents = {
+		},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[13229] = {
+		creates = 10921,
+		icon = "Interface\\Icons\\ability_poisonsting",
+		name = "Wound Poison III",
+		reagents = {
+		},
+		learnedAt = 0,
+		levels = {
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	[13230] = {
+		creates = 10922,
+		icon = "Interface\\Icons\\ability_poisonsting",
+		name = "Wound Poison IV",
+		reagents = {
+		},
 		learnedAt = 0,
 		levels = {
 			0,
@@ -265,7 +279,8 @@ RI.Data["Poisons"] = {
 		creates = 20844,
 		icon = "Interface\\Icons\\ability_rogue_dualweild",
 		name = "Deadly Poison V",
-		reagents = {},
+		reagents = {
+		},
 		learnedAt = 0,
 		levels = {
 			0,
