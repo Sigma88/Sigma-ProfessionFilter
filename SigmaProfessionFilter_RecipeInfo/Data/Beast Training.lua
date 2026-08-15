@@ -680,6 +680,13 @@ RI.Data["Beast Training"] = {
 		learnedAt = 60,
 		skillSubSpellName = "Rank 6",
 	},
+	[25076] = {
+		creates = nil,
+		icon = "Interface\\Icons\\spell_nature_guardianward",
+		name = "Cobra Reflexes",
+		learnedAt = 10,
+		skillSubSpellName = "Rank 1",
+	},
 	[26064] = {
 		creates = nil,
 		icon = "Interface\\Icons\\ability_hunter_pet_turtle",

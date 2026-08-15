@@ -3061,12 +3061,6 @@ RI.Data["Engineering"] = {
 			},
 		},
 		learnedAt = 205,
-		levels = {
-			0,
-			0,
-			0,
-			0,
-		},
 	},
 	[15255] = {
 		creates = 11590,
