@@ -172,7 +172,10 @@ function SPF.split(str, sep)
 end
 
 function SPF.match(str, filter)
-	if not str or strlen(str) == 0 or not filter or strlen(filter) == 0 then
+	if not str or strlen(str) == 0 then
+		return false;
+	end
+	if not filter or strlen(filter) == 0 then
 		return true;
 	end
 	str = strlower(str);
@@ -181,6 +184,9 @@ function SPF.match(str, filter)
 		local startPos, endPos = strfind(filter, "[^%;]+");
 		if startPos then
 			local f = strsub(filter, startPos, endPos);
+			if not pcall(strfind, str, f) then
+				return true;
+			end
 			if strfind(str, f) then
 				return true;
 			end
@@ -325,7 +331,7 @@ end
 function SPF:FilterSpellWithSearchBox(spellID)
 	
 	if SPF.SearchBox ~= nil then
-		
+
 		local searchFilter = SPF.trim(strlower(SPF.SearchBox:GetText()));
 		if not searchFilter or strlen(searchFilter) == 0 then
 			return true;
@@ -531,7 +537,7 @@ function SPF.ClearTradeSkill()
 	-- TradeSkillDescription:Hide();
 	-- TradeSkillCost:Hide();
 end
---[[
+
 function SPF.ClearNewFeatures()
 	TradeSkillFrameAvailableFilterCheckButton:SetChecked(false);
 	TradeSkillFrameAvailableFilterCheckButton:Hide();
@@ -539,7 +545,7 @@ function SPF.ClearNewFeatures()
 end
 
 TradeSkillFrameAvailableFilterCheckButton:SetScript("OnShow", SPF.ClearNewFeatures);
-]]--
+
 function SPF.FullUpdate(keepCollapsed)
 	if not TradeSkillFrame:IsVisible() then
 		return;
