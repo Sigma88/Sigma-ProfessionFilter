@@ -3,16 +3,6 @@ local SPF = SigmaProfessionFilter[2];
 
 local LocalTooltip = CreateFrame("GameTooltip", "SPF2CookingTooltip", WorldFrame, "GameTooltipTemplate");
 LocalTooltip:SetOwner(WorldFrame, "ANCHOR_NONE");
-local LocalTooltipText = {
-	[1] = LocalTooltip:CreateFontString(nil, nil, "GameTooltipText");
-	[2] = LocalTooltip:CreateFontString(nil, nil, "GameTooltipText");
-	[3] = LocalTooltip:CreateFontString(nil, nil, "GameTooltipText");
-	[4] = LocalTooltip:CreateFontString(nil, nil, "GameTooltipText");
-}
-LocalTooltip:AddFontStrings(LocalTooltipText[1], LocalTooltipText[1]);
-LocalTooltip:AddFontStrings(LocalTooltipText[2], LocalTooltipText[1]);
-LocalTooltip:AddFontStrings(LocalTooltipText[3], LocalTooltipText[1]);
-LocalTooltip:AddFontStrings(LocalTooltipText[4], LocalTooltipText[1]);
 LocalTooltip.LocalTooltips = {};
 local LocalTooltips = LocalTooltip.LocalTooltips;
 
@@ -25,9 +15,16 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 			if not (LocalTooltips[itemLink] and strlen(LocalTooltips[itemLink]) > 0) then
 				SPF.baseSetTradeSkillItem(LocalTooltip, skillIndex);
 				LocalTooltips[itemLink] = "";
-				for i=2,4 do
-					if not SPF.match(LocalTooltips[itemLink], "Use:") then
-						LocalTooltips[itemLink] = LocalTooltipText[i]:GetText() or "";
+				for i = 1, LocalTooltip:NumLines() do
+					local left = getglobal("SPF2CookingTooltipTextLeft" .. i);
+					if left and SPF.match(left:GetText(), "Use:") then
+						LocalTooltips[itemLink] = left:GetText();
+						break;
+					end
+
+					local right = getglobal("SPF2CookingTooltipTextRight" .. i);
+					if right and SPF.match(right:GetText(), "Use:") then
+						LocalTooltips[itemLink] = right:GetText();
 					end
 				end
 			end
@@ -106,9 +103,16 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 			if not (LocalTooltips[itemLink] and strlen(LocalTooltips[itemLink]) > 0) then
 				SPF.baseSetTradeSkillItem(LocalTooltip, skillIndex);
 				LocalTooltips[itemLink] = "";
-				for i=2,4 do
-					if not SPF.match(LocalTooltips[itemLink], "Use:") then
-						LocalTooltips[itemLink] = LocalTooltipText[i]:GetText() or "";
+				for i = 1, LocalTooltip:NumLines() do
+					local left = getglobal("SPF2CookingTooltipTextLeft" .. i);
+					if left and SPF.match(left:GetText(), "Use:") then
+						LocalTooltips[itemLink] = left:GetText();
+						break;
+					end
+
+					local right = getglobal("SPF2CookingTooltipTextRight" .. i);
+					if right and SPF.match(right:GetText(), "Use:") then
+						LocalTooltips[itemLink] = right:GetText();
 					end
 				end
 			end
