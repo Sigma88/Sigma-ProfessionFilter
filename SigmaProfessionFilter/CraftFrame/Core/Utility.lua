@@ -531,15 +531,21 @@ function SPF.ClearCraft()
 	CraftDescription:Hide();
 	CraftCost:Hide();
 end
---[[
+
 function SPF.ClearNewFeatures()
-	CraftFrameAvailableFilterCheckButton:SetChecked(false);
-	CraftFrameAvailableFilterCheckButton:Hide();
-	CraftOnlyShowMakeable(false);
+	if CraftFrameAvailableFilterCheckButton then
+		CraftFrameAvailableFilterCheckButton:SetChecked(false);
+		CraftFrameAvailableFilterCheckButton:Hide();
+	end
+	if CraftOnlyShowMakeable then
+		CraftOnlyShowMakeable(false);
+	end
 end
 
-CraftFrameAvailableFilterCheckButton:SetScript("OnShow", SPF.ClearNewFeatures);
-]]--
+if CraftFrameAvailableFilterCheckButton then
+	CraftFrameAvailableFilterCheckButton:SetScript("OnShow", SPF.ClearNewFeatures);
+end
+
 function SPF.FullUpdate(keepCollapsed)
 	if not CraftFrame:IsVisible() then
 		return;

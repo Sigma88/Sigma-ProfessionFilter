@@ -539,12 +539,18 @@ function SPF.ClearTradeSkill()
 end
 
 function SPF.ClearNewFeatures()
-	TradeSkillFrameAvailableFilterCheckButton:SetChecked(false);
-	TradeSkillFrameAvailableFilterCheckButton:Hide();
-	TradeSkillOnlyShowMakeable(false);
+	if TradeSkillFrameAvailableFilterCheckButton then
+		TradeSkillFrameAvailableFilterCheckButton:SetChecked(false);
+		TradeSkillFrameAvailableFilterCheckButton:Hide();
+	end
+	if TradeSkillOnlyShowMakeable then
+		TradeSkillOnlyShowMakeable(false);
+	end
 end
 
-TradeSkillFrameAvailableFilterCheckButton:SetScript("OnShow", SPF.ClearNewFeatures);
+if TradeSkillFrameAvailableFilterCheckButton then
+	TradeSkillFrameAvailableFilterCheckButton:SetScript("OnShow", SPF.ClearNewFeatures);
+end
 
 function SPF.FullUpdate(keepCollapsed)
 	if not TradeSkillFrame:IsVisible() then
