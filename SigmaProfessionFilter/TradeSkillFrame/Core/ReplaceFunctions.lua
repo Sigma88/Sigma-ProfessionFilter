@@ -82,7 +82,7 @@ SPF2.baseTradeSkillFrame_OnShow = TradeSkillFrame_OnShow;
 TradeSkillFrame_OnShow = SPF2.TradeSkillFrame_OnShow;
 TradeSkillFrame:SetScript("OnShow", TradeSkillFrame_OnShow);
 
-
+--[[
 function SPF2.ContainerFrameItemButton_OnClick(button, ignoreModifiers)
 	if SPF2.SearchBox:IsVisible() and SPF2.SearchBox.HasFocus and IsShiftKeyDown() then
 		SPF2.SearchBox.InsertItemName(GetContainerItemLink(this:GetParent():GetID(), this:GetID()));
@@ -93,7 +93,7 @@ end
 
 SPF2.baseContainerFrameItemButton_OnClick = ContainerFrameItemButton_OnClick;
 ContainerFrameItemButton_OnClick = SPF2.ContainerFrameItemButton_OnClick;
-
+--]]--
 
 --[[ KEEP FOR DEBUG PURPOSES
 

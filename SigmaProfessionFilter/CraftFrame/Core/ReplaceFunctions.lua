@@ -82,7 +82,7 @@ SPF1.baseCraftFrame_OnShow = CraftFrame_OnShow;
 CraftFrame_OnShow = SPF1.CraftFrame_OnShow;
 CraftFrame:SetScript("OnShow", CraftFrame_OnShow);
 
-
+--[[
 function SPF1.ContainerFrameItemButton_OnClick(button, ignoreModifiers)
 	if SPF1.SearchBox:IsVisible() and SPF1.SearchBox.HasFocus and IsShiftKeyDown() then
 		SPF1.SearchBox.InsertItemName(GetContainerItemLink(this:GetParent():GetID(), this:GetID()));
@@ -93,7 +93,7 @@ end
 
 SPF1.baseContainerFrameItemButton_OnClick = ContainerFrameItemButton_OnClick;
 ContainerFrameItemButton_OnClick = SPF1.ContainerFrameItemButton_OnClick;
-
+]]--
 
 --[[ KEEP FOR DEBUG PURPOSES
 
