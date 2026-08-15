@@ -6,18 +6,17 @@
 
 SigmaProfessionFilter_RecipeInfo.lua
 
-Data\Alchemy.lua
-Data\Beast Training.lua
-Data\Blacksmithing.lua
-Data\Cooking.lua
-Data\Enchanting.lua
-Data\Engineering.lua
-Data\First Aid.lua
-Data\Jewelcrafting.lua
-Data\Leatherworking.lua
-Data\Poisons.lua
-Data\Tailoring.lua
-Data\Smelting.lua
+Data\classic\Alchemy.lua
+Data\classic\Beast Training.lua
+Data\classic\Blacksmithing.lua
+Data\classic\Cooking.lua
+Data\classic\Enchanting.lua
+Data\classic\Engineering.lua
+Data\classic\First Aid.lua
+Data\classic\Leatherworking.lua
+Data\classic\Poisons.lua
+Data\classic\Tailoring.lua
+Data\classic\Smelting.lua
 
 Utility\LoadIntoCache.lua
 Utility\AutoLocalization.lua
