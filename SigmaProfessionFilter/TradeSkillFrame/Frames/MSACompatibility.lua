@@ -11,8 +11,10 @@ end
 function SPF2.DropDownMenu_SetWidth(width, frame)
 	if MSA_DropDownMenu_SetWidth then
 		return MSA_DropDownMenu_SetWidth(width, frame);
-	else
+	elseif CraftFrame then
 		return UIDropDownMenu_SetWidth(width, frame);
+	else
+		return UIDropDownMenu_SetWidth(frame, width);
 	end
 end
 

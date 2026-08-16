@@ -1,11 +1,8 @@
 -- Tables and Frames
 
-SigmaProfessionFilter_RecipeInfo = {};
-
-local RI = SigmaProfessionFilter_RecipeInfo;
-
-RI.Data = {};
-RI.L = {};
-
-RI.Craft = CreateFrame("Frame", nil, CraftFrame);
-RI.Skill = CreateFrame("Frame", nil, CraftFrame);
+SigmaProfessionFilter_RecipeInfo_classic = {};
+SigmaProfessionFilter_RecipeInfo_classic.Data = {};
+SigmaProfessionFilter_RecipeInfo_tbc = {};
+SigmaProfessionFilter_RecipeInfo_tbc.Data = {};
+SigmaProfessionFilter_RecipeInfo_wotlk = {};
+SigmaProfessionFilter_RecipeInfo_wotlk.Data = {};

@@ -1,4 +1,4 @@
-local RI = SigmaProfessionFilter_RecipeInfo;
+local RI = SigmaProfessionFilter_RecipeInfo_classic;
 
 RI.Data["Engineering"] = {
 	[3918] = {

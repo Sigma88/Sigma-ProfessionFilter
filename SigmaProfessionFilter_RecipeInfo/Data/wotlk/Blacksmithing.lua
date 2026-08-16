@@ -1,4 +1,4 @@
-local RI = SigmaProfessionFilter_RecipeInfo;
+local RI = SigmaProfessionFilter_RecipeInfo_wotlk;
 
 RI.Data["Blacksmithing"] = {
 	[2660] = {

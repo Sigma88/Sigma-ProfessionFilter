@@ -1,10 +1,22 @@
-## Interface: 20403
+## Interface: 30305
 ## Title: Sigma |cffbc5ff4Professions|r |cff000000|r|cffffffff Recipe Info|r
 ## Author: Sigma88
 ## Notes: Additional Recipe Informations module for |cffffcf00Sigma|r |cffbc5ff4Profession Filter|r |cff2e91f3(Classic)|r.
 ## Dependencies: SigmaProfessionFilter
 
 SigmaProfessionFilter_RecipeInfo.lua
+
+Data\classic\Alchemy.lua
+Data\classic\Beast Training.lua
+Data\classic\Blacksmithing.lua
+Data\classic\Cooking.lua
+Data\classic\Enchanting.lua
+Data\classic\Engineering.lua
+Data\classic\First Aid.lua
+Data\classic\Leatherworking.lua
+Data\classic\Poisons.lua
+Data\classic\Tailoring.lua
+Data\classic\Smelting.lua
 
 Data\tbc\Alchemy.lua
 Data\tbc\Beast Training.lua
@@ -18,6 +30,21 @@ Data\tbc\Leatherworking.lua
 Data\tbc\Poisons.lua
 Data\tbc\Tailoring.lua
 Data\tbc\Smelting.lua
+
+Data\wotlk\Alchemy.lua
+Data\wotlk\Blacksmithing.lua
+Data\wotlk\Cooking.lua
+Data\wotlk\Enchanting.lua
+Data\wotlk\Engineering.lua
+Data\wotlk\First Aid.lua
+Data\wotlk\Inscription.lua
+Data\wotlk\Jewelcrafting.lua
+Data\wotlk\Leatherworking.lua
+Data\wotlk\Runeforging.lua
+Data\wotlk\Tailoring.lua
+Data\wotlk\Smelting.lua
+
+SigmaProfessionFilter_DetectExpansion.lua
 
 Utility\LoadIntoCache.lua
 Utility\AutoLocalization.lua

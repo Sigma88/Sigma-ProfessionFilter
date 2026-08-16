@@ -1,4 +1,4 @@
-local RI = SigmaProfessionFilter_RecipeInfo;
+local RI = SigmaProfessionFilter_RecipeInfo_wotlk;
 
 RI.Data["Engineering"] = {
 	[3918] = {
@@ -7449,7 +7449,7 @@ RI.Data["Engineering"] = {
 	[54353] = {
 		creates = 39688,
 		icon = "Interface\\Icons\\inv_weapon_rifle_08",
-		name = "Mark "S" Boomstick",
+		name = 'Mark "S" Boomstick',
 		reagents = {
 			{
 				itemID = 36913,

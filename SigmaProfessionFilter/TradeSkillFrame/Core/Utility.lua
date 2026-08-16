@@ -546,6 +546,10 @@ function SPF.ClearNewFeatures()
 	if TradeSkillOnlyShowMakeable then
 		TradeSkillOnlyShowMakeable(false);
 	end
+	if TradeSkillFrameEditBox then
+		TradeSkillFrameEditBox:SetText("");
+		TradeSkillFrameEditBox:Hide();
+	end
 end
 
 if TradeSkillFrameAvailableFilterCheckButton then

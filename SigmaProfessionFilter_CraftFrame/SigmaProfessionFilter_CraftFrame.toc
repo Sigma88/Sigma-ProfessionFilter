@@ -1,0 +1,29 @@
+## Interface: 20403
+## Title: Sigma |cffbc5ff4Profession Filter|r (CraftFrame)
+## Author: Sigma88
+## Notes: v0.7.3 |cff00ff00Release|r
+## Dependencies: Blizzard_CraftUI, SigmaProfessionFilter
+## OptionalDeps: ElvUI, Leatrix_Plus
+
+CraftFrame\Core\Utility.lua
+CraftFrame\Core\DefineFunctions.lua
+CraftFrame\Core\LocalTooltip.lua
+
+CraftFrame\Frames\MSACompatibility.lua
+CraftFrame\Frames\DropDowns\LeftMenu.lua
+CraftFrame\Frames\DropDowns\LeftSort.lua
+CraftFrame\Frames\DropDowns\RightMenu.lua
+CraftFrame\Frames\DropDowns\RightSort.lua
+CraftFrame\Frames\CheckBoxBar.lua
+CraftFrame\Frames\TextSearch\SearchBox.lua
+CraftFrame\Frames\TextSearch\Search.lua
+CraftFrame\Frames\Filters\Filter1.lua
+CraftFrame\Frames\Filters\Filter2.lua
+CraftFrame\Frames\Filters\Unlearned.lua
+CraftFrame\Frames\Filters\Starred.lua
+
+CraftFrame\Core\ReplaceFunctions.lua
+CraftFrame\Frames\PortraitChanger.lua
+
+CraftFrame\Frames\LeatrixPlusCompatibility.lua
+CraftFrame\Frames\ElvUICompatibility.lua
