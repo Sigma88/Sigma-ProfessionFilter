@@ -21,18 +21,14 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 	["Functions"] = {
 		["GetCraftDescription"] = function(skillIndex)
 			if SPF.Data and SPF.Data[skillIndex] then
-				if SPF.Data[skillIndex]["original"] then
-					return;
-				end
 				
 				if SPF.Data[skillIndex]["creates"] then
 					return "";
 				end
 				
-				if SPF.Data[skillIndex]["spellID"] and SPF.Data[skillIndex]["skillSubSpellName"] then
-					SPF.LocalTooltip:SetCraftItem(skillIndex);
-					return "|cffffd100"..SPFCraftLocalTooltipTextLeft3:GetText().."\n".."|cffffd100"..SPFCraftLocalTooltipTextLeft4:GetText();
-				end
+				SPFCraftLocalTooltip:SetOwner(CraftFrame, "ANCHOR_NONE")
+				SPF:Custom("Functions")["SetCraftItem"](SPFCraftLocalTooltip, skillIndex, nil)
+				return (SPFCraftLocalTooltipTextLeft4:GetText() or "").."\n\n\n"..(SPFCraftLocalTooltipTextLeft7:GetText() or "").."\n"..(SPFCraftLocalTooltipTextLeft8:GetText() or "");
 			end
 		end;
 		["nameWithLevel"] = function(skillIndex, unlearned)
@@ -56,18 +52,23 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 		end;
 		["SetCraftItem"] = function(tooltip, skillIndex, reagentIndex)
 			local skillName, skillSubSpellName = GetCraftInfo(skillIndex);
-			if not SPF.Data[skillIndex]["original"] then
-				if skillName then
-					tooltip:SetText(skillName);
-					tooltip:AddLine(SPF.GetRequiresText(skillIndex));
-					local spellID = SPF.Data[skillIndex]["spellID"];
-					local source = SPF:GetGroupSpell("Right", spellID, 0);
-					tooltip:AddLine("Learned From: |cffffffff"..(SPF:GetMenu("Right")[source].name or "").."|r");
+			
+			if skillName then
+			
+				local learnedFrom = nil;
+				local usedBy = nil;
+				local pets = SPFBT.Pets();
+				local usedByAllPets = true;
+				
+				if SPF.Data[skillIndex]["original"] then -- Spells Already Learned
 					
-					local usedBy = nil;
-					local pets = SPFBT.Pets();
+					SPF.baseSetCraftSpell(tooltip, SPF.Data[skillIndex]["original"])
+					
+					local source = SPF:GetGroup("Right", skillIndex, 0);
+					learnedFrom = SPF:GetMenu("Right")[source].name;
+					
 					for i = 4, getn(SPF:GetMenu("Right")), 1 do
-						if (SPF:GetGroupSpell("Right", spellID, i) == i) then
+						if (SPF:GetGroup("Right", skillIndex, i) == i) then
 							local color = "|cffffffff";
 							local family = SPF:GetMenu("Right")[i].name;
 							if pets and not SPF.match(family, pets) then
@@ -79,13 +80,45 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 								usedBy = usedBy..", ";
 							end
 							usedBy = usedBy..color..family.."|cffffffff";
+						else
+							usedByAllPets = false;
 						end
 					end
-					if not usedBy then
-						usedBy = "Used by Pets: ".."|cffffffff".."All Families";
+				else -- Spells Not Yet Learned
+				
+					local spellID = SPF.Data[skillIndex]["spellID"];
+					tooltip:SetHyperlink("spell:"..spellID)
+					
+					local source = SPF:GetGroupSpell("Right", spellID, 0);
+					learnedFrom = SPF:GetMenu("Right")[source].name;
+					
+					for i = 4, getn(SPF:GetMenu("Right")), 1 do
+						if (SPF:GetGroupSpell("Right", spellID, i) == i) then
+							local color = "|cffffffff";
+							local family = SPF:GetMenu("Right")[i].name;
+							if pets and not SPF.match(family, pets) then
+								color = "|cff808080";
+							end
+							if not usedBy then
+								usedBy = "|cffffd200Used by Pets: ";
+							else
+								usedBy = usedBy..", ";
+							end
+							usedBy = usedBy..color..family.."|cffffffff";
+						else
+							usedByAllPets = false;
+						end
 					end
-					tooltip:AddLine(usedBy..".", nil, nil, nil, true);
 				end
+				
+				if usedByAllPets or not usedBy then
+					usedBy = "|cffffd200Used by Pets: ".."|cffffffff".."All Families";
+				end
+				
+				tooltip:AddLine(" ");
+				tooltip:AddLine(SPF.GetRequiresText(skillIndex));
+				tooltip:AddLine("|cffffd200Learned From: |cffffffff"..(learnedFrom or "").."|r");
+				tooltip:AddLine(usedBy..".", nil, nil, nil, true);
 			end
 			if skillSubSpellName then
 				local rankText = getfenv()[(tooltip:GetName() or "-").."TextRight1"];

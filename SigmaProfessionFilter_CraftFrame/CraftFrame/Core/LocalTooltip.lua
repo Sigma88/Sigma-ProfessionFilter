@@ -1,7 +1,7 @@
 local SPF = SigmaProfessionFilter[1];
 
 SPF.LocalTooltip = CreateFrame("GameTooltip", "SPFCraftLocalTooltip", WorldFrame, "GameTooltipTemplate");
-SPF.LocalTooltip:SetOwner(WorldFrame, "ANCHOR_NONE");
+SPF.LocalTooltip:SetOwner(UIParent, "ANCHOR_NONE");
 SPF.LocalTooltip.SetCraftItem = SPF.SetCraftItem;
 SPF.LocalTooltip.SetCraftSpell = SPF.SetCraftItem;
 
