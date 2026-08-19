@@ -28,7 +28,18 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 				
 				SPFCraftLocalTooltip:SetOwner(CraftFrame, "ANCHOR_NONE")
 				SPF:Custom("Functions")["SetCraftItem"](SPFCraftLocalTooltip, skillIndex, nil)
-				return (SPFCraftLocalTooltipTextLeft4:GetText() or "").."\n\n\n"..(SPFCraftLocalTooltipTextLeft7:GetText() or "").."\n"..(SPFCraftLocalTooltipTextLeft8:GetText() or "");
+				local numLines = SPFCraftLocalTooltip:NumLines();
+				local description = "";
+				if (numLines > 3) then
+					description = description..(getglobal("SPFCraftLocalTooltipTextLeft"..(numLines-3)):GetText() or "").."\n\n";
+				end
+				if (numLines > 1) then
+					description = description..(getglobal("SPFCraftLocalTooltipTextLeft"..(numLines-1)):GetText() or "").."\n";
+				end
+				if (numLines > 0) then
+					description = description..(getglobal("SPFCraftLocalTooltipTextLeft"..(numLines-0)):GetText() or "");
+				end
+				return description;
 			end
 		end;
 		["nameWithLevel"] = function(skillIndex, unlearned)
@@ -115,8 +126,13 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 					usedBy = "|cffffd200Used by Pets: ".."|cffffffff".."All Families";
 				end
 				
+				local requiresText = SPF.GetRequiresText(skillIndex);
+				if requiresText and requiresText ~= "" then
+					local left1 = getglobal(tooltip:GetName().."TextLeft1");
+					left1:SetText(left1:GetText().."\n"..string.gsub(requiresText, ":", ""));
+				end
+				
 				tooltip:AddLine(" ");
-				tooltip:AddLine(SPF.GetRequiresText(skillIndex));
 				tooltip:AddLine("|cffffd200Learned From: |cffffffff"..(learnedFrom or "").."|r");
 				tooltip:AddLine(usedBy..".", nil, nil, nil, true);
 			end
@@ -126,6 +142,10 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 					rankText:Show();
 					rankText:SetText(skillSubSpellName);
 					rankText:SetTextColor(0.5, 0.5, 0.5, 1);
+					local requiresText = SPF.GetRequiresText(skillIndex);
+					if requiresText and requiresText ~= "" then
+						rankText:SetText(skillSubSpellName.."\n\n");
+					end
 				end
 			end
 			tooltip:Show();

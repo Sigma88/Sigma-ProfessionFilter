@@ -378,7 +378,8 @@ function SPF.CraftFrame_SetSelection(skillIndex)
 				local spellID = SPF.Data[skillIndex]["spellID"];
 				local link = "enchant:"..spellID
 				SPF.LocalTooltip:SetHyperlink(link);
-				CraftRequirements:SetText((SPFCraftLocalTooltipTextLeft3:GetText() or ""));
+				local requiresText = SPF.GetRequiresText(skillIndex)
+				CraftRequirements:SetText((requiresText or ""));
 			end
 		end
 	end
