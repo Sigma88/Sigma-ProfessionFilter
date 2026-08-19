@@ -97,8 +97,13 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 					end
 				else -- Spells Not Yet Learned
 				
-					local spellID = SPF.Data[skillIndex]["spellID"];
-					tooltip:SetHyperlink("spell:"..spellID)
+					if not TradeSkillFrameAvailableFilterCheckButton then -- classic
+						tooltip:AddLine(skillName)
+						tooltip:AddLine(SPF.Data[skillIndex]["description"])
+					else -- tbc, wotlk
+						local spellID = SPF.Data[skillIndex]["spellID"];
+						tooltip:SetHyperlink("spell:"..spellID)
+					end
 					
 					local source = SPF:GetGroupSpell("Right", spellID, 0);
 					learnedFrom = SPF:GetMenu("Right")[source].name;
@@ -129,7 +134,7 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 				local requiresText = SPF.GetRequiresText(skillIndex);
 				if requiresText and requiresText ~= "" then
 					local left1 = getglobal(tooltip:GetName().."TextLeft1");
-					left1:SetText(left1:GetText().."\n"..string.gsub(requiresText, ":", ""));
+					left1:SetText((left1:GetText() or "").."\n"..string.gsub(requiresText, ":", ""));
 				end
 				
 				tooltip:AddLine(" ");

@@ -140,6 +140,7 @@ function SPF.GetNumCrafts()
 						local info = {
 							["skillName"] = skillName;
 							["skillSubSpellName"] = spellData["skillSubSpellName"];
+							["description"] = spellData["description"];
 							["skillType"] = skillType;
 							["numAvailable"] = 0;
 							["trainingPointCost"] = 0;
