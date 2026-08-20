@@ -87,7 +87,7 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 								color = "|cff808080";
 							end
 							if not usedBy then
-								usedBy = "Used by Pets: ";
+								usedBy = "|cffffd200Used by Pets: ";
 							else
 								usedBy = usedBy..", ";
 							end
