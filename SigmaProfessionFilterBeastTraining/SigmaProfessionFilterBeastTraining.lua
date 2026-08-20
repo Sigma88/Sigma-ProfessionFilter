@@ -56,7 +56,7 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 			if UnitLevel("pet") > 0 and UnitLevel("pet") < learnedAt then
 				color = "|cffff0000";
 			end
-			local requiresText = "|cffffffff".."Requires: Pet Level "..color..learnedAt.."|r";
+			local requiresText = color.."|cffffffff".."Requires: "..color.."Pet Level "..learnedAt.."|r";
 			CraftRequirements:SetText(requiresText);
 			CraftReagentLabel:Hide();
 			return requiresText;
@@ -134,7 +134,7 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 				local requiresText = SPF.GetRequiresText(skillIndex);
 				if requiresText and requiresText ~= "" then
 					local left1 = getglobal(tooltip:GetName().."TextLeft1");
-					left1:SetText((left1:GetText() or "").."\n"..string.gsub(requiresText, ":", ""));
+					left1:SetText((left1:GetText() or "").."\n"..string.gsub(string.gsub(requiresText, ":", ""),"|cffffffff", ""));
 				end
 				
 				tooltip:AddLine(" ");
