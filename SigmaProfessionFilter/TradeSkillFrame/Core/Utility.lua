@@ -556,6 +556,10 @@ if TradeSkillFrameAvailableFilterCheckButton then
 	TradeSkillFrameAvailableFilterCheckButton:SetScript("OnShow", SPF.ClearNewFeatures);
 end
 
+if TradeSkillFrameEditBox then
+	TradeSkillFrameEditBox:SetScript("OnShow", SPF.ClearNewFeatures);
+end
+
 function SPF.FullUpdate(keepCollapsed)
 	if not TradeSkillFrame:IsVisible() then
 		return;
@@ -635,12 +639,24 @@ function SPF.GetRecipeSpellID(spellName)
 end
 
 function SPF.baseGetTradeSkillItemLevel(index)
-	for i,value in pairs({GetTradeSkillItemStats(index)}) do
-		if strfind(value, "^Level (%d+)$") then
-			return string.gsub(value, "^Level (%d+)$", "%1");
+	
+	if CraftFrame then
+	
+		for i,value in pairs({GetTradeSkillItemStats(index)}) do
+			if strfind(value, "^Level (%d+)$") then
+				return string.gsub(value, "^Level (%d+)$", "%1");
+			end
 		end
+	
+	else
+	
+	local link = SPF.baseGetTradeSkillItemLink(index)
+	local _, _, _, itemLevel = SPF.GetItemInfo(link)
+	
+	return itemLevel;
+	
 	end
-
+	
 end
 
 function SPF.GetRequiresText(skillIndex)
