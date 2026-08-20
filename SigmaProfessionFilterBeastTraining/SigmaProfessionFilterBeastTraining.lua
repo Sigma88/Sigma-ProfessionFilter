@@ -175,7 +175,8 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 		[06] = { name = L["LEFT_06_NAME"]; filter = L["LEFT_06_FILTER"]; };
 		[07] = { name = L["LEFT_07_NAME"]; filter = L["LEFT_07_FILTER"]; };
 		[08] = { name = L["LEFT_08_NAME"]; filter = L["LEFT_08_FILTER"]; };
-		[09] = { name = L["OTHER"]; filter = "" };
+		[09] = { name = L["LEFT_09_NAME"]; filter = L["LEFT_09_FILTER"]; };
+		[10] = { name = L["OTHER"]; filter = "" };
 	};
 	["RightMenu"] = {
 		["title"] = L["RIGHT_TITLE"];
@@ -376,8 +377,6 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 };
 
 if TradeSkillFrameAvailableFilterCheckButton then -- TBC
-	SigmaProfessionFilter[L["PROFESSION"]]["Left"][09] = { name = L["LEFT_09_NAME"]; filter = L["LEFT_09_FILTER"]; };
-	SigmaProfessionFilter[L["PROFESSION"]]["Left"][10] = { name = L["OTHER"]; filter = "" };
 
 	SigmaProfessionFilter[L["PROFESSION"]]["Right"][21] = { name = L["PET_FAMILY_18"]; filter = L["RIGHT_20_FILTER"]; };
 	SigmaProfessionFilter[L["PROFESSION"]]["Right"][22] = { name = L["PET_FAMILY_19"]; filter = L["RIGHT_21_FILTER"]; };

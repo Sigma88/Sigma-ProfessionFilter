@@ -50,6 +50,7 @@ L["SCORPID_POISON"] = "Scorpid Poison";
 L["SCREECH"] = "Screech";
 L["SHELL_SHIELD"] = "Shell Shield";
 L["THUNDERSTOMP"] = "Thunderstomp";
+L["COBRA_REFLEXES"] = "Cobra Reflexes";
 L["GROWL"] = "Growl";
 if TradeSkillFrameAvailableFilterCheckButton then -- TBC
 	L["FIRE_BREATH"] = "Fire Breath";
@@ -57,7 +58,6 @@ if TradeSkillFrameAvailableFilterCheckButton then -- TBC
 	L["POISON_SPIT"] = "Poison Spit";
 	L["WARP"] = "Warp";
 	L["AVOIDANCE"] = "Avoidance";
-	L["COBRA_REFLEXES"] = "Cobra Reflexes";
 end
 -- Left Menu
 L["LEFT_TITLE"] = "All Types";
@@ -71,9 +71,7 @@ L["LEFT_05_NAME"] = "Movement";
 L["LEFT_06_NAME"] = "Threat";
 L["LEFT_07_NAME"] = "Stats";
 L["LEFT_08_NAME"] = "Resistance";
-if TradeSkillFrameAvailableFilterCheckButton then -- TBC
-	L["LEFT_09_NAME"] = "Passive";
-end
+L["LEFT_09_NAME"] = "Passive";
 -- Filters
 L["LEFT_01_FILTER"] = L["BITE"]..";"..L["CLAW"]..";"..L["LIGHTNING_BREATH"];
 L["LEFT_02_FILTER"] = L["SCORPID_POISON"];
@@ -83,12 +81,13 @@ L["LEFT_05_FILTER"] = L["DASH"]..";"..L["DIVE"];
 L["LEFT_06_FILTER"] = L["COWER"]..";"..L["GROWL"];
 L["LEFT_07_FILTER"] = "Stamina"..";".."Armor";
 L["LEFT_08_FILTER"] = "Resistance";
+L["LEFT_09_FILTER"] = L["COBRA_REFLEXES"];
 if TradeSkillFrameAvailableFilterCheckButton then -- TBC
 	L["LEFT_01_FILTER"] = L["LEFT_01_FILTER"]..";"..L["GORE"];
 	L["LEFT_02_FILTER"] = L["LEFT_02_FILTER"]..";"..L["FIRE_BREATH"]..";"..L["POISON_SPIT"];
 	L["LEFT_03_FILTER"] = L["LEFT_03_FILTER"]..";"..L["FIRE_BREATH"];
 	L["LEFT_05_FILTER"] = L["LEFT_05_FILTER"]..";"..L["WARP"];
-	L["LEFT_09_FILTER"] = L["AVOIDANCE"]..";"..L["COBRA_REFLEXES"];
+	L["LEFT_09_FILTER"] = L["LEFT_09_FILTER"]..";"..L["AVOIDANCE"];
 end
 -- Right Menu
 L["RIGHT_TITLE"] = "All Sources";
@@ -100,12 +99,12 @@ L["RIGHT_02_NAME"] = "Pet Trainer";
 -- Wild Animals Filter
 L["RIGHT_01_FILTER"] = L["BITE"]..";"..L["CHARGE"]..";"..L["CLAW"]..";"..L["COWER"]..";"..L["DASH"]..";"..L["DIVE"]..";"..L["FURIOUS_HOWL"]..";"..L["LIGHTNING_BREATH"]..";"..L["PROWL"]..";"..L["SCORPID_POISON"]..";"..L["SCREECH"]..";"..L["SHELL_SHIELD"]..";"..L["THUNDERSTOMP"];
 -- Pet Trainer Filter
-L["RIGHT_02_FILTER"] = L["GROWL"]..";".."Stamina"..";".."Armor"..";".."Resistance";
+L["RIGHT_02_FILTER"] = L["GROWL"]..";".."Stamina"..";".."Armor"..";".."Resistance"..";"..L["COBRA_REFLEXES"];
 if TradeSkillFrameAvailableFilterCheckButton then -- TBC
 	-- Wild Animals Filter
 	L["RIGHT_01_FILTER"] = L["RIGHT_01_FILTER"]..";"..L["FIRE_BREATH"]..";"..L["GORE"]..";"..L["POISON_SPIT"]..";"..L["WARP"];
 	-- Pet Trainer Filter
-	L["RIGHT_02_FILTER"] = L["RIGHT_02_FILTER"]..";"..L["AVOIDANCE"]..";"..L["COBRA_REFLEXES"];
+	L["RIGHT_02_FILTER"] = L["RIGHT_02_FILTER"]..";"..L["AVOIDANCE"];
 end
 -- Pet Families Filters
 L["RIGHT_03_FILTER"] = L["BITE"]..";"..L["DASH"]..";"..L["FURIOUS_HOWL"];
