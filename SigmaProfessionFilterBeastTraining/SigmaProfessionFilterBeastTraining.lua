@@ -136,7 +136,11 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 				local requiresText = SPF.GetRequiresText(skillIndex);
 				if requiresText and requiresText ~= "" then
 					local left1 = getglobal(tooltip:GetName().."TextLeft1");
-					left1:SetText((left1:GetText() or "").."\n"..string.gsub(string.gsub(requiresText, ":", ""),"|cffffffff", ""));
+					requiresText = string.gsub(requiresText, ":", "");
+					if TradeSkillFrameAvailableFilterCheckButton then -- tbc
+						requiresText = string.gsub(requiresText,"|cffffffff", "");
+					end
+					left1:SetText((left1:GetText() or "").."\n"..requiresText);
 				end
 				
 				tooltip:AddLine(" ");
