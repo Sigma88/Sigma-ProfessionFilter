@@ -392,9 +392,14 @@ function SPF.GetTradeSkillSelectionIndex()
 	return SPF.baseGetTradeSkillSelectionIndex();
 end
 
-function SPF.TradeSkillSkillButton_OnClick(button)
-	SPF.ONCLICK = this:GetID();
-	SPF.baseTradeSkillSkillButton_OnClick(button, this);
+function SPF.TradeSkillSkillButton_OnClick(self, button)
+	if CraftFrame then
+		SPF.ONCLICK = this:GetID();
+		SPF.baseTradeSkillSkillButton_OnClick(this, self);
+	else
+		SPF.ONCLICK = self:GetID();
+		SPF.baseTradeSkillSkillButton_OnClick(self, button);
+	end
 end
 
 -- Crafting
