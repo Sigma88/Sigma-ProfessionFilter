@@ -73,13 +73,14 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 				
 				if SPF.Data[skillIndex]["original"] then -- Spells Already Learned
 					
-					SPF.baseSetCraftSpell(tooltip, SPF.Data[skillIndex]["original"])
+					local originalSkillIndex = SPF.Data[skillIndex]["original"];
+					SPF.baseSetCraftSpell(tooltip, originalSkillIndex)
 					
-					local source = SPF:GetGroup("Right", skillIndex, 0);
+					local source = SPF:GetGroup("Right", originalSkillIndex, 0);
 					learnedFrom = SPF:GetMenu("Right")[source].name;
 					
 					for i = 4, getn(SPF:GetMenu("Right")), 1 do
-						if (SPF:GetGroup("Right", skillIndex, i) == i) then
+						if (SPF:GetGroup("Right", originalSkillIndex, i) == i) then
 							local color = "|cffffffff";
 							local family = SPF:GetMenu("Right")[i].name;
 							if pets and not SPF.match(family, pets) then
@@ -97,11 +98,12 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 					end
 				else -- Spells Not Yet Learned
 				
+					local spellID = SPF.Data[skillIndex]["spellID"];
+					
 					if not TradeSkillFrameAvailableFilterCheckButton then -- classic
 						tooltip:AddLine(skillName)
 						tooltip:AddLine(SPF.Data[skillIndex]["description"])
 					else -- tbc, wotlk
-						local spellID = SPF.Data[skillIndex]["spellID"];
 						tooltip:SetHyperlink("spell:"..spellID)
 					end
 					
