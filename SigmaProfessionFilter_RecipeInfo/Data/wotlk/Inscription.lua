@@ -4815,44 +4815,6 @@ RI.Data["Inscription"] = {
 			315,
 		},
 	},
-	[57231] = {
-		creates = 42897,
-		icon = "Interface\\Icons\\inv_glyph_majorhunter",
-		name = "Death Knight Glyph 25",
-		reagents = {
-			{
-				itemID = 39469,
-				icon = "Interface\\Icons\\inv_inscription_inkwhite02",
-				numRequired = 1,
-			},
-			{
-				itemID = 785,
-				icon = "Interface\\Icons\\inv_jewelry_talisman_03",
-				numRequired = 1,
-			},
-			{
-				itemID = 39354,
-				icon = "Interface\\Icons\\inv_inscription_papyrus",
-				numRequired = 1,
-			},
-			{
-				itemID = 10648,
-				icon = "Interface\\Icons\\inv_inscription_parchment",
-				numRequired = 1,
-			},
-			{
-				itemID = 39501,
-				icon = "Interface\\Icons\\inv_inscription_scroll",
-				numRequired = 1,
-			},
-			{
-				itemID = 39502,
-				icon = "Interface\\Icons\\inv_inscription_certificate",
-				numRequired = 1,
-			},
-		},
-		learnedAt = 9999,
-	},
 	[57232] = {
 		creates = 41517,
 		icon = "Interface\\Icons\\inv_glyph_majorshaman",
