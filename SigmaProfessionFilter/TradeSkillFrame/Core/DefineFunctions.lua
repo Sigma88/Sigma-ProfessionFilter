@@ -395,7 +395,7 @@ end
 function SPF.TradeSkillSkillButton_OnClick(self, button)
 	if CraftFrame then
 		SPF.ONCLICK = this:GetID();
-		SPF.baseTradeSkillSkillButton_OnClick(this, self);
+		SPF.baseTradeSkillSkillButton_OnClick(self);
 	else
 		SPF.ONCLICK = self:GetID();
 		SPF.baseTradeSkillSkillButton_OnClick(self, button);
