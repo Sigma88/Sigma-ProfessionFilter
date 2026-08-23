@@ -6,6 +6,21 @@ local SPF = SigmaProfessionFilter[1];
 	-- return L[skillName.."_SpellName"] or skillName;
 -- end
 
+function SPF.GetCraftName()
+	
+	local craftName = SPF.baseGetCraftName();
+	
+	if SPF.CraftName ~= craftName then
+		SPF.CraftName = craftName;
+		SPF.CraftFrame_OnShow(CraftFrame, true);
+	end
+	
+	return craftName;
+end
+
+SPF.baseGetCraftName = GetCraftName;
+GetCraftName = SPF.GetCraftName;
+
 function SPF.GetProfessionIcon()
 	local spellName = GetCraftName();
 	if spellName then
@@ -527,6 +542,7 @@ function SPF.ClearCraft()
 	CraftHighlightFrame:Hide();
 	CraftCreateButton:Disable();
 	CraftFramePointsLabel:Hide(); -- CraftCreateAllButton:Disable();
+	CraftFramePointsText:Hide(); -- CraftCreateAllButton:Disable();
 	CraftReagentLabel:Hide();
 	CraftDescription:Hide();
 	CraftCost:Hide();
