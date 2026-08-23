@@ -548,6 +548,17 @@ function SPF.ClearCraft()
 	CraftCost:Hide();
 end
 
+function SPF.Craft_UpdateTrainingPoints()
+	SPF.baseCraft_UpdateTrainingPoints();
+	if CraftReagent1:IsVisible() then
+		CraftFramePointsLabel:Hide();
+		CraftFramePointsText:Hide();
+	end
+end
+
+SPF.baseCraft_UpdateTrainingPoints = Craft_UpdateTrainingPoints;
+Craft_UpdateTrainingPoints = SPF.Craft_UpdateTrainingPoints;
+
 function SPF.ClearNewFeatures()
 	if CraftFrameAvailableFilterCheckButton then
 		CraftFrameAvailableFilterCheckButton:SetChecked(false);
