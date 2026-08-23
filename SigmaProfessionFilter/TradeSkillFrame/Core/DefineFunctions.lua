@@ -783,17 +783,19 @@ end
 
 function SPF.GetTradeSkillSubClasses()
 	local originalSubClasses = {GetTradeSkillSubClasses()};
+	
 	if not SPF:GetMenu("Left") then
 		if SigmaProfessionFilter_RecipeInfo and SPF:SavedData()["Unlearned"] then
 			if SPF.LeftMenu.LAST_CHECKED ~= time() then
 				SPF.LeftMenu.LAST_CHECKED = time();
 				local neededClasses = {};
+				local addFirstOriginal = false;
 				
 				for spellID,spellData in pairs(SPF.GetRecipeInfo() or {}) do
 					if spellData then
 						local itemID = spellData["creates"];
 						if itemID then
-							local _,_,_,_,class,subClass = GetItemInfo(itemID);
+							local _,_,_,_,_,class,subClass = GetItemInfo(itemID);
 							if class and subClass then
 								if not neededClasses[class] then
 									neededClasses[class] = {};
@@ -803,23 +805,17 @@ function SPF.GetTradeSkillSubClasses()
 								end
 							end
 						else
-							local lastClass, lastSubClass = "", "";
-							for classID,class in ipairs({GetAuctionItemClasses()}) do
-								lastClass = class;
-								lastSubClass = class;
-								for i,subClass in ipairs({GetAuctionItemSubClasses(classID)}) do
-									lastSubClass = subClass;
-								end
-							end
-							if not neededClasses[lastClass] then
-								neededClasses[lastClass] = {};
-							end
-							neededClasses[lastClass][lastSubClass] = true;
+							addFirstOriginal = true;
 						end
 					end
 				end
 				
 				SPF.LeftMenu.newClasses = {};
+				
+				if addFirstOriginal and originalSubClasses[1] then
+					table.insert(SPF.LeftMenu.newClasses, originalSubClasses[1]);
+				end
+				
 				for classID,class in ipairs({GetAuctionItemClasses()}) do
 					if neededClasses[class] then
 						local subClasses = {GetAuctionItemSubClasses(classID)};
