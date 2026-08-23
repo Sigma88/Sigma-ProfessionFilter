@@ -672,7 +672,10 @@ function SPF.SetTradeSkillDescription(skillIndex)
 		-- TradeSkillReagentLabelText = "";
 		TradeSkillReagentLabel:Show();
 	-- end
-	TradeSkillReagentLabel:SetText("|cffffffff"..SPF.GetTradeSkillDescription(skillIndex).."|r"..SPELL_REAGENTS);
+	TradeSkillReagentLabel:SetText("|cffffffff"..SPF.GetTradeSkillDescription(skillIndex).."|r");
+	if (TradeSkillReagent1:IsVisible()) then
+		TradeSkillReagentLabel:SetText(TradeSkillReagentLabel:GetText()..SPELL_REAGENTS);
+	end
 	TradeSkillReagentLabel:SetJustifyH("LEFT");
 end
 
