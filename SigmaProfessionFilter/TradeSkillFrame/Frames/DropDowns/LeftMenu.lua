@@ -168,7 +168,7 @@ function SPF2.LeftMenu:FilterSpell(spellID, groupIndex)
 		else
 			local creates = SPF2.GetRecipeInfo(spellID, "creates");
 			if creates then
-				local _,_,_,_,_,itemSubClass = SPF2.GetItemInfo(creates);
+				local _,_,_,_,_,_,itemSubClass = SPF2.GetItemInfo(creates);
 				local lastID = 0;
 				for i,subClass in ipairs(SPF2.GetTradeSkillSubClasses()) do
 					lastID = i;

@@ -105,7 +105,7 @@ function SPF2.RightMenu:Filter(skillIndex, groupIndex)
 				return firstGroup;
 			end
 		else
-			local _,_,_,_,_,_,_,invType = SPF2.baseGetTradeSkillItemInfo(skillIndex);
+			local _,_,_,_,_,_,_,_,invType = SPF2.baseGetTradeSkillItemInfo(skillIndex);
 			local itemSlot = SPF2:GetSlot(invType);
 			
 			if invType then
@@ -153,7 +153,7 @@ function SPF2.RightMenu:FilterSpell(spellID, groupIndex)
 		else
 			local creates = SPF2.GetRecipeInfo(spellID, "creates");
 			if creates then
-				local _,_,_,_,_,_,_,invType = SPF2.GetItemInfo(creates);
+				local _,_,_,_,_,_,_,_,invType = SPF2.GetItemInfo(creates);
 				local itemSlot = SPF2:GetSlot(invType);
 				
 				if invType then
