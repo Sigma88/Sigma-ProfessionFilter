@@ -728,8 +728,8 @@ function SPF.GetItemInfo(itemLink)
 			local id = string.gsub(itemLink, ".*\124Hitem:(%d+).*", "%1");
 			if id then
 				if not(GetItemInfo(id)) then
-					GameTooltip:SetHyperlink("item:"..id);
-					GameTooltip:Hide();
+					SPF.LocalTooltip:SetHyperlink("item:"..id);
+					SPF.LocalTooltip:Hide();
 				end
 				return GetItemInfo(id);
 			end
@@ -737,8 +737,8 @@ function SPF.GetItemInfo(itemLink)
 			local id = string.gsub(itemLink, ".*\124Henchant:(%d+).*", "%1");
 			if id then
 				if not(GetItemInfo(id)) then
-					GameTooltip:SetHyperlink("enchant:"..id);
-					GameTooltip:Hide();
+					SPF.LocalTooltip:SetHyperlink("enchant:"..id);
+					SPF.LocalTooltip:Hide();
 				end
 				return GetItemInfo(id);
 			end
@@ -798,7 +798,13 @@ function SPF.GetTradeSkillSubClasses()
 					if spellData then
 						local itemID = spellData["creates"];
 						if itemID then
-							local _,_,_,_,_,class,subClass = GetItemInfo(itemID);
+							local _,_,_,_,oldClass,class,subClass = GetItemInfo(itemID);
+							
+							if not TradeSkillFrameAvailableFilterCheckButton then -- classic
+								subClass = class;
+								class = oldClass;
+							end
+							
 							if class and subClass then
 								if not neededClasses[class] then
 									neededClasses[class] = {};
