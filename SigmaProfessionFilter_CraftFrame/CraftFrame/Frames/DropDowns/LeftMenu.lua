@@ -106,7 +106,7 @@ function SPF1.LeftMenu:Filter(skillIndex, groupIndex)
 				return firstGroup;
 			end
 		else
-			local _,_,_,_,_,itemSubClass = SPF1.baseGetCraftItemInfo(skillIndex);
+			local _,_,_,_,_,_,itemSubClass = SPF1.baseGetCraftItemInfo(skillIndex);
 			
 			if itemSubClass then
 				local lastID = 0;
@@ -154,7 +154,7 @@ function SPF1.LeftMenu:FilterSpell(spellID, groupIndex)
 			end
 		else
 			local creates = SPF1.GetRecipeInfo(spellID, "creates");
-			local _,_,_,_,_,itemSubClass = SPF1.GetItemInfo(creates);
+			local _,_,_,_,_,_,itemSubClass = SPF1.GetItemInfo(creates);
 			local lastID = 0;
 			for i,subClass in ipairs(SPF1.GetCraftSubClasses()) do
 				lastID = i;

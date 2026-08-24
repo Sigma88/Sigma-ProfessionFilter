@@ -717,27 +717,36 @@ function SPF.GetCraftReagentLabel(skillIndex)
 end
 
 function SPF.GetItemInfo(itemLink)
+	-- classic: itemName, itemLink, itemQuality,            itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, itemTexture
+	-- tbc:     itemName, itemLink, itemQuality, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, itemTexture
+	-- wotlk:   itemName, itemLink, itemQuality, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, itemTexture, itemSellPrice
 	if itemLink then
+		local id = nil;
 		if strfind(itemLink, "item:") then
-			local id = string.gsub(itemLink, ".*\124Hitem:(%d+).*", "%1");
+			id = string.gsub(itemLink, ".*\124Hitem:(%d+).*", "%1");
 			if id then
 				if not(GetItemInfo(id)) then
-					GameTooltip:SetHyperlink("item:"..id);
-					GameTooltip:Hide();
+					SPF.LocalTooltip:SetHyperlink("item:"..id);
+					SPF.LocalTooltip:Hide();
 				end
-				return GetItemInfo(id);
 			end
 		elseif strfind(itemLink, "enchant:") then
-			local id = string.gsub(itemLink, ".*\124Henchant:(%d+).*", "%1");
+			id = string.gsub(itemLink, ".*\124Henchant:(%d+).*", "%1");
 			if id then
 				if not(GetItemInfo(id)) then
-					GameTooltip:SetHyperlink("enchant:"..id);
-					GameTooltip:Hide();
+					SPF.LocalTooltip:SetHyperlink("enchant:"..id);
+					SPF.LocalTooltip:Hide();
 				end
-				return GetItemInfo(id);
 			end
 		end
-		return GetItemInfo(itemLink);
+		
+		if not TradeSkillFrameAvailableFilterCheckButton then -- classic
+			local itemName, itemLink, itemQuality, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, itemTexture = GetItemInfo(id or itemLink);
+			local itemLevel = itemMinLevel;
+			return itemName, itemLink, itemQuality, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, itemTexture;
+		else -- tbc, wotlk
+			return GetItemInfo(id or itemLink);
+		end
 	end
 end
 
@@ -752,7 +761,7 @@ function SPF.GetCraftInvSlots()
 					if spellData then
 						local itemID = spellData["creates"];
 						if itemID then
-							local _,_,_,_,_,_,_,invSlot = GetItemInfo(itemID);
+							local _,_,_,_,_,_,_,_,invSlot = SPF.GetItemInfo(itemID);
 							if invSlot and SPF.INV[invSlot] then
 								if not neededSlots[SPF.INV[invSlot]] then
 									neededSlots[SPF.INV[invSlot]] = true;
@@ -790,7 +799,7 @@ function SPF.GetCraftSubClasses()
 					if spellData then
 						local itemID = spellData["creates"];
 						if itemID then
-							local _,_,_,_,class,subClass = GetItemInfo(itemID);
+							local _,_,_,_,_,class,subClass = GetItemInfo(itemID);
 							if class and subClass then
 								if not neededClasses[class] then
 									neededClasses[class] = {};

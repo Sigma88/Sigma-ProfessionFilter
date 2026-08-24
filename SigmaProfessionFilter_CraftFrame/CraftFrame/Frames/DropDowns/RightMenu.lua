@@ -105,7 +105,7 @@ function SPF1.RightMenu:Filter(skillIndex, groupIndex)
 				return firstGroup;
 			end
 		else
-			local _,_,_,_,_,_,_,invType = SPF1.baseGetCraftItemInfo(skillIndex);
+			local _,_,_,_,_,_,_,_,invType = SPF1.baseGetCraftItemInfo(skillIndex);
 			local itemSlot = SPF1:GetSlot(invType);
 			
 			if invType then
@@ -153,7 +153,7 @@ function SPF1.RightMenu:FilterSpell(spellID, groupIndex)
 		else
 			local creates = SPF1.GetRecipeInfo(spellID, "creates");
 			if creates then
-				local _,_,_,_,_,_,_,invType = SPF1.GetItemInfo(creates);
+				local _,_,_,_,_,_,_,_,invType = SPF1.GetItemInfo(creates);
 				local itemSlot = SPF1:GetSlot(invType);
 				
 				if invType then
