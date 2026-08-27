@@ -549,10 +549,19 @@ function SPF.ClearCraft()
 end
 
 function SPF.Craft_UpdateTrainingPoints()
-	SPF.baseCraft_UpdateTrainingPoints();
 	if CraftReagent1:IsVisible() then
 		CraftFramePointsLabel:Hide();
 		CraftFramePointsText:Hide();
+	else
+		local totalPoints, spent = GetPetTrainingPoints();
+		local availablePoints = totalPoints - spent;
+		local color = "";
+		if (availablePoints < 0) then
+			color = "|cffff0000";
+		end
+		CraftFramePointsText:SetText(color..availablePoints);
+		CraftFramePointsLabel:Show();
+		CraftFramePointsText:Show();
 	end
 end
 
