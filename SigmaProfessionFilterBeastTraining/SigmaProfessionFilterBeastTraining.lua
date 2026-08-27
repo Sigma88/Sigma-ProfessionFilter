@@ -295,6 +295,8 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 	["Filter1"] = {
 		["text"] = L["FILTER1"];
 		["tooltip"] = L["FILTER1_TOOLTIP"];
+		["Tooltip_OnEnter"] = function() end;
+		["OnRightClick"] = function() end;
 		["Filter"] = function(craftIndex)
 			if not UnitExists("pet") then
 				return false;
@@ -318,6 +320,8 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 	["Filter2"] = {
 		["text"] = L["FILTER2"];--"Trainable";
 		["tooltip"] = L["FILTER2_TOOLTIP"];--"Only show the abilities for which your active pet has the required level and training points.";
+		["Tooltip_OnEnter"] = function() end;
+		["OnRightClick"] = function() end;
 		["Filter"] = function(craftIndex)
 			if not UnitExists("pet") then
 				return false;
