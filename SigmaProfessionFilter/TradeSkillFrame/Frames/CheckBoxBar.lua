@@ -41,9 +41,9 @@ function SPF2.CheckBoxBar.OnShow()
 	
 	SPF2.CheckBoxBar:SetPoint("TOPLEFT", TradeSkillFrame, "TOPLEFT", w + 5, -54);
 	--LeatrixPlus compatibility
-    if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
+	if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
 		SPF2.CheckBoxBar:SetPoint("TOPLEFT", TradeSkillFrame, "TOPLEFT", w + 5, -57);
-    end
+	end
 	
 	
 	local maxText = SPF2.CheckBoxBar:GetWidth();

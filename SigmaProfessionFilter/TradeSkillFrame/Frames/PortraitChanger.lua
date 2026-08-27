@@ -69,7 +69,7 @@ function SPF2.PortraitChanger:OnEnter()
 end
 
 function SPF2.PortraitChanger:OnLeave()
-    GameTooltip:Hide();
+	GameTooltip:Hide();
 	SPF2.PortraitChanger.IsMouseOver = false;
 end
 

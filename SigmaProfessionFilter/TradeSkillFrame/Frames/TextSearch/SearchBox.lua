@@ -20,11 +20,11 @@ function SPF2.SearchBox.OnLoad()
 	TradeSkillFrame:SetScript("OnHide", SPF2.TradeSkillFrame_OnHide);
 	SPF2.hooksecurefunc("ChatEdit_InsertLink", SPF2.SearchBox.InsertItemName)
 	
-    -- LeatrixPlus compatibility
-    if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
-        SPF2.SearchBox:SetPoint("TOPRIGHT", TradeSkillFrame, "TOPRIGHT", -50, -40);
+	-- LeatrixPlus compatibility
+	if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
+		SPF2.SearchBox:SetPoint("TOPRIGHT", TradeSkillFrame, "TOPRIGHT", -50, -40);
 		SPF2.SearchBox:SetWidth(300);
-    end
+	end
 end
 
 
@@ -47,16 +47,16 @@ function SPF2.SearchBox:OnShow()
 end
 
 function SPF2.SearchBox.OnEnterPressed()
-    SPF2.SearchBox:ClearFocus();
+	SPF2.SearchBox:ClearFocus();
 end
 
 function SPF2.SearchBox.OnEscapePressed()
-    SPF2.SearchBox:SetText("");
-    SPF2.SearchBox:ClearFocus();
+	SPF2.SearchBox:SetText("");
+	SPF2.SearchBox:ClearFocus();
 end
 
 function SPF2.SearchBox.OnTextChanged()
-    SPF2.FullUpdate();
+	SPF2.FullUpdate();
 end
 
 function SPF2.SearchBox.InsertItemName(itemLink)

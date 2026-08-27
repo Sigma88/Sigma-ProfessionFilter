@@ -16,9 +16,9 @@ if ElvUI then
 	S:HandleEditBox(SPF2.SearchBox);
 	SPF2.SearchBox:SetHeight(18);
 	SPF2.SearchBox:SetPoint("TOPRIGHT", TradeSkillFrame, "TOPRIGHT", -44, -76);
-    if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
-        SPF2.SearchBox:SetPoint("TOPRIGHT", TradeSkillFrame, "TOPRIGHT", -50, -49);
-    end
+	if (not (LeaPlusDB == nil) and LeaPlusDB["EnhanceProfessions"] == "On") then
+		SPF2.SearchBox:SetPoint("TOPRIGHT", TradeSkillFrame, "TOPRIGHT", -50, -49);
+	end
 
 	if (LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On") then
 		S:HandleDropDownBox(SPF2.LeftMenu, 170);

@@ -35,9 +35,9 @@ function SPF2.LeftMenu:OnShow()
 		SPF2.DropDownMenu_SetSelectedID(SPF2.LeftMenu, SPF2:GetSelected("Left") + 1);
 	end
 	
-    if SPF2:SavedData()["SearchBox"] then
-        SPF2.LeftMenu:Hide();
-    end
+	if SPF2:SavedData()["SearchBox"] then
+		SPF2.LeftMenu:Hide();
+	end
 end
 
 function SPF2.LeftMenu:Initialize()

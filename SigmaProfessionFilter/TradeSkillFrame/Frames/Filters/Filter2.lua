@@ -54,7 +54,7 @@ function SPF2.Filter2:OnClick()
 	else
 		PlaySound("igMainMenuOptionCheckBoxOff");
 	end
-    SPF2.FullUpdate();
+	SPF2.FullUpdate();
 end
 
 function SPF2.Filter2:OnRightClick()
@@ -70,10 +70,10 @@ function SPF2.Filter2:OnRightClick()
 end
 
 function SPF2.Filter2:OnEnter()
-    if (SPF2.Filter2.tooltipText) then
-        GameTooltip:SetOwner(SPF2.Filter2, "ANCHOR_TOPLEFT");
-        GameTooltip:SetText(SPF2.Filter2.tooltipText, nil, nil, nil, nil, true);
-    end
+	if (SPF2.Filter2.tooltipText) then
+		GameTooltip:SetOwner(SPF2.Filter2, "ANCHOR_TOPLEFT");
+		GameTooltip:SetText(SPF2.Filter2.tooltipText, nil, nil, nil, nil, true);
+	end
 	if (SPF2:Custom("Filter2")["Tooltip_OnEnter"]) then
 		SPF2:Custom("Filter2")["Tooltip_OnEnter"]();
 	else
@@ -83,7 +83,7 @@ function SPF2.Filter2:OnEnter()
 end
 
 function SPF2.Filter2.OnLeave()
-    GameTooltip:Hide();
+	GameTooltip:Hide();
 end
 
 function SPF2.baseTradeSkillHasMats(skillIndex, requiredAmount, layer)

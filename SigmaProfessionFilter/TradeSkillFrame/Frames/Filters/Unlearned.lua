@@ -55,11 +55,11 @@ function SPF2.Unlearned.OnClick()
 	SPF2:SetSelected("Right", 0);
 	
 	if (SPF2.Unlearned.button:GetChecked()) then
-        --PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
+		--PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
 		PlaySound("igMainMenuOptionCheckBoxOn");
 		SPF2:SavedData()["Unlearned"] = true;
-    else
-        --PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
+	else
+		--PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
 		PlaySound("igMainMenuOptionCheckBoxOff");
 		SPF2:SavedData()["Unlearned"] = nil;
 	end
@@ -70,14 +70,14 @@ function SPF2.Unlearned.OnClick()
 end
 
 function SPF2.Unlearned.OnEnter()
-    if (SPF2.Unlearned.tooltipText) then
-        GameTooltip:SetOwner(SPF2.Unlearned, "ANCHOR_TOPLEFT");
-        GameTooltip:SetText(SPF2.Unlearned.tooltipText, nil, nil, nil, nil, true);
-    end
+	if (SPF2.Unlearned.tooltipText) then
+		GameTooltip:SetOwner(SPF2.Unlearned, "ANCHOR_TOPLEFT");
+		GameTooltip:SetText(SPF2.Unlearned.tooltipText, nil, nil, nil, nil, true);
+	end
 end
 
 function SPF2.Unlearned.OnLeave()
-    GameTooltip:Hide();
+	GameTooltip:Hide();
 end
 
 SPF2.Unlearned.OnLoad();

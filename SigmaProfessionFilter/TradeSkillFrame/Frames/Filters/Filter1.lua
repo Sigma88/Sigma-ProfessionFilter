@@ -53,7 +53,7 @@ function SPF2.Filter1.OnClick()
 	else
 		PlaySound("igMainMenuOptionCheckBoxOff");
 	end
-    SPF2.FullUpdate();
+	SPF2.FullUpdate();
 end
 
 function SPF2.Filter1:OnRightClick()
@@ -78,10 +78,10 @@ function SPF2.Filter1:OnRightClick()
 end
 
 function SPF2.Filter1:OnEnter()
-    if (SPF2.Filter1.tooltipText) then
-        GameTooltip:SetOwner(SPF2.Filter1, "ANCHOR_TOPLEFT");
-        GameTooltip:SetText(SPF2.Filter1.tooltipText, nil, nil, nil, nil, true);
-    end
+	if (SPF2.Filter1.tooltipText) then
+		GameTooltip:SetOwner(SPF2.Filter1, "ANCHOR_TOPLEFT");
+		GameTooltip:SetText(SPF2.Filter1.tooltipText, nil, nil, nil, nil, true);
+	end
 	if (SPF2:Custom("Filter1")["Tooltip_OnEnter"]) then
 		SPF2:Custom("Filter1")["Tooltip_OnEnter"]();
 	else
@@ -91,7 +91,7 @@ function SPF2.Filter1:OnEnter()
 end
 
 function SPF2.Filter1:OnLeave()
-    GameTooltip:Hide();
+	GameTooltip:Hide();
 end
 
 -- Return True if the skill matches the filter

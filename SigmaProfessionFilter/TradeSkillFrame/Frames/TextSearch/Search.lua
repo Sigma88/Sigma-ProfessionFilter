@@ -37,11 +37,11 @@ end
 function SPF2.Search.OnClick()
 	
 	if (SPF2.Search:GetChecked()) then
-        --PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
+		--PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
 		PlaySound("igMainMenuOptionCheckBoxOn");
 		SPF2:SavedData()["SearchBox"] = true;
-    else
-        --PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
+	else
+		--PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
 		PlaySound("igMainMenuOptionCheckBoxOff");
 		SPF2:SavedData()["SearchBox"] = nil;
 	end
@@ -54,14 +54,14 @@ function SPF2.Search.OnClick()
 end
 
 function SPF2.Search.OnEnter()
-    if (SPF2.Search.tooltipText) then
-        GameTooltip:SetOwner(SPF2.Search, "ANCHOR_TOPLEFT");
-        GameTooltip:SetText(SPF2.Search.tooltipText, nil, nil, nil, nil, true);
-    end
+	if (SPF2.Search.tooltipText) then
+		GameTooltip:SetOwner(SPF2.Search, "ANCHOR_TOPLEFT");
+		GameTooltip:SetText(SPF2.Search.tooltipText, nil, nil, nil, nil, true);
+	end
 end
 
 function SPF2.Search.OnLeave()
-    GameTooltip:Hide();
+	GameTooltip:Hide();
 end
 
 SPF2.Search.OnLoad();

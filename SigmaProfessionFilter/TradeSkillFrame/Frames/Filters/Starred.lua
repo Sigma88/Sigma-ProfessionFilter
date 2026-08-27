@@ -54,11 +54,11 @@ end
 function SPF.Starred.OnClick()
 	
 	if (SPF.Starred.button:GetChecked()) then
-        --PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
+		--PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "SFX");
 		PlaySound("igMainMenuOptionCheckBoxOn");
 		SPF:SavedData()["Starred"] = true;
-    else
-        --PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
+	else
+		--PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "SFX");
 		PlaySound("igMainMenuOptionCheckBoxOff");
 		SPF:SavedData()["Starred"] = nil;
 	end
@@ -69,14 +69,14 @@ function SPF.Starred.OnClick()
 end
 
 function SPF.Starred.OnEnter()
-    if (SPF.Starred.tooltipText) then
-        GameTooltip:SetOwner(SPF.Starred, "ANCHOR_TOPLEFT");
-        GameTooltip:SetText(SPF.Starred.tooltipText, nil, nil, nil, nil, true);
-    end
+	if (SPF.Starred.tooltipText) then
+		GameTooltip:SetOwner(SPF.Starred, "ANCHOR_TOPLEFT");
+		GameTooltip:SetText(SPF.Starred.tooltipText, nil, nil, nil, nil, true);
+	end
 end
 
 function SPF.Starred.OnLeave()
-    GameTooltip:Hide();
+	GameTooltip:Hide();
 end
 
 function SPF.Starred.OnUpdate()

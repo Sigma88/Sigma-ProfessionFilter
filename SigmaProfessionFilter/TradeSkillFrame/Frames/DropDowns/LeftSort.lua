@@ -31,9 +31,9 @@ function SPF2.LeftSort:OnShow()
 		SPF2.LeftSort:SetChecked(SPF2:SavedData()["GroupBy"] ~= "Right");
 	end
 	
-    if SPF2:SavedData()["SearchBox"] then
-        SPF2.LeftSort:Hide();
-    end
+	if SPF2:SavedData()["SearchBox"] then
+		SPF2.LeftSort:Hide();
+	end
 end
 
 function SPF2.LeftSort:OnClick(mod)
@@ -46,14 +46,14 @@ function SPF2.LeftSort:OnClick(mod)
 end
 
 function SPF2.LeftSort:OnEnter()
-    if (SPF2.LeftSort.tooltipText) then
-        GameTooltip:SetOwner(SPF2.LeftSort, "ANCHOR_TOPLEFT");
-        GameTooltip:SetText(SPF2.LeftSort.tooltipText, nil, nil, nil, nil, true);
-    end
+	if (SPF2.LeftSort.tooltipText) then
+		GameTooltip:SetOwner(SPF2.LeftSort, "ANCHOR_TOPLEFT");
+		GameTooltip:SetText(SPF2.LeftSort.tooltipText, nil, nil, nil, nil, true);
+	end
 end
 
 function SPF2.LeftSort:OnLeave()
-    GameTooltip:Hide();
+	GameTooltip:Hide();
 end
 
 SPF2.LeftSort.OnLoad();
