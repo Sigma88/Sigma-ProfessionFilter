@@ -299,7 +299,7 @@ function SPF:FilterWithSearchBox(skillIndex)
 					end
 				else
 					local groupIndex = SPF.RightMenu:Filter(skillIndex, 0);
-					for i,gN in pairs(SPF.GetTradeSkillInvSlots()) do
+					for i,gN in pairs({SPF.GetTradeSkillInvSlots()}) do
 						if groupIndex == i then
 							groupName = gN;
 							break;
@@ -388,7 +388,7 @@ function SPF:FilterSpellWithSearchBox(spellID)
 					end
 				else
 					local groupIndex = SPF.RightMenu:FilterSpell(spellID, 0);
-					for i,gN in ipairs(SPF.GetTradeSkillInvSlots()) do
+					for i,gN in ipairs({SPF.GetTradeSkillInvSlots()}) do
 						if groupIndex == i then
 							groupName = gN;
 							break;
@@ -596,7 +596,7 @@ function SPF.GetRecipeInfo(spellID, infoType1, infoType2)
 			local Recipes = RI.Data[professionName];
 			if Recipes then
 				if spellID then
-					if  Recipes[spellID] then
+					if Recipes[spellID] then
 						if infoType1 then
 							if infoType2 then
 								return Recipes[spellID][infoType1], Recipes[spellID][infoType2];

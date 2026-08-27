@@ -208,7 +208,7 @@ function SPF.GetNumTradeSkills()
 			end
 			if (groupBy == "Right" and not SPF:GetMenu("Right")) then
 				Pairs = {};
-				for i,slot in ipairs(SPF.GetTradeSkillInvSlots()) do
+				for i,slot in ipairs({SPF.GetTradeSkillInvSlots()}) do
 					table.insert( Pairs, { name = slot; } );
 				end
 			end
@@ -719,7 +719,7 @@ function SPF.GetTradeSkillDescription(skillIndex)
 	end
 	
 	-- Otherwise fall back to the original
-    return "";
+	return "";
 end
 
 function SPF.GetItemInfo(itemLink)
@@ -760,37 +760,41 @@ function SPF.GetTradeSkillInvSlots()
 	local originalSlots = {GetTradeSkillInvSlots()};
 	if not SPF:GetMenu("Right") then
 		if SigmaProfessionFilter_RecipeInfo and SPF:SavedData()["Unlearned"] then
-			if SPF.RightMenu.LAST_CHECKED ~= time() then
+			if not SPF.RightMenu.newSlots or SPF.RightMenu.LAST_CHECKED ~= time() then
 				SPF.RightMenu.LAST_CHECKED = time();
 				local neededSlots = {};
-				for spellID,spellData in pairs(SPF.GetRecipeInfo() or {}) do
+				for spellID,spellData in pairs(SPF.GetRecipeInfo()) do
 					if spellData then
 						local itemID = spellData["creates"];
 						if itemID then
 							local _,_,_,_,_,_,_,_,invSlot = SPF.GetItemInfo(itemID);
 							if invSlot and SPF.INV[invSlot] then
-								if not neededSlots[SPF.INV[invSlot]] then
-									neededSlots[SPF.INV[invSlot]] = true;
+								if not neededSlots[SPF.SLOTS[SPF.INV[invSlot]]] then
+									neededSlots[SPF.SLOTS[SPF.INV[invSlot]]] = true
 								end
 							end
 						end
 					end
 				end
-				table.sort(neededSlots);
 				
 				SPF.RightMenu.newSlots = {};
-				for slotID,_ in pairs(neededSlots) do
-					table.insert(SPF.RightMenu.newSlots, SPF.SLOTS[slotID]);
+				
+				local slotID = 0;
+				while SPF.SLOTS[slotID] do
+					if neededSlots[SPF.SLOTS[slotID]] then
+						table.insert(SPF.RightMenu.newSlots, SPF.SLOTS[slotID]);
+					end
+					slotID = slotID + 1;
 				end
 				
 				table.insert(SPF.RightMenu.newSlots, NONEQUIPSLOT);
 			end
 			
-			return SPF.RightMenu.newSlots;
+			return unpack(SPF.RightMenu.newSlots);
 		end
 	end
 	
-	return originalSlots;
+	return unpack(originalSlots);
 end
 
 function SPF.GetTradeSkillSubClasses()
@@ -895,17 +899,17 @@ function SPF.TradeSkillFrame_Update()
 	end
 	
 	-- LeatrixPlus compatibility
-    if (LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On" and TradeSkillSkill23) then
+	if (LeaPlusDB and LeaPlusDB["EnhanceProfessions"] == "On" and TradeSkillSkill23) then
 		if SPF.Headers and getn(SPF.Headers) == 0 and SPF.FIRST then
 			TradeSkillSkill1:SetPoint("TOPLEFT", TradeSkillFrame, "TOPLEFT", 22, -81);
-			if SPF.Data and getn(SPF.Data) > 22  then
+			if SPF.Data and getn(SPF.Data) > 22 then
 				TradeSkillSkill23:Show();
 			end
 		else
 			TradeSkillSkill23:Hide();
 			TradeSkillSkill1:SetPoint("TOPLEFT", TradeSkillFrame, "TOPLEFT", 22, -96);
 		end
-    end
+	end
 	
 	if SPF.TradeSkillName ~= GetTradeSkillName() then
 		SPF.TradeSkillName = GetTradeSkillName();

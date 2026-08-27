@@ -607,7 +607,7 @@ end
 function SPF.GetRecipeInfo(spellID, infoType1, infoType2)
 	
 	if not(spellID) and (infoType1 or infoType2) then
-		return;
+		return {};
 	end
 	
 	local RI = SigmaProfessionFilter_RecipeInfo;
@@ -635,6 +635,7 @@ function SPF.GetRecipeInfo(spellID, infoType1, infoType2)
 			end
 		end
 	end
+	return {};
 end
 
 function SPF.GetRecipeSpellID(spellName, subSpellName)

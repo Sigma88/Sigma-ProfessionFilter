@@ -36,8 +36,8 @@ function SPF2.RightMenu:OnShow()
 	end
 	
 	if SPF2:SavedData()["SearchBox"] then
-        SPF2.RightMenu:Hide();
-    end
+		SPF2.RightMenu:Hide();
+	end
 end
 
 function SPF2.RightMenu.Initialize()
@@ -65,7 +65,7 @@ function SPF2.RightMenu.Initialize()
 			
 			SPF2.DropDownMenu_AddButton(info);
 			
-			for i,slot in ipairs(SPF2.GetTradeSkillInvSlots()) do
+			for i,slot in ipairs({SPF2.GetTradeSkillInvSlots()}) do
 				info = {};
 				info.text = slot;
 				info.func = SPF2.RightMenu.OnClick;
@@ -110,7 +110,7 @@ function SPF2.RightMenu:Filter(skillIndex, groupIndex)
 			
 			if invType then
 				local lastID = 0;
-				for i,slot in ipairs(SPF2.GetTradeSkillInvSlots()) do
+				for i,slot in ipairs({SPF2.GetTradeSkillInvSlots()}) do
 					lastID = i;
 					if itemSlot == slot then
 						if groupIndex == 0 or groupIndex == i then
@@ -158,7 +158,7 @@ function SPF2.RightMenu:FilterSpell(spellID, groupIndex)
 				
 				if invType then
 					local lastID = 0;
-					for i,slot in ipairs(SPF2.GetTradeSkillInvSlots()) do
+					for i,slot in ipairs({SPF2.GetTradeSkillInvSlots()}) do
 						lastID = i;
 						if itemSlot == slot then
 							if groupIndex == 0 or groupIndex == i then
