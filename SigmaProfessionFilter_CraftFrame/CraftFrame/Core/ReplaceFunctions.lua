@@ -81,6 +81,8 @@ GetCraftRepeatCount = SPF1.GetCraftRepeatCount;
 SPF1.baseCraftFrame_OnShow = CraftFrame_OnShow;
 CraftFrame_OnShow = SPF1.CraftFrame_OnShow;
 CraftFrame:SetScript("OnShow", CraftFrame_OnShow);
+PetFrame:SetScript("OnShow", SPF1.PetFrame_OnShow);
+PetFrame:SetScript("OnHide", SPF1.PetFrame_OnShow);
 
 --[[
 function SPF1.ContainerFrameItemButton_OnClick(button, ignoreModifiers)

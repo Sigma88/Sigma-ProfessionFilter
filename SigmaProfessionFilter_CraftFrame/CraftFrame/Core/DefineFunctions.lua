@@ -522,6 +522,12 @@ function SPF.GetCraftRepeatCount()
 	return CraftInputBox:GetNumber();
 end
 
+function SPF.PetFrame_OnShow()
+	if CraftFrame:IsVisible() and not CraftReagent1:IsVisible() then
+		CraftFrame_OnShow(CraftFrame, true);
+	end
+end
+
 function SPF.CraftFrame_OnShow(self, silent)
 	-- CraftInputBox:SetNumber(1);
 	if not silent then
