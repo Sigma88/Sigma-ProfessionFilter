@@ -285,11 +285,35 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 		[20] = { name = L["PET_FAMILY_17"]; filter = L["RIGHT_19_FILTER"]; };
 	};
 	["Portrait"] = {
-		["Icon"] = function()
-			if UnitExists("pet") then
+		["GetIcon"] = function()
+			
+			local iconSelection = SPF:SavedData()["ReplacePortrait"];
+			
+			if iconSelection == false then -- player portrait
+				return nil;
+			elseif (iconSelection == nil) or (not UnitExists("pet")) then -- profession icon
+				return SPF.GetProfessionIcon();
+			elseif iconSelection == "pet_family" then -- pet family icon
 				return GetPetIcon();
+			elseif iconSelection == "pet" then -- pet portrait
+				CraftFramePortrait:SetTexCoord(0,1,0,1);
+				SPF.baseSetPortraitTexture(CraftFramePortrait, "pet");
+				return nil;
 			end
-			return SPF.GetProfessionIcon();
+		end;
+		["SetIcon"] = function()
+			
+			local iconSelection = SPF:SavedData()["ReplacePortrait"];
+			
+			if iconSelection == "pet" then
+				SPF:SavedData()["ReplacePortrait"] = false;
+			elseif iconSelection == "pet_family" then
+				SPF:SavedData()["ReplacePortrait"] = "pet";
+			elseif iconSelection == nil then
+				SPF:SavedData()["ReplacePortrait"] = "pet_family";
+			else
+				SPF:SavedData()["ReplacePortrait"] = nil;
+			end
 		end;
 	};
 	["Filter1"] = {

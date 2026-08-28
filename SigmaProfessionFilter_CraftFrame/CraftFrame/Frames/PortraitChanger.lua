@@ -30,7 +30,13 @@ function SPF1.PortraitChanger:OnMouseDown()
 end
 
 function SPF1.PortraitChanger:OnClick()
-	SPF1:SavedData()["ReplacePortrait"] = not (SPF1:SavedData()["ReplacePortrait"] ~= false);
+	
+	if SPF1:Custom("Portrait")["SetIcon"] then
+		SPF1:Custom("Portrait"):SetIcon();
+	else
+		SPF1:SavedData()["ReplacePortrait"] = not (SPF1:SavedData()["ReplacePortrait"] ~= false);
+	end
+	
 	SPF1.PortraitChanger:OnShow();
 end
 
@@ -69,16 +75,16 @@ function SPF1.PortraitChanger:OnEnter()
 end
 
 function SPF1.PortraitChanger:OnLeave()
-    GameTooltip:Hide();
+	GameTooltip:Hide();
 	SPF1.PortraitChanger.IsMouseOver = false;
 end
 
 function SPF1.PortraitChanger:GetIcon()
 	
-	if SPF1:Custom("Portrait")["Icon"] then
-		return SPF1:Custom("Portrait"):Icon();
+	if SPF1:Custom("Portrait")["GetIcon"] then
+		return SPF1:Custom("Portrait"):GetIcon();
 	end
-
+	
 	if SigmaProfessionFilter[GetCraftName()] and SigmaProfessionFilter[GetCraftName()]["icon"] then
 		return SigmaProfessionFilter[GetCraftName()]["icon"];
 	end
