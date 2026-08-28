@@ -22,6 +22,11 @@ function SPF1.RightMenu.OnLoad()
 end
 
 function SPF1.RightMenu:OnShow()
+	
+	if not CraftFrame:IsVisible() then
+		return;
+	end
+	
 	SPF1.RightMenu:Show();
 	
 	if not SPF1:GetMenu("Right") then

@@ -22,6 +22,11 @@ function SPF2.RightMenu.OnLoad()
 end
 
 function SPF2.RightMenu:OnShow()
+	
+	if not TradeSkillFrame:IsVisible() then
+		return;
+	end
+	
 	SPF2.RightMenu:Show();
 	
 	if SPF2:Custom("RightMenu")["disabled"] then

@@ -22,6 +22,11 @@ function SPF2.LeftMenu:OnLoad()
 end
 
 function SPF2.LeftMenu:OnShow()
+	
+	if not TradeSkillFrame:IsVisible() then
+		return;
+	end
+	
 	SPF2.LeftMenu:Show();
 	
 	if SPF2:Custom("LeftMenu")["disabled"] then

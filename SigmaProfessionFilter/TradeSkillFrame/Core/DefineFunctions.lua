@@ -780,7 +780,7 @@ function SPF.GetTradeSkillInvSlots()
 				SPF.RightMenu.newSlots = {};
 				
 				local slotID = 0;
-				while slotID <= #SPF.SLOTS do
+				while slotID <= 20 do
 					if SPF.SLOTS[slotID] and neededSlots[SPF.SLOTS[slotID]] then
 						table.insert(SPF.RightMenu.newSlots, SPF.SLOTS[slotID]);
 					end
