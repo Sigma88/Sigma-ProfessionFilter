@@ -1252,6 +1252,35 @@ RI.Data["Cooking"] = {
 			255,
 		},
 	},
+	[15906] = {
+		creates = 12217,
+		icon = "Interface\\Icons\\inv_drink_17",
+		name = "Dragonbreath Chili",
+		reagents = {
+			{
+				itemID = 12037,
+				icon = "Interface\\Icons\\inv_misc_food_67",
+				numRequired = 1,
+			},
+			{
+				itemID = 4402,
+				icon = "Interface\\Icons\\inv_misc_organ_06",
+				numRequired = 1,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 200,
+		levels = {
+			200,
+			225,
+			237,
+			250,
+		},
+	},
 	[15910] = {
 		creates = 12215,
 		icon = "Interface\\Icons\\inv_drink_19",
@@ -1884,6 +1913,756 @@ RI.Data["Cooking"] = {
 			215,
 			235,
 			255,
+		},
+	},
+	[28267] = {
+		creates = 22645,
+		icon = "Interface\\Icons\\inv_misc_food_88_ravagernuggets",
+		name = "Crunchy Spider Surprise",
+		reagents = {
+			{
+				itemID = 22644,
+				icon = "Interface\\Icons\\inv_misc_ahnqirajtrinket_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 60,
+		levels = {
+			60,
+			100,
+			120,
+			140,
+		},
+	},
+	[33276] = {
+		creates = 27635,
+		icon = "Interface\\Icons\\inv_misc_food_47",
+		name = "Lynx Steak",
+		reagents = {
+			{
+				itemID = 27668,
+				icon = "Interface\\Icons\\inv_misc_food_71",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 1,
+		levels = {
+			1,
+			45,
+			65,
+			85,
+		},
+	},
+	[33277] = {
+		creates = 24105,
+		icon = "Interface\\Icons\\inv_misc_food_60",
+		name = "Roasted Moongraze Tenderloin",
+		reagents = {
+			{
+				itemID = 23676,
+				icon = "Interface\\Icons\\inv_misc_food_69",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 1,
+		levels = {
+			1,
+			45,
+			65,
+			85,
+		},
+	},
+	[33278] = {
+		creates = 27636,
+		icon = "Interface\\Icons\\inv_misc_food_86_basilisk",
+		name = "Bat Bites",
+		reagents = {
+			{
+				itemID = 27669,
+				icon = "Interface\\Icons\\inv_misc_food_70",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 50,
+		levels = {
+			50,
+			90,
+			110,
+			130,
+		},
+	},
+	[33279] = {
+		creates = 27651,
+		icon = "Interface\\Icons\\inv_misc_food_85_stegadonbite",
+		name = "Buzzard Bites",
+		reagents = {
+			{
+				itemID = 27671,
+				icon = "Interface\\Icons\\inv_misc_food_82",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 300,
+		levels = {
+			300,
+			320,
+			330,
+			340,
+		},
+	},
+	[33284] = {
+		creates = 27655,
+		icon = "Interface\\Icons\\inv_misc_food_53",
+		name = "Ravager Dog",
+		reagents = {
+			{
+				itemID = 27674,
+				icon = "Interface\\Icons\\inv_misc_food_72",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 300,
+		levels = {
+			300,
+			320,
+			330,
+			340,
+		},
+	},
+	[33285] = {
+		creates = 27656,
+		icon = "Interface\\Icons\\inv_misc_food_87_sporelingsnack",
+		name = "Sporeling Snack",
+		reagents = {
+			{
+				itemID = 27676,
+				icon = "Interface\\Icons\\classic_inv_misc_dust_04",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 310,
+		levels = {
+			310,
+			330,
+			340,
+			350,
+		},
+	},
+	[33286] = {
+		creates = 27657,
+		icon = "Interface\\Icons\\inv_misc_food_86_basilisk",
+		name = "Blackened Basilisk",
+		reagents = {
+			{
+				itemID = 27677,
+				icon = "Interface\\Icons\\inv_misc_food_81",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 315,
+		levels = {
+			315,
+			335,
+			345,
+			355,
+		},
+	},
+	[33287] = {
+		creates = 27658,
+		icon = "Interface\\Icons\\inv_misc_food_60",
+		name = "Roasted Clefthoof",
+		reagents = {
+			{
+				itemID = 27678,
+				icon = "Interface\\Icons\\inv_misc_food_80",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 325,
+		levels = {
+			325,
+			345,
+			355,
+			365,
+		},
+	},
+	[33288] = {
+		creates = 27659,
+		icon = "Interface\\Icons\\inv_misc_food_65",
+		name = "Warp Burger",
+		reagents = {
+			{
+				itemID = 27681,
+				icon = "Interface\\Icons\\inv_misc_food_83_talbuksteak",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 325,
+		levels = {
+			325,
+			345,
+			355,
+			365,
+		},
+	},
+	[33289] = {
+		creates = 27660,
+		icon = "Interface\\Icons\\inv_misc_food_84_roastclefthoof",
+		name = "Talbuk Steak",
+		reagents = {
+			{
+				itemID = 27682,
+				icon = "Interface\\Icons\\inv_misc_food_71",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 325,
+		levels = {
+			325,
+			345,
+			355,
+			365,
+		},
+	},
+	[33290] = {
+		creates = 27661,
+		icon = "Interface\\Icons\\inv_misc_food_77",
+		name = "Blackened Trout",
+		reagents = {
+			{
+				itemID = 27422,
+				icon = "Interface\\Icons\\inv_misc_fish_37",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 300,
+		levels = {
+			300,
+			320,
+			330,
+			340,
+		},
+	},
+	[33291] = {
+		creates = 27662,
+		icon = "Interface\\Icons\\inv_misc_food_74",
+		name = "Feltail Delight",
+		reagents = {
+			{
+				itemID = 27425,
+				icon = "Interface\\Icons\\inv_misc_fish_39",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 300,
+		levels = {
+			300,
+			320,
+			330,
+			340,
+		},
+	},
+	[33292] = {
+		creates = 27663,
+		icon = "Interface\\Icons\\inv_misc_food_79",
+		name = "Blackened Sporefish",
+		reagents = {
+			{
+				itemID = 27429,
+				icon = "Interface\\Icons\\inv_misc_fish_34",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 310,
+		levels = {
+			310,
+			330,
+			340,
+			350,
+		},
+	},
+	[33293] = {
+		creates = 27664,
+		icon = "Interface\\Icons\\inv_misc_food_78",
+		name = "Grilled Mudfish",
+		reagents = {
+			{
+				itemID = 27435,
+				icon = "Interface\\Icons\\inv_misc_fish_41",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 320,
+		levels = {
+			320,
+			340,
+			350,
+			360,
+		},
+	},
+	[33294] = {
+		creates = 27665,
+		icon = "Interface\\Icons\\inv_misc_food_76",
+		name = "Poached Bluefish",
+		reagents = {
+			{
+				itemID = 27437,
+				icon = "Interface\\Icons\\inv_misc_fish_23",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 320,
+		levels = {
+			320,
+			340,
+			350,
+			360,
+		},
+	},
+	[33295] = {
+		creates = 27666,
+		icon = "Interface\\Icons\\inv_misc_fish_18",
+		name = "Golden Fish Sticks",
+		reagents = {
+			{
+				itemID = 27438,
+				icon = "Interface\\Icons\\inv_misc_fish_36",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 325,
+		levels = {
+			325,
+			345,
+			355,
+			365,
+		},
+	},
+	[33296] = {
+		creates = 27667,
+		icon = "Interface\\Icons\\inv_misc_fish_16",
+		name = "Spicy Crawdad",
+		reagents = {
+			{
+				itemID = 27439,
+				icon = "Interface\\Icons\\inv_misc_fish_14",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 350,
+		levels = {
+			350,
+			370,
+			380,
+			390,
+		},
+	},
+	[36210] = {
+		creates = 30155,
+		icon = "Interface\\Icons\\inv_misc_food_27",
+		name = "Clam Bar",
+		reagents = {
+			{
+				itemID = 24477,
+				icon = "Interface\\Icons\\inv_misc_food_51",
+				numRequired = 2,
+			},
+			{
+				itemID = 3713,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 300,
+		levels = {
+			300,
+			320,
+			330,
+			340,
+		},
+	},
+	[37836] = {
+		creates = 30816,
+		icon = "Interface\\Icons\\inv_misc_food_95_grainbread",
+		name = "Spice Bread",
+		reagents = {
+			{
+				itemID = 30817,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_01",
+				numRequired = 1,
+			},
+			{
+				itemID = 2678,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 1,
+		levels = {
+			1,
+			30,
+			35,
+			40,
+		},
+	},
+	[38867] = {
+		creates = 31672,
+		icon = "Interface\\Icons\\inv_misc_food_48",
+		name = "Mok'Nathal Shortribs",
+		reagents = {
+			{
+				itemID = 31670,
+				icon = "Interface\\Icons\\inv_misc_food_16",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 335,
+		levels = {
+			335,
+			355,
+			365,
+			375,
+		},
+	},
+	[38868] = {
+		creates = 31673,
+		icon = "Interface\\Icons\\inv_misc_food_88_ravagernuggets",
+		name = "Crunchy Serpent",
+		reagents = {
+			{
+				itemID = 31671,
+				icon = "Interface\\Icons\\inv_misc_food_98_talbuk",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 335,
+		levels = {
+			335,
+			355,
+			365,
+			375,
+		},
+	},
+	[42296] = {
+		creates = 33048,
+		icon = "Interface\\Icons\\inv_misc_food_64",
+		name = "Stewed Trout",
+		reagents = {
+			{
+				itemID = 27422,
+				icon = "Interface\\Icons\\inv_misc_fish_37",
+				numRequired = 1,
+			},
+			{
+				itemID = 2593,
+				icon = "Interface\\Icons\\inv_potion_12",
+				numRequired = 1,
+			},
+			{
+				itemID = 3713,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 335,
+		levels = {
+			0,
+			335,
+			345,
+			355,
+		},
+	},
+	[42302] = {
+		creates = 33052,
+		icon = "Interface\\Icons\\inv_misc_food_88_ravagernuggets",
+		name = "Fisherman's Feast",
+		reagents = {
+			{
+				itemID = 27515,
+				icon = "Interface\\Icons\\inv_misc_fish_39",
+				numRequired = 1,
+			},
+			{
+				itemID = 4539,
+				icon = "Interface\\Icons\\inv_misc_food_20",
+				numRequired = 5,
+			},
+			{
+				itemID = 3713,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 5,
+			},
+		},
+		learnedAt = 375,
+		levels = {
+			0,
+			375,
+			380,
+			385,
+		},
+	},
+	[42305] = {
+		creates = 33053,
+		icon = "Interface\\Icons\\inv_misc_food_76",
+		name = "Hot Buttered Trout",
+		reagents = {
+			{
+				itemID = 27516,
+				icon = "Interface\\Icons\\inv_misc_fish_37",
+				numRequired = 1,
+			},
+			{
+				itemID = 3713,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 2,
+			},
+		},
+		learnedAt = 375,
+		levels = {
+			0,
+			375,
+			380,
+			385,
+		},
+	},
+	[43707] = {
+		creates = 33825,
+		icon = "Interface\\Icons\\inv_misc_food_63",
+		name = "Skullfish Soup",
+		reagents = {
+			{
+				itemID = 33824,
+				icon = "Interface\\Icons\\inv_misc_fish_40",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 325,
+		levels = {
+			325,
+			335,
+			345,
+			355,
+		},
+	},
+	[43758] = {
+		creates = 33866,
+		icon = "Interface\\Icons\\inv_misc_food_91",
+		name = "Stormchops",
+		reagents = {
+			{
+				itemID = 27678,
+				icon = "Interface\\Icons\\inv_misc_food_80",
+				numRequired = 1,
+			},
+			{
+				itemID = 13757,
+				icon = "Interface\\Icons\\inv_misc_fish_12",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 300,
+		levels = {
+			300,
+			320,
+			330,
+			340,
+		},
+	},
+	[43761] = {
+		creates = 33867,
+		icon = "Interface\\Icons\\inv_misc_fish_29",
+		name = "Broiled Bloodfin",
+		reagents = {
+			{
+				itemID = 33823,
+				icon = "Interface\\Icons\\inv_misc_fish_29",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 300,
+		levels = {
+			300,
+			320,
+			330,
+			340,
+		},
+	},
+	[43765] = {
+		creates = 33872,
+		icon = "Interface\\Icons\\inv_misc_food_84_roastclefthoof",
+		name = "Spicy Hot Talbuk",
+		reagents = {
+			{
+				itemID = 27682,
+				icon = "Interface\\Icons\\inv_misc_food_71",
+				numRequired = 1,
+			},
+			{
+				itemID = 2692,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 325,
+		levels = {
+			325,
+			335,
+			345,
+			355,
+		},
+	},
+	[43772] = {
+		creates = 33874,
+		icon = "Interface\\Icons\\inv_misc_food_49",
+		name = "Kibler's Bits",
+		reagents = {
+			{
+				itemID = 27671,
+				icon = "Interface\\Icons\\inv_misc_food_82",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 300,
+		levels = {
+			300,
+			345,
+			355,
+			365,
+		},
+	},
+	[43779] = {
+		creates = 33924,
+		icon = "Interface\\Icons\\inv_misc_celebrationcake_01",
+		name = "Delicious Chocolate Cake",
+		reagents = {
+			{
+				itemID = 30817,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_01",
+				numRequired = 8,
+			},
+			{
+				itemID = 1179,
+				icon = "Interface\\Icons\\inv_drink_milk_01",
+				numRequired = 4,
+			},
+			{
+				itemID = 2678,
+				icon = "Interface\\Icons\\inv_misc_food_wheat_02",
+				numRequired = 4,
+			},
+			{
+				itemID = 6889,
+				icon = "Interface\\Icons\\inv_egg_01",
+				numRequired = 8,
+			},
+			{
+				itemID = 2593,
+				icon = "Interface\\Icons\\inv_potion_12",
+				numRequired = 1,
+			},
+			{
+				itemID = 785,
+				icon = "Interface\\Icons\\inv_jewelry_talisman_03",
+				numRequired = 3,
+			},
+		},
+		learnedAt = 1,
+		levels = {
+			1,
+			50,
+			62,
+			75,
+		},
+	},
+	[45022] = {
+		creates = 34411,
+		icon = "Interface\\Icons\\inv_drink_23",
+		name = "Hot Apple Cider",
+		reagents = {
+			{
+				itemID = 34412,
+				icon = "Interface\\Icons\\inv_drink_22",
+				numRequired = 1,
+			},
+			{
+				itemID = 17196,
+				icon = "Interface\\Icons\\inv_drink_10",
+				numRequired = 1,
+			},
+			{
+				itemID = 17194,
+				icon = "Interface\\Icons\\inv_misc_bag_11",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 325,
+		levels = {
+			325,
+			325,
+			325,
+			325,
+		},
+	},
+	[45695] = {
+		creates = 34832,
+		icon = "Interface\\Icons\\inv_drink_03",
+		name = "Captain Rumsey's Lager",
+		reagents = {
+			{
+				itemID = 2596,
+				icon = "Interface\\Icons\\inv_drink_milk_02",
+				numRequired = 1,
+			},
+			{
+				itemID = 2594,
+				icon = "Interface\\Icons\\inv_drink_05",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 100,
+		levels = {
+			100,
+			100,
+			105,
+			110,
+		},
+	},
+	[46684] = {
+		creates = 35563,
+		icon = "Interface\\Icons\\inv_misc_food_68",
+		name = "Charred Bear Kabobs",
+		reagents = {
+			{
+				itemID = 35562,
+				icon = "Interface\\Icons\\inv_misc_food_13",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 250,
+		levels = {
+			250,
+			275,
+			285,
+			295,
+		},
+	},
+	[46688] = {
+		creates = 35565,
+		icon = "Interface\\Icons\\inv_misc_food_65",
+		name = "Juicy Bear Burger",
+		reagents = {
+			{
+				itemID = 35562,
+				icon = "Interface\\Icons\\inv_misc_food_13",
+				numRequired = 1,
+			},
+		},
+		learnedAt = 250,
+		levels = {
+			250,
+			275,
+			285,
+			295,
 		},
 	},
 }
