@@ -1,4 +1,5 @@
 local L = SigmaProfessionFilterFirstAid.L;
+local SPF = SigmaProfessionFilter[2];
 
 SigmaProfessionFilter[L["PROFESSION"]] = {
 	["LeftMenu"] = {
@@ -21,7 +22,16 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 		[04] = { name = L["RIGHT_04_NAME"]; filter = L["RIGHT_04_FILTER"]; };
 		[05] = { name = L["RIGHT_05_NAME"]; filter = L["RIGHT_05_FILTER"]; };
 		[06] = { name = L["RIGHT_06_NAME"]; filter = L["RIGHT_06_FILTER"]; };
-		[07] = { name = L["RIGHT_07_NAME"]; filter = L["RIGHT_07_FILTER"]; };
-		[08] = { name = MISCELLANEOUS; filter = ""; };
+		[07] = { name = MISCELLANEOUS; filter = ""; };
 	};
 };
+
+if not SPF.CLASSIC then
+	SigmaProfessionFilter[L["PROFESSION"]]["Right"][07] = { name = L["RIGHT_07_NAME"]; filter = L["RIGHT_07_FILTER"]; };
+	SigmaProfessionFilter[L["PROFESSION"]]["Right"][08] = { name = MISCELLANEOUS; filter = ""; };
+end
+
+if SPF.WRATH then
+	SigmaProfessionFilter[L["PROFESSION"]]["Right"][08] = { name = L["RIGHT_08_NAME"]; filter = L["RIGHT_08_FILTER"]; };
+	SigmaProfessionFilter[L["PROFESSION"]]["Right"][09] = { name = MISCELLANEOUS; filter = ""; };
+end

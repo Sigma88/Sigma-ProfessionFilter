@@ -405,7 +405,6 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 };
 
 if SPF.TBC then -- TBC
-
 	SigmaProfessionFilter[L["PROFESSION"]]["Right"][21] = { name = L["PET_FAMILY_18"]; filter = L["RIGHT_20_FILTER"]; };
 	SigmaProfessionFilter[L["PROFESSION"]]["Right"][22] = { name = L["PET_FAMILY_19"]; filter = L["RIGHT_21_FILTER"]; };
 	SigmaProfessionFilter[L["PROFESSION"]]["Right"][23] = { name = L["PET_FAMILY_20"]; filter = L["RIGHT_22_FILTER"]; };
