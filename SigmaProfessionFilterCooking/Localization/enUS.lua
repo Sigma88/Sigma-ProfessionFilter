@@ -18,7 +18,7 @@ L["LEFT_01_FILTER"] = "Agility;well fed";
 L["LEFT_02_FILTER"] = "Also";
 L["LEFT_03_FILTER"] = "";
 L["LEFT_04_FILTER"] = "Must remain seated";
-L["LEFT_05_FILTER"] = "item:17198;item:17197";
+L["LEFT_05_FILTER"] = "item:17197;item:17198;item:34411;item:44836;item:44837;item:44838;item:44839;item:44840;item:46691";
 -- Right Menu
 L["RIGHT_TITLE"] = "All Bonuses";
 L["RIGHT_TOOLTIP"] = "Sort recipes by the bonus provided by the food they produce.";
