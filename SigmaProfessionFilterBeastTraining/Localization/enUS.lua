@@ -1,6 +1,7 @@
 SigmaProfessionFilterBeastTraining = {};
 SigmaProfessionFilterBeastTraining.L = {};
 local L = SigmaProfessionFilterBeastTraining.L;
+local SPF = SigmaProfessionFilter[1];
 
 -- Profession
 L["PROFESSION"] = "Beast Training";
@@ -22,7 +23,7 @@ L["PET_FAMILY_14"] = "Bat";
 L["PET_FAMILY_15"] = "Hyena";
 L["PET_FAMILY_16"] = "Owl";
 L["PET_FAMILY_17"] = "Wind Serpent";
-if TradeSkillFrameAvailableFilterCheckButton then -- TBC
+if SPF.TBC then -- TBC
 	L["PET_FAMILY_18"] = "Dragonhawk";
 	L["PET_FAMILY_19"] = "Ravager";
 	L["PET_FAMILY_20"] = "Warp Stalker";
@@ -52,7 +53,7 @@ L["SHELL_SHIELD"] = "Shell Shield";
 L["THUNDERSTOMP"] = "Thunderstomp";
 L["COBRA_REFLEXES"] = "Cobra Reflexes";
 L["GROWL"] = "Growl";
-if TradeSkillFrameAvailableFilterCheckButton then -- TBC
+if SPF.TBC then -- TBC
 	L["FIRE_BREATH"] = "Fire Breath";
 	L["GORE"] = "Gore";
 	L["POISON_SPIT"] = "Poison Spit";
@@ -82,7 +83,7 @@ L["LEFT_06_FILTER"] = L["COWER"]..";"..L["GROWL"];
 L["LEFT_07_FILTER"] = "Stamina"..";".."Armor";
 L["LEFT_08_FILTER"] = "Resistance";
 L["LEFT_09_FILTER"] = L["COBRA_REFLEXES"];
-if TradeSkillFrameAvailableFilterCheckButton then -- TBC
+if SPF.TBC then -- TBC
 	L["LEFT_01_FILTER"] = L["LEFT_01_FILTER"]..";"..L["GORE"];
 	L["LEFT_02_FILTER"] = L["LEFT_02_FILTER"]..";"..L["FIRE_BREATH"]..";"..L["POISON_SPIT"];
 	L["LEFT_03_FILTER"] = L["LEFT_03_FILTER"]..";"..L["FIRE_BREATH"];
@@ -100,7 +101,7 @@ L["RIGHT_02_NAME"] = "Pet Trainer";
 L["RIGHT_01_FILTER"] = L["BITE"]..";"..L["CHARGE"]..";"..L["CLAW"]..";"..L["COWER"]..";"..L["DASH"]..";"..L["DIVE"]..";"..L["FURIOUS_HOWL"]..";"..L["LIGHTNING_BREATH"]..";"..L["PROWL"]..";"..L["SCORPID_POISON"]..";"..L["SCREECH"]..";"..L["SHELL_SHIELD"]..";"..L["THUNDERSTOMP"];
 -- Pet Trainer Filter
 L["RIGHT_02_FILTER"] = L["GROWL"]..";".."Stamina"..";".."Armor"..";".."Resistance"..";"..L["COBRA_REFLEXES"];
-if TradeSkillFrameAvailableFilterCheckButton then -- TBC
+if SPF.TBC then -- TBC
 	-- Wild Animals Filter
 	L["RIGHT_01_FILTER"] = L["RIGHT_01_FILTER"]..";"..L["FIRE_BREATH"]..";"..L["GORE"]..";"..L["POISON_SPIT"]..";"..L["WARP"];
 	-- Pet Trainer Filter
@@ -124,7 +125,7 @@ L["RIGHT_16_FILTER"] = L["BITE"]..";"..L["DIVE"]..";"..L["SCREECH"];
 L["RIGHT_17_FILTER"] = L["BITE"]..";"..L["DASH"];
 L["RIGHT_18_FILTER"] = L["CLAW"]..";"..L["DIVE"]..";"..L["SCREECH"];
 L["RIGHT_19_FILTER"] = L["BITE"]..";"..L["DIVE"]..";"..L["LIGHTNING_BREATH"];
-if TradeSkillFrameAvailableFilterCheckButton then -- TBC
+if SPF.TBC then -- TBC
 	L["RIGHT_07_FILTER"] = L["RIGHT_07_FILTER"]..";"..L["GORE"];
 	L["RIGHT_12_FILTER"] = L["RIGHT_12_FILTER"]..";"..L["DASH"];
 	L["RIGHT_20_FILTER"] = L["BITE"]..";"..L["DIVE"]..";"..L["FIRE_BREATH"];

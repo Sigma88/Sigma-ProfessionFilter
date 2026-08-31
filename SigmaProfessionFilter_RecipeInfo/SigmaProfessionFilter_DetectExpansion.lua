@@ -1,8 +1,10 @@
-if not TradeSkillFrameAvailableFilterCheckButton then -- CLASSIC
+local SPF = SigmaProfessionFilter[2];
+
+if SPF.CLASSIC then -- CLASSIC
 	SigmaProfessionFilter_RecipeInfo = SigmaProfessionFilter_RecipeInfo_classic;
-elseif CraftFrame then -- TBC
+elseif SPF.TBC then -- TBC
 	SigmaProfessionFilter_RecipeInfo = SigmaProfessionFilter_RecipeInfo_tbc;
-else -- wotlk
+elseif SPF.WRATH then -- wotlk
 	SigmaProfessionFilter_RecipeInfo = SigmaProfessionFilter_RecipeInfo_wotlk;
 end
 

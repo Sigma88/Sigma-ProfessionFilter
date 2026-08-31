@@ -113,7 +113,7 @@ function SPF2.LeftMenu:Filter(skillIndex, groupIndex)
 		else
 			local _,_,_,_,_,itemClass,itemSubClass = SPF2.baseGetTradeSkillItemInfo(skillIndex);
 			
-			if not TradeSkillFrameAvailableFilterCheckButton then -- classic
+			if SPF2.CLASSIC then -- classic
 				itemSubClass = itemClass
 			end
 			

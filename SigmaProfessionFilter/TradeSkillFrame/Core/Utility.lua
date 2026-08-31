@@ -640,7 +640,7 @@ end
 
 function SPF.baseGetTradeSkillItemLevel(index)
 	
-	if CraftFrame then
+	if not SPF.WRATH then
 	
 		for i,value in pairs({GetTradeSkillItemStats(index)}) do
 			if strfind(value, "^Level (%d+)$") then

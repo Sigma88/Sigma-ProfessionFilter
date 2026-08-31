@@ -385,7 +385,6 @@ function SPF.TradeSkillFrame_SetSelection(skillIndex)
 end
 
 function SPF.GetTradeSkillSelectionIndex()
-	
 	if SPF.SELECTED then
 		return SPF.SELECTED;
 	end
@@ -393,7 +392,7 @@ function SPF.GetTradeSkillSelectionIndex()
 end
 
 function SPF.TradeSkillSkillButton_OnClick(self, button)
-	if CraftFrame then
+	if not SPF.WRATH then
 		SPF.ONCLICK = this:GetID();
 		SPF.baseTradeSkillSkillButton_OnClick(self);
 	else
@@ -746,7 +745,7 @@ function SPF.GetItemInfo(itemLink)
 			end
 		end
 		
-		if not TradeSkillFrameAvailableFilterCheckButton then -- classic
+		if SPF.CLASSIC then -- classic
 			local itemName, itemLink, itemQuality, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, itemTexture = GetItemInfo(id or itemLink);
 			local itemLevel = itemMinLevel;
 			return itemName, itemLink, itemQuality, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, itemTexture;

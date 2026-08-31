@@ -11,6 +11,16 @@ SPF[1]["CFOnShow"] = {};
 SPF[1]["CFOnUpdate"] = {};
 SPF[2]["TSFOnShow"] = {};
 
+if not TradeSkillFrameAvailableFilterCheckButton then -- CLASSIC
+	SPF[1].CLASSIC = true;
+	SPF[2].CLASSIC = true;
+elseif CraftFrame then -- TBC
+	SPF[1].TBC = true;
+	SPF[2].TBC = true;
+else -- WRATH
+	SPF[1].WRATH = true;
+	SPF[2].WRATH = true;
+end
 
 local hooksecurefunc = function(arg2, arg3)
 	arg1 = getfenv(0);

@@ -100,7 +100,7 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 				
 					local spellID = SPF.Data[skillIndex]["spellID"];
 					
-					if not TradeSkillFrameAvailableFilterCheckButton then -- classic
+					if SPF.CLASSIC then -- classic
 						tooltip:AddLine(skillName)
 						tooltip:AddLine(SPF.Data[skillIndex]["description"])
 					else -- tbc, wotlk
@@ -137,7 +137,7 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 				if requiresText and requiresText ~= "" then
 					local left1 = getglobal(tooltip:GetName().."TextLeft1");
 					requiresText = string.gsub(requiresText, ":", "");
-					if TradeSkillFrameAvailableFilterCheckButton then -- tbc
+					if SPF.TBC then -- tbc
 						requiresText = string.gsub(requiresText,"|cffffffff", "");
 					end
 					left1:SetText((left1:GetText() or "").."\n"..requiresText);
@@ -404,7 +404,7 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 	};
 };
 
-if TradeSkillFrameAvailableFilterCheckButton then -- TBC
+if SPF.TBC then -- TBC
 
 	SigmaProfessionFilter[L["PROFESSION"]]["Right"][21] = { name = L["PET_FAMILY_18"]; filter = L["RIGHT_20_FILTER"]; };
 	SigmaProfessionFilter[L["PROFESSION"]]["Right"][22] = { name = L["PET_FAMILY_19"]; filter = L["RIGHT_21_FILTER"]; };
