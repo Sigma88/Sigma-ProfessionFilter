@@ -832,9 +832,10 @@ function SPF.GetTradeSkillSubClasses()
 					table.insert(SPF.LeftMenu.newClasses, originalSubClasses[1]);
 				end
 				
-				for classID,class in ipairs({GetAuctionItemClasses()}) do
+				for classId,classInfo in ipairs(SPF.SUBCLASSES) do
+					local class = classInfo.name;
+					local subClasses = classInfo.subclasses;
 					if neededClasses[class] then
-						local subClasses = {GetAuctionItemSubClasses(classID)};
 						if getn(subClasses) > 0 then
 							for i,subClass in ipairs(subClasses) do
 								if neededClasses[class] and neededClasses[class][subClass] then
@@ -848,6 +849,7 @@ function SPF.GetTradeSkillSubClasses()
 						end
 					end
 				end
+				table.insert(SPF.LeftMenu.newClasses, "Other");
 			end
 			return SPF.LeftMenu.newClasses;
 		end

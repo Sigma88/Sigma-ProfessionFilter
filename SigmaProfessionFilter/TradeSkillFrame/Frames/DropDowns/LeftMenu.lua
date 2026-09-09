@@ -113,18 +113,14 @@ function SPF2.LeftMenu:Filter(skillIndex, groupIndex)
 		else
 			local _,_,_,_,_,itemClass,itemSubClass = SPF2.baseGetTradeSkillItemInfo(skillIndex);
 			
-			if SPF2.CLASSIC then -- classic
-				itemSubClass = itemClass
-			end
-			
 			if itemClass then
 				local lastID = 0;
-			local subClasses = SPF2.GetTradeSkillSubClasses();
+				local subClasses = SPF2.GetTradeSkillSubClasses();
 				for i,subClass in ipairs(subClasses) do
 					lastID = i;
 					if itemSubClass == subClass then
 						break;
-						end
+					end
 				end
 				
 				if (itemClass == "Trade Goods" or itemClass == "Weapon") then
@@ -173,20 +169,33 @@ function SPF2.LeftMenu:FilterSpell(spellID, groupIndex)
 		else
 			local creates = SPF2.GetRecipeInfo(spellID, "creates");
 			if creates then
-				local _,_,_,_,_,_,itemSubClass = SPF2.GetItemInfo(creates);
-				local lastID = 0;
-				for i,subClass in ipairs(SPF2.GetTradeSkillSubClasses()) do
-					lastID = i;
-					if itemSubClass == subClass then
-						if groupIndex == 0 or groupIndex == i then
-							return i;
-						end
-						return 0;
-					end
-				end
+				local _,_,_,_,_,itemClass,itemSubClass = SPF2.GetItemInfo(creates);
 				
-				if groupIndex == 0 or groupIndex == lastID then
-					return lastID;
+				if itemClass then
+					local lastID = 0;
+					local subClasses = SPF2.GetTradeSkillSubClasses();
+					
+					for i,subClass in ipairs(subClasses) do
+						lastID = i;
+						if itemSubClass == subClass then
+							break;
+						end
+					end
+					
+					if (itemClass == "Trade Goods" or itemClass == "Weapon") then
+						if (itemSubClass == subClasses[lastID + 1]) then
+							lastID = lastID + 1;
+						end
+					end
+					
+					if groupIndex == 0 or groupIndex == lastID then
+						return lastID;
+					end
+				else
+					if groupIndex == 0 or groupIndex == 1 then
+						return 1;
+					end
+					return 0;
 				end
 			end
 		end

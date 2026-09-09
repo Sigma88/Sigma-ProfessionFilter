@@ -71,6 +71,159 @@ SPF.SLOTS = {
 	[20] = BAGSLOT;
 }
 
+SPF.SUBCLASSES = {
+	[1] = {
+		name = "Consumable",
+		subclasses = {
+			[1] = "Consumable",
+			[2] = "Cheese/Bread(OBSOLETE)",
+			[3] = "Liquid(OBSOLETE)",
+		},
+	},
+	[2] = {
+		name = "Container",
+		subclasses = {
+			[1] = "Bag",
+			[2] = "Soul Bag",
+			[3] = "Herb Bag",
+			[4] = "Enchanting Bag",
+			[5] = "Engineering Bag",
+		},
+	},
+	[3] = {
+		name = "Weapon",
+		subclasses = {
+			[1]  = "One-Handed Axes",
+			[2]  = "Two-Handed Axes",
+			[3]  = "Bows",
+			[4]  = "Guns",
+			[5]  = "One-Handed Maces",
+			[6]  = "Two-Handed Maces",
+			[7]  = "Polearms",
+			[8]  = "One-Handed Swords",
+			[9]  = "Two-Handed Swords",
+			[10] = "Obsolete",
+			[11] = "Staves",
+			[12] = "One-Handed Exotics",
+			[13] = "Two-Handed Exotics",
+			[14] = "Fist Weapons",
+			[15] = "Miscellaneous",
+			[16] = "Daggers",
+			[17] = "Thrown",
+			[18] = "Spears",
+			[19] = "Crossbows",
+			[20] = "Wands",
+			[21] = "Fishing Poles",
+		},
+	},
+	[4] = {
+		name = "Jewelry(OBSOLETE)",
+		subclasses = {
+			[1] = "Jewelry(OBSOLETE)",
+		},
+	},
+	[5] = {
+		name = "Armor",
+		subclasses = {
+			[1]  = "Miscellaneous",
+			[2]  = "Cloth",
+			[3]  = "Leather",
+			[4]  = "Mail",
+			[5]  = "Plate",
+			[6]  = "Bucklers",
+			[7]  = "Shields",
+			[8]  = "Libram",
+			[9]  = "Idol",
+			[10] = "Totem",
+		},
+	},
+	[6] = {
+		name = "Reagent",
+		subclasses = {
+			[1] = "Reagent",
+		},
+	},
+	[7] = {
+		name = "Projectile",
+		subclasses = {
+			[1] = "Wand(OBSOLETE)",
+			[2] = "Bolt(OBSOLETE)",
+			[3] = "Arrow",
+			[4] = "Bullet",
+			[5] = "Thrown(OBSOLETE)",
+		},
+	},
+	[8] = {
+		name = "Trade Goods",
+		subclasses = {
+			[1] = "Trade Goods",
+			[2] = "Parts",
+			[3] = "Explosives",
+			[4] = "Devices",
+		},
+	},
+	[9] = {
+		name = "Generic(OBSOLETE)",
+		subclasses = {
+			[1] = "Generic(OBSOLETE)",
+		},
+	},
+	[10] = {
+		name = "Recipe",
+		subclasses = {
+			[1]  = "Book",
+			[2]  = "Leatherworking",
+			[3]  = "Tailoring",
+			[4]  = "Engineering",
+			[5]  = "Blacksmithing",
+			[6]  = "Cooking",
+			[7]  = "Alchemy",
+			[8]  = "First Aid",
+			[9]  = "Enchanting",
+			[10] = "Fishing",
+		},
+	},
+	[11] = {
+		name = "Money(OBSOLETE)",
+		subclasses = {
+			[1] = "Money(OBSOLETE)",
+		},
+	},
+	[12] = {
+		name = "Quiver",
+		subclasses = {
+			[1] = "Quiver(OBSOLETE)",
+			[2] = "Quiver(OBSOLETE)",
+			[3] = "Quiver",
+			[4] = "Ammo Pouch",
+		},
+	},
+	[13] = {
+		name = "Quest",
+		subclasses = {
+			[1] = "Quest",
+		},
+	},
+	[14] = {
+		name = "Key",
+		subclasses = {
+			[1] = "Key",
+			[2] = "Lockpick",
+		},
+	},
+	[15] = {
+		name = "Permanent(OBSOLETE)",
+		subclasses = {
+			[1] = "Permanent",
+		},
+	},
+	[16] = {
+		name = "Miscellaneous",
+		subclasses = {
+			[1] = "Junk",
+		},
+	},
+}
 
 function SPF:GetSlot(TYPE)
 	if TYPE then
