@@ -121,8 +121,8 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 					return 1;
 				end
 			else
-				for i=2,9 do
-					if SPF.match(LocalTooltips[itemLink], L["RIGHT_0"..i.."_FILTER"]) then
+				for i=2,12 do
+					if SPF.match(LocalTooltips[itemLink], L["RIGHT_"..string.format("%02d",i).."_FILTER"]) then
 						if groupIndex == 0 or groupIndex == i then
 							return i;
 						else
@@ -131,13 +131,13 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 					end
 				end
 			
-				if SPF.match(LocalTooltips[itemLink], L["RIGHT_11_FILTER"]) then
-					if groupIndex == 0 or groupIndex == 11 then
-						return 11;
+				if SPF.match(LocalTooltips[itemLink], L["RIGHT_14_FILTER"]) then
+					if groupIndex == 0 or groupIndex == 14 then
+						return 14;
 					end
 				else
-					if groupIndex == 0 or groupIndex == 10 then
-						return 10;
+					if groupIndex == 0 or groupIndex == 13 then
+						return 13;
 					end
 				end
 			end
@@ -160,8 +160,8 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 					return 1;
 				end
 			else
-				for i=2,9 do
-					if SPF.match(LocalTooltips[itemLink], L["RIGHT_0"..i.."_FILTER"]) then
+				for i=2,12 do
+					if SPF.match(LocalTooltips[itemLink], L["RIGHT_"..string.format("%02d",i).."_FILTER"]) then
 						if groupIndex == 0 or groupIndex == i then
 							return i;
 						else
@@ -170,13 +170,13 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 					end
 				end
 			
-				if SPF.match(LocalTooltips[itemLink], L["RIGHT_11_FILTER"]) then
-					if groupIndex == 0 or groupIndex == 11 then
-						return 11;
+				if SPF.match(LocalTooltips[itemLink], L["RIGHT_14_FILTER"]) then
+					if groupIndex == 0 or groupIndex == 14 then
+						return 14;
 					end
 				else
-					if groupIndex == 0 or groupIndex == 10 then
-						return 10;
+					if groupIndex == 0 or groupIndex == 13 then
+						return 13;
 					end
 				end
 			end
@@ -196,5 +196,8 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 		[09] = { name = L["RIGHT_09_NAME"]; filter = L["RIGHT_09_FILTER"]; };
 		[10] = { name = L["RIGHT_10_NAME"]; filter = L["RIGHT_10_FILTER"]; };
 		[11] = { name = L["RIGHT_11_NAME"]; filter = L["RIGHT_11_FILTER"]; };
+		[12] = { name = L["RIGHT_12_NAME"]; filter = L["RIGHT_12_FILTER"]; };
+		[13] = { name = L["RIGHT_13_NAME"]; filter = L["RIGHT_13_FILTER"]; };
+		[14] = { name = L["RIGHT_14_NAME"]; filter = L["RIGHT_14_FILTER"]; };
 	};
 };
