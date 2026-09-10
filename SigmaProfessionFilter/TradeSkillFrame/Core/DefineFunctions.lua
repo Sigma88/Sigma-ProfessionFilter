@@ -916,7 +916,7 @@ function SPF.TradeSkillFrame_Update()
 	
 	if SPF.TradeSkillName ~= GetTradeSkillName() then
 		SPF.TradeSkillName = GetTradeSkillName();
-		SPF.TradeSkillFrame_OnShow(TradeSkillFrame, true);
+		SPF.TradeSkillFrame_OnShow(TradeSkillFrame, false);
 	end
 	
 	SPF.Starred.OnUpdate();
