@@ -7,14 +7,7 @@ local SPF = SigmaProfessionFilter[1];
 -- end
 
 function SPF.GetCraftName()
-	
 	local craftName = SPF.baseGetCraftName();
-	
-	if SPF.CraftName ~= craftName then
-		SPF.CraftName = craftName;
-		SPF.CraftFrame_OnShow(CraftFrame, true);
-	end
-	
 	return craftName;
 end
 

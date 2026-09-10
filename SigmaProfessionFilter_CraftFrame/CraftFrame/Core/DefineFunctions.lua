@@ -388,6 +388,12 @@ end
 
 function SPF.GetCraftSelectionIndex()
 	
+	if SPF.CraftName ~= GetCraftName() then
+		SPF.CraftName = GetCraftName();
+		SPF.CraftFrame_OnShow(CraftFrame, false);
+		return 1;
+	end
+	
 	if SPF.SELECTED then
 		return SPF.SELECTED;
 	end
@@ -912,7 +918,7 @@ function SPF.CraftFrame_Update()
 	
 	if SPF.CraftName ~= GetCraftName() then
 		SPF.CraftName = GetCraftName();
-		SPF.CraftFrame_OnShow(CraftFrame, true);
+		SPF.CraftFrame_OnShow(CraftFrame, false);
 	end
 	
 	SPF.Starred.OnUpdate();
