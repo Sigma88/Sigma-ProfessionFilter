@@ -259,9 +259,9 @@ SPF.SUBCLASSES = {
 }
 
 if not SPF.CLASSIC then
-	SPF.SUBCLASSES[5][8]  = "Librams",
-	SPF.SUBCLASSES[5][9]  = "Idols",
-	SPF.SUBCLASSES[5][10] = "Totems",
+	SPF.SUBCLASSES[5][8]  = "Librams";
+	SPF.SUBCLASSES[5][9]  = "Idols";
+	SPF.SUBCLASSES[5][10] = "Totems";
 end
 
 function SPF:GetSlot(TYPE)
@@ -556,9 +556,11 @@ function SPF:FilterSpellWithSearchBox(spellID)
 					end
 				else
 					local groupIndex = SPF.LeftMenu:FilterSpell(spellID, 0);
-					for i,gN in ipairs(SPF.GetTradeSkillSubClasses()) do
+					for i,slot in ipairs(SPF.GetTradeSkillSubClasses()) do
+						local separator = string.find(slot, "|r")
+						local subClass = string.sub(slot, 1, separator - 1)
 						if groupIndex == i then
-							groupName = gN;
+							groupName = subClass;
 							break;
 						end
 					end

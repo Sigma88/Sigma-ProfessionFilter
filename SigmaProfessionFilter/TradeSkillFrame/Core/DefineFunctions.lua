@@ -203,7 +203,9 @@ function SPF.GetNumTradeSkills()
 			if (groupBy == "Left" and not SPF:GetMenu("Left")) then
 				Pairs = {};
 				for i,slot in ipairs(SPF.GetTradeSkillSubClasses()) do
-					table.insert( Pairs, { name = slot; } );
+					local separator = string.find(slot, "|r");
+					local subClass = string.sub(slot, 1, separator - 1);
+					table.insert( Pairs, { name = subClass; } );
 				end
 			end
 			if (groupBy == "Right" and not SPF:GetMenu("Right")) then
@@ -839,17 +841,17 @@ function SPF.GetTradeSkillSubClasses()
 						if getn(subClasses) > 0 then
 							for i,subClass in ipairs(subClasses) do
 								if neededClasses[class] and neededClasses[class][subClass] then
-									table.insert(SPF.LeftMenu.newClasses, subClass);
+									table.insert(SPF.LeftMenu.newClasses, subClass.."|r"..class);
 								end
 							end
 						else
 							if neededClasses[class] and neededClasses[class][class] then
-								table.insert(SPF.LeftMenu.newClasses, class);
+								table.insert(SPF.LeftMenu.newClasses, class.."|r"..class);
 							end
 						end
 					end
 				end
-				table.insert(SPF.LeftMenu.newClasses, "Other");
+				table.insert(SPF.LeftMenu.newClasses, "Other|rOther");
 			end
 			return SPF.LeftMenu.newClasses;
 		end

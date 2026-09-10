@@ -70,7 +70,10 @@ function SPF2.LeftMenu:Initialize()
 			
 			SPF2.DropDownMenu_AddButton(info);
 			
-			for i,subClass in ipairs(SPF2.GetTradeSkillSubClasses()) do
+			for i,slot in ipairs(SPF2.GetTradeSkillSubClasses()) do
+				local separator = string.find(slot, "|r");
+				local subClass = string.sub(slot, 1, separator - 1);
+				
 				info = {};
 				info.text = subClass;
 				info.func = SPF2.LeftMenu.OnClick;
@@ -116,16 +119,13 @@ function SPF2.LeftMenu:Filter(skillIndex, groupIndex)
 			if itemClass then
 				local lastID = 0;
 				local subClasses = SPF2.GetTradeSkillSubClasses();
-				for i,subClass in ipairs(subClasses) do
+				for i,slot in ipairs(subClasses) do
+					local separator = string.find(slot, "|r")
+					local subClass = string.sub(slot, 1, separator - 1)
+					local class = string.sub(slot, separator + 2)
 					lastID = i;
-					if itemSubClass == subClass then
+					if itemSubClass == subClass and itemClass == class then
 						break;
-					end
-				end
-				
-				if (itemClass == "Trade Goods" or itemClass == "Weapon") then
-					if (itemSubClass == subClasses[lastID + 1]) then
-						lastID = lastID + 1;
 					end
 				end
 				
@@ -173,18 +173,15 @@ function SPF2.LeftMenu:FilterSpell(spellID, groupIndex)
 				
 				if itemClass then
 					local lastID = 0;
-					local subClasses = SPF2.GetTradeSkillSubClasses();
+					local slots = SPF2.GetTradeSkillSubClasses();
 					
-					for i,subClass in ipairs(subClasses) do
+					for i,slot in ipairs(slots) do
+						local separator = string.find(slot, "|r")
+						local subClass = string.sub(slot, 1, separator - 1)
+						local class = string.sub(slot, separator + 2)
 						lastID = i;
-						if itemSubClass == subClass then
+						if itemSubClass == subClass and itemClass == class then
 							break;
-						end
-					end
-					
-					if (itemClass == "Trade Goods" or itemClass == "Weapon") then
-						if (itemSubClass == subClasses[lastID + 1]) then
-							lastID = lastID + 1;
 						end
 					end
 					
