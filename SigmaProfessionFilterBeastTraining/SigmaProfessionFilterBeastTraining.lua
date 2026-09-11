@@ -340,6 +340,20 @@ SigmaProfessionFilter[L["PROFESSION"]] = {
 				return  trainingPointCost > 0;
 			end
 		end;
+		["FilterSpell"] = function(spellID)
+			if not UnitExists("pet") then
+				return false;
+			end
+			
+			local name, learnedAt = SPF.GetRecipeInfo(spellID, "name", "learnedAt");
+			local petLevel = UnitLevel("pet");
+			
+			if learnedAt > petLevel then
+				return false;
+			end
+			
+			return true;
+		end;
 	};
 	["Filter2"] = {
 		["text"] = L["FILTER2"];--"Trainable";
