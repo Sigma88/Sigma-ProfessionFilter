@@ -76,14 +76,6 @@ SPF.SUBCLASSES = {
 		name = "Consumable",
 		subclasses = {
 			[1] = "Consumable",
-			[2] = "Potion",           -- tbc
-			[3] = "Elixir",           -- tbc
-			[4] = "Flask",            -- tbc
-			[5] = "Scroll",           -- tbc
-			[6] = "Food & Drink",     -- tbc
-			[7] = "Item Enhancement", -- tbc
-			[8] = "Bandage",          -- tbc
-			[9] = "Other",            -- tbc
 		},
 	},
 	[2] = {
@@ -94,9 +86,6 @@ SPF.SUBCLASSES = {
 			[3] = "Herb Bag",
 			[4] = "Enchanting Bag",
 			[5] = "Engineering Bag",
-			[6] = "Gem Bag",            -- tbc
-			[7] = "Mining Bag",         -- tbc
-			[8] = "Leatherworking Bag", -- tbc
 		},
 	},
 	[3] = {
@@ -126,17 +115,8 @@ SPF.SUBCLASSES = {
 		},
 	},
 	[4] = {
-		name = "Gem", -- tbc
+		name = "Gem",
 		subclasses = {
-			[1] = "Red",       -- tbc
-			[2] = "Blue",      -- tbc
-			[3] = "Yellow",    -- tbc
-			[4] = "Purple",    -- tbc
-			[5] = "Green",     -- tbc
-			[6] = "Orange",    -- tbc
-			[7] = "Meta",      -- tbc
-			[8] = "Simple",    -- tbc
-			[9] = "Prismatic", -- tbc
 		},
 	},
 	[5] = {
@@ -177,16 +157,6 @@ SPF.SUBCLASSES = {
 			[2]  = "Parts",
 			[3]  = "Explosives",
 			[4]  = "Devices",
-			[5]  = "Jewelcrafting", -- tbc
-			[6]  = "Cloth",         -- tbc
-			[7]  = "Leather",       -- tbc
-			[8]  = "Metal & Stone", -- tbc
-			[9]  = "Meat",          -- tbc
-			[10] = "Herb",          -- tbc
-			[11] = "Elemental",     -- tbc
-			[12] = "Other",         -- tbc
-			[13] = "Enchanting",    -- tbc
-			[14] = "Materials",     -- tbc
 		},
 	},
 	[9] = {
@@ -208,11 +178,10 @@ SPF.SUBCLASSES = {
 			[8]  = "First Aid",
 			[9]  = "Enchanting",
 			[10] = "Fishing",
-			[11] = "Jewelcrafting", -- tbc
 		},
 	},
 	[11] = {
-		name = "Money(OBSOLETE)",
+		name = "Money",
 		subclasses = {
 			[1] = "Money(OBSOLETE)",
 		},
@@ -249,19 +218,87 @@ SPF.SUBCLASSES = {
 		name = "Miscellaneous",
 		subclasses = {
 			[1] = "Junk",
-			[2] = "Reagent", -- tbc
-			[3] = "Pet",     -- tbc
-			[4] = "Holiday", -- tbc
-			[5] = "Other",   -- tbc
-			[6] = "Mount",   -- tbc
 		},
 	},
 }
 
 if not SPF.CLASSIC then
-	SPF.SUBCLASSES[5][8]  = "Librams";
-	SPF.SUBCLASSES[5][9]  = "Idols";
-	SPF.SUBCLASSES[5][10] = "Totems";
+	-- Consumable
+	SPF.SUBCLASSES[1]["subclasses"][2] = "Potion";
+	SPF.SUBCLASSES[1]["subclasses"][3] = "Elixir";
+	SPF.SUBCLASSES[1]["subclasses"][4] = "Flask";
+	SPF.SUBCLASSES[1]["subclasses"][5] = "Scroll";
+	SPF.SUBCLASSES[1]["subclasses"][6] = "Food & Drink";
+	SPF.SUBCLASSES[1]["subclasses"][7] = "Item Enhancement";
+	SPF.SUBCLASSES[1]["subclasses"][8] = "Bandage";
+	SPF.SUBCLASSES[1]["subclasses"][9] = "Other";
+	-- Container
+	SPF.SUBCLASSES[2]["subclasses"][6] = "Gem Bag";
+	SPF.SUBCLASSES[2]["subclasses"][7] = "Mining Bag";
+	SPF.SUBCLASSES[2]["subclasses"][8] = "Leatherworking Bag";
+	-- Gem
+	SPF.SUBCLASSES[4]["subclasses"][1] = "Red";
+	SPF.SUBCLASSES[4]["subclasses"][2] = "Blue";
+	SPF.SUBCLASSES[4]["subclasses"][3] = "Yellow";
+	SPF.SUBCLASSES[4]["subclasses"][4] = "Purple";
+	SPF.SUBCLASSES[4]["subclasses"][5] = "Green";
+	SPF.SUBCLASSES[4]["subclasses"][6] = "Orange";
+	SPF.SUBCLASSES[4]["subclasses"][7] = "Meta";
+	SPF.SUBCLASSES[4]["subclasses"][8] = "Simple";
+	SPF.SUBCLASSES[4]["subclasses"][9] = "Prismatic";
+	-- Armor
+	SPF.SUBCLASSES[5]["subclasses"][8]  = "Librams";
+	SPF.SUBCLASSES[5]["subclasses"][9]  = "Idols";
+	SPF.SUBCLASSES[5]["subclasses"][10] = "Totems";
+	-- Trade Goods
+	SPF.SUBCLASSES[8]["subclasses"][5]  = "Jewelcrafting";
+	SPF.SUBCLASSES[8]["subclasses"][6]  = "Cloth";
+	SPF.SUBCLASSES[8]["subclasses"][7]  = "Leather";
+	SPF.SUBCLASSES[8]["subclasses"][8]  = "Metal & Stone";
+	SPF.SUBCLASSES[8]["subclasses"][9]  = "Meat";
+	SPF.SUBCLASSES[8]["subclasses"][10] = "Herb";
+	SPF.SUBCLASSES[8]["subclasses"][11] = "Elemental";
+	SPF.SUBCLASSES[8]["subclasses"][12] = "Other";
+	SPF.SUBCLASSES[8]["subclasses"][13] = "Enchanting";
+	SPF.SUBCLASSES[8]["subclasses"][14] = "Materials";
+	-- Recipe
+	SPF.SUBCLASSES[10]["subclasses"][11] = "Jewelcrafting";
+	-- Miscellaneous
+	SPF.SUBCLASSES[16]["subclasses"][2] = "Reagent";
+	SPF.SUBCLASSES[16]["subclasses"][3] = "Pet";
+	SPF.SUBCLASSES[16]["subclasses"][4] = "Holiday";
+	SPF.SUBCLASSES[16]["subclasses"][5] = "Other";
+	SPF.SUBCLASSES[16]["subclasses"][6] = "Mount";
+end
+
+if SPF.WRATH then
+	-- Container
+	SPF.SUBCLASSES[2]["subclasses"][9] = "Inscription Bag";
+	-- Armor
+	SPF.SUBCLASSES[5]["subclasses"][11] = "Sigils";
+	-- Trade Goods
+	SPF.SUBCLASSES[8]["subclasses"][15] = "Armor Enchantment";
+	SPF.SUBCLASSES[8]["subclasses"][16] = "Weapon Enchantment";
+	-- Recipe
+	SPF.SUBCLASSES[10]["subclasses"][12] = "Inscription";
+	-- Glyph
+	SPF.SUBCLASSES[17] = {
+		name = "Glyph",
+		subclasses = {
+			[1] = "Glyph",
+			[2] = "Warrior",
+			[3] = "Paladin",
+			[4] = "Hunter",
+			[5] = "Rogue",
+			[6] = "Priest",
+			[7] = "Death Knight",
+			[8] = "Shaman",
+			[9] = "Mage",
+			[10] = "Warlock",
+			[11] = "Unused(OBSOLETE)",
+			[12] = "Druid",
+		},
+	}
 end
 
 function SPF:GetSlot(TYPE)
