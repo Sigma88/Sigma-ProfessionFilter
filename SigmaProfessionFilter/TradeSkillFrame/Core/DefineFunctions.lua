@@ -802,7 +802,7 @@ function SPF.GetTradeSkillSubClasses()
 	local originalSubClasses = {GetTradeSkillSubClasses()};
 	
 	if not SPF:GetMenu("Left") then
-		if SigmaProfessionFilter_RecipeInfo and SPF:SavedData()["Unlearned"] then
+		if SigmaProfessionFilter_RecipeInfo then
 			if SPF.LeftMenu.LAST_CHECKED ~= time() then
 				SPF.LeftMenu.LAST_CHECKED = time();
 				local neededClasses = {};
