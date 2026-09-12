@@ -3,6 +3,7 @@ local RI = SigmaProfessionFilter_RecipeInfo_wotlk;
 RI.Data["Enchanting"] = {
 	[7418] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Minor Health",
 		reagents = {
@@ -22,6 +23,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7420] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Minor Health",
 		reagents = {
@@ -70,6 +72,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7426] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Minor Absorption",
 		reagents = {
@@ -94,6 +97,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7428] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Minor Deflection",
 		reagents = {
@@ -118,6 +122,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7443] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Chest - Minor Mana",
 		reagents = {
@@ -137,6 +142,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7454] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Cloak - Minor Resistance",
 		reagents = {
@@ -161,6 +167,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7457] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Minor Stamina",
 		reagents = {
@@ -180,6 +187,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7745] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant 2H Weapon - Minor Impact",
 		reagents = {
@@ -204,6 +212,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7748] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Lesser Health",
 		reagents = {
@@ -228,6 +237,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7766] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Minor Spirit",
 		reagents = {
@@ -247,6 +257,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7771] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Minor Protection",
 		reagents = {
@@ -271,6 +282,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7776] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Chest - Lesser Mana",
 		reagents = {
@@ -295,6 +307,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7779] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Minor Agility",
 		reagents = {
@@ -319,6 +332,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7782] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Minor Strength",
 		reagents = {
@@ -338,6 +352,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7786] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Minor Beastslayer",
 		reagents = {
@@ -362,6 +377,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7788] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Weapon - Minor Striking",
 		reagents = {
@@ -391,6 +407,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7793] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant 2H Weapon - Lesser Intellect",
 		reagents = {
@@ -444,6 +461,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7857] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Health",
 		reagents = {
@@ -468,6 +486,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7859] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Lesser Spirit",
 		reagents = {
@@ -487,6 +506,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7861] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Cloak - Lesser Fire Resistance",
 		reagents = {
@@ -511,6 +531,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7863] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Minor Stamina",
 		reagents = {
@@ -530,6 +551,7 @@ RI.Data["Enchanting"] = {
 	},
 	[7867] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Boots - Minor Agility",
 		reagents = {
@@ -554,6 +576,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13378] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Shield - Minor Stamina",
 		reagents = {
@@ -578,6 +601,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13380] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant 2H Weapon - Lesser Spirit",
 		reagents = {
@@ -602,6 +626,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13419] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Minor Agility",
 		reagents = {
@@ -621,6 +646,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13421] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Cloak - Lesser Protection",
 		reagents = {
@@ -645,6 +671,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13464] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Shield - Lesser Protection",
 		reagents = {
@@ -674,6 +701,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13485] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Shield - Lesser Spirit",
 		reagents = {
@@ -698,6 +726,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13501] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Lesser Stamina",
 		reagents = {
@@ -717,6 +746,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13503] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Weapon - Lesser Striking",
 		reagents = {
@@ -741,6 +771,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13522] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Lesser Shadow Resistance",
 		reagents = {
@@ -765,6 +796,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13529] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant 2H Weapon - Lesser Impact",
 		reagents = {
@@ -789,6 +821,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13536] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Lesser Strength",
 		reagents = {
@@ -808,6 +841,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13538] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Lesser Absorption",
 		reagents = {
@@ -837,6 +871,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13607] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Mana",
 		reagents = {
@@ -861,6 +896,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13612] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Mining",
 		reagents = {
@@ -885,6 +921,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13617] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Herbalism",
 		reagents = {
@@ -909,6 +946,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13620] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Fishing",
 		reagents = {
@@ -933,6 +971,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13622] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Lesser Intellect",
 		reagents = {
@@ -952,6 +991,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13626] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Minor Stats",
 		reagents = {
@@ -1020,6 +1060,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13631] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Shield - Lesser Stamina",
 		reagents = {
@@ -1044,6 +1085,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13635] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Cloak - Defense",
 		reagents = {
@@ -1068,6 +1110,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13637] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Boots - Lesser Agility",
 		reagents = {
@@ -1092,6 +1135,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13640] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Greater Health",
 		reagents = {
@@ -1111,6 +1155,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13642] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Spirit",
 		reagents = {
@@ -1130,6 +1175,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13644] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Boots - Lesser Stamina",
 		reagents = {
@@ -1149,6 +1195,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13646] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Lesser Deflection",
 		reagents = {
@@ -1173,6 +1220,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13648] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Stamina",
 		reagents = {
@@ -1192,6 +1240,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13653] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Lesser Beastslayer",
 		reagents = {
@@ -1221,6 +1270,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13655] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Lesser Elemental Slayer",
 		reagents = {
@@ -1250,6 +1300,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13657] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Cloak - Fire Resistance",
 		reagents = {
@@ -1274,6 +1325,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13659] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Shield - Spirit",
 		reagents = {
@@ -1298,6 +1350,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13661] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Strength",
 		reagents = {
@@ -1317,6 +1370,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13663] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Greater Mana",
 		reagents = {
@@ -1336,6 +1390,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13687] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Lesser Spirit",
 		reagents = {
@@ -1360,6 +1415,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13689] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Shield - Lesser Block",
 		reagents = {
@@ -1389,6 +1445,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13693] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Weapon - Striking",
 		reagents = {
@@ -1413,6 +1470,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13695] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant 2H Weapon - Impact",
 		reagents = {
@@ -1437,6 +1495,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13698] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Skinning",
 		reagents = {
@@ -1461,6 +1520,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13700] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Lesser Stats",
 		reagents = {
@@ -1529,6 +1589,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13746] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Cloak - Greater Defense",
 		reagents = {
@@ -1548,6 +1609,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13794] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Cloak - Resistance",
 		reagents = {
@@ -1567,6 +1629,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13815] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Gloves - Agility",
 		reagents = {
@@ -1591,6 +1654,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13817] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Shield - Stamina",
 		reagents = {
@@ -1610,6 +1674,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13822] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Intellect",
 		reagents = {
@@ -1629,6 +1694,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13836] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Boots - Stamina",
 		reagents = {
@@ -1648,6 +1714,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13841] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Advanced Mining",
 		reagents = {
@@ -1672,6 +1739,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13846] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Greater Spirit",
 		reagents = {
@@ -1696,6 +1764,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13858] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Superior Health",
 		reagents = {
@@ -1715,6 +1784,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13868] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Advanced Herbalism",
 		reagents = {
@@ -1739,6 +1809,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13882] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Lesser Agility",
 		reagents = {
@@ -1758,6 +1829,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13887] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Gloves - Strength",
 		reagents = {
@@ -1782,6 +1854,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13890] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Boots - Minor Speed",
 		reagents = {
@@ -1811,6 +1884,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13898] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Fiery Weapon",
 		reagents = {
@@ -1835,6 +1909,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13905] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Shield - Greater Spirit",
 		reagents = {
@@ -1859,6 +1934,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13915] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Demonslaying",
 		reagents = {
@@ -1888,6 +1964,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13917] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Superior Mana",
 		reagents = {
@@ -1912,6 +1989,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13931] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Deflection",
 		reagents = {
@@ -1936,6 +2014,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13933] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Shield - Frost Resistance",
 		reagents = {
@@ -1960,6 +2039,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13935] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Boots - Agility",
 		reagents = {
@@ -1979,6 +2059,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13937] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant 2H Weapon - Greater Impact",
 		reagents = {
@@ -2003,6 +2084,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13939] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Greater Strength",
 		reagents = {
@@ -2027,6 +2109,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13941] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Stats",
 		reagents = {
@@ -2056,6 +2139,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13943] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Weapon - Greater Striking",
 		reagents = {
@@ -2080,6 +2164,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13945] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Greater Stamina",
 		reagents = {
@@ -2099,6 +2184,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13947] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Riding Skill",
 		reagents = {
@@ -2123,6 +2209,7 @@ RI.Data["Enchanting"] = {
 	},
 	[13948] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Gloves - Minor Haste",
 		reagents = {
@@ -2325,6 +2412,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20008] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Greater Intellect",
 		reagents = {
@@ -2344,6 +2432,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20009] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Superior Spirit",
 		reagents = {
@@ -2368,6 +2457,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20010] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Superior Strength",
 		reagents = {
@@ -2392,6 +2482,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20011] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Superior Stamina",
 		reagents = {
@@ -2411,6 +2502,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20012] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Greater Agility",
 		reagents = {
@@ -2435,6 +2527,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20013] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Greater Strength",
 		reagents = {
@@ -2459,6 +2552,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20014] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Greater Resistance",
 		reagents = {
@@ -2498,6 +2592,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20015] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Cloak - Superior Defense",
 		reagents = {
@@ -2517,6 +2612,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20016] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Shield - Vitality",
 		reagents = {
@@ -2541,6 +2637,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20017] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Shield - Greater Stamina",
 		reagents = {
@@ -2560,6 +2657,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20020] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Greater Stamina",
 		reagents = {
@@ -2579,6 +2677,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20023] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Greater Agility",
 		reagents = {
@@ -2603,6 +2702,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20024] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Spirit",
 		reagents = {
@@ -2622,6 +2722,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20025] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Chest - Greater Stats",
 		reagents = {
@@ -2646,6 +2747,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20026] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Chest - Major Health",
 		reagents = {
@@ -2665,6 +2767,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20028] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Chest - Major Mana",
 		reagents = {
@@ -2684,6 +2787,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20029] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Icy Chill",
 		reagents = {
@@ -2718,6 +2822,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20030] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant 2H Weapon - Superior Impact",
 		reagents = {
@@ -2742,6 +2847,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20031] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Superior Striking",
 		reagents = {
@@ -2766,6 +2872,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20032] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Lifestealing",
 		reagents = {
@@ -2795,6 +2902,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20033] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Unholy Weapon",
 		reagents = {
@@ -2819,6 +2927,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20034] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Crusader",
 		reagents = {
@@ -2843,6 +2952,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20035] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant 2H Weapon - Major Spirit",
 		reagents = {
@@ -2867,6 +2977,7 @@ RI.Data["Enchanting"] = {
 	},
 	[20036] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant 2H Weapon - Major Intellect",
 		reagents = {
@@ -2935,6 +3046,7 @@ RI.Data["Enchanting"] = {
 	},
 	[21931] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Winter's Might",
 		reagents = {
@@ -2969,6 +3081,7 @@ RI.Data["Enchanting"] = {
 	},
 	[22749] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Spellpower",
 		reagents = {
@@ -2998,6 +3111,7 @@ RI.Data["Enchanting"] = {
 	},
 	[22750] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Healing Power",
 		reagents = {
@@ -3027,6 +3141,7 @@ RI.Data["Enchanting"] = {
 	},
 	[23799] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Weapon - Strength",
 		reagents = {
@@ -3051,6 +3166,7 @@ RI.Data["Enchanting"] = {
 	},
 	[23800] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Weapon - Agility",
 		reagents = {
@@ -3075,6 +3191,7 @@ RI.Data["Enchanting"] = {
 	},
 	[23801] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Bracer - Mana Regeneration",
 		reagents = {
@@ -3104,6 +3221,7 @@ RI.Data["Enchanting"] = {
 	},
 	[23802] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Bracer - Healing Power",
 		reagents = {
@@ -3133,6 +3251,7 @@ RI.Data["Enchanting"] = {
 	},
 	[23803] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Weapon - Mighty Spirit",
 		reagents = {
@@ -3162,6 +3281,7 @@ RI.Data["Enchanting"] = {
 	},
 	[23804] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Weapon - Mighty Intellect",
 		reagents = {
@@ -3191,6 +3311,7 @@ RI.Data["Enchanting"] = {
 	},
 	[25072] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Gloves - Threat",
 		reagents = {
@@ -3220,6 +3341,7 @@ RI.Data["Enchanting"] = {
 	},
 	[25073] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Gloves - Shadow Power",
 		reagents = {
@@ -3249,6 +3371,7 @@ RI.Data["Enchanting"] = {
 	},
 	[25074] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Gloves - Frost Power",
 		reagents = {
@@ -3278,6 +3401,7 @@ RI.Data["Enchanting"] = {
 	},
 	[25078] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Gloves - Fire Power",
 		reagents = {
@@ -3307,6 +3431,7 @@ RI.Data["Enchanting"] = {
 	},
 	[25079] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Gloves - Healing Power",
 		reagents = {
@@ -3336,6 +3461,7 @@ RI.Data["Enchanting"] = {
 	},
 	[25080] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Gloves - Superior Agility",
 		reagents = {
@@ -3365,6 +3491,7 @@ RI.Data["Enchanting"] = {
 	},
 	[25081] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Cloak - Greater Fire Resistance",
 		reagents = {
@@ -3394,6 +3521,7 @@ RI.Data["Enchanting"] = {
 	},
 	[25082] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Cloak - Greater Nature Resistance",
 		reagents = {
@@ -3423,6 +3551,7 @@ RI.Data["Enchanting"] = {
 	},
 	[25083] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Cloak - Stealth",
 		reagents = {
@@ -3452,6 +3581,7 @@ RI.Data["Enchanting"] = {
 	},
 	[25084] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Cloak - Subtlety",
 		reagents = {
@@ -3481,6 +3611,7 @@ RI.Data["Enchanting"] = {
 	},
 	[25086] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Cloak - Dodge",
 		reagents = {
@@ -3713,6 +3844,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27837] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant 2H Weapon - Agility",
 		reagents = {
@@ -3737,6 +3869,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27899] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Brawn",
 		reagents = {
@@ -3756,6 +3889,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27905] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Stats",
 		reagents = {
@@ -3780,6 +3914,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27906] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Major Defense",
 		reagents = {
@@ -3804,6 +3939,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27911] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Bracer - Superior Healing",
 		reagents = {
@@ -3828,6 +3964,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27913] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Restore Mana Prime",
 		reagents = {
@@ -3847,6 +3984,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27914] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Fortitude",
 		reagents = {
@@ -3876,6 +4014,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27917] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Spellpower",
 		reagents = {
@@ -3905,6 +4044,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27920] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Ring - Striking",
 		reagents = {
@@ -3929,6 +4069,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27924] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Ring - Spellpower",
 		reagents = {
@@ -3953,6 +4094,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27926] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Ring - Healing Power",
 		reagents = {
@@ -3982,6 +4124,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27927] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Ring - Stats",
 		reagents = {
@@ -4006,6 +4149,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27944] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Shield - Tough Shield",
 		reagents = {
@@ -4030,6 +4174,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27945] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Shield - Intellect",
 		reagents = {
@@ -4049,6 +4194,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27946] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Shield - Shield Block",
 		reagents = {
@@ -4078,6 +4224,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27947] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Shield - Resistance",
 		reagents = {
@@ -4117,6 +4264,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27948] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Vitality",
 		reagents = {
@@ -4146,6 +4294,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27950] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Fortitude",
 		reagents = {
@@ -4165,6 +4314,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27951] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Dexterity",
 		reagents = {
@@ -4189,6 +4339,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27954] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Surefooted",
 		reagents = {
@@ -4213,6 +4364,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27957] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Exceptional Health",
 		reagents = {
@@ -4242,6 +4394,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27958] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Chest - Exceptional Mana",
 		reagents = {
@@ -4261,6 +4414,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27960] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Chest - Exceptional Stats",
 		reagents = {
@@ -4290,6 +4444,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27961] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Cloak - Major Armor",
 		reagents = {
@@ -4309,6 +4464,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27962] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Major Resistance",
 		reagents = {
@@ -4348,6 +4504,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27967] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Weapon - Major Striking",
 		reagents = {
@@ -4377,6 +4534,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27968] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Major Intellect",
 		reagents = {
@@ -4401,6 +4559,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27971] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant 2H Weapon - Savagery",
 		reagents = {
@@ -4425,6 +4584,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27972] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Potency",
 		reagents = {
@@ -4454,6 +4614,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27975] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Major Spellpower",
 		reagents = {
@@ -4478,6 +4639,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27977] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant 2H Weapon - Major Agility",
 		reagents = {
@@ -4507,6 +4669,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27981] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Sunfire",
 		reagents = {
@@ -4546,6 +4709,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27982] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Soulfrost",
 		reagents = {
@@ -4585,6 +4749,7 @@ RI.Data["Enchanting"] = {
 	},
 	[27984] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Mongoose",
 		reagents = {
@@ -4619,6 +4784,7 @@ RI.Data["Enchanting"] = {
 	},
 	[28003] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Spellsurge",
 		reagents = {
@@ -4648,6 +4814,7 @@ RI.Data["Enchanting"] = {
 	},
 	[28004] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Battlemaster",
 		reagents = {
@@ -4899,6 +5066,7 @@ RI.Data["Enchanting"] = {
 	},
 	[33990] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Major Spirit",
 		reagents = {
@@ -4918,6 +5086,7 @@ RI.Data["Enchanting"] = {
 	},
 	[33991] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Restore Mana Prime",
 		reagents = {
@@ -4942,6 +5111,7 @@ RI.Data["Enchanting"] = {
 	},
 	[33992] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Chest - Major Resilience",
 		reagents = {
@@ -4966,6 +5136,7 @@ RI.Data["Enchanting"] = {
 	},
 	[33993] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Gloves - Blasting",
 		reagents = {
@@ -4990,6 +5161,7 @@ RI.Data["Enchanting"] = {
 	},
 	[33994] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Precise Strikes",
 		reagents = {
@@ -5019,6 +5191,7 @@ RI.Data["Enchanting"] = {
 	},
 	[33995] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Gloves - Major Strength",
 		reagents = {
@@ -5043,6 +5216,7 @@ RI.Data["Enchanting"] = {
 	},
 	[33996] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Gloves - Assault",
 		reagents = {
@@ -5062,6 +5236,7 @@ RI.Data["Enchanting"] = {
 	},
 	[33997] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Major Spellpower",
 		reagents = {
@@ -5091,6 +5266,7 @@ RI.Data["Enchanting"] = {
 	},
 	[33999] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Major Healing",
 		reagents = {
@@ -5120,6 +5296,7 @@ RI.Data["Enchanting"] = {
 	},
 	[34001] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Major Intellect",
 		reagents = {
@@ -5139,6 +5316,7 @@ RI.Data["Enchanting"] = {
 	},
 	[34002] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Assault",
 		reagents = {
@@ -5158,6 +5336,7 @@ RI.Data["Enchanting"] = {
 	},
 	[34003] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Spell Penetration",
 		reagents = {
@@ -5187,6 +5366,7 @@ RI.Data["Enchanting"] = {
 	},
 	[34004] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Cloak - Greater Agility",
 		reagents = {
@@ -5216,6 +5396,7 @@ RI.Data["Enchanting"] = {
 	},
 	[34005] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Cloak - Greater Arcane Resistance",
 		reagents = {
@@ -5240,6 +5421,7 @@ RI.Data["Enchanting"] = {
 	},
 	[34006] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Cloak - Greater Shadow Resistance",
 		reagents = {
@@ -5264,6 +5446,7 @@ RI.Data["Enchanting"] = {
 	},
 	[34007] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Boots - Cat's Swiftness",
 		reagents = {
@@ -5288,6 +5471,7 @@ RI.Data["Enchanting"] = {
 	},
 	[34008] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Boots - Boar's Speed",
 		reagents = {
@@ -5312,6 +5496,7 @@ RI.Data["Enchanting"] = {
 	},
 	[34009] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Shield - Major Stamina",
 		reagents = {
@@ -5331,6 +5516,7 @@ RI.Data["Enchanting"] = {
 	},
 	[34010] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Major Healing",
 		reagents = {
@@ -5398,6 +5584,7 @@ RI.Data["Enchanting"] = {
 	},
 	[42620] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Weapon - Greater Agility",
 		reagents = {
@@ -5432,6 +5619,7 @@ RI.Data["Enchanting"] = {
 	},
 	[42974] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Executioner",
 		reagents = {
@@ -5471,6 +5659,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44383] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Shield - Resilience",
 		reagents = {
@@ -5495,6 +5684,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44483] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Superior Frost Resistance",
 		reagents = {
@@ -5524,6 +5714,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44484] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Gloves - Expertise",
 		reagents = {
@@ -5543,6 +5734,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44488] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Gloves - Precision",
 		reagents = {
@@ -5562,6 +5754,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44489] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Shield - Defense",
 		reagents = {
@@ -5586,6 +5779,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44492] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Chest - Mighty Health",
 		reagents = {
@@ -5605,6 +5799,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44494] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Superior Nature Resistance",
 		reagents = {
@@ -5634,6 +5829,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44500] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Superior Agility",
 		reagents = {
@@ -5653,6 +5849,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44506] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Gloves - Gatherer",
 		reagents = {
@@ -5672,6 +5869,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44508] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Boots - Greater Spirit",
 		reagents = {
@@ -5696,6 +5894,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44509] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Chest - Greater Mana Restoration",
 		reagents = {
@@ -5720,6 +5919,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44510] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Exceptional Spirit",
 		reagents = {
@@ -5744,6 +5944,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44513] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Greater Assault",
 		reagents = {
@@ -5768,6 +5969,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44524] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Icebreaker",
 		reagents = {
@@ -5792,6 +5994,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44528] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Boots - Greater Fortitude",
 		reagents = {
@@ -5816,6 +6019,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44529] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Gloves - Major Agility",
 		reagents = {
@@ -5840,6 +6044,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44555] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Bracers - Exceptional Intellect",
 		reagents = {
@@ -5859,6 +6064,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44556] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Superior Fire Resistance",
 		reagents = {
@@ -5883,6 +6089,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44575] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracers - Greater Assault",
 		reagents = {
@@ -5907,6 +6114,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44576] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Lifeward",
 		reagents = {
@@ -5931,6 +6139,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44582] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Cloak - Spell Piercing",
 		reagents = {
@@ -5950,6 +6159,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44584] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Boots - Greater Vitality",
 		reagents = {
@@ -5974,6 +6184,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44588] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Chest - Exceptional Resilience",
 		reagents = {
@@ -5998,6 +6209,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44589] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Superior Agility",
 		reagents = {
@@ -6022,6 +6234,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44590] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Superior Shadow Resistance",
 		reagents = {
@@ -6051,6 +6264,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44591] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Titanweave",
 		reagents = {
@@ -6080,6 +6294,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44592] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Gloves - Exceptional Spellpower",
 		reagents = {
@@ -6104,6 +6319,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44593] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracers - Major Spirit",
 		reagents = {
@@ -6128,6 +6344,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44595] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant 2H Weapon - Scourgebane",
 		reagents = {
@@ -6152,6 +6369,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44596] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Superior Arcane Resistance",
 		reagents = {
@@ -6176,6 +6394,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44598] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracers - Expertise",
 		reagents = {
@@ -6200,6 +6419,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44616] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracers - Greater Stats",
 		reagents = {
@@ -6224,6 +6444,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44621] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Giant Slayer",
 		reagents = {
@@ -6248,6 +6469,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44623] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Chest - Super Stats",
 		reagents = {
@@ -6272,6 +6494,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44625] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Armsman",
 		reagents = {
@@ -6296,6 +6519,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44629] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Weapon - Exceptional Spellpower",
 		reagents = {
@@ -6320,6 +6544,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44630] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant 2H Weapon - Greater Savagery",
 		reagents = {
@@ -6344,6 +6569,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44631] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Shadow Armor",
 		reagents = {
@@ -6368,6 +6594,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44633] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Exceptional Agility",
 		reagents = {
@@ -6392,6 +6619,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44635] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Bracers - Greater Spellpower",
 		reagents = {
@@ -6416,6 +6644,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44636] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Ring - Greater Spellpower",
 		reagents = {
@@ -6440,6 +6669,7 @@ RI.Data["Enchanting"] = {
 	},
 	[44645] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Ring - Assault",
 		reagents = {
@@ -6483,6 +6713,7 @@ RI.Data["Enchanting"] = {
 	},
 	[46578] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Deathfrost",
 		reagents = {
@@ -6507,6 +6738,7 @@ RI.Data["Enchanting"] = {
 	},
 	[46594] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Chest - Defense",
 		reagents = {
@@ -6536,6 +6768,7 @@ RI.Data["Enchanting"] = {
 	},
 	[47051] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Cloak - Steelweave",
 		reagents = {
@@ -6560,6 +6793,7 @@ RI.Data["Enchanting"] = {
 	},
 	[47672] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Mighty Armor",
 		reagents = {
@@ -6584,6 +6818,7 @@ RI.Data["Enchanting"] = {
 	},
 	[47766] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Chest - Greater Defense",
 		reagents = {
@@ -6608,6 +6843,7 @@ RI.Data["Enchanting"] = {
 	},
 	[47898] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Greater Speed",
 		reagents = {
@@ -6632,6 +6868,7 @@ RI.Data["Enchanting"] = {
 	},
 	[47899] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Wisdom",
 		reagents = {
@@ -6656,6 +6893,7 @@ RI.Data["Enchanting"] = {
 	},
 	[47900] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Chest - Super Health",
 		reagents = {
@@ -6680,6 +6918,7 @@ RI.Data["Enchanting"] = {
 	},
 	[47901] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Tuskarr's Vitality",
 		reagents = {
@@ -6709,6 +6948,7 @@ RI.Data["Enchanting"] = {
 	},
 	[59619] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Accuracy",
 		reagents = {
@@ -6743,6 +6983,7 @@ RI.Data["Enchanting"] = {
 	},
 	[59621] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Berserking",
 		reagents = {
@@ -6777,6 +7018,7 @@ RI.Data["Enchanting"] = {
 	},
 	[59625] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Black Magic",
 		reagents = {
@@ -6806,6 +7048,7 @@ RI.Data["Enchanting"] = {
 	},
 	[59636] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Ring - Stamina",
 		reagents = {
@@ -6830,6 +7073,7 @@ RI.Data["Enchanting"] = {
 	},
 	[60606] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Boots - Assault",
 		reagents = {
@@ -6854,6 +7098,7 @@ RI.Data["Enchanting"] = {
 	},
 	[60609] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Cloak - Speed",
 		reagents = {
@@ -6873,6 +7118,7 @@ RI.Data["Enchanting"] = {
 	},
 	[60616] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Bracers - Striking",
 		reagents = {
@@ -6931,6 +7177,7 @@ RI.Data["Enchanting"] = {
 	},
 	[60621] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Weapon - Greater Potency",
 		reagents = {
@@ -6955,6 +7202,7 @@ RI.Data["Enchanting"] = {
 	},
 	[60623] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Boots - Icewalker",
 		reagents = {
@@ -6979,6 +7227,7 @@ RI.Data["Enchanting"] = {
 	},
 	[60653] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Shield - Greater Intellect",
 		reagents = {
@@ -6998,6 +7247,7 @@ RI.Data["Enchanting"] = {
 	},
 	[60663] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Cloak - Major Agility",
 		reagents = {
@@ -7027,6 +7277,7 @@ RI.Data["Enchanting"] = {
 	},
 	[60668] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Gloves - Crusher",
 		reagents = {
@@ -7056,6 +7307,7 @@ RI.Data["Enchanting"] = {
 	},
 	[60691] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant 2H Weapon - Massacre",
 		reagents = {
@@ -7085,6 +7337,7 @@ RI.Data["Enchanting"] = {
 	},
 	[60692] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Chest - Powerful Stats",
 		reagents = {
@@ -7109,6 +7362,7 @@ RI.Data["Enchanting"] = {
 	},
 	[60707] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Superior Potency",
 		reagents = {
@@ -7143,6 +7397,7 @@ RI.Data["Enchanting"] = {
 	},
 	[60714] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Mighty Spellpower",
 		reagents = {
@@ -7172,6 +7427,7 @@ RI.Data["Enchanting"] = {
 	},
 	[60763] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Greater Assault",
 		reagents = {
@@ -7196,6 +7452,7 @@ RI.Data["Enchanting"] = {
 	},
 	[60767] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracers - Superior Spellpower",
 		reagents = {
@@ -7225,6 +7482,7 @@ RI.Data["Enchanting"] = {
 	},
 	[62256] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Bracers - Major Stamina",
 		reagents = {
@@ -7249,6 +7507,7 @@ RI.Data["Enchanting"] = {
 	},
 	[62948] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Staff - Greater Spellpower",
 		reagents = {
@@ -7278,6 +7537,7 @@ RI.Data["Enchanting"] = {
 	},
 	[62959] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Staff - Spellpower",
 		reagents = {
@@ -7302,6 +7562,7 @@ RI.Data["Enchanting"] = {
 	},
 	[63746] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Boots - Lesser Accuracy",
 		reagents = {
@@ -7326,6 +7587,7 @@ RI.Data["Enchanting"] = {
 	},
 	[64441] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Weapon - Blade Ward",
 		reagents = {
@@ -7355,6 +7617,7 @@ RI.Data["Enchanting"] = {
 	},
 	[64579] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Weapon - Blood Draining",
 		reagents = {
@@ -7403,6 +7666,7 @@ RI.Data["Enchanting"] = {
 	},
 	[71692] = {
 		creates = nil,
+		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Angler",
 		reagents = {

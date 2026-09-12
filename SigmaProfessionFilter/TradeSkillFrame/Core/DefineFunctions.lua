@@ -548,7 +548,7 @@ function SPF.GetTradeSkillItemLink(skillIndex)
 			local spellID = SPF.Data[skillIndex]["spellID"];
 			if spellID then
 				local spellName = SPF.GetRecipeInfo(spellID, "name");
-				return "|cffffd000|Henchant:"..spellID.."|h["..spellName.."]|h|r";
+				return "|cffffd000|Hspell:"..spellID.."|h["..spellName.."]|h|r";
 			end
 			return;
 		end
@@ -583,7 +583,7 @@ function SPF.GetTradeSkillRecipeLink(skillIndex)
 			local spellID = SPF.Data[skillIndex]["spellID"];
 			if spellID then
 				local spellName = SPF.GetRecipeInfo(spellID, "name");
-				return "|cffffd000|Henchant:"..spellID.."|h["..GetTradeSkillName()..": "..spellName.."]|h|r";
+				return "|cffffd000|Hspell:"..spellID.."|h["..GetTradeSkillName()..": "..spellName.."]|h|r";
 			end
 			return;
 		end
@@ -737,11 +737,11 @@ function SPF.GetItemInfo(itemLink)
 					SPF.LocalTooltip:Hide();
 				end
 			end
-		elseif strfind(itemLink, "enchant:") then
-			id = string.gsub(itemLink, ".*\124Henchant:(%d+).*", "%1");
+		elseif strfind(itemLink, "spell:") then
+			id = string.gsub(itemLink, ".*\124Hspell:(%d+).*", "%1");
 			if id then
 				if not(GetItemInfo(id)) then
-					SPF.LocalTooltip:SetHyperlink("enchant:"..id);
+					SPF.LocalTooltip:SetHyperlink("spell:"..id);
 					SPF.LocalTooltip:Hide();
 				end
 			end
@@ -823,15 +823,15 @@ function SPF.GetTradeSkillSubClasses()
 								end
 							end
 						else
-							addFirstOriginal = true;
+							addFirstOriginal = spellData["subClass"];
 						end
 					end
 				end
 				
 				SPF.LeftMenu.newClasses = {};
 				
-				if addFirstOriginal and originalSubClasses[1] then
-					table.insert(SPF.LeftMenu.newClasses, originalSubClasses[1]);
+				if addFirstOriginal then
+					table.insert(SPF.LeftMenu.newClasses, addFirstOriginal.."|r"..addFirstOriginal);
 				end
 				
 				for classId,classInfo in ipairs(SPF.SUBCLASSES) do

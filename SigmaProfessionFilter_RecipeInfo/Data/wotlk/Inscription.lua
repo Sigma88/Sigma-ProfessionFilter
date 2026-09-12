@@ -8688,6 +8688,7 @@ RI.Data["Inscription"] = {
 	},
 	[61117] = {
 		creates = nil,
+		subClass = "Inscribe",
 		icon = "Interface\\Icons\\inv_inscription_tradeskill01",
 		name = "Master's Inscription of the Axe",
 		reagents = {
@@ -8707,6 +8708,7 @@ RI.Data["Inscription"] = {
 	},
 	[61118] = {
 		creates = nil,
+		subClass = "Inscribe",
 		icon = "Interface\\Icons\\inv_inscription_tradeskill01",
 		name = "Master's Inscription of the Crag",
 		reagents = {
@@ -8726,6 +8728,7 @@ RI.Data["Inscription"] = {
 	},
 	[61119] = {
 		creates = nil,
+		subClass = "Inscribe",
 		icon = "Interface\\Icons\\inv_inscription_tradeskill01",
 		name = "Master's Inscription of the Pinnacle",
 		reagents = {
@@ -8745,6 +8748,7 @@ RI.Data["Inscription"] = {
 	},
 	[61120] = {
 		creates = nil,
+		subClass = "Inscribe",
 		icon = "Interface\\Icons\\inv_inscription_tradeskill01",
 		name = "Master's Inscription of the Storm",
 		reagents = {
@@ -8764,6 +8768,7 @@ RI.Data["Inscription"] = {
 	},
 	[61177] = {
 		creates = nil,
+		subClass = "Inscribe",
 		icon = "Interface\\Icons\\inv_inscription_tradeskill01",
 		name = "Northrend Inscription Research",
 		reagents = {
@@ -8793,6 +8798,7 @@ RI.Data["Inscription"] = {
 	},
 	[61288] = {
 		creates = nil,
+		subClass = "Inscribe",
 		icon = "Interface\\Icons\\inv_inscription_tradeskill01",
 		name = "Minor Inscription Research",
 		reagents = {
