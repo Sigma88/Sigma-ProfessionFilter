@@ -6,6 +6,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Minor Health",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 10940,
@@ -26,6 +27,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Minor Health",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 10940,
@@ -75,6 +77,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Minor Absorption",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 10940,
@@ -100,6 +103,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Minor Deflection",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 10938,
@@ -125,6 +129,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Chest - Minor Mana",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 10938,
@@ -145,6 +150,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Cloak - Minor Resistance",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 10940,
@@ -170,6 +176,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Minor Stamina",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 10940,
@@ -190,6 +197,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant 2H Weapon - Minor Impact",
+		invSlot = "ENCHANT_2H_WEAPON",
 		reagents = {
 			{
 				itemID = 10940,
@@ -215,6 +223,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Lesser Health",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 10940,
@@ -240,6 +249,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Minor Spirit",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 10938,
@@ -260,6 +270,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Minor Protection",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 10940,
@@ -285,6 +296,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Chest - Lesser Mana",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 10939,
@@ -310,6 +322,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Minor Agility",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 10940,
@@ -335,6 +348,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Minor Strength",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 10940,
@@ -355,6 +369,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Minor Beastslayer",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 10940,
@@ -380,6 +395,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Weapon - Minor Striking",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 10940,
@@ -410,6 +426,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant 2H Weapon - Lesser Intellect",
+		invSlot = "ENCHANT_2H_WEAPON",
 		reagents = {
 			{
 				itemID = 10939,
@@ -464,6 +481,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Health",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 10940,
@@ -489,6 +507,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Lesser Spirit",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 10998,
@@ -509,6 +528,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Cloak - Lesser Fire Resistance",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 6371,
@@ -534,6 +554,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Minor Stamina",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 10940,
@@ -554,6 +575,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Boots - Minor Agility",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 10940,
@@ -579,6 +601,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Shield - Minor Stamina",
+		invSlot = "ENCHANT_SHIELD",
 		reagents = {
 			{
 				itemID = 10998,
@@ -604,6 +627,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant 2H Weapon - Lesser Spirit",
+		invSlot = "ENCHANT_2H_WEAPON",
 		reagents = {
 			{
 				itemID = 10998,
@@ -629,6 +653,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Minor Agility",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 10998,
@@ -649,6 +674,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Cloak - Lesser Protection",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 10940,
@@ -674,6 +700,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Shield - Lesser Protection",
+		invSlot = "ENCHANT_SHIELD",
 		reagents = {
 			{
 				itemID = 10998,
@@ -704,6 +731,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Shield - Lesser Spirit",
+		invSlot = "ENCHANT_SHIELD",
 		reagents = {
 			{
 				itemID = 10998,
@@ -729,6 +757,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Lesser Stamina",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 11083,
@@ -749,6 +778,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Weapon - Lesser Striking",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 11083,
@@ -774,6 +804,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Lesser Shadow Resistance",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 11082,
@@ -799,6 +830,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant 2H Weapon - Lesser Impact",
+		invSlot = "ENCHANT_2H_WEAPON",
 		reagents = {
 			{
 				itemID = 11083,
@@ -824,6 +856,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Lesser Strength",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 11083,
@@ -844,6 +877,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Lesser Absorption",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 10940,
@@ -874,6 +908,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Mana",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 11082,
@@ -899,6 +934,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Mining",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 11083,
@@ -924,6 +960,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Herbalism",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 11083,
@@ -949,6 +986,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Fishing",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 11083,
@@ -974,6 +1012,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Lesser Intellect",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 11082,
@@ -994,6 +1033,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Minor Stats",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 11082,
@@ -1063,6 +1103,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Shield - Lesser Stamina",
+		invSlot = "ENCHANT_SHIELD",
 		reagents = {
 			{
 				itemID = 11134,
@@ -1088,6 +1129,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Cloak - Defense",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 11138,
@@ -1113,6 +1155,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Boots - Lesser Agility",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 11083,
@@ -1138,6 +1181,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Greater Health",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 11083,
@@ -1158,6 +1202,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Spirit",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 11134,
@@ -1178,6 +1223,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Boots - Lesser Stamina",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 11083,
@@ -1198,6 +1244,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Lesser Deflection",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 11134,
@@ -1223,6 +1270,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Stamina",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 11083,
@@ -1243,6 +1291,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Lesser Beastslayer",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 11134,
@@ -1273,6 +1322,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Lesser Elemental Slayer",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 11134,
@@ -1303,6 +1353,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Cloak - Fire Resistance",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 11134,
@@ -1328,6 +1379,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Shield - Spirit",
+		invSlot = "ENCHANT_SHIELD",
 		reagents = {
 			{
 				itemID = 11135,
@@ -1353,6 +1405,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Strength",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 11137,
@@ -1373,6 +1426,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Greater Mana",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 11135,
@@ -1393,6 +1447,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Lesser Spirit",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 11135,
@@ -1418,6 +1473,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Shield - Lesser Block",
+		invSlot = "ENCHANT_SHIELD",
 		reagents = {
 			{
 				itemID = 11135,
@@ -1448,6 +1504,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Weapon - Striking",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 11135,
@@ -1473,6 +1530,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant 2H Weapon - Impact",
+		invSlot = "ENCHANT_2H_WEAPON",
 		reagents = {
 			{
 				itemID = 11137,
@@ -1498,6 +1556,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Skinning",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 11137,
@@ -1523,6 +1582,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Lesser Stats",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 11135,
@@ -1592,6 +1652,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Cloak - Greater Defense",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 11137,
@@ -1612,6 +1673,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Cloak - Resistance",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 11174,
@@ -1632,6 +1694,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Gloves - Agility",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 11174,
@@ -1657,6 +1720,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Shield - Stamina",
+		invSlot = "ENCHANT_SHIELD",
 		reagents = {
 			{
 				itemID = 11137,
@@ -1677,6 +1741,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Intellect",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 11174,
@@ -1697,6 +1762,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Boots - Stamina",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 11137,
@@ -1717,6 +1783,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Advanced Mining",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 11137,
@@ -1742,6 +1809,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Greater Spirit",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 11174,
@@ -1767,6 +1835,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Superior Health",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 11137,
@@ -1787,6 +1856,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Advanced Herbalism",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 11137,
@@ -1812,6 +1882,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Lesser Agility",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 11174,
@@ -1832,6 +1903,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Gloves - Strength",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 11174,
@@ -1857,6 +1929,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Boots - Minor Speed",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 11177,
@@ -1887,6 +1960,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Fiery Weapon",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 11177,
@@ -1912,6 +1986,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Shield - Greater Spirit",
+		invSlot = "ENCHANT_SHIELD",
 		reagents = {
 			{
 				itemID = 11175,
@@ -1937,6 +2012,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Demonslaying",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 11177,
@@ -1967,6 +2043,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Superior Mana",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 11175,
@@ -1992,6 +2069,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Deflection",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 11175,
@@ -2017,6 +2095,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Shield - Frost Resistance",
+		invSlot = "ENCHANT_SHIELD",
 		reagents = {
 			{
 				itemID = 11178,
@@ -2042,6 +2121,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Boots - Agility",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 11175,
@@ -2062,6 +2142,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant 2H Weapon - Greater Impact",
+		invSlot = "ENCHANT_2H_WEAPON",
 		reagents = {
 			{
 				itemID = 11178,
@@ -2087,6 +2168,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Greater Strength",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 11176,
@@ -2112,6 +2194,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Stats",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 11178,
@@ -2142,6 +2225,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Weapon - Greater Striking",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 11178,
@@ -2167,6 +2251,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Greater Stamina",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 11176,
@@ -2187,6 +2272,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Riding Skill",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 11178,
@@ -2212,6 +2298,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Gloves - Minor Haste",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 11178,
@@ -2415,6 +2502,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Greater Intellect",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 16202,
@@ -2435,6 +2523,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Superior Spirit",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 16202,
@@ -2460,6 +2549,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Superior Strength",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 16204,
@@ -2485,6 +2575,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Superior Stamina",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 16204,
@@ -2505,6 +2596,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Greater Agility",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 16202,
@@ -2530,6 +2622,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Greater Strength",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 16202,
@@ -2555,6 +2648,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Greater Resistance",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 7077,
@@ -2595,6 +2689,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Cloak - Superior Defense",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 16204,
@@ -2615,6 +2710,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Shield - Vitality",
+		invSlot = "ENCHANT_SHIELD",
 		reagents = {
 			{
 				itemID = 16203,
@@ -2640,6 +2736,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Shield - Greater Stamina",
+		invSlot = "ENCHANT_SHIELD",
 		reagents = {
 			{
 				itemID = 11176,
@@ -2660,6 +2757,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Greater Stamina",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 11176,
@@ -2680,6 +2778,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Greater Agility",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 16202,
@@ -2705,6 +2804,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Spirit",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 16203,
@@ -2725,6 +2825,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Chest - Greater Stats",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 14344,
@@ -2750,6 +2851,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Chest - Major Health",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 14343,
@@ -2770,6 +2872,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Chest - Major Mana",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 16204,
@@ -2790,6 +2893,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Icy Chill",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 14343,
@@ -2825,6 +2929,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant 2H Weapon - Superior Impact",
+		invSlot = "ENCHANT_2H_WEAPON",
 		reagents = {
 			{
 				itemID = 14344,
@@ -2850,6 +2955,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Superior Striking",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 14344,
@@ -2875,6 +2981,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Lifestealing",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 14344,
@@ -2905,6 +3012,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Unholy Weapon",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 14344,
@@ -2930,6 +3038,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Crusader",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 14344,
@@ -2955,6 +3064,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant 2H Weapon - Major Spirit",
+		invSlot = "ENCHANT_2H_WEAPON",
 		reagents = {
 			{
 				itemID = 16203,
@@ -2980,6 +3090,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant 2H Weapon - Major Intellect",
+		invSlot = "ENCHANT_2H_WEAPON",
 		reagents = {
 			{
 				itemID = 16203,
@@ -3049,6 +3160,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Winter's Might",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 11135,
@@ -3084,6 +3196,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Spellpower",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 14344,
@@ -3114,6 +3227,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Healing Power",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 14344,
@@ -3144,6 +3258,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Weapon - Strength",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 14344,
@@ -3169,6 +3284,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Weapon - Agility",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 14344,
@@ -3194,6 +3310,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Bracer - Mana Regeneration",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 16204,
@@ -3224,6 +3341,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Bracer - Healing Power",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 14344,
@@ -3254,6 +3372,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Weapon - Mighty Spirit",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 14344,
@@ -3284,6 +3403,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Weapon - Mighty Intellect",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 14344,
@@ -3314,6 +3434,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Gloves - Threat",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 22448,
@@ -3344,6 +3465,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Gloves - Shadow Power",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 22448,
@@ -3374,6 +3496,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Gloves - Frost Power",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 22448,
@@ -3404,6 +3527,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Gloves - Fire Power",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 22448,
@@ -3434,6 +3558,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Gloves - Healing Power",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 22448,
@@ -3464,6 +3589,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Gloves - Superior Agility",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 22448,
@@ -3494,6 +3620,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Cloak - Greater Fire Resistance",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 22448,
@@ -3524,6 +3651,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Cloak - Greater Nature Resistance",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 22448,
@@ -3554,6 +3682,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Cloak - Stealth",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 22448,
@@ -3584,6 +3713,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Cloak - Subtlety",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 22448,
@@ -3614,6 +3744,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Cloak - Dodge",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 22448,
@@ -3847,6 +3978,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant 2H Weapon - Agility",
+		invSlot = "ENCHANT_2H_WEAPON",
 		reagents = {
 			{
 				itemID = 14344,
@@ -3872,6 +4004,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Brawn",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 22445,
@@ -3892,6 +4025,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Stats",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 22445,
@@ -3917,6 +4051,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Major Defense",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 22448,
@@ -3942,6 +4077,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Bracer - Superior Healing",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 22446,
@@ -3967,6 +4103,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Restore Mana Prime",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 22446,
@@ -3987,6 +4124,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Fortitude",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 22449,
@@ -4017,6 +4155,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracer - Spellpower",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 22449,
@@ -4047,6 +4186,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Ring - Striking",
+		invSlot = "INVTYPE_FINGER",
 		reagents = {
 			{
 				itemID = 22449,
@@ -4072,6 +4212,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Ring - Spellpower",
+		invSlot = "INVTYPE_FINGER",
 		reagents = {
 			{
 				itemID = 22449,
@@ -4097,6 +4238,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Ring - Healing Power",
+		invSlot = "INVTYPE_FINGER",
 		reagents = {
 			{
 				itemID = 22449,
@@ -4127,6 +4269,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Ring - Stats",
+		invSlot = "INVTYPE_FINGER",
 		reagents = {
 			{
 				itemID = 22450,
@@ -4152,6 +4295,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Shield - Tough Shield",
+		invSlot = "ENCHANT_SHIELD",
 		reagents = {
 			{
 				itemID = 22445,
@@ -4177,6 +4321,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Shield - Intellect",
+		invSlot = "ENCHANT_SHIELD",
 		reagents = {
 			{
 				itemID = 22446,
@@ -4197,6 +4342,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Shield - Shield Block",
+		invSlot = "ENCHANT_SHIELD",
 		reagents = {
 			{
 				itemID = 22445,
@@ -4227,6 +4373,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Shield - Resistance",
+		invSlot = "ENCHANT_SHIELD",
 		reagents = {
 			{
 				itemID = 22449,
@@ -4267,6 +4414,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Vitality",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 22445,
@@ -4297,6 +4445,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Fortitude",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 22445,
@@ -4317,6 +4466,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Dexterity",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 22446,
@@ -4342,6 +4492,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Surefooted",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 22450,
@@ -4367,6 +4518,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Exceptional Health",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 22445,
@@ -4397,6 +4549,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Chest - Exceptional Mana",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 34054,
@@ -4417,6 +4570,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Chest - Exceptional Stats",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 22449,
@@ -4447,6 +4601,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Cloak - Major Armor",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 22445,
@@ -4467,6 +4622,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Major Resistance",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 22446,
@@ -4507,6 +4663,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Weapon - Major Striking",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 22449,
@@ -4537,6 +4694,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Major Intellect",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 22449,
@@ -4562,6 +4720,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant 2H Weapon - Savagery",
+		invSlot = "ENCHANT_2H_WEAPON",
 		reagents = {
 			{
 				itemID = 22449,
@@ -4587,6 +4746,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Potency",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 22449,
@@ -4617,6 +4777,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Major Spellpower",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 22449,
@@ -4642,6 +4803,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant 2H Weapon - Major Agility",
+		invSlot = "ENCHANT_2H_WEAPON",
 		reagents = {
 			{
 				itemID = 22449,
@@ -4672,6 +4834,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Sunfire",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 22450,
@@ -4712,6 +4875,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Soulfrost",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 22450,
@@ -4752,6 +4916,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Mongoose",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 22450,
@@ -4787,6 +4952,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Spellsurge",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 22449,
@@ -4817,6 +4983,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Battlemaster",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 22450,
@@ -5069,6 +5236,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Major Spirit",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 22446,
@@ -5089,6 +5257,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Chest - Restore Mana Prime",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 22447,
@@ -5114,6 +5283,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Chest - Major Resilience",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 22446,
@@ -5139,6 +5309,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Gloves - Blasting",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 22447,
@@ -5164,6 +5335,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Precise Strikes",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 22446,
@@ -5194,6 +5366,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Gloves - Major Strength",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 22445,
@@ -5219,6 +5392,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Gloves - Assault",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 22445,
@@ -5239,6 +5413,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Major Spellpower",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 22446,
@@ -5269,6 +5444,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Major Healing",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 22446,
@@ -5299,6 +5475,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Major Intellect",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 22447,
@@ -5319,6 +5496,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Bracer - Assault",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 22445,
@@ -5339,6 +5517,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Spell Penetration",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 22446,
@@ -5369,6 +5548,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Cloak - Greater Agility",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 22446,
@@ -5399,6 +5579,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Cloak - Greater Arcane Resistance",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 22449,
@@ -5424,6 +5605,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Cloak - Greater Shadow Resistance",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 22449,
@@ -5449,6 +5631,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Boots - Cat's Swiftness",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 22449,
@@ -5474,6 +5657,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Boots - Boar's Speed",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 22449,
@@ -5499,6 +5683,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Shield - Major Stamina",
+		invSlot = "ENCHANT_SHIELD",
 		reagents = {
 			{
 				itemID = 22445,
@@ -5519,6 +5704,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Major Healing",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 22449,
@@ -5587,6 +5773,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Weapon - Greater Agility",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 22445,
@@ -5622,6 +5809,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Executioner",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 22450,
@@ -5662,6 +5850,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Shield - Resilience",
+		invSlot = "ENCHANT_SHIELD",
 		reagents = {
 			{
 				itemID = 22449,
@@ -5687,6 +5876,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Superior Frost Resistance",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 34054,
@@ -5717,6 +5907,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Gloves - Expertise",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 34054,
@@ -5737,6 +5928,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Gloves - Precision",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 34055,
@@ -5757,6 +5949,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Shield - Defense",
+		invSlot = "ENCHANT_SHIELD",
 		reagents = {
 			{
 				itemID = 34054,
@@ -5782,6 +5975,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Chest - Mighty Health",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 34055,
@@ -5802,6 +5996,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Superior Nature Resistance",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 34054,
@@ -5832,6 +6027,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Superior Agility",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 34054,
@@ -5852,6 +6048,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Gloves - Gatherer",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 34055,
@@ -5872,6 +6069,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Boots - Greater Spirit",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 34054,
@@ -5897,6 +6095,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Chest - Greater Mana Restoration",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 34054,
@@ -5922,6 +6121,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Exceptional Spirit",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 34054,
@@ -5947,6 +6147,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Greater Assault",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 34054,
@@ -5972,6 +6173,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Icebreaker",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 34052,
@@ -5997,6 +6199,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Boots - Greater Fortitude",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 34056,
@@ -6022,6 +6225,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Gloves - Major Agility",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 34055,
@@ -6047,6 +6251,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Bracers - Exceptional Intellect",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6067,6 +6272,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Superior Fire Resistance",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 34055,
@@ -6092,6 +6298,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracers - Greater Assault",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6117,6 +6324,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Lifeward",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 34052,
@@ -6142,6 +6350,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Cloak - Spell Piercing",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6162,6 +6371,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Boots - Greater Vitality",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6187,6 +6397,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Chest - Exceptional Resilience",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 34055,
@@ -6212,6 +6423,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Superior Agility",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6237,6 +6449,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Superior Shadow Resistance",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6267,6 +6480,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Titanweave",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6297,6 +6511,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Gloves - Exceptional Spellpower",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6322,6 +6537,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracers - Major Spirit",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6347,6 +6563,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant 2H Weapon - Scourgebane",
+		invSlot = "ENCHANT_2H_WEAPON",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6372,6 +6589,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Superior Arcane Resistance",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6397,6 +6615,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracers - Expertise",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6422,6 +6641,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracers - Greater Stats",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6447,6 +6667,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Giant Slayer",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 34055,
@@ -6472,6 +6693,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Chest - Super Stats",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6497,6 +6719,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Armsman",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 34052,
@@ -6522,6 +6745,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Weapon - Exceptional Spellpower",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6547,6 +6771,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant 2H Weapon - Greater Savagery",
+		invSlot = "ENCHANT_2H_WEAPON",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6572,6 +6797,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Shadow Armor",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6597,6 +6823,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Weapon - Exceptional Agility",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 34052,
@@ -6622,6 +6849,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Bracers - Greater Spellpower",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6647,6 +6875,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Ring - Greater Spellpower",
+		invSlot = "INVTYPE_FINGER",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6672,6 +6901,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Ring - Assault",
+		invSlot = "INVTYPE_FINGER",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6716,6 +6946,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Deathfrost",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 22456,
@@ -6741,6 +6972,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Chest - Defense",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 22446,
@@ -6771,6 +7003,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Cloak - Steelweave",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 22446,
@@ -6796,6 +7029,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Mighty Armor",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6821,6 +7055,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Chest - Greater Defense",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6846,6 +7081,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Greater Speed",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6871,6 +7107,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Cloak - Wisdom",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 34055,
@@ -6896,6 +7133,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Chest - Super Health",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6921,6 +7159,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Tuskarr's Vitality",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6951,6 +7190,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Accuracy",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 34054,
@@ -6986,6 +7226,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Berserking",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 34054,
@@ -7021,6 +7262,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Black Magic",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 34055,
@@ -7051,6 +7293,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Ring - Stamina",
+		invSlot = "INVTYPE_FINGER",
 		reagents = {
 			{
 				itemID = 34054,
@@ -7076,6 +7319,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Boots - Assault",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 34054,
@@ -7101,6 +7345,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Cloak - Speed",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 34054,
@@ -7121,6 +7366,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Bracers - Striking",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 34054,
@@ -7180,6 +7426,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Weapon - Greater Potency",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 34054,
@@ -7205,6 +7452,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Boots - Icewalker",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 34054,
@@ -7230,6 +7478,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Shield - Greater Intellect",
+		invSlot = "ENCHANT_SHIELD",
 		reagents = {
 			{
 				itemID = 34054,
@@ -7250,6 +7499,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Cloak - Major Agility",
+		invSlot = "INVTYPE_CLOAK",
 		reagents = {
 			{
 				itemID = 34054,
@@ -7280,6 +7530,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\trade_engraving",
 		name = "Enchant Gloves - Crusher",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 34054,
@@ -7310,6 +7561,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant 2H Weapon - Massacre",
+		invSlot = "ENCHANT_2H_WEAPON",
 		reagents = {
 			{
 				itemID = 34054,
@@ -7340,6 +7592,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Chest - Powerful Stats",
+		invSlot = "INVTYPE_CHEST",
 		reagents = {
 			{
 				itemID = 34052,
@@ -7365,6 +7618,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Superior Potency",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 34054,
@@ -7400,6 +7654,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Weapon - Mighty Spellpower",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 34054,
@@ -7430,6 +7685,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Boots - Greater Assault",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 34055,
@@ -7455,6 +7711,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Bracers - Superior Spellpower",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 34054,
@@ -7485,6 +7742,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Bracers - Major Stamina",
+		invSlot = "INVTYPE_WRIST",
 		reagents = {
 			{
 				itemID = 34055,
@@ -7510,6 +7768,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulasuperior_01",
 		name = "Enchant Staff - Greater Spellpower",
+		invSlot = "ENCHANT_2H_WEAPON",
 		reagents = {
 			{
 				itemID = 34054,
@@ -7540,6 +7799,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Staff - Spellpower",
+		invSlot = "ENCHANT_2H_WEAPON",
 		reagents = {
 			{
 				itemID = 34054,
@@ -7565,6 +7825,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\spell_holy_greaterheal",
 		name = "Enchant Boots - Lesser Accuracy",
+		invSlot = "INVTYPE_FEET",
 		reagents = {
 			{
 				itemID = 11137,
@@ -7590,6 +7851,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Weapon - Blade Ward",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 34057,
@@ -7620,6 +7882,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_misc_note_01",
 		name = "Enchant Weapon - Blood Draining",
+		invSlot = "ENCHANT_WEAPON",
 		reagents = {
 			{
 				itemID = 34057,
@@ -7669,6 +7932,7 @@ RI.Data["Enchanting"] = {
 		subClass = "Enchant",
 		icon = "Interface\\Icons\\inv_enchant_formulagood_01",
 		name = "Enchant Gloves - Angler",
+		invSlot = "INVTYPE_HAND",
 		reagents = {
 			{
 				itemID = 34054,

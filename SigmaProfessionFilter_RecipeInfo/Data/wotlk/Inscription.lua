@@ -8691,6 +8691,7 @@ RI.Data["Inscription"] = {
 		subClass = "Inscribe",
 		icon = "Interface\\Icons\\inv_inscription_tradeskill01",
 		name = "Master's Inscription of the Axe",
+		invSlot = "INVTYPE_SHOULDER",
 		reagents = {
 			{
 				itemID = 43127,
@@ -8711,6 +8712,7 @@ RI.Data["Inscription"] = {
 		subClass = "Inscribe",
 		icon = "Interface\\Icons\\inv_inscription_tradeskill01",
 		name = "Master's Inscription of the Crag",
+		invSlot = "INVTYPE_SHOULDER",
 		reagents = {
 			{
 				itemID = 43127,
@@ -8731,6 +8733,7 @@ RI.Data["Inscription"] = {
 		subClass = "Inscribe",
 		icon = "Interface\\Icons\\inv_inscription_tradeskill01",
 		name = "Master's Inscription of the Pinnacle",
+		invSlot = "INVTYPE_SHOULDER",
 		reagents = {
 			{
 				itemID = 43127,
@@ -8751,6 +8754,7 @@ RI.Data["Inscription"] = {
 		subClass = "Inscribe",
 		icon = "Interface\\Icons\\inv_inscription_tradeskill01",
 		name = "Master's Inscription of the Storm",
+		invSlot = "INVTYPE_SHOULDER",
 		reagents = {
 			{
 				itemID = 43127,
@@ -8771,6 +8775,7 @@ RI.Data["Inscription"] = {
 		subClass = "Inscribe",
 		icon = "Interface\\Icons\\inv_inscription_tradeskill01",
 		name = "Northrend Inscription Research",
+		itemSlot = "Created Items",
 		reagents = {
 			{
 				itemID = 43126,
@@ -8801,6 +8806,7 @@ RI.Data["Inscription"] = {
 		subClass = "Inscribe",
 		icon = "Interface\\Icons\\inv_inscription_tradeskill01",
 		name = "Minor Inscription Research",
+		itemSlot = "Created Items",
 		reagents = {
 			{
 				itemID = 39469,

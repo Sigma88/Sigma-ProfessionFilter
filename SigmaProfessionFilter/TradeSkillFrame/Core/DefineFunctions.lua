@@ -760,19 +760,21 @@ end
 function SPF.GetTradeSkillInvSlots()
 	local originalSlots = {GetTradeSkillInvSlots()};
 	if not SPF:GetMenu("Right") then
-		if SigmaProfessionFilter_RecipeInfo and SPF:SavedData()["Unlearned"] then
+		if SigmaProfessionFilter_RecipeInfo then
 			if not SPF.RightMenu.newSlots or SPF.RightMenu.LAST_CHECKED ~= time() then
 				SPF.RightMenu.LAST_CHECKED = time();
 				local neededSlots = {};
 				for spellID,spellData in pairs(SPF.GetRecipeInfo()) do
 					if spellData then
-						local itemID = spellData["creates"];
-						if itemID then
-							local _,_,_,_,_,_,_,_,invSlot = SPF.GetItemInfo(itemID);
-							if invSlot and SPF.INV[invSlot] then
-								if not neededSlots[SPF.SLOTS[SPF.INV[invSlot]]] then
-									neededSlots[SPF.SLOTS[SPF.INV[invSlot]]] = true
-								end
+						local invSlot = nil;
+						if spellData["creates"] then
+							invSlot = ({SPF.GetItemInfo(spellData["creates"])})[9];
+						else
+							invSlot = spellData["invSlot"];
+						end
+						if invSlot and SPF.INV[invSlot] then
+							if not neededSlots[SPF.SLOTS[SPF.INV[invSlot]]] then
+								neededSlots[SPF.SLOTS[SPF.INV[invSlot]]] = true
 							end
 						end
 					end
