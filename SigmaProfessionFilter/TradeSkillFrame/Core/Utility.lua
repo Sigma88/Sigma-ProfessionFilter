@@ -771,7 +771,9 @@ function SPF.ClearTradeSkill()
 	TradeSkillCreateButton:Disable();
 	TradeSkillCreateAllButton:Disable();
 	TradeSkillReagentLabel:Hide();
-	-- TradeSkillDescription:Hide();
+	if SPF.WRATH then
+		TradeSkillDescription:SetText("");
+	end
 	-- TradeSkillCost:Hide();
 end
 
