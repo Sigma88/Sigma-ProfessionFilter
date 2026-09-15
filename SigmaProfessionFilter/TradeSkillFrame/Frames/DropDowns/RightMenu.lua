@@ -111,23 +111,25 @@ function SPF2.RightMenu:Filter(skillIndex, groupIndex)
 			end
 		else
 			local _,_,_,_,_,_,_,_,invType = SPF2.baseGetTradeSkillItemInfo(skillIndex);
-			local itemSlot = SPF2:GetSlot(invType);
+			local itemSlot = nil;
 			
 			if invType then
-				local lastID = 0;
-				for i,slot in ipairs({SPF2.GetTradeSkillInvSlots()}) do
-					lastID = i;
-					if itemSlot == slot then
-						if groupIndex == 0 or groupIndex == i then
-							return i;
-						end
-						return 0;
+				itemSlot = SPF2:GetSlot(invType);
+			end
+			
+			local lastID = 0;
+			for i,slot in ipairs({SPF2.GetTradeSkillInvSlots()}) do
+				lastID = i;
+				if itemSlot == slot then
+					if groupIndex == 0 or groupIndex == i then
+						return i;
 					end
+					return 0;
 				end
-				
-				if groupIndex == 0 or groupIndex == lastID then
-					return lastID;
-				end
+			end
+			
+			if groupIndex == 0 or groupIndex == lastID then
+				return lastID;
 			end
 		end
 		

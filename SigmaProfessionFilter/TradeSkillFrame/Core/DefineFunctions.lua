@@ -853,6 +853,7 @@ function SPF.GetTradeSkillSubClasses()
 						end
 					end
 				end
+				
 				table.insert(SPF.LeftMenu.newClasses, "Other|rOther");
 			end
 			return SPF.LeftMenu.newClasses;
